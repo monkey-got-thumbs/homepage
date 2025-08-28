@@ -27,6 +27,8 @@
     <meta name="twitter:title" content="Monkey Got Thumbs — Augmented Intelligence for Smarter Collaboration">
     <meta name="twitter:description" content="Kickstarting innovation with augmented intelligence. AI shouldn’t replace us — it should amplify us.">
     <meta name="twitter:image" content="https://yourdomain.com/hero.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+ 
 
     <!-- JSON-LD Schema -->
     <script type="application/ld+json">
@@ -71,19 +73,25 @@
             font-family: var(--sans);
             text-align: center;
             line-height: 1.55;
-            padding: 2rem;
+            padding: 0;
+            margin: 0;
+
         }
 
         header {
             position: fixed;
-            top: 1rem;
-            left: 1rem;
+            top: 0;
+            left: 0;
+            display: flex;
+            flex-direction: row;
+            align-items: center;width:100%;
+background-color: rgba(0,0,0,0.8);
         }
 
         header img { width: 120px; height: auto; }
-
+h1 {flex: 1;text-align: center;width:100%;margin-left:-120px;}
         main {
-            margin-top: 8rem;
+            margin-top: 12rem;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -151,6 +159,7 @@
 <body>
 <header>
     <img src="logo.png" alt="Monkey Got Thumbs Logo" />
+    <h1>Monkey Got Thumbs</h1>
 </header>
 
 <main>
@@ -159,15 +168,17 @@
     </section>
 
     <section class="title">
-        <h1>Monkey Got Thumbs</h1>
-        <h2>Making Apes Great Again.</h2>
+
+        <h2>Making Apes Great Again</h2>
     </section>
 
     <section id="raison">
-        <h3>About</h3>
-        <p>AI shouldn’t replace us — it should <em>amplify us</em>. Monkey Got Thumbs exists to make humans smarter,
-            faster, and more effective together. Like opposable thumbs, augmented intelligence is a tool to unlock
+<p>Monkey Got Thumbs has a belief in Augmented Intelligence.</p>
+        <p>We believe that technology should <em>amplify us</em> and make us smarter.<br>  Both collectively and individually.
+            <br>Like opposable thumbs, augmented intelligence is a tool to unlock
             our future.</p>
+
+        <h3>What is Augmented Intelligence?</h3>
     </section>
 
     <section id="mission">
