@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, viewport-fit=cover" />
+    <title>Contact — Monkey Got Thumbs</title>
+    <link rel="canonical" href="https://monkey-got-thumbs.com/contact/">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0E0B1A" />
+    <meta name="color-scheme" content="dark">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers:wght@400&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/tokens.css">
+    <link rel="stylesheet" href="/assets/css/base.css">
+    <link rel="stylesheet" href="/assets/css/layout.css">
+    <meta name="description" content="Get in touch with Monkey Got Thumbs. Questions, feedback, case study submissions, and partnership enquiries." />
+    <meta name="author" content="Monkey Got Thumbs" />
+    <meta property="og:title" content="Contact — Monkey Got Thumbs">
+    <meta property="og:url" content="https://monkey-got-thumbs.com/contact/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://monkey-got-thumbs.com/hero.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+    <style>
+        .content { max-width: 42rem; margin: 0 auto; padding: 2rem 1rem; }
+        .content p { line-height: 1.8; margin-bottom: 1.25rem; }
+        .lead { font-size: var(--font-size-lg); color: var(--color-fg-secondary); line-height: 1.7; }
+        .contact-methods { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
+        .contact-methods .card { padding: 1.5rem; }
+        .contact-methods .card h3 { margin-top: 0; }
+        @media (max-width: 640px) { .contact-methods { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <mgt-header></mgt-header>
+    <main id="main-content">
+        <article class="content">
+            <nav aria-label="Breadcrumb"><ul class="breadcrumbs"><li><a href="/">Home</a></li><li><span aria-current="page">Contact</span></li></ul></nav>
+            <header>
+                <h1>Contact Us</h1>
+                <p class="lead">Questions about augmented intelligence, feedback on our content, or partnership enquiries — we would love to hear from you.</p>
+            </header>
+            <div class="contact-methods">
+                <div class="card">
+                    <h3>General Enquiries</h3>
+                    <p>Questions, feedback, or just want to say hello.</p>
+                    <p><strong>hello@monkey-got-thumbs.com</strong></p>
+                </div>
+                <div class="card">
+                    <h3>Case Studies</h3>
+                    <p>Have a story about augmented intelligence in action? We feature real-world examples.</p>
+                    <p><strong>stories@monkey-got-thumbs.com</strong></p>
+                </div>
+            </div>
+            <section>
+                <h2>Stay Connected</h2>
+                <p>The best way to stay in touch is through our newsletter — practical augmented intelligence insights delivered weekly.</p>
+                <mgt-newsletter compact></mgt-newsletter>
+            </section>
+            <section class="card" style="margin-top: 2rem;">
+                <h2>Start Learning</h2>
+                <div class="cta">
+                    <a href="/learn/" class="btn">Learning Hub</a>
+                    <a href="/community/" class="btn btn--secondary">Community</a>
+                </div>
+            </section>
+        </article>
+    </main>
+    <mgt-footer></mgt-footer>
+    <script src="/assets/js/tracking.js"></script>
+    <script type="module" src="/assets/js/app.js"></script>
+    <script type="module" src="/components/core/mgt-header.js"></script>
+    <script type="module" src="/components/core/mgt-footer.js"></script>
+    <script type="module" src="/components/core/mgt-newsletter.js"></script>
+</body>
+</html>

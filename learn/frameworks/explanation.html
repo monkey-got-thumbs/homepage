@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, viewport-fit=cover" />
+    <title>Explanation: Making AI Transparent and Understandable — Monkey Got Thumbs</title>
+
+    <link rel="canonical" href="https://monkey-got-thumbs.com/learn/frameworks/explanation.html">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#0E0B1A" />
+    <meta name="color-scheme" content="dark">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers:wght@400&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/assets/css/tokens.css">
+    <link rel="stylesheet" href="/assets/css/base.css">
+    <link rel="stylesheet" href="/assets/css/layout.css">
+
+    <meta name="description" content="Genuine explanation is more than generated text. Learn why AI transparency requires hard-to-vary reasoning, knowledge distillation, and verifiable output." />
+    <meta name="keywords" content="explainable AI, AI interpretability, making AI understandable" />
+    <meta name="author" content="Monkey Got Thumbs" />
+
+    <meta property="og:title" content="Explanation: Making AI Transparent and Understandable — Monkey Got Thumbs">
+    <meta property="og:description" content="Why AI output needs to be explainable, and how to tell genuine explanation from generated text.">
+    <meta property="og:url" content="https://monkey-got-thumbs.com/learn/frameworks/explanation.html">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://monkey-got-thumbs.com/hero.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Explanation: Making AI Transparent and Understandable">
+    <meta name="twitter:description" content="Genuine explanation vs generated text — why AI transparency demands hard-to-vary reasoning.">
+    <meta name="twitter:image" content="https://monkey-got-thumbs.com/hero.png">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Explanation: Making AI Transparent and Understandable",
+        "description": "Why AI output needs to be explainable, and how to tell genuine explanation from generated text.",
+        "url": "https://monkey-got-thumbs.com/learn/frameworks/explanation.html",
+        "author": { "@type": "Organization", "name": "Monkey Got Thumbs" },
+        "publisher": { "@type": "Organization", "name": "Monkey Got Thumbs", "logo": "https://monkey-got-thumbs.com/logo.png" },
+        "datePublished": "2026-04-11",
+        "dateModified": "2026-04-11",
+        "educationalLevel": "Advanced",
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://monkey-got-thumbs.com/" },
+                { "@type": "ListItem", "position": 2, "name": "Learn", "item": "https://monkey-got-thumbs.com/learn/" },
+                { "@type": "ListItem", "position": 3, "name": "Frameworks", "item": "https://monkey-got-thumbs.com/learn/frameworks/" },
+                { "@type": "ListItem", "position": 4, "name": "Explanation" }
+            ]
+        }
+    }
+    </script>
+
+    <style>
+        .content { max-width: 42rem; margin: 0 auto; padding: 2rem 1rem; }
+        .content h2 { margin-top: 2.5rem; }
+        .content p { line-height: 1.8; margin-bottom: 1.25rem; }
+        .content ul, .content ol { margin-bottom: 1.25rem; padding-left: 1.5rem; }
+        .content li { margin-bottom: 0.5rem; line-height: 1.7; }
+        .page-meta { color: var(--color-muted); font-size: var(--font-size-sm); margin-top: 0.5rem; }
+        .lead { font-size: var(--font-size-lg); color: var(--color-fg-secondary); line-height: 1.7; }
+        .highlight-box { background: var(--color-bg-secondary); border-left: 4px solid var(--color-accent); padding: 1.25rem 1.5rem; border-radius: var(--radius-sm); margin: 1.5rem 0; }
+        .highlight-box p { margin-bottom: 0; }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <mgt-header></mgt-header>
+
+    <main id="main-content">
+        <article class="content">
+            <nav aria-label="Breadcrumb">
+                <ul class="breadcrumbs">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/learn/">Learn</a></li>
+                    <li><span aria-current="page">Explanation</span></li>
+                </ul>
+            </nav>
+
+            <header>
+                <h1>Explanation</h1>
+                <p class="lead">Explanation is the translation layer of augmented intelligence. It transforms complex representations — whether from a neural network, a dataset, or your own reasoning — into communicable form. Without it, AI output is opaque, and opaque output cannot be trusted.</p>
+                <p class="page-meta">Advanced &middot; 9 min read</p>
+            </header>
+
+            <section>
+                <h2>The Explanation Problem</h2>
+                <p>
+                    Ask a large language model to explain why it gave a particular answer. It will produce a fluent, confident paragraph. It will sound like an explanation. It will have the grammatical structure of an explanation. But it is not an explanation — it is more generated text.
+                </p>
+                <p>
+                    This is the core problem. AI systems can produce outputs that resemble reasoning, but the process that generated those outputs is fundamentally different from human reasoning. A language model does not "decide" to give an answer and then explain its decision. It generates the answer and the explanation through the same statistical process — predicting the next token in a sequence.
+                </p>
+                <p>
+                    When someone asks you why you chose a particular restaurant, you can trace your actual reasoning: you wanted Thai food, this place had good reviews, it was within walking distance. Each element of the explanation corresponds to an actual factor in your decision. AI explanations do not have this correspondence. The "explanation" is a post-hoc construction that may or may not reflect the computational process that produced the output.
+                </p>
+                <p>
+                    This is not a minor technical issue. It is a fundamental challenge that shapes how you should interact with every AI system you use.
+                </p>
+            </section>
+
+            <section>
+                <h2>Genuine Explanation vs Generated Text</h2>
+                <p>
+                    <a href="/learn/foundations/three-pillars.html">David Deutsch's concept of hard-to-vary explanations</a> gives us a precise tool for distinguishing genuine explanation from noise. A genuine explanation has specific properties:
+                </p>
+                <ul>
+                    <li><strong>Every component does essential work.</strong> You cannot swap parts of the explanation without breaking it. If you can replace "the model hallucinated because the training data was sparse in this domain" with "the model hallucinated because Mercury was in retrograde" and the explanation feels equally plausible, then neither version is actually explaining anything.</li>
+                    <li><strong>It is traceable.</strong> You can follow the chain of reasoning back to evidence. A genuine explanation connects its conclusion to observable facts through a chain of logic that you can inspect and test.</li>
+                    <li><strong>It is falsifiable.</strong> A real explanation makes predictions. If the explanation is correct, certain things should follow. If those things do not follow, the explanation is wrong. Generated text rarely makes falsifiable claims — it hedges, qualifies, and keeps its options open.</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <p><strong>The test:</strong> When AI gives you an explanation, ask — can I remove or change any part of this and still reach the same conclusion? If yes, the explanation is easy to vary, and you should not trust it. If removing any element breaks the reasoning chain, you may have a genuine explanation worth building on.</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>Interpretability and the Black Box</h2>
+                <p>
+                    Modern AI systems are often described as <a href="/learn/foundations/ai-pitfalls.html">black boxes</a> — you put data in, you get results out, but you cannot see what happens in between. This is not a metaphor. A large neural network contains billions of parameters whose interactions are genuinely opaque, even to the researchers who built it.
+                </p>
+                <p>
+                    Interpretability research attempts to open the black box. Techniques like attention visualisation, feature attribution, and mechanistic interpretability try to answer: what patterns is the model using? Which parts of the input influenced the output? What internal representations did the model form?
+                </p>
+                <p>
+                    This work is valuable but limited. Current interpretability methods can tell you which input tokens the model weighted most heavily, but they cannot tell you why those tokens mattered in a way that constitutes a genuine explanation. The gap between "what the model did" and "why the model did it" remains large.
+                </p>
+                <p>
+                    For practitioners, this means you cannot rely on the AI to explain itself. You must build explanation from the outside — by testing the output against known facts, by comparing results across different prompts, by verifying claims independently. The explanation comes from your process, not from the model.
+                </p>
+            </section>
+
+            <section>
+                <h2>Knowledge Distillation</h2>
+                <p>
+                    Knowledge distillation is the process of compressing complex knowledge into simpler, more communicable forms. In machine learning, it literally means training a smaller model to replicate the behaviour of a larger one. But the concept applies far more broadly.
+                </p>
+                <p>
+                    Every time you take a 50-page research paper and extract three key findings, you are performing knowledge distillation. Every time you create a diagram that captures the essential logic of a complex system, you are distilling knowledge. The value is not just compression — it is the creation of understanding.
+                </p>
+                <p>
+                    AI can assist with distillation, but it cannot do it for you. A language model can summarise a paper, but it cannot determine which findings are most important to your specific context. It can generate a diagram description, but it cannot judge whether the diagram captures the essential relationships or misses the crucial one. The distillation requires your understanding of what matters — the AI provides speed, you provide judgement.
+                </p>
+                <p>
+                    Effective distillation produces what this framework calls <a href="/learn/frameworks/cognitive-artifacts.html">cognitive artifacts</a> — encapsulated structures of meaning that can be shared, reused, and built upon. The quality of your distillation determines the quality of these artifacts, which in turn determines how effectively you and others can reason about the underlying knowledge.
+                </p>
+            </section>
+
+            <section>
+                <h2>Making AI Output Verifiable</h2>
+                <p>
+                    If you cannot explain how an AI reached its output, the next best thing is to make the output verifiable — to structure your workflow so that AI claims can be checked against reality before you act on them.
+                </p>
+                <p>
+                    Practical strategies for verifiable AI output:
+                </p>
+                <ol>
+                    <li><strong>Demand sources.</strong> When AI makes factual claims, ask for specific sources. Then check those sources. AI frequently fabricates citations — the fact that it provides a reference does not mean the reference exists.</li>
+                    <li><strong>Decompose claims.</strong> Break complex AI outputs into individual claims and verify each one separately. A paragraph that is 90% correct is still dangerous if the 10% that is wrong is the part you act on.</li>
+                    <li><strong>Use structured output.</strong> Ask AI to provide output in structured formats — tables, schemas, step-by-step reasoning — that make individual claims visible and checkable. Freeform prose hides assumptions; structure exposes them.</li>
+                    <li><strong>Cross-reference.</strong> Run the same query through different models or different prompting strategies. Where the outputs agree, you have higher confidence. Where they disagree, you have identified an area that requires human investigation.</li>
+                    <li><strong>Test predictions.</strong> If the AI's output implies certain things should be true, test those implications. A recommendation that "users will prefer option A" can be tested with actual users. An analysis that "this code will fail under load" can be tested with a load test.</li>
+                </ol>
+
+                <div class="highlight-box">
+                    <p><strong>The principle:</strong> You do not need to understand how the AI works internally. You need to build a process around the AI that catches errors before they reach production. Explanation is not just about understanding the model — it is about making the entire workflow transparent and correctable.</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>Explanation as a Practice</h2>
+                <p>
+                    In the augmented intelligence framework, explanation is not a feature you wait for AI companies to build. It is a practice you develop. Every time you take an AI output and translate it into a form that someone else (or your future self) can understand and verify, you are practising explanation.
+                </p>
+                <p>
+                    This connects directly to <a href="/learn/frameworks/meta-cognition.html">meta-cognition</a> — the feedback loop that governs your AI interactions. Meta-cognition asks "am I thinking about this correctly?" Explanation asks "can I communicate what I have found in a way that is traceable and verifiable?" They are complementary disciplines: one governs your internal process, the other governs the output.
+                </p>
+                <p>
+                    Explainer agents — AI systems designed specifically to make other AI systems' outputs understandable — are an emerging capability. But they face the same fundamental challenge: their explanations are also generated text. The human in the loop remains essential, not as a bottleneck but as the only agent in the system capable of genuine understanding.
+                </p>
+            </section>
+
+            <section class="card" style="margin-top: 2.5rem;">
+                <h2>Continue Learning</h2>
+                <p>Explanation is the translation layer. Next, explore how knowledge persists and grows through memory systems.</p>
+                <div class="cta">
+                    <a href="/learn/frameworks/memory-systems.html" class="btn">Memory Systems</a>
+                    <a href="/learn/" class="btn btn--secondary">Back to Learning Hub</a>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <mgt-footer></mgt-footer>
+
+    <script src="/assets/js/tracking.js"></script>
+    <script type="module" src="/assets/js/app.js"></script>
+    <script type="module" src="/components/core/mgt-header.js"></script>
+    <script type="module" src="/components/core/mgt-footer.js"></script>
+</body>
+</html>

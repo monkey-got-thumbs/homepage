@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, viewport-fit=cover" />
+    <title>Meta-Cognition: Thinking Tools for Human-AI Collaboration — Monkey Got Thumbs</title>
+
+    <link rel="canonical" href="https://monkey-got-thumbs.com/learn/frameworks/meta-cognition.html">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#0E0B1A" />
+    <meta name="color-scheme" content="dark">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers:wght@400&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/assets/css/tokens.css">
+    <link rel="stylesheet" href="/assets/css/base.css">
+    <link rel="stylesheet" href="/assets/css/layout.css">
+
+    <meta name="description" content="Meta-cognition is thinking about thinking. Learn how mental models, prompt engineering, and cognitive scaffolds help you reason more effectively with AI." />
+    <meta name="keywords" content="metacognition AI, thinking about thinking, mental models AI, prompt engineering, cognitive scaffolds" />
+    <meta name="author" content="Monkey Got Thumbs" />
+
+    <meta property="og:title" content="Meta-Cognition: Thinking Tools for AI Collaboration — Monkey Got Thumbs">
+    <meta property="og:description" content="Learn how mental models, prompt engineering, and cognitive scaffolds help you reason with AI.">
+    <meta property="og:url" content="https://monkey-got-thumbs.com/learn/frameworks/meta-cognition.html">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://monkey-got-thumbs.com/hero.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Meta-Cognition: Thinking Tools for AI Collaboration">
+    <meta name="twitter:description" content="Mental models, prompt engineering, and cognitive scaffolds for reasoning with AI.">
+    <meta name="twitter:image" content="https://monkey-got-thumbs.com/hero.png">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Meta-Cognition: Thinking Tools for Human-AI Collaboration",
+        "description": "How mental models, prompt engineering, and cognitive scaffolds help you reason with AI.",
+        "url": "https://monkey-got-thumbs.com/learn/frameworks/meta-cognition.html",
+        "author": { "@type": "Organization", "name": "Monkey Got Thumbs" },
+        "publisher": { "@type": "Organization", "name": "Monkey Got Thumbs", "logo": "https://monkey-got-thumbs.com/logo.png" },
+        "datePublished": "2026-04-11",
+        "dateModified": "2026-04-11",
+        "educationalLevel": "Advanced",
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://monkey-got-thumbs.com/" },
+                { "@type": "ListItem", "position": 2, "name": "Learn", "item": "https://monkey-got-thumbs.com/learn/" },
+                { "@type": "ListItem", "position": 3, "name": "Frameworks", "item": "https://monkey-got-thumbs.com/learn/frameworks/" },
+                { "@type": "ListItem", "position": 4, "name": "Meta-Cognition" }
+            ]
+        }
+    }
+    </script>
+
+    <style>
+        .content { max-width: 42rem; margin: 0 auto; padding: 2rem 1rem; }
+        .content h2 { margin-top: 2.5rem; }
+        .content p { line-height: 1.8; margin-bottom: 1.25rem; }
+        .content ul, .content ol { margin-bottom: 1.25rem; padding-left: 1.5rem; }
+        .content li { margin-bottom: 0.5rem; line-height: 1.7; }
+        .page-meta { color: var(--color-muted); font-size: var(--font-size-sm); margin-top: 0.5rem; }
+        .lead { font-size: var(--font-size-lg); color: var(--color-fg-secondary); line-height: 1.7; }
+        .highlight-box { background: var(--color-bg-secondary); border-left: 4px solid var(--color-accent); padding: 1.25rem 1.5rem; border-radius: var(--radius-sm); margin: 1.5rem 0; }
+        .highlight-box p { margin-bottom: 0; }
+        .tool-card { background: var(--color-bg-secondary); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 1.5rem; margin: 1rem 0; }
+        .tool-card h3 { margin-top: 0; color: var(--color-accent); }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <mgt-header></mgt-header>
+
+    <main id="main-content">
+        <article class="content">
+            <nav aria-label="Breadcrumb">
+                <ul class="breadcrumbs">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/learn/">Learn</a></li>
+                    <li><span aria-current="page">Meta-Cognition</span></li>
+                </ul>
+            </nav>
+
+            <header>
+                <h1>Meta-Cognition</h1>
+                <p class="lead">Meta-cognition is thinking about thinking — the ability to observe, evaluate, and adjust your own reasoning process. In augmented intelligence, it is the feedback loop and control surface that determines whether AI makes you smarter or just faster at being wrong.</p>
+                <p class="page-meta">Advanced &middot; 8 min read</p>
+            </header>
+
+            <section>
+                <h2>Why Meta-Cognition Matters for AI</h2>
+                <p>
+                    When you use AI without meta-cognition, you are outsourcing your thinking to a system that <a href="/learn/foundations/ai-pitfalls.html">cannot think</a>. You accept its outputs, build on its suggestions, and follow its reasoning — without ever asking whether the reasoning is sound.
+                </p>
+                <p>
+                    Meta-cognition changes that. It is the practice of stepping back from the AI's output and asking: <em>What assumptions did I make when I wrote this prompt? What assumptions is the AI making in its response? Where could this go wrong? What would I need to verify before I trust this?</em>
+                </p>
+                <p>
+                    This is the feedback loop that makes augmented intelligence work. Without it, you are not collaborating with AI — you are being led by it.
+                </p>
+            </section>
+
+            <section>
+                <h2>Thinking Tools</h2>
+                <p>
+                    In the <a href="/learn/foundations/three-pillars.html">augmented intelligence framework</a>, meta-cognition encompasses "thinking toys" — lightweight cognitive tools that help you reason about your own reasoning. These are not formal systems. They are habits of mind that you can learn and practise.
+                </p>
+
+                <div class="tool-card">
+                    <h3>Mental Models</h3>
+                    <p>Simplified representations of how something works. When you approach an AI task with a clear mental model — "this model is a pattern matcher, not a reasoner" — you automatically adjust your expectations and verification strategy. The model is not true in a comprehensive sense, but it is useful as a guide for action.</p>
+                </div>
+
+                <div class="tool-card">
+                    <h3>Prompt Engineering as Thinking</h3>
+                    <p>The act of writing a good prompt is itself a meta-cognitive exercise. To write a clear prompt, you must first clarify your own thinking: what exactly do I need? What context is essential? What constraints should I specify? What format should the output take? Many people discover that the process of constructing the prompt solves half the problem before the AI even responds.</p>
+                </div>
+
+                <div class="tool-card">
+                    <h3>Cognitive Scaffolding</h3>
+                    <p>Breaking complex problems into structured sub-problems. Instead of asking AI to "write a marketing strategy," you scaffold: define the audience, identify the channels, specify the constraints, then ask for each component separately. The scaffolding forces you to think through the problem structure, which makes the AI's contributions more targeted and verifiable.</p>
+                </div>
+
+                <div class="tool-card">
+                    <h3>Rubber Ducking with AI</h3>
+                    <p>Explaining your reasoning to AI as a way of testing it. The classic "rubber duck debugging" technique — explaining your code to an inanimate object to find errors — becomes vastly more powerful when the object can ask clarifying questions. Use AI as a thought partner: explain your reasoning, ask it to find the weak points, then evaluate its critique with the same rigour.</p>
+                </div>
+
+                <div class="tool-card">
+                    <h3>Socratic Questioning</h3>
+                    <p>Using AI to ask you questions rather than give you answers. Instead of "give me the answer," try "ask me the questions I should be asking about this problem." This reversal forces you to engage with the problem space rather than passively receiving solutions.</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>The Control Surface</h2>
+                <p>
+                    In engineering, a control surface is the part of a system you adjust to change its behaviour — the steering wheel of a car, the rudder of a plane. Meta-cognition is the control surface of augmented intelligence.
+                </p>
+
+                <div class="highlight-box">
+                    <p><strong>Without meta-cognition, you have access to AI but no control over the quality of the collaboration.</strong> With it, you can adjust your approach in real time: rephrase when the output is wrong, scaffold when it is too broad, verify when it is plausible but unconfirmed.</p>
+                </div>
+
+                <p>
+                    This is why the <a href="/learn/foundations/how-it-helps.html">Harvard/BCG research</a> found that AI only improves outcomes when the human "knows how to direct it." The directing is meta-cognition in action: observing the AI's output, evaluating it against your understanding, and adjusting your next interaction based on what you learned.
+                </p>
+            </section>
+
+            <section>
+                <h2>Practising Meta-Cognition</h2>
+                <p>
+                    Meta-cognition is a skill, not a talent. You develop it through deliberate practice:
+                </p>
+                <ol>
+                    <li><strong>Before each AI interaction</strong> — pause and articulate what you need and why. Write it down if necessary.</li>
+                    <li><strong>After receiving output</strong> — ask "what would I need to check to trust this?" Then check it.</li>
+                    <li><strong>When something goes wrong</strong> — trace back to your prompt. Was the error in the AI's processing, or in your framing?</li>
+                    <li><strong>Regularly</strong> — review your AI interactions. What patterns do you notice? Where do you tend to over-trust? Under-specify? Miss opportunities?</li>
+                </ol>
+                <p>
+                    Over time, this becomes automatic — a background process that runs alongside every AI interaction, continuously improving the quality of the collaboration.
+                </p>
+            </section>
+
+            <section class="card" style="margin-top: 2.5rem;">
+                <h2>Continue Learning</h2>
+                <p>Meta-cognition is the control surface. Next, explore how to make AI's output understandable and verifiable.</p>
+                <div class="cta">
+                    <a href="/learn/frameworks/explanation.html" class="btn">Explanation</a>
+                    <a href="/learn/" class="btn btn--secondary">Back to Learning Hub</a>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <mgt-footer></mgt-footer>
+
+    <script src="/assets/js/tracking.js"></script>
+    <script type="module" src="/assets/js/app.js"></script>
+    <script type="module" src="/components/core/mgt-header.js"></script>
+    <script type="module" src="/components/core/mgt-footer.js"></script>
+</body>
+</html>

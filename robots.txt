@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /metron/
+Disallow: /lp/
+
+Sitemap: https://monkey-got-thumbs.com/sitemap.xml

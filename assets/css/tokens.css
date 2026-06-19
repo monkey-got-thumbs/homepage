@@ -1,0 +1,154 @@
+/* Design System Tokens */
+/* All colors, spacing, and typography defined as CSS custom properties */
+
+:root {
+  /* ===== COLORS ===== */
+
+  /* Semantic Colors */
+  --color-bg: #0E0B1A;
+  --color-bg-secondary: #17122B;
+  --color-fg: #EDECF6;
+  --color-fg-secondary: #F3F2FA;
+  --color-accent: #A6FF4D;
+  --color-brand: #503E94;
+  --color-brand-light: #6A55C0;
+  --color-muted: #B9B5D3;
+
+  /* Functional Colors */
+  --color-success: #4ADE80;
+  --color-warning: #FBBF24;
+  --color-error: #F87171;
+  --color-info: #60A5FA;
+
+  /* Borders & Dividers */
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-border-light: rgba(255, 255, 255, 0.04);
+  --color-divider: rgba(255, 255, 255, 0.06);
+
+  /* ===== TYPOGRAPHY ===== */
+
+  /* Font Families */
+  --font-sans: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Bangers", cursive;
+  --font-mono: "Courier New", monospace;
+
+  /* Font Sizes */
+  --font-size-xs: 0.75rem;      /* 12px */
+  --font-size-sm: 0.875rem;     /* 14px */
+  --font-size-base: 1rem;       /* 16px */
+  --font-size-lg: 1.125rem;     /* 18px */
+  --font-size-xl: 1.25rem;      /* 20px */
+  --font-size-2xl: 1.5rem;      /* 24px */
+  --font-size-3xl: 1.875rem;    /* 30px */
+  --font-size-4xl: 2.25rem;     /* 36px */
+  --font-size-5xl: 3rem;        /* 48px */
+
+  /* Font Weights */
+  --font-weight-normal: 400;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Line Heights */
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.6;
+  --line-height-relaxed: 1.8;
+
+  /* Letter Spacing */
+  --letter-spacing-tight: -0.01em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.08em;
+
+  /* ===== SPACING ===== */
+
+  --space-xs: 0.25rem;   /* 4px */
+  --space-sm: 0.5rem;    /* 8px */
+  --space-md: 1rem;      /* 16px */
+  --space-lg: 1.5rem;    /* 24px */
+  --space-xl: 2rem;      /* 32px */
+  --space-2xl: 3rem;     /* 48px */
+  --space-3xl: 4rem;     /* 64px */
+  --space-4xl: 6rem;     /* 96px */
+
+  /* ===== LAYOUT ===== */
+
+  --container-max: 72rem;  /* 1152px */
+  --container-md: 56rem;   /* 896px */
+  --container-sm: 42rem;   /* 672px */
+
+  /* ===== BORDERS & RADIUS ===== */
+
+  --radius: 12px;
+  --radius-sm: 8px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+
+  /* ===== SHADOWS ===== */
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.15);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.45);
+  --shadow-xl: 0 20px 64px rgba(0, 0, 0, 0.55);
+
+  /* ===== TRANSITIONS ===== */
+
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 350ms ease;
+
+  /* ===== Z-INDEX SCALE ===== */
+
+  --z-dropdown: 100;
+  --z-sticky: 101;
+  --z-fixed: 200;
+  --z-modal-backdrop: 300;
+  --z-modal: 400;
+  --z-tooltip: 500;
+  --z-notification: 600;
+
+  /* ===== BREAKPOINTS (for reference in media queries) ===== */
+  /* --breakpoint-sm: 640px */
+  /* --breakpoint-md: 768px */
+  /* --breakpoint-lg: 1024px */
+  /* --breakpoint-xl: 1280px */
+
+  /* ===== FOCUS STYLES ===== */
+
+  --focus-outline: 3px solid var(--color-accent);
+  --focus-offset: 2px;
+}
+
+/* ===== DARK MODE (currently default, prepared for light mode future) ===== */
+
+@media (prefers-color-scheme: light) {
+  :root {
+    /* If we ever add light mode, variables would change here */
+  }
+}
+
+/* ===== CONTRAST ADJUSTMENT FOR ACCESSIBILITY ===== */
+
+@media (prefers-contrast: more) {
+  :root {
+    --color-border: rgba(255, 255, 255, 0.20);
+    --color-border-light: rgba(255, 255, 255, 0.12);
+    --shadow-sm: 0 2px 12px rgba(0, 0, 0, 0.25);
+    --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.45);
+    --shadow-lg: 0 16px 56px rgba(0, 0, 0, 0.55);
+  }
+}
+
+/* ===== REDUCED MOTION ===== */
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --transition-fast: 0ms;
+    --transition-base: 0ms;
+    --transition-slow: 0ms;
+  }
+
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

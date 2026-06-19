@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, viewport-fit=cover" />
+    <title>Understand AI in 10 Minutes. No Jargon, No Hype.</title>
+
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#0E0B1A" />
+    <meta name="color-scheme" content="dark">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers:wght@400&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/assets/css/tokens.css">
+    <link rel="stylesheet" href="/assets/css/base.css">
+    <link rel="stylesheet" href="/assets/css/layout.css">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+
+    <style>
+        .lp { max-width: 38rem; margin: 0 auto; padding: 3rem 1.5rem; text-align: center; }
+        .lp h1 { font-family: var(--font-display); color: var(--color-accent); font-size: clamp(2rem, 5vw, 3rem); line-height: 1.2; margin-bottom: 1rem; }
+        .lp .subtitle { font-size: var(--font-size-lg); color: var(--color-fg-secondary); line-height: 1.7; margin-bottom: 2.5rem; }
+        .lp-section { text-align: left; margin-bottom: 2rem; }
+        .lp-section h2 { font-size: var(--font-size-xl); margin-bottom: 0.75rem; }
+        .lp-section p, .lp-section li { line-height: 1.8; margin-bottom: 1rem; }
+        .lp-section ul { padding-left: 1.5rem; }
+        .quick-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 2rem 0; }
+        .quick-facts .card { padding: 1.25rem; text-align: left; }
+        .quick-facts .card h3 { margin-top: 0; font-size: var(--font-size-base); color: var(--color-accent); }
+        .quick-facts .card p { font-size: var(--font-size-sm); margin: 0; }
+        @media (max-width: 640px) { .quick-facts { grid-template-columns: 1fr; } }
+        .lp-cta { margin-top: 2.5rem; padding: 2rem; background: var(--color-bg-secondary); border-radius: var(--radius); }
+        .lp-cta h2 { text-align: center; margin-bottom: 1rem; }
+        .lp-footer { margin-top: 3rem; text-align: center; font-size: var(--font-size-sm); color: var(--color-muted); }
+        .lp-footer a { color: var(--color-muted); }
+        .lp-logo { display: block; margin: 0 auto 2rem; max-width: 60px; }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <main id="main-content">
+        <div class="lp">
+            <img src="/logo.png" alt="Monkey Got Thumbs" class="lp-logo" width="60" height="60">
+
+            <h1>Understand AI in 10 Minutes. No Jargon, No Hype.</h1>
+            <p class="subtitle">AI is everywhere. Most explanations are either too technical or too breathless. Here's what you actually need to know.</p>
+
+            <div class="lp-section">
+                <h2>What AI Actually Does</h2>
+                <p>
+                    AI — specifically large language models like ChatGPT and Claude — predicts the next most likely word in a sequence. That is it. It does not think, reason, or understand. It is an extraordinarily sophisticated pattern matcher trained on vast amounts of text.
+                </p>
+                <p>
+                    This makes it genuinely useful for certain tasks: drafting text, summarising documents, generating code, processing data. But it also means it has fundamental limitations that no amount of training will fix.
+                </p>
+            </div>
+
+            <div class="quick-facts">
+                <div class="card">
+                    <h3>It makes things up</h3>
+                    <p>LLMs hallucinate 3-27% of the time. They present fiction as fact with complete confidence.</p>
+                </div>
+                <div class="card">
+                    <h3>It can't explain itself</h3>
+                    <p>AI cannot trace its reasoning. The "explanations" it gives are themselves generated text, not actual logic.</p>
+                </div>
+                <div class="card">
+                    <h3>It's losing money</h3>
+                    <p>OpenAI projects $14B in losses for 2026. The business model is not proven.</p>
+                </div>
+                <div class="card">
+                    <h3>It needs you</h3>
+                    <p>AI directed by a skilled human produces 40% better results. The human is the key variable.</p>
+                </div>
+            </div>
+
+            <div class="lp-section">
+                <h2>The Better Approach: Augmented Intelligence</h2>
+                <p>
+                    Instead of treating AI as a replacement for human thinking, augmented intelligence treats it as an amplifier. You direct. AI assists. You verify. AI generates. You decide. AI processes.
+                </p>
+                <p>
+                    The result is a compounding advantage: reclaimed time, higher quality output, and skills that get more valuable every year — not less.
+                </p>
+            </div>
+
+            <div class="lp-cta">
+                <h2>Start Learning for Free</h2>
+                <mgt-newsletter heading="Weekly AI Insights" description="Clear, practical guidance on working with AI. Unsubscribe any time." compact></mgt-newsletter>
+                <p style="margin-top: 1rem; text-align: center;">
+                    <a href="/learn/foundations/what-is-ai.html" class="btn" style="margin-top: 0.5rem;">Read: What is Augmented Intelligence?</a>
+                </p>
+            </div>
+
+            <div class="lp-footer">
+                <p><a href="/">monkey-got-thumbs.com</a> · <a href="/privacy/">Privacy</a></p>
+            </div>
+        </div>
+    </main>
+
+    <script src="/assets/js/tracking.js"></script>
+    <script type="module" src="/components/core/mgt-newsletter.js"></script>
+</body>
+</html>
