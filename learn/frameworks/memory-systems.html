@@ -91,6 +91,11 @@
                 <p class="page-meta">Advanced &middot; 10 min read</p>
             </header>
 
+            <aside class="recall-banner" data-recall-banner>
+                <span class="recall-banner__icon" aria-hidden="true">🧠</span>
+                <p>This page <strong>remembers what you learn</strong>. Answer the recall cards as you read — they come back just before you'd forget, and everything stays in your browser. A page about memory that, fittingly, is one. <span class="recall-banner__stat" data-recall-stat></span></p>
+            </aside>
+
             <section>
                 <h2>The Three Layers of Memory</h2>
                 <p>
@@ -109,6 +114,25 @@
                 <div class="highlight-box">
                     <p><strong>The key insight:</strong> No single layer is sufficient. Internal memory provides judgement. External memory provides persistence and scale. Machine-augmented memory provides speed and pattern-matching. The most effective knowledge systems integrate all three.</p>
                 </div>
+
+                <mgt-recall id="ms-layers-count">
+                    <details>
+                        <summary>How many distinct layers of memory does augmented intelligence operate across?</summary>
+                        <p>Three.</p>
+                    </details>
+                </mgt-recall>
+                <mgt-recall id="ms-layers-name">
+                    <details>
+                        <summary>Name the three layers of memory.</summary>
+                        <p>Internal (human), external (tools), and machine-augmented (AI).</p>
+                    </details>
+                </mgt-recall>
+                <mgt-recall id="ms-layers-why">
+                    <details>
+                        <summary>Why is no single memory layer enough on its own?</summary>
+                        <p>Each supplies something different: internal gives judgement, external gives persistence and scale, and machine-augmented gives speed and pattern-matching.</p>
+                    </details>
+                </mgt-recall>
             </section>
 
             <section>
@@ -129,6 +153,25 @@
                 <p>
                     The human role remains critical, however. AI can surface connections and retrieve context, but it cannot determine what is worth capturing in the first place. The quality of your PKM system depends on your judgement about what matters, how you frame it, and what structure you give it. Garbage in, garbage out — no amount of semantic search can compensate for poorly captured knowledge.
                 </p>
+
+                <mgt-recall id="ms-pkm-job">
+                    <details>
+                        <summary>What job do PKM tools do that a chatbot alone does not?</summary>
+                        <p>They keep your knowledge persistent and yours, so AI can retrieve from it later.</p>
+                    </details>
+                </mgt-recall>
+                <mgt-recall id="ms-pkm-retrieval">
+                    <details>
+                        <summary>With AI, your notes are retrieved by ______ rather than just keywords.</summary>
+                        <p>Semantic similarity — meaning — captured as embeddings.</p>
+                    </details>
+                </mgt-recall>
+                <mgt-recall id="ms-pkm-human">
+                    <details>
+                        <summary>What can AI <em>not</em> do for your knowledge system?</summary>
+                        <p>Decide what's worth capturing in the first place. That judgement is yours — garbage in, garbage out.</p>
+                    </details>
+                </mgt-recall>
             </section>
 
             <section>
@@ -152,6 +195,25 @@
                 <p>
                     RAG does not eliminate <a href="/learn/foundations/ai-pitfalls.html">hallucination</a>, but it dramatically reduces it by anchoring the model's output to specific source material. It also makes the output more <a href="/learn/frameworks/explanation.html">verifiable</a> — you can check the retrieved sources against the generated response and assess whether the model used them faithfully.
                 </p>
+
+                <mgt-recall id="ms-rag-what">
+                    <details>
+                        <summary>What does RAG retrieve before the model answers?</summary>
+                        <p>Relevant chunks from your own documents (found via embeddings), which are fed into the prompt as context.</p>
+                    </details>
+                </mgt-recall>
+                <mgt-recall id="ms-rag-why">
+                    <details>
+                        <summary>Why can't a language model answer about last week's events without retrieval?</summary>
+                        <p>Its knowledge is frozen at training time.</p>
+                    </details>
+                </mgt-recall>
+                <mgt-recall id="ms-rag-halluc">
+                    <details>
+                        <summary>Does RAG eliminate hallucination?</summary>
+                        <p>No — but it dramatically reduces it by anchoring output to specific sources, and makes the answer verifiable against them.</p>
+                    </details>
+                </mgt-recall>
             </section>
 
             <section>
@@ -165,6 +227,19 @@
                 <p>
                     For personal and organisational knowledge management, the combination of embeddings and graphs creates a system that is both broad (it can find anything semantically related to your query) and precise (it can follow specific relationship chains to deliver targeted answers). This is the machine-augmented layer at its most powerful.
                 </p>
+
+                <mgt-recall id="ms-embed-what">
+                    <details>
+                        <summary>What turns a piece of text into a point in semantic space?</summary>
+                        <p>An embedding.</p>
+                    </details>
+                </mgt-recall>
+                <mgt-recall id="ms-embed-vs-graph">
+                    <details>
+                        <summary>Embeddings capture similarity; semantic graphs capture ______.</summary>
+                        <p>Structure — explicit relationships between concepts (A causes B, X is a type of Y).</p>
+                    </details>
+                </mgt-recall>
             </section>
 
             <section>
@@ -182,6 +257,27 @@
 
                 <div class="highlight-box">
                     <p><strong>The compound effect:</strong> A well-maintained knowledge system gets more valuable with every entry. After a year, you have a searchable, AI-augmented second brain that contains the distilled learning from everything you have read, built, and thought about. After five years, you have something no AI model can replicate — your unique knowledge, structured for instant retrieval.</p>
+                </div>
+
+                <mgt-recall id="ms-build-capture">
+                    <details>
+                        <summary>What is the single most important part of any knowledge system?</summary>
+                        <p>The habit of consistent capture — actually putting things in. Format matters less than consistency.</p>
+                    </details>
+                </mgt-recall>
+                <mgt-recall id="ms-build-stick">
+                    <details>
+                        <summary>What single habit makes knowledge actually stick over the long term?</summary>
+                        <p>Spaced retrieval — reviewing just before you forget. (Exactly what these cards do.)</p>
+                    </details>
+                </mgt-recall>
+
+                <div class="recall-cta" data-recall-cta hidden>
+                    <p>You've answered <strong data-recall-count>0</strong> recall card(s) on this page. <span data-recall-due></span> They'll resurface right before you'd forget — that's the compound effect, working on this very page.</p>
+                    <div class="cta">
+                        <a href="/learn/review/" class="btn">Review your cards</a>
+                        <button type="button" class="btn btn--secondary" data-recall-export>Export my cards (.csv)</button>
+                    </div>
                 </div>
             </section>
 
@@ -202,5 +298,6 @@
     <script type="module" src="/assets/js/app.js"></script>
     <script type="module" src="/components/core/mgt-header.js"></script>
     <script type="module" src="/components/core/mgt-footer.js"></script>
+    <script type="module" src="/components/core/mgt-recall.js"></script>
 </body>
 </html>

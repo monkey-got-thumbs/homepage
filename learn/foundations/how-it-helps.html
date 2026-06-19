@@ -98,6 +98,11 @@
                 <p class="page-meta">Beginner &middot; 8 min read</p>
             </header>
 
+            <aside class="recall-banner" data-recall-banner>
+                <span class="recall-banner__icon" aria-hidden="true">🧠</span>
+                <p>This page <strong>remembers what you learn</strong>. Answer the recall cards as you read — they come back just before you'd forget, and everything stays in your browser. <span class="recall-banner__stat" data-recall-stat></span></p>
+            </aside>
+
             <section>
                 <h2>Three Mechanisms of Amplification</h2>
                 <p>
@@ -137,6 +142,27 @@
                 </div>
             </section>
 
+            <mgt-recall id="help-three-mechanisms">
+                <details>
+                    <summary>What are the three mechanisms through which augmented intelligence amplifies work?</summary>
+                    <p>Compressing workflows, automating ongoing tasks, and scaling collaboration. Each one compounds with the others.</p>
+                </details>
+            </mgt-recall>
+
+            <mgt-recall id="help-compressing-workflows">
+                <details>
+                    <summary>Compressing workflows isn't about doing the same work faster — so what is it about?</summary>
+                    <p>It removes the mechanical steps entirely, so you can focus on the parts that need human judgment: choosing the approach, validating the reasoning, and making the decisions that matter.</p>
+                </details>
+            </mgt-recall>
+
+            <mgt-recall id="help-automation-candidates">
+                <details>
+                    <summary>Which tasks are good candidates for automation under augmented intelligence?</summary>
+                    <p>Mechanical tasks: those that follow predictable patterns, require no judgment, and consume attention without creating value. Everything else stays with the human.</p>
+                </details>
+            </mgt-recall>
+
             <section>
                 <h2>What the Research Shows</h2>
                 <p>
@@ -152,6 +178,20 @@
                     <p>The consistent finding across all studies: <strong>AI alone does not improve outcomes. AI directed by a skilled human does.</strong> The skill of the human is the determining variable.</p>
                 </div>
             </section>
+
+            <mgt-recall id="help-research-finding">
+                <details>
+                    <summary>Across the rigorous studies, what is the determining variable for whether AI improves outcomes?</summary>
+                    <p>The skill of the human. AI alone does not improve outcomes — AI directed by a skilled human does.</p>
+                </details>
+            </mgt-recall>
+
+            <mgt-recall id="help-bcg-caveat">
+                <details>
+                    <summary>In the Harvard/BCG study, the productivity gains only held under what condition?</summary>
+                    <p>When the tasks fell within AI's capability frontier and the human knew how to direct it effectively.</p>
+                </details>
+            </mgt-recall>
 
             <section>
                 <h2>Case Study: The Power of Saying No</h2>
@@ -188,6 +228,20 @@
                 </p>
             </section>
 
+            <mgt-recall id="help-case-study-judgment">
+                <details>
+                    <summary>In the startup case study, which part of "augmented intelligence in action" did the consultant actually demonstrate?</summary>
+                    <p>The human judgment part, not the AI part. They weighed business runway against an engineering choice and pushed back against conventional wisdom — a decision no AI system could have made.</p>
+                </details>
+            </mgt-recall>
+
+            <mgt-recall id="help-case-study-outcome">
+                <details>
+                    <summary>What was the headline business outcome after the consultant chose JavaScript over TypeScript to reach product-market fit faster?</summary>
+                    <p>The product launched in 7 weeks, won its first paying customer in 2 weeks, and secured a $500K funding round based on real traction.</p>
+                </details>
+            </mgt-recall>
+
             <section>
                 <h2>Practical Applications by Role</h2>
                 <p>
@@ -204,6 +258,13 @@
                     The pattern is consistent: AI handles volume. Humans handle value. The combination produces outcomes neither can achieve alone.
                 </p>
             </section>
+
+            <mgt-recall id="help-volume-value">
+                <details>
+                    <summary>Across every role, what is the consistent division of labour between AI and humans?</summary>
+                    <p>AI handles volume; humans handle value. The combination produces outcomes neither can achieve alone.</p>
+                </details>
+            </mgt-recall>
 
             <section>
                 <h2>Getting Started</h2>
@@ -225,6 +286,21 @@
                 </p>
             </section>
 
+            <mgt-recall id="help-getting-started-first-step">
+                <details>
+                    <summary>What is the recommended first step for getting started with augmented intelligence?</summary>
+                    <p>Identify the single most time-consuming mechanical task in your daily work, then experiment with using AI to handle just that one task.</p>
+                </details>
+            </mgt-recall>
+
+            <div class="recall-cta" data-recall-cta hidden>
+                <p>You've answered <strong data-recall-count>0</strong> recall card(s) on this page. <span data-recall-due></span> They'll resurface right before you'd forget.</p>
+                <div class="cta">
+                    <a href="/learn/review/" class="btn">Review your cards</a>
+                    <button type="button" class="btn btn--secondary" data-recall-export>Export my cards (.csv)</button>
+                </div>
+            </div>
+
             <section class="card" style="margin-top: 2.5rem;">
                 <h2>Continue Learning</h2>
                 <p>Understand the theory behind the practice. The three pillars provide the intellectual foundation for everything on this page.</p>
@@ -242,5 +318,6 @@
     <script type="module" src="/assets/js/app.js"></script>
     <script type="module" src="/components/core/mgt-header.js"></script>
     <script type="module" src="/components/core/mgt-footer.js"></script>
+    <script type="module" src="/components/core/mgt-recall.js"></script>
 </body>
 </html>

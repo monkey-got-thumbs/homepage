@@ -77,6 +77,17 @@
         .comparison { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 1.5rem 0; }
         .comparison .card { padding: 1.5rem; }
         @media (max-width: 640px) { .comparison { grid-template-columns: 1fr; } }
+        .explorable { background: var(--color-bg-secondary); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
+        .explorable figcaption { font-weight: var(--font-weight-semibold); color: var(--color-fg); margin-bottom: 1rem; }
+        .explorable__note { display: block; font-weight: 400; font-size: var(--font-size-xs); color: var(--color-muted); margin-top: 0.25rem; }
+        .explorable__controls label { display: block; font-size: var(--font-size-sm); color: var(--color-fg-secondary); margin-bottom: 0.5rem; }
+        .explorable__controls input[type=range] { width: 100%; accent-color: var(--color-accent); }
+        .explorable__readout { display: flex; gap: 1rem; flex-wrap: wrap; margin: 1.25rem 0 0.5rem; }
+        .explorable__readout div { flex: 1; min-width: 90px; text-align: center; background: color-mix(in srgb, #000 20%, transparent); border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 0.75rem; }
+        .explorable__readout b { display: block; font-family: var(--font-display); font-size: var(--font-size-2xl); color: var(--color-accent); line-height: 1.1; }
+        .explorable__readout span { font-size: var(--font-size-xs); color: var(--color-muted); }
+        .explorable__chart { width: 100%; height: auto; margin-top: 0.5rem; }
+        .explorable__desc { font-size: var(--font-size-sm); color: var(--color-muted); margin: 0.5rem 0 0; }
     </style>
 </head>
 <body>
@@ -99,6 +110,11 @@
                 <p class="page-meta">Beginner &middot; 8 min read</p>
             </header>
 
+            <aside class="recall-banner" data-recall-banner>
+                <span class="recall-banner__icon" aria-hidden="true">🧠</span>
+                <p>This page <strong>remembers what you learn</strong>. Answer the recall cards as you read — they come back just before you'd forget, and everything stays in your browser. <span class="recall-banner__stat" data-recall-stat></span></p>
+            </aside>
+
             <section>
                 <h2>The Core Idea: A Time Amplifier</h2>
                 <p>
@@ -115,6 +131,43 @@
                 <p>
                     The result is a compounding effect. Each hour you reclaim gets reinvested into higher-value work, which generates more capacity, which compounds further. This is not a marginal improvement. It is a structural change in how productive a single person or small team can be.
                 </p>
+
+                <figure class="explorable" id="amplifier">
+                    <figcaption>See it for yourself — drag the slider.
+                        <span class="explorable__note">A simple model of the idea above (reclaimed hours, reinvested, compound). It's an illustration to build intuition, not a measured figure — your real results will vary.</span>
+                    </figcaption>
+                    <div class="explorable__controls">
+                        <label for="amp-hours">Hours reclaimed per week: <strong id="amp-hours-val">5</strong></label>
+                        <input type="range" id="amp-hours" min="0" max="20" step="1" value="5" aria-describedby="amp-chart-desc" />
+                    </div>
+                    <div class="explorable__readout" aria-live="polite">
+                        <div><b id="amp-year">240</b><span>hours / year reclaimed</span></div>
+                        <div><b id="amp-mult">1.7&times;</b><span>effective capacity after 12 months</span></div>
+                        <div><b id="amp-rate">1.0%</b><span>weekly compounding</span></div>
+                    </div>
+                    <svg class="explorable__chart" id="amp-chart" viewBox="0 0 320 120" role="img" aria-label="Chart comparing flat baseline capacity with compounding augmented capacity over twelve months"></svg>
+                    <p id="amp-chart-desc" class="explorable__desc"></p>
+                    <noscript><p class="explorable__desc">This interactive model needs JavaScript. The idea: reclaim ~5 hours/week and reinvest them, and your effective capacity compounds — roughly 1.7&times; over a year in this simple model.</p></noscript>
+                </figure>
+
+                <mgt-recall id="wai-amplifier">
+                    <details>
+                        <summary>Augmented intelligence is best described as a what?</summary>
+                        <p>A time amplifier — it multiplies what you can accomplish with the hours and attention you already have.</p>
+                    </details>
+                </mgt-recall>
+                <mgt-recall id="wai-three-dims">
+                    <details>
+                        <summary>Across which three dimensions does augmented intelligence amplify work?</summary>
+                        <p>Compressing workflows, automating ongoing tasks, and scaling collaboration.</p>
+                    </details>
+                </mgt-recall>
+                <mgt-recall id="wai-compounding">
+                    <details>
+                        <summary>Why is the effect described as "compounding"?</summary>
+                        <p>Each reclaimed hour is reinvested into higher-value work, which creates more capacity, which compounds further.</p>
+                    </details>
+                </mgt-recall>
             </section>
 
             <section>
@@ -145,6 +198,19 @@
                 <p>
                     Augmented intelligence acknowledges these limitations and designs around them. Instead of asking "how do we replace the human?", it asks "how do we give the human superpowers while keeping them in control?"
                 </p>
+
+                <mgt-recall id="wai-ai-vs">
+                    <details>
+                        <summary>What's the core difference between artificial intelligence and augmented intelligence?</summary>
+                        <p>AI optimises for removing humans from the loop; augmented intelligence optimises for making humans more capable — the human stays in the loop.</p>
+                    </details>
+                </mgt-recall>
+                <mgt-recall id="wai-limitations">
+                    <details>
+                        <summary>Name structural limitations of current AI that augmented intelligence designs around.</summary>
+                        <p>They hallucinate, lack judgement, can't explain their reasoning, and are expensive to run.</p>
+                    </details>
+                </mgt-recall>
             </section>
 
             <section>
@@ -163,6 +229,19 @@
                 <p>
                     The key word is <em>assistance</em>. You direct. You decide. You verify. The machine handles the parts that do not require judgment — the research, the first drafts, the data processing, the pattern matching. You handle the parts that do — the strategy, the ethics, the context, the relationships.
                 </p>
+
+                <mgt-recall id="wai-cyborg">
+                    <details>
+                        <summary>What does the "digital cyborg" idea actually mean here?</summary>
+                        <p>Extending your cognitive reach with machine assistance — like a spreadsheet or search engine, but adding reasoning, pattern recognition, and generation.</p>
+                    </details>
+                </mgt-recall>
+                <mgt-recall id="wai-assistance">
+                    <details>
+                        <summary>What's the key word in the human–machine relationship?</summary>
+                        <p>Assistance. You direct, decide, and verify; the machine handles the parts that don't require judgement.</p>
+                    </details>
+                </mgt-recall>
             </section>
 
             <section>
@@ -182,6 +261,19 @@
                 <p>
                     That is what this site is about. Teaching those skills.
                 </p>
+
+                <mgt-recall id="wai-scales">
+                    <details>
+                        <summary>At what scales does augmented intelligence apply?</summary>
+                        <p>Personal workflows, institutional processes, enterprise operations, and economic systems.</p>
+                    </details>
+                </mgt-recall>
+                <mgt-recall id="wai-advantage">
+                    <details>
+                        <summary>Who gains the advantage in the shift to AI?</summary>
+                        <p>People who learn to work <em>with</em> AI rather than be replaced <em>by</em> it — through skills and mental models, not special technology.</p>
+                    </details>
+                </mgt-recall>
             </section>
 
             <section>
@@ -197,7 +289,22 @@
                 <p>
                     These pillars support a practical framework of five capabilities: <a href="/learn/frameworks/meta-cognition.html">Meta-Cognition</a>, <a href="/learn/frameworks/explanation.html">Explanation</a>, <a href="/learn/frameworks/memory-systems.html">Memory Systems</a>, <a href="/learn/frameworks/interfaces.html">Interfaces</a>, and <a href="/learn/frameworks/cognitive-artifacts.html">Cognitive Artifacts</a>. Together they provide a complete model for how humans and machines can think together.
                 </p>
+
+                <mgt-recall id="wai-pillars">
+                    <details>
+                        <summary>Name the three pillars of augmented intelligence.</summary>
+                        <p>Logic, Explanation, and Architected Data Objects.</p>
+                    </details>
+                </mgt-recall>
             </section>
+
+            <div class="recall-cta" data-recall-cta hidden>
+                <p>You've answered <strong data-recall-count>0</strong> recall card(s) on this page. <span data-recall-due></span> They'll resurface right before you'd forget.</p>
+                <div class="cta">
+                    <a href="/learn/review/" class="btn">Review your cards</a>
+                    <button type="button" class="btn btn--secondary" data-recall-export>Export my cards (.csv)</button>
+                </div>
+            </div>
 
             <section class="card" style="margin-top: 2.5rem;">
                 <h2>Continue Learning</h2>
@@ -216,5 +323,46 @@
     <script type="module" src="/assets/js/app.js"></script>
     <script type="module" src="/components/core/mgt-header.js"></script>
     <script type="module" src="/components/core/mgt-footer.js"></script>
+    <script type="module" src="/components/core/mgt-recall.js"></script>
+    <script>
+        /* Explorable: reclaimed hours, reinvested, compound (illustrative model). "Show the data." */
+        (function () {
+            const $ = s => document.querySelector(s);
+            const hours = $('#amp-hours'); if (!hours) return;
+            const hv = $('#amp-hours-val'), yEl = $('#amp-year'), mEl = $('#amp-mult'), rEl = $('#amp-rate'),
+                chart = $('#amp-chart'), desc = $('#amp-chart-desc');
+            const W = 320, H = 120, pad = 10, months = 12, weeks = 52;
+            function pts(rate, maxv) {
+                const x = i => pad + i * (W - 2 * pad) / months;
+                const y = v => H - pad - ((v - 1) / (maxv - 1)) * (H - 2 * pad);
+                let base = [], aug = [];
+                for (let m = 0; m <= months; m++) {
+                    const wk = m * weeks / months;
+                    base.push(x(m) + ',' + y(1));
+                    aug.push(x(m) + ',' + y(Math.pow(1 + rate, wk)));
+                }
+                return { base: base.join(' '), aug: aug.join(' ') };
+            }
+            function render() {
+                const h = +hours.value;
+                const rate = h * 0.002;                 // weekly compounding rate (illustrative)
+                const mult = Math.pow(1 + rate, weeks);
+                const maxv = Math.max(2, mult);
+                hv.textContent = h;
+                yEl.textContent = h * 48;
+                mEl.innerHTML = mult.toFixed(1) + '&times;';
+                rEl.textContent = (rate * 100).toFixed(1) + '%';
+                const p = pts(rate, maxv);
+                chart.innerHTML =
+                    '<polyline fill="none" stroke="#6A55C0" stroke-width="2" stroke-dasharray="4 4" points="' + p.base + '"></polyline>' +
+                    '<polyline fill="none" stroke="#A6FF4D" stroke-width="2.5" points="' + p.aug + '"></polyline>';
+                desc.textContent = h === 0
+                    ? 'With nothing reclaimed, capacity stays flat — the dashed line.'
+                    : 'Reinvest ' + h + ' h/week and effective capacity (lime) grows to about ' + mult.toFixed(1) + '× the flat baseline (dashed) over a year — in this simple model.';
+            }
+            hours.addEventListener('input', render);
+            render();
+        })();
+    </script>
 </body>
 </html>

@@ -125,6 +125,11 @@
                 <p class="page-meta">Beginner &middot; 10 min read</p>
             </header>
 
+            <aside class="recall-banner" data-recall-banner>
+                <span class="recall-banner__icon" aria-hidden="true">🧠</span>
+                <p>This page <strong>remembers what you learn</strong>. Answer the recall cards as you read — they come back just before you'd forget, and everything stays in your browser. <span class="recall-banner__stat" data-recall-stat></span></p>
+            </aside>
+
             <section>
                 <h2>The Money Problem</h2>
                 <p>
@@ -151,6 +156,25 @@
                 <p>
                     This matters to you because it means the AI tools you depend on today may not exist tomorrow. Companies burning billions of dollars per year are not stable foundations for your workflow. And when the funding runs out, the tools change, the pricing changes, or the companies disappear entirely.
                 </p>
+
+                <mgt-recall id="pit-money-secret">
+                    <details>
+                        <summary>What is the AI industry's "dirty secret" this article opens with?</summary>
+                        <p>Almost nobody is making money — most frontier AI companies are deeply unprofitable.</p>
+                    </details>
+                </mgt-recall>
+                <mgt-recall id="pit-paying-share">
+                    <details>
+                        <summary>What share of ChatGPT's users actually pay for a subscription?</summary>
+                        <p>Only 5.5% — the other 94.5% use it free while OpenAI bears the compute cost of every query.</p>
+                    </details>
+                </mgt-recall>
+                <mgt-recall id="pit-builders-position">
+                    <details>
+                        <summary>Why are companies building on top of AI in an even worse financial position than the model providers?</summary>
+                        <p>They pay providers for API access and add their own development and infrastructure costs, then must charge enough to cover all of it — and most cannot.</p>
+                    </details>
+                </mgt-recall>
             </section>
 
             <section>
@@ -173,6 +197,19 @@
                 <div class="insight-box">
                     <p><strong>This is exactly why augmented intelligence matters.</strong> When a human stays in the loop — reviewing, verifying, applying judgment — hallucinations get caught before they cause damage. Remove the human, and you are trusting a system that cannot tell the difference between fact and plausible fiction.</p>
                 </div>
+
+                <mgt-recall id="pit-hallucination-cause">
+                    <details>
+                        <summary>Why do large language models hallucinate, making it a structural feature rather than a fixable bug?</summary>
+                        <p>They have no internal model of truth — they only model what text typically follows other text, so they predict plausible-sounding words rather than verified facts.</p>
+                    </details>
+                </mgt-recall>
+                <mgt-recall id="pit-hallucination-rate">
+                    <details>
+                        <summary>How often does research show LLMs hallucinate?</summary>
+                        <p>Between 3% and 27% of the time, depending on the task.</p>
+                    </details>
+                </mgt-recall>
             </section>
 
             <section>
@@ -189,6 +226,13 @@
                 <p>
                     An AI that cannot show its working is an AI you cannot properly oversee. And an AI you cannot properly oversee is a liability, not an asset.
                 </p>
+
+                <mgt-recall id="pit-black-box">
+                    <details>
+                        <summary>Why can't a large language model genuinely explain <em>why</em> it gave an answer?</summary>
+                        <p>It processes patterns rather than reasoning; any "explanation" it produces is itself another predicted sequence of likely words, not a trace of the computation that produced the answer.</p>
+                    </details>
+                </mgt-recall>
             </section>
 
             <section>
@@ -205,6 +249,13 @@
                 <p>
                     The <a href="/learn/human-factors/bounded-rationality.html">bounded rationality</a> of human cognition means we are already prone to taking shortcuts. AI amplifies this tendency by giving us a seemingly authoritative source we can defer to — without the cognitive cost of verification.
                 </p>
+
+                <mgt-recall id="pit-automation-bias">
+                    <details>
+                        <summary>What is automation bias, and why does AI make it worse?</summary>
+                        <p>It is the human tendency to over-rely on automated systems; AI worsens it by speaking with absolute certainty whether right or wrong, presenting fabricated information in the same tone as verified facts.</p>
+                    </details>
+                </mgt-recall>
             </section>
 
             <section>
@@ -233,6 +284,19 @@
                 <p>
                     That "knowing how to direct it" is the entire point of <a href="/learn/foundations/what-is-ai.html">augmented intelligence</a>. It is the skill that separates the displaced from the amplified.
                 </p>
+
+                <mgt-recall id="pit-displacement-numbers">
+                    <details>
+                        <summary>What does the World Economic Forum project for jobs displaced versus created by 2030?</summary>
+                        <p>92 million roles displaced and 170 million new roles emerging — but they are not the same jobs, skills, or places.</p>
+                    </details>
+                </mgt-recall>
+                <mgt-recall id="pit-displacement-escape">
+                    <details>
+                        <summary>According to the article, who avoids displacement and instead gets amplified?</summary>
+                        <p>People who learn to direct AI well — practising augmented intelligence — rather than ignoring it or accepting its output uncritically.</p>
+                    </details>
+                </mgt-recall>
             </section>
 
             <section>
@@ -254,7 +318,28 @@
                 <div class="insight-box">
                     <p><strong>The future belongs to people who can think with machines, not people who are replaced by them.</strong> That is the premise of augmented intelligence, and that is what we teach here.</p>
                 </div>
+
+                <mgt-recall id="pit-stay-in-loop">
+                    <details>
+                        <summary>What is the first rule the article gives for approaching AI with clear eyes?</summary>
+                        <p>Stay in the loop — never let AI make decisions without human review; use it to generate, research, and analyse, but you make the final call.</p>
+                    </details>
+                </mgt-recall>
+                <mgt-recall id="pit-diversify">
+                    <details>
+                        <summary>Why does the article advise against building your entire workflow on a single AI provider?</summary>
+                        <p>The industry is volatile — pricing changes constantly and companies disappear — so diversifying your tools protects your workflow.</p>
+                    </details>
+                </mgt-recall>
             </section>
+
+            <div class="recall-cta" data-recall-cta hidden>
+                <p>You've answered <strong data-recall-count>0</strong> recall card(s) on this page. <span data-recall-due></span> They'll resurface right before you'd forget.</p>
+                <div class="cta">
+                    <a href="/learn/review/" class="btn">Review your cards</a>
+                    <button type="button" class="btn btn--secondary" data-recall-export>Export my cards (.csv)</button>
+                </div>
+            </div>
 
             <section class="card" style="margin-top: 2.5rem;">
                 <h2>Continue Learning</h2>
@@ -273,5 +358,6 @@
     <script type="module" src="/assets/js/app.js"></script>
     <script type="module" src="/components/core/mgt-header.js"></script>
     <script type="module" src="/components/core/mgt-footer.js"></script>
+    <script type="module" src="/components/core/mgt-recall.js"></script>
 </body>
 </html>

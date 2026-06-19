@@ -92,6 +92,11 @@
                 <p class="page-meta">Human Factors &middot; 7 min read</p>
             </header>
 
+            <aside class="recall-banner" data-recall-banner>
+                <span class="recall-banner__icon" aria-hidden="true">🧠</span>
+                <p>This page <strong>remembers what you learn</strong>. Answer the recall cards as you read — they come back just before you'd forget, and everything stays in your browser. <span class="recall-banner__stat" data-recall-stat></span></p>
+            </aside>
+
             <section>
                 <h2>What Agency Actually Means</h2>
                 <p>
@@ -106,6 +111,20 @@
                     <li><strong>Reason</strong> — The disciplined application of <a href="/learn/foundations/three-pillars.html">logic and explanation</a> to evaluate evidence, test claims, and revise beliefs. Reason without worldview is sterile. Worldview without reason is dogma. Agency requires both.</li>
                 </ul>
             </section>
+
+            <mgt-recall id="agc-autonomy-vs-agency">
+                <details>
+                    <summary>What distinguishes agency from autonomy?</summary>
+                    <p>Autonomy is the freedom to act; agency is the capacity to act meaningfully by integrating worldview, charity, and reason into coherent action.</p>
+                </details>
+            </mgt-recall>
+
+            <mgt-recall id="agc-three-components">
+                <details>
+                    <summary>What three integrated components does agency rest on?</summary>
+                    <p>Worldview, charity, and reason.</p>
+                </details>
+            </mgt-recall>
 
             <section>
                 <h2>The Worldview Spectrum</h2>
@@ -123,6 +142,20 @@
                 </p>
             </section>
 
+            <mgt-recall id="agc-worldview-spectrum">
+                <details>
+                    <summary>What do the two ends of the worldview continuum represent?</summary>
+                    <p>0 is purely combative (zero-sum, every interaction a competition); 10 is purely collaborative (positive-sum, every interaction an opportunity to build).</p>
+                </details>
+            </mgt-recall>
+
+            <mgt-recall id="agc-maturity-defined">
+                <details>
+                    <summary>How does this framework define maturity?</summary>
+                    <p>Maturity is the skill of compartmentalising worldview — reading which mode a situation calls for and shifting accordingly without losing coherence.</p>
+                </details>
+            </mgt-recall>
+
             <section>
                 <h2>The Intrinsic Motivation Triad</h2>
                 <p>
@@ -137,6 +170,20 @@
                     These three motivators interact with worldview in a feedback loop. When purpose, mastery, and autonomy are satisfied, worldview trends collaborative — you have the psychological resources to be generous. When they are thwarted, worldview trends combative — scarcity makes people defensive. This is why <a href="/learn/human-factors/burnout-resilience.html">burnout</a> does not just reduce productivity; it fundamentally shifts how people relate to each other and to their work.
                 </p>
             </section>
+
+            <mgt-recall id="agc-motivation-triad">
+                <details>
+                    <summary>What three intrinsic motivators fuel spirit?</summary>
+                    <p>Purpose, mastery, and autonomy.</p>
+                </details>
+            </mgt-recall>
+
+            <mgt-recall id="agc-triad-feedback">
+                <details>
+                    <summary>How does satisfying the motivation triad affect worldview?</summary>
+                    <p>When purpose, mastery, and autonomy are satisfied, worldview trends collaborative; when they are thwarted, scarcity pushes worldview combative.</p>
+                </details>
+            </mgt-recall>
 
             <section>
                 <h2>Prioritisation Under Bounded Rationality</h2>
@@ -153,6 +200,13 @@
                     <p><strong>The competition for focus:</strong> Multiple askers — colleagues, systems, deadlines, your own ambitions — compete for your limited attention. Without a deliberate prioritisation system, the most urgent demand always wins over the most important one. Agency means having a system that lets the important compete fairly with the urgent.</p>
                 </div>
             </section>
+
+            <mgt-recall id="agc-prioritisation-tradeoff">
+                <details>
+                    <summary>Why does every "yes" in prioritisation imply a "no"?</summary>
+                    <p>You have a finite pool of time, energy, and focus, so allocating it to one demand under bounded rationality necessarily withholds it from others.</p>
+                </details>
+            </mgt-recall>
 
             <section>
                 <h2>Maturity as a Skill</h2>
@@ -180,6 +234,21 @@
                 </p>
             </section>
 
+            <mgt-recall id="agc-cannot-outsource">
+                <details>
+                    <summary>Why does delegating priorities to an AI preserve autonomy but not agency?</summary>
+                    <p>No one forced the choice (autonomy intact), but the person is no longer integrating worldview, charity, and reason into the decision (agency lost).</p>
+                </details>
+            </mgt-recall>
+
+            <div class="recall-cta" data-recall-cta hidden>
+                <p>You've answered <strong data-recall-count>0</strong> recall card(s) on this page. <span data-recall-due></span> They'll resurface right before you'd forget.</p>
+                <div class="cta">
+                    <a href="/learn/review/" class="btn">Review your cards</a>
+                    <button type="button" class="btn btn--secondary" data-recall-export>Export my cards (.csv)</button>
+                </div>
+            </div>
+
             <section class="card" style="margin-top: 2.5rem;">
                 <h2>Continue Learning</h2>
                 <p>Agency connects to trust, cognitive limits, and the structural factors that sustain or erode human motivation. Explore the related topics.</p>
@@ -197,5 +266,6 @@
     <script type="module" src="/assets/js/app.js"></script>
     <script type="module" src="/components/core/mgt-header.js"></script>
     <script type="module" src="/components/core/mgt-footer.js"></script>
+    <script type="module" src="/components/core/mgt-recall.js"></script>
 </body>
 </html>

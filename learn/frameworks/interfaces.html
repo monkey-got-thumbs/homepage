@@ -91,6 +91,11 @@
                 <p class="page-meta">Advanced &middot; 9 min read</p>
             </header>
 
+            <aside class="recall-banner" data-recall-banner>
+                <span class="recall-banner__icon" aria-hidden="true">🧠</span>
+                <p>This page <strong>remembers what you learn</strong>. Answer the recall cards as you read — they come back just before you'd forget, and everything stays in your browser. <span class="recall-banner__stat" data-recall-stat></span></p>
+            </aside>
+
             <section>
                 <h2>The Interface Shapes What Is Possible</h2>
                 <p>
@@ -106,6 +111,13 @@
                     This is why interfaces are a core element of the augmented intelligence framework. <a href="/learn/foundations/how-it-helps.html">AI's ability to help you</a> is bounded not just by the model's capability but by the interface through which you access that capability.
                 </p>
             </section>
+
+            <mgt-recall id="ifc-conduit">
+                <details>
+                    <summary>Is an AI interface a neutral conduit that simply passes your request through to the model?</summary>
+                    <p>No. The interface actively shapes what problems you think to solve, how you frame them, and what answers are possible.</p>
+                </details>
+            </mgt-recall>
 
             <section>
                 <h2>Natural Language as an Interface Paradigm</h2>
@@ -126,6 +138,20 @@
                 </div>
             </section>
 
+            <mgt-recall id="ifc-nl-paradox">
+                <details>
+                    <summary>What is the paradox of natural language as an AI interface?</summary>
+                    <p>It is simultaneously the most accessible interface and the most error-prone one.</p>
+                </details>
+            </mgt-recall>
+
+            <mgt-recall id="ifc-implicit-context">
+                <details>
+                    <summary>Why does asking AI to "draft the proposal" cause errors that asking a colleague would not?</summary>
+                    <p>The implicit context a colleague shares (which proposal, format, audience, tone) is invisible to AI, so it must guess — and guessing is where errors begin.</p>
+                </details>
+            </mgt-recall>
+
             <section>
                 <h2>Voice Agents and Conversational AI</h2>
                 <p>
@@ -141,6 +167,13 @@
                     The most effective voice AI systems are not trying to replicate human conversation. They are designed around the strengths of voice — speed, hands-free operation, natural exploration — while compensating for its weaknesses through confirmation, summarisation, and seamless handoff to visual interfaces when precision is needed.
                 </p>
             </section>
+
+            <mgt-recall id="ifc-voice-strength">
+                <details>
+                    <summary>What fundamental capability does a voice interface add that a text interface cannot?</summary>
+                    <p>It frees your body, letting you collaborate with AI hands-free while driving, cooking, walking, or working.</p>
+                </details>
+            </mgt-recall>
 
             <section>
                 <h2>Visual Interfaces and Information Display</h2>
@@ -161,6 +194,20 @@
                 </p>
             </section>
 
+            <mgt-recall id="ifc-direct-manipulation">
+                <details>
+                    <summary>How does direct manipulation reduce errors compared with describing what you want in words?</summary>
+                    <p>By letting you show the AI — dragging, drawing, highlighting — it shrinks the translation gap between your intent and the AI's understanding.</p>
+                </details>
+            </mgt-recall>
+
+            <mgt-recall id="ifc-bad-visual">
+                <details>
+                    <summary>When is a visual interface worse than having no interface at all?</summary>
+                    <p>When it is badly designed: it then adds cognitive load, hides information, and creates confusion instead of reducing it.</p>
+                </details>
+            </mgt-recall>
+
             <section>
                 <h2>AR, VR, and Spatial Computing</h2>
                 <p>
@@ -176,6 +223,13 @@
                     The technology is still maturing. Current devices are expensive, bulky, and limited in field of view. But the trajectory is clear, and the interface paradigm it represents — AI as an invisible layer of intelligence over your physical reality — will define the next generation of augmented intelligence tools.
                 </p>
             </section>
+
+            <mgt-recall id="ifc-spatial-boundary">
+                <details>
+                    <summary>What boundary does spatial computing dissolve that flat-screen interfaces preserve?</summary>
+                    <p>The boundary between "using AI" and "doing work" — the assistance is woven into the task instead of living on a separate screen.</p>
+                </details>
+            </mgt-recall>
 
             <section>
                 <h2>The UX Challenge: Making AI Accessible</h2>
@@ -200,6 +254,28 @@
                 </div>
             </section>
 
+            <mgt-recall id="ifc-empty-text-box">
+                <details>
+                    <summary>What is the "empty text box" problem in natural-language AI interfaces?</summary>
+                    <p>The interface gives no indication of what the system can do or what good input looks like, so people underuse capable AI.</p>
+                </details>
+            </mgt-recall>
+
+            <mgt-recall id="ifc-design-principle">
+                <details>
+                    <summary>According to the design principle, what should the best AI interface do to your knowledge?</summary>
+                    <p>Make your existing knowledge more powerful — amplifying your capability rather than replacing it or creating dependency.</p>
+                </details>
+            </mgt-recall>
+
+            <div class="recall-cta" data-recall-cta hidden>
+                <p>You've answered <strong data-recall-count>0</strong> recall card(s) on this page. <span data-recall-due></span> They'll resurface right before you'd forget.</p>
+                <div class="cta">
+                    <a href="/learn/review/" class="btn">Review your cards</a>
+                    <button type="button" class="btn btn--secondary" data-recall-export>Export my cards (.csv)</button>
+                </div>
+            </div>
+
             <section class="card" style="margin-top: 2.5rem;">
                 <h2>Continue Learning</h2>
                 <p>Interfaces provide the access points. Next, explore the building blocks of structured thought — cognitive artifacts.</p>
@@ -217,5 +293,6 @@
     <script type="module" src="/assets/js/app.js"></script>
     <script type="module" src="/components/core/mgt-header.js"></script>
     <script type="module" src="/components/core/mgt-footer.js"></script>
+    <script type="module" src="/components/core/mgt-recall.js"></script>
 </body>
 </html>

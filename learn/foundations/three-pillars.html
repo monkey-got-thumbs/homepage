@@ -103,6 +103,11 @@
                 <p class="page-meta">Foundation &middot; 9 min read</p>
             </header>
 
+            <aside class="recall-banner" data-recall-banner>
+                <span class="recall-banner__icon" aria-hidden="true">🧠</span>
+                <p>This page <strong>remembers what you learn</strong>. Answer the recall cards as you read — they come back just before you'd forget, and everything stays in your browser. <span class="recall-banner__stat" data-recall-stat></span></p>
+            </aside>
+
             <section>
                 <h2>Why Foundations Matter</h2>
                 <p>
@@ -115,6 +120,20 @@
                     The three pillars provide that framework. They are not abstract philosophy. They are practical commitments that change how you think, how you evaluate information, and how you work with machines.
                 </p>
             </section>
+
+            <mgt-recall id="pil-name-the-three">
+                <details>
+                    <summary>Name the three pillars of augmented intelligence.</summary>
+                    <p>Logic, Explanation, and Architected Data Objects.</p>
+                </details>
+            </mgt-recall>
+
+            <mgt-recall id="pil-why-framework">
+                <details>
+                    <summary>Why does using AI effectively require more than access to the tool?</summary>
+                    <p>Because without an intellectual framework you cannot tell a correct answer from a plausible-sounding hallucination, or build on the output with confidence.</p>
+                </details>
+            </mgt-recall>
 
             <div class="pillar">
                 <span class="pillar-number">01</span>
@@ -137,6 +156,20 @@
                 </p>
             </div>
 
+            <mgt-recall id="pil-logic-two-modes">
+                <details>
+                    <summary>What two modes of reasoning does the Logic pillar blend?</summary>
+                    <p>Induction (inferring general patterns from specific instances) and deduction (deriving specific predictions from general principles).</p>
+                </details>
+            </mgt-recall>
+
+            <mgt-recall id="pil-scientific-cycle">
+                <details>
+                    <summary>Logic embodies the scientific method as a repeating cycle. What is that cycle?</summary>
+                    <p>Observe, hypothesise, predict, test, refine — the most reliable process humans have for reducing uncertainty.</p>
+                </details>
+            </mgt-recall>
+
             <div class="pillar">
                 <span class="pillar-number">02</span>
                 <h3>Explanation</h3>
@@ -157,6 +190,20 @@
                     This matters enormously when working with AI because AI generates easy-to-vary explanations all day long. It produces text that <em>sounds</em> explanatory but is not actually bound to evidence. The pillar of Explanation gives you the filter to distinguish real insight from plausible-sounding noise.
                 </p>
             </div>
+
+            <mgt-recall id="pil-hard-to-vary">
+                <details>
+                    <summary>What makes an explanation "hard to vary"?</summary>
+                    <p>Every part of it does essential work, so you cannot change any element without the explanation breaking. This is David Deutsch's standard for a good explanation.</p>
+                </details>
+            </mgt-recall>
+
+            <mgt-recall id="pil-explanation-filter">
+                <details>
+                    <summary>Why is the Explanation pillar especially useful when working with AI?</summary>
+                    <p>AI produces easy-to-vary text that sounds explanatory but isn't bound to evidence; the pillar is the filter that separates real insight from plausible-sounding noise.</p>
+                </details>
+            </mgt-recall>
 
             <div class="pillar">
                 <span class="pillar-number">03</span>
@@ -179,6 +226,20 @@
                     When you work with AI effectively, you are constantly creating and consuming ADOs — structured prompts, formatted outputs, schema-defined data, knowledge graphs. The quality of these structures directly determines the quality of the human-AI collaboration.
                 </p>
             </div>
+
+            <mgt-recall id="pil-ado-definition">
+                <details>
+                    <summary>What is an Architected Data Object (ADO)?</summary>
+                    <p>A standardised, efficient data structure that encapsulates truth into shareable, universally interpretable units.</p>
+                </details>
+            </mgt-recall>
+
+            <mgt-recall id="pil-ado-map">
+                <details>
+                    <summary>Why is a map a good example of an ADO?</summary>
+                    <p>It compresses enormous geographic complexity into a standardised structure anyone can read, share, and build upon — trading detail for transmissibility and reusability.</p>
+                </details>
+            </mgt-recall>
 
             <section>
                 <h2>The Five-Part Framework</h2>
@@ -237,6 +298,21 @@
                 </p>
             </section>
 
+            <mgt-recall id="pil-three-filters">
+                <details>
+                    <summary>In practice, what does each pillar ask of AI output?</summary>
+                    <p>Logic asks whether the output is testable against evidence, Explanation asks whether the reasoning is hard to vary, and ADOs ask whether the information is structured for reliable reuse.</p>
+                </details>
+            </mgt-recall>
+
+            <div class="recall-cta" data-recall-cta hidden>
+                <p>You've answered <strong data-recall-count>0</strong> recall card(s) on this page. <span data-recall-due></span> They'll resurface right before you'd forget.</p>
+                <div class="cta">
+                    <a href="/learn/review/" class="btn">Review your cards</a>
+                    <button type="button" class="btn btn--secondary" data-recall-export>Export my cards (.csv)</button>
+                </div>
+            </div>
+
             <section class="card" style="margin-top: 2.5rem;">
                 <h2>Continue Learning</h2>
                 <p>Explore the five-part framework in detail, or choose a learning path that matches your level.</p>
@@ -254,5 +330,6 @@
     <script type="module" src="/assets/js/app.js"></script>
     <script type="module" src="/components/core/mgt-header.js"></script>
     <script type="module" src="/components/core/mgt-footer.js"></script>
+    <script type="module" src="/components/core/mgt-recall.js"></script>
 </body>
 </html>

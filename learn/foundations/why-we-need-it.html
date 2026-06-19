@@ -99,6 +99,11 @@
                 <p class="page-meta">Beginner &middot; 7 min read</p>
             </header>
 
+            <aside class="recall-banner" data-recall-banner>
+                <span class="recall-banner__icon" aria-hidden="true">🧠</span>
+                <p>This page <strong>remembers what you learn</strong>. Answer the recall cards as you read — they come back just before you'd forget, and everything stays in your browser. <span class="recall-banner__stat" data-recall-stat></span></p>
+            </aside>
+
             <section>
                 <h2>The Acceleration Is Already Here</h2>
                 <p>
@@ -114,6 +119,20 @@
                     Younger workers feel it most acutely. Those aged 18-24 are 129% more likely to fear AI will make their jobs obsolete. Nearly half of Gen Z job seekers believe AI has already diminished the value of their university education.
                 </p>
             </section>
+
+            <mgt-recall id="why-when-acceleration">
+                <details>
+                    <summary>Is the AI acceleration a distant future event or is it happening now?</summary>
+                    <p>It is happening now. By 2025 generative AI was in the daily workflows of 75% of knowledge workers, and entire job categories have already begun to shift.</p>
+                </details>
+            </mgt-recall>
+
+            <mgt-recall id="why-displacement-scale">
+                <details>
+                    <summary>What scale of job displacement do the World Economic Forum and Goldman Sachs project?</summary>
+                    <p>The World Economic Forum projects 92 million roles displaced by 2030, and Goldman Sachs estimates 300 million full-time jobs globally will be affected.</p>
+                </details>
+            </mgt-recall>
 
             <section>
                 <h2>Why Pure AI Is Not the Answer</h2>
@@ -135,6 +154,20 @@
                 </div>
             </section>
 
+            <mgt-recall id="why-two-wrong-responses">
+                <details>
+                    <summary>What are the two instinctive responses to AI acceleration, and why does the page reject both?</summary>
+                    <p>Resistance and full automation. Resistance fails because the technology and economic incentives are real; full automation fails because AI has structural limitations like hallucination and no judgment.</p>
+                </details>
+            </mgt-recall>
+
+            <mgt-recall id="why-third-answer">
+                <details>
+                    <summary>If neither resistance nor full automation works, what is the answer?</summary>
+                    <p>Collaboration — human with machine rather than human versus machine.</p>
+                </details>
+            </mgt-recall>
+
             <section>
                 <h2>The Human Advantage</h2>
                 <p>
@@ -154,6 +187,13 @@
                     These are not marginal advantages. They are fundamental. And they are precisely what <a href="/learn/foundations/what-is-ai.html">augmented intelligence</a> is designed to amplify.
                 </p>
             </section>
+
+            <mgt-recall id="why-human-advantages">
+                <details>
+                    <summary>Name three human capabilities that AI cannot replicate.</summary>
+                    <p>Any three of: judgment, ethics, context, creativity from lived experience, and relationships such as trust and negotiation.</p>
+                </details>
+            </mgt-recall>
 
             <section>
                 <h2>The Compounding Time Amplifier</h2>
@@ -176,6 +216,20 @@
                     This is not a marginal improvement. It is a structural shift in productivity. And the "only when they understood how to direct it" part is critical. The benefit does not come from having access to AI. Everyone has access. The benefit comes from knowing how to use it — which is a learnable skill.
                 </p>
             </section>
+
+            <mgt-recall id="why-bcg-study">
+                <details>
+                    <summary>In the Harvard/BCG study, what did consultants gain by using AI, and under what condition?</summary>
+                    <p>They produced 40% higher quality work and finished 25% faster — but only when they understood how to direct the AI effectively.</p>
+                </details>
+            </mgt-recall>
+
+            <mgt-recall id="why-real-benefit">
+                <details>
+                    <summary>According to the study, where does the real benefit of AI come from — access or skill?</summary>
+                    <p>Skill. Everyone has access; the benefit comes from knowing how to direct the AI, which is a learnable skill.</p>
+                </details>
+            </mgt-recall>
 
             <section>
                 <h2>Two Paths Forward</h2>
@@ -207,6 +261,21 @@
                 </p>
             </section>
 
+            <mgt-recall id="why-two-paths">
+                <details>
+                    <summary>What are the two paths forward, and what is the risk of choosing the first?</summary>
+                    <p>Do nothing or learn augmented intelligence. Doing nothing risks waking up in 2028 with skills the market no longer values, against people who spent two years building the capabilities you ignored.</p>
+                </details>
+            </mgt-recall>
+
+            <div class="recall-cta" data-recall-cta hidden>
+                <p>You've answered <strong data-recall-count>0</strong> recall card(s) on this page. <span data-recall-due></span> They'll resurface right before you'd forget.</p>
+                <div class="cta">
+                    <a href="/learn/review/" class="btn">Review your cards</a>
+                    <button type="button" class="btn btn--secondary" data-recall-export>Export my cards (.csv)</button>
+                </div>
+            </div>
+
             <section class="card" style="margin-top: 2.5rem;">
                 <h2>Continue Learning</h2>
                 <p>Ready to see augmented intelligence in action? Explore real-world examples and practical applications.</p>
@@ -224,5 +293,6 @@
     <script type="module" src="/assets/js/app.js"></script>
     <script type="module" src="/components/core/mgt-header.js"></script>
     <script type="module" src="/components/core/mgt-footer.js"></script>
+    <script type="module" src="/components/core/mgt-recall.js"></script>
 </body>
 </html>

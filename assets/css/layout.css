@@ -481,3 +481,45 @@ button:focus-visible {
   outline: var(--focus-outline);
   outline-offset: var(--focus-offset);
 }
+
+/* ===== MNEMONIC MEDIUM — <mgt-recall> page furniture (banner + review CTA) ===== */
+
+.recall-banner {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  background: color-mix(in srgb, var(--color-accent) 8%, var(--color-bg-secondary));
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0 0.5rem;
+}
+
+.recall-banner__icon {
+  font-size: 1.4rem;
+  line-height: 1.4;
+  flex-shrink: 0;
+}
+
+.recall-banner p {
+  margin: 0;
+  font-size: var(--font-size-sm);
+  color: var(--color-fg-secondary);
+  line-height: 1.6;
+}
+
+.recall-banner__stat {
+  color: var(--color-accent);
+  font-weight: var(--font-weight-semibold);
+}
+
+.recall-cta {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.recall-cta p { margin-top: 0; }
+.recall-cta .cta { display: flex; gap: 0.75rem; flex-wrap: wrap; }

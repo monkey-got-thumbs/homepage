@@ -91,6 +91,11 @@
                 <p class="page-meta">Advanced &middot; 10 min read</p>
             </header>
 
+            <aside class="recall-banner" data-recall-banner>
+                <span class="recall-banner__icon" aria-hidden="true">🧠</span>
+                <p>This page <strong>remembers what you learn</strong>. Answer the recall cards as you read — they come back just before you'd forget, and everything stays in your browser. <span class="recall-banner__stat" data-recall-stat></span></p>
+            </aside>
+
             <section>
                 <h2>What Are Cognitive Artifacts?</h2>
                 <p>
@@ -106,6 +111,27 @@
                     This is why freeform text, despite being natural and easy to produce, is often the worst medium for human-AI collaboration. It is the least structured cognitive artifact available — and structure is what makes artifacts powerful.
                 </p>
             </section>
+
+            <mgt-recall id="ca-definition">
+                <details>
+                    <summary>What is a cognitive artifact?</summary>
+                    <p>An external object that aids or extends human cognition by compressing complex knowledge into a defined, reusable structure.</p>
+                </details>
+            </mgt-recall>
+
+            <mgt-recall id="ca-units-of-exchange">
+                <details>
+                    <summary>In augmented intelligence, what specific role do cognitive artifacts play?</summary>
+                    <p>They are the units of exchange between human and machine cognition — a well-structured prompt and a structured AI output are each cognitive artifacts.</p>
+                </details>
+            </mgt-recall>
+
+            <mgt-recall id="ca-freeform-weakness">
+                <details>
+                    <summary>Why is freeform text often the worst medium for human-AI collaboration?</summary>
+                    <p>It is the least structured cognitive artifact available, and structure is what makes artifacts powerful.</p>
+                </details>
+            </mgt-recall>
 
             <section>
                 <h2>Architected Data Objects</h2>
@@ -133,6 +159,20 @@
                 </div>
             </section>
 
+            <mgt-recall id="ca-ado-properties">
+                <details>
+                    <summary>What three properties define an Architected Data Object (ADO)?</summary>
+                    <p>ADOs are standardised, efficient, and designed to encapsulate truth into shareable, universally interpretable units.</p>
+                </details>
+            </mgt-recall>
+
+            <mgt-recall id="ca-knowledge-atom">
+                <details>
+                    <summary>What is a knowledge atom?</summary>
+                    <p>The smallest self-contained unit of knowledge that can be independently verified, stored, and composed with other units.</p>
+                </details>
+            </mgt-recall>
+
             <section>
                 <h2>Loose Text vs Structured Knowledge</h2>
                 <p>
@@ -158,6 +198,13 @@
                 </p>
             </section>
 
+            <mgt-recall id="ca-structure-tradeoff">
+                <details>
+                    <summary>What is the trade-off of a structured artifact versus loose prose?</summary>
+                    <p>It takes slightly more upfront effort to define the schema, but the return compounds with every subsequent use through reusability and reliability.</p>
+                </details>
+            </mgt-recall>
+
             <section>
                 <h2>Schemas, Templates, and Formats as Cognitive Artifacts</h2>
                 <p>
@@ -178,6 +225,20 @@
                 </div>
             </section>
 
+            <mgt-recall id="ca-schema-generative">
+                <details>
+                    <summary>Why is a schema considered the most powerful type of cognitive artifact?</summary>
+                    <p>It is generative — it does not capture just one piece of knowledge but defines the shape of an entire category of knowledge.</p>
+                </details>
+            </mgt-recall>
+
+            <mgt-recall id="ca-template-defaults">
+                <details>
+                    <summary>How does a template differ from a plain schema?</summary>
+                    <p>A template is a schema with defaults — a partially completed artifact that encodes best practices, such as pre-populated sections.</p>
+                </details>
+            </mgt-recall>
+
             <section>
                 <h2>Why Structured Output from AI Is More Valuable</h2>
                 <p>
@@ -197,6 +258,13 @@
                 </p>
             </section>
 
+            <mgt-recall id="ca-structured-verifiable">
+                <details>
+                    <summary>Why is structured AI output easier to verify than prose?</summary>
+                    <p>You can check it field by field, write automated checks, and spot missing data as empty fields, rather than re-reading every sentence to assess each claim.</p>
+                </details>
+            </mgt-recall>
+
             <section>
                 <h2>Building a Practice of Cognitive Artifacts</h2>
                 <p>
@@ -209,6 +277,14 @@
                     <li><strong>Iterate on structure, not just content.</strong> When an AI output is not useful, the problem might not be the AI's capability — it might be the artifact's structure. Revise your schemas based on actual use. Add fields you keep needing. Remove fields you never check. The artifact should evolve with your understanding of the domain.</li>
                 </ol>
             </section>
+
+            <div class="recall-cta" data-recall-cta hidden>
+                <p>You've answered <strong data-recall-count>0</strong> recall card(s) on this page. <span data-recall-due></span> They'll resurface right before you'd forget.</p>
+                <div class="cta">
+                    <a href="/learn/review/" class="btn">Review your cards</a>
+                    <button type="button" class="btn btn--secondary" data-recall-export>Export my cards (.csv)</button>
+                </div>
+            </div>
 
             <section class="card" style="margin-top: 2.5rem;">
                 <h2>Continue Learning</h2>
@@ -227,5 +303,6 @@
     <script type="module" src="/assets/js/app.js"></script>
     <script type="module" src="/components/core/mgt-header.js"></script>
     <script type="module" src="/components/core/mgt-footer.js"></script>
+    <script type="module" src="/components/core/mgt-recall.js"></script>
 </body>
 </html>

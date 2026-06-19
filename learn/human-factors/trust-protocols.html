@@ -92,6 +92,11 @@
                 <p class="page-meta">Human Factors &middot; 8 min read</p>
             </header>
 
+            <aside class="recall-banner" data-recall-banner>
+                <span class="recall-banner__icon" aria-hidden="true">🧠</span>
+                <p>This page <strong>remembers what you learn</strong>. Answer the recall cards as you read — they come back just before you'd forget, and everything stays in your browser. <span class="recall-banner__stat" data-recall-stat></span></p>
+            </aside>
+
             <section>
                 <h2>Trust Is Not Belief</h2>
                 <p>
@@ -101,6 +106,19 @@
                     This is why trust differs fundamentally from blind faith. Faith asks you to commit without evidence. Trust asks you to commit based on evidence that is necessarily incomplete — and to remain engaged as new evidence arrives. The distinction matters enormously when working with AI systems, where the temptation to drift from trust into passive belief is constant.
                 </p>
             </section>
+
+            <mgt-recall id="trust-forecast">
+                <details>
+                    <summary>Used precisely, trust is a personal _____ under uncertainty.</summary>
+                    <p>A forecast — a prediction that, given what you know and have observed, a person or system will behave in a particular way.</p>
+                </details>
+            </mgt-recall>
+            <mgt-recall id="trust-vs-faith">
+                <details>
+                    <summary>What separates trust from blind faith?</summary>
+                    <p>Faith asks you to commit without evidence; trust asks you to commit based on incomplete evidence and to stay engaged as new evidence arrives.</p>
+                </details>
+            </mgt-recall>
 
             <section>
                 <h2>The Trust Continuum</h2>
@@ -119,6 +137,13 @@
                 </p>
             </section>
 
+            <mgt-recall id="trust-continuum-goal">
+                <details>
+                    <summary>On the trust continuum, what is the target posture — and why not maximum trust?</summary>
+                    <p>Curiosity. It is the engaged middle ground where you keep asking questions yet act on what you learn; pushing past it toward faith or belief drops the feedback loop that keeps trust calibrated.</p>
+                </details>
+            </mgt-recall>
+
             <section>
                 <h2>The Cadence of Curiosity</h2>
                 <p>
@@ -134,6 +159,13 @@
                     This is not the same as being difficult or adversarial. Fear of judgment or authoritarian posturing drives silence — and silence is the death of trust. When people stop asking questions because they are afraid of looking ignorant, or because the authority figure in the room has signalled that questioning is unwelcome, curiosity dies. And when curiosity dies, the only remaining options are suspicion or blind faith.
                 </p>
             </section>
+
+            <mgt-recall id="trust-cadence">
+                <details>
+                    <summary>What kind of protocol is the cadence of curiosity, and what does each probe signal?</summary>
+                    <p>It is a challenge-response protocol — a rhythmic exchange of questions, answers, and follow-ups. Each probe signals that you are engaged and yields evidence to update your forecast.</p>
+                </details>
+            </mgt-recall>
 
             <section>
                 <h2>Qualitative Trust Layers</h2>
@@ -151,6 +183,19 @@
                 </p>
             </section>
 
+            <mgt-recall id="trust-layers">
+                <details>
+                    <summary>Name the four qualitative layers across which trust operates.</summary>
+                    <p>Credibility (demonstrated expertise), reliability (consistent results), culture (shared norms), and values (shared goals).</p>
+                </details>
+            </mgt-recall>
+            <mgt-recall id="trust-values-gap">
+                <details>
+                    <summary>What happens to trust when a human and an AI optimise for different objectives?</summary>
+                    <p>The values layer fails and trust fractures, even when credibility and reliability are high.</p>
+                </details>
+            </mgt-recall>
+
             <section>
                 <h2>Information Asymmetry and Transparency</h2>
                 <p>
@@ -163,6 +208,13 @@
                     The <a href="/learn/foundations/three-pillars.html">three pillars of augmented intelligence</a> — logic, explanation, and architected data objects — provide the machinery for this translation. Logic gives you testable claims. Explanation gives you hard-to-vary reasoning. ADOs give you structured, shareable formats. Together, they make transparency practical rather than aspirational.
                 </p>
             </section>
+
+            <mgt-recall id="trust-asymmetry">
+                <details>
+                    <summary>What is the antidote to the information asymmetry between a human and an AI?</summary>
+                    <p>Transparency through translation — making the invisible visible by explaining not just what was concluded but how, which lowers the cost of curiosity.</p>
+                </details>
+            </mgt-recall>
 
             <section>
                 <h2>Practical Trust Engineering</h2>
@@ -179,6 +231,27 @@
                     <p><strong>Key insight:</strong> Trust is a judgment — a personal forecast under uncertainty. It does not scale inter-subjectively. What scales is the infrastructure that makes individual trust judgments cheaper and more accurate: transparent reasoning, reversible decisions, capped exposure, and observable artifacts.</p>
                 </div>
             </section>
+
+            <mgt-recall id="trust-engineering">
+                <details>
+                    <summary>Since trust does not scale inter-subjectively, what should you engineer instead?</summary>
+                    <p>The structural conditions that make individual trust judgments cheaper and more accurate: reversible decisions, capped exposure, verification interfaces, and observable artifacts.</p>
+                </details>
+            </mgt-recall>
+            <mgt-recall id="trust-cap-exposure">
+                <details>
+                    <summary>Why is "cap exposure" calibration rather than suspicion?</summary>
+                    <p>You give the AI a small task, verify, then expand scope — limiting how much damage a trust failure can cause while still extending real trust.</p>
+                </details>
+            </mgt-recall>
+
+            <div class="recall-cta" data-recall-cta hidden>
+                <p>You've answered <strong data-recall-count>0</strong> recall card(s) on this page. <span data-recall-due></span> They'll resurface right before you'd forget.</p>
+                <div class="cta">
+                    <a href="/learn/review/" class="btn">Review your cards</a>
+                    <button type="button" class="btn btn--secondary" data-recall-export>Export my cards (.csv)</button>
+                </div>
+            </div>
 
             <section class="card" style="margin-top: 2.5rem;">
                 <h2>Continue Learning</h2>
@@ -197,5 +270,6 @@
     <script type="module" src="/assets/js/app.js"></script>
     <script type="module" src="/components/core/mgt-header.js"></script>
     <script type="module" src="/components/core/mgt-footer.js"></script>
+    <script type="module" src="/components/core/mgt-recall.js"></script>
 </body>
 </html>

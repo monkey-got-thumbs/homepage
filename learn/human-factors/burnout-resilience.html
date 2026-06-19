@@ -92,6 +92,11 @@
                 <p class="page-meta">Human Factors &middot; 8 min read</p>
             </header>
 
+            <aside class="recall-banner" data-recall-banner>
+                <span class="recall-banner__icon" aria-hidden="true">🧠</span>
+                <p>This page <strong>remembers what you learn</strong>. Answer the recall cards as you read — they come back just before you'd forget, and everything stays in your browser. <span class="recall-banner__stat" data-recall-stat></span></p>
+            </aside>
+
             <section>
                 <h2>The Burnout Equation</h2>
                 <p>
@@ -112,6 +117,19 @@
                 </ul>
             </section>
 
+            <mgt-recall id="bur-equation-vars">
+                <details>
+                    <summary>How many variables make up the burnout equation?</summary>
+                    <p>Four: self-doubt (S), expectation gap (&#916;E), information asymmetry (I), and time buffer (&#964;).</p>
+                </details>
+            </mgt-recall>
+            <mgt-recall id="bur-time-buffer">
+                <details>
+                    <summary>Why is the time buffer (&#964;) the denominator in the burnout equation?</summary>
+                    <p>Because it determines whether the other pressures are survivable: the same expectation gap is a manageable challenge with ample time but a crisis with a deadline tomorrow.</p>
+                </details>
+            </mgt-recall>
+
             <section>
                 <h2>The Balanced Equation: Where Trust Enters</h2>
                 <p>
@@ -129,6 +147,13 @@
                 </p>
             </section>
 
+            <mgt-recall id="bur-trust-counterforce">
+                <details>
+                    <summary>In the balanced equation, what role does trust (T) play?</summary>
+                    <p>Trust acts as a counterforce that counterbalances the forces driving burnout: high trust lowers self-doubt, shrinks information asymmetry, and narrows the expectation gap.</p>
+                </details>
+            </mgt-recall>
+
             <section>
                 <h2>AI and the Expectation Gap</h2>
                 <p>
@@ -141,6 +166,13 @@
                     The <a href="/learn/foundations/how-it-helps.html">augmented intelligence approach</a> reframes the relationship. AI is not the benchmark — it is the scaffolding. The question is not "can you produce output as fast as the AI?" It is "can you use the AI to produce better output than either of you could produce alone?" This reframing closes the expectation gap by changing what the expectation is.
                 </p>
             </section>
+
+            <mgt-recall id="bur-ai-reframe">
+                <details>
+                    <summary>How does the augmented intelligence approach close the AI-driven expectation gap?</summary>
+                    <p>It reframes AI as scaffolding rather than the benchmark, changing the expectation from "match the AI's speed" to "use the AI to produce better output than either could alone".</p>
+                </details>
+            </mgt-recall>
 
             <section>
                 <h2>Practical Levers</h2>
@@ -158,6 +190,19 @@
                 </div>
             </section>
 
+            <mgt-recall id="bur-lever-milestone">
+                <details>
+                    <summary>Why does scheduling an early milestone review increase the time buffer (&#964;)?</summary>
+                    <p>Early feedback lets you course-correct while most of the timeline remains: a review at 30% completion leaves 70% to adjust, whereas a review at 90% leaves almost none.</p>
+                </details>
+            </mgt-recall>
+            <mgt-recall id="bur-lever-wins">
+                <details>
+                    <summary>Which lever reduces self-doubt (S), and how?</summary>
+                    <p>Celebrating past wins: systematically documenting and reviewing past successes gives people concrete, evidence-based proof of their capability rather than mere cheerleading.</p>
+                </details>
+            </mgt-recall>
+
             <section>
                 <h2>Resilience Is Structural, Not Individual</h2>
                 <p>
@@ -170,6 +215,21 @@
                     This perspective shifts the locus of intervention from "fix the person" to "fix the system." It is more effective and more humane. And it aligns directly with the augmented intelligence philosophy: build better <a href="/learn/foundations/three-pillars.html">structures and protocols</a>, and the humans within those structures will perform better, sustain longer, and produce higher-quality work.
                 </p>
             </section>
+
+            <mgt-recall id="bur-structural">
+                <details>
+                    <summary>Why is resilience described as structural rather than individual?</summary>
+                    <p>Because most variables in the burnout equation are environmental — culture amplifies self-doubt, leadership shapes the expectation gap, and planning sets the time buffer — so teams with clear criteria and high trust stay resilient even when individuals feel self-doubt.</p>
+                </details>
+            </mgt-recall>
+
+            <div class="recall-cta" data-recall-cta hidden>
+                <p>You've answered <strong data-recall-count>0</strong> recall card(s) on this page. <span data-recall-due></span> They'll resurface right before you'd forget.</p>
+                <div class="cta">
+                    <a href="/learn/review/" class="btn">Review your cards</a>
+                    <button type="button" class="btn btn--secondary" data-recall-export>Export my cards (.csv)</button>
+                </div>
+            </div>
 
             <section class="card" style="margin-top: 2.5rem;">
                 <h2>Continue Learning</h2>
@@ -188,5 +248,6 @@
     <script type="module" src="/assets/js/app.js"></script>
     <script type="module" src="/components/core/mgt-header.js"></script>
     <script type="module" src="/components/core/mgt-footer.js"></script>
+    <script type="module" src="/components/core/mgt-recall.js"></script>
 </body>
 </html>

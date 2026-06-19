@@ -92,6 +92,11 @@
                 <p class="page-meta">Human Factors &middot; 7 min read</p>
             </header>
 
+            <aside class="recall-banner" data-recall-banner>
+                <span class="recall-banner__icon" aria-hidden="true">🧠</span>
+                <p>This page <strong>remembers what you learn</strong>. Answer the recall cards as you read — they come back just before you'd forget, and everything stays in your browser. <span class="recall-banner__stat" data-recall-stat></span></p>
+            </aside>
+
             <section>
                 <h2>The Three Constraints</h2>
                 <p>
@@ -110,6 +115,27 @@
                 </p>
             </section>
 
+            <mgt-recall id="br-three-constraints">
+                <details>
+                    <summary>What are the three constraints that bound human rationality?</summary>
+                    <p>Incomplete information, limited time, and finite cognitive capacity.</p>
+                </details>
+            </mgt-recall>
+
+            <mgt-recall id="br-satisfice">
+                <details>
+                    <summary>In Herbert Simon's bounded rationality, do humans optimise or satisfice?</summary>
+                    <p>We satisfice — we settle for an answer that is good enough given what we know, how long we have, and the mental energy available, rather than finding the best possible answer.</p>
+                </details>
+            </mgt-recall>
+
+            <mgt-recall id="br-working-memory">
+                <details>
+                    <summary>Roughly how many chunks of information does working memory hold at once?</summary>
+                    <p>About four chunks, which is why complex decisions force the mind to drop or oversimplify variables.</p>
+                </details>
+            </mgt-recall>
+
             <section>
                 <h2>The Hidden Fourth Constraint: Psychology</h2>
                 <p>
@@ -126,6 +152,20 @@
                 </p>
             </section>
 
+            <mgt-recall id="br-fourth-constraint">
+                <details>
+                    <summary>What hidden fourth constraint does the AUGI framework add to bounded rationality?</summary>
+                    <p>Psychological safety — fear of judgment distorts decision-making as powerfully as any cognitive limitation.</p>
+                </details>
+            </mgt-recall>
+
+            <mgt-recall id="br-collaboration-problem">
+                <details>
+                    <summary>Beyond a cognitive problem, what kind of problem does AUGI say bounded rationality also is?</summary>
+                    <p>A collaboration problem — weak protocols for asking questions, sharing uncertainty, and revising conclusions amplify every cognitive limitation.</p>
+                </details>
+            </mgt-recall>
+
             <section>
                 <h2>The AUGI Framework for Bounded Rationality</h2>
                 <p>
@@ -139,6 +179,20 @@
                     <li><strong>Decision speed and cognitive load metrics</strong> — Close the feedback loop. You cannot manage what you do not measure. Tracking how long decisions take, how often they are revised, and how much cognitive strain participants report gives you data to improve the system over time.</li>
                 </ol>
             </section>
+
+            <mgt-recall id="br-info-layer">
+                <details>
+                    <summary>Which AUGI layer extends the incomplete-information constraint?</summary>
+                    <p>Integrated logic and explanation tools — AI reasoning that holds more context and surfaces more precedents, shifting the human's role to evaluating what the tool surfaces.</p>
+                </details>
+            </mgt-recall>
+
+            <mgt-recall id="br-time-layer">
+                <details>
+                    <summary>How do collaborative platforms address the limited-time constraint?</summary>
+                    <p>They make collaboration asynchronous, so a decision can be distributed across time and people instead of forced into a single sitting.</p>
+                </details>
+            </mgt-recall>
 
             <section>
                 <h2>Scaffolding, Not Replacement</h2>
@@ -156,6 +210,13 @@
                 </div>
             </section>
 
+            <mgt-recall id="br-crutch-test">
+                <details>
+                    <summary>What is the practical test for whether AI scaffolding has become a crutch?</summary>
+                    <p>If removing the AI would cause the decision to collapse entirely, it is a crutch; good scaffolding leaves the human a better thinker even when the AI is absent.</p>
+                </details>
+            </mgt-recall>
+
             <section>
                 <h2>Multiple Askers, Limited Focus</h2>
                 <p>
@@ -168,6 +229,21 @@
                     The goal is not to eliminate the bounds of rationality. It is to spend the bounded resources you have on the things that matter most.
                 </p>
             </section>
+
+            <mgt-recall id="br-bounded-attention">
+                <details>
+                    <summary>Why does bounded rationality also mean bounded attention?</summary>
+                    <p>Multiple "askers" — colleagues, notifications, deadlines — draw from the same finite pool of focus, so attention is a limited cognitive budget that must be allocated. Without a system to allocate it, the most urgent demand wins over the most important one.</p>
+                </details>
+            </mgt-recall>
+
+            <div class="recall-cta" data-recall-cta hidden>
+                <p>You've answered <strong data-recall-count>0</strong> recall card(s) on this page. <span data-recall-due></span> They'll resurface right before you'd forget.</p>
+                <div class="cta">
+                    <a href="/learn/review/" class="btn">Review your cards</a>
+                    <button type="button" class="btn btn--secondary" data-recall-export>Export my cards (.csv)</button>
+                </div>
+            </div>
 
             <section class="card" style="margin-top: 2.5rem;">
                 <h2>Continue Learning</h2>
@@ -186,5 +262,6 @@
     <script type="module" src="/assets/js/app.js"></script>
     <script type="module" src="/components/core/mgt-header.js"></script>
     <script type="module" src="/components/core/mgt-footer.js"></script>
+    <script type="module" src="/components/core/mgt-recall.js"></script>
 </body>
 </html>

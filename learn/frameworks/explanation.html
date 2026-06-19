@@ -91,6 +91,11 @@
                 <p class="page-meta">Advanced &middot; 9 min read</p>
             </header>
 
+            <aside class="recall-banner" data-recall-banner>
+                <span class="recall-banner__icon" aria-hidden="true">🧠</span>
+                <p>This page <strong>remembers what you learn</strong>. Answer the recall cards as you read — they come back just before you'd forget, and everything stays in your browser. <span class="recall-banner__stat" data-recall-stat></span></p>
+            </aside>
+
             <section>
                 <h2>The Explanation Problem</h2>
                 <p>
@@ -105,6 +110,20 @@
                 <p>
                     This is not a minor technical issue. It is a fundamental challenge that shapes how you should interact with every AI system you use.
                 </p>
+
+                <mgt-recall id="exp-text">
+                    <details>
+                        <summary>When a language model "explains" its answer, what is it actually producing?</summary>
+                        <p>More generated text — predicted token by token through the same statistical process that produced the answer, not a trace of any decision.</p>
+                    </details>
+                </mgt-recall>
+
+                <mgt-recall id="exp-posthoc">
+                    <details>
+                        <summary>Why does an AI's explanation lack the correspondence that a human's reasoning has?</summary>
+                        <p>It is a post-hoc construction that may not reflect the computational process that produced the output, so its parts need not map to any actual factor in the decision.</p>
+                    </details>
+                </mgt-recall>
             </section>
 
             <section>
@@ -121,6 +140,20 @@
                 <div class="highlight-box">
                     <p><strong>The test:</strong> When AI gives you an explanation, ask — can I remove or change any part of this and still reach the same conclusion? If yes, the explanation is easy to vary, and you should not trust it. If removing any element breaks the reasoning chain, you may have a genuine explanation worth building on.</p>
                 </div>
+
+                <mgt-recall id="exp-hardtovary">
+                    <details>
+                        <summary>In Deutsch's terms, what makes an explanation genuine rather than easy to vary?</summary>
+                        <p>Every component does essential work — you cannot swap any part without breaking it, so the explanation is hard to vary.</p>
+                    </details>
+                </mgt-recall>
+
+                <mgt-recall id="exp-falsifiable">
+                    <details>
+                        <summary>What does a genuine explanation make that generated text usually avoids?</summary>
+                        <p>Falsifiable predictions: it commits to things that should follow, so it can be shown wrong. Generated text hedges and keeps its options open.</p>
+                    </details>
+                </mgt-recall>
             </section>
 
             <section>
@@ -137,6 +170,20 @@
                 <p>
                     For practitioners, this means you cannot rely on the AI to explain itself. You must build explanation from the outside — by testing the output against known facts, by comparing results across different prompts, by verifying claims independently. The explanation comes from your process, not from the model.
                 </p>
+
+                <mgt-recall id="exp-blackbox">
+                    <details>
+                        <summary>What gap do current interpretability methods still leave open?</summary>
+                        <p>The gap between "what the model did" (which tokens it weighted) and "why it did it" — they cannot supply a genuine explanation.</p>
+                    </details>
+                </mgt-recall>
+
+                <mgt-recall id="exp-fromoutside">
+                    <details>
+                        <summary>If the model cannot explain itself, where must a practitioner build explanation from?</summary>
+                        <p>From the outside, through your own process — testing output against known facts, comparing prompts, and verifying claims independently.</p>
+                    </details>
+                </mgt-recall>
             </section>
 
             <section>
@@ -153,6 +200,20 @@
                 <p>
                     Effective distillation produces what this framework calls <a href="/learn/frameworks/cognitive-artifacts.html">cognitive artifacts</a> — encapsulated structures of meaning that can be shared, reused, and built upon. The quality of your distillation determines the quality of these artifacts, which in turn determines how effectively you and others can reason about the underlying knowledge.
                 </p>
+
+                <mgt-recall id="exp-distillation">
+                    <details>
+                        <summary>What is knowledge distillation?</summary>
+                        <p>Compressing complex knowledge into simpler, more communicable forms — and in doing so creating understanding, not just shorter text.</p>
+                    </details>
+                </mgt-recall>
+
+                <mgt-recall id="exp-judgement">
+                    <details>
+                        <summary>Why can't a language model do distillation for you?</summary>
+                        <p>It cannot judge which findings matter for your specific context — that requires your understanding. The AI supplies speed, you supply judgement.</p>
+                    </details>
+                </mgt-recall>
             </section>
 
             <section>
@@ -174,6 +235,13 @@
                 <div class="highlight-box">
                     <p><strong>The principle:</strong> You do not need to understand how the AI works internally. You need to build a process around the AI that catches errors before they reach production. Explanation is not just about understanding the model — it is about making the entire workflow transparent and correctable.</p>
                 </div>
+
+                <mgt-recall id="exp-verifiable">
+                    <details>
+                        <summary>If you cannot explain how an AI reached its output, what is the next best thing?</summary>
+                        <p>Make the output verifiable — structure the workflow so AI claims can be checked against reality before you act on them.</p>
+                    </details>
+                </mgt-recall>
             </section>
 
             <section>
@@ -188,6 +256,14 @@
                     Explainer agents — AI systems designed specifically to make other AI systems' outputs understandable — are an emerging capability. But they face the same fundamental challenge: their explanations are also generated text. The human in the loop remains essential, not as a bottleneck but as the only agent in the system capable of genuine understanding.
                 </p>
             </section>
+
+            <div class="recall-cta" data-recall-cta hidden>
+                <p>You've answered <strong data-recall-count>0</strong> recall card(s) on this page. <span data-recall-due></span> They'll resurface right before you'd forget.</p>
+                <div class="cta">
+                    <a href="/learn/review/" class="btn">Review your cards</a>
+                    <button type="button" class="btn btn--secondary" data-recall-export>Export my cards (.csv)</button>
+                </div>
+            </div>
 
             <section class="card" style="margin-top: 2.5rem;">
                 <h2>Continue Learning</h2>
@@ -206,5 +282,6 @@
     <script type="module" src="/assets/js/app.js"></script>
     <script type="module" src="/components/core/mgt-header.js"></script>
     <script type="module" src="/components/core/mgt-footer.js"></script>
+    <script type="module" src="/components/core/mgt-recall.js"></script>
 </body>
 </html>
