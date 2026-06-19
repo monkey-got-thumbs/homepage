@@ -19,19 +19,19 @@
     <link rel="stylesheet" href="/assets/css/base.css">
     <link rel="stylesheet" href="/assets/css/layout.css">
 
-    <meta name="description" content="Augmented intelligence amplifies human potential instead of replacing it. Learn what it means, how it differs from AI replacement, and why the digital cyborg concept matters." />
-    <meta name="keywords" content="augmented intelligence, what is augmented intelligence, AI vs augmented intelligence, human AI collaboration, digital cyborg" />
+    <meta name="description" content="Augmented intelligence pairs your judgment with machine speed — you stay in charge. See it in one worked example, play with how reclaimed time compounds, then try the split on your own work." />
+    <meta name="keywords" content="augmented intelligence, what is augmented intelligence, AI vs augmented intelligence, human AI collaboration, human in the loop" />
     <meta name="author" content="Monkey Got Thumbs" />
 
     <meta property="og:title" content="What is Augmented Intelligence? — Monkey Got Thumbs">
-    <meta property="og:description" content="Augmented intelligence amplifies human potential instead of replacing it. Learn the difference between AI replacement and human-AI collaboration.">
+    <meta property="og:description" content="Pair your judgment with machine speed and stay in charge. A worked example, an interactive model, and a try-it-on-your-own-work prompt.">
     <meta property="og:url" content="https://monkey-got-thumbs.com/learn/foundations/what-is-ai.html">
     <meta property="og:type" content="article">
     <meta property="og:image" content="https://monkey-got-thumbs.com/hero.png">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="What is Augmented Intelligence? — Monkey Got Thumbs">
-    <meta name="twitter:description" content="AI should amplify human potential, not replace it. Learn the fundamentals of augmented intelligence.">
+    <meta name="twitter:description" content="AI should amplify human potential, not replace it. A worked example you can learn from, and try yourself.">
     <meta name="twitter:image" content="https://monkey-got-thumbs.com/hero.png">
 
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
@@ -41,7 +41,7 @@
         "@context": "https://schema.org",
         "@type": "Article",
         "headline": "What is Augmented Intelligence?",
-        "description": "Augmented intelligence amplifies human potential instead of replacing it. Learn what it means and why the digital cyborg concept matters.",
+        "description": "Augmented intelligence pairs human judgment with machine capability — the human stays in charge. A worked example, an interactive model, and a transfer prompt.",
         "url": "https://monkey-got-thumbs.com/learn/foundations/what-is-ai.html",
         "author": { "@type": "Organization", "name": "Monkey Got Thumbs" },
         "publisher": {
@@ -50,7 +50,7 @@
             "logo": "https://monkey-got-thumbs.com/logo.png"
         },
         "datePublished": "2026-04-11",
-        "dateModified": "2026-04-11",
+        "dateModified": "2026-06-20",
         "educationalLevel": "Beginner",
         "breadcrumb": {
             "@type": "BreadcrumbList",
@@ -77,6 +77,32 @@
         .comparison { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 1.5rem 0; }
         .comparison .card { padding: 1.5rem; }
         @media (max-width: 640px) { .comparison { grid-template-columns: 1fr; } }
+        /* enduring-understanding callout */
+        .enduring { background: color-mix(in srgb, var(--color-accent) 10%, var(--color-bg-secondary)); border: 1px solid var(--color-border); border-left: 4px solid var(--color-accent); border-radius: var(--radius-sm); padding: 1.1rem 1.5rem; margin: 1.5rem 0; }
+        .enduring p { margin: 0; }
+        .enduring strong { color: var(--color-accent); }
+        /* worked example */
+        .worked { background: var(--color-bg-secondary); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 1.5rem; margin: 1.5rem 0; }
+        .worked h3 { margin: 0 0 0.75rem; color: var(--color-fg); }
+        .split { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.25rem 0; }
+        @media (max-width: 640px) { .split { grid-template-columns: 1fr; } }
+        .split .col { background: color-mix(in srgb, #000 20%, transparent); border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 1rem; }
+        .split .col h4 { margin: 0 0 0.5rem; font-size: var(--font-size-sm); text-transform: uppercase; letter-spacing: 0.05em; }
+        .split .machine h4 { color: var(--color-brand-light); }
+        .split .human h4 { color: var(--color-accent); }
+        .split .col p { font-size: var(--font-size-sm); margin-bottom: 0.5rem; }
+        .artifact { font-family: var(--font-mono, "Courier New", monospace); font-size: 0.78rem; line-height: 1.55; background: #0a0814; border: 1px solid var(--color-border); border-radius: 6px; padding: 0.6rem 0.75rem; color: var(--color-muted); white-space: pre-wrap; margin: 0.5rem 0 0; }
+        .artifact .edit { color: var(--color-accent); }
+        /* misconception buster */
+        .misconception { background: color-mix(in srgb, var(--color-error) 8%, var(--color-bg-secondary)); border: 1px solid var(--color-border); border-left: 4px solid var(--color-error); border-radius: var(--radius-sm); padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
+        .misconception h3 { margin: 0 0 0.5rem; color: var(--color-error); font-size: var(--font-size-lg); }
+        .misconception p { margin-bottom: 0; }
+        /* try-it transfer prompt */
+        .tryit { background: color-mix(in srgb, var(--color-accent) 9%, var(--color-bg-secondary)); border: 1px solid var(--color-border); border-left: 4px solid var(--color-accent); border-radius: var(--radius); padding: 1.5rem; margin: 2rem 0; }
+        .tryit h2 { margin-top: 0; }
+        .tryit ol { margin-bottom: 1rem; }
+        .tryit p:last-child { margin-bottom: 0; }
+        /* explorable (compounding) */
         .explorable { background: var(--color-bg-secondary); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
         .explorable figcaption { font-weight: var(--font-weight-semibold); color: var(--color-fg); margin-bottom: 1rem; }
         .explorable__note { display: block; font-weight: 400; font-size: var(--font-size-xs); color: var(--color-muted); margin-top: 0.25rem; }
@@ -88,6 +114,18 @@
         .explorable__readout span { font-size: var(--font-size-xs); color: var(--color-muted); }
         .explorable__chart { width: 100%; height: auto; margin-top: 0.5rem; }
         .explorable__desc { font-size: var(--font-size-sm); color: var(--color-muted); margin: 0.5rem 0 0; }
+        /* replace-vs-augment toggle */
+        .augtoggle { background: var(--color-bg-secondary); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
+        .augtoggle__btns { display: flex; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap; }
+        .augtoggle__btns button { flex: 1; min-width: 140px; padding: 0.6rem; border-radius: 8px; border: 1px solid var(--color-border); background: transparent; color: var(--color-fg); font: 600 0.9rem "Montserrat", sans-serif; cursor: pointer; }
+        .augtoggle__btns button[aria-pressed="true"] { background: var(--color-accent); color: #11210a; border-color: var(--color-accent); }
+        .flow { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; justify-content: center; margin: 0.5rem 0; }
+        .node { padding: 0.55rem 0.85rem; border-radius: 10px; border: 1px solid var(--color-border); font-size: 0.85rem; font-weight: 600; }
+        .node.you { background: color-mix(in srgb, var(--color-accent) 25%, transparent); }
+        .node.ai { background: color-mix(in srgb, var(--color-brand) 35%, transparent); }
+        .node.muted { opacity: 0.35; text-decoration: line-through; }
+        .arrow { color: var(--color-muted); font-size: 0.85rem; }
+        .augtoggle__caption { color: var(--color-fg-secondary); margin: 0.75rem 0 0; font-size: var(--font-size-sm); min-height: 3em; }
     </style>
 </head>
 <body>
@@ -106,9 +144,13 @@
 
             <header>
                 <h1>What is Augmented Intelligence?</h1>
-                <p class="lead">AI should amplify human potential, not replace it. Augmented intelligence is the practice of pairing human judgment with machine capability to achieve outcomes neither could reach alone.</p>
+                <p class="lead">AI should amplify human potential, not replace it. Augmented intelligence is the practice of pairing human judgment with machine capability to reach outcomes neither could alone.</p>
                 <p class="page-meta">Beginner &middot; 8 min read</p>
             </header>
+
+            <div class="enduring">
+                <p><strong>The one idea to keep:</strong> AI is a tool you <em>direct</em>. The value isn't the machine — it's pairing your judgment with its speed, reinvesting the time you save, and staying in charge of every decision that matters.</p>
+            </div>
 
             <aside class="recall-banner" data-recall-banner>
                 <span class="recall-banner__icon" aria-hidden="true">🧠</span>
@@ -116,20 +158,61 @@
             </aside>
 
             <section>
-                <h2>The Core Idea: A Time Amplifier</h2>
+                <h2>Start with one real afternoon</h2>
                 <p>
-                    Augmented intelligence is a time amplifier. Not in the science-fiction sense of slowing down clocks, but in the practical sense of multiplying what you can accomplish with the attention and hours you already have.
+                    Maria runs a busy community clinic. It's Wednesday, and by Friday she owes the board a report summarising three months of patient feedback — about 400 comments. Reading and hand-tallying all 400 would eat a full day she doesn't have. Here's how she does it in an hour <em>with</em> augmented intelligence — and why she, not the AI, is still the author.
                 </p>
+                <div class="worked">
+                    <h3>The task: 400 comments → a board report by Friday</h3>
+                    <div class="split">
+                        <div class="col machine">
+                            <h4>What the machine does — volume</h4>
+                            <p>Groups the 400 comments into themes, drafts a one-line summary of each, and counts them:</p>
+                            <div class="artifact">Wait times — 118 comments
+"Patients are frustrated by long
+waits, especially mornings."
+
+Staff friendliness — 96 (positive)
+Parking — 40
+Booking system — 31 …</div>
+                        </div>
+                        <div class="col human">
+                            <h4>What Maria does — judgment</h4>
+                            <p>Reads the <em>themes</em>, not 400 comments, then adds what the data can't:</p>
+                            <div class="artifact">Wait times — 118 comments
+"Patients are frustrated by long
+waits, especially mornings.
+<span class="edit">↳ Maria: lead with this — the
+board cares most. Recommend a
+morning triage-nurse pilot.</span>
+<span class="edit">↳ Maria: merge "Parking" into
+"Access" — the model split one
+complaint into two.</span></div>
+                        </div>
+                    </div>
+                    <p style="margin-bottom:0">The machine handled the 400; Maria handled the judgment — the priority call, the miscategorisation only a human with context would catch, and the recommendation the data could never make. <strong>That division of labour is augmented intelligence.</strong></p>
+                </div>
+
+                <mgt-recall id="wai-split">
+                    <details>
+                        <summary>In augmented intelligence, who handles volume and who handles judgment?</summary>
+                        <p>The machine handles volume (repetitive, mechanical work); the human handles judgment — context, priorities, ethics, and the final call.</p>
+                    </details>
+                </mgt-recall>
+            </section>
+
+            <section>
+                <h2>The pattern: a time amplifier</h2>
                 <p>
-                    It works across three dimensions:
+                    Maria's afternoon is one instance of a general pattern. Augmented intelligence is a <strong>time amplifier</strong> — not science fiction, just multiplying what you accomplish with the attention and hours you already have. It works in three ways:
                 </p>
                 <ul>
-                    <li><strong>Compressing workflows</strong> — shortening the path from idea to outcome. What used to take a team three weeks of research, drafting, and revision can collapse into days when a human directs AI to handle the mechanical parts while focusing their own energy on judgment calls.</li>
-                    <li><strong>Automating ongoing tasks</strong> — offloading repetition to machines so humans can focus on what actually requires a brain. Not the rote data entry, not the boilerplate emails, not the formatting. The thinking.</li>
-                    <li><strong>Scaling collaboration</strong> — reducing noise so teams can coordinate at higher velocity. When AI handles summarisation, context-switching, and information retrieval, humans spend less time searching and more time deciding.</li>
+                    <li><strong>Compressing workflows</strong> — shortening the path from idea to outcome (Maria's day-long read became an hour).</li>
+                    <li><strong>Automating ongoing tasks</strong> — offloading repetition so your attention goes to what needs a brain.</li>
+                    <li><strong>Scaling collaboration</strong> — cutting the noise (summarising, retrieving, context-switching) so teams decide faster.</li>
                 </ul>
                 <p>
-                    The result is a compounding effect. Each hour you reclaim gets reinvested into higher-value work, which generates more capacity, which compounds further. This is not a marginal improvement. It is a structural change in how productive a single person or small team can be.
+                    And it compounds: each hour you reclaim gets reinvested into higher-value work, which creates more capacity, which compounds again. Don't take the claim on faith — move the slider and watch it.
                 </p>
 
                 <figure class="explorable" id="amplifier">
@@ -173,69 +256,79 @@
             </section>
 
             <section>
-                <h2>Augmented Intelligence vs. Artificial Intelligence</h2>
+                <h2>Augmented vs. artificial intelligence</h2>
                 <p>
-                    The terms get conflated, but they describe fundamentally different philosophies about the role of machines in human work.
+                    The terms get conflated, but they're different philosophies about the machine's role. The difference is one thing: <strong>is the human still in the loop?</strong> Flip the switch and watch what changes.
                 </p>
+
+                <div class="augtoggle" id="augtoggle">
+                    <div class="augtoggle__btns">
+                        <button data-mode="augment" aria-pressed="true">Augment (human in the loop)</button>
+                        <button data-mode="replace" aria-pressed="false">Replace (human removed)</button>
+                    </div>
+                    <div class="flow"></div>
+                    <p class="augtoggle__caption" role="status" aria-live="polite"></p>
+                    <noscript><p class="augtoggle__caption">Augmented intelligence keeps you in the loop: AI drafts, you verify and decide. Full automation removes you — faster, but no one catches the model's mistakes.</p></noscript>
+                </div>
 
                 <div class="comparison">
                     <div class="card">
                         <h3>Artificial Intelligence</h3>
-                        <p>Aims to replace human decision-making with autonomous systems. The goal is a machine that can operate independently — no human in the loop.</p>
-                        <p>Think self-driving cars, automated trading algorithms, or fully autonomous customer service bots.</p>
+                        <p>Aims to <strong>replace</strong> human decision-making with autonomous systems — the goal is a machine that runs with no human in the loop.</p>
+                        <p>Self-driving cars, automated trading, fully autonomous support bots.</p>
                     </div>
                     <div class="card">
                         <h3>Augmented Intelligence</h3>
-                        <p>Aims to enhance human decision-making by providing better tools, faster information retrieval, and expanded analytical capability. The human stays in the loop.</p>
-                        <p>Think a doctor using AI to analyse scans faster, a writer using AI to draft then refining with judgment, or an engineer using AI to generate then reviewing code.</p>
+                        <p>Aims to <strong>enhance</strong> human decision-making — better tools, faster retrieval, more analytical reach. The human stays in the loop.</p>
+                        <p>Maria's report. A doctor reading AI-flagged scans. A writer refining an AI draft.</p>
                     </div>
                 </div>
 
                 <p>
-                    The distinction matters because it changes what you optimise for. Artificial intelligence optimises for removing humans from the equation. Augmented intelligence optimises for making humans more capable.
+                    The distinction changes what you optimise for: AI optimises for removing the human; augmented intelligence optimises for making the human more capable. And it matters because <a href="/learn/foundations/ai-pitfalls.html">today's AI has real limits</a> — it hallucinates, lacks judgment, can't explain itself, and is costly to run. Augmented intelligence designs <em>around</em> those limits instead of pretending they're gone.
                 </p>
-                <p>
-                    And here is the uncomfortable truth that the AI industry does not talk about enough: <a href="/learn/foundations/ai-pitfalls.html">current AI systems have serious limitations</a>. They hallucinate. They lack judgment. They cannot explain their reasoning. They are extraordinarily expensive to run. These are not temporary bugs — they are structural characteristics of how large language models work.
-                </p>
-                <p>
-                    Augmented intelligence acknowledges these limitations and designs around them. Instead of asking "how do we replace the human?", it asks "how do we give the human superpowers while keeping them in control?"
-                </p>
+
+                <div class="misconception">
+                    <h3>The trap: "AI will just do it for me"</h3>
+                    <p>The tempting model is: hand the whole task over and collect the answer. It fails for a precise reason — the model has no judgment and <em>can't tell you when it's wrong</em>. In Maria's report the AI confidently mislabelled comments; only a human with context caught it. Outsource the volume, never the judgment.</p>
+                </div>
 
                 <mgt-recall id="wai-ai-vs">
                     <details>
                         <summary>What's the core difference between artificial intelligence and augmented intelligence?</summary>
-                        <p>AI optimises for removing humans from the loop; augmented intelligence optimises for making humans more capable — the human stays in the loop.</p>
+                        <p>AI optimises for removing the human from the loop; augmented intelligence optimises for making the human more capable — the human stays in the loop.</p>
                     </details>
                 </mgt-recall>
                 <mgt-recall id="wai-limitations">
                     <details>
                         <summary>Name structural limitations of current AI that augmented intelligence designs around.</summary>
-                        <p>They hallucinate, lack judgement, can't explain their reasoning, and are expensive to run.</p>
+                        <p>It hallucinates, lacks judgment, can't explain its reasoning, and is expensive to run.</p>
+                    </details>
+                </mgt-recall>
+                <mgt-recall id="wai-misconception">
+                    <details>
+                        <summary>What's the trap to avoid when handing work to AI?</summary>
+                        <p>Outsourcing the <em>judgment</em>, not just the volume — the model can't tell you when it's wrong, so you must stay in the loop to catch it.</p>
                     </details>
                 </mgt-recall>
             </section>
 
             <section>
-                <h2>The Digital Cyborg</h2>
+                <h2>You, as a digital cyborg</h2>
                 <p>
-                    Think of augmented intelligence as becoming a digital cyborg. Not in the dystopian, metal-arm sense — in the practical sense of extending your cognitive reach.
+                    Think of it as extending your cognitive reach — not metal arms, just more mind. You already do this: a spreadsheet extends your arithmetic, a search engine extends your memory, a calendar extends your planning. Augmented intelligence adds reasoning assistance, pattern recognition, and drafting to that toolkit.
                 </p>
-
                 <div class="highlight-box">
-                    <p><strong>Human judgment + machine capability = superhuman outcomes.</strong></p>
+                    <p><strong>Human judgment + machine capability = outcomes neither reaches alone.</strong></p>
                 </div>
-
                 <p>
-                    You already do this in small ways. A spreadsheet extends your mathematical ability. A search engine extends your memory. A calendar extends your planning capacity. Augmented intelligence takes this further by adding genuine reasoning assistance, pattern recognition, and creative generation to your toolkit.
-                </p>
-                <p>
-                    The key word is <em>assistance</em>. You direct. You decide. You verify. The machine handles the parts that do not require judgment — the research, the first drafts, the data processing, the pattern matching. You handle the parts that do — the strategy, the ethics, the context, the relationships.
+                    The key word is <em>assistance</em>. You direct, you decide, you verify. The machine handles the parts that don't need judgment — research, first drafts, data processing, pattern-matching. You keep the parts that do — strategy, ethics, context, relationships.
                 </p>
 
                 <mgt-recall id="wai-cyborg">
                     <details>
                         <summary>What does the "digital cyborg" idea actually mean here?</summary>
-                        <p>Extending your cognitive reach with machine assistance — like a spreadsheet or search engine, but adding reasoning, pattern recognition, and generation.</p>
+                        <p>Extending your cognitive reach with machine assistance — like a spreadsheet or search engine, but adding reasoning, pattern recognition, and drafting.</p>
                     </details>
                 </mgt-recall>
                 <mgt-recall id="wai-assistance">
@@ -247,21 +340,9 @@
             </section>
 
             <section>
-                <h2>Where It Applies</h2>
+                <h2>Where it applies</h2>
                 <p>
-                    Augmented intelligence operates across every scale of human organisation:
-                </p>
-                <ul>
-                    <li><strong>Personal workflows</strong> — individual productivity, learning, creative work. Using AI to research faster, write better, analyse data you could never process alone.</li>
-                    <li><strong>Institutional processes</strong> — teams and organisations using AI to coordinate, make decisions, and execute at speeds that were previously impossible.</li>
-                    <li><strong>Enterprise operations</strong> — large-scale deployment of human-AI systems across entire business functions. Not replacing departments, but making every person in them dramatically more effective.</li>
-                    <li><strong>Economic systems</strong> — the broader impact on how industries, markets, and entire economies reorganise around augmented human capability.</li>
-                </ul>
-                <p>
-                    The people who understand this shift — who learn to work <em>with</em> AI rather than being replaced <em>by</em> it — will have a significant advantage. Not because they have special technology, but because they have developed the skills and mental models to use it effectively.
-                </p>
-                <p>
-                    That is what this site is about. Teaching those skills.
+                    The same human-directs-machine-assists pattern scales from one person to a whole economy: <strong>personal</strong> workflows, <strong>institutional</strong> processes, <strong>enterprise</strong> operations, and the broader <strong>economic</strong> reshaping as industries reorganise around it. The advantage doesn't go to whoever has the fanciest model — it goes to whoever has the <em>skill</em> to direct it.
                 </p>
 
                 <mgt-recall id="wai-scales">
@@ -279,17 +360,9 @@
             </section>
 
             <section>
-                <h2>The Three Pillars</h2>
+                <h2>The three pillars</h2>
                 <p>
-                    Augmented intelligence rests on <a href="/learn/foundations/three-pillars.html">three foundational pillars</a>:
-                </p>
-                <ol>
-                    <li><strong>Logic</strong> — the scientific method, mathematical reasoning, and the discipline of forming testable predictions from observations.</li>
-                    <li><strong>Explanation</strong> — the ability to create clear, durable explanations that withstand scrutiny. Drawing on David Deutsch's principle of "hard-to-vary" explanations.</li>
-                    <li><strong>Architected Data Objects</strong> — standardised structures that compress complexity into shareable, interpretable units. The building blocks of machine-readable knowledge.</li>
-                </ol>
-                <p>
-                    These pillars support a practical framework of five capabilities: <a href="/learn/frameworks/meta-cognition.html">Meta-Cognition</a>, <a href="/learn/frameworks/explanation.html">Explanation</a>, <a href="/learn/frameworks/memory-systems.html">Memory Systems</a>, <a href="/learn/frameworks/interfaces.html">Interfaces</a>, and <a href="/learn/frameworks/cognitive-artifacts.html">Cognitive Artifacts</a>. Together they provide a complete model for how humans and machines can think together.
+                    Doing this well rests on <a href="/learn/foundations/three-pillars.html">three foundational pillars</a>: <strong>Logic</strong> (the scientific method and testable reasoning), <strong>Explanation</strong> (clear, hard-to-vary explanations that survive scrutiny), and <strong>Architected Data Objects</strong> (structured, shareable units of knowledge). They support five working capabilities — <a href="/learn/frameworks/meta-cognition.html">Meta-Cognition</a>, <a href="/learn/frameworks/explanation.html">Explanation</a>, <a href="/learn/frameworks/memory-systems.html">Memory Systems</a>, <a href="/learn/frameworks/interfaces.html">Interfaces</a>, and <a href="/learn/frameworks/cognitive-artifacts.html">Cognitive Artifacts</a>.
                 </p>
 
                 <mgt-recall id="wai-pillars">
@@ -298,6 +371,17 @@
                         <p>Logic, Explanation, and Architected Data Objects.</p>
                     </details>
                 </mgt-recall>
+            </section>
+
+            <section class="tryit" aria-labelledby="tryit-title">
+                <h2 id="tryit-title">Try it on your own work</h2>
+                <p>This only clicks when you do it on something real. Take one task from <em>this week</em>:</p>
+                <ol>
+                    <li>Write the task in one line.</li>
+                    <li>Split it into <strong>volume</strong> (repetitive, mechanical — could be drafted, sorted, or searched) and <strong>judgment</strong> (needs your context, ethics, taste, or final call).</li>
+                    <li>Decide which volume parts you'd hand to AI — and the exact point where you'd stay in the loop to verify, the way Maria did.</li>
+                </ol>
+                <p>That split <em>is</em> the skill. Do it five times this week and it stops being an exercise and becomes a habit.</p>
             </section>
 
             <div class="recall-cta" data-recall-cta hidden>
@@ -310,7 +394,7 @@
 
             <section class="card" style="margin-top: 2.5rem;">
                 <h2>Continue Learning</h2>
-                <p>Now that you understand the concept, explore why it matters — and what happens if you ignore it.</p>
+                <p>You've got the core idea and tried the split. Next: why this matters now — and what happens if you ignore it.</p>
                 <div class="cta">
                     <a href="/learn/foundations/why-we-need-it.html" class="btn">Why We Need It</a>
                     <a href="/learn/foundations/ai-pitfalls.html" class="btn btn--secondary">AI's Pitfalls</a>
@@ -328,5 +412,6 @@
     <script type="module" src="/components/core/mgt-recall.js"></script>
     <script type="module" src="/components/core/mgt-credit.js"></script>
     <script src="/assets/js/explorable-amplifier.js" defer></script>
+    <script src="/assets/js/augment-toggle.js" defer></script>
 </body>
 </html>
