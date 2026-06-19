@@ -5,6 +5,7 @@
         "name": "Chatty",
         "subtitle": "Your guide to Monkey Got Thumbs",
         "launcherText": "Need help?",
+        "nudge": "Kia ora! 👋 I'm Chatty. Ask me about learning AI, building agents, or chatyman.",
         "accent": "#A6FF4D"
     },
     "model": { "preferred": "Qwen2.5-1.5B-Instruct-q4f16_1-MLC", "generative": "auto" },
@@ -44,7 +45,7 @@
                     { "id": "build", "desc": "build their own agent", "examples": ["build my own agent", "make a chatbot", "create an AI agent", "how do I build an agent", "I want to make my own AI"], "goto": "build" },
                     { "id": "products", "desc": "see products", "examples": ["what products do you have", "show me your tools", "what do you sell", "products"], "goto": "products" },
                     { "id": "chatty", "desc": "the chatyman product", "examples": ["what is chatyman", "tell me about chatyman", "chatbot product", "the chat widget"], "goto": "chatty" },
-                    { "id": "pricing", "desc": "pricing and cost", "examples": ["how much does it cost", "pricing", "what are your prices", "is it free", "plans"], "goto": "pricing" },
+                    { "id": "pricing", "desc": "pricing and cost", "examples": ["how much does it cost", "how much is chatyman", "what does it cost", "pricing", "what are your prices", "monthly price", "is it free", "free plan", "how much is pro", "plans and pricing"], "goto": "pricing" },
                     { "id": "sell", "desc": "share or sell agents", "examples": ["can I sell my agent", "make money with AI", "sell my chatbot", "agent marketplace"], "goto": "sell" }
                 ],
                 "fallback": "site_rag"

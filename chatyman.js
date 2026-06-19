@@ -44,6 +44,9 @@
     let llm = null, llmGrammar = false, llmState = 'idle'; // idle|loading|ready|off
     let siteIndex = [], indexState = 'idle', _indexPromise = null;  // idle|running|done
     let ui = null;                                // {root, msgs, btns, input, ...}
+    let transcript = [];                          // message log, persisted for the floating widget
+    let lastFocus = null;                         // element to restore focus to on close
+    const STORE_KEY = () => INLINE_SEL ? null : ('chatyman:' + ((CFG && CFG.id) || 'site'));
 
     /* ===================================================================== *
      * Small utilities
@@ -372,6 +375,7 @@ onmessage = async (e) => {
         if (!n) { console.warn('chatyman: missing node', id); return; }
         node = n; node._id = id;
         renderNode(n);
+        persist();
     }
     function renderNode(n) {
         if (n.say) addBot(n.say);
@@ -482,10 +486,13 @@ onmessage = async (e) => {
     }
 
     function mdToHtml(s) {
-        return esc(s)
-            .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
-            .replace(/\*(.+?)\*/g, '<em>$1</em>')
-            .replace(/\n/g, '<br>');
+        let h = esc(s);
+        // markdown links [text](url) — only http(s) or root-relative targets
+        h = h.replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+|\/[^\s)]*)\)/g,
+            (m, t, u) => `<a href="${u}"${/^https?:/.test(u) ? ' target="_blank" rel="noopener"' : ''}>${t}</a>`);
+        h = h.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>').replace(/\*(.+?)\*/g, '<em>$1</em>');
+        h = h.replace(/(?:^|\n)\s*[-*]\s+(.+)/g, '\n• $1');   // simple bullet lists
+        return h.replace(/\n/g, '<br>');
     }
 
     /* ===================================================================== *
@@ -549,6 +556,18 @@ onmessage = async (e) => {
 .cm-row button:disabled { opacity: .5; cursor: not-allowed; }
 .cm-credit { text-align: center; font-size: 10px; color: var(--muted); padding-top: 8px; }
 .cm-credit a { color: var(--muted); }
+.cm-nudge { position: fixed; right: 20px; bottom: 80px; z-index: 2147483000; max-width: 250px;
+    background: var(--bg); color: var(--fg); border: 1px solid var(--bd); border-radius: 14px;
+    padding: 12px 32px 12px 14px; font-size: 13px; line-height: 1.45; cursor: pointer;
+    box-shadow: 0 10px 30px rgba(0,0,0,.45); animation: cmIn .2s ease-out; }
+.cm-nudge .x { position: absolute; top: 5px; right: 7px; border: 0; background: transparent;
+    color: var(--muted); cursor: pointer; font-size: 15px; line-height: 1; padding: 2px; }
+.cm-nudge .x:hover { color: #fff; }
+@media (prefers-reduced-motion: reduce) {
+    .cm-panel.open, .cm-nudge { animation: none; }
+    .cm-launch, .cm-chip, .cm-row button, .cm-head button { transition: none; }
+    .cm-typing i { animation: none; }
+}
 `;
 
     function buildUI() {
@@ -562,22 +581,25 @@ onmessage = async (e) => {
         const sub = (CFG.branding && CFG.branding.subtitle) || 'Ask me anything';
         const inline = INLINE_SEL ? document.querySelector(INLINE_SEL) : null;
 
+        const nudgeText = (CFG.branding && CFG.branding.nudge) || 'Kia ora! 👋 Need a hand? Ask me anything.';
         wrap.innerHTML =
             `<style>${STYLE}</style>` +
-            (inline ? '' : `<button class="cm-launch" part="launch"><span class="dot"></span>${esc((CFG.branding && CFG.branding.launcherText) || 'Need help?')}</button>`) +
-            `<section class="cm-panel${inline ? ' cm-inline open' : ''}" role="dialog" aria-label="${esc(name)}">
+            (inline ? '' : `<button class="cm-launch" part="launch" aria-haspopup="dialog"><span class="dot"></span>${esc((CFG.branding && CFG.branding.launcherText) || 'Need help?')}</button>`) +
+            (inline ? '' : `<div class="cm-nudge" role="button" tabindex="0" hidden>${esc(nudgeText)}<button class="x" aria-label="Dismiss">×</button></div>`) +
+            `<section class="cm-panel${inline ? ' cm-inline open' : ''}" role="dialog" aria-label="${esc(name)}"${inline ? '' : ' aria-modal="false"'}>
                 <div class="cm-head">
-                    <div class="av">${esc((name[0] || 'C').toUpperCase())}</div>
+                    <div class="av" aria-hidden="true">${esc((name[0] || 'C').toUpperCase())}</div>
                     <div class="t"><b>${esc(name)}</b><span>${esc(sub)}</span></div>
-                    ${inline ? '' : '<button class="cm-min" aria-label="Minimize">–</button>'}
+                    <button class="cm-reset" aria-label="Start the conversation over" title="Start over">↺</button>
+                    ${inline ? '' : '<button class="cm-min" aria-label="Minimize chat" title="Minimize">–</button>'}
                 </div>
-                <div class="cm-msgs" role="log" aria-live="polite"></div>
+                <div class="cm-msgs" role="log" aria-live="polite" aria-label="Conversation"></div>
                 <div class="cm-btns"></div>
                 <div class="cm-foot">
-                    <div class="cm-status"></div>
+                    <div class="cm-status" role="status" aria-live="polite"></div>
                     <div class="cm-row">
-                        <input type="text" aria-label="Message" placeholder="Type your message…" />
-                        <button class="cm-send" aria-label="Send">➤</button>
+                        <input type="text" aria-label="Type your message" placeholder="Type your message…" autocomplete="off" />
+                        <button class="cm-send" aria-label="Send message">➤</button>
                     </div>
                     <div class="cm-credit">Powered by <a href="https://monkey-got-thumbs.com/chatty/" target="_blank" rel="noopener">chatyman</a> · runs in your browser</div>
                 </div>
@@ -588,22 +610,62 @@ onmessage = async (e) => {
 
         ui = {
             host, root: wrap,
-            panel: $('.cm-panel', wrap), launch: $('.cm-launch', wrap),
+            panel: $('.cm-panel', wrap), launch: $('.cm-launch', wrap), nudge: $('.cm-nudge', wrap),
             msgs: $('.cm-msgs', wrap), btns: $('.cm-btns', wrap),
             input: $('.cm-row input', wrap), send: $('.cm-send', wrap),
             status: $('.cm-status', wrap), inline: !!inline
         };
         if (ui.launch) ui.launch.addEventListener('click', toggle);
-        const min = $('.cm-min', wrap); if (min) min.addEventListener('click', toggle);
+        const min = $('.cm-min', wrap); if (min) min.addEventListener('click', close);
+        const reset = $('.cm-reset', wrap); if (reset) reset.addEventListener('click', resetChat);
         ui.send.addEventListener('click', () => onText(ui.input.value));
         ui.input.addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); onText(ui.input.value); } });
+        // Esc closes the floating panel
+        wrap.addEventListener('keydown', e => { if (e.key === 'Escape' && !ui.inline && ui.panel.classList.contains('open')) { e.stopPropagation(); close(); } });
+        // Nudge: gentle one-per-session prompt to open the chat
+        if (ui.nudge) {
+            const openFromNudge = () => { hideNudge(true); open(); };
+            ui.nudge.addEventListener('click', e => { if (!e.target.closest('.x')) openFromNudge(); });
+            ui.nudge.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openFromNudge(); } });
+            ui.nudge.querySelector('.x').addEventListener('click', e => { e.stopPropagation(); hideNudge(true); });
+            maybeShowNudge();
+        }
     }
 
-    function open() { if (ui.panel) ui.panel.classList.add('open'); if (ui.launch) ui.launch.style.display = 'none'; if (!started) startConversation(); ui.input.focus(); }
-    function close() { if (ui.panel) ui.panel.classList.remove('open'); if (ui.launch) ui.launch.style.display = ''; }
+    function maybeShowNudge() {
+        try { if (sessionStorage.getItem('chatyman:nudged')) return; } catch (_) {}
+        setTimeout(() => {
+            if (ui && ui.nudge && !ui.panel.classList.contains('open')) ui.nudge.hidden = false;
+        }, 6000);
+    }
+    function hideNudge(remember) {
+        if (ui && ui.nudge) ui.nudge.hidden = true;
+        if (remember) { try { sessionStorage.setItem('chatyman:nudged', '1'); } catch (_) {} }
+    }
+
+    function open() {
+        hideNudge(true);
+        if (ui.panel) { ui.panel.classList.add('open'); if (!ui.inline) ui.panel.setAttribute('aria-modal', 'true'); }
+        if (ui.launch) { lastFocus = ui.launch; ui.launch.style.display = 'none'; }
+        if (!started) startConversation();
+        setTimeout(() => { try { ui.input.focus(); } catch (_) {} }, 0);
+    }
+    function close() {
+        if (ui.panel) { ui.panel.classList.remove('open'); ui.panel.setAttribute('aria-modal', 'false'); }
+        if (ui.launch) { ui.launch.style.display = ''; }
+        try { (lastFocus || ui.launch || document.body).focus(); } catch (_) {}
+    }
     function toggle() { (ui.panel.classList.contains('open') && !ui.inline) ? close() : open(); }
 
-    function addBot(html, sources) {
+    function resetChat() {
+        transcript = []; if (CFG) CFG._slots = {};
+        try { const k = STORE_KEY(); if (k) sessionStorage.removeItem(k); } catch (_) {}
+        ui.msgs.innerHTML = '';
+        goTo((CFG.flow && CFG.flow.start) || 'root');
+        try { ui.input.focus(); } catch (_) {}
+    }
+
+    function renderBotEl(html, sources) {
         const d = document.createElement('div'); d.className = 'cm-msg cm-bot'; d.innerHTML = html;
         if (sources && sources.length) {
             const seen = []; const links = sources.filter(u => { if (seen.includes(u)) return false; seen.push(u); return true; })
@@ -612,9 +674,20 @@ onmessage = async (e) => {
         }
         ui.msgs.appendChild(d); scroll();
     }
-    function addUser(text) {
+    function renderUserEl(text) {
         const d = document.createElement('div'); d.className = 'cm-msg cm-user'; d.textContent = text;
         ui.msgs.appendChild(d); scroll();
+    }
+    function addBot(html, sources) { renderBotEl(html, sources); transcript.push({ role: 'bot', html: html, sources: sources || null }); persist(); }
+    function addUser(text) { renderUserEl(text); transcript.push({ role: 'user', text: text }); persist(); }
+
+    function persist() {
+        const key = STORE_KEY(); if (!key) return;
+        try { sessionStorage.setItem(key, JSON.stringify({ t: transcript.slice(-40), node: node && node._id, slots: (CFG && CFG._slots) || {} })); } catch (_) {}
+    }
+    function loadState() {
+        const key = STORE_KEY(); if (!key) return null;
+        try { return JSON.parse(sessionStorage.getItem(key) || 'null'); } catch (_) { return null; }
     }
     let typingEl = null;
     function setTyping(on) {
@@ -628,7 +701,17 @@ onmessage = async (e) => {
     function startConversation() {
         started = true;
         const startId = (CFG.flow && CFG.flow.start) || 'root';
-        goTo(startId);
+        // Restore an in-progress conversation (floating widget) so context survives page navigation.
+        const saved = loadState();
+        if (saved && saved.t && saved.t.length && NODES[saved.node]) {
+            transcript = saved.t;
+            CFG._slots = saved.slots || {};
+            saved.t.forEach(m => m.role === 'user' ? renderUserEl(m.text) : renderBotEl(m.html, m.sources));
+            node = NODES[saved.node]; node._id = saved.node;
+            renderButtons(node); gateInput(node);
+        } else {
+            goTo(startId);
+        }
         // warm embeddings + idle-index the site so the agentic path is fast later
         warmEmbeddings();
         if (CFG.site && CFG.site.indexOnIdle !== false) {
