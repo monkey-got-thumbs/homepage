@@ -4,3 +4,6 @@
 .playwright-mcp/
 .claude/
 notes/
+
+# Self-hosted model stack — large + regenerable via scripts/build-vendor.sh; deployed to S3, not git
+vendor/

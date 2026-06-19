@@ -139,15 +139,22 @@
         if (!('gpu' in navigator) || (CFG.model && CFG.model.generative === 'off')) { llmState = 'off'; return null; }
         llmState = 'loading'; setStatus('Loading the in-browser LLM…');
         try {
-            const webllm = await import(/* @vite-ignore */ WEBLLM_URL);
-            const want = (CFG.model && CFG.model.preferred) || 'Qwen2.5-1.5B-Instruct-q4f16_1-MLC';
-            const list = webllm.prebuiltAppConfig.model_list.map(m => m.model_id);
-            const pick = list.find(id => id === want)
-                || list.find(id => /Qwen2\.5-1\.5B-Instruct-q4f16/.test(id))
-                || list.find(id => /Qwen2\.5-0\.5B-Instruct-q4f16/.test(id))
-                || list.find(id => /Llama-3\.2-1B-Instruct-q4f16/.test(id));
-            if (!pick) { llmState = 'off'; return null; }
-            llm = await webllm.CreateMLCEngine(pick, {
+            const O = location.origin;
+            const webllm = await import(/* @vite-ignore */ O + '/vendor/web-llm/lib/index.js');
+            // Self-hosted: runtime, weights, and model-lib all served from our own origin
+            // (no CDN, no HuggingFace) so it works under the tight CSP. Cached in IndexedDB
+            // after first load, so the ~830MB download is one-time per device.
+            const modelId = 'Qwen2.5-1.5B-Instruct-q4f16_1-MLC';
+            const appConfig = {
+                useIndexedDBCache: true,
+                model_list: [{
+                    model: O + '/vendor/models/qwen2.5-1.5b',
+                    model_id: modelId,
+                    model_lib: O + '/vendor/web-llm/libs/Qwen2-1.5B-Instruct-q4f16_1_cs1k-webgpu.wasm'
+                }]
+            };
+            llm = await webllm.CreateMLCEngine(modelId, {
+                appConfig,
                 initProgressCallback: p => setStatus('Loading AI… ' + Math.round((p.progress || 0) * 100) + '%')
             });
             // probe grammar-constrained JSON support

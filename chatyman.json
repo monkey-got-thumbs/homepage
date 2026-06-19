@@ -8,7 +8,7 @@
         "nudge": "Kia ora! 👋 I'm Chatty. Ask me about learning AI, building agents, or chatyman.",
         "accent": "#A6FF4D"
     },
-    "model": { "preferred": "Qwen2.5-1.5B-Instruct-q4f16_1-MLC", "generative": "off" },
+    "model": { "preferred": "Qwen2.5-1.5B-Instruct-q4f16_1-MLC", "generative": "auto" },
     "thresholds": { "tauHigh": 0.62, "delta": 0.06, "tauAsk": 0.42 },
     "escalation": { "type": "email", "value": "hello@monkey-got-thumbs.com" },
     "inputPlaceholder": "Ask me anything about Monkey Got Thumbs…",
