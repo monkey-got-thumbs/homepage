@@ -104,43 +104,30 @@
     }
 
     /* ===================================================================== *
-     * Embeddings — transformers.js MiniLM in a worker (WASM, runs everywhere)
+     * Embeddings — transformers.js MiniLM, self-hosted under /vendor, MAIN thread.
+     * Not a worker: the threaded ONNX-WASM stalls inside a blob worker without
+     * cross-origin isolation. Inference of short text is fast once warm. Returns
+     * an async embed(texts) -> vectors, or null if the runtime can't load.
      * ===================================================================== */
-    function spawnEmbWorker() {
-        const src = `
-import { pipeline, env } from ${JSON.stringify(XENOVA_URL)};
-env.allowLocalModels = false;
-let ext = null;
-async function load(){ if(!ext) ext = await pipeline('feature-extraction','Xenova/all-MiniLM-L6-v2'); return ext; }
-onmessage = async (e) => {
-  const { id, texts } = e.data;
-  try {
-    const x = await load();
-    const out = await x(texts, { pooling: 'mean', normalize: true });
-    let vecs;
-    if (out && typeof out.tolist === 'function') vecs = out.tolist();
-    else { const d = out.dims[1]; vecs = []; for (let i=0;i<texts.length;i++) vecs.push(Array.from(out.data.slice(i*d,(i+1)*d))); }
-    postMessage({ id, ok: true, vecs });
-  } catch (err) { postMessage({ id, ok: false, error: String((err && err.message) || err) }); }
-};`;
-        const url = URL.createObjectURL(new Blob([src], { type: 'text/javascript' }));
-        const w = new Worker(url, { type: 'module' });
-        setTimeout(() => URL.revokeObjectURL(url), 0);
-        return w;
-    }
-    function initEmbeddings() {
-        let worker, seq = 0; const pending = new Map();
-        try { worker = spawnEmbWorker(); } catch (_) { return null; }
-        worker.onmessage = e => {
-            const { id, ok, vecs, error } = e.data; const p = pending.get(id);
-            if (p) { pending.delete(id); ok ? p.res(vecs) : p.rej(new Error(error)); }
-        };
-        worker.onerror = () => { for (const [, p] of pending) p.rej(new Error('emb worker crashed')); pending.clear(); embReady = false; };
-        return (texts) => new Promise((res, rej) => {
-            const id = ++seq; pending.set(id, { res, rej });
-            worker.postMessage({ id, texts });
-            setTimeout(() => { if (pending.has(id)) { pending.delete(id); rej(new Error('emb timeout')); } }, 120000);
-        });
+    async function initEmbeddings() {
+        try {
+            const O = location.origin;
+            const mod = await import(/* @vite-ignore */ O + '/vendor/transformers/transformers.min.js');
+            const pipeline = mod.pipeline, env = mod.env;
+            env.allowRemoteModels = false;          // self-hosted only — nothing from a CDN
+            env.allowLocalModels = true;
+            env.localModelPath = O + '/vendor/models/';
+            env.backends.onnx.wasm.wasmPaths = O + '/vendor/transformers/';
+            env.backends.onnx.wasm.numThreads = 1;  // no cross-origin isolation → single-thread
+            const ext = await pipeline('feature-extraction', 'Xenova/all-MiniLM-L6-v2', { dtype: 'q8' });
+            return async (texts) => {
+                const out = await ext(texts, { pooling: 'mean', normalize: true });
+                if (out && typeof out.tolist === 'function') return out.tolist();
+                const d = out.dims[1], v = [];
+                for (let i = 0; i < texts.length; i++) v.push(Array.from(out.data.slice(i * d, (i + 1) * d)));
+                return v;
+            };
+        } catch (e) { console.warn('chatyman: embeddings unavailable', e); return null; }
     }
 
     /* ===================================================================== *
@@ -721,11 +708,14 @@ onmessage = async (e) => {
         if (CFG.model && CFG.model.generative === 'eager') ensureLLM();
     }
 
+    let _embStarted = false;
     async function warmEmbeddings() {
-        if (embFn) return embReadyPromise;
-        embFn = initEmbeddings();
-        if (!embFn) { _embResolve(false); return embReadyPromise; }
-        try { await embFn(['hello']); embReady = true; _embResolve(true); }
+        if (_embStarted) return embReadyPromise;
+        _embStarted = true;
+        const fn = await initEmbeddings();
+        if (!fn) { _embResolve(false); return embReadyPromise; }
+        embFn = fn;
+        try { await embFn(['warm up']); embReady = true; _embResolve(true); }
         catch (_) { embReady = false; _embResolve(false); }
         return embReadyPromise;
     }

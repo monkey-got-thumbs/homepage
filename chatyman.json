@@ -8,7 +8,7 @@
         "nudge": "Kia ora! 👋 I'm Chatty. Ask me about learning AI, building agents, or chatyman.",
         "accent": "#A6FF4D"
     },
-    "model": { "preferred": "Qwen2.5-1.5B-Instruct-q4f16_1-MLC", "generative": "auto" },
+    "model": { "preferred": "Qwen2.5-1.5B-Instruct-q4f16_1-MLC", "generative": "off" },
     "thresholds": { "tauHigh": 0.62, "delta": 0.06, "tauAsk": 0.42 },
     "escalation": { "type": "email", "value": "hello@monkey-got-thumbs.com" },
     "inputPlaceholder": "Ask me anything about Monkey Got Thumbs…",
@@ -99,7 +99,7 @@
             },
             "chatty": {
                 "answer": {
-                    "text": "<strong>chatyman</strong> is an AI support chatbot that runs <em>entirely in your visitor's browser</em>. Unlike cloud bots that charge per conversation, chatyman is <strong>unlimited and flat-priced</strong> — your users' devices do the work. It's a curated workflow (so it never invents answers) plus a small in-browser LLM for understanding, and it can read your own site to answer the long tail. Deploy in minutes: one script tag + one config file.",
+                    "text": "<strong>chatyman</strong> is an AI support chatbot that runs <em>entirely in your visitor's browser</em>. Conversations run on the visitor's device, so there are no per-chat fees. It's a curated workflow (so it never invents answers) with in-browser understanding that reads your own site to answer questions, with citations. Deploy in minutes: one script tag + one config file.",
                     "sources": ["/chatty/"]
                 },
                 "buttons": [
@@ -116,7 +116,7 @@
             },
             "pricing": {
                 "answer": {
-                    "text": "chatyman pricing is simple and <strong>flat — no per-chat fees</strong>:<br><br>• <strong>Free</strong> — self-host, unlimited chats, community support<br>• <strong>Pro</strong> — hosted weights, branding, analytics, priority support<br>• <strong>Enterprise</strong> — SSO, SLAs, custom flows & onboarding<br><br>Compare that to cloud bots charging $1,250–$2,500+/month with per-conversation metering. Because chatyman runs in the browser, conversations are unlimited.",
+                    "text": "chatyman is <strong>open and free to run yourself today</strong> — it's a script plus a JSON config, and conversations run in the visitor's browser, so there are <strong>no per-chat fees</strong>. Managed hosting and team features are in development; we'd rather say that than invent a price list. (Cloud chatbots can run $1,250–$2,500+/month with per-conversation metering.)",
                     "sources": ["/chatty/"]
                 },
                 "buttons": [
