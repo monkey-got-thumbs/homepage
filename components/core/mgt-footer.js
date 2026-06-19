@@ -153,6 +153,7 @@ class MGTFooter extends HTMLElement {
                 <li><a href="/learn/frameworks/">Frameworks</a></li>
                 <li><a href="/learn/learning-paths/">Learning Paths</a></li>
                 <li><a href="/learn/human-factors/">Human Factors</a></li>
+                <li><a href="/learn/influences.html">Influences &amp; Credits</a></li>
               </ul>
             </section>
 
