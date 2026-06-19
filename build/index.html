@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, viewport-fit=cover" />
+    <title>Build &amp; sell your own AI agents | Monkey Got Thumbs</title>
+    <link rel="canonical" href="https://monkey-got-thumbs.com/build/">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#0E0B1A" />
+    <meta name="color-scheme" content="dark">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers:wght@400&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/tokens.css">
+    <link rel="stylesheet" href="/assets/css/base.css">
+    <link rel="stylesheet" href="/assets/css/layout.css">
+    <meta name="description" content="You don't need a computer-science degree to build an AI agent. Learn how to make one, put it to work, and earn from it — no-code with chatyman, or local and private with Metron and Airgap." />
+    <meta name="author" content="Monkey Got Thumbs" />
+    <meta property="og:title" content="Build &amp; sell your own AI agents | Monkey Got Thumbs">
+    <meta property="og:description" content="You don't need a computer-science degree to build an AI agent. Learn how to make one, put it to work, and earn from it — no-code with chatyman, or local and private with Metron and Airgap.">
+    <meta property="og:url" content="https://monkey-got-thumbs.com/build/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://monkey-got-thumbs.com/hero.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Build & sell your own AI agents",
+        "description": "Learn how to build an AI agent, put it to work, and earn from it — no engineering degree required.",
+        "url": "https://monkey-got-thumbs.com/build/",
+        "isPartOf": {
+            "@type": "WebSite",
+            "name": "Monkey Got Thumbs",
+            "url": "https://monkey-got-thumbs.com/"
+        },
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://monkey-got-thumbs.com/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Build",
+                    "item": "https://monkey-got-thumbs.com/build/"
+                }
+            ]
+        }
+    }
+    </script>
+    <style>
+        /* ===== Page scope: Build & sell ===== */
+        .build-hero {
+            text-align: center;
+            margin: var(--space-lg) auto var(--space-3xl);
+            max-width: var(--container-md);
+        }
+
+        .build-hero h1 {
+            margin-bottom: var(--space-md);
+        }
+
+        .build-hero .lead {
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 46rem;
+        }
+
+        .build-hero .cta {
+            justify-content: center;
+            margin-top: var(--space-lg);
+        }
+
+        /* Section spacing + headings */
+        .build-section {
+            margin-top: var(--space-3xl);
+        }
+
+        .build-section > h2 {
+            margin-top: 0;
+        }
+
+        .section-intro {
+            color: var(--color-muted);
+            max-width: 46rem;
+            margin-bottom: var(--space-lg);
+        }
+
+        /* Card grids */
+        .build-grid {
+            display: grid;
+            gap: var(--space-lg);
+            grid-template-columns: 1fr;
+            margin-top: var(--space-lg);
+        }
+
+        @media (min-width: 640px) {
+            .build-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (min-width: 900px) {
+            .build-grid--3 {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .build-card h3 {
+            margin-top: 0;
+            color: var(--color-fg-secondary);
+        }
+
+        .build-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .build-card .card-link {
+            display: inline-block;
+            margin-top: var(--space-sm);
+            font-weight: var(--font-weight-bold);
+        }
+
+        /* Numbered steps */
+        .step-card {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-sm);
+        }
+
+        .step-card .step-head {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+        }
+
+        .step-num {
+            flex: 0 0 auto;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: var(--radius-full);
+            background: linear-gradient(180deg, var(--color-brand-light), var(--color-brand));
+            color: #fff;
+            font-family: var(--font-display);
+            font-size: var(--font-size-xl);
+            letter-spacing: var(--letter-spacing-wide);
+            line-height: 1;
+        }
+
+        .step-card .step-head h3 {
+            margin: 0;
+            color: var(--color-accent);
+            font-family: var(--font-display);
+            letter-spacing: var(--letter-spacing-wide);
+            font-size: var(--font-size-2xl);
+        }
+
+        /* Status pill (coming soon treatment) */
+        .status-pill {
+            display: inline-block;
+            font-size: var(--font-size-xs);
+            font-weight: var(--font-weight-bold);
+            text-transform: uppercase;
+            letter-spacing: var(--letter-spacing-wide);
+            padding: 0.25rem 0.75rem;
+            border-radius: var(--radius-full);
+            background: color-mix(in srgb, var(--color-warning) 18%, transparent);
+            color: var(--color-warning);
+        }
+
+        .soon-card .soon-head {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: var(--space-md);
+            margin-bottom: var(--space-md);
+        }
+
+        .soon-card .soon-head h2 {
+            margin: 0;
+        }
+
+        .soon-card .build-steps {
+            margin: var(--space-md) 0 0;
+            padding-left: var(--space-lg);
+        }
+
+        .soon-card .build-steps li {
+            color: var(--color-fg);
+        }
+
+        /* Final CTA band */
+        .final-cta {
+            text-align: center;
+            margin-top: var(--space-3xl);
+        }
+
+        .final-cta .cta {
+            justify-content: center;
+        }
+
+        .final-cta mgt-newsletter {
+            display: block;
+            margin-top: var(--space-xl);
+            text-align: left;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .build-card,
+            .step-num {
+                transition: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <mgt-header></mgt-header>
+    <main id="main-content">
+        <nav aria-label="Breadcrumb">
+            <ul class="breadcrumbs">
+                <li><a href="/">Home</a></li>
+                <li><span aria-current="page">Build</span></li>
+            </ul>
+        </nav>
+
+        <section class="build-hero" aria-labelledby="hero-heading">
+            <h1 id="hero-heading">Build it. Share it. Sell it.</h1>
+            <p class="lead">You don't need a computer-science degree to build an AI agent anymore. We'll show you how to make one, put it to work, and even earn from it.</p>
+            <div class="cta">
+                <a class="btn" href="/chatty/">Start with chatyman</a>
+                <a class="btn btn--secondary" href="/learn/">Learn the basics</a>
+            </div>
+        </section>
+
+        <section class="build-section" aria-labelledby="why-heading">
+            <h2 id="why-heading">Why build your own?</h2>
+            <p class="section-intro">The people who learn to build with AI get the upside. Here's what's in it for you.</p>
+            <div class="build-grid build-grid--3">
+                <article class="card build-card">
+                    <h3>Own your tools</h3>
+                    <p>Stop renting someone else's software. When you build the agent, you decide how it works, what it can touch, and where your data lives. You stay in control.</p>
+                </article>
+                <article class="card build-card">
+                    <h3>New income</h3>
+                    <p>An agent is something people will pay for. Package the one you build, put a price on it, and turn a weekend project into a product.</p>
+                </article>
+                <article class="card build-card">
+                    <h3>Stay relevant</h3>
+                    <p>AI isn't coming for the people who use it — it's lifting them. The folks who build with AI today are the ones with the leverage tomorrow.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="build-section" aria-labelledby="start-heading">
+            <h2 id="start-heading">Three ways to start</h2>
+            <p class="section-intro">Pick the path that fits you. They all lead to the same place: an agent you made, doing real work.</p>
+            <div class="build-grid build-grid--3">
+                <article class="card build-card step-card">
+                    <div class="step-head">
+                        <span class="step-num" aria-hidden="true">1</span>
+                        <h3>No-code with chatyman</h3>
+                    </div>
+                    <p>Author a simple config, drop one <code>&lt;script&gt;</code> tag onto your site, and your bot is live. No backend, no build step, no engineering team.</p>
+                    <a class="card-link" href="/chatty/">Build with chatyman →</a>
+                </article>
+                <article class="card build-card step-card">
+                    <div class="step-head">
+                        <span class="step-num" aria-hidden="true">2</span>
+                        <h3>Learn the foundations</h3>
+                    </div>
+                    <p>Understand what's actually going on: agents, prompts, memory, and tools. A little theory makes everything you build sharper and more reliable.</p>
+                    <a class="card-link" href="/learn/">Learn the foundations →</a>
+                </article>
+                <article class="card build-card step-card">
+                    <div class="step-head">
+                        <span class="step-num" aria-hidden="true">3</span>
+                        <h3>Go local &amp; private</h3>
+                    </div>
+                    <p>Run models on your own hardware with Metron and Airgap. Local-first, no cloud bills, no lock-in — your agent, your machine, your data.</p>
+                    <a class="card-link" href="/products/">Explore local tools →</a>
+                </article>
+            </div>
+        </section>
+
+        <section class="build-section" aria-labelledby="sell-heading">
+            <h2 id="sell-heading">Share &amp; sell</h2>
+            <p class="section-intro">Once you've built something useful, why keep it to yourself? Here's the vision we're building toward.</p>
+            <div class="card card--featured soon-card">
+                <div class="soon-head">
+                    <h2>The Monkey Got Thumbs marketplace</h2>
+                    <span class="status-pill">Coming soon</span>
+                </div>
+                <p>Package the agent you built. List it where people can find it. Earn when they use it. That's the loop we want to put in every ordinary person's hands — building AI shouldn't only pay off for big companies.</p>
+                <p>We're honest about where this stands: the marketplace isn't open yet. We're building it — and the playbooks that show you how to package, price, and sell what you make.</p>
+                <ul class="build-steps">
+                    <li><strong>Build</strong> your agent with chatyman or your own local tools.</li>
+                    <li><strong>Package</strong> it with our templates and seller guides (in the works).</li>
+                    <li><strong>List &amp; earn</strong> when the marketplace opens.</li>
+                </ul>
+                <p>We're building the marketplace and the playbooks. Get on the list to be a founding seller.</p>
+                <div class="cta">
+                    <a class="btn" href="#get-building">Join the founding sellers list</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="build-section final-cta" id="get-building" aria-labelledby="final-heading">
+            <h2 id="final-heading">Start building today</h2>
+            <p class="lead">Make your first agent this week. We'll hand you the guides, templates, and first access to the marketplace.</p>
+            <div class="cta">
+                <a class="btn" href="/chatty/">Start with chatyman</a>
+                <a class="btn btn--secondary" href="/learn/">Learn the basics</a>
+            </div>
+            <mgt-newsletter heading="Get building" description="Guides, templates, and first access to the marketplace."></mgt-newsletter>
+        </section>
+    </main>
+    <mgt-footer></mgt-footer>
+    <script src="/assets/js/tracking.js"></script>
+    <script type="module" src="/assets/js/app.js"></script>
+    <script type="module" src="/components/core/mgt-header.js"></script>
+    <script type="module" src="/components/core/mgt-footer.js"></script>
+    <script type="module" src="/components/core/mgt-newsletter.js"></script>
+</body>
+</html>

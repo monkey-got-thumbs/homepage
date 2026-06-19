@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, viewport-fit=cover" />
+    <title>Products — Monkey Got Thumbs</title>
+    <link rel="canonical" href="https://monkey-got-thumbs.com/products/">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0E0B1A" />
+    <meta name="color-scheme" content="dark">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers:wght@400&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/tokens.css">
+    <link rel="stylesheet" href="/assets/css/base.css">
+    <link rel="stylesheet" href="/assets/css/layout.css">
+    <meta name="description" content="Augmented intelligence tools by Monkey Got Thumbs. Metron, Airgap, Bigboy, and Rusty — built to keep humans in control." />
+    <meta name="keywords" content="augmented intelligence tools, AI tools, local AI, Metron, Airgap" />
+    <meta name="author" content="Monkey Got Thumbs" />
+    <meta property="og:title" content="Products — Monkey Got Thumbs">
+    <meta property="og:description" content="Augmented intelligence tools built to keep humans in control.">
+    <meta property="og:url" content="https://monkey-got-thumbs.com/products/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://monkey-got-thumbs.com/hero.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "CollectionPage", "name": "Products", "url": "https://monkey-got-thumbs.com/products/",
+      "breadcrumb": { "@type": "BreadcrumbList", "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://monkey-got-thumbs.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Products" }
+    ]}}
+    </script>
+    <style>
+        .content { max-width: 48rem; margin: 0 auto; padding: 2rem 1rem; }
+        .content p { line-height: 1.8; margin-bottom: 1.25rem; }
+        .lead { font-size: var(--font-size-lg); color: var(--color-fg-secondary); line-height: 1.7; }
+        .product-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
+        .product { background: var(--color-bg-secondary); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 2rem; transition: transform var(--transition-fast), box-shadow var(--transition-fast); }
+        .product:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+        .product h2 { font-family: var(--font-display); color: var(--color-accent); font-size: var(--font-size-2xl); margin: 0 0 0.5rem 0; letter-spacing: 0.02em; }
+        .product .tagline { color: var(--color-fg-secondary); font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; }
+        .product p { font-size: var(--font-size-base); line-height: 1.7; margin-bottom: 0.75rem; }
+        .product .status { display: inline-block; font-size: var(--font-size-xs); padding: 0.25rem 0.75rem; border-radius: var(--radius-full); margin-top: 0.75rem; }
+        .status--dev { background: rgba(166, 255, 77, 0.15); color: var(--color-accent); }
+        .status--soon { background: rgba(251, 191, 36, 0.15); color: var(--color-warning); }
+        .status--live { background: rgba(166, 255, 77, 0.18); color: var(--color-accent); }
+        .product--featured { border-color: var(--color-accent); grid-column: 1 / -1; }
+        @media (max-width: 640px) { .product-grid { grid-template-columns: 1fr; } }
+        @media (prefers-reduced-motion: reduce) { .product:hover { transform: none; } }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <mgt-header></mgt-header>
+    <main id="main-content">
+        <article class="content">
+            <nav aria-label="Breadcrumb"><ul class="breadcrumbs"><li><a href="/">Home</a></li><li><span aria-current="page">Products</span></li></ul></nav>
+            <header>
+                <h1>Products</h1>
+                <p class="lead">Tools built on augmented intelligence principles. The human directs, the machine assists. No black boxes. No cloud dependencies you don't control. Our first shipping product, chatyman, runs AI in the browser — try it on the chatyman page.</p>
+            </header>
+
+            <div class="product-grid">
+                <div class="product product--featured">
+                    <h2>chatyman</h2>
+                    <p class="tagline">In-Browser AI Chatbot</p>
+                    <p>An AI support chatbot that runs entirely in your visitors' browsers — unlimited conversations, flat price, and data that never leaves the device. A drop-in alternative to expensive cloud chatbots.</p>
+                    <p>Curated workflow so it never invents answers, a small in-browser LLM for understanding, and it can read your own site to answer the long tail — all same-origin, no backend.</p>
+                    <span class="status status--live">Available</span>
+                    <a class="btn" href="/chatty/" style="margin-top:1rem;display:inline-block;">Explore chatyman →</a>
+                </div>
+
+                <div class="product">
+                    <h2>Metron</h2>
+                    <p class="tagline">Local AI Model Management</p>
+                    <p>Run AI models on your own hardware. Load, swap, and configure models without sending data to the cloud. Full control over your inference pipeline.</p>
+                    <p>Built in Rust with a Python MLX bridge for Apple Silicon. Designed for people who want AI capability without cloud dependency.</p>
+                    <span class="status status--dev">In Development</span>
+                </div>
+
+                <div class="product">
+                    <h2>Airgap</h2>
+                    <p class="tagline">Private AI Chat &amp; Workspace</p>
+                    <p>A local-first AI chat system with workspace persistence, knowledge management, and telemetry. Your conversations, your data, your machine.</p>
+                    <p>Structured conversation history, per-profile workspaces, and an extensible tool system — all running air-gapped on your device.</p>
+                    <span class="status status--dev">In Development</span>
+                </div>
+
+                <div class="product">
+                    <h2>Bigboy</h2>
+                    <p class="tagline">Heavy-Duty AI Processing</p>
+                    <p>When local hardware isn't enough. Bigboy handles the compute-intensive tasks that need more muscle — batch processing, large model inference, and data-heavy workflows.</p>
+                    <p>Designed to complement your local tools, not replace them. You choose what goes to the cloud and what stays on your machine.</p>
+                    <span class="status status--soon">Coming Soon</span>
+                </div>
+
+                <div class="product">
+                    <h2>Rusty</h2>
+                    <p class="tagline">Systems-Level AI Tooling</p>
+                    <p>Low-level, high-performance AI infrastructure built in Rust. The plumbing that makes everything else fast, safe, and reliable.</p>
+                    <p>Memory-safe, concurrent, and designed for the kind of performance-critical work where milliseconds matter and crashes are not an option.</p>
+                    <span class="status status--soon">Coming Soon</span>
+                </div>
+            </div>
+
+            <section>
+                <h2>Our Philosophy</h2>
+                <p>
+                    Every tool we build follows the same principles that underpin <a href="/learn/foundations/what-is-ai.html">augmented intelligence</a>:
+                </p>
+                <ul style="padding-left: 1.5rem; margin-bottom: 1.25rem;">
+                    <li style="margin-bottom: 0.5rem; line-height: 1.7;"><strong>You stay in control.</strong> AI assists. You decide what to trust, what to verify, and what to override.</li>
+                    <li style="margin-bottom: 0.5rem; line-height: 1.7;"><strong>Your data stays yours.</strong> Local-first by default. Cloud is opt-in, not mandatory.</li>
+                    <li style="margin-bottom: 0.5rem; line-height: 1.7;"><strong>No vendor lock-in.</strong> Open formats, standard protocols, portable data.</li>
+                    <li style="margin-bottom: 0.5rem; line-height: 1.7;"><strong>Built to last.</strong> Rust where performance matters. Simple architecture over clever abstraction.</li>
+                </ul>
+            </section>
+
+            <section class="card" style="margin-top: 2rem;">
+                <h2>Stay Updated</h2>
+                <p>Get notified when products launch and receive early access.</p>
+                <mgt-newsletter heading="Product Updates" description="Be first to know when we ship. No spam." compact></mgt-newsletter>
+            </section>
+        </article>
+    </main>
+    <mgt-footer></mgt-footer>
+    <script src="/assets/js/tracking.js"></script>
+    <script type="module" src="/assets/js/app.js"></script>
+    <script type="module" src="/components/core/mgt-header.js"></script>
+    <script type="module" src="/components/core/mgt-footer.js"></script>
+    <script type="module" src="/components/core/mgt-newsletter.js"></script>
+</body>
+</html>

@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, viewport-fit=cover" />
+    <title>chatyman — the in-browser AI chatbot | Monkey Got Thumbs</title>
+    <link rel="canonical" href="https://monkey-got-thumbs.com/chatty/">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#0E0B1A" />
+    <meta name="color-scheme" content="dark">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers:wght@400&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/tokens.css">
+    <link rel="stylesheet" href="/assets/css/base.css">
+    <link rel="stylesheet" href="/assets/css/layout.css">
+    <meta name="description" content="chatyman is an AI support chatbot that runs entirely in your visitors' browsers. Unlimited conversations, flat price, citations from your own site, and data that never leaves the device." />
+    <meta name="author" content="Monkey Got Thumbs" />
+    <meta property="og:title" content="chatyman — the in-browser AI chatbot | Monkey Got Thumbs">
+    <meta property="og:description" content="chatyman is an AI support chatbot that runs entirely in your visitors' browsers. Unlimited conversations, flat price, citations from your own site, and data that never leaves the device.">
+    <meta property="og:url" content="https://monkey-got-thumbs.com/chatty/">
+    <meta property="og:type" content="product">
+    <meta property="og:image" content="https://monkey-got-thumbs.com/hero.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "chatyman",
+        "description": "An AI support chatbot that runs entirely in the visitor's browser. Unlimited conversations, flat pricing, on-device privacy, and cited answers scoped to your own site.",
+        "brand": { "@type": "Brand", "name": "Monkey Got Thumbs" },
+        "url": "https://monkey-got-thumbs.com/chatty/",
+        "image": "https://monkey-got-thumbs.com/hero.png",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Any modern web browser",
+        "offers": {
+            "@type": "AggregateOffer",
+            "priceCurrency": "USD",
+            "lowPrice": 0,
+            "highPrice": 49,
+            "offerCount": 3,
+            "offers": [
+                { "@type": "Offer", "name": "Free / Self-host", "price": 0, "priceCurrency": "USD", "url": "https://monkey-got-thumbs.com/chatty/#pricing" },
+                { "@type": "Offer", "name": "Pro", "price": 49, "priceCurrency": "USD", "url": "https://monkey-got-thumbs.com/chatty/#pricing" },
+                { "@type": "Offer", "name": "Enterprise", "priceCurrency": "USD", "url": "https://monkey-got-thumbs.com/contact/" }
+            ]
+        }
+    }
+    </script>
+    <style>
+        .content { max-width: var(--container-md); margin: 0 auto; }
+
+        /* ===== HERO ===== */
+        .cm-hero { text-align: center; padding: var(--space-lg) 0 var(--space-2xl); }
+        .cm-hero h1 { margin-bottom: var(--space-md); }
+        .cm-hero .lead { max-width: 44rem; margin-left: auto; margin-right: auto; }
+        .cm-badges { display: flex; flex-wrap: wrap; gap: var(--space-sm); justify-content: center; margin-bottom: var(--space-lg); padding: 0; list-style: none; }
+        .cm-badges li { margin: 0; }
+        .cm-badge {
+            display: inline-flex; align-items: center; gap: var(--space-xs);
+            font-size: var(--font-size-xs); font-weight: var(--font-weight-semibold);
+            text-transform: uppercase; letter-spacing: var(--letter-spacing-wide);
+            color: var(--color-accent);
+            background: color-mix(in srgb, var(--color-accent) 12%, transparent);
+            border: 1px solid color-mix(in srgb, var(--color-accent) 35%, transparent);
+            padding: 0.35rem 0.8rem; border-radius: var(--radius-full);
+        }
+        .cm-cta { display: flex; flex-wrap: wrap; gap: var(--space-md); justify-content: center; margin-top: var(--space-lg); }
+
+        /* ===== DEMO ===== */
+        .cm-demo-wrap { text-align: center; }
+        .cm-demo-wrap p { max-width: 40rem; margin-left: auto; margin-right: auto; }
+        #cm-demo { max-width: 420px; width: 100%; min-height: 560px; margin: var(--space-lg) auto 0; }
+        .cm-demo-note {
+            display: inline-flex; align-items: center; gap: var(--space-xs);
+            font-size: var(--font-size-sm); color: var(--color-success);
+            margin-top: var(--space-md);
+        }
+
+        /* ===== HOW IT WORKS / STEPS ===== */
+        .cm-steps { display: grid; gap: var(--space-lg); grid-template-columns: 1fr; margin: var(--space-lg) 0 0; padding: 0; list-style: none; counter-reset: cm-step; }
+        @media (min-width: 800px) { .cm-steps { grid-template-columns: repeat(3, 1fr); } }
+        .cm-steps > li { margin: 0; padding: var(--space-lg); background: var(--color-bg-secondary); border: 1px solid var(--color-border); border-radius: var(--radius); }
+        .cm-step-num {
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 2.5rem; height: 2.5rem; border-radius: var(--radius-full);
+            background: linear-gradient(180deg, var(--color-brand-light), var(--color-brand));
+            color: #fff; font-family: var(--font-display); font-size: var(--font-size-2xl);
+            letter-spacing: var(--letter-spacing-wide); margin-bottom: var(--space-md);
+        }
+        .cm-steps h3 { margin-top: 0; }
+        .cm-steps p { margin-bottom: 0; color: var(--color-muted); }
+
+        /* ===== FEATURES ===== */
+        .cm-features { display: grid; gap: var(--space-lg); grid-template-columns: 1fr; margin-top: var(--space-lg); }
+        @media (min-width: 640px) { .cm-features { grid-template-columns: 1fr 1fr; } }
+        @media (min-width: 960px) { .cm-features { grid-template-columns: repeat(3, 1fr); } }
+        .cm-features .card h3 { margin-top: 0; color: var(--color-accent); }
+        .cm-features .card p { margin-bottom: 0; color: var(--color-muted); }
+
+        /* ===== COMPARISON TABLE ===== */
+        .cm-table-scroll { overflow-x: auto; margin-top: var(--space-lg); -webkit-overflow-scrolling: touch; }
+        .cm-compare { min-width: 32rem; }
+        .cm-compare th, .cm-compare td { vertical-align: top; }
+        .cm-compare thead th { font-size: var(--font-size-sm); }
+        .cm-compare tbody th { font-weight: var(--font-weight-semibold); color: var(--color-fg-secondary); white-space: nowrap; }
+        .cm-compare .cm-col-chatyman {
+            color: var(--color-accent); font-weight: var(--font-weight-semibold);
+            background: color-mix(in srgb, var(--color-bg-secondary) 70%, var(--color-accent) 8%);
+        }
+        .cm-compare thead .cm-col-chatyman { color: var(--color-accent); }
+
+        /* ===== PRICING ===== */
+        .cm-pricing { display: grid; gap: var(--space-lg); grid-template-columns: 1fr; margin-top: var(--space-lg); align-items: start; }
+        @media (min-width: 880px) { .cm-pricing { grid-template-columns: repeat(3, 1fr); } }
+        .cm-plan { display: flex; flex-direction: column; height: 100%; position: relative; }
+        .cm-plan h3 { margin-top: 0; color: var(--color-fg); }
+        .cm-price { font-family: var(--font-display); font-size: var(--font-size-4xl); color: var(--color-accent); letter-spacing: var(--letter-spacing-wide); line-height: 1.1; margin-bottom: var(--space-md); }
+        .cm-price span { font-family: var(--font-sans); font-size: var(--font-size-base); color: var(--color-muted); letter-spacing: normal; font-weight: var(--font-weight-semibold); }
+        .cm-plan ul { list-style: none; margin: 0 0 var(--space-lg); padding: 0; flex: 1; }
+        .cm-plan ul li { display: flex; gap: var(--space-sm); margin-bottom: var(--space-sm); line-height: var(--line-height-normal); color: var(--color-fg); }
+        .cm-plan ul li::before { content: "✓"; color: var(--color-accent); font-weight: var(--font-weight-bold); flex: 0 0 auto; }
+        .cm-plan .btn { display: block; width: 100%; text-align: center; margin-top: auto; }
+        .cm-plan-label {
+            position: absolute; top: calc(-1 * var(--space-sm)); right: var(--space-md);
+            font-size: var(--font-size-xs); font-weight: var(--font-weight-bold);
+            text-transform: uppercase; letter-spacing: var(--letter-spacing-wide);
+            color: var(--color-bg); background: var(--color-accent);
+            padding: 0.25rem 0.65rem; border-radius: var(--radius-full);
+        }
+        .cm-pricing-note { text-align: center; margin-top: var(--space-lg); color: var(--color-muted); }
+
+        /* ===== INSTALL / CODE BLOCKS ===== */
+        .cm-install-step { margin-top: var(--space-xl); }
+        .cm-install-step:first-of-type { margin-top: var(--space-lg); }
+        .cm-code {
+            background: var(--color-bg-secondary); border: 1px solid var(--color-border);
+            border-radius: var(--radius); padding: var(--space-md);
+            overflow-x: auto; -webkit-overflow-scrolling: touch;
+            font-family: var(--font-mono); font-size: var(--font-size-sm);
+            line-height: var(--line-height-normal); color: var(--color-fg);
+            margin: var(--space-sm) 0 0;
+        }
+        .cm-code code { background: none; color: inherit; padding: 0; border-radius: 0; font-size: inherit; white-space: pre; }
+
+        /* ===== FAQ ===== */
+        .cm-faq { margin-top: var(--space-lg); }
+        .cm-faq details { background: var(--color-bg-secondary); }
+        .cm-faq p:last-child { margin-bottom: 0; }
+
+        /* ===== FINAL CTA ===== */
+        .cm-final { margin-top: var(--space-3xl); }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <mgt-header></mgt-header>
+    <main id="main-content">
+        <article class="content">
+            <nav aria-label="Breadcrumb">
+                <ul class="breadcrumbs">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/products/">Products</a></li>
+                    <li><span aria-current="page">chatyman</span></li>
+                </ul>
+            </nav>
+
+            <section id="hero" class="cm-hero" aria-labelledby="hero-title">
+                <ul class="cm-badges" aria-label="Highlights">
+                    <li><span class="cm-badge">In-browser</span></li>
+                    <li><span class="cm-badge">Unlimited chats</span></li>
+                    <li><span class="cm-badge">Private</span></li>
+                </ul>
+                <h1 id="hero-title">chatyman</h1>
+                <p class="lead">An AI support chatbot that runs entirely in your visitors' browsers. Unlimited conversations, flat price, and your data never leaves the device.</p>
+                <div class="cm-cta">
+                    <a class="btn" href="#demo">Try the live demo</a>
+                    <a class="btn btn--secondary" href="#pricing">See pricing</a>
+                </div>
+            </section>
+
+            <section id="demo" class="cm-demo-wrap" aria-labelledby="demo-title">
+                <h2 id="demo-title">Try it right now</h2>
+                <p>This is chatyman running locally in your browser, configured to help with this site. Click around or just type.</p>
+                <div id="cm-demo" role="region" aria-label="Live chatyman demo"></div>
+                <p class="cm-demo-note"><span aria-hidden="true">🔒</span> No data is sent to a server — everything happens on your device.</p>
+            </section>
+
+            <section id="how" aria-labelledby="how-title">
+                <h2 id="how-title">How it works</h2>
+                <ol class="cm-steps">
+                    <li>
+                        <span class="cm-step-num" aria-hidden="true">1</span>
+                        <h3>Describe your bot</h3>
+                        <p>Write a <code>/chatyman.json</code> describing your conversation flow and which pages it's allowed to read.</p>
+                    </li>
+                    <li>
+                        <span class="cm-step-num" aria-hidden="true">2</span>
+                        <h3>Add one line</h3>
+                        <p>Drop a single tag on your site:</p>
+                        <pre class="cm-code"><code>&lt;script src="/chatyman.js" defer&gt;&lt;/script&gt;</code></pre>
+                    </li>
+                    <li>
+                        <span class="cm-step-num" aria-hidden="true">3</span>
+                        <h3>It just works</h3>
+                        <p>Same-origin, no backend, no build step. The bot loads and answers straight from your own files.</p>
+                    </li>
+                </ol>
+            </section>
+
+            <section id="features" aria-labelledby="features-title">
+                <h2 id="features-title">Built to answer, not to guess</h2>
+                <div class="cm-features">
+                    <div class="card">
+                        <h3>Curated workflow</h3>
+                        <p>Authoritative quick-reply flows give exact, on-brand answers and never invent facts.</p>
+                    </div>
+                    <div class="card">
+                        <h3>In-browser LLM understanding</h3>
+                        <p>A small on-device model reads intent and routes correctly — no more keyword-bot misrouting.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Reads your own site</h3>
+                        <p>Scoped agentic retrieval answers from your pages with citations — never the open web, never invented facts.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Private by design</h3>
+                        <p>Conversations never leave the browser. Same-origin only, so CORS is never an issue and no per-message server cost.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Drop-in + degrades gracefully</h3>
+                        <p>Works everywhere as a smart scripted bot on WASM; the generative LLM layer switches on when WebGPU is available.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="compare" aria-labelledby="compare-title">
+                <h2 id="compare-title">chatyman vs cloud chatbots</h2>
+                <div class="cm-table-scroll">
+                    <table class="cm-compare">
+                        <caption class="sr-only">Comparison of chatyman against a typical cloud chatbot platform such as Ambit.</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Capability</th>
+                                <th scope="col" class="cm-col-chatyman">chatyman</th>
+                                <th scope="col">Cloud chatbot (e.g. Ambit)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">Where it runs</th>
+                                <td class="cm-col-chatyman">Your visitor's browser</td>
+                                <td>Vendor cloud</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Conversation pricing</th>
+                                <td class="cm-col-chatyman">Unlimited, flat</td>
+                                <td>Metered, $1,250–$2,500+/mo</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Cost per extra chat</th>
+                                <td class="cm-col-chatyman">$0</td>
+                                <td>Per-conversation fees</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Data privacy</th>
+                                <td class="cm-col-chatyman">Never leaves the browser</td>
+                                <td>Sent to vendor + LLM provider</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Time to deploy</th>
+                                <td class="cm-col-chatyman">Minutes</td>
+                                <td>2–4 weeks</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Lock-in</th>
+                                <td class="cm-col-chatyman">You own the files</td>
+                                <td>SaaS subscription</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Offline / air-gap</th>
+                                <td class="cm-col-chatyman">Self-hostable</td>
+                                <td>No</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="pricing" aria-labelledby="pricing-title">
+                <h2 id="pricing-title">Flat pricing</h2>
+                <div class="cm-pricing">
+                    <div class="card cm-plan">
+                        <h3>Free / Self-host</h3>
+                        <p class="cm-price">$0</p>
+                        <ul>
+                            <li>Unlimited chats</li>
+                            <li>Full source</li>
+                            <li>Self-host the model weights</li>
+                            <li>Community support</li>
+                        </ul>
+                        <a class="btn btn--secondary" href="#install">Get started</a>
+                    </div>
+                    <div class="card card--featured cm-plan">
+                        <span class="cm-plan-label">Most popular</span>
+                        <h3>Pro</h3>
+                        <p class="cm-price">$49<span>/mo</span></p>
+                        <ul>
+                            <li>Everything in Free</li>
+                            <li>Hosted model weights (zero-setup)</li>
+                            <li>Custom branding</li>
+                            <li>Conversation analytics</li>
+                            <li>Priority support</li>
+                            <li>Remove "Powered by"</li>
+                        </ul>
+                        <a class="btn" href="/contact/">Start Pro</a>
+                    </div>
+                    <div class="card cm-plan">
+                        <h3>Enterprise</h3>
+                        <p class="cm-price">Custom</p>
+                        <ul>
+                            <li>Everything in Pro</li>
+                            <li>SSO</li>
+                            <li>SLAs</li>
+                            <li>Custom flows &amp; onboarding</li>
+                            <li>On-prem weights</li>
+                            <li>Dedicated support</li>
+                        </ul>
+                        <a class="btn btn--secondary" href="/contact/">Talk to sales</a>
+                    </div>
+                </div>
+                <p class="cm-pricing-note">Flat price, unlimited conversations — because your users' browsers do the work.</p>
+            </section>
+
+            <section id="install" aria-labelledby="install-title">
+                <h2 id="install-title">Add chatyman in two steps</h2>
+                <div class="cm-install-step">
+                    <h3>Step 1 — Add the script</h3>
+                    <p>Host <code>chatyman.js</code> on your site and add one tag before <code>&lt;/body&gt;</code>:</p>
+                    <pre class="cm-code"><code>&lt;script src="/chatyman.js" defer&gt;&lt;/script&gt;</code></pre>
+                </div>
+                <div class="cm-install-step">
+                    <h3>Step 2 — Author <code>/chatyman.json</code></h3>
+                    <p>Describe a tiny flow and the pages your bot may read:</p>
+                    <pre class="cm-code"><code>{
+    "branding": { "name": "Helpdesk" },
+    "flow": {
+        "start": "root",
+        "nodes": {
+            "root": {
+                "say": "Hi! How can I help?",
+                "buttons": [
+                    { "label": "Pricing", "goto": "pricing" }
+                ],
+                "fallback": "site_rag"
+            },
+            "pricing": {
+                "answer": {
+                    "text": "Our plans start at $0.",
+                    "sources": ["/pricing/"]
+                }
+            }
+        }
+    },
+    "site": {
+        "include": ["/", "/pricing/*"],
+        "maxPages": 40
+    }
+}</code></pre>
+                </div>
+                <p>Want a real, working example? View this site's own <a href="/chatyman.json">chatyman.json</a> and <a href="/chatyman.js">chatyman.js</a> — the same files powering the demo above.</p>
+            </section>
+
+            <section id="faq" aria-labelledby="faq-title">
+                <h2 id="faq-title">Frequently asked questions</h2>
+                <div class="cm-faq">
+                    <details>
+                        <summary>Does it need a special browser?</summary>
+                        <p>No. chatyman works in every modern browser as a smart scripted bot, with embeddings running on WASM everywhere. Generative answers need WebGPU; where it's available, the in-browser LLM layer switches on automatically.</p>
+                    </details>
+                    <details>
+                        <summary>Is my data safe?</summary>
+                        <p>Yes. Conversations run in-browser and same-origin — nothing is sent to our servers or any third-party LLM provider. There's no per-message server cost because the work happens on the visitor's device.</p>
+                    </details>
+                    <details>
+                        <summary>Can it answer questions about my site?</summary>
+                        <p>Yes. chatyman performs scoped retrieval over your own pages and answers with citations. It only reads the pages you allow — never the open web, and it won't invent facts.</p>
+                    </details>
+                    <details>
+                        <summary>How is it cheaper?</summary>
+                        <p>There's no per-chat server cost: the visitor's browser does the work. That means unlimited conversations at a flat price, instead of metered per-conversation fees.</p>
+                    </details>
+                </div>
+            </section>
+
+            <section id="get-started" class="cm-final" aria-labelledby="final-title">
+                <h2 id="final-title">Ready to ship?</h2>
+                <mgt-newsletter heading="Ship chatyman" description="Get launch updates and the install guide."></mgt-newsletter>
+            </section>
+        </article>
+    </main>
+    <mgt-footer></mgt-footer>
+    <script src="/assets/js/tracking.js"></script>
+    <script type="module" src="/assets/js/app.js"></script>
+    <script type="module" src="/components/core/mgt-header.js"></script>
+    <script type="module" src="/components/core/mgt-footer.js"></script>
+    <script type="module" src="/components/core/mgt-newsletter.js"></script>
+    <script src="/chatyman.js" data-inline="#cm-demo" defer></script>
+</body>
+</html>

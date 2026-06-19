@@ -1,0 +1,154 @@
+{
+    "id": "monkey-got-thumbs",
+    "version": "1.0.0",
+    "branding": {
+        "name": "Chatty",
+        "subtitle": "Your guide to Monkey Got Thumbs",
+        "launcherText": "Need help?",
+        "accent": "#A6FF4D"
+    },
+    "model": { "preferred": "Qwen2.5-1.5B-Instruct-q4f16_1-MLC", "generative": "auto" },
+    "thresholds": { "tauHigh": 0.62, "delta": 0.06, "tauAsk": 0.42 },
+    "escalation": { "type": "email", "value": "hello@monkey-got-thumbs.com" },
+    "inputPlaceholder": "Ask me anything about Monkey Got Thumbs…",
+    "outOfScope": "I'm focused on Monkey Got Thumbs — learning AI, building agents, and our products. I can also connect you to a human. What would you like?",
+    "noResults": "I couldn't find that on the site. Want me to connect you to a human, or try rephrasing?",
+    "site": {
+        "sitemap": "/sitemap.xml",
+        "include": ["/", "/learn/*", "/products/*", "/chatty/*", "/build/*", "/resources/*", "/community/*", "/tools/*", "/contact/*"],
+        "exclude": ["/lp/*", "/privacy/*", "/terms/*", "/accessibility/*"],
+        "maxPages": 60,
+        "maxChunks": 500,
+        "indexOnIdle": true
+    },
+    "flow": {
+        "start": "root",
+        "globals": {
+            "intents": [
+                { "id": "human", "desc": "wants to talk to a person", "examples": ["talk to a human", "speak to someone", "contact a person", "real person", "agent please"], "action": "escalate" },
+                { "id": "restart", "desc": "start over", "examples": ["start over", "go back", "main menu", "restart"], "goto": "root" }
+            ]
+        },
+        "nodes": {
+            "root": {
+                "say": "Kia ora! I'm Chatty — your guide to <strong>Monkey Got Thumbs</strong>. We help real people understand AI, build their own agents, and even sell them. What brings you here?",
+                "buttons": [
+                    { "label": "Learn about AI", "goto": "learn" },
+                    { "label": "Build my own agent", "goto": "build" },
+                    { "label": "See the products", "goto": "products" },
+                    { "label": "What's chatyman?", "goto": "chatty" },
+                    { "label": "Talk to a human", "action": "escalate" }
+                ],
+                "intents": [
+                    { "id": "learn", "desc": "learn about AI", "examples": ["I want to learn AI", "teach me about AI", "AI for beginners", "where do I start with AI", "understand artificial intelligence"], "goto": "learn" },
+                    { "id": "build", "desc": "build their own agent", "examples": ["build my own agent", "make a chatbot", "create an AI agent", "how do I build an agent", "I want to make my own AI"], "goto": "build" },
+                    { "id": "products", "desc": "see products", "examples": ["what products do you have", "show me your tools", "what do you sell", "products"], "goto": "products" },
+                    { "id": "chatty", "desc": "the chatyman product", "examples": ["what is chatyman", "tell me about chatyman", "chatbot product", "the chat widget"], "goto": "chatty" },
+                    { "id": "pricing", "desc": "pricing and cost", "examples": ["how much does it cost", "pricing", "what are your prices", "is it free", "plans"], "goto": "pricing" },
+                    { "id": "sell", "desc": "share or sell agents", "examples": ["can I sell my agent", "make money with AI", "sell my chatbot", "agent marketplace"], "goto": "sell" }
+                ],
+                "fallback": "site_rag"
+            },
+            "learn": {
+                "answer": {
+                    "text": "Our <strong>Learning Hub</strong> takes you from \"what even is AI?\" to building real things — no jargon, no hype. Start with Foundations, then Frameworks and Human Factors, or follow a guided path (Beginner → Practitioner → Researcher).",
+                    "sources": ["/learn/"]
+                },
+                "buttons": [
+                    { "label": "Open the Learning Hub", "url": "/learn/" },
+                    { "label": "Build my own agent", "goto": "build" },
+                    { "label": "Back to start", "goto": "root" }
+                ],
+                "intents": [
+                    { "id": "beginner", "desc": "beginner path", "examples": ["I'm a complete beginner", "where do I start", "I know nothing about AI"], "goto": "learn" }
+                ],
+                "fallback": "site_rag"
+            },
+            "build": {
+                "answer": {
+                    "text": "You don't need to be an engineer to build an agent. <strong>chatyman</strong> is the easiest way to start: you write one config file describing what your bot should do, drop one script tag on your site, and it runs entirely in your visitors' browsers. Want to see how it works, or learn the concepts first?",
+                    "sources": ["/build/", "/chatty/"]
+                },
+                "buttons": [
+                    { "label": "Build with chatyman", "goto": "chatty" },
+                    { "label": "Learn the concepts", "url": "/learn/" },
+                    { "label": "Can I sell it?", "goto": "sell" }
+                ],
+                "intents": [
+                    { "id": "chatty", "desc": "use chatyman to build", "examples": ["use chatyman", "the easy way", "no-code agent"], "goto": "chatty" }
+                ],
+                "fallback": "site_rag"
+            },
+            "products": {
+                "answer": {
+                    "text": "We build <strong>local-first AI tools</strong> — your data stays yours, no cloud lock-in:<br><br>• <strong>chatyman</strong> — drop-in in-browser chatbot for any website<br>• <strong>Metron</strong> — run AI models on your own hardware<br>• <strong>Airgap</strong> — private AI chat & workspace<br>• <strong>Bigboy</strong> & <strong>Rusty</strong> — heavy-duty and systems-level tooling (coming soon)",
+                    "sources": ["/products/"]
+                },
+                "buttons": [
+                    { "label": "Tell me about chatyman", "goto": "chatty" },
+                    { "label": "See all products", "url": "/products/" },
+                    { "label": "Back to start", "goto": "root" }
+                ],
+                "intents": [
+                    { "id": "chatty", "desc": "chatyman", "examples": ["chatyman", "the chatbot one"], "goto": "chatty" },
+                    { "id": "metron", "desc": "metron", "examples": ["metron", "run models locally"], "goto": "products" },
+                    { "id": "airgap", "desc": "airgap", "examples": ["airgap", "private chat"], "goto": "products" }
+                ],
+                "fallback": "site_rag"
+            },
+            "chatty": {
+                "answer": {
+                    "text": "<strong>chatyman</strong> is an AI support chatbot that runs <em>entirely in your visitor's browser</em>. Unlike cloud bots that charge per conversation, chatyman is <strong>unlimited and flat-priced</strong> — your users' devices do the work. It's a curated workflow (so it never invents answers) plus a small in-browser LLM for understanding, and it can read your own site to answer the long tail. Deploy in minutes: one script tag + one config file.",
+                    "sources": ["/chatty/"]
+                },
+                "buttons": [
+                    { "label": "See pricing", "goto": "pricing" },
+                    { "label": "Try the live demo", "url": "/chatty/#demo" },
+                    { "label": "How do I add it?", "goto": "install" },
+                    { "label": "Back to start", "goto": "root" }
+                ],
+                "intents": [
+                    { "id": "pricing", "desc": "pricing", "examples": ["how much", "pricing", "cost", "is it free"], "goto": "pricing" },
+                    { "id": "install", "desc": "how to install", "examples": ["how do I add it", "install", "set it up", "how does deployment work"], "goto": "install" }
+                ],
+                "fallback": "site_rag"
+            },
+            "pricing": {
+                "answer": {
+                    "text": "chatyman pricing is simple and <strong>flat — no per-chat fees</strong>:<br><br>• <strong>Free</strong> — self-host, unlimited chats, community support<br>• <strong>Pro</strong> — hosted weights, branding, analytics, priority support<br>• <strong>Enterprise</strong> — SSO, SLAs, custom flows & onboarding<br><br>Compare that to cloud bots charging $1,250–$2,500+/month with per-conversation metering. Because chatyman runs in the browser, conversations are unlimited.",
+                    "sources": ["/chatty/"]
+                },
+                "buttons": [
+                    { "label": "See full pricing", "url": "/chatty/#pricing" },
+                    { "label": "Talk to sales", "action": "escalate" },
+                    { "label": "Back to start", "goto": "root" }
+                ],
+                "fallback": "site_rag"
+            },
+            "install": {
+                "answer": {
+                    "text": "Two steps:<br><br>1. Host <code>chatyman.js</code> on your server and add <code>&lt;script src=\"/chatyman.js\" defer&gt;&lt;/script&gt;</code> to your pages.<br>2. Create <code>/chatyman.json</code> describing your flow and which pages it may read.<br><br>That's it — no backend, no build step. It's same-origin, so CORS is never an issue. This very site runs it!",
+                    "sources": ["/chatty/"]
+                },
+                "buttons": [
+                    { "label": "See the docs", "url": "/chatty/#install" },
+                    { "label": "See pricing", "goto": "pricing" },
+                    { "label": "Back to start", "goto": "root" }
+                ],
+                "fallback": "site_rag"
+            },
+            "sell": {
+                "answer": {
+                    "text": "Yes — we want to <strong>normalise building and selling AI</strong>. Build an agent (a chatyman flow, a tool, a workflow), package it, and share or sell it. We're building the marketplace and the playbooks to help you turn an agent into income.",
+                    "sources": ["/build/"]
+                },
+                "buttons": [
+                    { "label": "Learn to build", "goto": "build" },
+                    { "label": "Get notified", "action": "escalate" },
+                    { "label": "Back to start", "goto": "root" }
+                ],
+                "fallback": "site_rag"
+            }
+        }
+    }
+}

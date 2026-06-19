@@ -1,283 +1,407 @@
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <title>Monkey Got Thumbs — Augmented Intelligence for Smarter Collaboration</title>
-
-    <!-- Google Fonts: Bangers + Montserrat -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, viewport-fit=cover" />
+    <title>Monkey Got Thumbs — AI, on your terms</title>
+    <link rel="canonical" href="https://monkey-got-thumbs.com/">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#0E0B1A" />
+    <meta name="color-scheme" content="dark">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Montserrat:wght@700&display=swap" rel="stylesheet">
-
-    <!-- SEO Meta -->
-    <meta name="description" content="Monkey Got Thumbs is a platform for augmented intelligence and collaboration. Bringing together professionals, investors, and contributors to kickstart innovative projects that amplify human potential.">
-    <meta name="keywords" content="augmented intelligence, AI collaboration, innovation platform, startup community, venture capital, contributors, professionals, normies, collective intelligence, future of work, AI tools for collaboration, Monkey Got Thumbs">
-    <meta name="author" content="Monkey Got Thumbs">
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="Monkey Got Thumbs — Augmented Intelligence for Smarter Collaboration">
-    <meta property="og:description" content="Kickstarting innovation with augmented intelligence. Ideas, professionals, normies, VCs, contributors — join us.">
-    <meta property="og:image" content="https://yourdomain.com/hero.png">
-    <meta property="og:url" content="https://yourdomain.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers:wght@400&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/tokens.css">
+    <link rel="stylesheet" href="/assets/css/base.css">
+    <link rel="stylesheet" href="/assets/css/layout.css">
+    <meta name="description" content="Learn AI without the jargon, build your own agents, and even sell what you make — on your terms. No hype, no lock-in. Meet chatyman, the chatbot that runs in your visitors' browsers." />
+    <meta name="author" content="Monkey Got Thumbs" />
+    <meta property="og:title" content="Monkey Got Thumbs — AI, on your terms">
+    <meta property="og:description" content="Learn AI without the jargon, build your own agents, and even sell what you make — on your terms. No hype, no lock-in.">
+    <meta property="og:url" content="https://monkey-got-thumbs.com/">
     <meta property="og:type" content="website">
-
-    <!-- Twitter Card -->
+    <meta property="og:image" content="https://monkey-got-thumbs.com/hero.png">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Monkey Got Thumbs — Augmented Intelligence for Smarter Collaboration">
-    <meta name="twitter:description" content="Kickstarting innovation with augmented intelligence. AI shouldn’t replace us — it should amplify us.">
-    <meta name="twitter:image" content="https://yourdomain.com/hero.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
- 
-
-    <!-- JSON-LD Schema -->
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
+    <script type="application/ld+json">{
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Monkey Got Thumbs",
+        "url": "https://monkey-got-thumbs.com/",
+        "description": "AI advocacy and development for everyday people. Learn AI without the jargon, build your own agents, share and sell what you make — on your terms. Augmented intelligence: the human directs, the machine assists.",
+        "publisher": {
             "@type": "Organization",
             "name": "Monkey Got Thumbs",
-            "url": "https://yourdomain.com",
-            "logo": "https://yourdomain.com/logo.png",
-            "sameAs": [
-                "https://twitter.com/yourhandle",
-                "https://www.linkedin.com/company/monkeygotthumbs"
-            ],
-            "description": "Monkey Got Thumbs is a collaboration platform for augmented intelligence, uniting professionals, investors, and contributors to amplify human creativity.",
-            "contactPoint": {
-                "@type": "ContactPoint",
-                "contactType": "Customer Support",
-                "email": "contact@yourdomain.com"
+            "logo": "https://monkey-got-thumbs.com/logo.png"
+        }
+    }</script>
+    <style>
+        /* ===== HERO ===== */
+        .home-hero {
+            display: grid;
+            place-items: center;
+            gap: var(--space-md);
+            text-align: center;
+            margin: var(--space-lg) 0 var(--space-3xl);
+        }
+
+        .home-hero img {
+            margin-bottom: var(--space-sm);
+            animation: heroIn 700ms ease-out both;
+        }
+
+        .home-hero h1 {
+            margin-bottom: var(--space-sm);
+        }
+
+        .home-hero .lead {
+            max-width: var(--container-sm);
+            color: var(--color-fg-secondary);
+        }
+
+        .home-hero .cta {
+            justify-content: center;
+        }
+
+        @keyframes heroIn {
+            from { opacity: 0; transform: translateY(16px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ===== SECTION HEADINGS ===== */
+        .section-head {
+            text-align: center;
+            max-width: var(--container-sm);
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section-head h2 {
+            margin-top: 0;
+        }
+
+        /* ===== "DO" CARDS ===== */
+        .do-grid .card {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .do-grid .card h3 {
+            margin-top: 0;
+        }
+
+        .do-grid .card p {
+            flex: 1;
+        }
+
+        .card-link {
+            font-weight: var(--font-weight-bold);
+            color: var(--color-accent);
+        }
+
+        /* ===== FEATURED chatyman BAND ===== */
+        .featured-band {
+            margin-top: var(--space-3xl);
+        }
+
+        .featured-band .featured-inner {
+            display: grid;
+            gap: var(--space-lg);
+            grid-template-columns: 1fr;
+            align-items: start;
+        }
+
+        @media (min-width: 800px) {
+            .featured-band .featured-inner {
+                grid-template-columns: 1.1fr 0.9fr;
+                gap: var(--space-2xl);
             }
         }
-    </script>
 
-    <style>
-        :root {
-            --lime:   #000;
-            --lime2:  #A6FF4D;
-            --purple: #503E94;
-            --dark:   rgb(186,197,79);
-            --sans:   -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-            Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        .featured-band h2 {
+            margin-top: 0;
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-
-        body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
-            background: var(--lime);
-            color: var(--dark);
-            font-family: var(--sans);
-            text-align: center;
-            line-height: 1.55;
+        .feature-list {
+            list-style: none;
+            margin: 0 0 var(--space-md);
             padding: 0;
-            margin: 0;
-
         }
 
-        header {
-            position: fixed;
-            top: 0;
+        .feature-list li {
+            position: relative;
+            padding-left: 1.9rem;
+            margin-bottom: var(--space-sm);
+            line-height: var(--line-height-normal);
+        }
+
+        .feature-list li::before {
+            content: "✓";
+            position: absolute;
             left: 0;
-            display: flex;
-            flex-direction: row;
-            align-items: center;width:100%;
-background-color: rgba(0,0,0,0.8);
+            top: 0;
+            color: var(--color-accent);
+            font-weight: var(--font-weight-bold);
         }
 
-        header img { width: 120px; height: auto; }
-h1 {flex: 1;text-align: center;width:100%;margin-left:-120px;}
-        main {
-            margin-top: 12rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
+        .price-contrast {
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius);
+            padding: var(--space-md) var(--space-lg);
+            color: var(--color-fg-secondary);
+            font-size: var(--font-size-sm);
+            line-height: var(--line-height-normal);
         }
 
-        .hero { width: 200px; height: 200px; overflow: hidden; margin: 0; }
-        .hero img { width: 100%; height: auto; display: block; margin-top: -50px; margin-bottom: -50px; }
-
-        h1,h4 {
-            font-family: 'Bangers', cursive;
-            font-size: 3.5rem;
-            color: var(--purple);
-            margin-bottom: 0.5rem;
-            letter-spacing: 2px;
+        .price-contrast strong {
+            color: var(--color-accent);
         }
 
-        h2, h3 {
-            font-family: 'Montserrat', sans-serif;
+        /* ===== PRODUCTS STRIP ===== */
+        .product-grid {
+            display: grid;
+            gap: var(--space-md);
+            grid-template-columns: 1fr;
+        }
+
+        @media (min-width: 560px) {
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 900px) {
+            .product-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .product-grid .card h3 {
+            margin-top: 0;
+            margin-bottom: var(--space-xs);
+            color: var(--color-fg);
+        }
+
+        .product-grid .card p {
+            margin-bottom: var(--space-sm);
+            color: var(--color-muted);
+            font-size: var(--font-size-sm);
+        }
+
+        .pill {
+            display: inline-block;
+            font-size: var(--font-size-xs);
+            font-weight: var(--font-weight-semibold);
+            letter-spacing: var(--letter-spacing-wide);
             text-transform: uppercase;
-            font-weight: 700;
-            letter-spacing: 1px;
+            padding: 0.15rem 0.6rem;
+            border-radius: var(--radius-full);
+            border: 1px solid var(--color-border);
+            color: var(--color-muted);
         }
 
-        h2 { font-size: 2.5rem; color: var(--lime2); margin-bottom: 1.25rem; }
-        h3 { font-size: 1.5rem; color: var(--purple); margin-bottom: 1rem; }
-        h3 { font-size: 1.5rem; color: var(--purple); margin-bottom: 1rem; }
-
-        p { max-width: 60ch; font-size: 1.1rem; margin-bottom: 1rem; }
-
-        section { margin: 3rem 0; width: 100%; max-width: 700px; }
-
-        form {
-            display: flex; flex-direction: column; gap: 1rem; margin-top: 1.5rem;
+        .pill--live {
+            color: var(--color-accent);
+            border-color: color-mix(in srgb, var(--color-accent) 50%, transparent);
         }
-        label { display: flex; flex-direction: column; align-items: flex-start; font-size: 0.95rem; }
-        input, textarea {
-            width: 100%; padding: 0.65rem; margin-top: 0.25rem;
-            border: 2px solid var(--purple); border-radius: 6px; font-size: 1rem;
-        }
-        textarea { min-height: 120px; }
-        button {
-            padding: 0.75rem 1.25rem; border: none; background: var(--purple); color: #fff;
-            font-weight: bold; border-radius: 6px; cursor: pointer; transition: background 0.2s ease;
-        }
-        button:hover { background: #6a55c0; }
 
-        footer {
-            margin-top: 4rem;
-            font-size: 0.9rem;
-            max-width: 80ch;
-            text-align: left;
-            color: var(--dark);
+        .products-foot {
+            margin-top: var(--space-lg);
+            text-align: center;
         }
-        footer h4 {
-            font-family: 'Montserrat', sans-serif;
-            text-transform: uppercase;
-            font-size: 1.2rem;
-            margin-top: 1.5rem;
-            margin-bottom: 0.5rem;
+
+        /* ===== VALUES ===== */
+        .values-grid {
+            display: grid;
+            gap: var(--space-md);
+            grid-template-columns: 1fr;
+        }
+
+        @media (min-width: 560px) {
+            .values-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 900px) {
+            .values-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .value {
+            text-align: center;
+            padding: var(--space-md);
+        }
+
+        .value h3 {
+            margin: 0 0 var(--space-xs);
+            color: var(--color-accent);
+            font-family: var(--font-display);
+            letter-spacing: var(--letter-spacing-wide);
+            font-weight: var(--font-weight-normal);
+            font-size: var(--font-size-xl);
+        }
+
+        .value p {
+            margin: 0;
+            color: var(--color-muted);
+            font-size: var(--font-size-sm);
+        }
+
+        /* ===== NEWSLETTER ===== */
+        .newsletter-section {
+            margin-top: var(--space-3xl);
+            padding: var(--space-md);
+        }
+
+        /* ===== REDUCED MOTION ===== */
+        @media (prefers-reduced-motion: reduce) {
+            .home-hero img {
+                animation: none;
+            }
         }
     </style>
 </head>
-
 <body>
-<header>
-    <img src="logo.png" alt="Monkey Got Thumbs Logo" />
-    <h1>Monkey Got Thumbs</h1>
-</header>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <mgt-header></mgt-header>
+    <main id="main-content">
+        <section class="home-hero" aria-labelledby="hero-title">
+            <img src="/hero.png" alt="Monkey Got Thumbs mascot" width="1024" height="1536" loading="eager" decoding="async" fetchpriority="high" style="width:min(260px,45vw);height:auto">
+            <h1 id="hero-title">AI, on your terms.</h1>
+            <p class="lead">Learn it, build with it, even sell what you make — without the hype or the lock-in.</p>
+            <div class="cta">
+                <a class="btn" href="/learn/">Start learning</a>
+                <a class="btn btn--secondary" href="/chatty/">Meet chatyman</a>
+            </div>
+        </section>
 
-<main>
-    <section class="hero">
-        <img src="hero.png" alt="Monkey Got Thumbs Hero Image" />
-    </section>
+        <section aria-labelledby="do-title">
+            <div class="section-head">
+                <h2 id="do-title">What you can do here</h2>
+                <p class="muted">Augmented intelligence means you stay in the driver's seat. Here's where to start.</p>
+            </div>
+            <div class="do-grid grid--3col">
+                <article class="card">
+                    <h3>Learn</h3>
+                    <p>Understand AI without the jargon. Plain-spoken guides that explain what's real, what's hype, and how to actually use it.</p>
+                    <a class="card-link" href="/learn/">Start learning →</a>
+                </article>
+                <article class="card">
+                    <h3>Build</h3>
+                    <p>Make your own agents — no PhD required. Step-by-step paths from your first prompt to a working tool you control.</p>
+                    <a class="card-link" href="/build/">Start building →</a>
+                </article>
+                <article class="card">
+                    <h3>Sell</h3>
+                    <p>Share and sell what you build. Turn the agents and tools you create into something other people pay for.</p>
+                    <a class="card-link" href="/build/">Learn how →</a>
+                </article>
+            </div>
+        </section>
 
-    <section class="title">
+        <section class="featured-band" aria-labelledby="chatty-title">
+            <div class="card card--featured">
+                <div class="featured-inner">
+                    <div>
+                        <p class="muted font-semibold">Flagship product</p>
+                        <h2 id="chatty-title">Meet chatyman — the chatbot that runs in your visitors' browsers.</h2>
+                        <p>A real AI chatbot for your site that needs no backend and no monthly cloud bill that scales with every conversation. Drop in one script tag, point it at one JSON file, and you're live.</p>
+                        <ul class="feature-list">
+                            <li><strong>Unlimited conversations</strong> — no per-chat fees, ever.</li>
+                            <li><strong>Private by design</strong> — data never leaves the browser.</li>
+                            <li><strong>Live in minutes</strong> — one script tag, one JSON file, no backend.</li>
+                        </ul>
+                        <div class="cta">
+                            <a class="btn" href="/chatty/">See chatyman</a>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="price-contrast">Cloud chatbot platforms can run <strong>$1,250–$2,500+/month</strong> with per-conversation limits. chatyman is flat-priced and unlimited.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <h2>Making Apes Great Again</h2>
-    </section>
+        <section aria-labelledby="products-title">
+            <div class="section-head">
+                <h2 id="products-title">Tools built on the same principles</h2>
+                <p class="muted">Local-first, in your control, no lock-in. Every product follows the augmented intelligence playbook.</p>
+            </div>
+            <div class="product-grid">
+                <article class="card">
+                    <h3>chatyman</h3>
+                    <p>In-browser AI chatbot for any website. Unlimited, private, deploy in minutes.</p>
+                    <p><span class="pill pill--live">Available now</span></p>
+                    <a class="card-link" href="/chatty/">Explore →</a>
+                </article>
+                <article class="card">
+                    <h3>Metron</h3>
+                    <p>Run and manage AI models on your own hardware — no cloud dependency.</p>
+                    <p><span class="pill">In development</span></p>
+                    <a class="card-link" href="/products/">Learn more →</a>
+                </article>
+                <article class="card">
+                    <h3>Airgap</h3>
+                    <p>Private, local-first AI chat and workspace. Your conversations, your machine.</p>
+                    <p><span class="pill">In development</span></p>
+                    <a class="card-link" href="/products/">Learn more →</a>
+                </article>
+                <article class="card">
+                    <h3>Bigboy</h3>
+                    <p>Heavy-duty AI processing for when local hardware isn't enough. You choose what runs where.</p>
+                    <p><span class="pill">Coming soon</span></p>
+                    <a class="card-link" href="/products/">Learn more →</a>
+                </article>
+                <article class="card">
+                    <h3>Rusty</h3>
+                    <p>Systems-level AI tooling in Rust — the fast, safe plumbing behind everything else.</p>
+                    <p><span class="pill">Coming soon</span></p>
+                    <a class="card-link" href="/products/">Learn more →</a>
+                </article>
+            </div>
+            <div class="products-foot">
+                <a class="btn btn--secondary" href="/products/">See all products</a>
+            </div>
+        </section>
 
-    <section id="raison">
-<p>Monkey Got Thumbs has a belief in Augmented Intelligence.</p>
-        <p>We believe that technology should <em>amplify us</em> and make us smarter.<br>  Both collectively and individually.
-            <br>Like opposable thumbs, augmented intelligence is a tool to unlock
-            our future.</p>
+        <section aria-labelledby="values-title">
+            <div class="section-head">
+                <h2 id="values-title">What we believe</h2>
+                <p class="muted">Pro-human, plain-spoken, and built so the power stays with you.</p>
+            </div>
+            <div class="values-grid">
+                <div class="value">
+                    <h3>You stay in control</h3>
+                    <p>The human directs, the machine assists. You decide what to trust and what to override.</p>
+                </div>
+                <div class="value">
+                    <h3>Local-first</h3>
+                    <p>Your data stays yours. Cloud is opt-in, never the default.</p>
+                </div>
+                <div class="value">
+                    <h3>No lock-in</h3>
+                    <p>Open formats and portable data. Take what you build and go anywhere.</p>
+                </div>
+                <div class="value">
+                    <h3>AI for everyone</h3>
+                    <p>Normalise AI for everyday people — more options, more opportunities.</p>
+                </div>
+            </div>
+        </section>
 
-        <h3>What is Augmented Intelligence?</h3>
-    </section>
-
-    <section id="mission">
-        <h3>Mission</h3>
-        <p>To unite ideas, professionals, everyday people, VCs, and contributors around projects that matter —
-            kickstarting innovation by combining human creativity with augmented intelligence.</p>
-    </section>
-
-    <section id="cta">
-        <h3>Get Involved</h3>
-        <p>We’re building a platform for shared intelligence. Whether you have an idea, capital, skills, or just curiosity —
-            there’s a place for you here.</p>
-        <p><strong>Join us in making collaboration great again.</strong></p>
-    </section>
-
-    <section id="contact">
-        <h3>Contact Us</h3>
-        <p>Want to contribute, invest, or collaborate? Drop us a line:</p>
-        <form action="https://staticcontact.com/send/26b4507d-d6b8-445e-a8c7-59c2b4669035" method="post">
-            <label>Name:<input type="text" name="name" required placeholder="Your name"></label>
-            <label>Email:<input type="email" name="email" required placeholder="Your email"></label>
-            <label>Message:<textarea name="message" placeholder="Tell us how you’d like to get involved..."></textarea></label>
-            <button type="submit">Send Message</button>
-        </form>
-    </section>
-</main>
-
-
-<section id="manifesto" style="margin-top:4rem; max-width:90ch; text-align:left; font-size:1rem; line-height:1.7;">
-    <h4>The Monkey Got Thumbs Manifesto</h4>
-    <p><strong>Monkey Got Thumbs</strong> is more than a platform — it’s a movement. Our core belief is simple:
-        technology should make humans <em>smarter, more effective, and more collaborative</em>. Too often, artificial
-        intelligence is framed as a replacement for people. We believe in the opposite: <strong>augmented intelligence</strong>
-        should amplify human creativity, insight, and problem-solving.</p>
-
-    <p>When we say “technology,” we don’t just mean AI systems or machine learning algorithms. Technology is
-        <strong>ideas, code, user experience, research, and even the simple act of sharing a thought</strong>.
-        Every time humans invent a new way of working together, they create technology. That’s why we bring together
-        <em>developers, designers, strategists, venture capitalists, entrepreneurs, researchers, and everyday people</em>
-        into one collaborative ecosystem.</p>
-
-    <p>Monkey Got Thumbs is about turning collaboration into a superpower. By combining <strong>UX design thinking,
-        open-source code, startup energy, and collective intelligence</strong>, we accelerate innovation. A single person
-        can spark an idea, but when ideas meet capital, design, and technical expertise, they evolve into
-        <strong>real-world solutions</strong> that can change industries.</p>
-
-    <p>Our community is built on inclusivity: <em>normies, professionals, contributors, and investors</em> all have a place.
-        Some bring funding, others bring skills, and many bring fresh perspectives that make projects more resilient and
-        creative. This mixture of viewpoints creates breakthroughs that no algorithm could generate alone.</p>
-
-    <p><strong>Focus Areas:</strong> We care deeply about the <em>future of work, augmented intelligence, startup
-        ecosystems, venture capital partnerships, UX and design innovation, open collaboration, and human + AI teamwork</em>.
-        These are the building blocks of smarter societies and the foundation for solving the world’s hardest problems.</p>
-
-    <p><strong>Our vision</strong> is to make collaboration great again by redefining what it means to use technology.
-        Whether it’s <em>a piece of code on GitHub, a UX prototype, a brainstormed strategy, or a conversation that sparks
-            an idea</em>, all of these are forms of technology. Monkey Got Thumbs exists to harness them and turn them into
-        something greater: collective intelligence.</p>
-
-    <p>Join us. Share your thoughts, your skills, your capital, or just your curiosity. Together, we can build a future
-        where humans thrive not because AI replaces us, but because <strong>augmented intelligence lifts us higher</strong>.</p>
-</section>
-
-
-<footer>
-    <h4>Monkey Got Thumbs — Augmented Intelligence Platform</h4>
-    <p><strong>Monkey Got Thumbs</strong> is a collaboration platform designed to amplify human intelligence, not replace it.
-        We believe technology is more than just machines — it is <strong>ideas, code, user experience, design, strategy,
-            thoughts, and shared knowledge</strong>. Our mission is to make people <em>smarter, more effective, and more
-            collaborative</em> by combining human creativity with the right tools.</p>
-
-    <h4>Why Augmented Intelligence?</h4>
-    <p>Augmented intelligence (AI+) is the philosophy that humans and machines should work together. While artificial
-        intelligence aims to automate, augmented intelligence aims to <strong>elevate human decision-making, creativity,
-            and problem-solving</strong>. Monkey Got Thumbs brings this vision to life, creating a community where
-        <em>entrepreneurs, developers, designers, researchers, investors, and everyday people</em> can work together
-        to solve problems that matter.</p>
-
-    <h4>How We Make People Smarter</h4>
-    <p>Our platform focuses on practical collaboration. That means using <strong>technology in every form</strong>:
-        <em>writing code, building startups, creating UX experiences, generating new ideas, refining processes,
-            brainstorming strategies, or sharing insights</em>. By mixing skills from different domains, we make
-        individuals and teams more effective. The result: <strong>faster innovation, better outcomes, and smarter
-            collaboration</strong>.</p>
-
-    <h4>Keywords & Focus Areas</h4>
-    <p>Monkey Got Thumbs focuses on: <em>augmented intelligence, collective intelligence platforms, AI collaboration tools,
-        startup ecosystems, venture capital for innovation, UX design thinking, open-source collaboration, code and
-        product development, creative ideation, knowledge sharing, and the future of work</em>.</p>
-
-    <h4>Our Vision</h4>
-    <p>We want to redefine how people think about technology. Technology isn’t just software or hardware — it’s
-        <strong>everything that helps humans achieve more</strong>. From a <em>new idea sketched on a napkin, to a
-            GitHub repo, to a refined UX prototype, to a thought shared in a community</em> — all of these are forms of
-        technology that make us smarter together. Monkey Got Thumbs exists to harness them all.</p>
-
-    <p>&copy; 2025 Monkey Got Thumbs. All rights reserved.</p>
-</footer>
-
-
+        <section class="card newsletter-section" aria-labelledby="newsletter-title">
+            <h2 id="newsletter-title" class="sr-only">Newsletter</h2>
+            <mgt-newsletter heading="Stay ahead of AI" description="Practical, no-hype insights. No spam."></mgt-newsletter>
+        </section>
+    </main>
+    <mgt-footer></mgt-footer>
+    <script src="/assets/js/tracking.js"></script>
+    <script type="module" src="/assets/js/app.js"></script>
+    <script type="module" src="/components/core/mgt-header.js"></script>
+    <script type="module" src="/components/core/mgt-footer.js"></script>
+    <script type="module" src="/components/core/mgt-newsletter.js"></script>
 </body>
 </html>
