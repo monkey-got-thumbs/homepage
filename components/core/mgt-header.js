@@ -68,25 +68,14 @@ class MGTHeader extends HTMLElement {
         }
 
         .brand-logo {
-          width: 40px;
-          height: 40px;
+          width: 80px;
+          height: 80px;
           border-radius: 8px;
           flex-shrink: 0;
         }
 
         .brand-text {
-          font-family: "Bangers", cursive;
-          letter-spacing: 2px;
-          font-size: 1.75rem;
-          line-height: 1;
-          color: var(--accent);
-          display: none;
-        }
-
-        @media (min-width: 640px) {
-          .brand-text {
-            display: inline;
-          }
+          display: none;   /* logo only — wordmark removed */
         }
 
         .nav-toggle {
