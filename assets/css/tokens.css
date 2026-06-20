@@ -82,7 +82,7 @@
   --measure-wide: 48rem;   /* looser measure for lead-heavy pages */
   --container-wide: 90rem; /* 1440px — page chrome / hubs / card grids */
   --container-full: 110rem;/* 1760px — ultrawide cap so 1920 isn't a lone centered column */
-  --gutter: clamp(1rem, 4vw, 4rem);  /* fluid page gutter */
+  --gutter: clamp(1.25rem, 6vw, 7rem);  /* fluid page gutter — generous side breathing room */
 
   /* Article wide-layout rails (TOC | prose | aside) */
   --toc-col: 15rem;

@@ -738,6 +738,9 @@ a.wikilink:hover { border-bottom-color: var(--color-accent); }
  * load, encouraging). Use these on every page so the experience is one thing.
  * ===================================================================== */
 .section-pad { padding-block: clamp(3rem, 8vw, 6.5rem); }              /* restful vertical rhythm */
+.section-head { text-align: center; max-width: var(--measure-wide); margin: 0 auto var(--space-2xl); }
+.section-head h2 { margin: 0; }
+.section-head > p, .section-head .muted { margin: var(--space-sm) auto 0; }
 .eyebrow {
   display: inline-block; font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold);
   letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-accent); margin-bottom: var(--space-md);
