@@ -5,14 +5,14 @@
         "name": "Chatty",
         "subtitle": "Your guide to Monkey Got Thumbs",
         "launcherText": "Need help?",
-        "nudge": "Kia ora! 👋 I'm Chatty. Ask me about learning AI, building agents, or chatyman.",
+        "nudge": "Kia ora! 👋 I'm Chatty. New to AI or just curious? Ask me anything — no question's too basic.",
         "accent": "#A6FF4D"
     },
     "model": { "preferred": "Qwen2.5-1.5B-Instruct-q4f16_1-MLC", "generative": "auto" },
     "thresholds": { "tauHigh": 0.62, "delta": 0.06, "tauAsk": 0.42 },
     "escalation": { "type": "email", "value": "hello@monkey-got-thumbs.com" },
     "inputPlaceholder": "Ask me anything about Monkey Got Thumbs…",
-    "outOfScope": "I'm focused on Monkey Got Thumbs — learning AI, building agents, and our products. I can also connect you to a human. What would you like?",
+    "outOfScope": "I'm here to help you find your way around Monkey Got Thumbs — getting comfortable with AI, the lessons, and the community. Want me to point you somewhere, or connect you with a human?",
     "noResults": "I couldn't find that on the site. Want me to connect you to a human, or try rephrasing?",
     "site": {
         "sitemap": "/sitemap.xml",
@@ -32,11 +32,11 @@
         },
         "nodes": {
             "root": {
-                "say": "Kia ora! I'm Chatty — your guide to <strong>Monkey Got Thumbs</strong>. We help real people understand AI, build their own agents, and even sell them. What brings you here?",
+                "say": "Kia ora! I'm Chatty 👋 — your friendly guide here. Monkey Got Thumbs helps everyday people get comfortable with AI, at their own pace, with a community alongside them. Where shall we start?",
                 "buttons": [
-                    { "label": "Learn about AI", "goto": "learn" },
-                    { "label": "Build my own agent", "goto": "build" },
-                    { "label": "See the products", "goto": "products" },
+                    { "label": "I'm new — where do I start?", "goto": "learn" },
+                    { "label": "I use AI but want to get better", "goto": "learn" },
+                    { "label": "Tell me about the community", "goto": "products" },
                     { "label": "What's chatyman?", "goto": "chatty" },
                     { "label": "Talk to a human", "action": "escalate" }
                 ],
@@ -82,7 +82,7 @@
             },
             "products": {
                 "answer": {
-                    "text": "We build <strong>local-first AI tools</strong> — your data stays yours, no cloud lock-in:<br><br>• <strong>chatyman</strong> — drop-in in-browser chatbot for any website<br>• <strong>Metron</strong> — run AI models on your own hardware<br>• <strong>Airgap</strong> — private AI chat & workspace<br>• <strong>Bigboy</strong> & <strong>Rusty</strong> — heavy-duty and systems-level tooling (coming soon)",
+                    "text": "We build <strong>local-first AI tools</strong> — your data stays yours, no cloud lock-in:<br><br>• <strong>chatyman</strong> — drop-in in-browser chatbot for any website<br>• <strong>Agent Builder Advisor</strong> — free, one-shot feedback on an agent prompt you're building",
                     "sources": ["/products/"]
                 },
                 "buttons": [
@@ -92,8 +92,7 @@
                 ],
                 "intents": [
                     { "id": "chatty", "desc": "chatyman", "examples": ["chatyman", "the chatbot one"], "goto": "chatty" },
-                    { "id": "metron", "desc": "metron", "examples": ["metron", "run models locally"], "goto": "products" },
-                    { "id": "airgap", "desc": "airgap", "examples": ["airgap", "private chat"], "goto": "products" }
+                    { "id": "advisor", "desc": "agent builder advisor", "examples": ["agent builder", "advisor", "test my agent prompt"], "url": "/build/advisor/" }
                 ],
                 "fallback": "site_rag"
             },

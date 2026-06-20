@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, viewport-fit=cover" />
-    <title>Community — Monkey Got Thumbs</title>
+    <title>Find your people — Monkey Got Thumbs</title>
 
     <link rel="canonical" href="https://monkey-got-thumbs.com/community/">
     <meta name="robots" content="index, follow">
@@ -19,15 +19,17 @@
     <link rel="stylesheet" href="/assets/css/base.css">
     <link rel="stylesheet" href="/assets/css/layout.css">
 
-    <meta name="description" content="Join the Monkey Got Thumbs community. Connect with others learning augmented intelligence, share insights, and stay ahead of the AI curve." />
-    <meta name="keywords" content="augmented intelligence community, AI learning community, human AI collaboration" />
+    <meta name="description" content="You're not learning AI alone. Join everyday people who started exactly where you are — getting comfortable with AI together, one friendly note at a time. No jargon, no pressure." />
     <meta name="author" content="Monkey Got Thumbs" />
 
-    <meta property="og:title" content="Community — Monkey Got Thumbs">
-    <meta property="og:description" content="Join others learning augmented intelligence. Stay ahead of the AI curve.">
+    <meta property="og:title" content="Find your people — Monkey Got Thumbs">
+    <meta property="og:description" content="You're not learning AI alone. Join everyday people getting comfortable with AI together — no jargon, no pressure.">
     <meta property="og:url" content="https://monkey-got-thumbs.com/community/">
     <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:site_name" content="Monkey Got Thumbs">
     <meta property="og:image" content="https://monkey-got-thumbs.com/hero.png">
+    <meta property="og:image:alt" content="Monkey Got Thumbs — a friendly monkey giving two thumbs up">
 
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
 
@@ -35,8 +37,8 @@
     {
         "@context": "https://schema.org",
         "@type": "WebPage",
-        "name": "Community",
-        "description": "Join the Monkey Got Thumbs augmented intelligence community.",
+        "name": "Find your people",
+        "description": "Join everyday people getting comfortable with AI together — a friendly newsletter, your story, and a warm welcome.",
         "url": "https://monkey-got-thumbs.com/community/",
         "breadcrumb": {
             "@type": "BreadcrumbList",
@@ -49,16 +51,52 @@
     </script>
 
     <style>
-        .content { max-width: var(--measure-wide); margin: 0 auto; padding-block: 2rem; }
-        .content h2 { margin-top: 2.5rem; }
-        .content p { line-height: 1.8; margin-bottom: 1.25rem; }
-        .content ul { margin-bottom: 1.25rem; padding-left: 1.5rem; }
-        .content li { margin-bottom: 0.5rem; line-height: 1.7; }
-        .lead { font-size: var(--font-size-lg); color: var(--color-fg-secondary); line-height: 1.7; }
-        .values { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr)); gap: 1.5rem; margin: 2rem 0; }
-        .values .card { padding: 1.5rem; }
-        .values .card h3 { margin-top: 0; }
-        @media (max-width: 640px) { .values { grid-template-columns: 1fr; } }
+        /* ===== Calm, warm backdrop — soft glows, matched to the home page ===== */
+        body {
+            background:
+                radial-gradient(60rem 40rem at 78% -8%, color-mix(in srgb, var(--color-brand) 26%, transparent), transparent 70%),
+                radial-gradient(48rem 36rem at 8% 14%, color-mix(in srgb, var(--color-accent) 9%, transparent), transparent 68%),
+                var(--color-bg);
+            background-attachment: fixed;
+        }
+
+        .community { max-width: var(--container-wide); margin-inline: auto; padding-inline: var(--gutter); }
+
+        /* ===== Hero — one warm invitation ===== */
+        .community-head { text-align: center; max-width: 42rem; margin: 0 auto var(--space-2xl); }
+        .community-head h1 { margin: var(--space-sm) 0; }
+
+        /* ===== The warm front-door card (join) reuses the shared gradient-card ===== */
+        .join { display: block; margin-inline: auto; max-width: 40rem; }
+        .join h2 { margin-top: 0; text-align: center; }
+        .join > .gradient-card__inner > p { text-align: center; color: var(--color-fg-secondary); line-height: 1.8; margin-bottom: var(--space-lg); }
+        .join mgt-newsletter { display: block; }
+
+        /* ===== Section heads — centred, restful ===== */
+        .section-head { text-align: center; max-width: 42rem; margin: 0 auto var(--space-xl); }
+        .section-head h2 { margin-bottom: var(--space-sm); }
+
+        /* ===== Faces of the community — gentle reassurance cards ===== */
+        .faces .card { display: flex; flex-direction: column; gap: 0.5rem; }
+        .faces .card p { margin: 0; color: var(--color-fg-secondary); line-height: 1.7; }
+        .faces .who { color: var(--color-muted); font-size: var(--font-size-sm); font-style: normal; }
+
+        /* ===== Ways to be part of it — a path, not a menu ===== */
+        .ways .step p { flex: 1; }
+
+        /* ===== Delight: a recall card, framed softly ===== */
+        .delight { max-width: 44rem; margin-inline: auto; }
+        .delight h2 { margin-top: 0; text-align: center; }
+        .delight > .gradient-card__inner > p { color: var(--color-fg-secondary); line-height: 1.8; }
+        .delight mgt-recall { display: block; margin-top: var(--space-lg); }
+
+        /* ===== Gentle scroll reveal — transform only, never hides content ===== */
+        @media (prefers-reduced-motion: no-preference) {
+            @supports (animation-timeline: view()) {
+                .reveal { animation: reveal-rise linear both; animation-timeline: view(); animation-range: entry 0% cover 22%; }
+                @keyframes reveal-rise { from { transform: translateY(22px); } to { transform: translateY(0); } }
+            }
+        }
     </style>
 </head>
 <body>
@@ -66,7 +104,7 @@
     <mgt-header></mgt-header>
 
     <main id="main-content">
-        <article class="content">
+        <div class="community section-pad">
             <nav aria-label="Breadcrumb">
                 <ul class="breadcrumbs">
                     <li><a href="/">Home</a></li>
@@ -74,56 +112,132 @@
                 </ul>
             </nav>
 
-            <header>
-                <h1>Community</h1>
-                <p class="lead">Augmented intelligence is a collective effort. We are building a community of people who want to understand AI deeply, use it wisely, and stay ahead of the curve.</p>
+            <!-- HERO: one warm invitation -->
+            <header class="community-head">
+                <span class="eyebrow">you're not doing this alone</span>
+                <h1>Find your people</h1>
+                <p class="lede">Learning something new is so much warmer with company. Here you'll find everyday people who started exactly where you are — a little unsure, plenty curious — getting comfortable with AI together.</p>
             </header>
 
-            <section>
-                <mgt-newsletter></mgt-newsletter>
+            <!-- JOIN: the one clear, primary action -->
+            <section class="join gradient-card reveal" aria-labelledby="join-title">
+                <div class="gradient-card__inner">
+                    <h2 id="join-title">The simplest way to join in</h2>
+                    <p>Pop your email below and we'll send a friendly, no-jargon note now and then — a small thing we've learned, a gentle nudge, a reminder you're not the only one figuring this out. That's it. That's the welcome.</p>
+                    <mgt-newsletter heading="Come along for the ride" description="A warm, jargon-free note now and then. No spam, no pressure, unsubscribe any time."></mgt-newsletter>
+                </div>
             </section>
 
-            <section>
-                <h2>What We Value</h2>
-                <div class="values">
-                    <div class="card">
-                        <h3>Curiosity Over Fear</h3>
-                        <p>AI is changing everything. We approach that change with curiosity rather than panic — learning what works, what doesn't, and what matters.</p>
-                    </div>
-                    <div class="card">
-                        <h3>Substance Over Hype</h3>
-                        <p>No breathless predictions. No "AI will solve everything." Real data, real limitations, real strategies for real people.</p>
-                    </div>
-                    <div class="card">
-                        <h3>Humans in the Loop</h3>
-                        <p>We believe the future belongs to people who can think with machines — not people who are replaced by them.</p>
-                    </div>
-                    <div class="card">
-                        <h3>Share What You Learn</h3>
-                        <p>Knowledge compounds when it's shared. We encourage contribution, collaboration, and teaching what you know.</p>
+            <!-- FACES: who's actually here (reassurance, honestly framed) -->
+            <section class="reveal" style="margin-top: var(--space-2xl);" aria-labelledby="who-title">
+                <div class="section-head">
+                    <span class="eyebrow">who's here</span>
+                    <h2 id="who-title">People just like you</h2>
+                    <p class="muted">Not experts. Not coders. Just curious folks, helping each other feel a little more at home with AI.</p>
+                </div>
+                <div class="faces grid--2col">
+                    <article class="card">
+                        <p>"I used to call it 'chatty' and feel a bit silly. Turns out loads of people did the same — and nobody minds. We're all just learning."</p>
+                        <span class="who">— the nervous-but-curious starter</span>
+                    </article>
+                    <article class="card">
+                        <p>"I'm not techie at all. I just wanted to write better emails and plan a holiday without the faff. Small wins, shared along the way."</p>
+                        <span class="who">— the practical everyday user</span>
+                    </article>
+                    <article class="card">
+                        <p>"Some weeks I get something wrong, share it, and someone gently shows me a better way. No showing off. Just kindness."</p>
+                        <span class="who">— the keep-it-honest learner</span>
+                    </article>
+                    <article class="card">
+                        <p>"I started a few months ago and now I help the new folks. Passing it on feels lovely — and it's how the whole thing keeps its heart."</p>
+                        <span class="who">— the friendly hand-holder</span>
+                    </article>
+                </div>
+            </section>
+
+            <!-- WAYS: how to be part of it (honest, low-pressure) -->
+            <section class="reveal" style="margin-top: var(--space-2xl);" aria-labelledby="ways-title">
+                <div class="section-head">
+                    <span class="eyebrow">ways to be part of it</span>
+                    <h2 id="ways-title">There's no wrong way in</h2>
+                    <p class="muted">Pick whatever feels comfortable today. You can always do more later — or nothing at all. No pressure here.</p>
+                </div>
+                <ol class="ways path" role="list">
+                    <li class="step">
+                        <span class="step__num" aria-hidden="true">1</span>
+                        <h3>Get the friendly notes</h3>
+                        <p>The easiest start. A gentle, no-hype note now and then, so you've always got a quiet companion as you learn.</p>
+                        <a class="card-link" href="#join-title">Join above →</a>
+                    </li>
+                    <li class="step">
+                        <span class="step__num" aria-hidden="true">2</span>
+                        <h3>Share your story</h3>
+                        <p>Had a lovely little win with AI? Or a moment where it went sideways? Tell us — your story might be exactly what helps the next nervous starter feel braver.</p>
+                        <a class="card-link" href="/contact/">Say hello →</a>
+                    </li>
+                    <li class="step">
+                        <span class="step__num" aria-hidden="true">3</span>
+                        <h3>Pass it on</h3>
+                        <p>Know someone who calls it "chatty" and feels a bit lost? Send them our way. Every kind nudge brings one more person in from the cold.</p>
+                        <a class="card-link" href="/learn/">Show them where to start →</a>
+                    </li>
+                </ol>
+            </section>
+
+            <!-- WHAT WE'RE ABOUT: the spirit, in plain words -->
+            <section class="reveal" style="margin-top: var(--space-2xl);" aria-labelledby="spirit-title">
+                <div class="section-head">
+                    <span class="eyebrow">how we treat each other</span>
+                    <h2 id="spirit-title">The spirit of the place</h2>
+                    <p class="muted">A few gentle promises about what it feels like to be here.</p>
+                </div>
+                <div class="grid--2col">
+                    <article class="card">
+                        <h3>Curious, not scared</h3>
+                        <p>AI is new and a bit strange — that's allowed. We meet it with curiosity instead of panic, and we never make you feel daft for asking.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Honest, not hyped</h3>
+                        <p>No breathless "AI will change your life" talk. Just real, plain experiences — what worked, what didn't, and what's worth your time.</p>
+                    </article>
+                    <article class="card">
+                        <h3>You stay in charge</h3>
+                        <p>AI is a helper, not the boss. We're here to make you more confident and more in control — never to replace your own good judgement.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Kindness compounds</h3>
+                        <p>What you learn is worth more when you pass it on. A small tip shared today helps someone feel braver tomorrow. That's the whole idea.</p>
+                    </article>
+                </div>
+            </section>
+
+            <!-- DELIGHT: a recall card to feel the way we learn together -->
+            <section class="reveal" style="margin-top: var(--space-2xl);" aria-labelledby="delight-title">
+                <div class="delight gradient-card">
+                    <div class="gradient-card__inner">
+                        <span class="eyebrow" style="display:block; text-align:center;">a little taste</span>
+                        <h2 id="delight-title">This is how we learn together</h2>
+                        <p>Small, friendly prompts that pop back just before you'd forget — the same way a good friend reminds you of something handy. Have a go (it saves only in your browser, nowhere else):</p>
+                        <mgt-recall id="community-belong">
+                            <details>
+                                <summary>What does "community" actually mean here?</summary>
+                                <p>It's simpler than it sounds: friendly notes in your inbox, the chance to share your own story, and a warm welcome to people figuring AI out together. No experts required — just kind, curious folks like you.</p>
+                            </details>
+                        </mgt-recall>
                     </div>
                 </div>
             </section>
 
-            <section>
-                <h2>How to Get Involved</h2>
-                <ul>
-                    <li><strong>Subscribe to the newsletter</strong> — weekly insights on augmented intelligence, delivered free.</li>
-                    <li><strong>Start learning</strong> — work through the <a href="/learn/learning-paths/beginner.html">beginner path</a> or explore the <a href="/learn/">learning hub</a>.</li>
-                    <li><strong>Share your experience</strong> — if you have a story about using AI effectively (or about it going wrong), <a href="/contact/">reach out</a>. We feature real case studies.</li>
-                    <li><strong>Spread the word</strong> — if this content helps you, share it with someone who needs it. The more people who understand augmented intelligence, the better.</li>
-                </ul>
-            </section>
-
-            <section class="card" style="margin-top: 2.5rem;">
-                <h2>Start Here</h2>
-                <p>New to augmented intelligence? Begin with the foundations.</p>
-                <div class="cta">
-                    <a href="/learn/foundations/what-is-ai.html" class="btn">What is Augmented Intelligence?</a>
-                    <a href="/learn/" class="btn btn--secondary">Learning Hub</a>
+            <!-- GENTLE NEXT STEP -->
+            <section class="reveal section-head" style="margin-top: var(--space-2xl);" aria-labelledby="next-title">
+                <span class="eyebrow">brand new?</span>
+                <h2 id="next-title">Not sure where to begin?</h2>
+                <p class="muted">No rush, no wrong moves. Start with a gentle five-minute intro whenever you're ready.</p>
+                <div class="cta" style="justify-content: center; margin-top: var(--space-md);">
+                    <a href="/learn/start/new.html" class="btn">Start here — it's friendlier than you think</a>
                 </div>
             </section>
-        </article>
+        </div>
     </main>
 
     <mgt-footer></mgt-footer>
@@ -133,5 +247,6 @@
     <script type="module" src="/components/core/mgt-header.js"></script>
     <script type="module" src="/components/core/mgt-footer.js"></script>
     <script type="module" src="/components/core/mgt-newsletter.js"></script>
+    <script type="module" src="/components/core/mgt-recall.js"></script>
 </body>
 </html>

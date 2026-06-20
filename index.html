@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, viewport-fit=cover" />
-    <title>Monkey Got Thumbs — AI, on your terms</title>
+    <title>Monkey Got Thumbs — get comfortable with AI</title>
     <link rel="canonical" href="https://monkey-got-thumbs.com/">
     <meta name="robots" content="index, follow, max-image-preview:large">
     <meta name="theme-color" content="#0E0B1A" />
@@ -14,13 +14,16 @@
     <link rel="stylesheet" href="/assets/css/tokens.css">
     <link rel="stylesheet" href="/assets/css/base.css">
     <link rel="stylesheet" href="/assets/css/layout.css">
-    <meta name="description" content="Learn how AI actually works, build your own agents with a hands-on advisor, and run them your way — no hype, no lock-in. Plus chatyman, an AI chatbot that runs in your visitors' browsers." />
+    <meta name="description" content="New to AI, or just call it 'chatty'? You're in the right place. Monkey Got Thumbs is the calm, jargon-free way to get comfortable with AI at your own pace — and find people figuring it out with you." />
     <meta name="author" content="Monkey Got Thumbs" />
-    <meta property="og:title" content="Monkey Got Thumbs — AI, on your terms">
-    <meta property="og:description" content="Learn how AI actually works, build your own agents with a hands-on advisor, and run them your way — no hype, no lock-in.">
+    <meta property="og:title" content="Monkey Got Thumbs — get comfortable with AI">
+    <meta property="og:description" content="The calm, jargon-free way to get comfortable with AI at your own pace — and find your people.">
     <meta property="og:url" content="https://monkey-got-thumbs.com/">
     <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Monkey Got Thumbs">
+    <meta property="og:locale" content="en_GB">
     <meta property="og:image" content="https://monkey-got-thumbs.com/hero.png">
+    <meta property="og:image:alt" content="Monkey Got Thumbs — a friendly monkey giving two thumbs up">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
     <script type="application/ld+json">{
@@ -28,168 +31,198 @@
         "@type": "WebSite",
         "name": "Monkey Got Thumbs",
         "url": "https://monkey-got-thumbs.com/",
-        "description": "AI advocacy and development for everyday people. Learn AI without the jargon, build your own agents with a hands-on advisor, and run them your way. Augmented intelligence: the human directs, the machine assists.",
-        "publisher": {
-            "@type": "Organization",
-            "name": "Monkey Got Thumbs",
-            "logo": "https://monkey-got-thumbs.com/logo.png"
-        }
+        "description": "The calm, jargon-free way for everyday people to get comfortable with AI — and find a community figuring it out together.",
+        "publisher": { "@type": "Organization", "name": "Monkey Got Thumbs", "logo": "https://monkey-got-thumbs.com/logo.png" }
     }</script>
     <style>
-        /* ===== HERO ===== */
-        .home-hero {
-            display: grid;
-            place-items: center;
-            gap: var(--space-md);
-            text-align: center;
-            margin: var(--space-lg) 0 var(--space-3xl);
-        }
-        .home-hero img { margin-bottom: var(--space-sm); animation: heroIn 700ms ease-out both; }
-        .home-hero h1 { margin-bottom: var(--space-sm); }
-        .home-hero .lead { max-width: var(--measure-wide); color: var(--color-fg-secondary); }
-        .home-hero .cta { justify-content: center; }
-        @keyframes heroIn {
-            from { opacity: 0; transform: translateY(16px); }
-            to   { opacity: 1; transform: translateY(0); }
+        /* ===== Calm, warm backdrop — soft glows instead of flat black ===== */
+        body {
+            background:
+                radial-gradient(60rem 40rem at 78% -8%, color-mix(in srgb, var(--color-brand) 26%, transparent), transparent 70%),
+                radial-gradient(48rem 36rem at 8% 14%, color-mix(in srgb, var(--color-accent) 9%, transparent), transparent 68%),
+                var(--color-bg);
+            background-attachment: fixed;
         }
 
-        /* ===== SECTION HEADINGS ===== */
-        .section-head { text-align: center; max-width: var(--measure-wide); margin-left: auto; margin-right: auto; }
-        .section-head h2 { margin-top: 0; }
-
-        /* ===== THREE DOORS ===== */
-        .doors .card { display: flex; flex-direction: column; }
-        .doors .card h3 { margin-top: 0; }
-        .doors .card > p { flex: 1; }
-        .door-links { display: flex; flex-direction: column; gap: 0.35rem; margin-top: var(--space-sm); }
-        a.door-sub { font-size: var(--font-size-sm); color: var(--color-muted); text-decoration: none; }
-        a.door-sub:hover { color: var(--color-fg); }
-
-        /* ===== WHERE THINGS STAND ===== */
-        .status-cols { align-items: start; }
-        .status-cols .card h3 { margin-top: 0; }
-        .status-list { list-style: none; padding: 0; margin: var(--space-md) 0 0; }
-        .status-list li {
-            display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.5rem;
-            padding: 0.6rem 0; border-bottom: 1px solid var(--color-border);
+        /* Generous, restful vertical rhythm — one idea at a time */
+        .home-section { padding-block: clamp(3rem, 8vw, 6.5rem); }
+        .home-lede { max-width: 36rem; margin-inline: auto; text-align: center; color: var(--color-fg-secondary); font-size: var(--font-size-lg); line-height: 1.75; }
+        .eyebrow {
+            display: inline-block; font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold);
+            letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-accent);
+            margin-bottom: var(--space-md);
         }
-        .status-list li:last-child { border-bottom: 0; }
-        .status-list a { color: var(--color-accent); text-decoration: none; font-weight: var(--font-weight-semibold); }
-        .status-list a:hover { text-decoration: underline; }
-        .status-list .name { font-weight: var(--font-weight-semibold); color: var(--color-fg); }
-        .status-list .desc { color: var(--color-muted); font-size: var(--font-size-sm); flex: 1 1 100%; margin: 0; }
 
-        /* ===== VALUES ===== */
-        .values-grid { display: grid; gap: var(--space-md); grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr)); }
-        .value { text-align: center; padding: var(--space-md); }
-        .value h3 {
-            margin: 0 0 var(--space-xs); color: var(--color-accent);
-            font-family: var(--font-display); letter-spacing: var(--letter-spacing-wide);
-            font-weight: var(--font-weight-normal); font-size: var(--font-size-xl);
+        /* ===== Hero — one warm invitation, nothing to decide ===== */
+        .hero { text-align: center; padding-top: clamp(1rem, 4vw, 3rem); }
+        .hero img { width: min(190px, 42vw); height: auto; margin-inline: auto; display: block; animation: floatIn 800ms ease-out both; }
+        .hero h1 { margin: var(--space-md) 0 var(--space-sm); }
+        .hero .home-lede { font-size: clamp(1.05rem, 1.6vw, 1.3rem); }
+        .hero-cta { margin-top: var(--space-xl); display: flex; flex-direction: column; align-items: center; gap: var(--space-sm); }
+        .hero-cta .btn { font-size: var(--font-size-lg); padding-inline: 1.6rem; }
+        .hero-cta small { color: var(--color-muted); font-size: var(--font-size-sm); }
+        .scroll-hint { margin-top: var(--space-2xl); color: var(--color-muted); font-size: var(--font-size-sm); text-decoration: none; display: inline-block; }
+        .scroll-hint:hover { color: var(--color-fg); }
+        @keyframes floatIn { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* ===== Reassurance line ===== */
+        .reassure { text-align: center; max-width: 40rem; margin-inline: auto; font-size: var(--font-size-lg); line-height: 1.8; color: var(--color-fg-secondary); }
+        .reassure strong { color: var(--color-fg); }
+
+        /* ===== The journey — a path, not a menu ===== */
+        .path { display: grid; gap: clamp(1rem, 2.5vw, 1.75rem); grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr)); margin-top: var(--space-2xl); }
+        .step {
+            position: relative; background: color-mix(in srgb, var(--color-bg-secondary) 80%, transparent);
+            border: 1px solid var(--color-border); border-radius: var(--radius-lg);
+            padding: clamp(1.4rem, 3vw, 2rem); display: flex; flex-direction: column; gap: 0.6rem;
+            transition: border-color var(--transition-base), transform var(--transition-base);
         }
-        .value p { margin: 0; color: var(--color-muted); font-size: var(--font-size-sm); }
+        .step:hover { border-color: color-mix(in srgb, var(--color-accent) 45%, transparent); transform: translateY(-3px); }
+        .step__num {
+            font-family: var(--font-display); font-size: 2.2rem; line-height: 1; color: var(--color-accent);
+            opacity: 0.85; letter-spacing: 0.04em;
+        }
+        .step h3 { margin: 0; font-size: var(--font-size-xl); }
+        .step p { margin: 0; color: var(--color-fg-secondary); line-height: 1.7; flex: 1; }
+        .step a.card-link { margin-top: var(--space-sm); }
 
-        /* ===== NEWSLETTER ===== */
-        .newsletter-section { margin-top: var(--space-3xl); padding: var(--space-md); }
+        /* ===== Delight: a card framed by a soft gradient border (css-tip style) ===== */
+        .delight {
+            max-width: 44rem; margin-inline: auto;
+            border-radius: var(--radius-lg); padding: 1px;
+            background: linear-gradient(135deg, color-mix(in srgb, var(--color-accent) 55%, transparent), color-mix(in srgb, var(--color-brand-light) 55%, transparent));
+        }
+        .delight__inner { background: var(--color-bg-secondary); border-radius: calc(var(--radius-lg) - 1px); padding: clamp(1.5rem, 4vw, 2.5rem); }
+        .delight h2 { margin-top: 0; }
+        .delight p { color: var(--color-fg-secondary); line-height: 1.8; }
+        .delight mgt-recall { display: block; margin-top: var(--space-lg); }
 
-        @media (prefers-reduced-motion: reduce) { .home-hero img { animation: none; } }
+        /* show-the-data taste reuses shared .split/.artifact from layout.css */
+        .home-demo { margin-top: var(--space-lg); }
+
+        /* ===== Community invite ===== */
+        .belong { text-align: center; max-width: 40rem; margin-inline: auto; }
+        .belong h2 { margin-bottom: var(--space-sm); }
+        .belong p { color: var(--color-fg-secondary); line-height: 1.8; font-size: var(--font-size-lg); }
+        .belong .cta { justify-content: center; margin-top: var(--space-lg); }
+
+        /* ===== Gentle scroll reveal — transform only, never hides content ===== */
+        @media (prefers-reduced-motion: no-preference) {
+            @supports (animation-timeline: view()) {
+                .reveal { animation: reveal-rise linear both; animation-timeline: view(); animation-range: entry 0% cover 22%; }
+                @keyframes reveal-rise { from { transform: translateY(22px); } to { transform: translateY(0); } }
+            }
+        }
     </style>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
     <mgt-header></mgt-header>
     <main id="main-content">
-        <section class="home-hero" aria-labelledby="hero-title">
+
+        <!-- HERO: one warm invitation -->
+        <section class="home-section hero" aria-labelledby="hero-title">
             <picture>
                 <source srcset="/hero.webp" type="image/webp">
-                <img src="/hero.png" alt="Monkey Got Thumbs mascot" width="800" height="1200" loading="eager" decoding="async" fetchpriority="high" style="width:min(260px,45vw);height:auto">
+                <img src="/hero.png" alt="Monkey Got Thumbs — a friendly monkey giving two thumbs up" width="800" height="1200" loading="eager" decoding="async" fetchpriority="high">
             </picture>
-            <h1 id="hero-title">AI, on your terms.</h1>
-            <p class="lead">Learn how AI actually works, build your own agents, and run them your way — no hype, no lock-in.</p>
-            <div class="cta">
-                <a class="btn" href="/build/advisor/">Build &amp; test an agent — free</a>
-                <a class="btn btn--secondary" href="/learn/">New to AI? Start here</a>
+            <h1 id="hero-title">Let's get comfortable with AI.</h1>
+            <p class="home-lede">Curious but not sure where to start? You're in exactly the right place. We'll take it slow, skip the jargon, and walk with you from “what even <em>is</em> this?” to genuinely confident — at your own pace.</p>
+            <div class="hero-cta">
+                <a class="btn" href="/learn/start/new.html">Start here — it's friendlier than you think</a>
+                <small>No sign-up. No jargon. No assumption you know a thing.</small>
             </div>
+            <a class="scroll-hint" href="#path">↓ or have a look around first</a>
         </section>
 
-        <section id="doors" aria-labelledby="doors-title">
+        <!-- REASSURANCE -->
+        <section class="home-section reveal" aria-label="A gentle promise">
+            <p class="reassure">You don't need a tech background. You don't need to “get” everything at once. <strong>This is a calm, gentle path from curious to confident</strong> — with people walking it alongside you.</p>
+        </section>
+
+        <!-- THE JOURNEY: a path, not a menu of choices -->
+        <section class="home-section reveal" id="path" aria-labelledby="path-title">
             <div class="section-head">
-                <h2 id="doors-title">What do you want to do?</h2>
-                <p class="muted">Three ways in. You stay in the driver's seat the whole way.</p>
+                <span class="eyebrow">the journey</span>
+                <h2 id="path-title">Three gentle steps. Go at your speed.</h2>
+                <p class="muted">No need to choose — just start at the top. Each step quietly opens the next.</p>
             </div>
-            <div class="doors grid--3col">
-                <article class="card card--featured">
-                    <p><span class="pill pill--new">Start here</span></p>
-                    <h3>Build an agent</h3>
-                    <p>Write an agent's prompt, then get it critiqued and test-run by an advisor that explains what's strong, what's risky, and how to make it better. Learn by doing — it's one round of expert feedback, not a chatbot.</p>
-                    <div class="door-links">
-                        <a class="card-link" href="/build/advisor/">Try the Agent Advisor →</a>
-                        <a class="door-sub" href="/build/">Building &amp; selling, explained →</a>
-                    </div>
-                </article>
-                <article class="card">
-                    <h3>Learn AI, properly</h3>
-                    <p>Plain-English guides from “what even is AI?” to working frameworks and the human side — no jargon, no hype. Each page even remembers what you learn.</p>
-                    <div class="door-links">
-                        <a class="card-link" href="/learn/">Start learning →</a>
-                        <a class="door-sub" href="/notes/">Wander the idea notes →</a>
-                    </div>
-                </article>
-                <article class="card">
-                    <h3>Use it on your site</h3>
-                    <p>Drop <strong>chatyman</strong> — an AI chatbot that runs entirely in your visitors' browsers — onto any website. No backend, no per-chat bill, and the data stays private.</p>
-                    <div class="door-links">
-                        <a class="card-link" href="/chatty/">Meet chatyman →</a>
-                        <a class="door-sub" href="/products/">See all tools →</a>
-                    </div>
-                </article>
+            <ol class="path" role="list">
+                <li class="step">
+                    <span class="step__num" aria-hidden="true">1</span>
+                    <h3>Get comfortable</h3>
+                    <p>Start with the basics, explained like a good friend would — plain words, no rush. Pretty soon “chatty” stops feeling like a mystery and starts feeling like a tool you actually get.</p>
+                    <a class="card-link" href="/learn/start/new.html">Take the first step →</a>
+                </li>
+                <li class="step">
+                    <span class="step__num" aria-hidden="true">2</span>
+                    <h3>Get good — and enjoy it</h3>
+                    <p>Short, playful lessons that genuinely stick: little visual explainers you can poke at, real examples, and gentle prompts that pop back just before you'd forget.</p>
+                    <a class="card-link" href="/learn/">See how we teach →</a>
+                </li>
+                <li class="step">
+                    <span class="step__num" aria-hidden="true">3</span>
+                    <h3>Find your people</h3>
+                    <p>It all sticks better with company. Join people who started exactly where you are — swapping what works, cheering each other on, figuring it out together.</p>
+                    <a class="card-link" href="/community/">Meet the community →</a>
+                </li>
+            </ol>
+        </section>
+
+        <!-- DELIGHT: lessons that stick (live recall card) -->
+        <section class="home-section reveal" aria-labelledby="stick-title">
+            <div class="delight">
+                <div class="delight__inner">
+                    <span class="eyebrow">why it sticks</span>
+                    <h2 id="stick-title">Our pages remember what you learn</h2>
+                    <p>Most things you read, you forget by next week. So our lessons gently quiz you — a quick prompt now, then again right before it'd slip away. It's the science of memory, made to feel like a game. Have a go (it saves only in your browser):</p>
+                    <mgt-recall id="home-taste">
+                        <details>
+                            <summary>What does it really mean to be “comfortable” with AI?</summary>
+                            <p>It's not about coding or jargon. It's knowing what AI is good at, where it gets things wrong, and how to ask for what you actually want — so you stay in charge, and it just helps.</p>
+                        </details>
+                    </mgt-recall>
+                </div>
             </div>
         </section>
 
-        <section aria-labelledby="status-title">
+        <!-- SHOW THE DATA: see, don't just read -->
+        <section class="home-section reveal" aria-labelledby="see-title">
             <div class="section-head">
-                <h2 id="status-title">Where things stand</h2>
-                <p class="muted">What you can use today, and what we're still building. No vaporware dressed up as shipped.</p>
+                <span class="eyebrow">see it, don't just read it</span>
+                <h2 id="see-title">We show you what's actually happening</h2>
+                <p class="muted">AI feels like magic until you see the moving parts. So we show them — side by side, in plain view.</p>
             </div>
-            <div class="status-cols grid--2col">
-                <article class="card">
-                    <h3>Live now</h3>
-                    <ul class="status-list">
-                        <li><a href="/chatty/">chatyman</a> <span class="pill pill--live">Live</span><p class="desc">In-browser AI chatbot for any website — unlimited, private, deploy in minutes.</p></li>
-                        <li><a href="/learn/">Learning Hub</a> <span class="pill pill--live">Free</span><p class="desc">14 plain-English guides plus a linked web of <a href="/notes/">idea notes</a>.</p></li>
-                        <li><a href="/build/advisor/">Agent Builder Advisor</a> <span class="pill pill--new">New</span><p class="desc">One round of expert feedback on an agent prompt you're writing.</p></li>
-                    </ul>
-                </article>
-                <article class="card">
-                    <h3>In development</h3>
-                    <ul class="status-list">
-                        <li><span class="name">Metron</span> <span class="pill pill--soon">Soon</span><p class="desc">Run &amp; manage AI models on your own hardware.</p></li>
-                        <li><span class="name">Airgap</span> <span class="pill pill--soon">Soon</span><p class="desc">Private, local-first AI chat &amp; workspace.</p></li>
-                        <li><span class="name">Bigboy &amp; Rusty</span> <span class="pill pill--soon">Soon</span><p class="desc">Heavy-duty and systems-level AI tooling.</p></li>
-                        <li><span class="name">Build &amp; sell marketplace</span> <span class="pill pill--soon">Soon</span><p class="desc">Package the agents you make and sell them.</p></li>
-                    </ul>
-                    <p class="muted" style="margin-top:var(--space-md);font-size:var(--font-size-sm)">Want first access? Get on the list below.</p>
-                </article>
+            <div class="worked home-demo" style="max-width:46rem;margin-inline:auto;">
+                <h3>Asking “chatty” to plan a birthday — before &amp; after a tiny tweak</h3>
+                <div class="split">
+                    <div class="col machine">
+                        <h4>A vague ask</h4>
+                        <div class="artifact">“plan a birthday party”</div>
+                        <p>You get a generic checklist that could be for anyone.</p>
+                    </div>
+                    <div class="col human">
+                        <h4>You add a little of <span class="edit">↳ what you actually want</span></h4>
+                        <div class="artifact">“plan a <span class="edit">relaxed 6th birthday for my daughter, ~10 kids, small backyard, £100, no clowns</span>”</div>
+                        <p>Now it plans <em>your</em> party. Same tool — one small habit you'll learn here.</p>
+                    </div>
+                </div>
+                <p>That tiny shift — telling it what you really mean — is the whole game. We'll make it second nature.</p>
             </div>
         </section>
 
-        <section aria-labelledby="values-title">
-            <div class="section-head">
-                <h2 id="values-title">What we believe</h2>
-                <p class="muted">Pro-human, plain-spoken, built so the power stays with you.</p>
+        <!-- BELONG -->
+        <section class="home-section reveal" aria-labelledby="belong-title">
+            <div class="belong">
+                <span class="eyebrow">you're not doing this alone</span>
+                <h2 id="belong-title">Find your people</h2>
+                <p>Everyone here started out a little unsure. Get gentle, no-hype notes in your inbox, and join a community of like minds who are getting comfortable with AI — together.</p>
             </div>
-            <div class="values-grid">
-                <div class="value"><h3>You stay in control</h3><p>The human directs, the machine assists. You decide what to trust.</p></div>
-                <div class="value"><h3>Local-first</h3><p>Your data stays yours. Cloud is opt-in, never the default.</p></div>
-                <div class="value"><h3>No lock-in</h3><p>Open formats, portable data. Take what you build and go.</p></div>
-                <div class="value"><h3>AI for everyone</h3><p>Normalise AI for everyday people — more options, more opportunity.</p></div>
+            <div style="max-width:34rem;margin:var(--space-xl) auto 0;">
+                <mgt-newsletter heading="Come along for the ride" description="A friendly, no-jargon note now and then. No spam, no pressure, unsubscribe anytime."></mgt-newsletter>
             </div>
         </section>
 
-        <section class="card newsletter-section" aria-labelledby="newsletter-title">
-            <h2 id="newsletter-title" class="sr-only">Newsletter</h2>
-            <mgt-newsletter heading="Get early access &amp; no-hype insights" description="Practical AI you can use, plus first dibs on what we ship next. No spam."></mgt-newsletter>
-        </section>
     </main>
     <mgt-footer></mgt-footer>
     <script src="/assets/js/tracking.js"></script>
@@ -197,5 +230,6 @@
     <script type="module" src="/components/core/mgt-header.js"></script>
     <script type="module" src="/components/core/mgt-footer.js"></script>
     <script type="module" src="/components/core/mgt-newsletter.js"></script>
+    <script type="module" src="/components/core/mgt-recall.js"></script>
 </body>
 </html>

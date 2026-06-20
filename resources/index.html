@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, viewport-fit=cover" />
-    <title>Resources — Monkey Got Thumbs</title>
+    <title>Good things to read and watch — Monkey Got Thumbs</title>
     <link rel="canonical" href="https://monkey-got-thumbs.com/resources/">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#0E0B1A" />
@@ -14,76 +14,153 @@
     <link rel="stylesheet" href="/assets/css/tokens.css">
     <link rel="stylesheet" href="/assets/css/base.css">
     <link rel="stylesheet" href="/assets/css/layout.css">
-    <meta name="description" content="Curated resources for learning augmented intelligence. Books, research papers, tools, and external courses to deepen your understanding." />
-    <meta name="keywords" content="AI learning resources, augmented intelligence resources, AI books, AI courses" />
+    <meta name="description" content="When you're ready to go a little deeper, here are a few good things to read and watch. A small, friendly, hand-picked list — no homework, just things we genuinely liked." />
     <meta name="author" content="Monkey Got Thumbs" />
-    <meta property="og:title" content="Resources — Monkey Got Thumbs">
-    <meta property="og:description" content="Curated resources for learning augmented intelligence.">
+    <meta property="og:title" content="Good things to read and watch — Monkey Got Thumbs">
+    <meta property="og:description" content="A small, friendly, hand-picked list for when you're ready to go a little deeper. No homework — just things we genuinely liked.">
     <meta property="og:url" content="https://monkey-got-thumbs.com/resources/">
     <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:site_name" content="Monkey Got Thumbs">
     <meta property="og:image" content="https://monkey-got-thumbs.com/hero.png">
+    <meta property="og:image:alt" content="Monkey Got Thumbs — a friendly monkey giving two thumbs up">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
     <script type="application/ld+json">
-    { "@context": "https://schema.org", "@type": "CollectionPage", "name": "Resources", "url": "https://monkey-got-thumbs.com/resources/",
+    { "@context": "https://schema.org", "@type": "CollectionPage", "name": "Good things to read and watch", "url": "https://monkey-got-thumbs.com/resources/",
+      "description": "A small, hand-picked list of good things to read and watch when you're ready to go a little deeper with AI.",
       "breadcrumb": { "@type": "BreadcrumbList", "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://monkey-got-thumbs.com/" },
-        { "@type": "ListItem", "position": 2, "name": "Resources" }
+        { "@type": "ListItem", "position": 2, "name": "Good reads" }
     ]}}
     </script>
     <style>
-        .content { max-width: 42rem; margin: 0 auto; padding: 2rem 1rem; }
-        .content h2 { margin-top: 2.5rem; }
-        .content p { line-height: 1.8; margin-bottom: 1.25rem; }
-        .content ul { margin-bottom: 1.25rem; padding-left: 1.5rem; }
-        .content li { margin-bottom: 0.75rem; line-height: 1.7; }
-        .lead { font-size: var(--font-size-lg); color: var(--color-fg-secondary); line-height: 1.7; }
+        /* page-specific: warm, spacious wrapper + a calm reading list */
+        .res-wrap { max-width: var(--container-wide); margin-inline: auto; padding-inline: var(--gutter); }
+        .res-head { text-align: center; max-width: 40rem; margin: 0 auto var(--space-2xl); }
+        .res-head h1 { margin: var(--space-sm) 0; }
+
+        /* shelf = a calm group of picks; each pick is roomy and easy on the eye */
+        .shelf { margin-top: var(--space-md); }
+        .shelf__head { max-width: 42rem; margin-inline: auto; text-align: center; }
+        .shelf__head h2 { margin-bottom: var(--space-xs); }
+        .shelf__head p { color: var(--color-fg-secondary); line-height: 1.7; }
+
+        .picks { list-style: none; margin: var(--space-lg) 0 0; padding: 0; display: grid; gap: var(--space-md); max-width: 46rem; margin-inline: auto; }
+        .pick {
+            background: color-mix(in srgb, var(--color-bg-secondary) 80%, transparent);
+            border: 1px solid var(--color-border); border-radius: var(--radius-lg);
+            padding: clamp(1.1rem, 3vw, 1.5rem);
+            transition: border-color var(--transition-base), transform var(--transition-base);
+        }
+        .pick:hover { border-color: color-mix(in srgb, var(--color-accent) 40%, transparent); transform: translateY(-2px); }
+        .pick h3 { margin: 0 0 0.35rem; font-size: var(--font-size-lg); }
+        .pick .by { color: var(--color-muted); font-weight: var(--font-weight-semibold); }
+        .pick p { margin: 0.5rem 0 0; color: var(--color-fg-secondary); line-height: 1.75; }
+        .pick a { color: var(--color-accent); }
+
+        .res-foot { max-width: 44rem; margin: var(--space-2xl) auto 0; text-align: center; }
+        .res-foot .gradient-card__inner h2 { margin-top: 0; }
+        .res-foot .gradient-card__inner p { color: var(--color-fg-secondary); line-height: 1.8; }
+        .res-foot .cta { justify-content: center; margin-top: var(--space-lg); }
     </style>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
     <mgt-header></mgt-header>
     <main id="main-content">
-        <article class="content">
-            <nav aria-label="Breadcrumb"><ul class="breadcrumbs"><li><a href="/">Home</a></li><li><span aria-current="page">Resources</span></li></ul></nav>
-            <header>
-                <h1>Resources</h1>
-                <p class="lead">A curated collection of books, research, tools, and external resources for learning augmented intelligence and human-AI collaboration.</p>
+        <div class="res-wrap section-pad">
+            <nav aria-label="Breadcrumb">
+                <ul class="breadcrumbs">
+                    <li><a href="/">Home</a></li>
+                    <li><span aria-current="page">Good reads</span></li>
+                </ul>
+            </nav>
+
+            <header class="res-head">
+                <span class="eyebrow">when you're ready for more</span>
+                <h1>Good things to read and watch</h1>
+                <p class="lede">No homework here — promise. Just a small, hand-picked shelf of things we genuinely liked, for the day you fancy going a little deeper. Take what looks interesting and leave the rest. There's no rush, and no test at the end.</p>
             </header>
-            <section>
-                <h2>Essential Reading</h2>
-                <ul>
-                    <li><strong>The Beginning of Infinity</strong> by David Deutsch — the intellectual foundation for "hard-to-vary explanations" that underpin <a href="/learn/foundations/three-pillars.html">our framework</a>.</li>
-                    <li><strong>Human + Machine</strong> by Paul Daugherty &amp; H. James Wilson — Accenture's framework for human-AI collaboration in business.</li>
-                    <li><strong>Co-Intelligence</strong> by Ethan Mollick — practical strategies for working alongside AI in knowledge work.</li>
-                    <li><strong>Thinking, Fast and Slow</strong> by Daniel Kahneman — the psychology behind <a href="/learn/human-factors/bounded-rationality.html">bounded rationality</a> and cognitive biases that affect AI interaction.</li>
-                    <li><strong>Drive</strong> by Daniel Pink — the science of purpose, mastery, and autonomy that shapes <a href="/learn/human-factors/agency-autonomy.html">agency and motivation</a>.</li>
+
+            <!-- BOOKS: warm, plain-English framing -->
+            <section class="shelf reveal" aria-labelledby="books-title">
+                <div class="shelf__head">
+                    <h2 id="books-title">Books worth your evening</h2>
+                    <p>The ones we'd actually press into a friend's hands. Each one helps a different bit of all this click.</p>
+                </div>
+                <ul class="picks">
+                    <li class="pick">
+                        <h3>Co-Intelligence <span class="by">— Ethan Mollick</span></h3>
+                        <p>The friendliest place to start. Practical, down-to-earth ideas for working alongside AI day to day — written for people, not engineers.</p>
+                    </li>
+                    <li class="pick">
+                        <h3>Thinking, Fast and Slow <span class="by">— Daniel Kahneman</span></h3>
+                        <p>Not about AI at all — it's about how your own mind takes shortcuts. Once you see it, you'll spot where AI can quietly nudge you, and where to trust your gut. It sits behind <a href="/learn/human-factors/bounded-rationality.html">how we think about clear thinking</a>.</p>
+                    </li>
+                    <li class="pick">
+                        <h3>Drive <span class="by">— Daniel Pink</span></h3>
+                        <p>What actually keeps us motivated and in charge of our own choices. A lovely lens for staying the one in the driver's seat — the thread behind <a href="/learn/human-factors/agency-autonomy.html">staying in control</a>.</p>
+                    </li>
+                    <li class="pick">
+                        <h3>Human + Machine <span class="by">— Paul Daugherty &amp; H. James Wilson</span></h3>
+                        <p>If you're curious how AI is changing the working world, this paints the bigger picture warmly and clearly — without the buzzwords.</p>
+                    </li>
+                    <li class="pick">
+                        <h3>The Beginning of Infinity <span class="by">— David Deutsch</span></h3>
+                        <p>A bigger, brainier read for a quiet weekend — about how good explanations move the world forward. It's the deeper idea under <a href="/learn/foundations/three-pillars.html">the way we explain things here</a>.</p>
+                    </li>
                 </ul>
             </section>
-            <section>
-                <h2>Research &amp; Reports</h2>
-                <ul>
-                    <li><strong>Stanford HAI AI Index Report</strong> — annual comprehensive assessment of the state of AI across industry, research, and policy.</li>
-                    <li><strong>WEF Future of Jobs Report</strong> — the leading analysis of AI's impact on global employment and skills requirements.</li>
-                    <li><strong>Harvard/BCG Generative AI Study</strong> — the definitive study on how AI-assisted workers produce 40% higher quality work when directed effectively.</li>
-                    <li><strong>Microsoft Work Trend Index</strong> — longitudinal data on how knowledge workers are actually adopting AI tools.</li>
+
+            <!-- REPORTS: kept, but framed as "for the curious", honest -->
+            <section class="shelf reveal" aria-labelledby="deeper-title" style="margin-top: var(--space-2xl);">
+                <div class="shelf__head">
+                    <h2 id="deeper-title">For the genuinely curious</h2>
+                    <p>A bit drier, a bit longer — but if you like seeing where the numbers come from, these are the trustworthy places to look.</p>
+                </div>
+                <ul class="picks">
+                    <li class="pick">
+                        <h3>Stanford HAI — AI Index Report</h3>
+                        <p>A yearly, plain-spoken stock-take of where AI actually is. A calm antidote to the headlines.</p>
+                    </li>
+                    <li class="pick">
+                        <h3>WEF — Future of Jobs Report</h3>
+                        <p>If you've wondered "what does this mean for my work?", this is a measured look at how jobs and skills are shifting.</p>
+                    </li>
+                    <li class="pick">
+                        <h3>Microsoft — Work Trend Index</h3>
+                        <p>Real data on how everyday people are actually using these tools — not how anyone hopes they will.</p>
+                    </li>
                 </ul>
             </section>
-            <section>
-                <h2>Case Studies</h2>
-                <p>Real-world examples of augmented intelligence in action — both successes and instructive failures.</p>
-                <div class="cta" style="margin-top: 1rem;">
-                    <a href="/resources/case-studies/" class="btn">Explore Case Studies</a>
+
+            <!-- CASE STUDIES: kept the real link, warmed up -->
+            <section class="shelf reveal" aria-labelledby="stories-title" style="margin-top: var(--space-2xl);">
+                <div class="shelf__head">
+                    <h2 id="stories-title">Real stories, not theory</h2>
+                    <p>Sometimes the clearest way to learn is to watch how it went for someone else — the wins and the wobbles alike.</p>
+                    <div class="cta" style="justify-content:center;margin-top:var(--space-lg);">
+                        <a href="/resources/case-studies/" class="btn">Read the stories</a>
+                    </div>
                 </div>
             </section>
-            <section class="card" style="margin-top: 2rem;">
-                <h2>Contribute</h2>
-                <p>Know a resource that belongs here? We are always looking for high-quality recommendations. <a href="/contact/">Get in touch</a>.</p>
-                <div class="cta">
-                    <a href="/learn/" class="btn">Back to Learning Hub</a>
-                    <a href="/community/" class="btn btn--secondary">Join Community</a>
+
+            <!-- CLOSE: contribute + gentle onward links -->
+            <section class="res-foot reveal">
+                <div class="gradient-card">
+                    <div class="gradient-card__inner">
+                        <span class="eyebrow">your turn</span>
+                        <h2>Read something you loved?</h2>
+                        <p>If a book, video or article helped it finally click for you, we'd love to hear about it — we add the good ones to this shelf so the next nervous beginner finds them too.</p>
+                        <div class="cta">
+                            <a href="/contact/" class="btn">Tell us about it</a>
+                            <a href="/learn/" class="btn btn--secondary">Back to learning</a>
+                        </div>
+                    </div>
                 </div>
             </section>
-        </article>
+        </div>
     </main>
     <mgt-footer></mgt-footer>
     <script src="/assets/js/tracking.js"></script>

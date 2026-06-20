@@ -12,6 +12,7 @@
   --color-accent: #A6FF4D;
   --color-brand: #503E94;
   --color-brand-light: #6A55C0;
+  --color-brand-lighter: #B7A7F2;   /* AA-contrast purple for small text on dark bg (>=4.5:1) */
   --color-muted: #B9B5D3;
 
   /* Functional Colors */
@@ -161,6 +162,8 @@
     --transition-base: 0ms;
     --transition-slow: 0ms;
   }
+
+  html { scroll-behavior: auto; }
 
   * {
     animation-duration: 0.01ms !important;

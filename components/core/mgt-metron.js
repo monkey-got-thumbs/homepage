@@ -31,6 +31,17 @@ class MGTMetron extends HTMLElement {
   }
 
   connectedCallback() {
+    // The live manager talks to a local Metron instance at :3001. The marketing
+    // site uses plain <mgt-metron> and shows a static preview; only the real app
+    // opts in with <mgt-metron live> to poll the local API.
+    this.offline = !this.hasAttribute('live');
+    if (this.offline) {
+      this.types = ['general', 'code', 'image', 'speech'].map((t) => ({ type: t, loaded: false, active: null }));
+      this.models = [];
+      this.loading = false;
+      this.render();
+      return;
+    }
     this.render();
     this.fetchData();
     // Poll every 10s for status changes
@@ -194,6 +205,17 @@ class MGTMetron extends HTMLElement {
           color: #B9B5D3;
           font-size: 14px;
         }
+
+        .preview-banner {
+          background: rgba(96, 165, 250, 0.12);
+          border: 1px solid rgba(96, 165, 250, 0.3);
+          border-radius: 8px;
+          padding: 12px 16px;
+          margin-bottom: 24px;
+          font-size: 14px;
+          color: #BFD8FF;
+        }
+        .preview-banner strong { color: #EDECF6; }
 
         .type-slot {
           background: #17122B;
@@ -423,7 +445,9 @@ class MGTMetron extends HTMLElement {
         }
       </style>
 
-      ${this.error ? `<div class="error-banner">${this.error}</div>` : ''}
+      ${this.offline
+        ? '<div class="preview-banner">A preview of the Metron model manager. The live version runs on <strong>your own hardware</strong> and connects to a local Metron instance — no cloud, your models stay yours. <strong>In development.</strong></div>'
+        : (this.error ? `<div class="error-banner">${this.error}</div>` : '')}
       ${this.loading ? '<div class="loading-state">Connecting to metron...</div>' : typeSlots}
     `;
 

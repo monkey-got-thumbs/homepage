@@ -41,9 +41,10 @@ class MGTHeader extends HTMLElement {
           display: flex;
           align-items: center;
           justify-content: space-between;
-          max-width: 72rem;
+          max-width: var(--container-wide, 90rem);
           margin: 0 auto;
-          padding: 0.75rem 1rem;
+          padding: 0.75rem var(--gutter, 1rem);
+          box-sizing: border-box;   /* shadow DOM doesn't inherit the page's border-box */
         }
 
         .brand {
@@ -230,7 +231,7 @@ class MGTHeader extends HTMLElement {
             <a href="/">Home</a>
             <a href="/learn/">Learn</a>
             <a href="/build/">Build</a>
-            <a href="/chatty/" class="nav-cta">chatyman</a>
+            <a href="/chatty/">chatyman</a>
             <a href="/products/">Products</a>
             <a href="/notes/">Notes</a>
             <a href="/community/">Community</a>
@@ -251,10 +252,8 @@ class MGTHeader extends HTMLElement {
       header.setAttribute('role', 'banner');
     }
 
-    // Trap focus when menu is open (mobile)
-    if (window.innerWidth < 768) {
-      this.setupFocusTrap();
-    }
+    // Trap focus when the mobile menu is open (handler self-gates at runtime)
+    this.setupFocusTrap();
   }
 
   attachEventListeners() {
@@ -319,31 +318,19 @@ class MGTHeader extends HTMLElement {
   }
 
   setupFocusTrap() {
-    // Trap focus within header when menu is open (mobile)
-    if (!this.isMenuOpen) return;
-
-    const focusableElements = this.shadowRoot.querySelectorAll(
-      'a, button, [tabindex]:not([tabindex="-1"])'
-    );
-
-    if (focusableElements.length === 0) return;
-
-    const firstFocusable = focusableElements[0];
-    const lastFocusable = focusableElements[focusableElements.length - 1];
-
+    // Attach once; only traps while the mobile menu is actually open.
     this.shadowRoot.addEventListener('keydown', (e) => {
-      if (e.key !== 'Tab') return;
-
-      if (e.shiftKey) {
-        if (this.shadowRoot.activeElement === firstFocusable) {
-          e.preventDefault();
-          lastFocusable.focus();
-        }
-      } else {
-        if (this.shadowRoot.activeElement === lastFocusable) {
-          e.preventDefault();
-          firstFocusable.focus();
-        }
+      if (e.key !== 'Tab' || !this.isMenuOpen || window.innerWidth >= 768) return;
+      const focusable = this.shadowRoot.querySelectorAll('a, button, [tabindex]:not([tabindex="-1"])');
+      if (focusable.length === 0) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (e.shiftKey && this.shadowRoot.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && this.shadowRoot.activeElement === last) {
+        e.preventDefault();
+        first.focus();
       }
     });
   }

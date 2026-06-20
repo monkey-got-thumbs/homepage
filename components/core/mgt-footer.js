@@ -30,7 +30,7 @@ class MGTFooter extends HTMLElement {
 
         footer {
           margin-top: 3rem;
-          padding: 3rem 1rem;
+          padding-block: 3rem;
           background: #0a0814;
           border-top: 1px solid var(--border);
           color: var(--muted);
@@ -41,6 +41,8 @@ class MGTFooter extends HTMLElement {
         .footer-container {
           max-width: var(--container-wide, 90rem);
           margin: 0 auto;
+          padding-inline: var(--gutter, 1rem);
+          box-sizing: border-box;
         }
 
         .footer-content {
@@ -109,7 +111,7 @@ class MGTFooter extends HTMLElement {
 
         @media (max-width: 768px) {
           footer {
-            padding: 2rem 1rem;
+            padding-block: 2rem;
           }
 
           .footer-content {

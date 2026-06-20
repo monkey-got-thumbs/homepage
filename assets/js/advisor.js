@@ -70,7 +70,7 @@
         $('test-1').value = EXAMPLE.tests[0];
         $('test-2-wrap').hidden = false; $('test-2').value = EXAMPLE.tests[1]; revealed = Math.max(revealed, 2);
         $('rubric').value = EXAMPLE.rubric;
-        setStatus('Example loaded — edit it, then Analyze.', '');
+        setStatus('Example loaded — edit it, then Analyse.', '');
         if (window.MGT && window.MGT.announceToScreenReader) window.MGT.announceToScreenReader('Example loaded');
         sp.focus();
     });
@@ -168,7 +168,7 @@
         }
 
         const token = TURNSTILE_KEY ? turnstileToken() : '';
-        if (TURNSTILE_KEY && !token) { setStatus('Please complete the “I\'m human” check, then Analyze.', 'error'); return; }
+        if (TURNSTILE_KEY && !token) { setStatus('Please complete the “I\'m human” check, then Analyse.', 'error'); return; }
 
         analyzeBtn.disabled = true;
         const orig = analyzeBtn.textContent; analyzeBtn.textContent = 'Analyzing…';

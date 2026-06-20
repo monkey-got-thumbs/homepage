@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, viewport-fit=cover" />
-    <title>Agent Builder Advisor — Monkey Got Thumbs</title>
+    <title>The free AI helper — paste what you asked, get friendly feedback | Monkey Got Thumbs</title>
     <link rel="canonical" href="https://monkey-got-thumbs.com/build/advisor/">
     <meta name="robots" content="index, follow, max-image-preview:large">
     <meta name="theme-color" content="#0E0B1A" />
@@ -14,30 +14,40 @@
     <link rel="stylesheet" href="/assets/css/tokens.css">
     <link rel="stylesheet" href="/assets/css/base.css">
     <link rel="stylesheet" href="/assets/css/layout.css">
-    <meta name="description" content="A one-shot advisor for people building AI agents: paste your agent's prompt and a few test inputs, get a critique, real test-run outputs, and concrete improvements. A learning tool, not a chatbot." />
+    <meta name="description" content="Paste in what you asked AI plus a couple of example messages, and get one round of friendly, plain-English feedback: what worked, what confused it, and how to ask better. Free, no sign-up." />
     <meta name="author" content="Monkey Got Thumbs" />
-    <meta property="og:title" content="Agent Builder Advisor — Monkey Got Thumbs">
-    <meta property="og:description" content="Paste your agent's prompt + test inputs, get one round of expert feedback. Learn to build better agents.">
+    <meta property="og:title" content="The free AI helper — paste what you asked, get friendly feedback | Monkey Got Thumbs">
+    <meta property="og:description" content="Paste what you asked AI, get one round of kind, plain-English feedback so you can ask better. Free.">
     <meta property="og:url" content="https://monkey-got-thumbs.com/build/advisor/">
     <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_GB">
     <meta property="og:image" content="https://monkey-got-thumbs.com/hero.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
     <script type="application/ld+json">
     { "@context": "https://schema.org", "@type": "WebApplication", "name": "Agent Builder Advisor",
       "applicationCategory": "DeveloperApplication", "operatingSystem": "Web browser",
       "url": "https://monkey-got-thumbs.com/build/advisor/",
-      "description": "A one-shot advisor that critiques an AI agent prompt, test-runs it, and suggests improvements.",
+      "description": "A friendly, one-round helper: paste what you asked AI, see what it produces, and get plain-English feedback on how to ask better.",
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
       "breadcrumb": { "@type": "BreadcrumbList", "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://monkey-got-thumbs.com/" },
-        { "@type": "ListItem", "position": 2, "name": "Build", "item": "https://monkey-got-thumbs.com/build/" },
-        { "@type": "ListItem", "position": 3, "name": "Agent Builder Advisor" }
+        { "@type": "ListItem", "position": 2, "name": "Make things", "item": "https://monkey-got-thumbs.com/build/" },
+        { "@type": "ListItem", "position": 3, "name": "The free AI helper" }
     ]}}
     </script>
     <style>
-        .advisor-hero { max-width: var(--measure-wide); margin: var(--space-lg) auto var(--space-2xl); }
+        /* Calm, warm backdrop to match the rest of the site */
+        body {
+            background:
+                radial-gradient(60rem 40rem at 78% -8%, color-mix(in srgb, var(--color-brand) 22%, transparent), transparent 70%),
+                radial-gradient(48rem 36rem at 8% 14%, color-mix(in srgb, var(--color-accent) 8%, transparent), transparent 68%),
+                var(--color-bg);
+            background-attachment: fixed;
+        }
+
+        .advisor-hero { max-width: var(--measure-wide); margin: var(--space-lg) auto var(--space-2xl); text-align: center; }
         .advisor-hero h1 { margin-bottom: var(--space-sm); }
-        .advisor-hero .lead { color: var(--color-fg-secondary); }
+        .advisor-hero .lead { color: var(--color-fg-secondary); line-height: 1.8; max-width: 44rem; margin-inline: auto; }
         .advisor-wrap { max-width: var(--container-md); margin: 0 auto; }
 
         .preview-note {
@@ -97,55 +107,56 @@
             <nav aria-label="Breadcrumb">
                 <ul class="breadcrumbs">
                     <li><a href="/">Home</a></li>
-                    <li><a href="/build/">Build</a></li>
-                    <li><span aria-current="page">Agent Builder Advisor</span></li>
+                    <li><a href="/build/">Make things</a></li>
+                    <li><span aria-current="page">The free AI helper</span></li>
                 </ul>
             </nav>
 
             <header class="advisor-hero">
-                <h1>Agent Builder Advisor</h1>
-                <p class="lead">Building an AI agent? Paste its prompt and a few test inputs below. You'll get <strong>one round of expert feedback</strong>: what's strong, what's risky, what each test input actually produces, and exactly how to improve it — with the reasons why. It's a <strong>learning tool, not a chatbot</strong> — no conversation, no memory. Each click is one fresh analysis.</p>
+                <span class="eyebrow">free · no sign-up</span>
+                <h1>Paste what you asked AI. Get friendly feedback.</h1>
+                <p class="lead">Pop in the instructions you gave AI (and a couple of example messages), and we'll read it over like a patient friend. You'll get <strong>one round of plain-English feedback</strong>: what's working, what might confuse it, what your examples actually produce, and how to ask so you get a better answer. It's <strong>one helpful read, not a chat</strong> — no back-and-forth. Each time you tap the button, it takes a fresh look.</p>
             </header>
 
             <div class="preview-note" id="preview-note" hidden>
-                <p><strong>Live analysis is launching soon.</strong> In the meantime, expand <em>“See a worked example of a strong prompt”</em> at the bottom to learn what good looks like — the same checklist the advisor uses.</p>
+                <p><strong>The live feedback is just about ready.</strong> While we finish it off, open <em>“See what a good set of instructions looks like”</em> at the bottom — it shows you exactly the kind of thing that works (the same checklist this helper uses).</p>
             </div>
 
             <form class="advisor-form card" id="advisor-form" novalidate>
                 <div class="field">
-                    <label for="agent-name">Agent name / role</label>
-                    <p class="help" id="name-help">One line on what this agent is for. e.g. “Refund-policy support agent for an online shoe shop”.</p>
+                    <label for="agent-name">What's your helper for?</label>
+                    <p class="help" id="name-help">One line is plenty. For example: “Helps customers with refund questions for an online shoe shop.”</p>
                     <input type="text" id="agent-name" name="agentName" maxlength="80" aria-describedby="name-help" autocomplete="off">
                 </div>
 
                 <div class="field">
-                    <label for="system-prompt">System prompt <span aria-hidden="true">*</span></label>
-                    <p class="help" id="sp-help">The instructions that define your agent — its role, scope, tone, rules, and the shape of its output. This is what gets analysed.</p>
+                    <label for="system-prompt">The instructions you gave AI <span aria-hidden="true">*</span></label>
+                    <p class="help" id="sp-help">This is the bit you write to tell AI who to be and how to help — its job, what it should and shouldn't do, its tone, and the kind of answer you want back. Paste it here; this is what we look over.</p>
                     <textarea id="system-prompt" name="systemPrompt" maxlength="6000" required aria-describedby="sp-help sp-count"></textarea>
                     <span class="char-count" id="sp-count" aria-live="off">0 / 6000</span>
                 </div>
 
                 <fieldset>
-                    <legend>Test inputs</legend>
-                    <p class="help">One to three example messages a real user might send. The advisor runs your agent on each and shows the output.</p>
+                    <legend>A couple of example messages</legend>
+                    <p class="help">One to three things a real person might actually say to your helper. We'll show you what your helper does with each one.</p>
                     <div class="test-input">
-                        <label class="sr-only" for="test-1">Test input 1</label>
-                        <textarea id="test-1" name="test1" maxlength="1500" aria-label="Test input 1" placeholder="e.g. I bought these trainers 40 days ago and they fell apart — can I get a refund?"></textarea>
+                        <label class="sr-only" for="test-1">Example message 1</label>
+                        <textarea id="test-1" name="test1" maxlength="1500" aria-label="Example message 1" placeholder="e.g. I bought these trainers 40 days ago and they fell apart — can I get a refund?"></textarea>
                     </div>
                     <div class="test-input" id="test-2-wrap" hidden>
-                        <label class="sr-only" for="test-2">Test input 2</label>
-                        <textarea id="test-2" name="test2" maxlength="1500" aria-label="Test input 2"></textarea>
+                        <label class="sr-only" for="test-2">Example message 2</label>
+                        <textarea id="test-2" name="test2" maxlength="1500" aria-label="Example message 2"></textarea>
                     </div>
                     <div class="test-input" id="test-3-wrap" hidden>
-                        <label class="sr-only" for="test-3">Test input 3</label>
-                        <textarea id="test-3" name="test3" maxlength="1500" aria-label="Test input 3"></textarea>
+                        <label class="sr-only" for="test-3">Example message 3</label>
+                        <textarea id="test-3" name="test3" maxlength="1500" aria-label="Example message 3"></textarea>
                     </div>
-                    <button type="button" class="btn btn--secondary" id="add-input">+ Add another test input</button>
+                    <button type="button" class="btn btn--secondary" id="add-input">+ Add another example</button>
                 </fieldset>
 
                 <div class="field">
-                    <label for="rubric">What does good output look like? <span class="help" style="display:inline">(optional)</span></label>
-                    <p class="help" id="rubric-help">Describe success so the advisor can judge the test runs against your bar. e.g. “Cites the 30-day policy, stays friendly, never promises a refund it can't authorise.”</p>
+                    <label for="rubric">What would a great answer look like? <span class="help" style="display:inline">(optional)</span></label>
+                    <p class="help" id="rubric-help">Tell us what “good” means to you, and we'll check the examples against it. For instance: “Mentions the 30-day policy, stays friendly, and never promises a refund it can't actually give.”</p>
                     <textarea id="rubric" name="rubric" maxlength="1000" aria-describedby="rubric-help"></textarea>
                 </div>
 
@@ -157,30 +168,30 @@
                 <div id="cf-slot"></div>
 
                 <div class="advisor-actions">
-                    <button type="submit" class="btn" id="analyze-btn">Analyze my agent</button>
-                    <button type="button" class="btn btn--secondary" id="load-example">Load the example</button>
+                    <button type="submit" class="btn" id="analyze-btn">Give me feedback</button>
+                    <button type="button" class="btn btn--secondary" id="load-example">Show me an example first</button>
                 </div>
                 <div id="advisor-status" role="status" aria-live="polite" aria-atomic="true"></div>
             </form>
 
             <section class="results" id="results" tabindex="-1" aria-live="polite" hidden>
                 <div class="card" id="critique-card">
-                    <h2>Prompt critique</h2>
+                    <h2>How your instructions read</h2>
                     <p id="critique-summary"></p>
                     <div id="critique-issues"></div>
                 </div>
                 <div class="card" id="runs-card">
-                    <h2>Test runs</h2>
-                    <p class="muted" style="font-size:var(--font-size-sm)">What your agent produced for each input (a simulated run of your prompt).</p>
+                    <h2>What your helper said</h2>
+                    <p class="muted" style="font-size:var(--font-size-sm)">A practice run of your instructions on each example message you gave.</p>
                     <div id="runs-list"></div>
                 </div>
                 <div class="card" id="improvements-card">
-                    <h2>How to improve it</h2>
+                    <h2>Little changes that'll help</h2>
                     <div id="improvements-list"></div>
                 </div>
                 <div class="card" id="improved-card">
-                    <h2>A stronger version of your prompt</h2>
-                    <p class="muted" style="font-size:var(--font-size-sm)">A starting point — read it, don't just paste it. The reasons above tell you why each change matters.</p>
+                    <h2>A friendlier version to start from</h2>
+                    <p class="muted" style="font-size:var(--font-size-sm)">A starting point, not a magic fix — have a read rather than just pasting it. The notes above explain why each change helps.</p>
                     <div class="improved-wrap">
                         <pre id="improved-prompt"></pre>
                         <button type="button" class="btn btn--secondary" id="copy-improved" style="margin-top:var(--space-sm)">Copy</button>
@@ -189,20 +200,20 @@
             </section>
 
             <details class="annotated card">
-                <summary>See a worked example of a strong prompt</summary>
-                <p class="muted" style="font-size:var(--font-size-sm);margin-top:var(--space-md)">A good agent prompt names the <span class="ann">role</span>, the <span class="ann">scope &amp; limits</span>, the <span class="ann">tone</span>, the <span class="ann">refusal rules</span>, and the <span class="ann">output shape</span>. Notice how each line removes ambiguity:</p>
-                <pre>You are a <span class="ann">refund-support assistant</span> for Northwind Shoes, an online shop.
+                <summary>See what a good set of instructions looks like</summary>
+                <p class="muted" style="font-size:var(--font-size-sm);margin-top:var(--space-md)">Clear instructions tend to say five things: the <span class="ann">job</span>, what's <span class="ann">in and out of bounds</span>, the <span class="ann">tone</span>, what to do <span class="ann">when it's not sure</span>, and the <span class="ann">shape of the answer</span>. See how each line leaves nothing to guess:</p>
+                <pre>You are a <span class="ann">helper for refund questions</span> at Northwind Shoes, an online shop.
 
-<span class="ann">Scope:</span> Help customers understand the returns policy and start a return.
-<span class="ann">Policy you must follow:</span> Refunds are allowed within 30 days of delivery,
+<span class="ann">Your job:</span> help customers understand the returns policy and start a return.
+<span class="ann">The policy to follow:</span> refunds are allowed within 30 days of delivery,
 for unworn items with proof of purchase. Faulty items can be returned any time.
-<span class="ann">Limits:</span> You cannot approve refunds yourself — you explain eligibility and,
-if eligible, give the steps to start one. Never promise money back.
-<span class="ann">Tone:</span> Warm, plain English, 3 sentences max unless asked for detail.
-<span class="ann">If unsure or out of scope:</span> say so and offer to hand off to a human at
-support@northwind.example.
-<span class="ann">Output:</span> A short reply to the customer, then a line "ELIGIBLE: yes/no/unclear".</pre>
-                <p class="muted" style="font-size:var(--font-size-sm)">Click <strong>“Load the example”</strong> above to drop this (plus test inputs) into the form and see how the advisor analyses it.</p>
+<span class="ann">What you can't do:</span> you can't approve refunds yourself — explain whether
+something qualifies and, if it does, give the steps to start one. Never promise money back.
+<span class="ann">Tone:</span> warm, plain English, 3 sentences at most unless they ask for more.
+<span class="ann">If you're not sure or it's outside your job:</span> say so, and offer to pass them
+to a person at support@northwind.example.
+<span class="ann">The answer:</span> a short, friendly reply, then a line "ELIGIBLE: yes/no/unclear".</pre>
+                <p class="muted" style="font-size:var(--font-size-sm)">Tap <strong>“Show me an example first”</strong> above to drop this (plus a couple of example messages) into the form and watch how the helper reads it.</p>
             </details>
         </article>
     </main>

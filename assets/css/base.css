@@ -24,7 +24,11 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100%;
-  background: radial-gradient(1200px 800px at 50% -10%, #1B1534 0%, var(--color-bg) 55%);
+  background:
+    radial-gradient(60rem 40rem at 78% -8%, color-mix(in srgb, var(--color-brand) 24%, transparent), transparent 70%),
+    radial-gradient(48rem 36rem at 6% 12%, color-mix(in srgb, var(--color-accent) 8%, transparent), transparent 66%),
+    radial-gradient(1200px 800px at 50% -10%, #1B1534 0%, var(--color-bg) 55%);
+  background-attachment: fixed;
   color: var(--color-fg);
   font: var(--font-weight-normal) var(--font-size-base) / var(--line-height-normal) var(--font-sans);
   margin: 0;
@@ -224,12 +228,6 @@ img {
   border-radius: var(--radius);
 }
 
-img[alt=""],
-img:not([alt]) {
-  border: 2px dashed var(--color-error);
-  outline: 2px solid var(--color-error);
-}
-
 figure {
   margin: var(--space-xl) 0;
 }
@@ -379,11 +377,10 @@ details[open] > summary {
 /* ===== UTILITY CLASSES ===== */
 
 .container {
-  max-width: var(--container-max);
+  max-width: var(--container-wide);
   margin-left: auto;
   margin-right: auto;
-  padding-left: var(--space-md);
-  padding-right: var(--space-md);
+  padding-inline: var(--gutter);
 }
 
 .sr-only {

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, viewport-fit=cover" />
-    <title>Getting Started with AI — Monkey Got Thumbs</title>
+    <title>Brand new to AI? Start right here — Monkey Got Thumbs</title>
     <link rel="canonical" href="https://monkey-got-thumbs.com/learn/start/new.html">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#0E0B1A" />
@@ -14,161 +14,200 @@
     <link rel="stylesheet" href="/assets/css/tokens.css">
     <link rel="stylesheet" href="/assets/css/base.css">
     <link rel="stylesheet" href="/assets/css/layout.css">
-    <meta name="description" content="New to AI? Here's what you need to know to get started. The big players, what they do, and how to try it yourself in five minutes." />
-    <meta property="og:title" content="Getting Started with AI — Monkey Got Thumbs">
+    <meta name="description" content="Never used AI before? This is the gentlest possible start. Plain words, lots of encouragement, and one tiny thing to try. You can't break anything — promise." />
+    <meta name="author" content="Monkey Got Thumbs" />
+    <meta property="og:title" content="Brand new to AI? Start right here — Monkey Got Thumbs">
+    <meta property="og:description" content="The gentlest possible start. Plain words, lots of encouragement, and one tiny thing to try. You can't break anything.">
     <meta property="og:url" content="https://monkey-got-thumbs.com/learn/start/new.html">
     <meta property="og:type" content="article">
     <meta property="og:image" content="https://monkey-got-thumbs.com/hero.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "Article", "headline": "Brand new to AI? Start right here",
+      "description": "The gentlest possible start with AI, for complete beginners.",
+      "url": "https://monkey-got-thumbs.com/learn/start/new.html",
+      "publisher": { "@type": "Organization", "name": "Monkey Got Thumbs", "logo": "https://monkey-got-thumbs.com/logo.png" },
+      "breadcrumb": { "@type": "BreadcrumbList", "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://monkey-got-thumbs.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Learn", "item": "https://monkey-got-thumbs.com/learn/" },
+        { "@type": "ListItem", "position": 3, "name": "Start" }
+      ]}}
+    </script>
     <style>
-        .wizard {
-            max-width: 32rem;
-            margin: 0 auto;
-            padding: 4rem 1.5rem 5rem;
+        /* Soft, warm backdrop to match the home page — calm, not flat black */
+        body {
+            background:
+                radial-gradient(56rem 38rem at 82% -8%, color-mix(in srgb, var(--color-brand) 22%, transparent), transparent 70%),
+                radial-gradient(44rem 34rem at 6% 12%, color-mix(in srgb, var(--color-accent) 8%, transparent), transparent 68%),
+                var(--color-bg);
+            background-attachment: fixed;
         }
-        .wizard h1 {
-            text-align: center;
-            margin-bottom: 3rem;
+
+        .start { max-width: 40rem; margin-inline: auto; padding-inline: var(--gutter); }
+
+        /* Warm, centred opening */
+        .start-head { text-align: center; max-width: 38rem; margin: 0 auto var(--space-2xl); }
+        .start-head .emoji { font-size: 2.75rem; line-height: 1; display: block; margin-bottom: var(--space-sm); }
+        .start-head h1 { margin: var(--space-sm) 0; }
+
+        .start h2 { margin-top: 0; }
+
+        /* The single, gentle first thing to try */
+        .try .gradient-card__inner h2 { margin-top: 0; }
+        .try p { color: var(--color-fg-secondary); line-height: 1.8; }
+        .try .links { display: flex; flex-wrap: wrap; gap: var(--space-sm); margin-top: var(--space-md); }
+        .try .links .btn { font-size: var(--font-size-base); }
+        .try .tiny { color: var(--color-muted); font-size: var(--font-size-sm); margin-top: var(--space-md); margin-bottom: 0; }
+
+        /* A short, reassuring list of plain truths */
+        .truths { list-style: none; margin: var(--space-lg) 0 0; padding: 0; display: grid; gap: var(--space-md); }
+        .truths li {
+            background: color-mix(in srgb, var(--color-bg-secondary) 80%, transparent);
+            border: 1px solid var(--color-border); border-radius: var(--radius-lg);
+            padding: clamp(1.1rem, 3vw, 1.5rem); line-height: 1.8; color: var(--color-fg-secondary);
         }
-        .wizard p {
-            line-height: 2;
-            margin-bottom: 1.75rem;
-            color: var(--color-fg-secondary);
-            font-size: var(--font-size-lg);
-        }
-        .wizard h2 {
-            font-size: var(--font-size-2xl);
-            margin-top: 4rem;
-            margin-bottom: 1.5rem;
-        }
-        .player {
-            padding: 1.5rem 0;
-            border-bottom: 1px solid var(--color-border);
-        }
-        .player:last-child { border-bottom: none; }
-        .player-name {
-            font-weight: var(--font-weight-bold);
-            color: var(--color-fg);
-            font-size: var(--font-size-lg);
-            display: block;
-            margin-bottom: 0.35rem;
-        }
-        .player-desc {
-            color: var(--color-muted);
-            font-size: var(--font-size-base);
-            line-height: 1.7;
-        }
-        .try-it {
-            background: var(--color-bg-secondary);
-            border-radius: var(--radius);
-            padding: 2rem;
-            margin: 2rem 0;
-        }
-        .try-it p {
-            margin-bottom: 1rem;
-            font-size: var(--font-size-base);
-        }
-        .try-it p:last-child { margin-bottom: 0; }
-        .know-item {
-            margin-bottom: 2.5rem;
-        }
-        .know-item p {
-            font-size: var(--font-size-base);
-        }
-        .next {
-            text-align: center;
-            margin-top: 5rem;
-            padding-top: 3rem;
-            border-top: 1px solid var(--color-border);
-        }
-        .next p {
-            margin-bottom: 1.5rem;
-            color: var(--color-muted);
-        }
-        .back {
-            display: block;
-            text-align: center;
-            margin-top: 2rem;
-            color: var(--color-muted);
-            font-size: var(--font-size-sm);
-        }
+        .truths li strong { color: var(--color-fg); display: block; margin-bottom: 0.25rem; }
+
+        /* The big players, kept light and friendly */
+        .players { list-style: none; margin: var(--space-lg) 0 0; padding: 0; }
+        .players li { padding: var(--space-md) 0; border-bottom: 1px solid var(--color-border); line-height: 1.7; }
+        .players li:last-child { border-bottom: none; }
+        .players .name { font-weight: var(--font-weight-bold); color: var(--color-fg); }
+        .players .desc { color: var(--color-fg-secondary); }
+
+        .start mgt-recall { display: block; margin-top: var(--space-lg); }
+
+        /* One gentle next step */
+        .next { text-align: center; margin-top: var(--space-2xl); padding-top: var(--space-xl); border-top: 1px solid var(--color-border); }
+        .next p { color: var(--color-fg-secondary); margin-bottom: var(--space-md); line-height: 1.8; }
+        .next .back { display: inline-block; margin-top: var(--space-lg); color: var(--color-muted); font-size: var(--font-size-sm); }
+        .next .back:hover { color: var(--color-fg); }
     </style>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
+    <mgt-header></mgt-header>
+
     <main id="main-content">
-        <article class="wizard">
-            <h1>The short version</h1>
+        <div class="start section-pad">
+            <nav aria-label="Breadcrumb">
+                <ul class="breadcrumbs">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/learn/">Learn</a></li>
+                    <li><span aria-current="page">Start</span></li>
+                </ul>
+            </nav>
 
-            <p>
-                AI right now is basically a few companies offering tools that can
-                read, write, analyse, and generate things. You talk to them in
-                plain English. They talk back. That's it.
-            </p>
+            <header class="start-head">
+                <span class="emoji" aria-hidden="true">🌱</span>
+                <span class="eyebrow">your gentle first step</span>
+                <h1>Welcome. You're in exactly the right place.</h1>
+                <p class="lede">Never used AI before? Wonderful — that's who this page is for. We'll go slow, skip every bit of jargon, and the only thing you'll do today is type one sentence. That's it. Take a breath; you've got this.</p>
+            </header>
 
-            <h2>The big ones</h2>
-
-            <div class="player">
-                <span class="player-name">ChatGPT</span>
-                <span class="player-desc">By OpenAI. The one most people have heard of. Free tier available. Good all-rounder.</span>
-            </div>
-            <div class="player">
-                <span class="player-name">Claude</span>
-                <span class="player-desc">By Anthropic. Tends to be more careful and detailed. Good for longer work. Free tier available.</span>
-            </div>
-            <div class="player">
-                <span class="player-name">Gemini</span>
-                <span class="player-desc">By Google. Built into Google's ecosystem. Good if you already live in Google Docs and Gmail.</span>
-            </div>
-            <div class="player">
-                <span class="player-name">Copilot</span>
-                <span class="player-desc">By Microsoft. Built into Windows and Office. Good if you already use Microsoft tools.</span>
-            </div>
-
-            <h2>Try it now</h2>
-
-            <div class="try-it">
-                <p>
-                    Go to <strong>chatgpt.com</strong> or <strong>claude.ai</strong>.
-                    Sign up for free. Type something you'd normally Google.
+            <!-- ONE clear idea, said simply -->
+            <section class="reveal" aria-labelledby="what-title">
+                <h2 id="what-title">So, what even <em>is</em> it?</h2>
+                <p style="color:var(--color-fg-secondary);line-height:1.8;">
+                    You know how you type a question into Google and get a page of links? AI is a bit like that — except you ask in
+                    plain, everyday words, and instead of links, you get a written answer back. You can ask it to explain something,
+                    tidy up an email, suggest ideas, or just chat. You talk; it talks back. Honestly, that's the heart of it.
                 </p>
-                <p>
-                    Instead of a list of links, you get an answer. Sometimes it's
-                    great. Sometimes it's wrong. That difference is the whole game.
+                <p style="color:var(--color-fg-secondary);line-height:1.8;">
+                    Lots of people call it “chatty” (you might know it as ChatGPT). There's nothing to install and nothing to learn first.
+                    If you can send a text message, you already have every skill you need.
                 </p>
-            </div>
+            </section>
 
-            <h2>Three things to know going in</h2>
+            <!-- THE one primary action, near the top -->
+            <section class="try reveal gradient-card" aria-labelledby="try-title" style="margin-top:var(--space-2xl);">
+                <div class="gradient-card__inner">
+                    <span class="eyebrow">the one thing to try</span>
+                    <h2 id="try-title">Say hello to it</h2>
+                    <p>
+                        Open one of these (both are free, and a quick sign-up is all it takes), then type something you'd
+                        normally Google — or just say <em>“hello, what can you help me with?”</em> See what comes back. There's no wrong thing to say.
+                    </p>
+                    <div class="links">
+                        <a class="btn" href="https://chatgpt.com" target="_blank" rel="noopener">Try ChatGPT →</a>
+                        <a class="btn btn--secondary" href="https://claude.ai" target="_blank" rel="noopener">Try Claude →</a>
+                    </div>
+                    <p class="tiny">Both are made by friendly, well-known companies (ChatGPT by OpenAI, Claude by Anthropic). Either is a lovely place to start.</p>
+                </div>
+            </section>
 
-            <div class="know-item">
-                <p>
-                    <strong>It makes things up.</strong>
-                    Confidently. It will state fiction as fact with zero hesitation.
-                    Always check anything that matters.
+            <!-- Reassurance: you can't break anything -->
+            <section class="reveal" aria-labelledby="safe-title" style="margin-top:var(--space-2xl);">
+                <h2 id="safe-title">You honestly can't break anything</h2>
+                <p style="color:var(--color-fg-secondary);line-height:1.8;">
+                    This is the part everyone worries about, so let's settle it now. There's no wrong button. You won't break the computer,
+                    and you won't break the AI. If an answer isn't useful, you just ask again in different words — like carrying on a chat.
+                    Nobody's watching, nobody's judging, and there's no clock. Poke around as much as you like.
                 </p>
-            </div>
-            <div class="know-item">
-                <p>
-                    <strong>It's a tool, not an oracle.</strong>
-                    It works best when you give it a clear task and review the result.
-                    Worst when you trust it blindly.
-                </p>
-            </div>
-            <div class="know-item">
-                <p>
-                    <strong>You're in charge.</strong>
-                    It doesn't decide anything. You ask, it responds, you decide
-                    what to do with it.
-                </p>
-            </div>
 
-            <div class="next">
-                <p>Had a go? Ready for the next bit?</p>
-                <a href="/learn/foundations/how-it-helps.html" class="btn">I use it but want to be better</a>
-                <a href="/learn/" class="back">Back</a>
+                <ul class="truths">
+                    <li>
+                        <strong>It sometimes gets things wrong.</strong>
+                        And it can sound very sure while doing it. So treat it like a helpful, chatty friend who occasionally misremembers —
+                        lovely for ideas and first drafts, but worth double-checking anything that really matters.
+                    </li>
+                    <li>
+                        <strong>It's a helper, not a boss.</strong>
+                        It never decides anything for you. You ask, it suggests, and you choose what to do with it. You stay in charge the whole time.
+                    </li>
+                    <li>
+                        <strong>The more you say, the better it helps.</strong>
+                        A few extra words about what you actually want makes a world of difference. Don't worry about getting this “right” yet —
+                        it's a gentle habit, and we'll grow it together.
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Delight: a recall card so the page remembers what you learn -->
+            <section class="reveal" aria-labelledby="recall-title" style="margin-top:var(--space-2xl);">
+                <h2 id="recall-title">A tiny memory nudge</h2>
+                <p style="color:var(--color-fg-secondary);line-height:1.8;">
+                    Here's one of our little quizzes — the kind that pops back just before you'd forget. Have a guess, then peek at the answer.
+                    It only saves in your own browser, so it's entirely between you and this page.
+                </p>
+                <mgt-recall id="new-first-truth">
+                    <details>
+                        <summary>If the AI gives you an answer that seems off, what's the simplest thing to do?</summary>
+                        <p>Just ask again in different words — it's a conversation, not a one-shot test. And for anything that really matters, give the answer a quick double-check yourself.</p>
+                    </details>
+                </mgt-recall>
+            </section>
+
+            <!-- The big players, light touch, optional reading -->
+            <section class="reveal" aria-labelledby="who-title" style="margin-top:var(--space-2xl);">
+                <h2 id="who-title">If you're wondering who the big names are</h2>
+                <p style="color:var(--color-fg-secondary);line-height:1.8;">
+                    You don't need to memorise any of this — pick one above and you're sorted. But if you're curious, here are the
+                    ones you'll hear about most. They all do much the same thing.
+                </p>
+                <ul class="players">
+                    <li><span class="name">ChatGPT</span> — <span class="desc">the one most people have heard of. A friendly all-rounder, with a free version. A great first hello.</span></li>
+                    <li><span class="name">Claude</span> — <span class="desc">tends to be thoughtful and careful, and is lovely for longer pieces of writing. Also free to try.</span></li>
+                    <li><span class="name">Gemini</span> — <span class="desc">made by Google, and handy if you already live in Gmail and Google Docs.</span></li>
+                    <li><span class="name">Copilot</span> — <span class="desc">made by Microsoft, and built into Windows and Office if that's where you spend your day.</span></li>
+                </ul>
+            </section>
+
+            <!-- ONE gentle next step -->
+            <div class="next reveal">
+                <p>That's the whole first step. Had a little play? Whenever you're ready — no rush at all — there's a gentle next bit waiting.</p>
+                <a href="/learn/foundations/what-is-ai.html" class="btn">Show me the next gentle step →</a>
+                <a href="/learn/" class="back">← Back to your learning home</a>
             </div>
-        </article>
+        </div>
     </main>
+
+    <mgt-footer></mgt-footer>
+
     <script src="/assets/js/tracking.js"></script>
+    <script type="module" src="/assets/js/app.js"></script>
+    <script type="module" src="/components/core/mgt-header.js"></script>
+    <script type="module" src="/components/core/mgt-footer.js"></script>
+    <script type="module" src="/components/core/mgt-recall.js"></script>
 </body>
 </html>

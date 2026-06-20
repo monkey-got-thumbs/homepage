@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, viewport-fit=cover" />
-    <title>Contact — Monkey Got Thumbs</title>
+    <title>Say hello — Monkey Got Thumbs</title>
     <link rel="canonical" href="https://monkey-got-thumbs.com/contact/">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#0E0B1A" />
@@ -14,58 +14,91 @@
     <link rel="stylesheet" href="/assets/css/tokens.css">
     <link rel="stylesheet" href="/assets/css/base.css">
     <link rel="stylesheet" href="/assets/css/layout.css">
-    <meta name="description" content="Get in touch with Monkey Got Thumbs. Questions, feedback, case study submissions, and partnership enquiries." />
+    <meta name="description" content="Say hi — we'd genuinely love to hear from you. A question, a thought, a 'this finally made sense' — no question is too small, and there's a real person at the other end." />
     <meta name="author" content="Monkey Got Thumbs" />
-    <meta property="og:title" content="Contact — Monkey Got Thumbs">
+    <meta property="og:title" content="Say hello — Monkey Got Thumbs">
+    <meta property="og:description" content="We'd love to hear from you. A question, a thought, or just a hello — no question is too small.">
     <meta property="og:url" content="https://monkey-got-thumbs.com/contact/">
     <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:site_name" content="Monkey Got Thumbs">
     <meta property="og:image" content="https://monkey-got-thumbs.com/hero.png">
+    <meta property="og:image:alt" content="Monkey Got Thumbs — a friendly monkey giving two thumbs up">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "ContactPage", "name": "Say hello", "url": "https://monkey-got-thumbs.com/contact/",
+      "description": "Get in touch with Monkey Got Thumbs — a question, a thought, or just a hello.",
+      "breadcrumb": { "@type": "BreadcrumbList", "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://monkey-got-thumbs.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Say hello" }
+    ]}}
+    </script>
     <style>
-        .content { max-width: 42rem; margin: 0 auto; padding: 2rem 1rem; }
-        .content p { line-height: 1.8; margin-bottom: 1.25rem; }
-        .lead { font-size: var(--font-size-lg); color: var(--color-fg-secondary); line-height: 1.7; }
-        .contact-methods { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
-        .contact-methods .card { padding: 1.5rem; }
-        .contact-methods .card h3 { margin-top: 0; }
-        @media (max-width: 640px) { .contact-methods { grid-template-columns: 1fr; } }
+        /* page-specific: warm, centred, low cognitive load */
+        .say-wrap { max-width: 44rem; margin-inline: auto; padding-inline: var(--gutter); }
+        .say-head { text-align: center; max-width: 38rem; margin: 0 auto var(--space-2xl); }
+        .say-head h1 { margin: var(--space-sm) 0; }
+
+        /* one warm primary way to reach us, then a quieter second option */
+        .say-card { text-align: center; }
+        .say-card .gradient-card__inner h2 { margin-top: 0; }
+        .say-card .gradient-card__inner p { color: var(--color-fg-secondary); line-height: 1.8; }
+        .mail { display: inline-block; margin-top: var(--space-sm); font-size: var(--font-size-lg); font-weight: var(--font-weight-bold); color: var(--color-accent); text-decoration: none; }
+        .mail:hover { text-decoration: underline; }
+
+        .say-aside { text-align: center; max-width: 34rem; margin: var(--space-2xl) auto 0; }
+        .say-aside p { color: var(--color-fg-secondary); line-height: 1.8; }
+        .say-aside a { color: var(--color-accent); font-weight: var(--font-weight-semibold); }
+
+        .say-news { max-width: 36rem; margin: var(--space-2xl) auto 0; text-align: center; }
+        .say-news h2 { margin-bottom: var(--space-sm); }
+        .say-news > p { color: var(--color-fg-secondary); line-height: 1.8; margin-bottom: var(--space-lg); }
     </style>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
     <mgt-header></mgt-header>
     <main id="main-content">
-        <article class="content">
-            <nav aria-label="Breadcrumb"><ul class="breadcrumbs"><li><a href="/">Home</a></li><li><span aria-current="page">Contact</span></li></ul></nav>
-            <header>
-                <h1>Contact Us</h1>
-                <p class="lead">Questions about augmented intelligence, feedback on our content, or partnership enquiries — we would love to hear from you.</p>
+        <div class="say-wrap section-pad">
+            <nav aria-label="Breadcrumb">
+                <ul class="breadcrumbs">
+                    <li><a href="/">Home</a></li>
+                    <li><span aria-current="page">Say hello</span></li>
+                </ul>
+            </nav>
+
+            <header class="say-head">
+                <span class="eyebrow">we'd love to hear from you</span>
+                <h1>Say hi</h1>
+                <p class="lede">Stuck on something? Got a thought, a worry, or a "this finally clicked" you want to share? There's a real person at the other end, and no question is ever too small or too silly. Honestly — we love getting these.</p>
             </header>
-            <div class="contact-methods">
-                <div class="card">
-                    <h3>General Enquiries</h3>
-                    <p>Questions, feedback, or just want to say hello.</p>
-                    <p><strong>hello@monkey-got-thumbs.com</strong></p>
+
+            <!-- ONE warm primary way to reach us -->
+            <section class="say-card reveal" aria-labelledby="hello-title">
+                <div class="gradient-card">
+                    <div class="gradient-card__inner">
+                        <span class="eyebrow">drop us a line</span>
+                        <h2 id="hello-title">Just send us an email</h2>
+                        <p>Anything at all — a question, some feedback, or simply hello. We read every message and reply like a friend would.</p>
+                        <a class="mail" href="mailto:hello@monkey-got-thumbs.com">hello@monkey-got-thumbs.com</a>
+                    </div>
                 </div>
-                <div class="card">
-                    <h3>Case Studies</h3>
-                    <p>Have a story about augmented intelligence in action? We feature real-world examples.</p>
-                    <p><strong>stories@monkey-got-thumbs.com</strong></p>
-                </div>
-            </div>
-            <section>
-                <h2>Stay Connected</h2>
-                <p>The best way to stay in touch is through our newsletter — practical augmented intelligence insights delivered weekly.</p>
+            </section>
+
+            <!-- quieter second option, no pressure -->
+            <section class="say-aside reveal" aria-label="Sharing a story">
+                <p>Got a story about AI making a real difference for you — the good bits and the bumps? We sometimes share these to help others feel less alone. Pop it over to <a href="mailto:stories@monkey-got-thumbs.com">stories@monkey-got-thumbs.com</a>.</p>
+            </section>
+
+            <!-- newsletter kept (compact), warmed up -->
+            <section class="say-news reveal" aria-labelledby="news-title">
+                <span class="eyebrow">stay in the loop</span>
+                <h2 id="news-title">Rather we came to you?</h2>
+                <p>Pop your email in and we'll send a gentle, no-jargon note now and then. No spam, no pressure, and you can unsubscribe any time.</p>
                 <mgt-newsletter compact></mgt-newsletter>
             </section>
-            <section class="card" style="margin-top: 2rem;">
-                <h2>Start Learning</h2>
-                <div class="cta">
-                    <a href="/learn/" class="btn">Learning Hub</a>
-                    <a href="/community/" class="btn btn--secondary">Community</a>
-                </div>
-            </section>
-        </article>
+        </div>
     </main>
     <mgt-footer></mgt-footer>
     <script src="/assets/js/tracking.js"></script>

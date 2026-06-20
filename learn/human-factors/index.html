@@ -31,26 +31,23 @@
     ]}}
     </script>
     <style>
-        .content { max-width: var(--container-wide); margin: 0 auto; padding-block: 2rem; }
-        .lead { font-size: var(--font-size-lg); color: var(--color-fg-secondary); line-height: 1.7; }
-        .path-intro { color: var(--color-fg); line-height: 1.8; margin: 1.5rem 0; }
-        .path-grid { list-style: none; padding: 0; margin: 2rem 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr)); gap: 1rem; }
-        .path-card { display: flex; gap: 1rem; align-items: flex-start; background: var(--color-bg-secondary); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 1.25rem 1.5rem; transition: border-color var(--transition-base), transform var(--transition-base); }
-        .path-card:hover { border-color: var(--color-accent); transform: translateY(-2px); }
-        .path-num { flex-shrink: 0; width: 2rem; height: 2rem; border-radius: 999px; background: color-mix(in srgb, var(--color-brand) 40%, transparent); color: var(--color-accent); font-family: var(--font-display); display: grid; place-items: center; font-size: 1.1rem; }
-        .path-card h3 { margin: 0 0 0.25rem; font-size: var(--font-size-lg); }
-        .path-card h3 a { color: var(--color-brand-light); }
-        .path-card h3 a:hover { color: var(--color-accent); }
-        .path-meta { font-size: var(--font-size-xs); color: var(--color-muted); text-transform: uppercase; letter-spacing: 0.05em; margin: 0 0 0.5rem; }
-        .path-card p.val { margin: 0; line-height: 1.6; color: var(--color-fg); }
-        @media (prefers-reduced-motion: reduce) { .path-card:hover { transform: none; } }
+        .hub { max-width: var(--container-wide); margin-inline: auto; padding-inline: var(--gutter); }
+        .hub-head { text-align: center; max-width: 40rem; margin: 0 auto var(--space-2xl); }
+        .hub-head h1 { margin: var(--space-sm) 0; }
+        .step h3 a { color: var(--color-fg); text-decoration: none; }
+        .step h3 a:hover { color: var(--color-accent); }
+        .step .meta { font-size: var(--font-size-xs); color: var(--color-muted); text-transform: uppercase; letter-spacing: 0.05em; margin: 0; }
+        .step .go { margin-top: auto; }
+        .hub-next { margin-top: var(--space-2xl); }
+        .hub-next h2 { margin-top: 0; }
+        .hub-next p { color: var(--color-fg-secondary); line-height: 1.7; margin: 0; }
     </style>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
     <mgt-header></mgt-header>
     <main id="main-content">
-        <article class="content">
+        <div class="hub section-pad">
             <nav aria-label="Breadcrumb">
                 <ul class="breadcrumbs">
                     <li><a href="/">Home</a></li>
@@ -58,38 +55,48 @@
                     <li><span aria-current="page">Human Factors</span></li>
                 </ul>
             </nav>
-            <header>
-                <h1>Human Factors</h1>
-                <p class="lead">Tools don't decide outcomes — people do. This track covers the human skills that determine whether AI amplifies you or quietly erodes you: how much to trust it, how to decide well, how to protect your energy, and how to stay the one in charge.</p>
+            <header class="hub-head reveal">
+                <span class="eyebrow">the human side</span>
+                <h1>You're still the one in charge</h1>
+                <p class="lede">AI is the tool — you're the person. These short reads are about the human bits most guides skip: how much to trust it, how to make good calls, how to protect your energy, and how to stay firmly in the driver's seat. Read whichever feels right for you today.</p>
             </header>
-            <p class="path-intro">Each stands on its own — read what's most relevant to where you are right now.</p>
-            <ol class="path-grid">
-                <li class="path-card"><span class="path-num" aria-hidden="true">1</span><div>
-                    <h3><a href="/learn/human-factors/trust-protocols.html">Trust Protocols</a></h3>
-                    <p class="path-meta">Human Factors · 8 min</p>
-                    <p class="val">Calibrated trust, not blind faith — challenge-response protocols that keep you verifying without slowing to a crawl.</p>
-                </div></li>
-                <li class="path-card"><span class="path-num" aria-hidden="true">2</span><div>
-                    <h3><a href="/learn/human-factors/bounded-rationality.html">Bounded Rationality</a></h3>
-                    <p class="path-meta">Human Factors · 7 min</p>
-                    <p class="val">We decide with incomplete information, limited time, and finite focus — how AI can extend each constraint instead of overwhelming it.</p>
-                </div></li>
-                <li class="path-card"><span class="path-num" aria-hidden="true">3</span><div>
-                    <h3><a href="/learn/human-factors/burnout-resilience.html">Burnout and Resilience</a></h3>
-                    <p class="path-meta">Human Factors · 8 min</p>
-                    <p class="val">The burnout equation, and the practical levers — including trust and realistic expectations — that protect human energy in the AI age.</p>
-                </div></li>
-                <li class="path-card"><span class="path-num" aria-hidden="true">4</span><div>
-                    <h3><a href="/learn/human-factors/agency-autonomy.html">Agency and Autonomy</a></h3>
-                    <p class="path-meta">Human Factors · 7 min</p>
-                    <p class="val">Purpose, mastery, and autonomy — why you can delegate tasks to AI without delegating the choices that keep you the driver.</p>
-                </div></li>
+            <ol class="path reveal">
+                <li class="step">
+                    <span class="step__num" aria-hidden="true">1</span>
+                    <p class="meta">8 min</p>
+                    <h3><a href="/learn/human-factors/trust-protocols.html">How much to trust it</a></h3>
+                    <p>Not blind faith, not constant suspicion — just a few easy habits for knowing when to take AI at its word and when to double-check.</p>
+                    <a class="card-link go" href="/learn/human-factors/trust-protocols.html">Have a read →</a>
+                </li>
+                <li class="step">
+                    <span class="step__num" aria-hidden="true">2</span>
+                    <p class="meta">7 min</p>
+                    <h3><a href="/learn/human-factors/bounded-rationality.html">Making good calls</a></h3>
+                    <p>We all decide with not enough time and not enough information. Here's how AI can quietly help you think clearer instead of piling on more.</p>
+                    <a class="card-link go" href="/learn/human-factors/bounded-rationality.html">Have a read →</a>
+                </li>
+                <li class="step">
+                    <span class="step__num" aria-hidden="true">3</span>
+                    <p class="meta">8 min</p>
+                    <h3><a href="/learn/human-factors/burnout-resilience.html">Looking after your energy</a></h3>
+                    <p>Used well, AI takes weight off your shoulders. Used badly, it adds more. The gentle, practical levers that keep it on your side.</p>
+                    <a class="card-link go" href="/learn/human-factors/burnout-resilience.html">Have a read →</a>
+                </li>
+                <li class="step">
+                    <span class="step__num" aria-hidden="true">4</span>
+                    <p class="meta">7 min</p>
+                    <h3><a href="/learn/human-factors/agency-autonomy.html">Staying the driver</a></h3>
+                    <p>You can hand the boring jobs to AI without handing over the choices that matter. How to keep the wheel firmly in your hands.</p>
+                    <a class="card-link go" href="/learn/human-factors/agency-autonomy.html">Have a read →</a>
+                </li>
             </ol>
-            <section class="card">
-                <h2>Next</h2>
-                <p>Ready to put it together on a schedule? Follow a guided <a href="/learn/">learning path</a>, or strengthen recall in your <a href="/learn/review/">review queue</a>.</p>
+            <section class="gradient-card hub-next reveal">
+                <div class="gradient-card__inner">
+                    <h2>When you're ready, what's next?</h2>
+                    <p>Fancy a set route to follow? A guided <a href="/learn/learning-paths/">path</a> walks you through everything, one gentle step at a time. Or keep things fresh in your <a href="/learn/review/">review queue</a>.</p>
+                </div>
             </section>
-        </article>
+        </div>
     </main>
     <mgt-footer></mgt-footer>
     <script src="/assets/js/tracking.js"></script>

@@ -37,6 +37,8 @@
         .rv-tools { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--color-divider); }
         .rv-tools button { background: none; border: 1px solid var(--color-border); color: var(--color-muted); border-radius: 8px; padding: 0.5rem 0.9rem; font: 600 var(--font-size-sm) var(--font-sans); cursor: pointer; }
         .rv-tools button:hover { border-color: var(--color-accent); color: var(--color-accent); }
+        .rv-tools button.rv-danger { border-color: var(--color-error); }
+        .rv-tools button.rv-danger:hover { border-color: var(--color-error); color: var(--color-error); }
     </style>
 </head>
 <body>
@@ -69,7 +71,7 @@
 
             <div class="rv-tools" id="tools" hidden>
                 <button type="button" id="export">Export my cards (.csv)</button>
-                <button type="button" id="reset">Reset my progress</button>
+                <button type="button" id="reset" class="rv-danger">Reset my progress</button>
             </div>
         </article>
     </main>

@@ -110,7 +110,7 @@ function renderBody(body, ctx) {
 }
 
 /* ---------- HTML shell ---------- */
-function head(title, desc, canonical, jsonld) {
+function head(title, desc, canonical, jsonld, ogType = 'article') {
     return `<!DOCTYPE html>
 <html lang="en-GB">
 <head>
@@ -132,7 +132,7 @@ function head(title, desc, canonical, jsonld) {
     <meta property="og:title" content="${esc(title)}">
     <meta property="og:description" content="${esc(desc)}">
     <meta property="og:url" content="${canonical}">
-    <meta property="og:type" content="article">
+    <meta property="og:type" content="${ogType}">
     <meta property="og:image" content="https://monkey-got-thumbs.com/hero.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
     <script type="application/ld+json">
@@ -182,11 +182,21 @@ function build() {
     for (const n of notes) {
         const desc = n.summary || n.title;
         const canonical = `https://monkey-got-thumbs.com/notes/${n.slug}.html`;
-        const jsonld = JSON.stringify({
-            '@context': 'https://schema.org', '@type': 'Article', headline: n.title,
-            description: desc, url: canonical,
-            author: { '@type': 'Organization', name: 'Monkey Got Thumbs' },
-        });
+        const jsonld = JSON.stringify([
+            {
+                '@context': 'https://schema.org', '@type': 'Article', headline: n.title,
+                description: desc, url: canonical,
+                author: { '@type': 'Organization', name: 'Monkey Got Thumbs' },
+            },
+            {
+                '@context': 'https://schema.org', '@type': 'BreadcrumbList',
+                itemListElement: [
+                    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://monkey-got-thumbs.com/' },
+                    { '@type': 'ListItem', position: 2, name: 'Notes', item: 'https://monkey-got-thumbs.com/notes/' },
+                    { '@type': 'ListItem', position: 3, name: n.title },
+                ],
+            },
+        ]);
         const back = backlinks.get(n.slug).sort();
         const backHtml = back.length
             ? `\n            <aside class="backlinks" aria-label="Notes that link here">
@@ -223,14 +233,23 @@ function build() {
     // index
     const sorted = [...notes].sort((a, b) => a.title.localeCompare(b.title));
     const canonical = 'https://monkey-got-thumbs.com/notes/';
-    const idxJsonld = JSON.stringify({
-        '@context': 'https://schema.org', '@type': 'CollectionPage', name: 'Notes — Monkey Got Thumbs',
-        url: canonical, description: 'A growing web of short, linked notes on augmented intelligence.',
-    });
-    const cards = sorted.map((n) => `\n                <li class="note-card"><a href="/notes/${n.slug}.html"><span class="note-card__title">${esc(n.title)}</span>${n.summary ? `<span class="note-card__sum">${esc(n.summary)}</span>` : ''}</a><span class="note-card__meta">${backlinks.get(n.slug).length} link${backlinks.get(n.slug).length === 1 ? '' : 's'} in</span></li>`).join('');
+    const idxJsonld = JSON.stringify([
+        {
+            '@context': 'https://schema.org', '@type': 'CollectionPage', name: 'Notes — Monkey Got Thumbs',
+            url: canonical, description: 'A growing web of short, linked notes on augmented intelligence.',
+        },
+        {
+            '@context': 'https://schema.org', '@type': 'BreadcrumbList',
+            itemListElement: [
+                { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://monkey-got-thumbs.com/' },
+                { '@type': 'ListItem', position: 2, name: 'Notes' },
+            ],
+        },
+    ]);
+    const cards = sorted.map((n) => `\n                <li class="note-card"><a href="/notes/${n.slug}.html"><span class="note-card__title">${esc(n.title)}</span>${n.summary ? `<span class="note-card__sum">${esc(n.summary)}</span>` : ''}<span class="note-card__meta">${backlinks.get(n.slug).length} link${backlinks.get(n.slug).length === 1 ? '' : 's'} in</span></a></li>`).join('');
     const index = head('Notes — a growing web of ideas — Monkey Got Thumbs',
         'Short, claim-titled, densely linked notes on augmented intelligence — AI as one tool for thinking. A growing web you can wander.',
-        canonical, idxJsonld) + `
+        canonical, idxJsonld, 'website') + `
         <article class="content u-wide">
             <nav aria-label="Breadcrumb">
                 <ul class="breadcrumbs">

@@ -2,219 +2,124 @@
 <html lang="en-GB">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Learning Hub — Monkey Got Thumbs</title>
-
-    <!-- Canonical & robots -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, viewport-fit=cover" />
+    <title>Start learning — Monkey Got Thumbs</title>
     <link rel="canonical" href="https://monkey-got-thumbs.com/learn/">
     <meta name="robots" content="index, follow">
-
-    <!-- Theming -->
     <meta name="theme-color" content="#0E0B1A" />
     <meta name="color-scheme" content="dark">
-
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bangers:wght@400&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-
-    <!-- Design System CSS -->
     <link rel="stylesheet" href="/assets/css/tokens.css">
     <link rel="stylesheet" href="/assets/css/base.css">
     <link rel="stylesheet" href="/assets/css/layout.css">
-
-    <!-- SEO Meta -->
-    <meta name="description" content="Explore comprehensive learning resources about augmented intelligence. From foundations to frameworks to human factors—find your path." />
-    <meta name="keywords" content="augmented intelligence learning, educational resources, AI frameworks, collaboration, trust, human factors" />
+    <meta name="description" content="Your gentle, jargon-free home for learning AI. Brand new? Start at the very beginning. Already dabbling? Jump to what you fancy. No wrong moves, no rush." />
     <meta name="author" content="Monkey Got Thumbs" />
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="Learning Hub — Monkey Got Thumbs">
-    <meta property="og:description" content="Explore comprehensive learning resources about augmented intelligence.">
+    <meta property="og:title" content="Start learning — Monkey Got Thumbs">
+    <meta property="og:description" content="Your gentle, jargon-free home for learning AI. No wrong moves, no rush.">
     <meta property="og:url" content="https://monkey-got-thumbs.com/learn/">
     <meta property="og:image" content="https://monkey-got-thumbs.com/hero.png">
     <meta property="og:type" content="website">
-
-    <!-- JSON-LD Schema -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "CollectionPage",
-        "name": "Learning Hub",
-        "description": "Educational resources about augmented intelligence",
-        "url": "https://monkey-got-thumbs.com/learn/",
-        "breadcrumb": {
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-                {
-                    "@type": "ListItem",
-                    "position": 1,
-                    "name": "Home",
-                    "item": "https://monkey-got-thumbs.com/"
-                },
-                {
-                    "@type": "ListItem",
-                    "position": 2,
-                    "name": "Learn",
-                    "item": "https://monkey-got-thumbs.com/learn/"
-                }
-            ]
-        }
-    }
-    </script>
-
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
-
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "CollectionPage", "name": "Learn", "url": "https://monkey-got-thumbs.com/learn/",
+      "description": "A gentle, jargon-free home for learning AI.",
+      "breadcrumb": { "@type": "BreadcrumbList", "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://monkey-got-thumbs.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Learn" }
+      ]}}
+    </script>
     <style>
-        .learning-section {
-            margin-top: 3rem;
-            margin-bottom: 3rem;
-        }
+        .learn-home { max-width: var(--container-wide); margin-inline: auto; padding-inline: var(--gutter); }
+        .learn-head { text-align: center; max-width: 40rem; margin: 0 auto var(--space-2xl); }
+        .learn-head h1 { margin: var(--space-sm) 0; }
 
-        .learning-section-title {
-            font-family: var(--font-display);
-            color: var(--color-accent);
-            font-size: 1.875rem;
-            margin-bottom: 1.5rem;
-            letter-spacing: 2px;
-        }
+        /* the warm front-door card */
+        .start-here { display: block; text-decoration: none; margin-bottom: var(--space-2xl); }
+        .start-here .gradient-card__inner { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-md) var(--space-lg); }
+        .start-here .emoji { font-size: 2.5rem; line-height: 1; }
+        .start-here .grow { flex: 1 1 16rem; }
+        .start-here h2 { margin: 0 0 0.25rem; color: var(--color-fg); }
+        .start-here p { margin: 0; color: var(--color-fg-secondary); line-height: 1.6; }
+        .start-here .go { color: var(--color-accent); font-weight: var(--font-weight-bold); white-space: nowrap; }
+        .start-here:hover .go { text-decoration: underline; }
 
-        .course-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
+        .learn-sub { text-align: center; color: var(--color-muted); margin-bottom: var(--space-lg); }
 
-        .course-card {
-            background: var(--color-bg-secondary);
-            border: 1px solid var(--color-border);
-            border-radius: var(--radius);
-            padding: 1.5rem;
-            transition: all var(--transition-base);
-            display: flex;
-            flex-direction: column;
-        }
+        /* curriculum cards reuse the shared .card grid */
+        .learn-grid { display: grid; gap: var(--space-lg); grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); }
+        .learn-grid .card { display: flex; flex-direction: column; gap: 0.4rem; }
+        .learn-grid .card h3 { margin: 0; }
+        .learn-grid .card p { margin: 0; color: var(--color-fg-secondary); line-height: 1.6; flex: 1; }
+        .learn-grid .card .card-link { margin-top: var(--space-sm); }
 
-        .course-card:hover {
-            border-color: var(--color-accent);
-            box-shadow: var(--shadow-lg);
-            transform: translateY(-2px);
-        }
-
-        .course-card h3 {
-            margin-top: 0;
-            color: var(--color-brand-light);
-        }
-
-        .course-card p {
-            flex: 1;
-            margin-bottom: 1rem;
-        }
-
-        .course-meta {
-            font-size: 0.875rem;
-            color: var(--color-muted);
-            margin-bottom: 1rem;
-        }
-
-        .course-meta-item {
-            display: inline-block;
-            margin-right: 1rem;
-        }
-
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .tag {
-            display: inline-block;
-            background: color-mix(in srgb, var(--color-brand) 20%, transparent);
-            color: var(--color-brand-light);
-            padding: 0.25rem 0.75rem;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .quick-nav {
-            background: color-mix(in srgb, var(--color-bg-secondary) 70%, transparent);
-            border: 1px solid var(--color-border);
-            border-radius: var(--radius);
-            padding: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .quick-nav h3 {
-            margin-top: 0;
-        }
-
-        .quick-nav-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-        }
-
-        .quick-nav-list li {
-            margin: 0;
-        }
-
-        .quick-nav-list a {
-            display: inline-block;
-            padding: 0.75rem 1rem;
-            background: var(--color-brand);
-            color: #fff;
-            border-radius: var(--radius-sm);
-            text-decoration: none;
-            transition: all var(--transition-base);
-            font-weight: 600;
-        }
-
-        .quick-nav-list a:hover {
-            background: var(--color-brand-light);
-        }
-
-        @media (max-width: 768px) {
-            .course-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .quick-nav-list {
-                grid-template-columns: 1fr;
-            }
-        }
+        .review-row { text-align: center; margin-top: var(--space-2xl); }
+        .review-row a { color: var(--color-accent); font-weight: var(--font-weight-semibold); }
     </style>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
     <mgt-header></mgt-header>
+    <main id="main-content">
+        <div class="learn-home section-pad">
+            <nav aria-label="Breadcrumb">
+                <ul class="breadcrumbs">
+                    <li><a href="/">Home</a></li>
+                    <li><span aria-current="page">Learn</span></li>
+                </ul>
+            </nav>
 
-    <!-- Main Content -->
-    <main id="main-content" style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 70vh; text-align: center; padding: 2rem 1rem;">
+            <header class="learn-head">
+                <span class="eyebrow">your learning home</span>
+                <h1>Find your footing with AI</h1>
+                <p class="lede">However you got here, there's a gentle next step waiting. Brand new? Start at the very beginning. Already dabbling? Jump to whatever you fancy. There are no wrong moves here.</p>
+            </header>
 
-        <h1 style="margin-bottom: 1rem;">Make your ideas real</h1>
-        <p style="max-width: var(--measure-wide); line-height: 1.9; margin: 0 auto 2.5rem; color: var(--color-fg-secondary);">
-            Where are you at?
-        </p>
+            <a class="start-here gradient-card" href="/learn/start/new.html">
+                <div class="gradient-card__inner">
+                    <span class="emoji" aria-hidden="true">🌱</span>
+                    <div class="grow">
+                        <h2>Brand new to AI? Start right here.</h2>
+                        <p>A friendly five-minute intro — what AI is, how to try it, and three things that'll make you feel instantly more in control.</p>
+                    </div>
+                    <span class="go">Begin the gentle intro →</span>
+                </div>
+            </a>
 
-        <div style="display: flex; flex-direction: column; gap: 1rem; width: 100%; max-width: min(28rem, 100%);">
-            <a href="/learn/start/new.html" class="btn">I'm new to AI</a>
-            <a href="/learn/foundations/how-it-helps.html" class="btn btn--secondary">I use it but want to be better</a>
-            <a href="/learn/foundations/ai-pitfalls.html" class="btn btn--secondary">Show me what's really going on</a>
-            <a href="/notes/" class="btn btn--secondary">Wander the idea notes</a>
-            <a href="/learn/review/" class="btn btn--secondary" id="review-nudge" hidden></a>
+            <p class="learn-sub">Or wander into whatever pulls you:</p>
+            <div class="learn-grid">
+                <article class="card">
+                    <h3>Foundations</h3>
+                    <p>The big picture in plain words — what AI is, what it isn't, and why it's worth your time. No jargon, no rush.</p>
+                    <a class="card-link" href="/learn/foundations/">Get the basics →</a>
+                </article>
+                <article class="card">
+                    <h3>Frameworks</h3>
+                    <p>Handy mental models that make AI click — and quietly make you much better at using it.</p>
+                    <a class="card-link" href="/learn/frameworks/">See the ideas →</a>
+                </article>
+                <article class="card">
+                    <h3>The human side</h3>
+                    <p>Staying in charge, trusting wisely, and keeping it healthy. The part most guides skip.</p>
+                    <a class="card-link" href="/learn/human-factors/">Mind the human bits →</a>
+                </article>
+                <article class="card">
+                    <h3>Guided paths</h3>
+                    <p>Prefer a set route? Follow a path from curious beginner to genuinely confident, one step at a time.</p>
+                    <a class="card-link" href="/learn/learning-paths/">Pick a path →</a>
+                </article>
+                <article class="card">
+                    <h3>Wander the notes</h3>
+                    <p>A cosy web of short, linked ideas to drift through whenever you're curious. No order required.</p>
+                    <a class="card-link" href="/notes/">Have a wander →</a>
+                </article>
+            </div>
+
+            <p class="review-row"><a href="/learn/review/" id="review-nudge" hidden></a></p>
         </div>
-
     </main>
     <mgt-footer></mgt-footer>
-
     <script src="/assets/js/tracking.js"></script>
     <script type="module" src="/assets/js/app.js"></script>
     <script type="module" src="/components/core/mgt-header.js"></script>

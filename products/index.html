@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, viewport-fit=cover" />
-    <title>Products — Monkey Got Thumbs</title>
+    <title>Things we made for you — Monkey Got Thumbs</title>
     <link rel="canonical" href="https://monkey-got-thumbs.com/products/">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#0E0B1A" />
@@ -14,115 +14,191 @@
     <link rel="stylesheet" href="/assets/css/tokens.css">
     <link rel="stylesheet" href="/assets/css/base.css">
     <link rel="stylesheet" href="/assets/css/layout.css">
-    <meta name="description" content="Augmented intelligence tools by Monkey Got Thumbs. Metron, Airgap, Bigboy, and Rusty — built to keep humans in control." />
-    <meta name="keywords" content="augmented intelligence tools, AI tools, local AI, Metron, Airgap" />
+    <meta name="description" content="Two friendly little things we made to help you with AI: chatyman, a helper you can pop onto your own website, and the Agent Builder Advisor, a free helper that makes the way you ask AI much better." />
     <meta name="author" content="Monkey Got Thumbs" />
-    <meta property="og:title" content="Products — Monkey Got Thumbs">
-    <meta property="og:description" content="Augmented intelligence tools built to keep humans in control.">
+    <meta property="og:title" content="Things we made for you — Monkey Got Thumbs">
+    <meta property="og:description" content="Two friendly little things we made to help you with AI — and both keep you firmly in charge.">
     <meta property="og:url" content="https://monkey-got-thumbs.com/products/">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://monkey-got-thumbs.com/hero.png">
+    <meta property="og:locale" content="en_GB">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
     <script type="application/ld+json">
-    { "@context": "https://schema.org", "@type": "CollectionPage", "name": "Products", "url": "https://monkey-got-thumbs.com/products/",
+    { "@context": "https://schema.org", "@type": "CollectionPage", "name": "Things we made for you", "url": "https://monkey-got-thumbs.com/products/",
+      "description": "Two friendly little things we made to help everyday people get more out of AI.",
       "breadcrumb": { "@type": "BreadcrumbList", "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://monkey-got-thumbs.com/" },
-        { "@type": "ListItem", "position": 2, "name": "Products" }
+        { "@type": "ListItem", "position": 2, "name": "Things we made" }
     ]}}
     </script>
     <style>
-        .content { max-width: var(--container-wide); margin: 0 auto; padding-block: 2rem; }
-        .content p { line-height: 1.8; margin-bottom: 1.25rem; }
-        .lead { font-size: var(--font-size-lg); color: var(--color-fg-secondary); line-height: 1.7; }
-        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr)); gap: 1.5rem; margin: 2rem 0; }
-        .product-grid ~ section { max-width: var(--measure-wide); margin-inline: auto; }
-        .product { background: var(--color-bg-secondary); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 2rem; transition: transform var(--transition-fast), box-shadow var(--transition-fast); }
-        .product:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
-        .product h2 { font-family: var(--font-display); color: var(--color-accent); font-size: var(--font-size-2xl); margin: 0 0 0.5rem 0; letter-spacing: 0.02em; }
-        .product .tagline { color: var(--color-fg-secondary); font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; }
-        .product p { font-size: var(--font-size-base); line-height: 1.7; margin-bottom: 0.75rem; }
-        .product .status { display: inline-block; font-size: var(--font-size-xs); padding: 0.25rem 0.75rem; border-radius: var(--radius-full); margin-top: 0.75rem; }
-        .status--dev { background: rgba(166, 255, 77, 0.15); color: var(--color-accent); }
-        .status--soon { background: rgba(251, 191, 36, 0.15); color: var(--color-warning); }
-        .status--live { background: rgba(166, 255, 77, 0.18); color: var(--color-accent); }
-        .product--featured { border-color: var(--color-accent); grid-column: 1 / -1; }
-        @media (max-width: 640px) { .product-grid { grid-template-columns: 1fr; } }
-        @media (prefers-reduced-motion: reduce) { .product:hover { transform: none; } }
+        /* ===== Calm, warm backdrop — matches the home page ===== */
+        body {
+            background:
+                radial-gradient(60rem 40rem at 78% -8%, color-mix(in srgb, var(--color-brand) 26%, transparent), transparent 70%),
+                radial-gradient(48rem 36rem at 8% 14%, color-mix(in srgb, var(--color-accent) 9%, transparent), transparent 68%),
+                var(--color-bg);
+            background-attachment: fixed;
+        }
+
+        .products-page { max-width: var(--container-wide); margin-inline: auto; padding-inline: var(--gutter); }
+
+        /* warm centred head */
+        .products-head { text-align: center; max-width: 40rem; margin: 0 auto var(--space-2xl); }
+        .products-head h1 { margin: var(--space-sm) 0; }
+
+        /* the two things — generous, calm cards */
+        .things { display: grid; gap: clamp(1.25rem, 3vw, 2rem); grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); }
+        .thing { display: flex; flex-direction: column; gap: 0.65rem; }
+        .thing h2 { font-family: var(--font-display); color: var(--color-accent); font-size: var(--font-size-2xl); margin: 0; letter-spacing: 0.02em; }
+        .thing .what { font-weight: var(--font-weight-semibold); color: var(--color-fg); margin: 0; }
+        .thing p { margin: 0; color: var(--color-fg-secondary); line-height: 1.75; }
+        .thing .pill { align-self: flex-start; margin-top: 0.2rem; }
+        .thing .btn { align-self: flex-start; margin-top: var(--space-sm); }
+        .thing ul { margin: 0.25rem 0 0; padding-left: 1.2rem; color: var(--color-fg-secondary); }
+        .thing ul li { margin-bottom: 0.4rem; line-height: 1.7; }
+        .thing .free { color: var(--color-accent); font-weight: var(--font-weight-semibold); }
+
+        /* centred section heads */
+        .head-centred { text-align: center; max-width: 38rem; margin: 0 auto var(--space-xl); }
+        .head-centred h2 { margin: var(--space-sm) 0 0; }
+
+        /* the gentle promise / values */
+        .promise { max-width: 44rem; margin-inline: auto; }
+        .promise .gradient-card__inner ul { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-md); }
+        .promise li { line-height: 1.75; color: var(--color-fg-secondary); }
+        .promise li strong { color: var(--color-fg); display: block; margin-bottom: 0.15rem; }
+
+        /* show-the-data taste reuses shared .split/.artifact from layout.css */
+        .advisor-demo { max-width: 46rem; margin-inline: auto; }
+        .advisor-demo mgt-recall { display: block; margin-top: var(--space-lg); }
+
+        .newsletter-wrap { max-width: 34rem; margin: var(--space-xl) auto 0; }
+
+        /* gentle scroll reveal — transform only, never hides content */
+        @media (prefers-reduced-motion: no-preference) {
+            @supports (animation-timeline: view()) {
+                .reveal { animation: reveal-rise linear both; animation-timeline: view(); animation-range: entry 0% cover 22%; }
+                @keyframes reveal-rise { from { transform: translateY(22px); } to { transform: translateY(0); } }
+            }
+        }
     </style>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
     <mgt-header></mgt-header>
     <main id="main-content">
-        <article class="content">
-            <nav aria-label="Breadcrumb"><ul class="breadcrumbs"><li><a href="/">Home</a></li><li><span aria-current="page">Products</span></li></ul></nav>
-            <header>
-                <h1>Products</h1>
-                <p class="lead">Tools built on augmented intelligence principles. The human directs, the machine assists. No black boxes. No cloud dependencies you don't control. Our first shipping product, chatyman, runs AI in the browser — try it on the chatyman page.</p>
+        <div class="products-page section-pad">
+            <nav aria-label="Breadcrumb">
+                <ul class="breadcrumbs">
+                    <li><a href="/">Home</a></li>
+                    <li><span aria-current="page">Things we made</span></li>
+                </ul>
+            </nav>
+
+            <!-- HEAD: one warm idea -->
+            <header class="products-head">
+                <span class="eyebrow">things we made for you</span>
+                <h1>A couple of little helpers</h1>
+                <p class="lede">We don't have a big catalogue — just two small things we built to make AI feel friendlier and more useful. Here's what each one actually does for you, in plain words.</p>
             </header>
 
-            <div class="product-grid">
-                <div class="product product--featured">
-                    <h2>chatyman</h2>
-                    <p class="tagline">In-Browser AI Chatbot</p>
-                    <p>An AI support chatbot that runs entirely in your visitors' browsers — unlimited conversations, flat price, and data that never leaves the device. A drop-in alternative to expensive cloud chatbots.</p>
-                    <p>Curated workflow so it never invents answers, a small in-browser LLM for understanding, and it can read your own site to answer the long tail — all same-origin, no backend.</p>
-                    <span class="status status--live">Available</span>
-                    <a class="btn" href="/chatty/" style="margin-top:1rem;display:inline-block;">Explore chatyman →</a>
-                </div>
+            <!-- THE TWO THINGS -->
+            <section class="reveal" aria-label="The two things we made">
+                <div class="things">
 
-                <div class="product">
-                    <h2>Metron</h2>
-                    <p class="tagline">Local AI Model Management</p>
-                    <p>Run AI models on your own hardware. Load, swap, and configure models without sending data to the cloud. Full control over your inference pipeline.</p>
-                    <p>Built in Rust with a Python MLX bridge for Apple Silicon. Designed for people who want AI capability without cloud dependency.</p>
-                    <span class="status status--dev">In Development</span>
-                </div>
+                    <article class="thing card">
+                        <h2>chatyman</h2>
+                        <p class="what">A friendly AI helper you can pop onto your own website.</p>
+                        <p>Got a website? chatyman is a little chat bubble in the corner that answers your visitors' questions — kindly, and in your words. It reads your own pages, so it talks about <em>your</em> place, not the whole internet.</p>
+                        <ul>
+                            <li>It only answers from what you've told it, so it won't make things up.</li>
+                            <li>The chats happen right there in your visitor's browser — nothing's sent off to be stored elsewhere.</li>
+                            <li>One simple price. Chat away as much as you like.</li>
+                        </ul>
+                        <span class="pill pill--live">Ready to use</span>
+                        <a class="btn" href="/chatty/">Have a look at chatyman →</a>
+                    </article>
 
-                <div class="product">
-                    <h2>Airgap</h2>
-                    <p class="tagline">Private AI Chat &amp; Workspace</p>
-                    <p>A local-first AI chat system with workspace persistence, knowledge management, and telemetry. Your conversations, your data, your machine.</p>
-                    <p>Structured conversation history, per-profile workspaces, and an extensible tool system — all running air-gapped on your device.</p>
-                    <span class="status status--dev">In Development</span>
-                </div>
+                    <article class="thing card">
+                        <h2>Agent Builder Advisor</h2>
+                        <p class="what">A <span class="free">free</span> helper that makes the way you ask AI much better.</p>
+                        <p>When you ask AI to do a job for you, the way you word it changes everything. Paste in what you've written, add a couple of examples, and the Advisor gives you one round of friendly, honest feedback: what's working, what might trip you up, and exactly how to make it clearer.</p>
+                        <ul>
+                            <li>You get a quick, expert read — not a chat that goes round in circles.</li>
+                            <li>It shows you what your wording would actually produce, so there are no surprises.</li>
+                            <li>Free to use, no sign-up.</li>
+                        </ul>
+                        <span class="pill pill--new">New</span>
+                        <a class="btn" href="/build/advisor/">Try the Advisor →</a>
+                    </article>
 
-                <div class="product">
-                    <h2>Bigboy</h2>
-                    <p class="tagline">Heavy-Duty AI Processing</p>
-                    <p>When local hardware isn't enough. Bigboy handles the compute-intensive tasks that need more muscle — batch processing, large model inference, and data-heavy workflows.</p>
-                    <p>Designed to complement your local tools, not replace them. You choose what goes to the cloud and what stays on your machine.</p>
-                    <span class="status status--soon">Coming Soon</span>
                 </div>
-
-                <div class="product">
-                    <h2>Rusty</h2>
-                    <p class="tagline">Systems-Level AI Tooling</p>
-                    <p>Low-level, high-performance AI infrastructure built in Rust. The plumbing that makes everything else fast, safe, and reliable.</p>
-                    <p>Memory-safe, concurrent, and designed for the kind of performance-critical work where milliseconds matter and crashes are not an option.</p>
-                    <span class="status status--soon">Coming Soon</span>
-                </div>
-            </div>
-
-            <section>
-                <h2>Our Philosophy</h2>
-                <p>
-                    Every tool we build follows the same principles that underpin <a href="/learn/foundations/what-is-ai.html">augmented intelligence</a>:
-                </p>
-                <ul style="padding-left: 1.5rem; margin-bottom: 1.25rem;">
-                    <li style="margin-bottom: 0.5rem; line-height: 1.7;"><strong>You stay in control.</strong> AI assists. You decide what to trust, what to verify, and what to override.</li>
-                    <li style="margin-bottom: 0.5rem; line-height: 1.7;"><strong>Your data stays yours.</strong> Local-first by default. Cloud is opt-in, not mandatory.</li>
-                    <li style="margin-bottom: 0.5rem; line-height: 1.7;"><strong>No vendor lock-in.</strong> Open formats, standard protocols, portable data.</li>
-                    <li style="margin-bottom: 0.5rem; line-height: 1.7;"><strong>Built to last.</strong> Rust where performance matters. Simple architecture over clever abstraction.</li>
-                </ul>
             </section>
 
-            <section class="card" style="margin-top: 2rem;">
-                <h2>Stay Updated</h2>
-                <p>Get notified when products launch and receive early access.</p>
-                <mgt-newsletter heading="Product Updates" description="Be first to know when we ship. No spam." compact></mgt-newsletter>
+            <!-- SHOW THE DATA: see what the Advisor does, don't just read it -->
+            <section class="reveal section-pad" aria-labelledby="see-title">
+                <div class="head-centred">
+                    <span class="eyebrow">see it, don't just read it</span>
+                    <h2 id="see-title">A tiny tweak, a much better answer</h2>
+                    <p class="muted">This is the kind of thing the Advisor helps you spot — the same job, asked two ways.</p>
+                </div>
+                <div class="worked advisor-demo">
+                    <h3>Asking AI to reply to a customer — before &amp; after</h3>
+                    <div class="split">
+                        <div class="col machine">
+                            <h4>A vague ask</h4>
+                            <div class="artifact">“reply to this email”</div>
+                            <p>You get a polite-but-generic reply that could be from anyone.</p>
+                        </div>
+                        <div class="col human">
+                            <h4>You add a little of <span class="edit">↳ what you actually want</span></h4>
+                            <div class="artifact">“reply to this unhappy customer — <span class="edit">warm, apologise once, offer a refund or a swap, keep it under 80 words</span>”</div>
+                            <p>Now it sounds like <em>you</em>, and does exactly the job. Same tool — one small habit.</p>
+                        </div>
+                    </div>
+                    <p>The Advisor is built to help you find those little tweaks for yourself. Have a quick go at remembering the idea (it saves only in your browser):</p>
+                    <mgt-recall id="products-taste">
+                        <details>
+                            <summary>Why does it help to tell AI exactly what you want?</summary>
+                            <p>AI can't read your mind — it fills the gaps with a safe, generic guess. The more you say about the tone, the length, and the outcome you're after, the closer it gets to what you actually meant.</p>
+                        </details>
+                    </mgt-recall>
+                </div>
             </section>
-        </article>
+
+            <!-- THE PROMISE: warmed-up values -->
+            <section class="reveal section-pad" aria-labelledby="promise-title">
+                <div class="head-centred">
+                    <span class="eyebrow">how we build</span>
+                    <h2 id="promise-title">A few quiet promises</h2>
+                    <p class="muted">Whatever we make, we hold to the same simple ideas — the same ones we <a href="/learn/foundations/what-is-ai.html">teach about</a>.</p>
+                </div>
+                <div class="promise gradient-card">
+                    <div class="gradient-card__inner">
+                        <ul>
+                            <li><strong>You stay in charge.</strong> AI helps; you decide what to keep, what to change, and what to ignore. It never takes the wheel.</li>
+                            <li><strong>Your information stays yours.</strong> We keep things on your own device wherever we can, and we'd never quietly hand your details around.</li>
+                            <li><strong>Nothing locks you in.</strong> If you ever want to walk away, you can — your stuff comes with you.</li>
+                            <li><strong>Made to be reliable.</strong> We'd rather make something simple and steady than something clever and fragile.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- STAY IN TOUCH: warmed-up newsletter, one gentle action -->
+            <section class="reveal section-pad" aria-labelledby="touch-title">
+                <div class="head-centred">
+                    <span class="eyebrow">stay in touch</span>
+                    <h2 id="touch-title">We'll only nudge you when there's something good</h2>
+                    <p class="muted">If you'd like to hear when we make something new, pop your email in. No spam, no pressure, leave whenever you like.</p>
+                </div>
+                <div class="newsletter-wrap">
+                    <mgt-newsletter heading="Hear about new helpers" description="A friendly note now and then when there's something worth knowing. Unsubscribe anytime." compact></mgt-newsletter>
+                </div>
+            </section>
+
+        </div>
     </main>
     <mgt-footer></mgt-footer>
     <script src="/assets/js/tracking.js"></script>
@@ -130,5 +206,6 @@
     <script type="module" src="/components/core/mgt-header.js"></script>
     <script type="module" src="/components/core/mgt-footer.js"></script>
     <script type="module" src="/components/core/mgt-newsletter.js"></script>
+    <script type="module" src="/components/core/mgt-recall.js"></script>
 </body>
 </html>

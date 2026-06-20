@@ -36,9 +36,9 @@ header {
   display: flex;
   align-items: center;
   gap: var(--space-md);
-  max-width: var(--container-max);
+  max-width: var(--container-wide);
   margin: 0 auto;
-  padding: 0.75rem var(--space-md);
+  padding: 0.75rem var(--gutter);
 }
 
 .brand {
@@ -361,10 +361,13 @@ footer a {
   background: linear-gradient(180deg, var(--color-brand-light), var(--color-brand));
   color: #fff;
   font-weight: var(--font-weight-bold);
-  padding: 0.9rem 1.1rem;
-  border-radius: 10px;
+  padding: 0.7rem 1.1rem;
+  min-height: 2.75rem;            /* >=44px tap target */
+  border-radius: var(--radius);
   text-decoration: none;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   transition: all var(--transition-base);
   font-family: inherit;
   font-size: var(--font-size-base);
@@ -623,7 +626,7 @@ button:focus-visible {
   padding: 1rem;
 }
 .split .col h4 { margin: 0 0 0.5rem; font-size: var(--font-size-sm); text-transform: uppercase; letter-spacing: 0.05em; }
-.split .machine h4 { color: var(--color-brand-light); }
+.split .machine h4 { color: var(--color-brand-lighter); }
 .split .human h4 { color: var(--color-accent); }
 .split .col p { font-size: var(--font-size-sm); margin-bottom: 0.5rem; }
 @media (max-width: 640px) { .split { grid-template-columns: 1fr; } }
@@ -725,7 +728,44 @@ a.wikilink:hover { border-bottom-color: var(--color-accent); }
   color: var(--color-muted);
 }
 .pill--live { color: var(--color-accent); border-color: color-mix(in srgb, var(--color-accent) 50%, transparent); }
-.pill--new  { color: var(--color-brand-light); border-color: color-mix(in srgb, var(--color-brand-light) 55%, transparent); }
+.pill--new  { color: var(--color-brand-lighter); border-color: color-mix(in srgb, var(--color-brand-lighter) 55%, transparent); }
 .pill--soon { color: var(--color-warning); border-color: color-mix(in srgb, var(--color-warning) 45%, transparent); }
 .card-link { font-weight: var(--font-weight-bold); color: var(--color-accent); text-decoration: none; }
 .card-link:hover { text-decoration: underline; }
+
+/* ===================================================================== *
+ * WARM, INVITING DESIGN LANGUAGE — shared across the site (calm, low cognitive
+ * load, encouraging). Use these on every page so the experience is one thing.
+ * ===================================================================== */
+.section-pad { padding-block: clamp(3rem, 8vw, 6.5rem); }              /* restful vertical rhythm */
+.eyebrow {
+  display: inline-block; font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-accent); margin-bottom: var(--space-md);
+}
+.lede { max-width: 38rem; margin-inline: auto; color: var(--color-fg-secondary); font-size: var(--font-size-lg); line-height: 1.75; }
+
+/* The journey: a numbered path of step cards (a path, not a menu of choices) */
+.path { display: grid; gap: clamp(1rem, 2.5vw, 1.75rem); grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr)); margin: 0; padding: 0; }
+.step {
+  position: relative; list-style: none;
+  background: color-mix(in srgb, var(--color-bg-secondary) 80%, transparent);
+  border: 1px solid var(--color-border); border-radius: var(--radius-lg);
+  padding: clamp(1.4rem, 3vw, 2rem); display: flex; flex-direction: column; gap: 0.6rem;
+  transition: border-color var(--transition-base), transform var(--transition-base);
+}
+.step:hover { border-color: color-mix(in srgb, var(--color-accent) 45%, transparent); transform: translateY(-3px); }
+.step__num { font-family: var(--font-display); font-size: 2.2rem; line-height: 1; color: var(--color-accent); opacity: 0.85; letter-spacing: 0.04em; }
+.step h3 { margin: 0; font-size: var(--font-size-xl); }
+.step p { margin: 0; color: var(--color-fg-secondary); line-height: 1.7; flex: 1; }
+
+/* A feature panel framed by a soft gradient border */
+.gradient-card { border-radius: var(--radius-lg); padding: 1px; background: linear-gradient(135deg, color-mix(in srgb, var(--color-accent) 55%, transparent), color-mix(in srgb, var(--color-brand-light) 55%, transparent)); }
+.gradient-card__inner { background: var(--color-bg-secondary); border-radius: calc(var(--radius-lg) - 1px); padding: clamp(1.5rem, 4vw, 2.5rem); }
+
+/* Gentle scroll reveal — transform only, never hides content (progressive) */
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .reveal { animation: reveal-rise linear both; animation-timeline: view(); animation-range: entry 0% cover 22%; }
+    @keyframes reveal-rise { from { transform: translateY(22px); } to { transform: translateY(0); } }
+  }
+}
