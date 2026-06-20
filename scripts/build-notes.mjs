@@ -133,7 +133,10 @@ function head(title, desc, canonical, jsonld, ogType = 'article') {
     <meta property="og:description" content="${esc(desc)}">
     <meta property="og:url" content="${canonical}">
     <meta property="og:type" content="${ogType}">
-    <meta property="og:image" content="https://monkey-got-thumbs.com/hero.png">
+    <meta property="og:image" content="https://monkey-got-thumbs.com/social-card.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
     <script type="application/ld+json">
     ${jsonld}
@@ -186,6 +189,8 @@ function build() {
             {
                 '@context': 'https://schema.org', '@type': 'Article', headline: n.title,
                 description: desc, url: canonical,
+                image: 'https://monkey-got-thumbs.com/social-card.png',
+                mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
                 author: { '@type': 'Organization', name: 'Monkey Got Thumbs' },
                 publisher: { '@type': 'Organization', name: 'Monkey Got Thumbs', logo: { '@type': 'ImageObject', url: 'https://monkey-got-thumbs.com/logo.png', width: 200, height: 300 } },
                 datePublished: '2026-06-20', dateModified: '2026-06-20',

@@ -56,6 +56,7 @@
     mount.appendChild(title);
     mount.appendChild(buildList());
     mount.classList.add('is-ready');
+    if (!mount.hasAttribute('aria-label')) mount.setAttribute('aria-label', 'On this page');
     mount.removeAttribute('hidden');
 
     // Collapsible fallback after <header> (CSS shows it <64rem)

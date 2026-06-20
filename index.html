@@ -70,7 +70,8 @@
         .hero-cta small { color: var(--color-muted); font-size: var(--font-size-sm); }
         .scroll-hint { margin-top: var(--space-2xl); color: var(--color-muted); font-size: var(--font-size-sm); text-decoration: none; display: inline-block; }
         .scroll-hint:hover { color: var(--color-fg); }
-        @keyframes floatIn { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+        /* transform-only — never opacity:0 on the LCP hero image, so it paints immediately */
+        @keyframes floatIn { from { transform: translateY(18px); } to { transform: translateY(0); } }
 
         /* ===== Reassurance line ===== */
         .reassure { text-align: center; max-width: 40rem; margin-inline: auto; font-size: var(--font-size-lg); line-height: 1.8; color: var(--color-fg-secondary); }
@@ -234,7 +235,7 @@
 
     </main>
     <mgt-footer></mgt-footer>
-    <script src="/assets/js/tracking.js"></script>
+    <script src="/assets/js/tracking.js" defer></script>
     <script type="module" src="/assets/js/app.js"></script>
     <script type="module" src="/components/core/mgt-header.js"></script>
     <script type="module" src="/components/core/mgt-footer.js"></script>

@@ -85,7 +85,7 @@ class MGTRecall extends HTMLElement {
         this.shadowRoot.innerHTML = `<style>${STYLE}</style>
             <div class="card${recent ? ' done' : ''}">
                 <div class="head">
-                    <span class="tag" aria-hidden="true">🧠 Recall</span>
+                    <span class="tag"><span aria-hidden="true">🧠</span> Recall</span>
                     <span class="purpose">A quick self-test. Cover the answer, have a go, then check — these come back just before you'd forget, so it sticks.</span>
                 </div>
                 <p class="q"></p>

@@ -19,7 +19,6 @@
     <link rel="stylesheet" href="/assets/css/layout.css">
 
     <meta name="description" content="Explore the three layers of memory in augmented intelligence — human, external tools, and machine-augmented — plus RAG, semantic graphs, and building a personal knowledge system." />
-    <meta name="keywords" content="knowledge management AI, RAG retrieval augmented generation, PKM tools AI, vector databases" />
     <meta name="author" content="Monkey Got Thumbs" />
 
     <meta property="og:title" content="Memory Systems: Knowledge Management in the AI Era — Monkey Got Thumbs">
@@ -43,6 +42,7 @@
         "@context": "https://schema.org",
         "@type": "Article",
         "headline": "Memory Systems: Knowledge Management in the AI Era",
+        "image": "https://monkey-got-thumbs.com/social-card.png",
         "description": "The three layers of memory — human, external, and machine-augmented — and how to build effective knowledge systems.",
         "url": "https://monkey-got-thumbs.com/learn/frameworks/memory-systems.html",
         "author": { "@type": "Organization", "name": "Monkey Got Thumbs" },
@@ -70,7 +70,7 @@
         .content li { margin-bottom: 0.5rem; line-height: 1.7; }
         .page-meta { color: var(--color-muted); font-size: var(--font-size-sm); margin-top: 0.5rem; }
         .lead { font-size: var(--font-size-lg); color: var(--color-fg-secondary); line-height: 1.7; }
-        .highlight-box { background: var(--color-bg-secondary); border-left: 4px solid var(--color-accent); padding: 1.25rem 1.5rem; border-radius: var(--radius-sm); margin: 1.5rem 0; }
+        .highlight-box { background: color-mix(in srgb, var(--color-accent) 7%, var(--color-bg-secondary)); border: 1px solid color-mix(in srgb, var(--color-accent) 22%, var(--color-border)); padding: 1.25rem 1.5rem; border-radius: var(--radius); margin: 1.5rem 0; }
         .highlight-box p { margin-bottom: 0; }
         /* Overflow safety: let split columns and monospace artifacts shrink/scroll instead of pushing the page wider */
         .split .col { min-width: 0; }
@@ -106,7 +106,7 @@
             <mgt-credit>The recall cards woven through this page are our take on the <strong>mnemonic medium</strong> by Andy Matuschak &amp; Michael Nielsen.</mgt-credit>
 
             <div class="enduring">
-                <p><strong>The one idea to keep:</strong> A memory system compounds only when a human decides what's worth keeping. Tools and AI add persistence, scale, and retrieval — but you supply the judgement about what matters. Capture that, and every future question can be answered against everything you've already learned.</p>
+                <p><strong>The one idea to keep:</strong> A memory system compounds only when a human decides what's worth keeping. Tools and AI add persistence, scale, and retrieval — but you supply the judgment about what matters. Capture that, and every future question can be answered against everything you've already learned.</p>
             </div>
 
             <section>
@@ -137,11 +137,11 @@ permissions, onboarding, drop-off, mobile</div>
                     <div class="artifact">Based on your saved onboarding study, the drop-off isn't at the
 sign-up form — it's at the permissions screen. Your own note flags
 that you tend to blame sign-up, so this is the leak worth fixing first.</div>
-                    <p>The AI didn't "remember" the study. Aisha's judgement decided it was worth capturing, the tool kept it, and embeddings surfaced it at the exact moment it answered a real question. That is all three layers compounding into one reply.</p>
+                    <p>The AI didn't "remember" the study. Aisha's judgment decided it was worth capturing, the tool kept it, and embeddings surfaced it at the exact moment it answered a real question. That is all three layers compounding into one reply.</p>
                 </div>
 
                 <p>
-                    <strong>Layer 1: Internal memory (human).</strong> This is what you know — the knowledge stored in your brain through experience, education, and reflection. Internal memory is associative, contextual, and deeply integrated with your reasoning. You do not just recall facts; you recall them within webs of meaning that connect to other facts, emotions, and experiences. This makes internal memory extraordinarily powerful for judgement and creativity, but limited in capacity and unreliable in precision.
+                    <strong>Layer 1: Internal memory (human).</strong> This is what you know — the knowledge stored in your brain through experience, education, and reflection. Internal memory is associative, contextual, and deeply integrated with your reasoning. You do not just recall facts; you recall them within webs of meaning that connect to other facts, emotions, and experiences. This makes internal memory extraordinarily powerful for judgment and creativity, but limited in capacity and unreliable in precision.
                 </p>
                 <p>
                     <strong>Layer 2: External memory (tools).</strong> This is knowledge stored outside your brain — in notes, documents, databases, bookmarks, file systems. Humans have used external memory for millennia: cave paintings, books, filing cabinets. Modern personal knowledge management (PKM) tools like Obsidian, Notion, and Roam Research are sophisticated external memory systems that let you capture, organise, link, and retrieve information far beyond what your brain can hold.
@@ -151,7 +151,7 @@ that you tend to blame sign-up, so this is the leak worth fixing first.</div>
                 </p>
 
                 <div class="highlight-box">
-                    <p><strong>The key insight:</strong> No single layer is sufficient. Internal memory provides judgement. External memory provides persistence and scale. Machine-augmented memory provides speed and pattern-matching. The most effective knowledge systems integrate all three.</p>
+                    <p><strong>The key insight:</strong> No single layer is sufficient. Internal memory provides judgment. External memory provides persistence and scale. Machine-augmented memory provides speed and pattern-matching. The most effective knowledge systems integrate all three.</p>
                 </div>
 
                 <mgt-recall id="ms-layers-count">
@@ -169,7 +169,7 @@ that you tend to blame sign-up, so this is the leak worth fixing first.</div>
                 <mgt-recall id="ms-layers-why">
                     <details>
                         <summary>Why is no single memory layer enough on its own?</summary>
-                        <p>Each supplies something different: internal gives judgement, external gives persistence and scale, and machine-augmented gives speed and pattern-matching.</p>
+                        <p>Each supplies something different: internal gives judgment, external gives persistence and scale, and machine-augmented gives speed and pattern-matching.</p>
                     </details>
                 </mgt-recall>
             </section>
@@ -190,7 +190,7 @@ that you tend to blame sign-up, so this is the leak worth fixing first.</div>
                     This is not a small improvement. It is a qualitative shift in what a personal knowledge system can do. Your notes become a living knowledge base that grows more useful with every entry, because each new note creates new potential connections with everything already in the system.
                 </p>
                 <p>
-                    The human role remains critical, however. AI can surface connections and retrieve context, but it cannot determine what is worth capturing in the first place. The quality of your PKM system depends on your judgement about what matters, how you frame it, and what structure you give it. Garbage in, garbage out — no amount of semantic search can compensate for poorly captured knowledge.
+                    The human role remains critical, however. AI can surface connections and retrieve context, but it cannot determine what is worth capturing in the first place. The quality of your PKM system depends on your judgment about what matters, how you frame it, and what structure you give it. Garbage in, garbage out — no amount of semantic search can compensate for poorly captured knowledge.
                 </p>
 
                 <mgt-recall id="ms-pkm-job">
@@ -208,7 +208,7 @@ that you tend to blame sign-up, so this is the leak worth fixing first.</div>
                 <mgt-recall id="ms-pkm-human">
                     <details>
                         <summary>What can AI <em>not</em> do for your knowledge system?</summary>
-                        <p>Decide what's worth capturing in the first place. That judgement is yours — garbage in, garbage out.</p>
+                        <p>Decide what's worth capturing in the first place. That judgment is yours — garbage in, garbage out.</p>
                     </details>
                 </mgt-recall>
 
@@ -219,7 +219,7 @@ that you tend to blame sign-up, so this is the leak worth fixing first.</div>
                 <mgt-recall id="ms-trap">
                     <details>
                         <summary>Why won't an AI just "remember everything for you"?</summary>
-                        <p>Because it can only retrieve what was captured and put within its reach. It can't sit through your day judging which moments matter — that capture and that judgement are still yours.</p>
+                        <p>Because it can only retrieve what was captured and put within its reach. It can't sit through your day judging which moments matter — that capture and that judgment are still yours.</p>
                     </details>
                 </mgt-recall>
             </section>
@@ -327,7 +327,7 @@ that you tend to blame sign-up, so this is the leak worth fixing first.</div>
                 <h2 id="tryit-ms">Try it on your own work</h2>
                 <p>You don't need a vector database to start a knowledge system that compounds. You need one place to capture, and one decision repeated: <em>is this worth keeping?</em> Try this with whatever you're working on this week.</p>
                 <ol>
-                    <li><strong>Capture one thing today.</strong> Open a single note (any tool you already use) and write down one finding, idea, or hard-won lesson from your work — in your own words, with a line about <em>why</em> it matters to you. That framing is the judgement only you can supply.</li>
+                    <li><strong>Capture one thing today.</strong> Open a single note (any tool you already use) and write down one finding, idea, or hard-won lesson from your work — in your own words, with a line about <em>why</em> it matters to you. That framing is the judgment only you can supply.</li>
                     <li><strong>Make it findable by meaning, not filing.</strong> Don't bury it in folders. Add a few plain-language tags and the question it would answer. The goal is that future-you can retrieve it by what it's <em>about</em>, even after forgetting it exists.</li>
                     <li><strong>Ask it back later.</strong> In a week, point your AI assistant (or your tool's search) at that note and ask the real question it speaks to — without naming the note. If the answer comes back grounded in what you captured, you've just run RAG across your own three layers.</li>
                 </ol>

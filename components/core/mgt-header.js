@@ -203,7 +203,7 @@ class MGTHeader extends HTMLElement {
               width="80"
               height="80"
               decoding="async"
-              fetchpriority="high"
+              loading="eager"
             />
             <span class="brand-text">Monkey Got Thumbs</span>
           </a>
