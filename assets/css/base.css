@@ -175,8 +175,8 @@ a {
 }
 
 a:hover {
-  text-decoration: underline;
-  color: #b8ff5c;
+  text-decoration: none;       /* no underline on hover — affordance is a colour shift instead */
+  color: var(--color-link-hover);
 }
 
 a:focus-visible {
