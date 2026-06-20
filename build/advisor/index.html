@@ -25,10 +25,13 @@
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:type" content="image/png">
+    <meta property="og:image:alt" content="Monkey Got Thumbs — a friendly monkey, thumbs up, on a dark background">
+    <meta property="og:site_name" content="Monkey Got Thumbs">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
     <script type="application/ld+json">
     { "@context": "https://schema.org", "@type": "WebApplication", "name": "Agent Builder Advisor",
-      "applicationCategory": "DeveloperApplication", "operatingSystem": "Web browser",
+      "applicationCategory": "BusinessApplication", "operatingSystem": "Web browser",
       "url": "https://monkey-got-thumbs.com/build/advisor/",
       "description": "A friendly, one-round helper: paste what you asked AI, see what it produces, and get plain-English feedback on how to ask better.",
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
@@ -122,9 +125,10 @@
             </nav>
 
             <header class="advisor-hero">
-                <span class="eyebrow">free · no sign-up</span>
+                <span class="eyebrow">free · no sign-up · preview</span>
                 <h1>Paste what you asked AI. Get friendly feedback.</h1>
                 <p class="lead">Pop in the instructions you gave AI (and a couple of example messages), and we'll read it over like a patient friend. You'll get <strong>one round of plain-English feedback</strong>: what's working, what might confuse it, what your examples actually produce, and how to ask so you get a better answer. It's <strong>one helpful read, not a chat</strong> — no back-and-forth. Each time you tap the button, it takes a fresh look.</p>
+                <p class="lead" style="font-size:var(--font-size-base);color:var(--color-muted);"><em>This is an early preview — load the worked example below to see exactly how the feedback reads.</em></p>
             </header>
 
             <div class="preview-note" id="preview-note" hidden>
@@ -227,7 +231,7 @@ to a person at support@northwind.example.
         </article>
     </main>
     <mgt-footer></mgt-footer>
-    <script src="/assets/js/tracking.js"></script>
+    <script src="/assets/js/tracking.js" defer></script>
     <script type="module" src="/assets/js/app.js"></script>
     <script type="module" src="/components/core/mgt-header.js"></script>
     <script type="module" src="/components/core/mgt-footer.js"></script>

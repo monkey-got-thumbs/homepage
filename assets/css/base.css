@@ -155,11 +155,12 @@ ol li::marker {
 blockquote {
   margin: var(--space-md) 0;
   padding: var(--space-md) var(--space-lg);
-  border-left: 4px solid var(--color-accent);
-  background: var(--color-bg-secondary);
+  /* calm soft-border callout (the retired loud 4px green left-bar is gone site-wide) */
+  border: 1px solid color-mix(in srgb, var(--color-accent) 22%, var(--color-border));
+  background: color-mix(in srgb, var(--color-accent) 7%, var(--color-bg-secondary));
   color: var(--color-fg-secondary);
   font-style: italic;
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius);
 }
 
 blockquote p {

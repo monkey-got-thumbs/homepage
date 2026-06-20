@@ -65,7 +65,8 @@ function inline(text, ctx) {
     // [text](url) standard links (groups already escaped)
     t = t.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_, label, url) => {
         const external = /^https?:/i.test(url);
-        return `<a href="${url}"${external ? ' target="_blank" rel="noopener"' : ''}>${label}</a>`;
+        const href = url.replace(/"/g, '&quot;');   // esc() handled & < > earlier; keep quotes from breaking the attribute
+        return `<a href="${href}"${external ? ' target="_blank" rel="noopener"' : ''}>${label}</a>`;
     });
     t = t.replace(/`([^`]+)`/g, '<code>$1</code>');
     t = t.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
@@ -137,6 +138,12 @@ function head(title, desc, canonical, jsonld, ogType = 'article') {
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:type" content="image/png">
+    <meta property="og:image:alt" content="Monkey Got Thumbs — a friendly monkey, thumbs up, on a dark background">
+    <meta property="og:site_name" content="Monkey Got Thumbs">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="${esc(title)}">
+    <meta name="twitter:description" content="${esc(desc)}">
+    <meta name="twitter:image" content="https://monkey-got-thumbs.com/social-card.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
     <script type="application/ld+json">
     ${jsonld}

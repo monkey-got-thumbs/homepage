@@ -26,7 +26,7 @@
         .rv-stat { flex: 1; min-width: 120px; background: var(--color-bg-secondary); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 1rem 1.25rem; text-align: center; }
         .rv-stat b { display: block; font-family: var(--font-display); font-size: var(--font-size-3xl); color: var(--color-accent); line-height: 1.1; }
         .rv-stat span { font-size: var(--font-size-xs); color: var(--color-muted); text-transform: uppercase; letter-spacing: 0.06em; }
-        .rv-card { background: var(--color-bg-secondary); border: 1px solid var(--color-border); border-left: 4px solid var(--color-accent); border-radius: var(--radius); padding: 1.75rem; margin: 1.5rem 0; }
+        .rv-card { background: color-mix(in srgb, var(--color-accent) 7%, var(--color-bg-secondary)); border: 1px solid color-mix(in srgb, var(--color-accent) 22%, var(--color-border)); border-radius: var(--radius); padding: 1.75rem; margin: 1.5rem 0; }
         .rv-progress { font-size: var(--font-size-xs); color: var(--color-muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.75rem; }
         .rv-q { font-size: var(--font-size-xl); font-weight: var(--font-weight-semibold); color: var(--color-fg); line-height: 1.5; }
         .rv-a { margin-top: 1rem; padding-top: 1rem; border-top: 1px dashed var(--color-border); color: var(--color-fg); line-height: 1.7; }
@@ -79,7 +79,7 @@
     </main>
     <mgt-footer></mgt-footer>
 
-    <script src="/assets/js/tracking.js"></script>
+    <script src="/assets/js/tracking.js" defer></script>
     <script type="module" src="/assets/js/app.js"></script>
     <script type="module" src="/components/core/mgt-header.js"></script>
     <script type="module" src="/components/core/mgt-footer.js"></script>

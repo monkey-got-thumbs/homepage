@@ -598,6 +598,10 @@
             </section>`;
 
         root.appendChild(wrap);
+        // Clear the inline target's no-JS "Loading the live demo…" fallback before mounting,
+        // so it doesn't sit stacked above the live widget. (buildUI only runs after config loads,
+        // so the fallback still shows if the widget can't mount.)
+        if (inline) inline.replaceChildren();
         (inline || document.body).appendChild(host);
 
         ui = {

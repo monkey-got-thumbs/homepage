@@ -41,9 +41,9 @@ if (runner && statsEl) {
             : `<div class="rv-done"><h2>No cards yet</h2><p>Read a lesson and answer its recall cards — they'll appear here, scheduled just before you'd forget. Start with <a href="/learn/frameworks/memory-systems.html">Memory Systems</a>.</p></div>`;
     }
 
-    function renderCard() {
+    function renderCard(focusShow) {
         const c = srs.getCard(queue[0]);
-        if (!c) { queue.shift(); return queue.length ? renderCard() : renderEmpty(); }
+        if (!c) { queue.shift(); return queue.length ? renderCard(focusShow) : renderEmpty(); }
         runner.innerHTML =
             `<div class="rv-card">
                 <div class="rv-progress">${done + queue.length} to review · ${done} done</div>
@@ -64,6 +64,8 @@ if (runner && statsEl) {
         });
         document.getElementById('rvYes').addEventListener('click', () => grade(true));
         document.getElementById('rvNo').addEventListener('click', () => grade(false));
+        // keep keyboard focus on the active card after a grade re-renders it (not on first load)
+        if (focusShow) document.getElementById('rvShow').focus();
     }
 
     function grade(ok) {
@@ -73,7 +75,7 @@ if (runner && statsEl) {
         done++;
         if (!ok) queue.push(id); // relearn this session
         renderStats();
-        queue.length ? renderCard() : renderEmpty();
+        queue.length ? renderCard(true) : renderEmpty();
     }
 
     const exp = document.getElementById('export');

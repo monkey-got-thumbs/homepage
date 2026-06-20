@@ -273,8 +273,6 @@ async function init() {
       detail: { config: CONFIG, browserSupport: support },
     });
     document.dispatchEvent(initEvent);
-
-    console.log('Monkey Got Thumbs initialized successfully');
   } catch (error) {
     console.error('Error during app initialization:', error);
   }

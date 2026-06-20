@@ -8,7 +8,7 @@ Autonomy and agency get used as synonyms, but they pull apart under pressure. Au
 
 AI tends to hand you the first while quietly draining the second. It clears the chores, answers before you've finished asking, and removes the friction that used to make you stop and choose. Your autonomy goes up — fewer demands on your time. But if the AI is also choosing what to read, what to write, and what to want next, your agency slips. You're freer and steering less.
 
-So protect the second, not just the first. The defense is concrete: keep deciding the things that are yours to decide, which is the whole point of [[you-keep-the-judgment]]. Freedom from interference is worth little if you've stopped doing anything with it.
+So protect the second, not just the first. The defence is concrete: keep deciding the things that are yours to decide, which is the whole point of [[you-keep-the-judgment]]. Freedom from interference is worth little if you've stopped doing anything with it.
 
 See more on [agency and autonomy](/learn/human-factors/agency-autonomy.html).
 
