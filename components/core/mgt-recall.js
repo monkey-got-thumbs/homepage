@@ -23,25 +23,26 @@ const STYLE = `
     --fg: var(--color-fg, #EDECF6); --muted: var(--color-muted, #B9B5D3); --brand: var(--color-brand-light, #6A55C0);
     --bd: var(--color-border, rgba(255,255,255,.08)); }
 * { box-sizing: border-box; }
-.card { background: var(--bg); border: 1px solid var(--bd); border-left: 4px solid var(--acc);
-    border-radius: 12px; padding: 1.1rem 1.25rem; font-family: "Montserrat", system-ui, sans-serif; }
-.card.done { border-left-color: var(--brand); }
-.tag { display: inline-block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em;
-    color: #11210a; background: var(--acc); border-radius: 999px; padding: 2px 9px; margin-right: 10px; vertical-align: middle; }
-.card.done .tag { background: var(--brand); color: #fff; }
-.q { color: var(--fg); font-size: 1rem; font-weight: 600; line-height: 1.5; }
-.a { color: var(--fg); font-size: .95rem; line-height: 1.7; margin-top: .75rem; padding-top: .75rem; border-top: 1px dashed var(--bd); }
+/* Quiet, unobtrusive self-check — a calm aside, not a loud quiz. No coloured bar, no filled lime pill. */
+.card { background: color-mix(in srgb, var(--bg) 45%, transparent); border: 1px solid var(--bd);
+    border-radius: 10px; padding: 0.85rem 1.05rem; font-family: "Montserrat", system-ui, sans-serif; }
+.tag { display: flex; align-items: center; gap: .4rem; font-size: 10.5px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: .12em; color: var(--muted); margin: 0 0 .45rem; }
+.tag::before { content: ""; width: 5px; height: 5px; border-radius: 999px; background: color-mix(in srgb, var(--acc) 70%, transparent); flex: 0 0 auto; }
+.card.done .tag::before { background: var(--muted); }
+.q { color: var(--fg); font-size: .95rem; font-weight: 600; line-height: 1.55; }
+.a { color: var(--color-fg-secondary, var(--fg)); font-size: .92rem; line-height: 1.7; margin-top: .7rem; padding-top: .7rem; border-top: 1px dashed var(--bd); }
 .a :first-child { margin-top: 0; } .a :last-child { margin-bottom: 0; }
-.row { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; margin-top: .9rem; }
-button { font: 600 .85rem "Montserrat", sans-serif; border-radius: 8px; padding: .5rem .9rem; cursor: pointer;
-    border: 1px solid var(--bd); background: color-mix(in srgb, var(--brand) 24%, transparent); color: var(--fg);
-    transition: filter .15s ease, border-color .15s ease; }
-button:hover { border-color: var(--acc); }
-button.primary { background: var(--acc); color: #11210a; border-color: var(--acc); }
-button.primary:hover { filter: brightness(1.07); }
-button:focus-visible { outline: 3px solid var(--acc); outline-offset: 2px; }
-.hint { color: var(--muted); font-size: 12px; line-height: 1.5; }
-.status { color: var(--muted); font-size: 12px; margin-top: .6rem; min-height: 1em; }
+.row { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; margin-top: .8rem; }
+button { font: 600 .82rem "Montserrat", sans-serif; border-radius: 8px; padding: .42rem .85rem; cursor: pointer;
+    border: 1px solid var(--bd); background: transparent; color: var(--fg);
+    transition: border-color .15s ease, background .15s ease; }
+button:hover { border-color: color-mix(in srgb, var(--acc) 55%, var(--bd)); }
+button.primary { background: color-mix(in srgb, var(--acc) 12%, transparent); border-color: color-mix(in srgb, var(--acc) 40%, var(--bd)); }
+button.primary:hover { background: color-mix(in srgb, var(--acc) 18%, transparent); }
+button:focus-visible { outline: 2px solid var(--acc); outline-offset: 2px; }
+.hint { color: var(--muted); font-size: 11.5px; line-height: 1.5; }
+.status { color: var(--muted); font-size: 11.5px; margin-top: .55rem; min-height: 1em; }
 @media (prefers-reduced-motion: reduce) { button { transition: none; } }
 `;
 
