@@ -45,10 +45,16 @@
             background-attachment: fixed;
         }
 
-        .advisor-hero { max-width: var(--measure-wide); margin: var(--space-lg) auto var(--space-2xl); text-align: center; }
+        /* top-level wrapper — breadcrumb, head + form all share the content column's left edge */
+        .advisor-wrap { max-width: var(--content-col); margin-inline: auto; }
+
+        /* left-aligned head — shares the breadcrumb's left edge */
+        .advisor-hero { max-width: 46rem; margin: var(--space-lg) 0 var(--space-2xl); text-align: left; }
         .advisor-hero h1 { margin-bottom: var(--space-sm); }
-        .advisor-hero .lead { color: var(--color-fg-secondary); line-height: 1.8; max-width: 44rem; margin-inline: auto; }
-        .advisor-wrap { max-width: var(--container-md); margin: 0 auto; }
+        .advisor-hero .lead { color: var(--color-fg-secondary); line-height: 1.8; max-width: 44rem; margin-inline: 0; text-align: left; }
+
+        /* the form + results + example keep a comfortable typing/reading measure, left-aligned in the column */
+        .advisor-form, .preview-note, .results, .annotated { max-width: var(--container-md); }
 
         .preview-note {
             background: color-mix(in srgb, var(--color-warning) 10%, var(--color-bg-secondary));

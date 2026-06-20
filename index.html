@@ -46,6 +46,10 @@
 
         /* Generous, restful vertical rhythm — one idea at a time */
         .home-section { padding-block: clamp(3rem, 8vw, 6.5rem); }
+        /* Every section BELOW the hero is capped to the standard content column,
+           centred as a column so heads + grids share one clean width. The hero
+           stays full-bleed-centred (see .hero override below). */
+        .home-section:not(.hero) { max-width: var(--content-col); margin-inline: auto; }
         .home-lede { max-width: 36rem; margin-inline: auto; text-align: center; color: var(--color-fg-secondary); font-size: var(--font-size-lg); line-height: 1.75; }
         .eyebrow {
             display: inline-block; font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold);
@@ -70,7 +74,9 @@
         .reassure strong { color: var(--color-fg); }
 
         /* ===== The journey — a path, not a menu ===== */
-        .path { display: grid; gap: clamp(1rem, 2.5vw, 1.75rem); grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr)); margin-top: var(--space-2xl); }
+        /* calm uniform ~3-up that fills the content column, wraps left-aligned */
+        .path { display: grid; gap: clamp(1.25rem, 2vw, 2rem); grid-template-columns: repeat(auto-fill, minmax(min(100%, 19rem), 1fr)); margin-top: var(--space-2xl); }
+        .path > * { min-width: 0; }
         .step {
             position: relative; background: color-mix(in srgb, var(--color-bg-secondary) 80%, transparent);
             border: 1px solid var(--color-border); border-radius: var(--radius-lg);

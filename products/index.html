@@ -41,11 +41,12 @@
             background-attachment: fixed;
         }
 
-        .products-page { max-width: var(--container-wide); margin-inline: auto; }
+        .products-page { max-width: var(--content-col); margin-inline: auto; }
 
-        /* warm centred head */
-        .products-head { text-align: center; max-width: 40rem; margin: 0 auto var(--space-2xl); }
+        /* left-aligned head — shares the column's left edge with breadcrumb + cards */
+        .products-head { text-align: left; max-width: 46rem; margin: 0 0 var(--space-2xl); }
         .products-head h1 { margin: var(--space-sm) 0; }
+        .products-head .lede { margin-inline: 0; text-align: left; }
 
         /* the two things — generous, calm cards */
         .things { display: grid; gap: clamp(1.25rem, 3vw, 2rem); grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); }

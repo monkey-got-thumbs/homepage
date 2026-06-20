@@ -60,11 +60,12 @@
             background-attachment: fixed;
         }
 
-        .community { max-width: var(--container-wide); margin-inline: auto; }
+        .community { max-width: var(--content-col); margin-inline: auto; }
 
-        /* ===== Hero — one warm invitation ===== */
-        .community-head { text-align: center; max-width: 42rem; margin: 0 auto var(--space-2xl); }
+        /* ===== Hero — one warm invitation, shares the column's left edge ===== */
+        .community-head { text-align: left; max-width: 46rem; margin: 0 0 var(--space-2xl); }
         .community-head h1 { margin: var(--space-sm) 0; }
+        .community-head .lede { margin-inline: 0; text-align: left; }
 
         /* ===== The warm front-door card (join) reuses the shared gradient-card ===== */
         .join { display: block; margin-inline: auto; max-width: 40rem; }
@@ -76,12 +77,18 @@
         .section-head { text-align: center; max-width: 42rem; margin: 0 auto var(--space-xl); }
         .section-head h2 { margin-bottom: var(--space-sm); }
 
+        /* ===== Calm card grids — uniform, left-aligned, fill the content column ===== */
+        .calm-grid { display: grid; gap: clamp(1.25rem, 2vw, 2rem); grid-template-columns: repeat(auto-fill, minmax(min(100%, 19rem), 1fr)); }
+        .calm-grid > * { min-width: 0; }
+
         /* ===== Faces of the community — gentle reassurance cards ===== */
         .faces .card { display: flex; flex-direction: column; gap: 0.5rem; }
         .faces .card p { margin: 0; color: var(--color-fg-secondary); line-height: 1.7; }
         .faces .who { color: var(--color-muted); font-size: var(--font-size-sm); font-style: normal; }
 
         /* ===== Ways to be part of it — a path, not a menu ===== */
+        .ways.path { display: grid; gap: clamp(1.25rem, 2vw, 2rem); grid-template-columns: repeat(auto-fill, minmax(min(100%, 19rem), 1fr)); }
+        .ways.path > * { min-width: 0; }
         .ways .step p { flex: 1; }
 
         /* ===== Delight: a recall card, framed softly ===== */
@@ -135,7 +142,7 @@
                     <h2 id="who-title">People just like you</h2>
                     <p class="muted">Not experts. Not coders. Just curious folks, helping each other feel a little more at home with AI.</p>
                 </div>
-                <div class="faces grid--2col">
+                <div class="faces calm-grid">
                     <article class="card">
                         <p>"I used to call it 'chatty' and feel a bit silly. Turns out loads of people did the same — and nobody minds. We're all just learning."</p>
                         <span class="who">— the nervous-but-curious starter</span>
@@ -191,7 +198,7 @@
                     <h2 id="spirit-title">The spirit of the place</h2>
                     <p class="muted">A few gentle promises about what it feels like to be here.</p>
                 </div>
-                <div class="grid--2col">
+                <div class="calm-grid">
                     <article class="card">
                         <h3>Curious, not scared</h3>
                         <p>AI is new and a bit strange — that's allowed. We meet it with curiosity instead of panic, and we never make you feel daft for asking.</p>

@@ -69,6 +69,10 @@
         .lead { font-size: var(--font-size-lg); color: var(--color-fg-secondary); line-height: 1.7; }
         .highlight-box { background: var(--color-bg-secondary); border-left: 4px solid var(--color-accent); padding: 1.25rem 1.5rem; border-radius: var(--radius-sm); margin: 1.5rem 0; }
         .highlight-box p { margin-bottom: 0; }
+        /* Overflow safety: let split columns and monospace artifacts shrink/scroll instead of pushing the page wider (does not touch #coffee-dial) */
+        .split .col { min-width: 0; }
+        .artifact { max-width: 100%; overflow-x: auto; }
+        .content pre, .content code { max-width: 100%; overflow-x: auto; }
         .tool-card { background: var(--color-bg-secondary); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 1.5rem; margin: 1rem 0; }
         .tool-card h3 { margin-top: 0; color: var(--color-accent); }
 

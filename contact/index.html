@@ -35,23 +35,24 @@
     ]}}
     </script>
     <style>
-        /* page-specific: warm, centred, low cognitive load */
-        .say-wrap { max-width: 44rem; margin-inline: auto; }
-        .say-head { text-align: center; max-width: 38rem; margin: 0 auto var(--space-2xl); }
+        /* page-specific: one calm column, aligned head, low cognitive load */
+        .say-wrap { max-width: var(--content-col); margin-inline: auto; }
+        .say-head { text-align: left; max-width: 46rem; margin: 0 0 var(--space-2xl); }
         .say-head h1 { margin: var(--space-sm) 0; }
+        .say-head .lede { margin-inline: 0; text-align: left; }
 
         /* one warm primary way to reach us, then a quieter second option */
-        .say-card { text-align: center; }
+        .say-card { max-width: 46rem; }
         .say-card .gradient-card__inner h2 { margin-top: 0; }
         .say-card .gradient-card__inner p { color: var(--color-fg-secondary); line-height: 1.8; }
         .mail { display: inline-block; margin-top: var(--space-sm); font-size: var(--font-size-lg); font-weight: var(--font-weight-bold); color: var(--color-accent); text-decoration: none; }
         .mail:hover { text-decoration: underline; }
 
-        .say-aside { text-align: center; max-width: 34rem; margin: var(--space-2xl) auto 0; }
+        .say-aside { text-align: left; max-width: 46rem; margin: var(--space-2xl) 0 0; }
         .say-aside p { color: var(--color-fg-secondary); line-height: 1.8; }
         .say-aside a { color: var(--color-accent); font-weight: var(--font-weight-semibold); }
 
-        .say-news { max-width: 36rem; margin: var(--space-2xl) auto 0; text-align: center; }
+        .say-news { max-width: 46rem; margin: var(--space-2xl) 0 0; text-align: left; }
         .say-news h2 { margin-bottom: var(--space-sm); }
         .say-news > p { color: var(--color-fg-secondary); line-height: 1.8; margin-bottom: var(--space-lg); }
     </style>

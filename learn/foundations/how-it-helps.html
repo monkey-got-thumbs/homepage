@@ -74,8 +74,22 @@
         .case-study h3 { color: var(--color-accent); margin-top: 0; font-size: var(--font-size-xl); }
         .case-study .result { font-weight: var(--font-weight-semibold); color: var(--color-fg); }
         .mechanism { display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin: 1.5rem 0; }
+        .mechanism > * { min-width: 0; }
         .mechanism .card { padding: 1.5rem; border-left: 3px solid var(--color-brand-light); }
         .mechanism .card h3 { margin-top: 0; }
+        /* Article reads as a calm, truly-centred column at the prose measure.
+           Keep the TOC sidebar, but mirror it with an equal right rail and let the
+           grid size to its content so the prose never floats off-centre. */
+        @media (min-width: 64rem) {
+            .content.article-layout {
+                width: fit-content;
+                max-width: 100%;
+                margin-inline: auto;
+                grid-template-columns: var(--toc-col) minmax(0, var(--measure)) var(--toc-col);
+                column-gap: clamp(2rem, 4vw, 3.5rem);
+            }
+        }
+        @media (min-width: 90rem) { .content.article-layout { max-width: 100%; } }
     </style>
 </head>
 <body>

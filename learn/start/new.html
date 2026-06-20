@@ -43,13 +43,16 @@
             background-attachment: fixed;
         }
 
-        .start { max-width: 40rem; margin-inline: auto; }
+        .start { max-width: var(--content-col); margin-inline: auto; }
 
-        /* Warm, centred opening */
-        .start-head { text-align: center; max-width: 38rem; margin: 0 auto var(--space-2xl); }
+        /* Warm, left-aligned opening — shares the breadcrumb's left edge */
+        .start-head { text-align: left; max-width: 46rem; margin: 0 0 var(--space-2xl); }
         .start-head .emoji { font-size: 2.75rem; line-height: 1; display: block; margin-bottom: var(--space-sm); }
         .start-head h1 { margin: var(--space-sm) 0; }
+        .start-head .lede { margin-inline: 0; text-align: left; }
 
+        /* prose + the single first action stay at a readable measure, left-aligned to the column edge */
+        .start > section, .start > .next { max-width: 46rem; }
         .start h2 { margin-top: 0; }
 
         /* The single, gentle first thing to try */

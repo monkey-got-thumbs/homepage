@@ -31,12 +31,13 @@
       ]}}
     </script>
     <style>
-        .learn-home { max-width: var(--container-wide); margin-inline: auto; }
-        .learn-head { text-align: center; max-width: 40rem; margin: 0 auto var(--space-2xl); }
+        .learn-home { max-width: var(--content-col); margin-inline: auto; }
+        .learn-head { text-align: left; max-width: 46rem; margin: 0 0 var(--space-2xl); }
         .learn-head h1 { margin: var(--space-sm) 0; }
+        .learn-head .lede { margin-inline: 0; text-align: left; }
 
-        /* the warm front-door card */
-        .start-here { display: block; text-decoration: none; margin-bottom: var(--space-2xl); }
+        /* the warm front-door card — fills the content column, left-aligned */
+        .start-here { display: block; text-decoration: none; margin: 0 0 var(--space-2xl); }
         .start-here .gradient-card__inner { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-md) var(--space-lg); }
         .start-here .emoji { font-size: 2.5rem; line-height: 1; }
         .start-here .grow { flex: 1 1 16rem; }
@@ -45,10 +46,11 @@
         .start-here .go { color: var(--color-accent); font-weight: var(--font-weight-bold); white-space: nowrap; }
         .start-here:hover .go { text-decoration: underline; }
 
-        .learn-sub { text-align: center; color: var(--color-muted); margin-bottom: var(--space-lg); }
+        .learn-sub { text-align: left; color: var(--color-muted); margin-bottom: var(--space-lg); }
 
-        /* curriculum cards reuse the shared .card grid */
-        .learn-grid { display: grid; gap: var(--space-lg); grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); }
+        /* curriculum cards — shared calm grid: uniform 3-up, left-aligned, fills the column */
+        .learn-grid { display: grid; gap: clamp(1.25rem, 2vw, 2rem); grid-template-columns: repeat(auto-fill, minmax(min(100%, 19rem), 1fr)); }
+        .learn-grid > * { min-width: 0; }
         .learn-grid .card { display: flex; flex-direction: column; gap: 0.4rem; }
         .learn-grid .card h3 { margin: 0; }
         .learn-grid .card p { margin: 0; color: var(--color-fg-secondary); line-height: 1.6; flex: 1; }

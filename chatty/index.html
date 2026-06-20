@@ -96,19 +96,19 @@
             background-attachment: fixed;
         }
 
-        .content { max-width: var(--container-wide); margin: 0 auto; }
+        .content { max-width: var(--content-col); margin-inline: auto; }
 
-        /* Centred, warm section headers (one idea at a time) */
+        /* Centred, warm section headers (secondary, capped narrow — fine to stay centred) */
         .cm-head { text-align: center; max-width: 42rem; margin: 0 auto var(--space-xl); }
         .cm-head h2 { margin: var(--space-sm) 0; }
         .cm-head p { color: var(--color-fg-secondary); line-height: 1.75; margin: 0; }
 
-        /* ===== HERO — one warm invitation ===== */
-        .cm-hero { text-align: center; padding-top: clamp(1rem, 4vw, 2.5rem); }
+        /* ===== HERO — the primary head, shares the column's left edge ===== */
+        .cm-hero { text-align: left; max-width: 46rem; margin-inline: 0; padding-top: clamp(1rem, 4vw, 2.5rem); }
         .cm-hero .emoji { font-size: 3rem; line-height: 1; display: block; }
         .cm-hero h1 { margin: var(--space-md) 0 var(--space-sm); }
-        .cm-hero .lede { font-size: clamp(1.05rem, 1.6vw, 1.25rem); }
-        .cm-cta { display: flex; flex-direction: column; align-items: center; gap: var(--space-sm); margin-top: var(--space-xl); }
+        .cm-hero .lede { font-size: clamp(1.05rem, 1.6vw, 1.25rem); margin-inline: 0; }
+        .cm-cta { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-sm); margin-top: var(--space-xl); }
         .cm-cta .btn { font-size: var(--font-size-lg); padding-inline: 1.6rem; }
         .cm-cta small { color: var(--color-muted); font-size: var(--font-size-sm); }
 
@@ -121,13 +121,15 @@
             margin-top: var(--space-md);
         }
 
-        /* ===== FRIENDLY BENEFITS (reuse shared .card grid) ===== */
+        /* ===== FRIENDLY BENEFITS — calm uniform grid, left-aligned, fills the column ===== */
+        .cm-features { display: grid; gap: clamp(1.25rem, 2vw, 2rem); grid-template-columns: repeat(auto-fill, minmax(min(100%, 19rem), 1fr)); }
+        .cm-features > * { min-width: 0; }
         .cm-features .card h3 { margin-top: 0; }
         .cm-features .card p { margin-bottom: 0; color: var(--color-fg-secondary); line-height: 1.7; }
         .cm-features .card .emoji { font-size: 1.8rem; line-height: 1; display: block; margin-bottom: var(--space-sm); }
 
         /* ===== COMPARISON TABLE ===== */
-        .cm-table-scroll { overflow-x: auto; margin-top: var(--space-lg); -webkit-overflow-scrolling: touch; }
+        .cm-table-scroll { max-width: 100%; overflow-x: auto; margin-top: var(--space-lg); -webkit-overflow-scrolling: touch; }
         .cm-compare { min-width: 32rem; }
         .cm-compare th, .cm-compare td { vertical-align: top; }
         .cm-compare thead th { font-size: var(--font-size-sm); }
@@ -139,8 +141,7 @@
         .cm-compare thead .cm-col-chatyman { color: var(--color-accent); }
 
         /* ===== PRICING ===== */
-        .cm-pricing { display: grid; gap: var(--space-lg); grid-template-columns: 1fr; margin-top: var(--space-lg); align-items: start; }
-        @media (min-width: 760px) { .cm-pricing { grid-template-columns: 1fr 1fr; } }
+        .cm-pricing { display: grid; gap: var(--space-lg); grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr)); margin-top: var(--space-lg); align-items: start; }
         .cm-plan { display: flex; flex-direction: column; height: 100%; position: relative; }
         .cm-plan h3 { margin-top: 0; color: var(--color-fg); }
         .cm-price { font-family: var(--font-display); font-size: var(--font-size-4xl); color: var(--color-accent); letter-spacing: var(--letter-spacing-wide); line-height: 1.1; margin-bottom: var(--space-sm); }
@@ -223,7 +224,7 @@
                     <h2 id="features-title">Helpful, honest, and easy on everyone</h2>
                     <p>No clever talk needed. Here's what chatyman quietly does for you and the people who visit your site.</p>
                 </div>
-                <div class="cm-features grid--3col">
+                <div class="cm-features">
                     <div class="card">
                         <span class="emoji" aria-hidden="true">💛</span>
                         <h3>It answers like you would</h3>

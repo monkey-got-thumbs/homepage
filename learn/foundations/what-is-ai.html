@@ -75,8 +75,22 @@
         .highlight-box { background: var(--color-bg-secondary); border-left: 4px solid var(--color-accent); padding: 1.25rem 1.5rem; border-radius: var(--radius-sm); margin: 1.5rem 0; }
         .highlight-box p { margin-bottom: 0; }
         .comparison { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 1.5rem 0; }
+        .comparison > * { min-width: 0; }
         .comparison .card { padding: 1.5rem; }
         @media (max-width: 640px) { .comparison { grid-template-columns: 1fr; } }
+        /* Article reads as a calm, truly-centred column at the prose measure.
+           Keep the TOC sidebar, but mirror it with an equal right rail and let the
+           grid size to its content so the prose never floats off-centre. */
+        @media (min-width: 64rem) {
+            .content.article-layout {
+                width: fit-content;
+                max-width: 100%;
+                margin-inline: auto;
+                grid-template-columns: var(--toc-col) minmax(0, var(--measure)) var(--toc-col);
+                column-gap: clamp(2rem, 4vw, 3.5rem);
+            }
+        }
+        @media (min-width: 90rem) { .content.article-layout { max-width: 100%; } }
         /* Rubric components (.enduring/.worked/.split/.artifact/.misconception/.tryit) now live in shared layout.css */
         /* explorable (compounding) */
         .explorable { background: var(--color-bg-secondary); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 1.25rem 1.5rem; margin: 1.5rem 0; }

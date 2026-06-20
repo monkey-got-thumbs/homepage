@@ -35,18 +35,21 @@
     ]}}
     </script>
     <style>
-        /* page-specific: warm, spacious wrapper + a calm reading list */
-        .res-wrap { max-width: var(--container-wide); margin-inline: auto; }
-        .res-head { text-align: center; max-width: 40rem; margin: 0 auto var(--space-2xl); }
+        /* page-specific: one calm column, aligned head + a calm reading list */
+        .res-wrap { max-width: var(--content-col); margin-inline: auto; }
+        .res-head { text-align: left; max-width: 46rem; margin: 0 0 var(--space-2xl); }
         .res-head h1 { margin: var(--space-sm) 0; }
+        .res-head .lede { margin-inline: 0; text-align: left; }
 
         /* shelf = a calm group of picks; each pick is roomy and easy on the eye */
         .shelf { margin-top: var(--space-md); }
-        .shelf__head { max-width: 42rem; margin-inline: auto; text-align: center; }
+        .shelf__head { max-width: 46rem; text-align: left; }
         .shelf__head h2 { margin-bottom: var(--space-xs); }
         .shelf__head p { color: var(--color-fg-secondary); line-height: 1.7; }
 
-        .picks { list-style: none; margin: var(--space-lg) 0 0; padding: 0; display: grid; gap: var(--space-md); max-width: 46rem; margin-inline: auto; }
+        /* picks fill the content column, left-aligned, calm uniform 3-up */
+        .picks { list-style: none; margin: var(--space-lg) 0 0; padding: 0; display: grid; gap: clamp(1.25rem, 2vw, 2rem); grid-template-columns: repeat(auto-fill, minmax(min(100%, 19rem), 1fr)); }
+        .picks > * { min-width: 0; }
         .pick {
             background: color-mix(in srgb, var(--color-bg-secondary) 80%, transparent);
             border: 1px solid var(--color-border); border-radius: var(--radius-lg);
@@ -140,7 +143,7 @@
                 <div class="shelf__head">
                     <h2 id="stories-title">Real stories, not theory</h2>
                     <p>Sometimes the clearest way to learn is to watch how it went for someone else — the wins and the wobbles alike.</p>
-                    <div class="cta" style="justify-content:center;margin-top:var(--space-lg);">
+                    <div class="cta" style="margin-top:var(--space-lg);">
                         <a href="/resources/case-studies/" class="btn">Read the stories</a>
                     </div>
                 </div>

@@ -20,17 +20,18 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
 
     <style>
-        .lp { max-width: 38rem; margin: 0 auto; padding: 3rem 1.5rem; text-align: center; }
+        .lp { max-width: var(--measure); margin: 0 auto; padding: 3rem var(--gutter); text-align: left; }
+        .lp > * { min-width: 0; }
+        .lp-hero { text-align: center; margin-bottom: 2.5rem; }
         .lp h1 { font-family: var(--font-display); color: var(--color-accent); font-size: clamp(2rem, 5vw, 3rem); line-height: 1.2; margin-bottom: 1rem; }
-        .lp .subtitle { font-size: var(--font-size-lg); color: var(--color-fg-secondary); line-height: 1.7; margin-bottom: 2.5rem; }
+        .lp .subtitle { font-size: var(--font-size-lg); color: var(--color-fg-secondary); line-height: 1.7; margin-bottom: 0; }
         .lp-section { text-align: left; margin-bottom: 2rem; }
-        .lp-section h2 { font-size: var(--font-size-xl); margin-bottom: 0.75rem; }
+        .lp-section h2 { font-size: var(--font-size-xl); margin-bottom: 0.75rem; text-align: left; }
         .lp-section p { line-height: 1.8; margin-bottom: 1rem; }
         .stat { font-family: var(--font-display); font-size: var(--font-size-4xl); color: var(--color-accent); display: block; margin-bottom: 0.25rem; }
-        .stat-card { background: var(--color-bg-secondary); border-radius: var(--radius); padding: 1.5rem; margin: 1.5rem 0; text-align: center; }
+        .stat-card { background: var(--color-bg-secondary); border-radius: var(--radius); padding: 1.5rem; text-align: center; min-width: 0; }
         .stat-card p { margin: 0; }
-        .stats-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin: 2rem 0; }
-        @media (max-width: 640px) { .stats-row { grid-template-columns: 1fr; } }
+        .stats-row { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 11rem), 1fr)); gap: clamp(1.25rem, 2vw, 2rem); margin: 2rem 0; }
         .lp-cta { margin-top: 2.5rem; padding: 2rem; background: var(--color-bg-secondary); border-radius: var(--radius); }
         .lp-cta h2 { text-align: center; margin-bottom: 1rem; }
         .lp-footer { margin-top: 3rem; text-align: center; font-size: var(--font-size-sm); color: var(--color-muted); }
@@ -43,10 +44,11 @@
 
     <main id="main-content">
         <div class="lp">
-            <img src="/logo.png" alt="Monkey Got Thumbs" class="lp-logo" width="60" height="60">
-
-            <h1>AI Is Coming For Your Job. Here's How To Stay Ahead.</h1>
-            <p class="subtitle">92 million roles will be displaced by 2030. But the people who learn to work <em>with</em> AI aren't getting replaced — they're getting promoted.</p>
+            <div class="lp-hero">
+                <img src="/logo.png" alt="Monkey Got Thumbs" class="lp-logo" width="60" height="60">
+                <h1>AI Is Coming For Your Job. Here's How To Stay Ahead.</h1>
+                <p class="subtitle">92 million roles will be displaced by 2030. But the people who learn to work <em>with</em> AI aren't getting replaced — they're getting promoted.</p>
+            </div>
 
             <div class="stats-row">
                 <div class="stat-card">

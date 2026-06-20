@@ -82,7 +82,8 @@
   --measure-wide: 48rem;   /* looser measure for lead-heavy pages */
   --container-wide: 90rem; /* 1440px — page chrome / hubs / card grids */
   --container-full: 110rem;/* 1760px — ultrawide cap so 1920 isn't a lone centered column */
-  --gutter: clamp(1.25rem, 4vw, 4.5rem);  /* fluid page gutter — generous but not cavernous */
+  --gutter: clamp(1.5rem, 5vw, 5rem);  /* fluid page gutter — generous responsive side breathing room */
+  --content-col: 68rem;    /* 1088px — THE standard content column (breadcrumb, head, grids all share it) */
 
   /* Article wide-layout rails (TOC | prose | aside) */
   --toc-col: 15rem;
