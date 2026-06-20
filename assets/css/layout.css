@@ -434,10 +434,32 @@ footer a {
 .hub-head, .products-head, .learn-head, .start-head,
 .community-head, .res-head, .say-head,
 .build-hero, .advisor-hero, .cm-hero, .lp-hero, .home-section.hero {
+  position: relative;
   padding-bottom: clamp(1.5rem, 3.5vw, 2.25rem);
   margin-bottom: clamp(1.75rem, 4vw, 2.5rem);
-  border-bottom: 1px solid var(--color-border);
 }
+/* The full-bleed line only spans the window if the hero element is full-width of its
+   (centred) wrapper. `main ` prefix beats per-page `max-width` caps on these heads. */
+main .hub-head, main .products-head, main .learn-head, main .start-head,
+main .community-head, main .res-head, main .say-head,
+main .build-hero, main .advisor-hero, main .cm-hero, main .lp-hero { max-width: none; }
+/* the line itself — full window width (edge to edge), centred on the viewport, clearly visible */
+.content > header::after,
+.hub-head::after, .products-head::after, .learn-head::after, .start-head::after,
+.community-head::after, .res-head::after, .say-head::after,
+.build-hero::after, .advisor-hero::after, .cm-hero::after, .lp-hero::after, .home-section.hero::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - 50vw);
+  right: calc(50% - 50vw);
+  height: 1px;
+  background: color-mix(in srgb, var(--color-fg) 24%, transparent);
+}
+/* leads stay at a readable measure even though their head now spans full width */
+.products-head .lede, .learn-head .lede, .hub-head .lede, .start-head .lede,
+.community-head .lede, .res-head .lede, .say-head .lede, .cm-hero .lede,
+.build-hero .lede, .advisor-hero .lede { max-width: var(--measure-wide); }
 
 /* ===== ARTICLE WIDE LAYOUT: [TOC | prose(measure) | aside] =====
    Opt-in via .content.article-layout. Below lg it's a plain centered measure
