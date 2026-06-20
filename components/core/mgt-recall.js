@@ -23,18 +23,19 @@ const STYLE = `
     --fg: var(--color-fg, #EDECF6); --muted: var(--color-muted, #B9B5D3); --brand: var(--color-brand-light, #6A55C0);
     --bd: var(--color-border, rgba(255,255,255,.08)); }
 * { box-sizing: border-box; }
-/* Quiet self-check — calm, but with CLEAR grouping: even internal spacing (flex+gap),
-   and the answer is a visually distinct panel with its own "Answer" label so it's never
-   confused with the question. No loud bar, no filled lime pill. */
+[hidden] { display: none !important; }   /* must beat .row{display:flex} / .a — else hidden rows still show */
+/* Quiet self-check — calm, but with a CLEAR identity (what it is + why) and CLEAR grouping:
+   even internal spacing (flex+gap), and the answer is a distinct labelled panel. */
 .card { background: color-mix(in srgb, var(--bg) 45%, transparent); border: 1px solid var(--bd);
     border-radius: 10px; padding: 1rem 1.1rem; font-family: "Montserrat", system-ui, sans-serif;
     display: flex; flex-direction: column; gap: .8rem; }
 .card > * { margin: 0; }
-.tag { display: flex; align-items: center; gap: .4rem; font-size: 10.5px; font-weight: 700; text-transform: uppercase;
-    letter-spacing: .12em; color: var(--muted); }
-.tag::before { content: ""; width: 5px; height: 5px; border-radius: 999px; background: color-mix(in srgb, var(--acc) 70%, transparent); flex: 0 0 auto; }
-.card.done .tag::before { background: var(--muted); }
-.q { color: var(--fg); font-size: .98rem; font-weight: 700; line-height: 1.5; }
+.head { display: flex; flex-direction: column; gap: .25rem; }
+.tag { align-self: flex-start; display: inline-flex; align-items: center; gap: .35rem; font-size: 11px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: .1em; color: var(--acc); }
+.card.done .tag { color: var(--muted); }
+.purpose { font-size: 12px; color: var(--muted); line-height: 1.5; }
+.q { color: var(--fg); font-size: 1.02rem; font-weight: 700; line-height: 1.5; }
 /* The answer = a distinct, clearly-labelled panel. Impossible to mistake for the question. */
 .a { color: var(--color-fg-secondary, var(--fg)); font-size: .92rem; line-height: 1.7;
     background: color-mix(in srgb, var(--acc) 7%, transparent);
@@ -83,7 +84,11 @@ class MGTRecall extends HTMLElement {
         const recent = st && st.last && (Date.now() - st.last < 12 * 3600 * 1000);
         this.shadowRoot.innerHTML = `<style>${STYLE}</style>
             <div class="card${recent ? ' done' : ''}">
-                <div class="q"><span class="tag">Recall</span>${this._q}</div>
+                <div class="head">
+                    <span class="tag" aria-hidden="true">🧠 Recall</span>
+                    <span class="purpose">A quick self-test. Cover the answer, have a go, then check — these come back just before you'd forget, so it sticks.</span>
+                </div>
+                <p class="q">${this._q}</p>
                 <div class="a" ${recent ? '' : 'hidden'}>${this._a}</div>
                 <div class="row reveal-row" ${recent ? 'hidden' : ''}>
                     <button class="primary reveal">Show answer</button>
