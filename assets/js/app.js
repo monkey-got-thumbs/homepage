@@ -121,7 +121,8 @@ function setupSmoothScroll() {
     const target = document.querySelector(targetId);
     if (target) {
       e.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      target.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
       // Make non-interactive targets (e.g. an <h2>) focusable so focus() actually lands
       if (!target.hasAttribute('tabindex')) target.setAttribute('tabindex', '-1');
       target.focus({ preventScroll: true });

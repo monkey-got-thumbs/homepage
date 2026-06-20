@@ -660,6 +660,8 @@ button:focus-visible {
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
   padding: 1rem;
+  min-width: 0;            /* let long content shrink instead of forcing the grid wider */
+  overflow-wrap: anywhere;
 }
 .split .col h4 { margin: 0 0 0.5rem; font-size: var(--font-size-sm); text-transform: uppercase; letter-spacing: 0.05em; }
 .split .machine h4 { color: var(--color-brand-lighter); }
@@ -706,7 +708,7 @@ button:focus-visible {
 .tryit p:last-child { margin-bottom: 0; }
 
 /* ===== /notes/ — evergreen idea web ===== */
-.content.note { max-width: var(--measure); margin: 0 auto; padding: 2rem var(--gutter); }
+.content.note { max-width: var(--measure); margin: 0 auto; padding: 2rem 0; }  /* <main> already supplies the inline gutter */
 .note-body { line-height: 1.8; }
 .note-body p { margin-bottom: 1.25rem; line-height: 1.8; }
 .note-body h2 { margin-top: 2rem; }

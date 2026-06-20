@@ -126,12 +126,14 @@ class MGTHeader extends HTMLElement {
             padding: 1rem;
             max-height: 0;
             overflow: hidden;
+            visibility: hidden;   /* take the collapsed links out of the tab order + a11y tree (WCAG 2.4.3) */
             transition: max-height 300ms ease, padding 300ms ease;
           }
 
           nav.open {
             max-height: 500px;
             padding: 1rem;
+            visibility: visible;
           }
         }
 

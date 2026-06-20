@@ -14,7 +14,11 @@ const LADDER = [1, 3, 7, 16, 35, 90]; // days granted after each successful revi
 
 function loadAll() { try { return JSON.parse(localStorage.getItem(KEY) || '{}'); } catch (_) { return {}; } }
 function saveAll(o) { try { localStorage.setItem(KEY, JSON.stringify(o)); } catch (_) {} }
-function dayStr(ts) { return new Date(ts == null ? Date.now() : ts).toISOString().slice(0, 10); }
+function dayStr(ts) {
+    // local calendar day (not UTC) so streaks + "reviewed today" match the user's own clock
+    const d = new Date(ts == null ? Date.now() : ts);
+    return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+}
 function markToday() {
     try {
         const d = JSON.parse(localStorage.getItem(DAYKEY) || '[]');
