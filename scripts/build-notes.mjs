@@ -231,7 +231,7 @@ function build() {
     const index = head('Notes — a growing web of ideas — Monkey Got Thumbs',
         'Short, claim-titled, densely linked notes on augmented intelligence — AI as one tool for thinking. A growing web you can wander.',
         canonical, idxJsonld) + `
-        <article class="content">
+        <article class="content u-wide">
             <nav aria-label="Breadcrumb">
                 <ul class="breadcrumbs">
                     <li><a href="/">Home</a></li>

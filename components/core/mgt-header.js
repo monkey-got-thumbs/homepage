@@ -229,10 +229,10 @@ class MGTHeader extends HTMLElement {
           <nav id="main-nav" role="navigation" aria-label="Primary">
             <a href="/">Home</a>
             <a href="/learn/">Learn</a>
-            <a href="/notes/">Notes</a>
             <a href="/build/">Build</a>
-            <a href="/products/">Products</a>
             <a href="/chatty/" class="nav-cta">chatyman</a>
+            <a href="/products/">Products</a>
+            <a href="/notes/">Notes</a>
             <a href="/community/">Community</a>
           </nav>
         </div>
@@ -354,8 +354,9 @@ class MGTHeader extends HTMLElement {
 
     links.forEach((link) => {
       const href = link.getAttribute('href');
+      // Section-prefix match so deep pages (e.g. /learn/foundations/x.html) light their nav item.
       const isCurrentPage = href === currentPath ||
-                           (currentPath === '/' && href === '/');
+                           (href !== '/' && currentPath.startsWith(href));
 
       if (isCurrentPage) {
         link.setAttribute('aria-current', 'page');

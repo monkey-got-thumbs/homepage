@@ -39,7 +39,7 @@ class MGTFooter extends HTMLElement {
         }
 
         .footer-container {
-          max-width: 72rem;
+          max-width: var(--container-wide, 90rem);
           margin: 0 auto;
         }
 
@@ -140,8 +140,8 @@ class MGTFooter extends HTMLElement {
               <h4 id="footer-products">Products</h4>
               <ul>
                 <li><a href="/chatty/">chatyman</a></li>
-                <li><a href="/products/">Metron</a></li>
-                <li><a href="/products/">Airgap</a></li>
+                <li><a href="/build/advisor/">Agent Builder Advisor</a></li>
+                <li><a href="/products/">All products</a></li>
                 <li><a href="/build/">Build &amp; Sell Agents</a></li>
               </ul>
             </section>
@@ -151,8 +151,8 @@ class MGTFooter extends HTMLElement {
               <ul>
                 <li><a href="/learn/foundations/">Foundations</a></li>
                 <li><a href="/learn/frameworks/">Frameworks</a></li>
-                <li><a href="/learn/learning-paths/">Learning Paths</a></li>
                 <li><a href="/learn/human-factors/">Human Factors</a></li>
+                <li><a href="/notes/">Notes</a></li>
                 <li><a href="/learn/influences.html">Influences &amp; Credits</a></li>
               </ul>
             </section>

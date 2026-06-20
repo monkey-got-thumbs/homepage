@@ -194,17 +194,17 @@
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
-
+    <mgt-header></mgt-header>
 
     <!-- Main Content -->
-    <main id="main-content" style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; text-align: center; padding: 2rem 1rem;">
+    <main id="main-content" style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 70vh; text-align: center; padding: 2rem 1rem;">
 
         <h1 style="margin-bottom: 1rem;">Make your ideas real</h1>
-        <p style="max-width: 30rem; line-height: 1.9; margin: 0 auto 2.5rem; color: var(--color-fg-secondary);">
+        <p style="max-width: var(--measure-wide); line-height: 1.9; margin: 0 auto 2.5rem; color: var(--color-fg-secondary);">
             Where are you at?
         </p>
 
-        <div style="display: flex; flex-direction: column; gap: 1rem; width: 100%; max-width: 24rem;">
+        <div style="display: flex; flex-direction: column; gap: 1rem; width: 100%; max-width: min(28rem, 100%);">
             <a href="/learn/start/new.html" class="btn">I'm new to AI</a>
             <a href="/learn/foundations/how-it-helps.html" class="btn btn--secondary">I use it but want to be better</a>
             <a href="/learn/foundations/ai-pitfalls.html" class="btn btn--secondary">Show me what's really going on</a>
@@ -213,9 +213,12 @@
         </div>
 
     </main>
+    <mgt-footer></mgt-footer>
 
     <script src="/assets/js/tracking.js"></script>
     <script type="module" src="/assets/js/app.js"></script>
+    <script type="module" src="/components/core/mgt-header.js"></script>
+    <script type="module" src="/components/core/mgt-footer.js"></script>
     <script type="module" src="/assets/js/learn-nudge.js"></script>
 </body>
 </html>

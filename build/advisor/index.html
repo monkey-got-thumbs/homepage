@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, viewport-fit=cover" />
+    <title>Agent Builder Advisor — Monkey Got Thumbs</title>
+    <link rel="canonical" href="https://monkey-got-thumbs.com/build/advisor/">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#0E0B1A" />
+    <meta name="color-scheme" content="dark">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers:wght@400&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/tokens.css">
+    <link rel="stylesheet" href="/assets/css/base.css">
+    <link rel="stylesheet" href="/assets/css/layout.css">
+    <meta name="description" content="A one-shot advisor for people building AI agents: paste your agent's prompt and a few test inputs, get a critique, real test-run outputs, and concrete improvements. A learning tool, not a chatbot." />
+    <meta name="author" content="Monkey Got Thumbs" />
+    <meta property="og:title" content="Agent Builder Advisor — Monkey Got Thumbs">
+    <meta property="og:description" content="Paste your agent's prompt + test inputs, get one round of expert feedback. Learn to build better agents.">
+    <meta property="og:url" content="https://monkey-got-thumbs.com/build/advisor/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://monkey-got-thumbs.com/hero.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "WebApplication", "name": "Agent Builder Advisor",
+      "applicationCategory": "DeveloperApplication", "operatingSystem": "Web browser",
+      "url": "https://monkey-got-thumbs.com/build/advisor/",
+      "description": "A one-shot advisor that critiques an AI agent prompt, test-runs it, and suggests improvements.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "breadcrumb": { "@type": "BreadcrumbList", "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://monkey-got-thumbs.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Build", "item": "https://monkey-got-thumbs.com/build/" },
+        { "@type": "ListItem", "position": 3, "name": "Agent Builder Advisor" }
+    ]}}
+    </script>
+    <style>
+        .advisor-hero { max-width: var(--measure-wide); margin: var(--space-lg) auto var(--space-2xl); }
+        .advisor-hero h1 { margin-bottom: var(--space-sm); }
+        .advisor-hero .lead { color: var(--color-fg-secondary); }
+        .advisor-wrap { max-width: var(--container-md); margin: 0 auto; }
+
+        .preview-note {
+            background: color-mix(in srgb, var(--color-warning) 10%, var(--color-bg-secondary));
+            border: 1px solid color-mix(in srgb, var(--color-warning) 40%, transparent);
+            border-radius: var(--radius-sm); padding: var(--space-md) var(--space-lg);
+            margin-bottom: var(--space-lg);
+        }
+        .preview-note p { margin: 0; }
+
+        .advisor-form fieldset { border: 0; padding: 0; margin: 0 0 var(--space-lg); }
+        .advisor-form legend { font-weight: var(--font-weight-bold); color: var(--color-accent); margin-bottom: var(--space-xs); padding: 0; }
+        .field { margin-bottom: var(--space-lg); }
+        .field > label { display: block; font-weight: var(--font-weight-semibold); margin-bottom: 0.35rem; }
+        .field .help { color: var(--color-muted); font-size: var(--font-size-sm); margin: 0 0 0.4rem; }
+        .advisor-form textarea { min-height: 4.5rem; font-family: var(--font-mono); font-size: var(--font-size-sm); line-height: 1.5; }
+        #system-prompt { min-height: 12rem; }
+        .char-count { display: block; text-align: right; color: var(--color-muted); font-size: var(--font-size-xs); margin-top: -0.6rem; }
+        .char-count.over { color: var(--color-error); }
+        .test-input { margin-bottom: var(--space-md); }
+        .honeypot { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+        .advisor-actions { display: flex; flex-wrap: wrap; gap: var(--space-sm); align-items: center; }
+        #cf-slot { margin: var(--space-md) 0; min-height: 0; }
+        #advisor-status { margin-top: var(--space-md); min-height: 1.4rem; font-size: var(--font-size-sm); }
+        #advisor-status.error { color: var(--color-error); }
+        #advisor-status.loading { color: var(--color-info); }
+
+        .results { margin-top: var(--space-2xl); }
+        .results > .card { margin-bottom: var(--space-lg); }
+        .results h2 { margin-top: 0; }
+        .issue { padding: var(--space-sm) 0; border-bottom: 1px solid var(--color-border); }
+        .issue:last-child { border-bottom: 0; }
+        .issue .why, .imp .why, .run .note { color: var(--color-muted); font-size: var(--font-size-sm); margin: 0.25rem 0 0; }
+        .sev { margin-right: 0.5rem; }
+        .sev--high { color: var(--color-error); border-color: color-mix(in srgb, var(--color-error) 50%, transparent); }
+        .sev--medium { color: var(--color-warning); border-color: color-mix(in srgb, var(--color-warning) 50%, transparent); }
+        .sev--low { color: var(--color-info); border-color: color-mix(in srgb, var(--color-info) 50%, transparent); }
+        .run { padding: var(--space-sm) 0; border-bottom: 1px solid var(--color-border); }
+        .run:last-child { border-bottom: 0; }
+        .run .io { font-family: var(--font-mono); font-size: 0.8rem; white-space: pre-wrap; background: var(--color-bg); border: 1px solid var(--color-border); border-radius: 6px; padding: 0.6rem 0.75rem; margin: 0.35rem 0; }
+        .run .io-label { font-size: var(--font-size-xs); text-transform: uppercase; letter-spacing: var(--letter-spacing-wide); color: var(--color-muted); }
+        .imp { padding: var(--space-sm) 0; border-bottom: 1px solid var(--color-border); }
+        .imp:last-child { border-bottom: 0; }
+        .improved-wrap { position: relative; }
+        #improved-prompt { font-family: var(--font-mono); font-size: 0.8rem; white-space: pre-wrap; background: var(--color-bg); border: 1px solid var(--color-border); border-radius: 6px; padding: 0.75rem; margin: 0.5rem 0 0; }
+        .annotated { margin-top: var(--space-2xl); }
+        .annotated summary { cursor: pointer; font-weight: var(--font-weight-semibold); color: var(--color-accent); }
+        .annotated pre { font-family: var(--font-mono); font-size: 0.8rem; white-space: pre-wrap; background: var(--color-bg); border: 1px solid var(--color-border); border-radius: 6px; padding: 0.75rem; }
+        .annotated .ann { color: var(--color-accent); }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <mgt-header></mgt-header>
+    <main id="main-content">
+        <article class="advisor-wrap">
+            <nav aria-label="Breadcrumb">
+                <ul class="breadcrumbs">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/build/">Build</a></li>
+                    <li><span aria-current="page">Agent Builder Advisor</span></li>
+                </ul>
+            </nav>
+
+            <header class="advisor-hero">
+                <h1>Agent Builder Advisor</h1>
+                <p class="lead">Building an AI agent? Paste its prompt and a few test inputs below. You'll get <strong>one round of expert feedback</strong>: what's strong, what's risky, what each test input actually produces, and exactly how to improve it — with the reasons why. It's a <strong>learning tool, not a chatbot</strong> — no conversation, no memory. Each click is one fresh analysis.</p>
+            </header>
+
+            <div class="preview-note" id="preview-note" hidden>
+                <p><strong>Live analysis is launching soon.</strong> In the meantime, expand <em>“See a worked example of a strong prompt”</em> at the bottom to learn what good looks like — the same checklist the advisor uses.</p>
+            </div>
+
+            <form class="advisor-form card" id="advisor-form" novalidate>
+                <div class="field">
+                    <label for="agent-name">Agent name / role</label>
+                    <p class="help" id="name-help">One line on what this agent is for. e.g. “Refund-policy support agent for an online shoe shop”.</p>
+                    <input type="text" id="agent-name" name="agentName" maxlength="80" aria-describedby="name-help" autocomplete="off">
+                </div>
+
+                <div class="field">
+                    <label for="system-prompt">System prompt <span aria-hidden="true">*</span></label>
+                    <p class="help" id="sp-help">The instructions that define your agent — its role, scope, tone, rules, and the shape of its output. This is what gets analysed.</p>
+                    <textarea id="system-prompt" name="systemPrompt" maxlength="6000" required aria-describedby="sp-help sp-count"></textarea>
+                    <span class="char-count" id="sp-count" aria-live="off">0 / 6000</span>
+                </div>
+
+                <fieldset>
+                    <legend>Test inputs</legend>
+                    <p class="help">One to three example messages a real user might send. The advisor runs your agent on each and shows the output.</p>
+                    <div class="test-input">
+                        <label class="sr-only" for="test-1">Test input 1</label>
+                        <textarea id="test-1" name="test1" maxlength="1500" aria-label="Test input 1" placeholder="e.g. I bought these trainers 40 days ago and they fell apart — can I get a refund?"></textarea>
+                    </div>
+                    <div class="test-input" id="test-2-wrap" hidden>
+                        <label class="sr-only" for="test-2">Test input 2</label>
+                        <textarea id="test-2" name="test2" maxlength="1500" aria-label="Test input 2"></textarea>
+                    </div>
+                    <div class="test-input" id="test-3-wrap" hidden>
+                        <label class="sr-only" for="test-3">Test input 3</label>
+                        <textarea id="test-3" name="test3" maxlength="1500" aria-label="Test input 3"></textarea>
+                    </div>
+                    <button type="button" class="btn btn--secondary" id="add-input">+ Add another test input</button>
+                </fieldset>
+
+                <div class="field">
+                    <label for="rubric">What does good output look like? <span class="help" style="display:inline">(optional)</span></label>
+                    <p class="help" id="rubric-help">Describe success so the advisor can judge the test runs against your bar. e.g. “Cites the 30-day policy, stays friendly, never promises a refund it can't authorise.”</p>
+                    <textarea id="rubric" name="rubric" maxlength="1000" aria-describedby="rubric-help"></textarea>
+                </div>
+
+                <div class="honeypot" aria-hidden="true">
+                    <label for="website">Leave this field empty</label>
+                    <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+                </div>
+
+                <div id="cf-slot"></div>
+
+                <div class="advisor-actions">
+                    <button type="submit" class="btn" id="analyze-btn">Analyze my agent</button>
+                    <button type="button" class="btn btn--secondary" id="load-example">Load the example</button>
+                </div>
+                <div id="advisor-status" role="status" aria-live="polite" aria-atomic="true"></div>
+            </form>
+
+            <section class="results" id="results" tabindex="-1" aria-live="polite" hidden>
+                <div class="card" id="critique-card">
+                    <h2>Prompt critique</h2>
+                    <p id="critique-summary"></p>
+                    <div id="critique-issues"></div>
+                </div>
+                <div class="card" id="runs-card">
+                    <h2>Test runs</h2>
+                    <p class="muted" style="font-size:var(--font-size-sm)">What your agent produced for each input (a simulated run of your prompt).</p>
+                    <div id="runs-list"></div>
+                </div>
+                <div class="card" id="improvements-card">
+                    <h2>How to improve it</h2>
+                    <div id="improvements-list"></div>
+                </div>
+                <div class="card" id="improved-card">
+                    <h2>A stronger version of your prompt</h2>
+                    <p class="muted" style="font-size:var(--font-size-sm)">A starting point — read it, don't just paste it. The reasons above tell you why each change matters.</p>
+                    <div class="improved-wrap">
+                        <pre id="improved-prompt"></pre>
+                        <button type="button" class="btn btn--secondary" id="copy-improved" style="margin-top:var(--space-sm)">Copy</button>
+                    </div>
+                </div>
+            </section>
+
+            <details class="annotated card">
+                <summary>See a worked example of a strong prompt</summary>
+                <p class="muted" style="font-size:var(--font-size-sm);margin-top:var(--space-md)">A good agent prompt names the <span class="ann">role</span>, the <span class="ann">scope &amp; limits</span>, the <span class="ann">tone</span>, the <span class="ann">refusal rules</span>, and the <span class="ann">output shape</span>. Notice how each line removes ambiguity:</p>
+                <pre>You are a <span class="ann">refund-support assistant</span> for Northwind Shoes, an online shop.
+
+<span class="ann">Scope:</span> Help customers understand the returns policy and start a return.
+<span class="ann">Policy you must follow:</span> Refunds are allowed within 30 days of delivery,
+for unworn items with proof of purchase. Faulty items can be returned any time.
+<span class="ann">Limits:</span> You cannot approve refunds yourself — you explain eligibility and,
+if eligible, give the steps to start one. Never promise money back.
+<span class="ann">Tone:</span> Warm, plain English, 3 sentences max unless asked for detail.
+<span class="ann">If unsure or out of scope:</span> say so and offer to hand off to a human at
+support@northwind.example.
+<span class="ann">Output:</span> A short reply to the customer, then a line "ELIGIBLE: yes/no/unclear".</pre>
+                <p class="muted" style="font-size:var(--font-size-sm)">Click <strong>“Load the example”</strong> above to drop this (plus test inputs) into the form and see how the advisor analyses it.</p>
+            </details>
+        </article>
+    </main>
+    <mgt-footer></mgt-footer>
+    <script src="/assets/js/tracking.js"></script>
+    <script type="module" src="/assets/js/app.js"></script>
+    <script type="module" src="/components/core/mgt-header.js"></script>
+    <script type="module" src="/components/core/mgt-footer.js"></script>
+    <script type="module" src="/components/core/mgt-newsletter.js"></script>
+    <script src="/assets/js/advisor.js" defer></script>
+</body>
+</html>

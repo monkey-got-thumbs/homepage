@@ -71,9 +71,25 @@
 
   /* ===== LAYOUT ===== */
 
-  --container-max: 72rem;  /* 1152px */
+  --container-max: 72rem;  /* 1152px — legacy hub width (kept; some pages reference it) */
   --container-md: 56rem;   /* 896px */
   --container-sm: 42rem;   /* 672px */
+
+  /* Two-axis liquid model: prose stays a readable measure; chrome/grids go wide.
+     PROSE = text read line-to-line (capped). CHROME = heroes/hubs/grids (fluid). */
+  --measure: 42rem;        /* ~65ch prose measure — text only */
+  --measure-wide: 48rem;   /* looser measure for lead-heavy pages */
+  --container-wide: 90rem; /* 1440px — page chrome / hubs / card grids */
+  --container-full: 110rem;/* 1760px — ultrawide cap so 1920 isn't a lone centered column */
+  --gutter: clamp(1rem, 4vw, 4rem);  /* fluid page gutter */
+
+  /* Article wide-layout rails (TOC | prose | aside) */
+  --toc-col: 15rem;
+  --aside-col: 18rem;
+
+  /* Sticky offset = header height + breathing room (single source of truth) */
+  --header-h: 4rem;
+  --scroll-offset: calc(var(--header-h) + 1rem);
 
   /* ===== BORDERS & RADIUS ===== */
 
@@ -105,11 +121,11 @@
   --z-tooltip: 500;
   --z-notification: 600;
 
-  /* ===== BREAKPOINTS (for reference in media queries) ===== */
-  /* --breakpoint-sm: 640px */
-  /* --breakpoint-md: 768px */
-  /* --breakpoint-lg: 1024px */
-  /* --breakpoint-xl: 1280px */
+  /* ===== BREAKPOINTS (standardized; rem-based so they scale with user font-size) ===== */
+  /* sm: 40rem (640px) — small cards stack -> 2col; in-prose splits collapse  */
+  /* md: 48rem (768px) — hamburger -> full nav; 2 -> 3 col grids              */
+  /* lg: 64rem (1024px) — article 3-rail layout engages; sidebar layouts      */
+  /* xl: 90rem (1440px) — widest container (--container-full); roomy asides    */
 
   /* ===== FOCUS STYLES ===== */
 

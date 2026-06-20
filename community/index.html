@@ -49,13 +49,13 @@
     </script>
 
     <style>
-        .content { max-width: 42rem; margin: 0 auto; padding: 2rem 1rem; }
+        .content { max-width: var(--measure-wide); margin: 0 auto; padding-block: 2rem; }
         .content h2 { margin-top: 2.5rem; }
         .content p { line-height: 1.8; margin-bottom: 1.25rem; }
         .content ul { margin-bottom: 1.25rem; padding-left: 1.5rem; }
         .content li { margin-bottom: 0.5rem; line-height: 1.7; }
         .lead { font-size: var(--font-size-lg); color: var(--color-fg-secondary); line-height: 1.7; }
-        .values { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
+        .values { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr)); gap: 1.5rem; margin: 2rem 0; }
         .values .card { padding: 1.5rem; }
         .values .card h3 { margin-top: 0; }
         @media (max-width: 640px) { .values { grid-template-columns: 1fr; } }

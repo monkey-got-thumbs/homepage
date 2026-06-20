@@ -203,6 +203,7 @@ pre {
   padding: var(--space-md);
   border-radius: var(--radius);
   overflow-x: auto;
+  max-width: 100%;            /* scroll long code internally instead of overflowing the page */
   margin-bottom: var(--space-md);
   border: 1px solid var(--color-border);
 }

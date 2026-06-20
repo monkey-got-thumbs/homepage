@@ -31,7 +31,7 @@
     ]}}
     </script>
     <style>
-        .content { max-width: 46rem; margin: 0 auto; padding: 2rem 1rem; }
+        .content { padding-block: 2rem; }
         .lead { font-size: var(--font-size-lg); color: var(--color-fg-secondary); line-height: 1.7; }
         .content p { line-height: 1.8; margin-bottom: 1.25rem; }
         .infl { background: var(--color-bg-secondary); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 1.5rem; margin: 1.25rem 0; }
@@ -48,7 +48,8 @@
     <a href="#main-content" class="skip-link">Skip to main content</a>
     <mgt-header></mgt-header>
     <main id="main-content">
-        <article class="content">
+        <article class="content article-layout">
+            <nav class="toc" data-toc hidden></nav>
             <nav aria-label="Breadcrumb">
                 <ul class="breadcrumbs">
                     <li><a href="/">Home</a></li>
@@ -141,5 +142,6 @@
     <script type="module" src="/assets/js/app.js"></script>
     <script type="module" src="/components/core/mgt-header.js"></script>
     <script type="module" src="/components/core/mgt-footer.js"></script>
+    <script src="/assets/js/toc.js" defer></script>
 </body>
 </html>

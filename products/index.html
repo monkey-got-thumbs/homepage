@@ -31,10 +31,11 @@
     ]}}
     </script>
     <style>
-        .content { max-width: 48rem; margin: 0 auto; padding: 2rem 1rem; }
+        .content { max-width: var(--container-wide); margin: 0 auto; padding-block: 2rem; }
         .content p { line-height: 1.8; margin-bottom: 1.25rem; }
         .lead { font-size: var(--font-size-lg); color: var(--color-fg-secondary); line-height: 1.7; }
-        .product-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr)); gap: 1.5rem; margin: 2rem 0; }
+        .product-grid ~ section { max-width: var(--measure-wide); margin-inline: auto; }
         .product { background: var(--color-bg-secondary); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 2rem; transition: transform var(--transition-fast), box-shadow var(--transition-fast); }
         .product:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
         .product h2 { font-family: var(--font-display); color: var(--color-accent); font-size: var(--font-size-2xl); margin: 0 0 0.5rem 0; letter-spacing: 0.02em; }

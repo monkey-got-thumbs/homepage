@@ -49,7 +49,7 @@
     }
     </script>
     <style>
-        .content { max-width: var(--container-md); margin: 0 auto; }
+        .content { max-width: var(--container-wide); margin: 0 auto; }
 
         /* ===== HERO ===== */
         .cm-hero { text-align: center; padding: var(--space-lg) 0 var(--space-2xl); }
@@ -71,7 +71,7 @@
         /* ===== DEMO ===== */
         .cm-demo-wrap { text-align: center; }
         .cm-demo-wrap p { max-width: 40rem; margin-left: auto; margin-right: auto; }
-        #cm-demo { max-width: 420px; width: 100%; min-height: 560px; margin: var(--space-lg) auto 0; }
+        #cm-demo { max-width: min(420px, 100%); width: 100%; min-height: 560px; margin: var(--space-lg) auto 0; }
         .cm-demo-note {
             display: inline-flex; align-items: center; gap: var(--space-xs);
             font-size: var(--font-size-sm); color: var(--color-success);
@@ -132,6 +132,8 @@
         .cm-pricing-note { text-align: center; margin-top: var(--space-lg); color: var(--color-muted); }
 
         /* ===== INSTALL / CODE BLOCKS ===== */
+        /* grid items must be able to shrink below their content (long code lines scroll, not overflow) */
+        .cm-steps > li, .cm-features > *, .cm-pricing > * { min-width: 0; }
         .cm-install-step { margin-top: var(--space-xl); }
         .cm-install-step:first-of-type { margin-top: var(--space-lg); }
         .cm-code {
@@ -260,7 +262,7 @@
                             <tr>
                                 <th scope="row">Conversation pricing</th>
                                 <td class="cm-col-chatyman">Unlimited — no per-chat fees</td>
-                                <td>Metered (e.g. Ambit $1,250–$2,500+/mo)</td>
+                                <td>Metered per conversation (cloud platforms often bill four figures/month at scale)</td>
                             </tr>
                             <tr>
                                 <th scope="row">Cost per extra chat</th>

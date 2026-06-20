@@ -61,7 +61,7 @@
     </script>
 
     <style>
-        .content { max-width: 42rem; margin: 0 auto; padding: 2rem 1rem; }
+        .content { padding-block: 2rem; }
         .content h2 { margin-top: 2.5rem; }
         .content p { line-height: 1.8; margin-bottom: 1.25rem; }
         .content ul, .content ol { margin-bottom: 1.25rem; padding-left: 1.5rem; }
@@ -83,7 +83,8 @@
     <mgt-header></mgt-header>
 
     <main id="main-content">
-        <article class="content">
+        <article class="content article-layout">
+            <nav class="toc" data-toc hidden></nav>
             <nav aria-label="Breadcrumb">
                 <ul class="breadcrumbs">
                     <li><a href="/">Home</a></li>
@@ -371,5 +372,6 @@ Marcus's version: <span class="edit">"Northwind was late 4 times — all in the 
     <script type="module" src="/components/core/mgt-header.js"></script>
     <script type="module" src="/components/core/mgt-footer.js"></script>
     <script type="module" src="/components/core/mgt-recall.js"></script>
+    <script src="/assets/js/toc.js" defer></script>
 </body>
 </html>

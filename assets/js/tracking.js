@@ -11,6 +11,10 @@
     var GA4_ID = 'G-XXXXXXXXXX';           // TODO: replace with real GA4 measurement ID
     var META_PIXEL_ID = 'XXXXXXXXXX';      // TODO: replace with real Meta Pixel ID
     var SIGNUP_ENDPOINT = 'https://mi77kvcp7baws2u263gwowzr6i0msooy.lambda-url.us-east-1.on.aws/';
+    // Agent Builder Advisor. Empty until the Bedrock-backed Lambda is deployed —
+    // the advisor page runs in preview mode (teaching example) until this is set.
+    var ADVISOR_ENDPOINT = '';            // TODO: set to the advisor Lambda function URL after `terraform apply`
+    var TURNSTILE_SITE_KEY = '';          // TODO: set to your Cloudflare Turnstile site key
 
     // ── GA4 ─────────────────────────────────────────────────────────
     if (GA4_ID !== 'G-XXXXXXXXXX') {
@@ -132,6 +136,8 @@
         trackEvent: trackEvent,
         submitSignup: submitSignup,
         getUTM: getUTM,
-        SIGNUP_ENDPOINT: SIGNUP_ENDPOINT
+        SIGNUP_ENDPOINT: SIGNUP_ENDPOINT,
+        ADVISOR_ENDPOINT: ADVISOR_ENDPOINT,
+        TURNSTILE_SITE_KEY: TURNSTILE_SITE_KEY
     };
 })();

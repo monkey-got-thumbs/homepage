@@ -79,11 +79,18 @@ header {
 /* ===== MAIN CONTENT ===== */
 
 main {
-  margin: clamp(2rem, 4vw, 4rem) auto;
-  max-width: var(--container-max);
-  padding: 0 var(--space-md);
+  margin-block: clamp(2rem, 4vw, 4rem);
+  margin-inline: auto;
+  max-width: var(--container-wide);   /* was 72rem — pages now use the space */
+  padding-inline: var(--gutter);       /* fluid gutter (was fixed 1rem) */
   width: 100%;
 }
+
+/* ===== WIDTH-REGIME UTILITIES (pages/sections opt in) ===== */
+.u-wide        { max-width: var(--container-wide);  margin-inline: auto; }
+.u-full        { max-width: var(--container-full);  margin-inline: auto; }
+.u-measure     { max-width: var(--measure);         margin-inline: auto; }
+.u-measure-wide{ max-width: var(--measure-wide);    margin-inline: auto; }
 
 /* ===== SECTIONS ===== */
 
@@ -112,7 +119,7 @@ section.intro {
   margin: 2.5rem 0;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 48rem) {
   section.intro {
     grid-template-columns: 1fr 1fr;
     gap: var(--space-lg);
@@ -221,32 +228,19 @@ footer a {
 
 /* ===== TWO-COLUMN LAYOUT ===== */
 
+/* Fluid card grids — columns reflow continuously with width (no fixed breakpoints,
+   no overflow at 320px thanks to min(100%, …)). */
 .grid,
 .grid--2col,
 .grid--3col {
   display: grid;
-  gap: var(--space-md);
-  grid-template-columns: 1fr;
+  gap: var(--space-lg);
 }
-
-@media (min-width: 640px) {
-  .grid,
-  .grid--2col {
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-lg);
-  }
-
-  .grid--3col {
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-lg);
-  }
-}
-
-@media (min-width: 900px) {
-  .grid--3col {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
+.grid       { grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); }
+.grid--2col { grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr)); }
+.grid--3col { grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr)); }
+/* Let grid items shrink below their content (prevents wide code/long words from overflowing) */
+.grid > *, .grid--2col > *, .grid--3col > * { min-width: 0; }
 
 /* ===== SIDEBAR LAYOUT ===== */
 
@@ -257,15 +251,15 @@ footer a {
   align-items: start;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 64rem) {
   .sidebar-layout {
-    grid-template-columns: 1fr 300px;
+    grid-template-columns: minmax(0, 1fr) clamp(16rem, 22vw, 22rem);
   }
 }
 
 .sidebar {
   position: sticky;
-  top: 100px;
+  top: var(--scroll-offset);
 }
 
 /* ===== HEADER STYLES ===== */
@@ -419,7 +413,8 @@ footer a {
 /* ===== CONTENT WRAPPER ===== */
 
 .content {
-  max-width: 60rem;
+  max-width: var(--measure);   /* prose measure by default; pages opt into wider via .u-wide / .article-layout */
+  margin-inline: auto;
 }
 
 .content > * + * {
@@ -429,6 +424,79 @@ footer a {
 .content section + section {
   margin-top: 2rem;
 }
+
+/* ===== ARTICLE WIDE LAYOUT: [TOC | prose(measure) | aside] =====
+   Opt-in via .content.article-layout. Below lg it's a plain centered measure
+   (identical to mobile/tablet today). At lg+ it becomes a 3-rail grid; ALL
+   authored children default to the prose rail, so existing markup needs no
+   per-element changes — only .toc / .page-aside jump to the side rails. */
+@media (min-width: 64rem) {
+  .content.article-layout {
+    max-width: var(--container-wide);
+    display: grid;
+    grid-template-columns: var(--toc-col) minmax(0, var(--measure)) minmax(0, 1fr);
+    grid-template-areas: "toc prose aside";
+    column-gap: clamp(2rem, 4vw, 4rem);
+    align-items: start;
+    justify-content: center;
+  }
+  .content.article-layout > *          { grid-column: prose; min-width: 0; }
+  .content.article-layout > .toc        { grid-area: toc; }
+  .content.article-layout > .page-aside { grid-area: aside; }
+}
+@media (min-width: 90rem) {
+  .content.article-layout { max-width: var(--container-full); }
+}
+
+/* Headings get an anchor offset so jumps clear the sticky header */
+.content h2[id], .content h3[id] { scroll-margin-top: var(--scroll-offset); }
+
+/* ===== IN-PAGE TABLE OF CONTENTS (built by /assets/js/toc.js) ===== */
+.toc { display: none; }                       /* hidden until JS marks it ready */
+@media (min-width: 64rem) {
+  .toc.is-ready {
+    display: block;
+    position: sticky;
+    top: var(--scroll-offset);
+    max-height: calc(100vh - var(--scroll-offset) - 2rem);
+    overflow-y: auto;
+    font-size: var(--font-size-sm);
+    border-left: 1px solid var(--color-border);
+    padding-left: var(--space-md);
+  }
+}
+.toc__title {
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wide);
+  color: var(--color-muted);
+  margin: 0 0 var(--space-sm);
+}
+.toc ol { list-style: none; margin: 0; padding: 0; }
+.toc li { margin: 0 0 var(--space-xs); line-height: 1.4; }
+.toc a {
+  display: block;
+  padding: 0.25rem 0 0.25rem var(--space-sm);
+  margin-left: -2px;
+  color: var(--color-muted);
+  border-left: 2px solid transparent;
+  text-decoration: none;
+}
+.toc a:hover { color: var(--color-fg); }
+.toc a[aria-current="true"] { color: var(--color-accent); border-left-color: var(--color-accent); }
+
+/* Narrow/medium fallback: a collapsible "On this page" injected at top of prose */
+.toc--inline {
+  display: block;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--space-lg);
+  padding: var(--space-sm) var(--space-md);
+}
+.toc--inline summary { cursor: pointer; font-weight: var(--font-weight-semibold); }
+.toc--inline ol { margin: var(--space-sm) 0 0; padding-left: var(--space-lg); }
+.toc--inline a { color: var(--color-accent); text-decoration: none; }
+@media (min-width: 64rem) { .toc--inline { display: none; } }  /* sidebar takes over */
 
 /* ===== RESPONSIVE PADDING ===== */
 
@@ -601,7 +669,7 @@ button:focus-visible {
 .tryit p:last-child { margin-bottom: 0; }
 
 /* ===== /notes/ — evergreen idea web ===== */
-.content.note { max-width: 42rem; margin: 0 auto; padding: 2rem 1rem; }
+.content.note { max-width: var(--measure); margin: 0 auto; padding: 2rem var(--gutter); }
 .note-body { line-height: 1.8; }
 .note-body p { margin-bottom: 1.25rem; line-height: 1.8; }
 .note-body h2 { margin-top: 2rem; }
@@ -631,7 +699,7 @@ a.wikilink:hover { border-bottom-color: var(--color-accent); }
 .note-foot a { color: var(--color-accent); }
 
 /* notes index */
-.notes-index { list-style: none; padding: 0; margin: 2rem 0; display: grid; gap: 0.85rem; }
+.notes-index { list-style: none; padding: 0; margin: 2rem 0; display: grid; gap: 0.85rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr)); }
 .note-card {
   display: flex; flex-direction: column; gap: 0.25rem;
   background: var(--color-bg-secondary); border: 1px solid var(--color-border);
@@ -643,3 +711,21 @@ a.wikilink:hover { border-bottom-color: var(--color-accent); }
 .note-card__title { color: var(--color-fg); font-weight: var(--font-weight-semibold); line-height: 1.4; }
 .note-card__sum { color: var(--color-fg-secondary); font-size: var(--font-size-sm); line-height: 1.5; }
 .note-card__meta { font-size: var(--font-size-xs); color: var(--color-muted); }
+
+/* ===== SHARED UI: status pills + card link (one vocabulary site-wide) ===== */
+.pill {
+  display: inline-block;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase;
+  padding: 0.15rem 0.6rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-border);
+  color: var(--color-muted);
+}
+.pill--live { color: var(--color-accent); border-color: color-mix(in srgb, var(--color-accent) 50%, transparent); }
+.pill--new  { color: var(--color-brand-light); border-color: color-mix(in srgb, var(--color-brand-light) 55%, transparent); }
+.pill--soon { color: var(--color-warning); border-color: color-mix(in srgb, var(--color-warning) 45%, transparent); }
+.card-link { font-weight: var(--font-weight-bold); color: var(--color-accent); text-decoration: none; }
+.card-link:hover { text-decoration: underline; }

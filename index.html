@@ -14,10 +14,10 @@
     <link rel="stylesheet" href="/assets/css/tokens.css">
     <link rel="stylesheet" href="/assets/css/base.css">
     <link rel="stylesheet" href="/assets/css/layout.css">
-    <meta name="description" content="Learn AI without the jargon, build your own agents, and even sell what you make — on your terms. No hype, no lock-in. Meet chatyman, the chatbot that runs in your visitors' browsers." />
+    <meta name="description" content="Learn how AI actually works, build your own agents with a hands-on advisor, and run them your way — no hype, no lock-in. Plus chatyman, an AI chatbot that runs in your visitors' browsers." />
     <meta name="author" content="Monkey Got Thumbs" />
     <meta property="og:title" content="Monkey Got Thumbs — AI, on your terms">
-    <meta property="og:description" content="Learn AI without the jargon, build your own agents, and even sell what you make — on your terms. No hype, no lock-in.">
+    <meta property="og:description" content="Learn how AI actually works, build your own agents with a hands-on advisor, and run them your way — no hype, no lock-in.">
     <meta property="og:url" content="https://monkey-got-thumbs.com/">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://monkey-got-thumbs.com/hero.png">
@@ -28,7 +28,7 @@
         "@type": "WebSite",
         "name": "Monkey Got Thumbs",
         "url": "https://monkey-got-thumbs.com/",
-        "description": "AI advocacy and development for everyday people. Learn AI without the jargon, build your own agents, share and sell what you make — on your terms. Augmented intelligence: the human directs, the machine assists.",
+        "description": "AI advocacy and development for everyday people. Learn AI without the jargon, build your own agents with a hands-on advisor, and run them your way. Augmented intelligence: the human directs, the machine assists.",
         "publisher": {
             "@type": "Organization",
             "name": "Monkey Got Thumbs",
@@ -44,224 +44,55 @@
             text-align: center;
             margin: var(--space-lg) 0 var(--space-3xl);
         }
-
-        .home-hero img {
-            margin-bottom: var(--space-sm);
-            animation: heroIn 700ms ease-out both;
-        }
-
-        .home-hero h1 {
-            margin-bottom: var(--space-sm);
-        }
-
-        .home-hero .lead {
-            max-width: var(--container-sm);
-            color: var(--color-fg-secondary);
-        }
-
-        .home-hero .cta {
-            justify-content: center;
-        }
-
+        .home-hero img { margin-bottom: var(--space-sm); animation: heroIn 700ms ease-out both; }
+        .home-hero h1 { margin-bottom: var(--space-sm); }
+        .home-hero .lead { max-width: var(--measure-wide); color: var(--color-fg-secondary); }
+        .home-hero .cta { justify-content: center; }
         @keyframes heroIn {
             from { opacity: 0; transform: translateY(16px); }
             to   { opacity: 1; transform: translateY(0); }
         }
 
         /* ===== SECTION HEADINGS ===== */
-        .section-head {
-            text-align: center;
-            max-width: var(--container-sm);
-            margin-left: auto;
-            margin-right: auto;
-        }
+        .section-head { text-align: center; max-width: var(--measure-wide); margin-left: auto; margin-right: auto; }
+        .section-head h2 { margin-top: 0; }
 
-        .section-head h2 {
-            margin-top: 0;
-        }
+        /* ===== THREE DOORS ===== */
+        .doors .card { display: flex; flex-direction: column; }
+        .doors .card h3 { margin-top: 0; }
+        .doors .card > p { flex: 1; }
+        .door-links { display: flex; flex-direction: column; gap: 0.35rem; margin-top: var(--space-sm); }
+        a.door-sub { font-size: var(--font-size-sm); color: var(--color-muted); text-decoration: none; }
+        a.door-sub:hover { color: var(--color-fg); }
 
-        /* ===== "DO" CARDS ===== */
-        .do-grid .card {
-            display: flex;
-            flex-direction: column;
+        /* ===== WHERE THINGS STAND ===== */
+        .status-cols { align-items: start; }
+        .status-cols .card h3 { margin-top: 0; }
+        .status-list { list-style: none; padding: 0; margin: var(--space-md) 0 0; }
+        .status-list li {
+            display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.5rem;
+            padding: 0.6rem 0; border-bottom: 1px solid var(--color-border);
         }
-
-        .do-grid .card h3 {
-            margin-top: 0;
-        }
-
-        .do-grid .card p {
-            flex: 1;
-        }
-
-        .card-link {
-            font-weight: var(--font-weight-bold);
-            color: var(--color-accent);
-        }
-
-        /* ===== FEATURED chatyman BAND ===== */
-        .featured-band {
-            margin-top: var(--space-3xl);
-        }
-
-        .featured-band .featured-inner {
-            display: grid;
-            gap: var(--space-lg);
-            grid-template-columns: 1fr;
-            align-items: start;
-        }
-
-        @media (min-width: 800px) {
-            .featured-band .featured-inner {
-                grid-template-columns: 1.1fr 0.9fr;
-                gap: var(--space-2xl);
-            }
-        }
-
-        .featured-band h2 {
-            margin-top: 0;
-        }
-
-        .feature-list {
-            list-style: none;
-            margin: 0 0 var(--space-md);
-            padding: 0;
-        }
-
-        .feature-list li {
-            position: relative;
-            padding-left: 1.9rem;
-            margin-bottom: var(--space-sm);
-            line-height: var(--line-height-normal);
-        }
-
-        .feature-list li::before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            top: 0;
-            color: var(--color-accent);
-            font-weight: var(--font-weight-bold);
-        }
-
-        .price-contrast {
-            background: var(--color-bg);
-            border: 1px solid var(--color-border);
-            border-radius: var(--radius);
-            padding: var(--space-md) var(--space-lg);
-            color: var(--color-fg-secondary);
-            font-size: var(--font-size-sm);
-            line-height: var(--line-height-normal);
-        }
-
-        .price-contrast strong {
-            color: var(--color-accent);
-        }
-
-        /* ===== PRODUCTS STRIP ===== */
-        .product-grid {
-            display: grid;
-            gap: var(--space-md);
-            grid-template-columns: 1fr;
-        }
-
-        @media (min-width: 560px) {
-            .product-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (min-width: 900px) {
-            .product-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
-        .product-grid .card h3 {
-            margin-top: 0;
-            margin-bottom: var(--space-xs);
-            color: var(--color-fg);
-        }
-
-        .product-grid .card p {
-            margin-bottom: var(--space-sm);
-            color: var(--color-muted);
-            font-size: var(--font-size-sm);
-        }
-
-        .pill {
-            display: inline-block;
-            font-size: var(--font-size-xs);
-            font-weight: var(--font-weight-semibold);
-            letter-spacing: var(--letter-spacing-wide);
-            text-transform: uppercase;
-            padding: 0.15rem 0.6rem;
-            border-radius: var(--radius-full);
-            border: 1px solid var(--color-border);
-            color: var(--color-muted);
-        }
-
-        .pill--live {
-            color: var(--color-accent);
-            border-color: color-mix(in srgb, var(--color-accent) 50%, transparent);
-        }
-
-        .products-foot {
-            margin-top: var(--space-lg);
-            text-align: center;
-        }
+        .status-list li:last-child { border-bottom: 0; }
+        .status-list a { color: var(--color-accent); text-decoration: none; font-weight: var(--font-weight-semibold); }
+        .status-list a:hover { text-decoration: underline; }
+        .status-list .name { font-weight: var(--font-weight-semibold); color: var(--color-fg); }
+        .status-list .desc { color: var(--color-muted); font-size: var(--font-size-sm); flex: 1 1 100%; margin: 0; }
 
         /* ===== VALUES ===== */
-        .values-grid {
-            display: grid;
-            gap: var(--space-md);
-            grid-template-columns: 1fr;
-        }
-
-        @media (min-width: 560px) {
-            .values-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (min-width: 900px) {
-            .values-grid {
-                grid-template-columns: repeat(4, 1fr);
-            }
-        }
-
-        .value {
-            text-align: center;
-            padding: var(--space-md);
-        }
-
+        .values-grid { display: grid; gap: var(--space-md); grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr)); }
+        .value { text-align: center; padding: var(--space-md); }
         .value h3 {
-            margin: 0 0 var(--space-xs);
-            color: var(--color-accent);
-            font-family: var(--font-display);
-            letter-spacing: var(--letter-spacing-wide);
-            font-weight: var(--font-weight-normal);
-            font-size: var(--font-size-xl);
+            margin: 0 0 var(--space-xs); color: var(--color-accent);
+            font-family: var(--font-display); letter-spacing: var(--letter-spacing-wide);
+            font-weight: var(--font-weight-normal); font-size: var(--font-size-xl);
         }
-
-        .value p {
-            margin: 0;
-            color: var(--color-muted);
-            font-size: var(--font-size-sm);
-        }
+        .value p { margin: 0; color: var(--color-muted); font-size: var(--font-size-sm); }
 
         /* ===== NEWSLETTER ===== */
-        .newsletter-section {
-            margin-top: var(--space-3xl);
-            padding: var(--space-md);
-        }
+        .newsletter-section { margin-top: var(--space-3xl); padding: var(--space-md); }
 
-        /* ===== REDUCED MOTION ===== */
-        @media (prefers-reduced-motion: reduce) {
-            .home-hero img {
-                animation: none;
-            }
-        }
+        @media (prefers-reduced-motion: reduce) { .home-hero img { animation: none; } }
     </style>
 </head>
 <body>
@@ -274,130 +105,90 @@
                 <img src="/hero.png" alt="Monkey Got Thumbs mascot" width="800" height="1200" loading="eager" decoding="async" fetchpriority="high" style="width:min(260px,45vw);height:auto">
             </picture>
             <h1 id="hero-title">AI, on your terms.</h1>
-            <p class="lead">Learn it, build with it, even sell what you make — without the hype or the lock-in.</p>
+            <p class="lead">Learn how AI actually works, build your own agents, and run them your way — no hype, no lock-in.</p>
             <div class="cta">
-                <a class="btn" href="/learn/">Start learning</a>
-                <a class="btn btn--secondary" href="/chatty/">Meet chatyman</a>
+                <a class="btn" href="/build/advisor/">Build &amp; test an agent — free</a>
+                <a class="btn btn--secondary" href="/learn/">New to AI? Start here</a>
             </div>
         </section>
 
-        <section aria-labelledby="do-title">
+        <section id="doors" aria-labelledby="doors-title">
             <div class="section-head">
-                <h2 id="do-title">What you can do here</h2>
-                <p class="muted">Augmented intelligence means you stay in the driver's seat. Here's where to start.</p>
+                <h2 id="doors-title">What do you want to do?</h2>
+                <p class="muted">Three ways in. You stay in the driver's seat the whole way.</p>
             </div>
-            <div class="do-grid grid--3col">
-                <article class="card">
-                    <h3>Learn</h3>
-                    <p>Understand AI without the jargon. Plain-spoken guides that explain what's real, what's hype, and how to actually use it.</p>
-                    <a class="card-link" href="/learn/">Start learning →</a>
+            <div class="doors grid--3col">
+                <article class="card card--featured">
+                    <p><span class="pill pill--new">Start here</span></p>
+                    <h3>Build an agent</h3>
+                    <p>Write an agent's prompt, then get it critiqued and test-run by an advisor that explains what's strong, what's risky, and how to make it better. Learn by doing — it's one round of expert feedback, not a chatbot.</p>
+                    <div class="door-links">
+                        <a class="card-link" href="/build/advisor/">Try the Agent Advisor →</a>
+                        <a class="door-sub" href="/build/">Building &amp; selling, explained →</a>
+                    </div>
                 </article>
                 <article class="card">
-                    <h3>Build</h3>
-                    <p>Make your own agents — no PhD required. Step-by-step paths from your first prompt to a working tool you control.</p>
-                    <a class="card-link" href="/build/">Start building →</a>
+                    <h3>Learn AI, properly</h3>
+                    <p>Plain-English guides from “what even is AI?” to working frameworks and the human side — no jargon, no hype. Each page even remembers what you learn.</p>
+                    <div class="door-links">
+                        <a class="card-link" href="/learn/">Start learning →</a>
+                        <a class="door-sub" href="/notes/">Wander the idea notes →</a>
+                    </div>
                 </article>
                 <article class="card">
-                    <h3>Sell</h3>
-                    <p>Share and sell what you build. Turn the agents and tools you create into something other people pay for.</p>
-                    <a class="card-link" href="/build/">Learn how →</a>
+                    <h3>Use it on your site</h3>
+                    <p>Drop <strong>chatyman</strong> — an AI chatbot that runs entirely in your visitors' browsers — onto any website. No backend, no per-chat bill, and the data stays private.</p>
+                    <div class="door-links">
+                        <a class="card-link" href="/chatty/">Meet chatyman →</a>
+                        <a class="door-sub" href="/products/">See all tools →</a>
+                    </div>
                 </article>
             </div>
         </section>
 
-        <section class="featured-band" aria-labelledby="chatty-title">
-            <div class="card card--featured">
-                <div class="featured-inner">
-                    <div>
-                        <p class="muted font-semibold">Flagship product</p>
-                        <h2 id="chatty-title">Meet chatyman — the chatbot that runs in your visitors' browsers.</h2>
-                        <p>A real AI chatbot for your site that needs no backend and no monthly cloud bill that scales with every conversation. Drop in one script tag, point it at one JSON file, and you're live.</p>
-                        <ul class="feature-list">
-                            <li><strong>Unlimited conversations</strong> — no per-chat fees, ever.</li>
-                            <li><strong>Private by design</strong> — data never leaves the browser.</li>
-                            <li><strong>Live in minutes</strong> — one script tag, one JSON file, no backend.</li>
-                        </ul>
-                        <div class="cta">
-                            <a class="btn" href="/chatty/">See chatyman</a>
-                        </div>
-                    </div>
-                    <div>
-                        <p class="price-contrast">Cloud chatbot platforms can run <strong>$1,250–$2,500+/month</strong> with per-conversation limits. chatyman is flat-priced and unlimited.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section aria-labelledby="products-title">
+        <section aria-labelledby="status-title">
             <div class="section-head">
-                <h2 id="products-title">Tools built on the same principles</h2>
-                <p class="muted">Local-first, in your control, no lock-in. Every product follows the augmented intelligence playbook.</p>
+                <h2 id="status-title">Where things stand</h2>
+                <p class="muted">What you can use today, and what we're still building. No vaporware dressed up as shipped.</p>
             </div>
-            <div class="product-grid">
+            <div class="status-cols grid--2col">
                 <article class="card">
-                    <h3>chatyman</h3>
-                    <p>In-browser AI chatbot for any website. Unlimited, private, deploy in minutes.</p>
-                    <p><span class="pill pill--live">Available now</span></p>
-                    <a class="card-link" href="/chatty/">Explore →</a>
+                    <h3>Live now</h3>
+                    <ul class="status-list">
+                        <li><a href="/chatty/">chatyman</a> <span class="pill pill--live">Live</span><p class="desc">In-browser AI chatbot for any website — unlimited, private, deploy in minutes.</p></li>
+                        <li><a href="/learn/">Learning Hub</a> <span class="pill pill--live">Free</span><p class="desc">14 plain-English guides plus a linked web of <a href="/notes/">idea notes</a>.</p></li>
+                        <li><a href="/build/advisor/">Agent Builder Advisor</a> <span class="pill pill--new">New</span><p class="desc">One round of expert feedback on an agent prompt you're writing.</p></li>
+                    </ul>
                 </article>
                 <article class="card">
-                    <h3>Metron</h3>
-                    <p>Run and manage AI models on your own hardware — no cloud dependency.</p>
-                    <p><span class="pill">In development</span></p>
-                    <a class="card-link" href="/products/">Learn more →</a>
+                    <h3>In development</h3>
+                    <ul class="status-list">
+                        <li><span class="name">Metron</span> <span class="pill pill--soon">Soon</span><p class="desc">Run &amp; manage AI models on your own hardware.</p></li>
+                        <li><span class="name">Airgap</span> <span class="pill pill--soon">Soon</span><p class="desc">Private, local-first AI chat &amp; workspace.</p></li>
+                        <li><span class="name">Bigboy &amp; Rusty</span> <span class="pill pill--soon">Soon</span><p class="desc">Heavy-duty and systems-level AI tooling.</p></li>
+                        <li><span class="name">Build &amp; sell marketplace</span> <span class="pill pill--soon">Soon</span><p class="desc">Package the agents you make and sell them.</p></li>
+                    </ul>
+                    <p class="muted" style="margin-top:var(--space-md);font-size:var(--font-size-sm)">Want first access? Get on the list below.</p>
                 </article>
-                <article class="card">
-                    <h3>Airgap</h3>
-                    <p>Private, local-first AI chat and workspace. Your conversations, your machine.</p>
-                    <p><span class="pill">In development</span></p>
-                    <a class="card-link" href="/products/">Learn more →</a>
-                </article>
-                <article class="card">
-                    <h3>Bigboy</h3>
-                    <p>Heavy-duty AI processing for when local hardware isn't enough. You choose what runs where.</p>
-                    <p><span class="pill">Coming soon</span></p>
-                    <a class="card-link" href="/products/">Learn more →</a>
-                </article>
-                <article class="card">
-                    <h3>Rusty</h3>
-                    <p>Systems-level AI tooling in Rust — the fast, safe plumbing behind everything else.</p>
-                    <p><span class="pill">Coming soon</span></p>
-                    <a class="card-link" href="/products/">Learn more →</a>
-                </article>
-            </div>
-            <div class="products-foot">
-                <a class="btn btn--secondary" href="/products/">See all products</a>
             </div>
         </section>
 
         <section aria-labelledby="values-title">
             <div class="section-head">
                 <h2 id="values-title">What we believe</h2>
-                <p class="muted">Pro-human, plain-spoken, and built so the power stays with you.</p>
+                <p class="muted">Pro-human, plain-spoken, built so the power stays with you.</p>
             </div>
             <div class="values-grid">
-                <div class="value">
-                    <h3>You stay in control</h3>
-                    <p>The human directs, the machine assists. You decide what to trust and what to override.</p>
-                </div>
-                <div class="value">
-                    <h3>Local-first</h3>
-                    <p>Your data stays yours. Cloud is opt-in, never the default.</p>
-                </div>
-                <div class="value">
-                    <h3>No lock-in</h3>
-                    <p>Open formats and portable data. Take what you build and go anywhere.</p>
-                </div>
-                <div class="value">
-                    <h3>AI for everyone</h3>
-                    <p>Normalise AI for everyday people — more options, more opportunities.</p>
-                </div>
+                <div class="value"><h3>You stay in control</h3><p>The human directs, the machine assists. You decide what to trust.</p></div>
+                <div class="value"><h3>Local-first</h3><p>Your data stays yours. Cloud is opt-in, never the default.</p></div>
+                <div class="value"><h3>No lock-in</h3><p>Open formats, portable data. Take what you build and go.</p></div>
+                <div class="value"><h3>AI for everyone</h3><p>Normalise AI for everyday people — more options, more opportunity.</p></div>
             </div>
         </section>
 
         <section class="card newsletter-section" aria-labelledby="newsletter-title">
             <h2 id="newsletter-title" class="sr-only">Newsletter</h2>
-            <mgt-newsletter heading="Stay ahead of AI" description="Practical, no-hype insights. No spam."></mgt-newsletter>
+            <mgt-newsletter heading="Get early access &amp; no-hype insights" description="Practical AI you can use, plus first dibs on what we ship next. No spam."></mgt-newsletter>
         </section>
     </main>
     <mgt-footer></mgt-footer>
