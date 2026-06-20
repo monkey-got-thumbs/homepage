@@ -71,6 +71,19 @@
         .highlight-box p { margin-bottom: 0; }
         .tool-card { background: var(--color-bg-secondary); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 1.5rem; margin: 1rem 0; }
         .tool-card h3 { margin-top: 0; color: var(--color-accent); }
+
+        /* "Coffee problem" explorable (built by /assets/js/explorable-coffee.js) */
+        .coffee-dial { background: var(--color-bg-secondary); border: 1px solid var(--color-border); border-radius: var(--radius); padding: clamp(1.25rem, 3vw, 1.75rem); margin: 1.5rem 0; }
+        .coffee-dial .cd-label { display: block; font-weight: var(--font-weight-semibold); margin-bottom: 0.6rem; }
+        .coffee-dial .cd-ends { color: var(--color-muted); font-weight: var(--font-weight-normal); font-size: var(--font-size-sm); float: right; }
+        .coffee-dial input[type="range"] { width: 100%; accent-color: var(--color-accent); margin-bottom: var(--space-md); }
+        .coffee-dial .cd-ask { margin: 0 0 0.5rem; }
+        .coffee-dial .cd-ask strong { color: var(--color-accent); }
+        .coffee-dial .cd-got { margin: 0 0 0.85rem; color: var(--color-fg-secondary); display: flex; gap: 0.5rem; align-items: baseline; min-height: 2.6em; }
+        .coffee-dial .cd-face { font-size: 1.5rem; line-height: 1; }
+        .coffee-dial .cd-meter { height: 8px; background: color-mix(in srgb, #000 35%, transparent); border-radius: 999px; overflow: hidden; }
+        .coffee-dial .cd-meter-fill { display: block; height: 100%; width: 6%; background: linear-gradient(90deg, var(--color-error), var(--color-warning) 55%, var(--color-accent)); border-radius: 999px; transition: width var(--transition-base); }
+        .coffee-dial .cd-meter-label { font-size: var(--font-size-xs); color: var(--color-muted); margin: 0.35rem 0 0; }
     </style>
 </head>
 <body>
@@ -251,23 +264,32 @@
             <section>
                 <h2>The coffee problem: you never say everything you mean</h2>
                 <p>
-                    Here's a catch that sits right at the heart of directing AI. Imagine you ask a friend, "grab me a coffee." They pour you a cup, or pop to the café on the corner. What they <em>don't</em> do is buy you a sack of raw beans, order one for delivery next month, or wrestle a cup out of a stranger's hands. You never listed those rules — they just knew. Everyday language leans on a huge pile of unspoken, shared common sense.
+                    Ask a friend to "grab me a coffee" and they just <em>know</em> the unspoken rules — a cup from the café, not a sack of raw beans or a whole plantation. Everyday language leans on a mountain of shared common sense. An AI doesn't share it by default, and today's models are eager — one well-known developer, Simon Willison, calls them "relentlessly proactive." So a vague ask sends a keen helper somewhere you never meant. Drag the dial:
                 </p>
+
+                <div id="coffee-dial" class="coffee-dial">
+                    <label class="cd-label" for="cd-range">How clearly did you ask? <span class="cd-ends">vague → clear</span></label>
+                    <input type="range" id="cd-range" min="0" max="4" value="0" step="1" aria-describedby="cd-out">
+                    <div class="cd-out" id="cd-out" aria-live="polite">
+                        <p class="cd-ask">You said: <strong data-ask>“coffee”</strong></p>
+                        <p class="cd-got"><span class="cd-face" data-face aria-hidden="true">😵</span> <span>The AI <span data-got>buys you a coffee plantation in Colombia.</span></span></p>
+                        <div class="cd-meter" role="progressbar" aria-label="how close to what you meant" aria-valuemin="0" aria-valuemax="100" aria-valuenow="6"><span class="cd-meter-fill" data-match style="width:6%"></span></div>
+                        <p class="cd-meter-label">how close to what you <em>meant</em></p>
+                    </div>
+                </div>
+
                 <p>
-                    That pile of common sense is exactly what an AI doesn't automatically share. And today's models are eager — one well-known AI developer, Simon Willison, calls them "relentlessly proactive." Point a creative, proactive helper at a goal and it will chase it energetically… sometimes down paths you never meant. Asked to trim your phone bill, it might cancel the plan altogether. Blocked from one folder, it might find another way in. It's doing what you <em>said</em> — just not what you <em>meant</em>.
-                </p>
-                <p>
-                    Folklore has warned us about this forever. King Midas wished everything he touched would turn to gold — and forgot to add "except my dinner and my daughter." Genies are famous for granting your <em>words</em> rather than your <em>wish</em>. In plain language, what we want is always under-specified, and a clever helper will happily fill in the gaps you left behind.
+                    Folklore knew this forever: Midas forgot to add "except my dinner," and genies grant your <em>words</em>, not your <em>wish</em>. <strong>In plain language, what we want is always under-specified</strong> — and a clever helper will happily fill the gaps you leave.
                 </p>
                 <div class="highlight-box">
-                    <p><strong>This is meta-cognition's real job: noticing the limits you'd otherwise leave unsaid, and putting the few that matter into words.</strong> Before you ask, pause and wonder — "what am I quietly assuming it already knows?" Then say that part out loud. You can't list every limitation (nobody can), but naming the important ones is the difference between a helper that nails it and one that wanders off somewhere expensive.</p>
+                    <p><strong>This is meta-cognition's real job:</strong> noticing the limits you'd leave unsaid, and putting the few that matter into words. Before you ask, wonder — "what am I assuming it already knows?" — then say that part.</p>
                 </div>
             </section>
 
             <mgt-recall id="meta-underspecified">
                 <details>
-                    <summary>Why is being explicit with AI so important — the "coffee problem"?</summary>
-                    <p>Because everyday language is always under-specified: when we ask for something we lean on a mountain of unspoken common sense that a person fills in automatically but an AI may not. Meta-cognition is catching those silent assumptions and saying the ones that matter out loud — so an eager, proactive AI does what you <em>meant</em>, not just what you said.</p>
+                    <summary>Why is being clear with AI so important — the "coffee problem"?</summary>
+                    <p>Because language is always under-specified: we lean on unspoken common sense a person fills in automatically but an AI may not. Meta-cognition is noticing those silent assumptions and saying the ones that matter — so an eager AI does what you <em>meant</em>.</p>
                 </details>
             </mgt-recall>
 
@@ -344,5 +366,6 @@
     <script type="module" src="/components/core/mgt-footer.js"></script>
     <script type="module" src="/components/core/mgt-recall.js"></script>
     <script src="/assets/js/toc.js" defer></script>
+    <script src="/assets/js/explorable-coffee.js" defer></script>
 </body>
 </html>

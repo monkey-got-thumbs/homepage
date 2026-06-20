@@ -17,18 +17,11 @@ main {
   flex: 1;
 }
 
-/* ===== HEADER ===== */
-
-header {
-  position: sticky;
-  top: 0;
-  z-index: var(--z-sticky);
-  backdrop-filter: saturate(120%) blur(6px);
-  background: color-mix(in srgb, #000 60%, transparent);
-  border-bottom: 1px solid var(--color-border);
-  margin: 0;
-  padding: 0;
-}
+/* ===== HEADER =====
+ * The site header is the <mgt-header> web component — its sticky nav lives in its own
+ * shadow DOM. We must NOT style the bare `header` element globally: content pages use
+ * <header> for their title block, and making those sticky/blurred makes them float over
+ * and overlap the page text. So: no global header rule here. */
 
 /* ===== NAVIGATION ===== */
 
