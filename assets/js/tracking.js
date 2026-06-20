@@ -10,14 +10,12 @@
     // ── Configuration ───────────────────────────────────────────────
     var GA4_ID = 'G-XXXXXXXXXX';           // TODO: replace with real GA4 measurement ID
     var META_PIXEL_ID = 'XXXXXXXXXX';      // TODO: replace with real Meta Pixel ID
-    var SIGNUP_ENDPOINT = 'https://mi77kvcp7baws2u263gwowzr6i0msooy.lambda-url.us-east-1.on.aws/';
+    var SIGNUP_ENDPOINT = '/api/signup';
     // Agent Builder Advisor. Empty until the Bedrock-backed Lambda is deployed —
-    // the advisor page runs in preview mode (teaching example) until this is set.
-    // Bedrock advisor Lambda is deployed but its public Function URL is blocked by an
-    // org SCP (auth=NONE not allowed). Until it's fronted by CloudFront (/api/advisor,
-    // auth=IAM+OAC) or moved in-browser, keep this empty so the advisor stays in its
-    // honest preview/teaching mode rather than erroring.
-    var ADVISOR_ENDPOINT = '';
+    // Advisor backend: kereru.ai (OpenAI-compatible), called server-side by the advisor
+    // Lambda (key in its env), reached same-origin via CloudFront (/api/advisor, the
+    // function URL is AWS_IAM + OAC-signed so the org SCP on public auth=NONE doesn't apply).
+    var ADVISOR_ENDPOINT = '/api/advisor';
     var TURNSTILE_SITE_KEY = '';
 
     // ── GA4 ─────────────────────────────────────────────────────────
