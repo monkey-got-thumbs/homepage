@@ -96,6 +96,10 @@
                 <p>This page <strong>remembers what you learn</strong>. Answer the recall cards as you read — they come back just before you'd forget, and everything stays in your browser. <span class="recall-banner__stat" data-recall-stat></span></p>
             </aside>
 
+            <div class="enduring">
+                <p><strong>The one idea to keep:</strong> the structure you put around a request to an AI is part of the request. A cognitive artifact — a schema, template, or filled form — turns a vague ask into a defined shape, and a defined shape gives you something you can verify field by field instead of re-reading prose to guess whether it is right.</p>
+            </div>
+
             <section>
                 <h2>What Are Cognitive Artifacts?</h2>
                 <p>
@@ -132,6 +136,32 @@
                     <p>It is the least structured cognitive artifact available, and structure is what makes artifacts powerful.</p>
                 </details>
             </mgt-recall>
+
+            <div class="worked">
+                <h3>Worked example: the same task, two artifacts</h3>
+                <p>
+                    Suppose you need an AI to assess one job applicant against a role. The task is identical in both cases. The only thing that changes is the artifact you hand over — and that changes whether you can trust the answer.
+                </p>
+                <div class="split">
+                    <div class="col machine">
+                        <h4>Freeform text request</h4>
+                        <div class="artifact">Here's a CV. Is this person a good fit for the senior backend role? Let me know what you think.</div>
+                        <p>The AI replies with three confident paragraphs: "a strong candidate with solid experience and good communication skills." It reads well. But which requirements did it actually check? Did it confirm the years of experience, or infer them? You cannot tell, so to be sure you re-read the whole CV yourself — and the AI's answer saved you nothing.</p>
+                    </div>
+                    <div class="col human">
+                        <h4>Structured artifact</h4>
+                        <div class="artifact"><span class="edit">Assess this CV against each requirement. Return one row per requirement with these fields:</span>
+  requirement
+  <span class="edit">met</span>: yes / no / unclear
+  <span class="edit">evidence</span>: quote from the CV
+  <span class="edit">source_line</span>: where it was found</div>
+                        <p>The AI returns a table. "5+ years backend → unclear, evidence: 'worked on backend systems,' no dates given." Now the gap is visible. You verify each row against its quoted evidence instead of trusting the prose, and an empty <code>evidence</code> field flags exactly what the AI could not support.</p>
+                    </div>
+                </div>
+                <p>
+                    Notice what the human added (shown in <span class="edit">highlight</span>): not more words, but a shape — fields, allowed values, and a demand for evidence tied to a source. That structure is the cognitive artifact. It is what makes the second answer checkable and the first merely persuasive.
+                </p>
+            </div>
 
             <section>
                 <h2>Architected Data Objects</h2>
@@ -265,6 +295,18 @@
                 </details>
             </mgt-recall>
 
+            <div class="misconception">
+                <h3>The trap: "Structure is just bureaucratic overhead that slows me down."</h3>
+                <p>It feels faster to type a sentence than to define a schema, so structure looks like a tax on getting started. But that framing only counts the cost of writing the artifact, never the cost of trusting the result. Freeform prose pushes the real work — checking each claim, extracting the data point you need, comparing it to last week's answer — onto every future reader, every time. The structure is not extra work added to the task; it is the verification work done once, up front, in a form the AI and the next person can both reuse. You are not choosing between effort and no effort. You are choosing where the effort lands.</p>
+            </div>
+
+            <mgt-recall id="ca-trap">
+                <details>
+                    <summary>Why isn't defining structure just bureaucratic overhead?</summary>
+                    <p>Skipping structure does not remove the work — it pushes the cost of verifying, extracting, and comparing onto every future reader. Structure is that work done once, up front, in a reusable form.</p>
+                </details>
+            </mgt-recall>
+
             <section>
                 <h2>Building a Practice of Cognitive Artifacts</h2>
                 <p>
@@ -276,6 +318,17 @@
                     <li><strong>Share and standardise within teams.</strong> Cognitive artifacts become more powerful when shared. When a team agrees on a standard schema for a project brief, every brief produced by any team member is immediately comparable and composable. Standardisation is not bureaucracy — it is collective intelligence infrastructure.</li>
                     <li><strong>Iterate on structure, not just content.</strong> When an AI output is not useful, the problem might not be the AI's capability — it might be the artifact's structure. Revise your schemas based on actual use. Add fields you keep needing. Remove fields you never check. The artifact should evolve with your understanding of the domain.</li>
                 </ol>
+            </section>
+
+            <section class="tryit" aria-labelledby="tryit-ca">
+                <h2 id="tryit-ca">Try it on your own work</h2>
+                <p>Pick one task you keep handing an AI as freeform text — a summary you request, a draft you ask it to review, an analysis you keep re-running. Turn it into a structured artifact:</p>
+                <ol>
+                    <li><strong>Name the fields you actually act on.</strong> Look at the last prose answer you got and ask what you did with it. Each thing you extracted or checked is a field. Write them down — that list is your first schema.</li>
+                    <li><strong>Demand evidence, not just answers.</strong> For every field, add a paired field that forces the AI to show its work: a quote, a source, a confidence level, or "unclear" as an allowed value. This is what makes the output verifiable instead of merely fluent.</li>
+                    <li><strong>Run the task through the schema and refine it.</strong> Ask the AI to fill the structure instead of writing prose. Where a field comes back empty or wrong, you have found exactly what to fix — in the prompt, the schema, or your own assumptions. Keep the version that worked.</li>
+                </ol>
+                <p>Save that schema where you will find it again. The second time you use it costs almost nothing, and it carries forward every lesson the first run taught you.</p>
             </section>
 
             <div class="recall-cta" data-recall-cta hidden>

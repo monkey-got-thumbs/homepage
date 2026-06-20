@@ -97,6 +97,10 @@
                 <p>This page <strong>remembers what you learn</strong>. Answer the recall cards as you read — they come back just before you'd forget, and everything stays in your browser. <span class="recall-banner__stat" data-recall-stat></span></p>
             </aside>
 
+            <div class="enduring">
+                <p><strong>The one idea to keep:</strong> Trust is a calibrated forecast, not a feeling — you extend it on the strength of evidence and keep verifying as new evidence arrives. The job is never to reach "I can stop checking"; it is to make checking cheap enough that you keep doing it without grinding to a halt.</p>
+            </div>
+
             <section>
                 <h2>Trust Is Not Belief</h2>
                 <p>
@@ -106,6 +110,32 @@
                     This is why trust differs fundamentally from blind faith. Faith asks you to commit without evidence. Trust asks you to commit based on evidence that is necessarily incomplete — and to remain engaged as new evidence arrives. The distinction matters enormously when working with AI systems, where the temptation to drift from trust into passive belief is constant.
                 </p>
             </section>
+
+            <div class="worked">
+                <h3>Worked example: Diego runs a challenge-response probe</h3>
+                <p>
+                    Diego, a contracts analyst, asks an AI to summarise a clause and confirm a deadline. The answer is fluent and confident. Rather than accept it or reject it, she runs a quick challenge-response check: she asks the AI to quote the exact words it relied on, then she opens the source clause and reads those words herself. The probe is small, the verification is cheap, and the result tells her how far to trust the rest.
+                </p>
+                <div class="split">
+                    <div class="col machine">
+                        <h4>AI claims</h4>
+                        <p>"The renewal notice is due 30 days before the term ends, so your deadline is comfortably met."</p>
+                        <p>Probe — "Quote the exact words you relied on."</p>
+                        <div class="artifact">Clause 8.2: "Either party may
+terminate by giving notice no
+<span class="edit">fewer than sixty (60) days</span>
+prior to the end of the Term."</div>
+                    </div>
+                    <div class="col human">
+                        <h4>Human verifies</h4>
+                        <p>Diego reads the quoted words against the source and spots the mismatch: the clause says <span class="edit">sixty days</span>, not thirty. The summary was confident and wrong.</p>
+                        <p>She does not throw the whole answer out. She lowers her trust on numeric claims from this AI, keeps the probe handy for the next deadline, and moves on. That is calibration: the evidence moved her forecast a notch, not all the way to suspicion.</p>
+                    </div>
+                </div>
+                <p>
+                    Notice what made the check cheap: she asked for the exact words, not a re-explanation. A challenge-response probe that demands a quotable, checkable artifact turns "do I trust this?" into "do these words match the source?" — a question she can answer in seconds.
+                </p>
+            </div>
 
             <mgt-recall id="trust-forecast">
                 <details>
@@ -164,6 +194,18 @@
                 <details>
                     <summary>What kind of protocol is the cadence of curiosity, and what does each probe signal?</summary>
                     <p>It is a challenge-response protocol — a rhythmic exchange of questions, answers, and follow-ups. Each probe signals that you are engaged and yields evidence to update your forecast.</p>
+                </details>
+            </mgt-recall>
+
+            <div class="misconception">
+                <h3>The trap: "A confident, fluent answer is a trustworthy one."</h3>
+                <p>Fluency is a property of how an answer is written, not of whether it is correct. AI systems are built to produce smooth, assured prose whether or not the underlying claim holds — Diego's confidently wrong "thirty days" is the rule, not the exception. Confidence is a writing style, so it carries no evidence. A challenge-response probe that demands a quotable, checkable artifact restores the evidence, because matching exact words to a source survives even the most polished delivery.</p>
+            </div>
+
+            <mgt-recall id="trust-trap">
+                <details>
+                    <summary>Why is a confident, fluent AI answer not evidence that it is trustworthy?</summary>
+                    <p>Fluency and confidence describe how the answer is written, not whether it is correct — AI produces assured prose regardless of accuracy. Trust has to come from a checkable artifact, like exact quoted words matched against the source, not from tone.</p>
                 </details>
             </mgt-recall>
 
@@ -244,6 +286,17 @@
                     <p>You give the AI a small task, verify, then expand scope — limiting how much damage a trust failure can cause while still extending real trust.</p>
                 </details>
             </mgt-recall>
+
+            <section class="tryit" aria-labelledby="tryit-trust">
+                <h2 id="tryit-trust">Try it on your own work</h2>
+                <p>Take one AI output you are about to act on — a summary, a number, a recommendation — and calibrate your trust on it the way Diego did, instead of judging it by how confident it sounds.</p>
+                <ol>
+                    <li><strong>Pick a checkable claim.</strong> Find the single statement in the output that would hurt most if it were wrong — a date, a figure, a "the document says…". That is where your probe goes.</li>
+                    <li><strong>Run a challenge-response probe.</strong> Ask the AI for the exact source words it relied on, then open the source and read those words yourself. You are matching words to a source, not re-asking for an explanation.</li>
+                    <li><strong>Move your forecast a notch, not all the way.</strong> If the words match, extend a little more trust to that kind of claim from this AI; if they do not, lower trust on that claim type and keep the probe for next time. Calibrate — don't swing to blind faith or blanket suspicion.</li>
+                </ol>
+                <p>Do this often enough and the probe becomes a reflex that costs seconds, which is the whole point: trust you can keep verifying without grinding to a halt.</p>
+            </section>
 
             <div class="recall-cta" data-recall-cta hidden>
                 <p>You've answered <strong data-recall-count>0</strong> recall card(s) on this page. <span data-recall-due></span> They'll resurface right before you'd forget.</p>

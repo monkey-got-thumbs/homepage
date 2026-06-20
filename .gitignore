@@ -3,7 +3,14 @@
 **/.DS_Store
 .playwright-mcp/
 .claude/
-notes/
+
+# Private working notes stay out of git/deploy — but the generated public
+# evergreen web (notes/*.html, built from content/notes/ by scripts/build-notes.mjs) ships.
+notes/*
+!notes/*.html
+
+# Public notes source (markdown) IS tracked
+!content/
 
 # Self-hosted model stack — large + regenerable via scripts/build-vendor.sh; deployed to S3, not git
 vendor/

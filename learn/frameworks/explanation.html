@@ -96,6 +96,10 @@
                 <p>This page <strong>remembers what you learn</strong>. Answer the recall cards as you read — they come back just before you'd forget, and everything stays in your browser. <span class="recall-banner__stat" data-recall-stat></span></p>
             </aside>
 
+            <div class="enduring">
+                <p><strong>The one idea to keep:</strong> A genuine explanation is hard to vary and falsifiable — change one part and it breaks, and it commits to claims that could be proven wrong. AI "explanations" are usually plausible post-hoc text, easy to vary and rarely falsifiable. Do not trust an explanation because it reads well; demand the parts that make it checkable, then check them.</p>
+            </div>
+
             <section>
                 <h2>The Explanation Problem</h2>
                 <p>
@@ -110,6 +114,24 @@
                 <p>
                     This is not a minor technical issue. It is a fundamental challenge that shapes how you should interact with every AI system you use.
                 </p>
+
+                <div class="worked">
+                    <h3>See the difference: two "explanations" for the same flagged transaction</h3>
+                    <p>You ask an AI assistant why it flagged a customer's payment as fraud. Both replies below sound confident. Only one is an explanation you can act on.</p>
+                    <div class="split">
+                        <div class="col machine">
+                            <h4>Plausible post-hoc text</h4>
+                            <p>"I flagged this transaction because it showed unusual patterns and a higher-than-normal risk profile based on a range of behavioural signals."</p>
+                            <p>Notice that almost every word can be swapped without changing the feel. "Unusual patterns" could become "atypical activity"; "higher-than-normal risk" could become "elevated exposure". Nothing here makes a claim that could turn out to be false. It explains the flag no matter what the real reason was — which means it explains nothing.</p>
+                        </div>
+                        <div class="col human">
+                            <h4>Hard-to-vary explanation</h4>
+                            <p>"I flagged it because the amount is 14x this account's median transaction <em>and</em> the merchant country differs from every prior purchase. Remove either condition and the score drops below the threshold."</p>
+                            <p>You cannot vary this without breaking it: each condition does essential work, and it makes a falsifiable prediction — if the account's history actually shows similar amounts or that country before, the explanation is wrong and you will see it immediately.</p>
+                        </div>
+                    </div>
+                    <p>The first reply was offered. The second only exists because the human <span class="edit">demanded the specific conditions, the threshold, and what would have changed the outcome</span> — and then <span class="edit">checked the account history to confirm the two claims were actually true</span>.</p>
+                </div>
 
                 <mgt-recall id="exp-text">
                     <details>
@@ -255,6 +277,29 @@
                 <p>
                     Explainer agents — AI systems designed specifically to make other AI systems' outputs understandable — are an emerging capability. But they face the same fundamental challenge: their explanations are also generated text. The human in the loop remains essential, not as a bottleneck but as the only agent in the system capable of genuine understanding.
                 </p>
+
+                <div class="misconception">
+                    <h3>The trap: "If the AI gives reasons, it explained itself."</h3>
+                    <p>Reasons that read fluently are the cheapest thing a language model produces — they come from the same next-token process as the answer, so the model can supply confident-sounding justification for any output, including a wrong one. Fluent reasons are not evidence of a real reasoning chain. The test is not whether reasons were given but whether they are hard to vary and falsifiable: can you remove a part without the conclusion changing, and could the claim turn out to be false? If not, you have generated text wearing the costume of an explanation.</p>
+                </div>
+
+                <mgt-recall id="exp-trap">
+                    <details>
+                        <summary>Why isn't "the AI gave reasons" enough to count as a genuine explanation?</summary>
+                        <p>The reasons come from the same next-token process as the answer, so the model can justify any output — including a wrong one. What matters is whether the reasons are hard to vary and falsifiable, not whether they were given.</p>
+                    </details>
+                </mgt-recall>
+            </section>
+
+            <section class="tryit" aria-labelledby="tryit-exp">
+                <h2 id="tryit-exp">Try it on your own work</h2>
+                <p>Take a recent AI output you relied on — a recommendation, a diagnosis of a bug, a summary's "key reason" — and pressure-test the explanation behind it.</p>
+                <ol>
+                    <li><strong>Try to vary it.</strong> Rewrite the explanation swapping its specifics for different ones (different cause, different signal, different number). If the new version sounds just as plausible, the original was easy to vary — it was not explaining your case in particular.</li>
+                    <li><strong>Find the falsifiable claim.</strong> Ask what would have to be true in the world if the explanation were correct, and what observation would prove it wrong. If you cannot name one, demand specifics — exact conditions, thresholds, sources — until you can.</li>
+                    <li><strong>Check it against reality.</strong> Verify those specifics independently: open the cited source, look at the actual data, run the case the explanation predicts. Keep only the parts that survive.</li>
+                </ol>
+                <p>The explanation you can trust is the one left standing after you have tried to break it and failed.</p>
             </section>
 
             <div class="recall-cta" data-recall-cta hidden>

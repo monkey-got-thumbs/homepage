@@ -103,11 +103,40 @@
                 <p>This page <strong>remembers what you learn</strong>. Answer the recall cards as you read — they come back just before you'd forget, and everything stays in your browser. <span class="recall-banner__stat" data-recall-stat></span></p>
             </aside>
 
+            <div class="enduring">
+                <p><strong>The one idea to keep:</strong> Augmented intelligence helps by handing the volume to the machine and keeping the judgment for yourself — that is what compresses workflows, automates repetition, and lets a small team coordinate like a large one.</p>
+            </div>
+
             <section>
                 <h2>Three Mechanisms of Amplification</h2>
                 <p>
                     Augmented intelligence is a <a href="/learn/foundations/what-is-ai.html">time amplifier</a>. It works through three distinct mechanisms, each of which compounds with the others.
                 </p>
+
+                <div class="worked">
+                    <h3>Worked example: Marcus compresses a three-day report into an afternoon</h3>
+                    <p>
+                        Marcus is an analyst who writes a quarterly supplier-performance report. Normally it takes about three days: pull the delivery records, find the late shipments, write up what happened and what to do about it. This quarter she hands the volume to AI and keeps the judgment for herself.
+                    </p>
+                    <p>
+                        She gives the AI the raw delivery log and asks it to flag every shipment that arrived late and draft a plain summary. Then she reads the draft as the person who actually knows the suppliers — and rewrites the part that needs a human.
+                    </p>
+                    <div class="split">
+                        <div class="col machine">
+                            <h4>What the machine did</h4>
+                            <p>Scanned hundreds of delivery rows, flagged the late ones, and produced a first-pass summary in minutes — the mechanical volume.</p>
+                        </div>
+                        <div class="col human">
+                            <h4>What Marcus did</h4>
+                            <p>Read the draft, threw out the conclusion that didn't fit what she knew about the supplier, and rewrote the recommendation — the judgment.</p>
+                        </div>
+                    </div>
+                    <p class="artifact">AI draft: "Northwind was late 4 times this quarter. Recommend switching suppliers."
+Marcus's version: <span class="edit">"Northwind was late 4 times — all in the week of the port strike. Keep them; add a backup for peak weeks only."</span></p>
+                    <p>
+                        The machine did in minutes the part that used to eat two of her three days. Marcus spent the afternoon on the part that needed her: deciding what the late shipments actually meant and what to do next. Same report, finished by close of business instead of by the end of the week.
+                    </p>
+                </div>
 
                 <div class="mechanism">
                     <div class="card">
@@ -177,7 +206,19 @@
                 <div class="highlight-box">
                     <p>The consistent finding across all studies: <strong>AI alone does not improve outcomes. AI directed by a skilled human does.</strong> The skill of the human is the determining variable.</p>
                 </div>
+
+                <div class="misconception">
+                    <h3>The trap: "If AI is doing the work, I can stop paying attention."</h3>
+                    <p>The opposite is true. AI handles the volume, but the value still depends on the human reading the output and catching what's wrong with it. In the worked example, the AI's draft told Marcus to switch suppliers — and that was the part she had to overrule. Hand off the volume, never the judgment.</p>
+                </div>
             </section>
+
+            <mgt-recall id="help-trap">
+                <details>
+                    <summary>Why is "if AI is doing the work, I can stop paying attention" a trap?</summary>
+                    <p>Because AI handles the volume but not the judgment. The value depends on a human reading the output and catching what's wrong — like Marcus overruling the AI's "switch suppliers" conclusion. Hand off the volume, never the judgment.</p>
+                </details>
+            </mgt-recall>
 
             <mgt-recall id="help-research-finding">
                 <details>
@@ -292,6 +333,17 @@
                     <p>Identify the single most time-consuming mechanical task in your daily work, then experiment with using AI to handle just that one task.</p>
                 </details>
             </mgt-recall>
+
+            <section class="tryit" aria-labelledby="tryit-help">
+                <h2 id="tryit-help">Try it on your own work</h2>
+                <p>Pick one report, summary, or piece of analysis you produce regularly — something with a tedious "gather and draft" stage and a "decide what it means" stage. You're going to split it the way Marcus did.</p>
+                <ol>
+                    <li>Hand the machine the volume: give the AI your raw material and ask for the flags and a first-pass draft.</li>
+                    <li>Read the draft as the person who actually knows the context — and find the one conclusion that's wrong.</li>
+                    <li>Rewrite that part yourself, and note how much of your old timeline you just reclaimed.</li>
+                </ol>
+                <p>If you couldn't find anything to overrule in step two, read the draft again — that's the part you must never hand off.</p>
+            </section>
 
             <div class="recall-cta" data-recall-cta hidden>
                 <p>You've answered <strong data-recall-count>0</strong> recall card(s) on this page. <span data-recall-due></span> They'll resurface right before you'd forget.</p>

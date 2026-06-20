@@ -98,6 +98,10 @@
                 <p>This page <strong>remembers what you learn</strong>. Answer the recall cards as you read — they come back just before you'd forget, and everything stays in your browser. <span class="recall-banner__stat" data-recall-stat></span></p>
             </aside>
 
+            <div class="enduring">
+                <p><strong>The one idea to keep:</strong> Meta-cognition is the control surface for directing AI — when you watch your own thinking (name what you actually want, the constraints, the structure), you lead the AI instead of being led by it.</p>
+            </div>
+
             <section>
                 <h2>Why Meta-Cognition Matters for AI</h2>
                 <p>
@@ -110,6 +114,42 @@
                     This is the feedback loop that makes augmented intelligence work. Without it, you are not collaborating with AI — you are being led by it.
                 </p>
             </section>
+
+            <div class="worked">
+                <h3>The same request, with and without meta-cognition</h3>
+                <p>
+                    Dan needs to write to a customer whose project is running late. He fires off the obvious prompt. Then he stops, watches his own thinking, and notices that he never told the AI what he actually wants — so he names the goal, the constraints, and the structure before asking again.
+                </p>
+                <div class="split">
+                    <div class="col machine">
+                        <h4>Vague prompt</h4>
+                        <div class="artifact">Write an email to my client about the delay.</div>
+                    </div>
+                    <div class="col human">
+                        <h4>Meta-cognitively designed prompt</h4>
+                        <div class="artifact">Write an email to my client about the delay. <span class="edit">My real goal is to keep their trust, not just inform them.</span><br>
+<span class="edit">Constraints: under 120 words, no excuses, and it must name a concrete new date.</span><br>
+<span class="edit">Scaffold it: (1) own the slip plainly, (2) give the new delivery date, (3) say what I'm doing so it doesn't recur, (4) invite a reply.</span><br>
+<span class="edit">Tone: calm and accountable, not apologetic-grovelling.</span></div>
+                    </div>
+                </div>
+                <p>
+                    Same task, two different outputs:
+                </p>
+                <div class="split">
+                    <div class="col machine">
+                        <h4>What the vague prompt returned</h4>
+                        <div class="artifact">Dear valued client, I am writing to inform you that there has been an unforeseen delay in your project due to various factors beyond our control. We sincerely apologise for any inconvenience this may have caused and appreciate your patience and understanding during this time. Please rest assured we are doing everything possible to resolve the situation as quickly as we can.</div>
+                    </div>
+                    <div class="col human">
+                        <h4>What the designed prompt returned</h4>
+                        <div class="artifact">Hi Priya — the build slipped, and that's on us: we under-scoped the data migration. New delivery date is 3 July. To keep it firm, I've moved migration to a dedicated engineer and added a daily checkpoint, so you'll get a one-line status each morning. Does 3 July work for your launch plan? Happy to walk through the new timeline if useful.</div>
+                    </div>
+                </div>
+                <p>
+                    Nothing about the model changed between the two runs. What changed is that Dan noticed what he actually wanted, named his constraints, and scaffolded the task — and the AI followed his thinking instead of supplying its own generic version of it.
+                </p>
+            </div>
 
             <mgt-recall id="meta-definition">
                 <details>
@@ -229,6 +269,29 @@
                     <p>It is a skill, not a talent — you develop it through deliberate practice such as articulating your need before a prompt and checking what you'd need to trust the output afterward.</p>
                 </details>
             </mgt-recall>
+
+            <div class="misconception">
+                <h3>The trap: "A better prompt just means a longer, more detailed prompt."</h3>
+                <p>Meta-cognition is not about piling on words — it is about noticing what you actually want before you ask. A short prompt that names the real goal, one or two true constraints, and the structure you need will out-perform a long prompt stuffed with detail you never examined. Dan's designed prompt was not longer because it was wordier; it was sharper because he had first watched his own thinking. Length is a side effect at most. The work is the noticing.</p>
+            </div>
+
+            <mgt-recall id="meta-trap">
+                <details>
+                    <summary>Why doesn't "a better prompt" simply mean a longer, more detailed one?</summary>
+                    <p>Because the value comes from noticing what you actually want — a short prompt that names the real goal, the true constraints, and the needed structure beats a long one full of detail you never examined.</p>
+                </details>
+            </mgt-recall>
+
+            <section class="tryit" aria-labelledby="tryit-meta">
+                <h2 id="tryit-meta">Try it on your own work</h2>
+                <p>Take one task you are about to hand to an AI — an email, a plan, a piece of analysis — and direct it meta-cognitively before you type the prompt.</p>
+                <ol>
+                    <li><strong>Name what you actually want.</strong> Write the real goal in one sentence, separate from the surface request. Dan's surface request was "tell them about the delay"; his real goal was "keep their trust."</li>
+                    <li><strong>State the constraints out loud.</strong> List the limits that matter — length, tone, what to avoid, anything that must appear. If you cannot name a constraint, you have not yet decided what good looks like.</li>
+                    <li><strong>Scaffold the task.</strong> Break it into the ordered steps you want the output to follow, then ask the AI to fill that structure rather than inventing its own.</li>
+                </ol>
+                <p>Notice how much of the thinking you finished before the AI said a word. That is the prompt doing its real job — clarifying you, not just instructing the model.</p>
+            </section>
 
             <div class="recall-cta" data-recall-cta hidden>
                 <p>You've answered <strong data-recall-count>0</strong> recall card(s) on this page. <span data-recall-due></span> They'll resurface right before you'd forget.</p>

@@ -97,6 +97,10 @@
                 <p>This page <strong>remembers what you learn</strong>. Answer the recall cards as you read — they come back just before you'd forget, and everything stays in your browser. <span class="recall-banner__stat" data-recall-stat></span></p>
             </aside>
 
+            <div class="enduring">
+                <p><strong>The one idea to keep:</strong> Every decision you make is bounded — by incomplete information, limited time, finite cognitive capacity, and how safe it feels to be uncertain. AI cannot remove those bounds, but it can extend each one as scaffolding. The judgment about what to do stays yours.</p>
+            </div>
+
             <section>
                 <h2>The Three Constraints</h2>
                 <p>
@@ -114,6 +118,28 @@
                     These constraints do not disappear when you add AI to the equation. But AI can extend each boundary — holding more information in context, processing faster than biological neurons, and maintaining consistency across variables that a human mind would blur together.
                 </p>
             </section>
+
+            <div class="worked">
+                <h3>A decision, made under all three bounds</h3>
+                <p>
+                    Sam is an on-call site reliability engineer. At 2am an alert fires: checkout error rates are climbing. She has incomplete information (she cannot see every service at once), limited time (revenue is dropping each minute), and finite capacity (she is one tired person holding a handful of dashboards in her head). She asks the AI assistant to help.
+                </p>
+                <div class="split">
+                    <div class="col machine">
+                        <h4>What AI extends</h4>
+                        <p>Pulls the last hour of logs across all services and surfaces the three that changed right before the spike — information Sam could not hold at once.</p>
+                        <p>Drafts two candidate explanations and the rollback command for each, so she is not composing them from scratch under pressure.</p>
+                    </div>
+                    <div class="col human">
+                        <h4>What Sam decides</h4>
+                        <p>Recognises that one "suspect" service was a scheduled deploy she approved yesterday — context the AI did not have — and rules it out.</p>
+                        <p>Judges that a rollback is safer than a fix-forward at 2am, accepts the risk, and runs it. She owns the call.</p>
+                    </div>
+                </div>
+                <p>
+                    The AI widened each bound: more information surfaced, options drafted faster, fewer variables for her to juggle. It never decided. Sam weighed what mattered, drew on context the tool could not see, and chose. That division — AI extends the constraints, the human keeps the judgment — is bounded rationality with scaffolding.
+                </p>
+            </div>
 
             <mgt-recall id="br-three-constraints">
                 <details>
@@ -217,6 +243,18 @@
                 </details>
             </mgt-recall>
 
+            <div class="misconception">
+                <h3>The trap: "More information from AI means a better decision."</h3>
+                <p>It feels obvious — if incomplete information is a constraint, then more information must be the cure. But human capacity is also bounded. Dump twenty pages of AI-generated context on a tired decision-maker and you have not extended the bound, you have overloaded it. The same tool that surfaces three relevant signals can bury them under thirty irrelevant ones. Good scaffolding does not maximise information; it filters and frames it so the human's limited attention lands where it matters. More is not better. Better is better.</p>
+            </div>
+
+            <mgt-recall id="br-trap">
+                <details>
+                    <summary>Why doesn't "more information from AI" automatically mean a better decision?</summary>
+                    <p>Because cognitive capacity is itself a bound — extra information can overload and bury the relevant signals rather than help. Useful scaffolding filters and frames information for the human's limited attention instead of maximising it.</p>
+                </details>
+            </mgt-recall>
+
             <section>
                 <h2>Multiple Askers, Limited Focus</h2>
                 <p>
@@ -236,6 +274,17 @@
                     <p>Multiple "askers" — colleagues, notifications, deadlines — draw from the same finite pool of focus, so attention is a limited cognitive budget that must be allocated. Without a system to allocate it, the most urgent demand wins over the most important one.</p>
                 </details>
             </mgt-recall>
+
+            <section class="tryit" aria-labelledby="tryit-br">
+                <h2 id="tryit-br">Try it on your own work</h2>
+                <p>Pick one real decision you are facing right now — something with incomplete information, a deadline, and more moving parts than you can comfortably hold in your head.</p>
+                <ol>
+                    <li>Name the bounds. Write one line each: what you do not know, how much time you actually have, and which two or three variables you keep losing track of.</li>
+                    <li>Ask AI to extend one bound — and only one. Have it gather the information you are missing, or draft a few options, or summarise the moving parts. Keep the request narrow so the output stays usable, not overwhelming.</li>
+                    <li>Make the call yourself. Add the context the tool could not see, decide what matters most, and choose. Then check: if you took the AI away, would you still understand your own decision? If not, you leaned on a crutch — not scaffolding.</li>
+                </ol>
+                <p>Run this a few times and you will start to feel the line: AI widens the constraints, you keep the judgment.</p>
+            </section>
 
             <div class="recall-cta" data-recall-cta hidden>
                 <p>You've answered <strong data-recall-count>0</strong> recall card(s) on this page. <span data-recall-due></span> They'll resurface right before you'd forget.</p>

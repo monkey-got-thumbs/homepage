@@ -97,11 +97,41 @@
             </aside>
             <mgt-credit>The recall cards woven through this page are our take on the <strong>mnemonic medium</strong> by Andy Matuschak &amp; Michael Nielsen.</mgt-credit>
 
+            <div class="enduring">
+                <p><strong>The one idea to keep:</strong> A memory system compounds only when a human decides what's worth keeping. Tools and AI add persistence, scale, and retrieval — but you supply the judgement about what matters. Capture that, and every future question can be answered against everything you've already learned.</p>
+            </div>
+
             <section>
                 <h2>The Three Layers of Memory</h2>
                 <p>
                     In augmented intelligence, memory operates across three distinct layers, each with different strengths, limitations, and roles. Understanding these layers — and how they interact — is the foundation of effective knowledge management.
                 </p>
+
+                <div class="worked">
+                    <h3>Worked example: a note from today, answered weeks later</h3>
+                    <p>Watch the three layers and RAG work together on a single real moment. Aisha, a product designer, reads a usability study and notices one finding she wants to remember.</p>
+                    <div class="split">
+                        <div class="col human">
+                            <h4>Human captures (today)</h4>
+                            <p>Aisha's <strong>internal memory</strong> holds the gist for an afternoon, then starts to fade. So she does the one thing the AI can't: she judges that this finding matters and writes it down in her notes app — her <strong>external memory</strong> — adding her own framing about why it's worth keeping.</p>
+                        </div>
+                        <div class="col machine">
+                            <h4>Machine retrieves (weeks later)</h4>
+                            <p>Her notes app embeds each note as a vector. Weeks later she asks her AI assistant a question that never mentions the original study by name. The <strong>machine-augmented</strong> layer matches her question to the note by meaning, not keywords, and feeds it back into the answer — RAG in miniature.</p>
+                        </div>
+                    </div>
+                    <p>The note she saved that afternoon:</p>
+                    <div class="artifact"><span class="edit"># Onboarding study — what I want to remember:</span>
+Users drop off at the permissions screen, not the sign-up form.
+<span class="edit"># Why this matters to me: I keep blaming sign-up; the real leak is later.</span>
+permissions, onboarding, drop-off, mobile</div>
+                    <p>Three weeks later, Aisha asks her assistant: <em>"Where are new users actually giving up before they finish setup?"</em> Nothing in her question names the study. The assistant answers, grounded in the note retrieved by embeddings:</p>
+                    <div class="artifact">Based on your saved onboarding study, the drop-off isn't at the
+sign-up form — it's at the permissions screen. Your own note flags
+that you tend to blame sign-up, so this is the leak worth fixing first.</div>
+                    <p>The AI didn't "remember" the study. Aisha's judgement decided it was worth capturing, the tool kept it, and embeddings surfaced it at the exact moment it answered a real question. That is all three layers compounding into one reply.</p>
+                </div>
+
                 <p>
                     <strong>Layer 1: Internal memory (human).</strong> This is what you know — the knowledge stored in your brain through experience, education, and reflection. Internal memory is associative, contextual, and deeply integrated with your reasoning. You do not just recall facts; you recall them within webs of meaning that connect to other facts, emotions, and experiences. This makes internal memory extraordinarily powerful for judgement and creativity, but limited in capacity and unreliable in precision.
                 </p>
@@ -171,6 +201,17 @@
                     <details>
                         <summary>What can AI <em>not</em> do for your knowledge system?</summary>
                         <p>Decide what's worth capturing in the first place. That judgement is yours — garbage in, garbage out.</p>
+                    </details>
+                </mgt-recall>
+
+                <div class="misconception">
+                    <h3>The trap: "the AI will just remember everything for me"</h3>
+                    <p>It can't. An AI only "remembers" what was captured and put within its reach — and it has no way to sit through your day deciding which moments mattered. It can't notice the offhand insight in a meeting, judge that a half-formed idea is worth keeping, or frame why something matters to you. If nobody captures it, the AI never sees it. The system compounds because <em>you</em> keep feeding it the things worth keeping; the AI's job is retrieval, not noticing.</p>
+                </div>
+                <mgt-recall id="ms-trap">
+                    <details>
+                        <summary>Why won't an AI just "remember everything for you"?</summary>
+                        <p>Because it can only retrieve what was captured and put within its reach. It can't sit through your day judging which moments matter — that capture and that judgement are still yours.</p>
                     </details>
                 </mgt-recall>
             </section>
@@ -272,6 +313,17 @@
                         <p>Spaced retrieval — reviewing just before you forget. (Exactly what these cards do.)</p>
                     </details>
                 </mgt-recall>
+
+                <section class="tryit" aria-labelledby="tryit-ms">
+                    <h2 id="tryit-ms">Try it on your own work</h2>
+                    <p>You don't need a vector database to start a knowledge system that compounds. You need one place to capture, and one decision repeated: <em>is this worth keeping?</em> Try this with whatever you're working on this week.</p>
+                    <ol>
+                        <li><strong>Capture one thing today.</strong> Open a single note (any tool you already use) and write down one finding, idea, or hard-won lesson from your work — in your own words, with a line about <em>why</em> it matters to you. That framing is the judgement only you can supply.</li>
+                        <li><strong>Make it findable by meaning, not filing.</strong> Don't bury it in folders. Add a few plain-language tags and the question it would answer. The goal is that future-you can retrieve it by what it's <em>about</em>, even after forgetting it exists.</li>
+                        <li><strong>Ask it back later.</strong> In a week, point your AI assistant (or your tool's search) at that note and ask the real question it speaks to — without naming the note. If the answer comes back grounded in what you captured, you've just run RAG across your own three layers.</li>
+                    </ol>
+                    <p>Do this often enough and the deciding becomes a habit. Each kept note adds a new connection to everything already there — and the system gets more useful the longer you run it.</p>
+                </section>
 
                 <div class="recall-cta" data-recall-cta hidden>
                     <p>You've answered <strong data-recall-count>0</strong> recall card(s) on this page. <span data-recall-due></span> They'll resurface right before you'd forget — that's the compound effect, working on this very page.</p>

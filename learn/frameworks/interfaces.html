@@ -96,6 +96,10 @@
                 <p>This page <strong>remembers what you learn</strong>. Answer the recall cards as you read — they come back just before you'd forget, and everything stays in your browser. <span class="recall-banner__stat" data-recall-stat></span></p>
             </aside>
 
+            <div class="enduring">
+                <p><strong>The one idea to keep:</strong> The interface is not a window onto AI — it is part of how you think with it. Whether you reach for a chatbox, your voice, a visual canvas, or your physical space changes which problems you even attempt and how good the result can be. Choose the interface to fit the task, and the right one stops feeling like a tool and starts feeling like an extension of your own thinking.</p>
+            </div>
+
             <section>
                 <h2>The Interface Shapes What Is Possible</h2>
                 <p>
@@ -111,6 +115,35 @@
                     This is why interfaces are a core element of the augmented intelligence framework. <a href="/learn/foundations/how-it-helps.html">AI's ability to help you</a> is bounded not just by the model's capability but by the interface through which you access that capability.
                 </p>
             </section>
+
+            <div class="worked">
+                <h3>Worked example: cropping a photo, two interfaces</h3>
+                <p>Same task — crop a photo so a person sits in the right third of the frame — done two ways. Watch how the interface, not the model, decides the effort and the outcome.</p>
+                <div class="split">
+                    <div class="col machine">
+                        <h4>Through a chatbot</h4>
+                        <p>You type a request and wait for the AI to interpret it:</p>
+                        <p class="artifact">You: crop this so the person is on the right, leave some headroom, keep it landscape
+
+AI: Here is a version cropped to the right third with headroom. Let me know if you'd like it tighter or shifted.
+
+You: a bit higher, and the person feels too close to the edge
+
+AI: I've nudged the crop up and added margin. How is this?</p>
+                        <p>Every adjustment is a sentence. You describe what you see, the AI guesses, you describe the gap, it guesses again. You never touch the actual frame.</p>
+                    </div>
+                    <div class="col human">
+                        <h4>Through direct manipulation</h4>
+                        <p>You drag the crop box on the image itself:</p>
+                        <p class="artifact">[drag corner handle inward]
+[reposition box: person → right third]
+[nudge box up to add headroom]
+done</p>
+                        <p>You see the result while you move. There is no describing, no guessing, no round-trip. Your hand and your eye close the loop directly, and "feels too close to the edge" becomes a one-second drag instead of a paragraph.</p>
+                    </div>
+                </div>
+                <p>The chatbot turned a spatial judgement into a translation exercise: feeling into words, words into the AI's guess, guess back into feeling. The visual interface let you make the judgement where it lives — on the image. Neither interface is smarter; one simply fits the shape of the task, and that fit is the whole difference in effort and result.</p>
+            </div>
 
             <mgt-recall id="ifc-conduit">
                 <details>
@@ -267,6 +300,29 @@
                     <p>Make your existing knowledge more powerful — amplifying your capability rather than replacing it or creating dependency.</p>
                 </details>
             </mgt-recall>
+
+            <div class="misconception">
+                <h3>The trap: "A chatbot is the only — or best — way to use AI"</h3>
+                <p>Because the chat window was most people's first encounter with AI, it is easy to treat it as the natural home for every task. It is not. The chatbox is just one interface among many, and for spatial, visual, hands-busy, or in-the-world tasks it is often the worst fit — it forces you to translate everything into prose and back again. Reaching for chat by reflex quietly caps what you can do. The skill is not "prompt better"; it is noticing when the task wants your voice, your hands on a canvas, or information laid over the thing in front of you.</p>
+            </div>
+
+            <mgt-recall id="ifc-trap">
+                <details>
+                    <summary>Why is treating the chatbox as the default way to use AI a trap?</summary>
+                    <p>Chat is just one interface among many. For spatial, visual, hands-busy, or in-the-world tasks it forces you to translate everything into prose and back, so defaulting to it quietly caps what you can do — the skill is matching the interface to the task.</p>
+                </details>
+            </mgt-recall>
+
+            <section class="tryit" aria-labelledby="tryit-ifc">
+                <h2 id="tryit-ifc">Try it on your own work</h2>
+                <p>Pick one task you currently do with an AI chatbot — something you keep typing back and forth about.</p>
+                <ol>
+                    <li>Name the task and notice what you are really doing: are you describing something spatial or visual, working with your hands full, or moving around in the world? That tells you which sense the task lives in.</li>
+                    <li>Match an interface to that sense: a visual or direct-manipulation tool for anything you'd rather show than describe, voice for hands-busy or exploratory thinking, spatial/overlay tools for work tied to physical objects.</li>
+                    <li>Do the task that way once, end to end, and compare it against the chat version — count the round-trips and notice where the effort went.</li>
+                </ol>
+                <p>If the new interface let you make the judgement directly instead of translating it into prose, you have found a place where switching modality, not prompting harder, is what makes AI an extension of your thinking.</p>
+            </section>
 
             <div class="recall-cta" data-recall-cta hidden>
                 <p>You've answered <strong data-recall-count>0</strong> recall card(s) on this page. <span data-recall-due></span> They'll resurface right before you'd forget.</p>

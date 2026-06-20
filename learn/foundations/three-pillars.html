@@ -108,6 +108,10 @@
                 <p>This page <strong>remembers what you learn</strong>. Answer the recall cards as you read — they come back just before you'd forget, and everything stays in your browser. <span class="recall-banner__stat" data-recall-stat></span></p>
             </aside>
 
+            <div class="enduring">
+                <p><strong>The one idea to keep:</strong> run every AI answer through three questions before you trust it — is it logical and testable, is the explanation hard to vary, and is the output a clean structured object you can reuse? If it fails any one, you do not yet have knowledge — you have plausible-sounding text.</p>
+            </div>
+
             <section>
                 <h2>Why Foundations Matter</h2>
                 <p>
@@ -120,6 +124,34 @@
                     The three pillars provide that framework. They are not abstract philosophy. They are practical commitments that change how you think, how you evaluate information, and how you work with machines.
                 </p>
             </section>
+
+            <div class="worked">
+                <h3>Watch the three pillars in action</h3>
+                <p>
+                    Nadia, a junior analyst, asks an AI: <em>"Why did our newsletter open rate drop last quarter?"</em> Here is the raw answer she gets back, and what she does with it before pasting it into her report.
+                </p>
+                <div class="split">
+                    <div class="col machine">
+                        <h4>What the AI returned</h4>
+                        <div class="artifact">Open rates dropped last quarter mainly because of changing audience engagement and broader market conditions affecting email. Subscribers are increasingly busy, and inbox competition has grown, so engagement naturally declined over the period.</div>
+                    </div>
+                    <div class="col human">
+                        <h4>What Nadia does with it</h4>
+                        <p><strong>Pillar 1 — Logic.</strong> Is this testable? She asks: what evidence would prove it wrong? The answer cites nothing measurable, so there is nothing to test.</p>
+                        <p><strong>Pillar 2 — Explanation.</strong> Is it hard to vary? She tries swapping "email" for "ads" or "the website" — the sentence still reads fine. It explains everything and therefore nothing.</p>
+                        <p><strong>Pillar 3 — ADO.</strong> Is the output a clean, reusable structure? No — it is loose prose with no numbers, no dates, no fields she could drop into a table.</p>
+                    </div>
+                </div>
+                <p>
+                    Failing all three, Nadia does not paste it. Instead she rewrites the request so the answer can pass. She pulls the actual figures and feeds them back, then asks for a structured answer. The revised output is something she can verify and reuse:
+                </p>
+                <div class="artifact">cause: send-time shifted from Tuesday 9am to Friday 5pm in week&nbsp;3<br>
+evidence: opens fell from <span class="edit">[her measured baseline]</span> to <span class="edit">[her measured Friday rate]</span>; reverting the send time recovered them in week&nbsp;9<br>
+test: revert send time on next campaign and compare</div>
+                <p>
+                    This version is logical (it names a test), hard to vary (change the cause and the recovered open rate no longer fits), and structured (named fields she can paste straight into her report). Same question, same tool — the difference is the three pillars.
+                </p>
+            </div>
 
             <mgt-recall id="pil-name-the-three">
                 <details>
@@ -304,6 +336,29 @@
                     <p>Logic asks whether the output is testable against evidence, Explanation asks whether the reasoning is hard to vary, and ADOs ask whether the information is structured for reliable reuse.</p>
                 </details>
             </mgt-recall>
+
+            <div class="misconception">
+                <h3>The trap: "If it sounds confident and detailed, it has passed the pillars."</h3>
+                <p>Fluency is not evidence. An answer can be long, articulate, and full of reasonable-sounding phrases while still failing every pillar — untestable, easy to vary, and unstructured. The pillars are not a vibe check on how the text reads; they are deliberate questions you ask against the content. Nadia's first answer sounded perfectly competent, and that is exactly why it was dangerous to paste.</p>
+            </div>
+
+            <mgt-recall id="pil-trap">
+                <details>
+                    <summary>Why isn't a confident, detailed-sounding AI answer enough to trust it?</summary>
+                    <p>Fluency is not evidence. A polished answer can still be untestable, easy to vary, and unstructured — so it can fail all three pillars while reading as if it had passed them.</p>
+                </details>
+            </mgt-recall>
+
+            <section class="tryit" aria-labelledby="tryit-pil">
+                <h2 id="tryit-pil">Try it on your own work</h2>
+                <p>Take one AI answer you actually relied on recently — an explanation, a recommendation, or a summary — and run it through the pillars exactly as Nadia did.</p>
+                <ol>
+                    <li><strong>Logic:</strong> Write down one concrete test that would prove the answer wrong. If you cannot name one, the claim is not yet testable.</li>
+                    <li><strong>Explanation:</strong> Swap out one key word or detail and reread it. If the answer still sounds equally true, it is too easy to vary to build on.</li>
+                    <li><strong>ADO:</strong> Try to rewrite it as named fields — cause, evidence, test — with no loose prose left over. If you cannot, ask the AI to return that structure instead.</li>
+                </ol>
+                <p>If your answer survives all three, use it. If it fails one, you have just found exactly what to ask for next.</p>
+            </section>
 
             <div class="recall-cta" data-recall-cta hidden>
                 <p>You've answered <strong data-recall-count>0</strong> recall card(s) on this page. <span data-recall-due></span> They'll resurface right before you'd forget.</p>

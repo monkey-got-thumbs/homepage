@@ -130,6 +130,8 @@
                 <p>This page <strong>remembers what you learn</strong>. Answer the recall cards as you read — they come back just before you'd forget, and everything stays in your browser. <span class="recall-banner__stat" data-recall-stat></span></p>
             </aside>
 
+            <div class="enduring"><p><strong>The one idea to keep:</strong> AI is a confident pattern-matcher, not a source of truth — it hallucinates, has no real judgment, and cannot explain itself. Augmented intelligence is the discipline of designing a human checkpoint around each of those weaknesses so the error gets caught before it ships.</p></div>
+
             <section>
                 <h2>The Money Problem</h2>
                 <p>
@@ -182,6 +184,27 @@
                 <p>
                     Large language models do not "know" things. They predict the next most likely word in a sequence based on patterns in their training data. This means they can — and regularly do — generate plausible-sounding information that is completely false.
                 </p>
+
+                <div class="worked">
+                    <h3>Worked example: the citation that did not exist</h3>
+                    <p>
+                        Priya is a paralegal drafting a brief on a tight deadline. She asks an AI assistant for case law supporting her argument and gets a clean, confident answer back. It even includes a docket number and a tidy one-line summary. The catch: the case is invented. The model produced the <em>shape</em> of a real citation without a real case behind it.
+                    </p>
+                    <div class="split">
+                        <div class="col machine">
+                            <h4>What the machine does</h4>
+                            <p>Returns a polished, authoritative-looking citation in the exact format Priya expected, with zero hesitation.</p>
+                            <div class="artifact">Smith v. Allerton Logistics, 412 F. Supp. 3d 88 (S.D.N.Y. 2019) — holds that a carrier is liable for a subcontractor's delay.</div>
+                        </div>
+                        <div class="col human">
+                            <h4>What the human does</h4>
+                            <p>Treats the output as a draft, not an answer. Priya pulls up the official court database to confirm the citation before it goes anywhere near a filing.</p>
+                            <div class="artifact">No matching case. No such docket number. <span class="edit">↳ human catch</span> Citation removed; argument rewritten around a verified precedent.</div>
+                        </div>
+                    </div>
+                    <p>The principle: the model is fluent, not accountable. Confidence is a feature of how it writes, not evidence that what it wrote is true — so the human's job is verification, not editing for tone.</p>
+                </div>
+
                 <p>
                     Research shows LLMs hallucinate between 3% and 27% of the time, depending on the task. That might sound small until you consider what it means in practice:
                 </p>
@@ -246,6 +269,18 @@
                 <p>
                     Studies of early AI tool adoption show a pattern: new users are sceptical. Then they see the AI get things right several times in a row. They start trusting it. Then they stop checking. And then the AI makes a critical error that goes uncaught because no one was looking any more.
                 </p>
+
+                <div class="misconception">
+                    <h3>The trap: "It's been right every time, so I can stop checking."</h3>
+                    <p>A run of correct answers tells you nothing about the next one. The model has no internal scorecard and no memory of its own accuracy — each response is a fresh prediction that can be confidently wrong, and the longer you go without verifying, the more likely it is that the error you finally hit is the one that slips through.</p>
+                </div>
+
+                <mgt-recall id="pit-trap">
+                    <details>
+                        <summary>Why doesn't a streak of correct AI answers mean you can safely stop verifying?</summary>
+                        <p>Each response is an independent prediction with no memory of past accuracy, so a confident error can appear at any time; dropping verification just means that error goes uncaught.</p>
+                    </details>
+                </mgt-recall>
                 <p>
                     The <a href="/learn/human-factors/bounded-rationality.html">bounded rationality</a> of human cognition means we are already prone to taking shortcuts. AI amplifies this tendency by giving us a seemingly authoritative source we can defer to — without the cognitive cost of verification.
                 </p>
@@ -331,6 +366,17 @@
                         <p>The industry is volatile — pricing changes constantly and companies disappear — so diversifying your tools protects your workflow.</p>
                     </details>
                 </mgt-recall>
+            </section>
+
+            <section class="tryit" aria-labelledby="tryit-pit">
+                <h2 id="tryit-pit">Try it on your own work</h2>
+                <p>Pick one task where you have recently leaned on an AI answer — a fact you cited, a number you quoted, a snippet of code you pasted, a recommendation you acted on. Then run it through a deliberate catch, the way Priya did with the citation.</p>
+                <ol>
+                    <li>Take the AI's most confident-sounding claim and write down how you would <strong>independently confirm</strong> it — a primary source, a test, a calculation, a second opinion.</li>
+                    <li>Actually check it. Note whether it held up, and if not, exactly where it went wrong and how plausible the wrong version looked.</li>
+                    <li>Decide the <strong>standing rule</strong> for that kind of task: which outputs you will always verify before you rely on them, and what your verification step is.</li>
+                </ol>
+                <p>If you cannot name a verification step for a task, that is a task you should not be handing to AI unsupervised yet. The goal is not to distrust the tool — it is to build the human checkpoint that turns a confident guess into something you can stand behind.</p>
             </section>
 
             <div class="recall-cta" data-recall-cta hidden>
