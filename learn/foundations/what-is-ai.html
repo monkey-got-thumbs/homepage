@@ -89,12 +89,10 @@
             }
         }
         @media (min-width: 90rem) { .content.article-layout { max-width: 100%; } }
-        /* Rubric components (.enduring/.worked/.split/.artifact/.misconception/.tryit) now live in shared layout.css */
-        /* replace-vs-augment toggle */
+        /* Rubric + .explorable container/rhythm now live in shared layout.css (consistent site-wide) */
         /* "Who should do this job?" explorable (built by /assets/js/explorable-jobsplit.js) */
         .into { font-size: var(--font-size-lg); color: var(--color-fg-secondary); line-height: 1.7; }
-        #job-split figcaption { font-family: var(--font-display); letter-spacing: 0.02em; font-size: var(--font-size-xl); color: var(--color-fg); margin-bottom: 1rem; }
-        .js-modes { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.4rem; }
+        .js-modes { display: flex; gap: 0.5rem; flex-wrap: wrap; }
         .js-modes button { flex: 1; min-width: 7.5rem; padding: 0.6rem 0.5rem; border-radius: 9px; border: 1px solid var(--color-border); background: transparent; color: var(--color-fg); font: 600 0.92rem "Montserrat", sans-serif; cursor: pointer; transition: background .15s ease, border-color .15s ease; }
         .js-modes button:hover { border-color: color-mix(in srgb, var(--color-accent) 50%, var(--color-border)); }
         .js-modes button[aria-pressed="true"] { background: var(--color-accent); color: #11210a; border-color: var(--color-accent); }
@@ -104,7 +102,7 @@
         .js-bar { height: 12px; background: color-mix(in srgb, #000 35%, transparent); border-radius: 999px; overflow: hidden; }
         .js-bar__fill { display: block; height: 100%; width: 14%; border-radius: 999px; background: var(--color-accent); transition: width .45s cubic-bezier(.2,.7,.2,1), background .3s ease; }
         .js-bar__fill.is-low { background: var(--color-error); }
-        .js-time { margin: 1.1rem 0 0.5rem; color: var(--color-fg-secondary); }
+        .js-time { color: var(--color-fg-secondary); }
         .js-time strong { color: var(--color-fg); }
         .js-caption { margin: 0; color: var(--color-fg-secondary); line-height: 1.65; min-height: 3.4em; }
     </style>

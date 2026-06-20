@@ -787,6 +787,25 @@ a.wikilink:hover { border-bottom-color: var(--color-accent); }
 /* Hub "what's next" panel — capped + centred so it isn't a cavernous full-width box */
 .hub-next { max-width: 52rem; margin-inline: auto; }
 
+/* ===================================================================== *
+ * GROUPING SYSTEM (site-wide, consistent) — Gestalt: a visible shared region,
+ * EVEN internal spacing, and clear separation from surrounding content. Every
+ * interactive/grouped block (explorables, and any .group-box) obeys this so a
+ * reader can always tell where one component ends and the next begins.
+ * ===================================================================== */
+.explorable, .group-box {
+  display: flex; flex-direction: column; gap: var(--space-md);   /* even internal rhythm */
+  background: color-mix(in srgb, var(--color-bg-secondary) 90%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-accent) 18%, var(--color-border));
+  border-radius: var(--radius-lg);
+  padding: clamp(1.3rem, 3vw, 1.9rem);
+  margin-block: var(--space-2xl);                                /* clear separation between blocks */
+}
+.explorable > *, .group-box > * { margin-block: 0; min-width: 0; }  /* gap owns the spacing — kill ad-hoc margins */
+.explorable figcaption, .explorable > h3:first-child {
+  font-family: var(--font-display); letter-spacing: 0.02em; font-size: var(--font-size-xl); color: var(--color-fg);
+}
+
 .gradient-card { border-radius: var(--radius-lg); padding: 1px; background: linear-gradient(135deg, color-mix(in srgb, var(--color-accent) 55%, transparent), color-mix(in srgb, var(--color-brand-light) 55%, transparent)); }
 .gradient-card__inner { background: var(--color-bg-secondary); border-radius: calc(var(--radius-lg) - 1px); padding: clamp(1.5rem, 4vw, 2.5rem); }
 

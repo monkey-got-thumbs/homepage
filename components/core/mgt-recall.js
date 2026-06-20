@@ -23,17 +23,27 @@ const STYLE = `
     --fg: var(--color-fg, #EDECF6); --muted: var(--color-muted, #B9B5D3); --brand: var(--color-brand-light, #6A55C0);
     --bd: var(--color-border, rgba(255,255,255,.08)); }
 * { box-sizing: border-box; }
-/* Quiet, unobtrusive self-check — a calm aside, not a loud quiz. No coloured bar, no filled lime pill. */
+/* Quiet self-check — calm, but with CLEAR grouping: even internal spacing (flex+gap),
+   and the answer is a visually distinct panel with its own "Answer" label so it's never
+   confused with the question. No loud bar, no filled lime pill. */
 .card { background: color-mix(in srgb, var(--bg) 45%, transparent); border: 1px solid var(--bd);
-    border-radius: 10px; padding: 0.85rem 1.05rem; font-family: "Montserrat", system-ui, sans-serif; }
+    border-radius: 10px; padding: 1rem 1.1rem; font-family: "Montserrat", system-ui, sans-serif;
+    display: flex; flex-direction: column; gap: .8rem; }
+.card > * { margin: 0; }
 .tag { display: flex; align-items: center; gap: .4rem; font-size: 10.5px; font-weight: 700; text-transform: uppercase;
-    letter-spacing: .12em; color: var(--muted); margin: 0 0 .45rem; }
+    letter-spacing: .12em; color: var(--muted); }
 .tag::before { content: ""; width: 5px; height: 5px; border-radius: 999px; background: color-mix(in srgb, var(--acc) 70%, transparent); flex: 0 0 auto; }
 .card.done .tag::before { background: var(--muted); }
-.q { color: var(--fg); font-size: .95rem; font-weight: 600; line-height: 1.55; }
-.a { color: var(--color-fg-secondary, var(--fg)); font-size: .92rem; line-height: 1.7; margin-top: .7rem; padding-top: .7rem; border-top: 1px dashed var(--bd); }
-.a :first-child { margin-top: 0; } .a :last-child { margin-bottom: 0; }
-.row { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; margin-top: .8rem; }
+.q { color: var(--fg); font-size: .98rem; font-weight: 700; line-height: 1.5; }
+/* The answer = a distinct, clearly-labelled panel. Impossible to mistake for the question. */
+.a { color: var(--color-fg-secondary, var(--fg)); font-size: .92rem; line-height: 1.7;
+    background: color-mix(in srgb, var(--acc) 7%, transparent);
+    border: 1px solid color-mix(in srgb, var(--acc) 22%, var(--bd));
+    border-radius: 8px; padding: .7rem .85rem; }
+.a::before { content: "Answer"; display: block; font-size: 10px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: .1em; color: var(--acc); margin-bottom: .35rem; }
+.a > :first-child { margin-top: 0; } .a > :last-child { margin-bottom: 0; }
+.row { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; }
 button { font: 600 .82rem "Montserrat", sans-serif; border-radius: 8px; padding: .42rem .85rem; cursor: pointer;
     border: 1px solid var(--bd); background: transparent; color: var(--fg);
     transition: border-color .15s ease, background .15s ease; }
@@ -42,7 +52,7 @@ button.primary { background: color-mix(in srgb, var(--acc) 12%, transparent); bo
 button.primary:hover { background: color-mix(in srgb, var(--acc) 18%, transparent); }
 button:focus-visible { outline: 2px solid var(--acc); outline-offset: 2px; }
 .hint { color: var(--muted); font-size: 11.5px; line-height: 1.5; }
-.status { color: var(--muted); font-size: 11.5px; margin-top: .55rem; min-height: 1em; }
+.status { color: var(--muted); font-size: 11.5px; min-height: 1em; }
 @media (prefers-reduced-motion: reduce) { button { transition: none; } }
 `;
 
