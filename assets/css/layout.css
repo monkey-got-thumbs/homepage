@@ -23,51 +23,8 @@ main {
  * <header> for their title block, and making those sticky/blurred makes them float over
  * and overlap the page text. So: no global header rule here. */
 
-/* ===== NAVIGATION ===== */
-
-.nav {
-  display: flex;
-  align-items: center;
-  gap: var(--space-md);
-  max-width: var(--container-wide);
-  margin: 0 auto;
-  padding: 0.75rem var(--gutter);
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  text-decoration: none;
-  font-weight: var(--font-weight-bold);
-}
-
-.brand img {
-  width: 40px;
-  height: 40px;
-  border-radius: var(--radius-sm);
-}
-
-.brand span {
-  font-family: var(--font-display);
-  letter-spacing: var(--letter-spacing-wide);
-  font-size: var(--font-size-2xl);
-  color: var(--color-accent);
-  line-height: 1;
-  display: none;
-}
-
-@media (min-width: 640px) {
-  .brand span {
-    display: inline;
-  }
-}
-
-.brand:focus-visible {
-  outline: var(--focus-outline);
-  outline-offset: var(--focus-offset);
-  border-radius: var(--radius-sm);
-}
+/* Navigation + brand mark live entirely in the <mgt-header> web component
+   (shadow DOM); no light-DOM .nav/.brand styles are needed here. */
 
 /* ===== MAIN CONTENT ===== */
 
@@ -139,26 +96,9 @@ article {
   box-shadow: var(--shadow-lg);
 }
 
-.card--featured {
-  border-color: var(--color-accent);
-  background: color-mix(in srgb, var(--color-bg-secondary) 95%, var(--color-accent) 5%);
-}
-
-.card--compact {
-  padding: var(--space-md);
-}
-
-.card--compact .btn {
-  margin-top: var(--space-sm);
-}
-
 /* Mobile card improvements */
 @media (max-width: 640px) {
   .card {
-    padding: var(--space-md);
-  }
-
-  .card--compact {
     padding: var(--space-md);
   }
 
@@ -223,17 +163,13 @@ footer a {
 
 /* Fluid card grids — columns reflow continuously with width (no fixed breakpoints,
    no overflow at 320px thanks to min(100%, …)). */
-.grid,
-.grid--2col,
-.grid--3col {
+.grid {
   display: grid;
   gap: var(--space-lg);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
 }
-.grid       { grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); }
-.grid--2col { grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr)); }
-.grid--3col { grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr)); }
 /* Let grid items shrink below their content (prevents wide code/long words from overflowing) */
-.grid > *, .grid--2col > *, .grid--3col > * { min-width: 0; }
+.grid > * { min-width: 0; }
 
 /* ===== SIDEBAR LAYOUT ===== */
 
@@ -316,21 +252,7 @@ footer a {
   margin-bottom: var(--space-2xl);
 }
 
-.hero-image {
-  width: min(400px, 70vw);
-  height: auto;
-  max-height: 360px;
-  object-fit: contain;
-  margin-bottom: var(--space-md);
-}
-
 @media (max-width: 640px) {
-  .hero-image {
-    width: min(240px, 60vw);
-    max-height: 220px;
-    margin-bottom: var(--space-sm);
-  }
-
   .hero h1 {
     font-size: var(--font-size-3xl);
   }

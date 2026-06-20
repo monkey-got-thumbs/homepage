@@ -8,10 +8,12 @@
     <meta name="robots" content="index, follow, max-image-preview:large">
     <meta name="theme-color" content="#0E0B1A" />
     <meta name="color-scheme" content="dark">
+    <!-- Preload the LCP hero (responsive) so it's discovered before the stylesheets parse -->
+    <link rel="preload" as="image" type="image/webp" imagesrcset="/hero-400.webp 400w, /hero.webp 800w" imagesizes="(max-width: 571px) 70vw, 400px" fetchpriority="high">
     <link rel="stylesheet" href="/assets/css/tokens.css">
     <link rel="stylesheet" href="/assets/css/base.css">
     <link rel="stylesheet" href="/assets/css/layout.css">
-    <meta name="description" content="New to AI, or just call it 'chatty'? You're in the right place. Monkey Got Thumbs is the calm, jargon-free way to get comfortable with AI at your own pace — and find people figuring it out with you." />
+    <meta name="description" content="New to AI, or just call it 'chatty'? Monkey Got Thumbs is the calm, jargon-free way to get comfortable with AI at your own pace — and find your people." />
     <meta name="author" content="Monkey Got Thumbs" />
     <meta property="og:title" content="Monkey Got Thumbs — get comfortable with AI">
     <meta property="og:description" content="The calm, jargon-free way to get comfortable with AI at your own pace — and find your people.">
@@ -56,7 +58,8 @@
 
         /* ===== Hero — one warm invitation, nothing to decide ===== */
         .hero { text-align: center; padding-top: clamp(1rem, 4vw, 3rem); }
-        .hero img { width: min(190px, 42vw); height: auto; margin-inline: auto; display: block; animation: floatIn 800ms ease-out both; }
+        /* width comes from the shared `section.hero img` rule in layout.css (min(400px, 70vw)) */
+        .hero img { height: auto; margin-inline: auto; display: block; animation: floatIn 800ms ease-out both; }
         .hero h1 { margin: var(--space-md) 0 var(--space-sm); }
         .hero .home-lede { font-size: clamp(1.05rem, 1.6vw, 1.3rem); }
         .hero-cta { margin-top: var(--space-xl); display: flex; flex-direction: column; align-items: center; gap: var(--space-sm); }
@@ -127,8 +130,8 @@
         <!-- HERO: one warm invitation -->
         <section class="home-section hero" aria-labelledby="hero-title">
             <picture>
-                <source srcset="/hero.webp" type="image/webp">
-                <img src="/hero.png" alt="Monkey Got Thumbs — a friendly monkey, thumbs up, on a dark background" width="800" height="1200" loading="eager" decoding="async" fetchpriority="high">
+                <source type="image/webp" srcset="/hero-400.webp 400w, /hero.webp 800w" sizes="(max-width: 571px) 70vw, 400px">
+                <img src="/hero.png" srcset="/hero-400.png 400w, /hero.png 800w" sizes="(max-width: 571px) 70vw, 400px" alt="Monkey Got Thumbs — a friendly monkey, thumbs up, on a dark background" width="800" height="1200" loading="eager" decoding="async" fetchpriority="high">
             </picture>
             <h1 id="hero-title">Let's get comfortable with AI.</h1>
             <p class="home-lede">Curious but not sure where to start? You're in exactly the right place. We'll take it slow, skip the jargon, and walk with you from “what even <em>is</em> this?” to genuinely confident — at your own pace.</p>
