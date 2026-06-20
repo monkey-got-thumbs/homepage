@@ -91,17 +91,22 @@
         @media (min-width: 90rem) { .content.article-layout { max-width: 100%; } }
         /* Rubric components (.enduring/.worked/.split/.artifact/.misconception/.tryit) now live in shared layout.css */
         /* replace-vs-augment toggle */
-        .augtoggle { background: var(--color-bg-secondary); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
-        .augtoggle__btns { display: flex; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap; }
-        .augtoggle__btns button { flex: 1; min-width: 140px; padding: 0.6rem; border-radius: 8px; border: 1px solid var(--color-border); background: transparent; color: var(--color-fg); font: 600 0.9rem "Montserrat", sans-serif; cursor: pointer; }
-        .augtoggle__btns button[aria-pressed="true"] { background: var(--color-accent); color: #11210a; border-color: var(--color-accent); }
-        .flow { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; justify-content: center; margin: 0.5rem 0; }
-        .node { padding: 0.55rem 0.85rem; border-radius: 10px; border: 1px solid var(--color-border); font-size: 0.85rem; font-weight: 600; }
-        .node.you { background: color-mix(in srgb, var(--color-accent) 25%, transparent); }
-        .node.ai { background: color-mix(in srgb, var(--color-brand) 35%, transparent); }
-        .node.muted { opacity: 0.35; text-decoration: line-through; }
-        .arrow { color: var(--color-muted); font-size: 0.85rem; }
-        .augtoggle__caption { color: var(--color-fg-secondary); margin: 0.75rem 0 0; font-size: var(--font-size-sm); min-height: 3em; }
+        /* "Who should do this job?" explorable (built by /assets/js/explorable-jobsplit.js) */
+        .into { font-size: var(--font-size-lg); color: var(--color-fg-secondary); line-height: 1.7; }
+        #job-split figcaption { font-family: var(--font-display); letter-spacing: 0.02em; font-size: var(--font-size-xl); color: var(--color-fg); margin-bottom: 1rem; }
+        .js-modes { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.4rem; }
+        .js-modes button { flex: 1; min-width: 7.5rem; padding: 0.6rem 0.5rem; border-radius: 9px; border: 1px solid var(--color-border); background: transparent; color: var(--color-fg); font: 600 0.92rem "Montserrat", sans-serif; cursor: pointer; transition: background .15s ease, border-color .15s ease; }
+        .js-modes button:hover { border-color: color-mix(in srgb, var(--color-accent) 50%, var(--color-border)); }
+        .js-modes button[aria-pressed="true"] { background: var(--color-accent); color: #11210a; border-color: var(--color-accent); }
+        .js-meters { display: flex; flex-direction: column; gap: 0.7rem; }
+        .js-meter { display: grid; grid-template-columns: 6.5rem 1fr; align-items: center; gap: 0.75rem; }
+        .js-meter__label { font-size: var(--font-size-sm); color: var(--color-fg-secondary); }
+        .js-bar { height: 12px; background: color-mix(in srgb, #000 35%, transparent); border-radius: 999px; overflow: hidden; }
+        .js-bar__fill { display: block; height: 100%; width: 14%; border-radius: 999px; background: var(--color-accent); transition: width .45s cubic-bezier(.2,.7,.2,1), background .3s ease; }
+        .js-bar__fill.is-low { background: var(--color-error); }
+        .js-time { margin: 1.1rem 0 0.5rem; color: var(--color-fg-secondary); }
+        .js-time strong { color: var(--color-fg); }
+        .js-caption { margin: 0; color: var(--color-fg-secondary); line-height: 1.65; min-height: 3.4em; }
     </style>
 </head>
 <body>
@@ -121,121 +126,47 @@
             <header>
                 <h1>What is Augmented Intelligence?</h1>
                 <p class="lead">Augmented intelligence pairs your judgment with the machine's speed — and keeps you in charge. The point isn't the AI. It's what you do with the time it gives back.</p>
-                <p class="page-meta">Beginner &middot; 6 min read</p>
+                <p class="page-meta">Beginner &middot; 3 min read</p>
             </header>
 
             <div class="enduring">
                 <p><strong>The one idea to keep:</strong> AI is a tool you <em>direct</em>. Hand it the volume; keep the judgment. Stay in charge of every decision that matters.</p>
             </div>
 
-            <aside class="recall-banner" data-recall-banner>
-                <span class="recall-banner__icon" aria-hidden="true">🧠</span>
-                <p>This page <strong>remembers what you learn</strong>. Answer the recall cards as you read — they come back just before you'd forget, and everything stays in your browser. <span class="recall-banner__stat" data-recall-stat></span></p>
-            </aside>
+            <p class="into">Here's the whole idea in one job. Maria runs a busy clinic and owes the board a report on 400 patient comments by Friday. Try each way of getting it done:</p>
 
-            <section>
-                <h2>Start with one real afternoon</h2>
-                <p>
-                    Maria runs a busy community clinic. It's Wednesday, and by Friday she owes the board a report summarising three months of patient feedback — about 400 comments. Reading and hand-tallying all 400 would eat a full day she doesn't have. Here's how she does it in an hour <em>with</em> augmented intelligence — and why she, not the AI, is still the author.
-                </p>
-                <div class="worked">
-                    <h3>The task: 400 comments → a board report by Friday</h3>
-                    <div class="split">
-                        <div class="col machine">
-                            <h4>What the machine does — volume</h4>
-                            <p>Groups the 400 comments into themes, drafts a one-line summary of each, and counts them:</p>
-                            <div class="artifact">Wait times — 118 comments
-"Patients are frustrated by long
-waits, especially mornings."
-
-Staff friendliness — 96 (positive)
-Parking — 40
-Booking system — 31 …</div>
-                        </div>
-                        <div class="col human">
-                            <h4>What Maria does — judgment</h4>
-                            <p>Reads the <em>themes</em>, not 400 comments, then adds what the data can't:</p>
-                            <div class="artifact">Wait times — 118 comments
-"Patients are frustrated by long
-waits, especially mornings.
-<span class="edit">↳ Maria: lead with this — the
-board cares most. Recommend a
-morning triage-nurse pilot.</span>
-<span class="edit">↳ Maria: merge "Parking" into
-"Access" — the model split one
-complaint into two.</span></div>
-                        </div>
-                    </div>
-                    <p style="margin-bottom:0">The machine handled the 400; Maria handled the judgment — the priority call, the miscategorisation only a human with context would catch, and the recommendation the data could never make. <strong>That division of labour is augmented intelligence.</strong></p>
+            <figure class="explorable" id="job-split">
+                <figcaption>Who should do this job?</figcaption>
+                <div class="js-modes" role="group" aria-label="Choose who does the job">
+                    <button type="button" data-mode="maria" aria-pressed="true">Maria alone</button>
+                    <button type="button" data-mode="ai" aria-pressed="false">AI alone</button>
+                    <button type="button" data-mode="both" aria-pressed="false">Maria + AI</button>
                 </div>
-
-                <p>Maria's afternoon is the whole pattern in miniature: the machine compresses slow work, automates the repetitive, and clears the noise — so you can spend the reclaimed time on the decisions only you can make.</p>
-
-                <mgt-recall id="wai-split">
-                    <details>
-                        <summary>When you hand work to AI, what do you keep and what do you give away?</summary>
-                        <p>Hand over the volume — the repetitive, mechanical work. Keep the judgment — context, priorities, ethics, and the final call.</p>
-                    </details>
-                </mgt-recall>
-            </section>
-
-            <section>
-                <h2>Augmented vs. artificial intelligence</h2>
-                <p>
-                    The terms get conflated, but they're different philosophies about the machine's role. The difference is one thing: <strong>is the human still in the loop?</strong> It opens on <em>augment</em> — press <strong>Replace</strong> and watch the <strong>You</strong> node disappear from the chain.
-                </p>
-
-                <div class="augtoggle" id="augtoggle">
-                    <div class="augtoggle__btns">
-                        <button data-mode="augment" aria-pressed="true">Augment (human in the loop)</button>
-                        <button data-mode="replace" aria-pressed="false">Replace (human removed)</button>
+                <div class="js-meters">
+                    <div class="js-meter">
+                        <span class="js-meter__label">Speed</span>
+                        <span class="js-bar"><span class="js-bar__fill" data-speed-bar></span></span>
                     </div>
-                    <div class="flow"></div>
-                    <p class="augtoggle__caption" role="status" aria-live="polite"></p>
-                    <noscript><p class="augtoggle__caption">Augmented intelligence keeps you in the loop: AI drafts, you verify and decide. Full automation removes you — faster, but no one catches the model's mistakes.</p></noscript>
-                </div>
-
-                <mgt-credit>Interactive explanations like this follow Bret Victor's principle that you understand what you can <strong>see and change</strong>.</mgt-credit>
-
-                <div class="comparison">
-                    <div class="card">
-                        <h3>Artificial Intelligence</h3>
-                        <p>Aims to <strong>replace</strong> human decision-making with autonomous systems — the goal is a machine that runs with no human in the loop.</p>
-                        <p>Self-driving cars, automated trading, fully autonomous support bots.</p>
-                    </div>
-                    <div class="card">
-                        <h3>Augmented Intelligence</h3>
-                        <p>Aims to <strong>enhance</strong> human decision-making — better tools, faster retrieval, more analytical reach. The human stays in the loop.</p>
-                        <p>Maria's report. A doctor reading AI-flagged scans. A writer refining an AI draft.</p>
+                    <div class="js-meter">
+                        <span class="js-meter__label">Got it right</span>
+                        <span class="js-bar"><span class="js-bar__fill" data-acc-bar></span></span>
                     </div>
                 </div>
+                <p class="js-time">Done in <strong data-time>a full day</strong></p>
+                <p class="js-caption" role="status" aria-live="polite" data-caption>Accurate — but reading 400 comments by hand ate the whole day, and the report is late.</p>
+                <noscript><p class="js-caption">Maria alone: accurate but slow. AI alone: instant, but it mislabels comments and no one catches it. Maria + AI: fast <em>and</em> right — the machine sorts the 400, Maria makes the calls. That pairing is augmented intelligence.</p></noscript>
+            </figure>
 
-                <p>
-                    The distinction changes what you optimise for: AI optimises for removing the human; augmented intelligence optimises for making the human more capable. And it matters because <a href="/learn/foundations/ai-pitfalls.html">today's AI has real limits</a> — it hallucinates, lacks judgment, can't explain itself, and is costly to run. Augmented intelligence designs <em>around</em> those limits instead of pretending they're gone.
-                </p>
+            <p>Only the last button fills both bars — and that's the whole idea in one picture: <strong>the machine handles the volume, you keep the judgment</strong> (the priorities, the mistakes only a person would catch, the final call). "AI that replaces you" is the middle button: fast, but with no one in the loop, its confident errors sail straight through.</p>
 
-                <div class="misconception">
-                    <h3>The trap: "AI will just do it for me"</h3>
-                    <p>The tempting model is: hand the whole task over and collect the answer. It fails for a precise reason — the model has no judgment and <em>can't tell you when it's wrong</em>. In Maria's report the AI confidently mislabelled comments; only a human with context caught it. Outsource the volume, never the judgment.</p>
-                </div>
+            <mgt-credit>Built so you get it by changing it — Bret Victor's idea of an explorable explanation.</mgt-credit>
 
-                <p>
-                    The key word is <em>assistance</em>: you direct, you decide, you verify. The machine takes research, first drafts, data processing, and pattern-matching; you keep strategy, ethics, context, and relationships.
-                </p>
-
-                <mgt-recall id="wai-ai-vs">
-                    <details>
-                        <summary>Augment vs. replace — what's the one thing that separates them?</summary>
-                        <p>Whether the human stays in the loop. Replace removes you; augment keeps you deciding and verifying.</p>
-                    </details>
-                </mgt-recall>
-                <mgt-recall id="wai-misconception">
-                    <details>
-                        <summary>What's the trap to avoid when handing work to AI?</summary>
-                        <p>Outsourcing the <em>judgment</em>, not just the volume — the model can't tell you when it's wrong, so you must stay in the loop to catch it.</p>
-                    </details>
-                </mgt-recall>
-            </section>
+            <mgt-recall id="wai-split">
+                <details>
+                    <summary>When you hand work to AI, what do you keep and what do you give away?</summary>
+                    <p>Give away the volume — the repetitive, mechanical work. Keep the judgment — context, priorities, ethics, and the final call.</p>
+                </details>
+            </mgt-recall>
 
             <section class="tryit" aria-labelledby="tryit-title">
                 <h2 id="tryit-title">Try it on your own work</h2>
@@ -258,7 +189,7 @@ complaint into two.</span></div>
 
             <section class="card" style="margin-top: 2.5rem;">
                 <h2>Continue Learning</h2>
-                <p>The same pattern — human directs, machine assists — scales from your inbox to a whole industry, and the edge goes to whoever has the <em>skill</em> to direct the model, not the fanciest model. Next: why this matters now, and what happens if you ignore it. Go deeper on the <a href="/learn/foundations/three-pillars.html">three foundational pillars</a> it rests on.</p>
+                <p>That's the whole idea. Next: why it's worth your time — or the <a href="/learn/foundations/three-pillars.html">three pillars</a> it rests on.</p>
                 <div class="cta">
                     <a href="/learn/foundations/why-we-need-it.html" class="btn">Why We Need It</a>
                     <a href="/learn/foundations/ai-pitfalls.html" class="btn btn--secondary">AI's Pitfalls</a>
@@ -275,6 +206,6 @@ complaint into two.</span></div>
     <script type="module" src="/components/core/mgt-footer.js"></script>
     <script type="module" src="/components/core/mgt-recall.js"></script>
     <script type="module" src="/components/core/mgt-credit.js"></script>
-    <script src="/assets/js/augment-toggle.js" defer></script>
+    <script src="/assets/js/explorable-jobsplit.js" defer></script>
 </body>
 </html>
