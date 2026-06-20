@@ -171,8 +171,8 @@
         if (TURNSTILE_KEY && !token) { setStatus('Please complete the “I\'m human” check, then Analyse.', 'error'); return; }
 
         analyzeBtn.disabled = true;
-        const orig = analyzeBtn.textContent; analyzeBtn.textContent = 'Analyzing…';
-        setStatus('Analyzing your agent — this usually takes 10–30 seconds…', 'loading');
+        const orig = analyzeBtn.textContent; analyzeBtn.textContent = 'Analysing…';
+        setStatus('Analysing your agent — this usually takes 10–30 seconds…', 'loading');
         results.hidden = true;
 
         const controller = new AbortController();

@@ -32,9 +32,7 @@
     const INLINE_SEL = ds.inline || null;
     const AUTO_OPEN = ds.open === 'true';
 
-    /* ---- model runtimes (loaded lazily from CDN, cached after first use) -- */
-    const WEBLLM_URL = 'https://esm.run/@mlc-ai/web-llm';
-    const XENOVA_URL = 'https://esm.run/@huggingface/transformers';
+    /* ---- model runtimes are lazy-imported from self-hosted /vendor (cached after first use) -- */
 
     /* ---- runtime state --------------------------------------------------- */
     let CFG = null, FLOW = null, node = null, NODES = {}, GLOBALS = [];
@@ -706,11 +704,15 @@
         } else {
             goTo(startId);
         }
-        // warm embeddings + idle-index the site so the agentic path is fast later
-        warmEmbeddings();
-        if (CFG.site && CFG.site.indexOnIdle !== false) {
-            if ('requestIdleCallback' in window) requestIdleCallback(() => indexSite(), { timeout: 4000 });
-            else setTimeout(() => indexSite(), 2500);
+        // warm embeddings + idle-index the site so the agentic path is fast later.
+        // Skip for the inline auto-opened demo (no user interaction yet) — it warms lazily on
+        // first send, so the /chatty/ page doesn't download the model just by loading.
+        if (!INLINE_SEL) {
+            warmEmbeddings();
+            if (CFG.site && CFG.site.indexOnIdle !== false) {
+                if ('requestIdleCallback' in window) requestIdleCallback(() => indexSite(), { timeout: 4000 });
+                else setTimeout(() => indexSite(), 2500);
+            }
         }
         if (CFG.model && CFG.model.generative === 'eager') ensureLLM();
     }

@@ -187,6 +187,8 @@ function build() {
                 '@context': 'https://schema.org', '@type': 'Article', headline: n.title,
                 description: desc, url: canonical,
                 author: { '@type': 'Organization', name: 'Monkey Got Thumbs' },
+                publisher: { '@type': 'Organization', name: 'Monkey Got Thumbs', logo: { '@type': 'ImageObject', url: 'https://monkey-got-thumbs.com/logo.png', width: 200, height: 300 } },
+                datePublished: '2026-06-20', dateModified: '2026-06-20',
             },
             {
                 '@context': 'https://schema.org', '@type': 'BreadcrumbList',

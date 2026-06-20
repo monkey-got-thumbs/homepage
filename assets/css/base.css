@@ -18,6 +18,7 @@
 html {
   height: 100%;
   scroll-behavior: smooth;
+  overflow-x: clip;   /* robust guard: full-bleed hero separators (100vw) never cause a horizontal scrollbar; clip keeps sticky working */
 }
 
 body {
@@ -33,6 +34,7 @@ body {
   font: var(--font-weight-normal) var(--font-size-base) / var(--line-height-normal) var(--font-sans);
   margin: 0;
   padding: 0;
+  overflow-x: clip;   /* contain full-bleed hero separators (100vw) without a scrollbar; clip won't break sticky header */
 }
 
 main {
@@ -491,17 +493,6 @@ details[open] > summary {
   display: grid;
 }
 
-.grid-2 {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-lg);
-}
-
-@media (max-width: 768px) {
-  .grid-2 {
-    grid-template-columns: 1fr;
-  }
-}
 
 .hidden {
   display: none !important;

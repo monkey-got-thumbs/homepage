@@ -88,7 +88,7 @@ class MGTRecall extends HTMLElement {
                     <span class="tag" aria-hidden="true">🧠 Recall</span>
                     <span class="purpose">A quick self-test. Cover the answer, have a go, then check — these come back just before you'd forget, so it sticks.</span>
                 </div>
-                <p class="q">${this._q}</p>
+                <p class="q"></p>
                 <div class="a" ${recent ? '' : 'hidden'}>${this._a}</div>
                 <div class="row reveal-row" ${recent ? 'hidden' : ''}>
                     <button class="primary reveal">Show answer</button>
@@ -102,6 +102,7 @@ class MGTRecall extends HTMLElement {
                 <div class="status" role="status" aria-live="polite">${recent ? this._nextLabel(st) : ''}</div>
             </div>`;
         const $ = s => this.shadowRoot.querySelector(s);
+        $('.q').textContent = this._q;   // question is plain text — set safely, never interpolated as HTML
         $('.reveal').addEventListener('click', () => { $('.a').hidden = false; $('.reveal-row').hidden = true; $('.grade-row').hidden = false; $('.yes').focus(); });
         $('.yes').addEventListener('click', () => this._grade(true));
         $('.no').addEventListener('click', () => this._grade(false));

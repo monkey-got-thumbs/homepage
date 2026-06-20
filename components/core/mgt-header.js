@@ -70,6 +70,7 @@ class MGTHeader extends HTMLElement {
         .brand-logo {
           width: 80px;
           height: 80px;
+          object-fit: contain;   /* logo is 200x300 — contain prevents squashing into the square box */
           border-radius: 8px;
           flex-shrink: 0;
         }

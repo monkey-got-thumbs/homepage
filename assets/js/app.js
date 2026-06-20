@@ -71,17 +71,18 @@ function setupAccessibilityBaseline() {
  * Setup skip-to-content link
  */
 function setupSkipLink() {
+  // Ensure main content has the skip target id (every page's static link points here)
+  const main = document.querySelector('main');
+  if (main && !main.id) {
+    main.id = 'main-content';
+  }
+  // Pages already ship a static .skip-link in the HTML — don't add a duplicate
+  if (document.querySelector('.skip-link')) return;
   const skipLink = document.createElement('a');
   skipLink.href = '#main-content';
   skipLink.textContent = 'Skip to main content';
   skipLink.className = 'skip-link';
   document.body.insertBefore(skipLink, document.body.firstChild);
-
-  // Ensure main content has proper ID
-  const main = document.querySelector('main');
-  if (main && !main.id) {
-    main.id = 'main-content';
-  }
 }
 
 /**
@@ -105,7 +106,10 @@ function setupKeyboardNavigation() {
  * Setup smooth scroll behavior
  */
 function setupSmoothScroll() {
-  document.documentElement.style.scrollBehavior = 'smooth';
+  // Respect the user's reduced-motion preference (don't force smooth)
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.documentElement.style.scrollBehavior = 'smooth';
+  }
 
   document.addEventListener('click', (e) => {
     const link = e.target.closest('a[href^="#"]');
@@ -118,7 +122,9 @@ function setupSmoothScroll() {
     if (target) {
       e.preventDefault();
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      target.focus();
+      // Make non-interactive targets (e.g. an <h2>) focusable so focus() actually lands
+      if (!target.hasAttribute('tabindex')) target.setAttribute('tabindex', '-1');
+      target.focus({ preventScroll: true });
     }
   });
 }
@@ -179,41 +185,6 @@ function ensureViewportMeta() {
     viewport.content =
       'width=device-width, initial-scale=1, minimum-scale=1, viewport-fit=cover';
     document.head.appendChild(viewport);
-  }
-}
-
-/**
- * Register service worker for PWA features (future)
- */
-function registerServiceWorker() {
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/sw.js').catch(() => {
-      // Service worker registration failed, app will still work
-    });
-  }
-}
-
-/**
- * Load web components dynamically
- */
-async function loadComponents() {
-  try {
-    // Components will be imported here as they are created
-    // For now, we'll keep this modular for future expansion
-    const componentRegistry = [
-      // { name: 'mgt-header', path: '/components/core/mgt-header.js' },
-      // { name: 'mgt-footer', path: '/components/core/mgt-footer.js' },
-    ];
-
-    for (const component of componentRegistry) {
-      try {
-        await import(component.path);
-      } catch (error) {
-        console.error(`Failed to load component: ${component.name}`, error);
-      }
-    }
-  } catch (error) {
-    console.error('Error loading components:', error);
   }
 }
 
@@ -291,10 +262,7 @@ async function init() {
     // Step 5: Set up scroll behavior
     setupSmoothScroll();
 
-    // Step 6: Load components
-    await loadComponents();
-
-    // Step 7: Initialize analytics
+    // Step 6: Initialize analytics
     initializeAnalytics();
 
     // Step 8: Inject the site-wide chatyman support widget

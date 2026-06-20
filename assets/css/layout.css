@@ -471,7 +471,8 @@ main .build-hero, main .advisor-hero, main .cm-hero, main .lp-hero { max-width: 
   .content.article-layout {
     max-width: var(--container-wide);
     display: grid;
-    grid-template-columns: var(--toc-col) minmax(0, var(--measure)) minmax(0, 1fr);
+    /* symmetric side rails keep the prose (and its full-window hero separator) centred on the viewport */
+    grid-template-columns: var(--toc-col) minmax(0, var(--measure)) var(--toc-col);
     grid-template-areas: "toc prose aside";
     column-gap: clamp(2rem, 4vw, 4rem);
     align-items: start;

@@ -52,7 +52,7 @@ class MGTFooter extends HTMLElement {
           margin-bottom: 2rem;
         }
 
-        h4 {
+        h2 {
           margin: 0 0 0.75rem;
           font-size: 1rem;
           text-transform: uppercase;
@@ -129,27 +129,27 @@ class MGTFooter extends HTMLElement {
         <div class="footer-container">
           <div class="footer-content">
             <section aria-labelledby="footer-about">
-              <h4 id="footer-about">About</h4>
+              <h2 id="footer-about">About</h2>
               <p>
-                <strong>Monkey Got Thumbs</strong> helps real people understand
-                AI, build their own agents, and share or sell them — putting the
-                tools (and the upside) of augmented intelligence in everyone's
-                hands. Local-first. No lock-in.
+                <strong>Monkey Got Thumbs</strong> helps everyday people get
+                comfortable with AI and make little helpers of their own — no
+                coding, no jargon, at your own pace, with a friendly community
+                alongside you.
               </p>
             </section>
 
             <section aria-labelledby="footer-products">
-              <h4 id="footer-products">Products</h4>
+              <h2 id="footer-products">Products</h2>
               <ul>
                 <li><a href="/chatty/">chatyman</a></li>
                 <li><a href="/build/advisor/">Agent Builder Advisor</a></li>
                 <li><a href="/products/">All products</a></li>
-                <li><a href="/build/">Build &amp; Sell Agents</a></li>
+                <li><a href="/build/">Make AI helpers</a></li>
               </ul>
             </section>
 
             <section aria-labelledby="footer-learning">
-              <h4 id="footer-learning">Learning</h4>
+              <h2 id="footer-learning">Learning</h2>
               <ul>
                 <li><a href="/learn/foundations/">Foundations</a></li>
                 <li><a href="/learn/frameworks/">Frameworks</a></li>
@@ -160,7 +160,7 @@ class MGTFooter extends HTMLElement {
             </section>
 
             <section aria-labelledby="footer-community">
-              <h4 id="footer-community">Community</h4>
+              <h2 id="footer-community">Community</h2>
               <ul>
                 <li><a href="/community/">Get Involved</a></li>
                 <li><a href="/resources/case-studies/">Case Studies</a></li>
@@ -192,7 +192,7 @@ class MGTFooter extends HTMLElement {
     // Ensure all sections have proper heading structure
     const sections = this.shadowRoot.querySelectorAll('section');
     sections.forEach((section) => {
-      const heading = section.querySelector('h4');
+      const heading = section.querySelector('h2');
       if (heading && !section.getAttribute('aria-labelledby')) {
         section.setAttribute('aria-labelledby', heading.id || heading.textContent);
       }
