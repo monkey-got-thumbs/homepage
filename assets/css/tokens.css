@@ -14,7 +14,8 @@
   --color-brand-light: #6A55C0;
   --color-brand-lighter: #B7A7F2;   /* AA-contrast purple for small text on dark bg (>=4.5:1) */
   --color-muted: #B9B5D3;
-  --color-link-hover: color-mix(in srgb, var(--color-fg) 55%, var(--color-accent));  /* text colour + accent green — hover tint, no underline */
+  --color-link: color-mix(in srgb, var(--color-accent) 72%, #000);   /* default green link — darker, fitting; brightens to --color-accent on hover */
+  --color-link-hover: color-mix(in srgb, var(--color-fg) 55%, var(--color-accent));  /* for non-green (fg) text links: text colour + accent tint */
 
   /* Functional Colors */
   --color-success: #4ADE80;

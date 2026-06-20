@@ -300,11 +300,12 @@ footer a {
 }
 
 .breadcrumbs a {
-  color: var(--color-accent);
+  color: var(--color-link);
 }
 
 .breadcrumbs a:hover {
-  text-decoration: underline;
+  color: var(--color-accent);
+  text-decoration: none;
 }
 
 /* ===== HERO SECTION ===== */
@@ -762,8 +763,8 @@ a.wikilink:hover { border-bottom-color: var(--color-accent); }
 .pill--live { color: var(--color-accent); border-color: color-mix(in srgb, var(--color-accent) 50%, transparent); }
 .pill--new  { color: var(--color-brand-lighter); border-color: color-mix(in srgb, var(--color-brand-lighter) 55%, transparent); }
 .pill--soon { color: var(--color-warning); border-color: color-mix(in srgb, var(--color-warning) 45%, transparent); }
-.card-link { font-weight: var(--font-weight-bold); color: var(--color-accent); text-decoration: none; }
-.card-link:hover { text-decoration: underline; }
+.card-link { font-weight: var(--font-weight-bold); color: var(--color-link); text-decoration: none; }
+.card-link:hover { color: var(--color-accent); text-decoration: none; }
 
 /* ===================================================================== *
  * WARM, INVITING DESIGN LANGUAGE — shared across the site (calm, low cognitive

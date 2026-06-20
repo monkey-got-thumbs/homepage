@@ -167,7 +167,7 @@ blockquote p {
 /* ===== LINKS ===== */
 
 a {
-  color: var(--color-accent);
+  color: var(--color-link);    /* darker, fitting green by default */
   text-decoration: none;
   text-decoration-thickness: 2px;
   text-underline-offset: 4px;
@@ -175,8 +175,8 @@ a {
 }
 
 a:hover {
-  text-decoration: none;       /* no underline on hover — affordance is a colour shift instead */
-  color: var(--color-link-hover);
+  text-decoration: none;       /* no underline — affordance is the link brightening to its highlighted hue */
+  color: var(--color-accent);  /* highlight: a brighter shade of the link's own green */
 }
 
 a:focus-visible {

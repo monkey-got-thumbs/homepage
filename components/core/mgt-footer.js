@@ -79,7 +79,7 @@ class MGTFooter extends HTMLElement {
         }
 
         a {
-          color: var(--accent);
+          color: var(--color-link, var(--accent));
           text-decoration: none;
           transition: all 150ms ease;
           text-decoration-thickness: 2px;
@@ -87,8 +87,8 @@ class MGTFooter extends HTMLElement {
         }
 
         a:hover {
-          text-decoration: underline;
-          color: #b8ff5c;
+          text-decoration: none;
+          color: var(--color-accent, #b8ff5c);
         }
 
         a:focus-visible {
