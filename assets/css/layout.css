@@ -424,6 +424,21 @@ footer a {
   margin-top: 2rem;
 }
 
+/* ===================================================================== *
+ * PAGE-HERO SEPARATOR (site-wide, consistent) — a hairline under every page's
+ * hero/header block so the title area is clearly set off from the body. Applies
+ * to article <header>s AND every marketing/hub/home hero. Sub-section heads
+ * (.section-head, .cm-head, .head-centred, .step-header) are deliberately excluded.
+ * ===================================================================== */
+.content > header,
+.hub-head, .products-head, .learn-head, .start-head,
+.community-head, .res-head, .say-head,
+.build-hero, .advisor-hero, .cm-hero, .lp-hero, .home-section.hero {
+  padding-bottom: clamp(1.5rem, 3.5vw, 2.25rem);
+  margin-bottom: clamp(1.75rem, 4vw, 2.5rem);
+  border-bottom: 1px solid var(--color-border);
+}
+
 /* ===== ARTICLE WIDE LAYOUT: [TOC | prose(measure) | aside] =====
    Opt-in via .content.article-layout. Below lg it's a plain centered measure
    (identical to mobile/tablet today). At lg+ it becomes a 3-rail grid; ALL
