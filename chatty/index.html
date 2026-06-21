@@ -39,13 +39,22 @@
         "image": "https://monkey-got-thumbs.com/hero.png",
         "applicationCategory": "BusinessApplication",
         "operatingSystem": "Any modern web browser",
-        "offers": {
-            "@type": "Offer",
-            "name": "Free to run yourself",
-            "price": 0,
-            "priceCurrency": "USD",
-            "url": "https://monkey-got-thumbs.com/chatty/#pricing"
-        }
+        "offers": [
+            {
+                "@type": "Offer",
+                "name": "Personal — free for personal & non-commercial use",
+                "price": 0,
+                "priceCurrency": "USD",
+                "url": "https://monkey-got-thumbs.com/chatty/#pricing"
+            },
+            {
+                "@type": "Offer",
+                "name": "Commercial — unmetered licence",
+                "price": 1000,
+                "priceCurrency": "USD",
+                "url": "https://monkey-got-thumbs.com/chatty/#pricing"
+            }
+        ]
     }
     </script>
     <script type="application/ld+json">
@@ -312,35 +321,48 @@
             <section id="pricing" class="section-pad reveal" aria-labelledby="pricing-title">
                 <div class="cm-head">
                     <span class="eyebrow">honest pricing</span>
-                    <h2 id="pricing-title">Free today. Honest about the rest.</h2>
-                    <p>chatyman is free to run yourself right now. A fully-managed, set-up-for-you option is in the works — and we'd much rather tell you that plainly than invent a price list.</p>
+                    <h2 id="pricing-title">Free for personal use. Fair for business.</h2>
+                    <p>Pop chatyman on your own personal site for nothing. Using it for a business? A commercial licence keeps it sustainable — pay only for what you use, or go unmetered.</p>
                 </div>
                 <div class="cm-pricing">
                     <div class="card cm-plan">
-                        <h3>Free &amp; open</h3>
+                        <h3>Personal</h3>
                         <p class="cm-price">$0</p>
                         <p class="cm-plan-status"><span class="pill pill--live">Available now</span></p>
                         <ul>
-                            <li>Add it to your own site and run it yourself</li>
+                            <li>For personal &amp; non-commercial sites</li>
                             <li>Free to run, however many people chat</li>
-                            <li>Answers from your own pages, and every chat stays on the visitor's device</li>
+                            <li>Answers from your own pages; every chat stays on the visitor's device</li>
                             <li>Friendly community to help you along</li>
                         </ul>
                         <a class="btn" href="#install">See how to add it</a>
                     </div>
                     <div class="card cm-plan">
-                        <h3>Set up for you</h3>
-                        <p class="cm-price">In development</p>
-                        <p class="cm-plan-status"><span class="pill pill--soon">In development</span></p>
+                        <h3>Commercial — metered</h3>
+                        <p class="cm-price">Pay as you go</p>
+                        <p class="cm-plan-status"><span class="pill pill--live">Available</span></p>
                         <ul>
-                            <li>We host and set it up, so there's nothing techy for you to do</li>
-                            <li>Extra help and features for teams</li>
-                            <li>Help us shape it — tell us what would actually make your life easier</li>
+                            <li>A commercial licence for business use</li>
+                            <li>You only pay for what you actually use</li>
+                            <li>Tiered as you grow — cheaper than unmetered for most sites</li>
+                            <li>Everything in Personal, plus commercial rights</li>
                         </ul>
-                        <a class="btn btn--secondary" href="/contact/">Tell us what you need</a>
+                        <a class="btn" href="/contact/">Get a commercial licence</a>
+                    </div>
+                    <div class="card cm-plan">
+                        <h3>Commercial — unmetered</h3>
+                        <p class="cm-price">$1,000<span>/month</span></p>
+                        <p class="cm-plan-status"><span class="pill pill--live">Available</span></p>
+                        <ul>
+                            <li>A commercial licence for business use</li>
+                            <li>Flat monthly price — no usage metering</li>
+                            <li>Unlimited chats and traffic</li>
+                            <li>Best when you'd rather not watch a meter</li>
+                        </ul>
+                        <a class="btn btn--secondary" href="/contact/">Talk to us</a>
                     </div>
                 </div>
-                <p class="cm-pricing-note">No made-up prices, no features that don't exist yet. When there's something to pay for, it'll be because it genuinely does something useful for you.</p>
+                <p class="cm-pricing-note">Free for personal use; a commercial licence is required for business use. Not sure which fits? <a href="/contact/">Tell us about your site</a> and we'll point you to the right one — no hard sell.</p>
             </section>
 
             <!-- INSTALL: the slightly techy bit, gently framed -->
