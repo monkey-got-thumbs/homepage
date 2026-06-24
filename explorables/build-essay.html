@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, viewport-fit=cover" />
+    <title>Build an essay — Monkey Got Thumbs</title>
+    <link rel="canonical" href="https://monkey-got-thumbs.com/explorables/build-essay.html">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#0E0B1A" />
+    <meta name="color-scheme" content="dark">
+    <link rel="stylesheet" href="/assets/css/tokens.css">
+    <link rel="stylesheet" href="/assets/css/base.css">
+    <link rel="stylesheet" href="/assets/css/layout.css">
+    <meta name="description" content="How to build a reactive explorable essay — long-form writing that re-reasons as you change it — with a copy-paste prompt for an AI agent." />
+    <meta name="author" content="Monkey Got Thumbs" />
+    <meta property="og:title" content="Build an essay — Monkey Got Thumbs">
+    <meta property="og:description" content="How to build a reactive explorable essay — long-form writing that re-reasons as you change it — with a copy-paste prompt for an AI agent.">
+    <meta property="og:url" content="https://monkey-got-thumbs.com/explorables/build-essay.html">
+    <meta property="og:image" content="https://monkey-got-thumbs.com/social-card.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:site_name" content="Monkey Got Thumbs">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:type" content="article">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+    <style>
+        .recipe { max-width: 50rem; margin-inline: auto; }
+        .recipe-head { margin: 0 0 var(--space-xl); }
+        .recipe-head h1 { margin: var(--space-sm) 0; }
+        .recipe-head .lede { margin-inline: 0; text-align: start; }
+        .recipe-section { margin: 0 0 var(--space-2xl); }
+        .recipe-section > h2 { font-family: var(--font-display); color: var(--color-accent); letter-spacing: .02em; margin: 0 0 var(--space-md); }
+        .recipe-section ol, .recipe-section ul { line-height: 1.7; color: var(--color-fg-secondary); }
+        .recipe-section ol li, .recipe-section ul li { margin-bottom: var(--space-sm); }
+        .recipe-section a { color: var(--color-accent); }
+        .copy-line { color: var(--color-fg-secondary); margin: 0 0 var(--space-sm); }
+        .prompt { white-space: pre-wrap; font: 13.5px/1.6 var(--font-mono); background: var(--color-bg-secondary); border: 1px solid var(--color-border); border-radius: 12px; padding: 16px 18px; overflow-x: auto; }
+        .copy-btn { font: inherit; font-size: 13px; cursor: pointer; border: 1px solid var(--color-border); background: transparent; color: var(--color-accent); border-radius: 8px; padding: 5px 12px; margin-bottom: 8px; }
+    </style>
+    <link rel="stylesheet" href="/assets/css/accessibility.css">
+    <script src="/assets/js/a11y-init.js"></script>
+    <script src="/assets/js/accessibility.js" defer></script>
+    <link rel="stylesheet" href="/assets/css/journey.css">
+    <script src="/assets/js/journey.js" defer></script>
+    <script src="/assets/js/copy.js" defer></script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <mgt-header></mgt-header>
+    <main id="main-content">
+        <div class="recipe">
+            <nav aria-label="Breadcrumb">
+                <ul class="breadcrumbs">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/explorables/">Explorables</a></li>
+                    <li aria-current="page">Build an essay</li>
+                </ul>
+            </nav>
+
+            <header class="recipe-head">
+                <p class="eyebrow">explorable library · recipe</p>
+                <h1>Build an essay</h1>
+                <p class="lede" data-a11y="lede">An <strong>essay</strong> is long-form writing where the prose itself is interactive: change a number, or your whole point of view, and the argument re-reasons around you. Here is the recipe, and a prompt you can hand straight to an AI.</p>
+            </header>
+
+            <section class="recipe-section">
+                <h2>Anatomy</h2>
+                <ol>
+                    <li data-a11y="anatomy-model">Put <strong>one coupled model</strong> under the whole piece — a <code>compute()</code> the entire essay reads from, fed by every scrubbable number and every chart handle, so changing one re-reasons the prose, the charts and the conclusions at once, possibly reframing the entire essay — which is the point.</li>
+                    <li data-a11y="anatomy-prose">Make the <strong>prose reactive</strong>: sentences rewrite at thresholds, reasoning backward to the cause and forward to the consequence, with the words changing as the reader drags.</li>
+                    <li data-a11y="anatomy-callouts">Keep callouts <strong>permanently live</strong>: recompute their numbers on every change and never freeze them at the values they had when first triggered.</li>
+                    <li data-a11y="anatomy-learning">Build a <strong>learning layer</strong> (especially for short or guided pieces): open with a question, nudge the first move, give a payoff that finds the reader (a callout that appears and names the insight), and make the insight a place the reader reaches for and discovers they cannot have.</li>
+                    <li data-a11y="anatomy-decompose">Never assert a floor or threshold — <strong>decompose it</strong> so the reader sees exactly why it exists.</li>
+                    <li data-a11y="anatomy-lens">Optionally add a <strong>perspective lens</strong> (worker, employer, treasury, society) that reframes the whole essay and reorders what matters.</li>
+                    <li data-a11y="anatomy-honest">Stay <strong>honest</strong>: label model versus fact clearly, mark illustrative forecast tails, never fabricate, and keep motion steady with no flashing and reduced-motion gated.</li>
+                </ol>
+            </section>
+
+            <section class="recipe-section">
+                <h2>The build prompt</h2>
+                <p class="copy-line" data-a11y="copy-line">Copy this into your agent:</p>
+                <button class="copy-btn" data-target="prompt-essay">Copy</button>
+                <pre id="prompt-essay" class="prompt">You are building a reactive explorable ESSAY about {TOPIC} — long-form writing where the prose itself is interactive.
+
+1. One coupled model under the whole piece: a compute() the entire essay reads from. Every scrubbable number in the sentences AND every chart handle feeds it; change one and the prose, the charts and the conclusions all re-reason. Changing things may reframe the entire essay — that is the point.
+2. Reactive prose: sentences rewrite at thresholds (reason backward to the cause, forward to the consequence). The words change as the reader drags. Keep callouts PERMANENTLY LIVE — recompute their numbers on every change; never freeze them at trigger-time values.
+3. The learning layer (especially for short/guided pieces): open with a QUESTION; nudge the first move (try this -&gt;); a payoff that FINDS the reader (at the meaningful state a callout appears and names the insight); and make the insight a PLACE the reader reaches for and discovers they cannot have. Do not assert a floor/threshold — DECOMPOSE it so the reader sees why.
+4. Optional but powerful: a PERSPECTIVE lens (e.g. worker / employer / treasury / society) that reframes the whole essay and reorders what matters.
+5. Honest: model vs fact clearly labelled; illustrative forecast tails marked; never fabricate.
+6. No flashing; steady motion; reduced-motion gated.
+
+Kill it if: you can twiddle but it is not obvious what you would learn; a load-bearing number is asserted instead of explained; a callout shows stale numbers; or any value is fabricated.</pre>
+            </section>
+
+            <section class="recipe-section">
+                <h2>Kill-criteria</h2>
+                <ul>
+                    <li data-a11y="kill-unclear">You can twiddle but it is not obvious what you would learn.</li>
+                    <li data-a11y="kill-asserted">A load-bearing number is asserted instead of explained (decompose it).</li>
+                    <li data-a11y="kill-stale">A callout shows stale numbers instead of recomputing live.</li>
+                    <li data-a11y="kill-fabricated">Any value is fabricated.</li>
+                </ul>
+            </section>
+
+            <section class="recipe-section">
+                <h2>See it in the wild</h2>
+                <ul>
+                    <li><a href="/explorables/bitcoin-treatise.html">Bitcoin, over time</a> (treatise)</li>
+                    <li><a href="/explorables/reform-retraining-essay.html">Moving the floor</a> (reactive essay)</li>
+                    <li><a href="/explorables/guided-money-printing.html">Can the government just print money?</a> (guided)</li>
+                </ul>
+            </section>
+        </div>
+    </main>
+    <mgt-footer></mgt-footer>
+    <script src="/assets/js/tracking.js" defer></script>
+    <script type="module" src="/assets/js/app.js"></script>
+    <script type="module" src="/components/core/mgt-header.js"></script>
+    <script type="module" src="/components/core/mgt-footer.js"></script>
+</body>
+</html>

@@ -1,135 +1,93 @@
 {
 "hero-title": [
-"Make your own little AI helper.",
-"You can make a little AI helper of your own.",
-"Make a little AI helper of your own.",
-"Build your own little AI helper.",
-"Build your own AI helper."
+"Have you ever asked an AI a question and got back something fuzzy and not very helpful? It happens to almost everyone. The good news is that it's usually easy to fix, and it has very little to do with the AI itself.",
+"Wondering why the AI keeps giving you answers that feel vague and not very useful? You're not alone — and it's easier to fix than you might think.",
+"Why does AI give you such vague, useless answers?",
+"Why does AI keep handing you vague, useless answers?",
+"Why is AI so vague and useless?"
 ],
 "hero-lede": [
-"This sounds like a job for tech people, but it really isn't. A “helper” is just some clear notes you write for AI. You tell it who to be and how to help you. When you do that well, AI does <em>so</em> much more for you. Don't worry — we'll walk you through it, nice and slow.",
-"It sounds technical, but it really isn't. A “helper” is simply clear instructions you write for AI — telling it who to be and how to help you. Do that well and AI does <em>so</em> much more for you. We'll show you, step by step.",
-"It sounds technical, but it really isn't. A “helper” is just clear instructions you write for AI — telling it who to be and how to help. Do that well and AI does <em>so</em> much more for you. We'll show you, gently.",
-"Sounds technical; isn't. A “helper” is clear instructions you write for AI — who to be, how to help. Done well, AI does <em>so</em> much more. We'll show you.",
-"A “helper” is just clear instructions for AI: who to be, how to help. Done well, it does <em>far</em> more. We'll show you."
+"Most of the time the AI isn't really the problem — the way you ask is. A “helper” is simply a clear way of asking that you can save and use again and again. Right here, you can build one bit by bit, and you'll watch the answer get better as you go. And the lovely part is, <strong>you never have to touch the AI itself.</strong>",
+"Usually it isn't the AI — it's how you <em>ask</em>. A “helper” is just a clear ask you can reuse. Build one here, piece by piece, and watch the answer improve. <strong>You won't touch the AI once.</strong>",
+"Almost always, it isn't the AI — it's the <em>ask</em>. A “helper” is just a clear ask you can reuse. Build one here, a piece at a time, and watch the answer change in front of you. <strong>You won't touch the AI once.</strong>",
+"Almost always it's the <em>ask</em>, not the AI. A helper is a reusable, clear ask. Build one here, piece by piece, and watch the answer change. <strong>You won't touch the AI once.</strong>",
+"It's the <em>ask</em>, not the AI. A helper is a reusable ask. Build one; watch it change. <strong>No AI required.</strong>"
 ],
-"reassure": [
-"You don't have to be good with computers. You don't have to know any special words. <strong>If you can say what you want in plain, everyday English, then you can already do this</strong> — and you'll get a little better each time you give it a go.",
-"You don't need to be techy, and you don't need the right words. <strong>If you can describe what you want in plain English, you can already do this</strong> — and you'll get better each time you try.",
-"You don't need to be techy. You don't need the right words. <strong>If you can describe what you want in plain English, you can already do this</strong> — and you'll get better every time you try.",
-"No tech skills or special words needed. <strong>If you can describe what you want in plain English, you can do this</strong> — and you'll improve with each try.",
-"No tech skills needed. <strong>Describe what you want in plain English and you can do this</strong> — improving each try."
-],
-"advisor-title": [
-"Get much better at asking AI — all in one go",
-"Get much better at asking AI, in one go",
-"Get much better at asking AI — in one go",
-"Get much better at asking AI, fast",
-"Ask AI better, in one go"
-],
-"advisor-body": [
-"Here's the kindest, easiest first step. Paste in something you really did ask AI. Then our free helper shows you how it all works. You get one round of warm, plain-English notes: what you did well, what may have confused the AI, and how to ask so you get a better answer back. It feels a bit like having a kind friend read it over your shoulder.",
-"Here's the friendliest first step: paste in something you actually asked AI, and our free helper shows you how it works. You get a round of kind, plain-English feedback — what was good, what confused it, and how to ask for a better answer. It's like having a patient friend read over your shoulder.",
-"Here's the friendliest first step: paste in something you actually asked AI, and our free helper shows you how it works — a round of kind, plain-English feedback on what was good, what confused it, and how to ask so you get a better answer. It's like having a patient friend read over your shoulder.",
-"The friendliest first step: paste in something you asked AI, and our free helper gives one round of plain-English feedback — what worked, what confused it, and how to ask for a better answer. Like a patient friend reading over your shoulder.",
-"Paste something you asked AI; the free helper returns one round of plain-English feedback — what worked, what confused it, how to ask better."
-],
-"advisor-preview": [
-"Right now, this one is a <strong>preview — a worked example for the moment</strong>. That means you can see exactly what the feedback looks like before the real, live version is ready. We're being honest: it gives you <strong>one round of feedback</strong> only, not a back-and-forth chat.",
-"For now this is a <strong>preview — a worked example</strong>, so you can see exactly what the feedback looks like before the live version arrives. We're honest that it's <strong>one round of feedback</strong>, with no back-and-forth chat.",
-"This one's a <strong>preview — a worked example for now</strong>, so you can see exactly what that feedback looks like before the live version lands. It's honest about being <strong>one round of feedback</strong>, no back-and-forth chat.",
-"This is a <strong>preview — a worked example for now</strong>, so you can see the feedback before the live version lands. Honestly: <strong>one round of feedback</strong>, no back-and-forth.",
-"A <strong>preview — worked example</strong>. One look at the feedback before the live version. <strong>One round only</strong>, no chat."
-],
-"recall-answer": [
-"It's being specific. Tell it who it's helping, what it should do, what it shouldn't do, and the kind of answer you'd like back. If you put in something vague, you get something vague out. If you put in something clear, you get something genuinely useful out.",
-"Being specific. Tell it who it's helping, what it should and shouldn't do, and the kind of answer you want back. Vague in means vague out — clear in means genuinely useful out.",
-"Being specific. Tell it who it's helping, what it should and shouldn't do, and the kind of answer you want back. Vague in, vague out — clear in, genuinely useful out.",
-"Being specific. State who it's helping, what it should and shouldn't do, and the answer you want. Vague in, vague out; clear in, useful out.",
-"Specificity. Say who it helps, what to do and avoid, and the answer wanted. Clear in, useful out."
+"ask-hint": [
+"Go ahead and tap any piece below to add it to your ask. Each piece you add gives the AI a useful detail that it would otherwise just have to guess at.",
+"Tap a piece to add it to your ask. Each one hands the AI a detail it can't guess on its own.",
+"Tap a piece to add it. Each one tells the AI something it can't guess.",
+"Tap a piece to add it — each tells the AI something it can't guess.",
+"Tap to add. Each piece tells the AI what it can't guess."
 ],
 "how-title": [
-"How it works — three little goes, with no rush at all.",
-"How it works, in three little goes.",
-"How it works, in three goes.",
-"How it works — three goes.",
-"How it works: three steps."
+"Now it's time to make this your very own.",
+"Now make it yours, in your own way.",
+"Now make it yours.",
+"Now make it yours.",
+"Make it yours."
 ],
 "how-sub": [
-"Just start at the top. Each step quietly leads you on to the next one, so you don't have to pick or choose.",
-"Start at the top. Each one quietly leads to the next, so you don't have to choose.",
-"Start at the top. Each one quietly leads to the next — you don't have to choose.",
-"Start at the top; each step leads to the next, so there's nothing to choose.",
-"Start at the top; each step leads to the next."
+"You've just learned the one move that matters most. Here's where that move can take you next.",
+"You just learned the key move. Here's where it can take you next.",
+"You just learned the move. Here's where it takes you.",
+"You've learned the move. Here's where it leads.",
+"You learned the move. Here's where it leads."
 ],
 "step1-title": [
-"Get the hang of asking",
-"Get the knack of asking",
-"Get the knack of asking",
-"Learn the knack of asking",
-"Learn to ask"
+"Give it a go with something from your own life",
+"Try it out on something real to you",
+"Try it on something real",
+"Try it on something real",
+"Try it for real"
 ],
 "step1-body": [
-"Paste something you asked AI into the free helper, and it gives you friendly notes back. After a few tries, you'll just <em>feel</em> how to ask for the thing you really want.",
-"Paste something you asked AI into the free helper and get friendly feedback. In a few goes, you'll <em>feel</em> how to ask for what you really want.",
-"Paste something you asked AI into the free helper and get friendly feedback. In a few goes, you'll just <em>feel</em> how to ask for what you actually want.",
-"Paste something you asked AI into the free helper for friendly feedback. In a few goes, you'll <em>feel</em> how to ask for what you want.",
-"Paste a request into the free helper for feedback. Soon you'll <em>feel</em> how to ask well."
+"Do you have an ask of your own that you'd like to try? Bring it along to the free Advisor, and it will give you friendly, plain-English feedback on how to make it sharper and clearer.",
+"Got an ask of your own in mind? Take it to the free Advisor for friendly, plain-English tips on sharpening it.",
+"Got an ask of your own in mind? Bring it to the free Advisor and get plain-English feedback on how to sharpen it.",
+"Have an ask of your own? Bring it to the free Advisor for plain-English feedback on sharpening it.",
+"Bring your own ask to the free Advisor for plain-English feedback."
 ],
 "step2-title": [
-"Make a helper that stays with you",
+"Make a helper that stays with you for next time",
+"Make a helper that sticks around for later",
 "Make a helper that sticks around",
 "Make a helper that sticks around",
-"Make a helper that sticks around",
-"Build a lasting helper"
+"Make a lasting helper"
 ],
 "step2-body": [
-"Once you've got the hang of it, chatyman lets you set up a little helper of your own — with no code at all. It's ready whenever you need it, so you don't have to start from scratch each time.",
-"Once you've got the knack, chatyman lets you set up a little helper of your own — no code — that's ready whenever you need it, so you needn't start from scratch each time.",
-"Once you've got the knack, chatyman lets you set up a little helper of your own — no code — that's ready whenever you need it, instead of starting from scratch each time.",
-"With the knack down, chatyman lets you set up your own helper — no code — ready whenever you need it, instead of starting from scratch.",
-"Then chatyman sets up your own no-code helper, ready anytime — no starting from scratch."
+"Once an ask is working nicely, chatyman lets you save it as a little helper — with no code needed at all. It'll be ready and waiting whenever you need it, so you never have to start over from scratch each time.",
+"Once an ask works, chatyman lets you save it as a little helper — no code — ready whenever you need it, so you needn't start over.",
+"Once an ask works, chatyman lets you save it as a little helper — no code — ready whenever you need it, instead of starting from scratch each time.",
+"When an ask works, chatyman saves it as a no-code helper, ready whenever you need it instead of starting over.",
+"chatyman saves a working ask as a no-code, reusable helper."
 ],
 "step3-title": [
-"Understand why it all works",
-"Understand why it works",
+"Get to understand why all of this actually works",
+"Understand why it really works",
 "Understand why it works",
 "Understand why it works",
 "Understand the why"
 ],
 "step3-body": [
-"Want those “aha” moments where it all clicks? A few short, plain lessons explain what's really going on — and they quietly make everything you make turn out better.",
+"Would you like those satisfying “aha” moments? A handful of short, plain-spoken lessons explain what's really going on behind the scenes — and they quietly make everything you make turn out that little bit better.",
+"Want the “aha” moments? A few short, plain lessons explain what's really going on — and quietly improve everything you make.",
 "Want the “aha” moments? A few short, plain lessons explain what's really going on — and quietly make everything you make better.",
-"Want the “aha” moments? A few short, plain lessons explain what's really going on — and quietly make everything you make better.",
-"Want the “aha” moments? A few short, plain lessons explain what's really going on — and make everything you build better.",
-"A few short lessons explain what's going on — and make everything you build better."
-],
-"someday-title": [
-"One day, you might share the things you make",
-"One day, you might share what you make",
-"One day, you might share what you make",
-"One day, you might share what you make",
-"Someday: share what you make"
-],
-"someday-body": [
-"Some people who get the hang of this go on to make helpers that other folks would love too. We'd like to make sharing them — and even earning a little from them — simple and friendly. We'll be honest with you: that part isn't ready yet. For now, just enjoy making things that help <em>you</em>.",
-"Some people who get the hang of this end up making helpers that other folks would love too. We'd like to make sharing — even earning a little from — what you make simple and friendly. We're honest: that part isn't ready yet. For now, just enjoy making things that help <em>you</em>.",
-"Some people who get the hang of this end up making helpers that other folks would love too. We'd like to make sharing — even earning a little from — what you make simple and friendly. We're honest: that part isn't ready yet. For now, just enjoy making things that help <em>you</em>.",
-"Some people who get this end up making helpers others would love. We'd like sharing — even earning a little from — what you make to be simple. Honestly, that part isn't ready. For now, enjoy making things that help <em>you</em>.",
-"Some go on to make helpers others want. Sharing — even earning from — them is a goal, not ready yet. For now, make things that help <em>you</em>."
+"Want the “aha” moments? A few short, plain lessons explain what's going on — and quietly improve everything you make.",
+"Short plain lessons explain the why — and improve everything you make."
 ],
 "belong-title": [
-"Get a friendly nudge every now and then",
+"Get a kind little nudge every now and then",
+"Have a friendly nudge from time to time",
 "Have a friendly nudge now and then",
 "Have a friendly nudge now and then",
-"Get a friendly nudge now and then",
-"Get occasional friendly nudges"
+"A friendly nudge now and then"
 ],
 "belong-body": [
-"Everyone here started out feeling a little unsure, just like you might. We'll send you gentle, no-jargon notes when there's something new worth trying — and you'll find other people working it all out right alongside you.",
+"Everyone who's here today started out feeling a little unsure too. You'll get gentle, jargon-free notes whenever there's something new and fun to try — and you'll find other people working it all out right alongside you.",
+"Everyone here started out a bit unsure. Get gentle, no-jargon notes when there's something new to try — and find others figuring it out with you.",
 "Everyone here started out a little unsure. Get gentle, no-jargon notes when there's something new to try — and find people figuring it out alongside you.",
-"Everyone here started out a little unsure. Get gentle, no-jargon notes when there's something new to try — and find people figuring it out alongside you.",
-"Everyone here started out unsure. Get gentle, no-jargon notes when there's something new to try — and find people figuring it out with you.",
-"Everyone started unsure. Get jargon-free notes on what's new — and people figuring it out with you."
+"Everyone here started out unsure. Get gentle, no-jargon notes on what's new to try — and find people figuring it out with you.",
+"Gentle, no-jargon notes on what's new — plus people figuring it out with you."
 ]
 }

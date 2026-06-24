@@ -62,11 +62,25 @@
     "Prefer a set route? A path from curious beginner to genuinely confident, step by step.",
     "Prefer a set route? Beginner to confident, step by step."
   ],
+  "card-explorables": [
+    "Little models that you think <em>with</em>, not at. You drag the numbers and watch the idea reason back to you. It's the most fun way in.",
+    "Little models you think <em>with</em>, not at — drag the numbers and watch the idea reason back. The most fun way in.",
+    "Little models you think <em>with</em>, not at — drag the numbers and watch the idea reason back. The most fun way in.",
+    "Little models you think <em>with</em>, not at — drag the numbers, watch the idea reason back. The most fun way in.",
+    "Models you think <em>with</em>: drag the numbers, watch it reason back. The most fun way in."
+  ],
   "card-notes": [
     "A cosy web of short ideas, all linked together. Drift through them whenever you feel curious. You don't have to read them in any order.",
     "A cosy web of short, linked ideas to drift through whenever you're curious. No order needed.",
     "A cosy web of short, linked ideas to drift through whenever you're curious. No order required.",
     "A web of short, linked ideas to drift through when curious. No order required.",
     "Short linked ideas to drift through. No order required."
+  ],
+  "card-resources": [
+    "Good things to read and watch from other places. They're here for when you want to go a bit deeper, or hear another person's voice on it.",
+    "Good things to read and watch from elsewhere — for when you want to go deeper or hear another voice.",
+    "Good things to read and watch from elsewhere — for when you want to go deeper or hear another voice.",
+    "Good reads and watches from elsewhere — for going deeper or hearing another voice.",
+    "Outside reads and watches: go deeper, hear another voice."
   ]
 }

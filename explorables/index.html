@@ -55,6 +55,7 @@
         .exp-section > h2 { font-family: var(--font-display); color: var(--color-accent); letter-spacing: .02em; margin: 0 0 var(--space-xs); }
         .exp-section > .lede { margin: 0 0 var(--space-lg); max-width: 50rem; }
         .exp-note { color: var(--color-fg-secondary); border-inline-start: 3px solid var(--color-accent); padding-inline-start: var(--space-md); margin-top: var(--space-lg); max-width: 52rem; line-height: 1.7; }
+.exp-build { margin: 0 0 var(--space-lg); }
     </style>
     <link rel="stylesheet" href="/assets/css/accessibility.css">
     <script src="/assets/js/a11y-init.js"></script>
@@ -70,7 +71,7 @@
             <header class="exp-head">
                 <h1 data-a11y="hero-h1">Explorables</h1>
                 <p class="lede" data-a11y="hero-lede">Most charts you look <em>at</em>. An explorable you think <em>with</em>. Every number — on the chart <em>and</em> in the sentence — is a handle: drag it, and the whole thing re-reasons in front of you. Nothing here is fixed text; the understanding is something you reach by playing, not by reading.</p>
-                <p class="lede">It's a small <strong>library</strong> in three parts — <a href="#components">Components</a>, <a href="#dashboards">Dashboards</a> and <a href="#essays">Essays</a>. Each is a working example <em>and</em> a teachable pattern: a vocabulary you — or an AI building the next one — can learn from.</p>
+                <p class="lede" data-a11y="hero-lede2">It's a small <strong>library</strong> in three parts — <a href="#components">Components</a>, <a href="#dashboards">Dashboards</a> and <a href="#essays">Essays</a>. Each is a working example <em>and</em> a teachable pattern: a vocabulary you — or an AI building the next one — can learn from.</p>
             </header>
 
             <nav class="exp-subnav" aria-label="The explorable library">
@@ -82,7 +83,8 @@
 
             <section id="components" class="exp-section">
                 <h2>Components</h2>
-                <p class="lede">The building blocks — one idea, one interaction. Reach for these first: a reactive document, a dependency network, an uncertainty curve, a trade-off frontier, a budget trend — plus a catalogue of fifteen more. This is the vocabulary every dashboard and essay is assembled from.</p>
+                <p class="lede" data-a11y="components-lede">The building blocks — one idea, one interaction. Reach for these first: a reactive document, a dependency network, an uncertainty curve, a trade-off frontier, a budget trend — plus a catalogue of fifteen more. This is the vocabulary every dashboard and essay is assembled from.</p>
+                <p class="exp-build" data-a11y="build-component"><a class="card-link" href="/explorables/build-component.html">How to build a component →</a></p>
                 <div class="exp-grid">
                 <article class="card">
                     <span class="tagline">document</span>
@@ -105,13 +107,13 @@
                 <article class="card">
                     <span class="tagline">trade-off</span>
                     <h3>Which option?</h3>
-                    <p>Five ways to deliver, plotted on cost vs time. Drag one and watch it cross the frontier of real choices — or get beaten on both.</p>
+                    <p data-a11y="card-tradeoff">Five ways to deliver, plotted on cost vs time. Drag one and watch it cross the frontier of real choices — or get beaten on both.</p>
                     <a class="card-link" href="/explorables/tradeoff.html">Open the explorable →</a>
                 </article>
                 <article class="card">
                     <span class="tagline">trend</span>
                     <h3>Are we over budget?</h3>
-                    <p>The spend curve climbing toward the budget line — drag the months, or the budget itself, and see exactly when you cross it.</p>
+                    <p data-a11y="card-trend">The spend curve climbing toward the budget line — drag the months, or the budget itself, and see exactly when you cross it.</p>
                     <a class="card-link" href="/explorables/trend.html">Open the explorable →</a>
                 </article>
                 <article class="card">
@@ -125,18 +127,19 @@
 
             <section id="dashboards" class="exp-section">
                 <h2>Dashboards</h2>
-                <p class="lede">Many components wired into one coordinated model: a single hero lever drives every panel at once. Each is built from public data and video transcripts, and cites its source so you can check it.</p>
+                <p class="lede" data-a11y="dashboards-lede">Many components wired into one coordinated model: a single hero lever drives every panel at once. Each is built from public data and video transcripts, and cites its source so you can check it.</p>
+                <p class="exp-build" data-a11y="build-dashboard"><a class="card-link" href="/explorables/build-dashboard.html">How to build a dashboard →</a></p>
                 <div class="exp-grid">
                 <article class="card">
                     <span class="tagline">dashboard · from a video</span>
                     <h3>The Federal Reserve</h3>
-                    <p>One rate dial drives inflation, unemployment, the corridor and the ripple at once — the dual-mandate "oven". Built from a USAFacts explainer.</p>
+                    <p data-a11y="card-fed">One rate dial drives inflation, unemployment, the corridor and the ripple at once — the dual-mandate "oven". Built from a USAFacts explainer.</p>
                     <a class="card-link" href="/explorables/fed-reserve-dashboard.html">Open the dashboard →</a>
                 </article>
                 <article class="card">
                     <span class="tagline">dashboard · from a video</span>
                     <h3>The US national debt</h3>
-                    <p>Budget → deficit → debt, and the interest, debt-to-GDP and ceiling that follow. Project the years forward and watch it all move.</p>
+                    <p data-a11y="card-debt">Budget → deficit → debt, and the interest, debt-to-GDP and ceiling that follow. Project the years forward and watch it all move.</p>
                     <a class="card-link" href="/explorables/national-debt-dashboard.html">Open the dashboard →</a>
                 </article>
                 <article class="card">
@@ -150,12 +153,13 @@
 
             <section id="essays" class="exp-section">
                 <h2>Essays</h2>
-                <p class="lede">Long-form writing where the prose itself is interactive — change a number, or your whole point of view, and the argument re-reasons around you. Includes short <em>guided</em> explorables that pose a question and make the insight a place you reach for and discover you can't have.</p>
+                <p class="lede" data-a11y="essays-lede">Long-form writing where the prose itself is interactive — change a number, or your whole point of view, and the argument re-reasons around you. Includes short <em>guided</em> explorables that pose a question and make the insight a place you reach for and discover you can't have.</p>
+                <p class="exp-build" data-a11y="build-essay"><a class="card-link" href="/explorables/build-essay.html">How to build an essay →</a></p>
                 <div class="exp-grid">
                 <article class="card">
                     <span class="tagline">treatise</span>
                     <h3>Bitcoin, over time</h3>
-                    <p>Four little machines you can drive: the 21M supply, the difficulty feedback loop, the four-year cycle, and "what if you'd bought?"</p>
+                    <p data-a11y="card-bitcoin">Four little machines you can drive: the 21M supply, the difficulty feedback loop, the four-year cycle, and "what if you'd bought?"</p>
                     <a class="card-link" href="/explorables/bitcoin-treatise.html">Open the treatise →</a>
                 </article>
                 <article class="card">
@@ -179,7 +183,7 @@
                 <article class="card">
                     <span class="tagline">guided · macro</span>
                     <h3>Jobs, or just inflation?</h3>
-                    <p>Unemployment isn't one thing — it's three, stacked. Print money and watch which band shrinks, and why the floor underneath won't move.</p>
+                    <p data-a11y="card-jobs-inflation">Unemployment isn't one thing — it's three, stacked. Print money and watch which band shrinks, and why the floor underneath won't move.</p>
                     <a class="card-link" href="/explorables/guided-print-jobs-inflation.html">Open the explorable →</a>
                 </article>
             </div>
@@ -187,16 +191,16 @@
 
             <section id="principles" class="exp-section">
                 <h2>How they're built</h2>
-                <p class="lede">All three libraries obey the same laws — the direction for building a new one, whether you're a person or an LLM agent:</p>
+                <p class="lede" data-a11y="principles-lede">All three libraries obey the same laws — the direction for building a new one, whether you're a person or an LLM agent:</p>
                 <ul class="exp-rules">
                     <li data-a11y="rule-manipulate">You reach the insight by <b>manipulating it</b> — strip the words and the point still lands.</li>
-                    <li><b>Every value is a handle</b>, whether it's a bar, a node, or a number in the prose.</li>
-                    <li>It <b>reasons</b> — backward to the cause, forward to what happens next — and the words change as you do.</li>
+                    <li data-a11y="rule-handle"><b>Every value is a handle</b>, whether it's a bar, a node, or a number in the prose.</li>
+                    <li data-a11y="rule-reasons">It <b>reasons</b> — backward to the cause, forward to what happens next — and the words change as you do.</li>
                     <li data-a11y="rule-honest">It stays <b>honest</b>: no fabricated data, no axes that clip, and <b>no flashing</b> (motion is steady and respects reduced-motion).</li>
-                    <li>The same idea handles <b>simple and complex</b> data alike.</li>
-                    <li><b>Guided discovery:</b> a question &rarr; a first-move nudge &rarr; a payoff that finds you &rarr; an insight you can't miss.</li>
+                    <li data-a11y="rule-simple-complex">The same idea handles <b>simple and complex</b> data alike.</li>
+                    <li data-a11y="rule-guided"><b>Guided discovery:</b> a question &rarr; a first-move nudge &rarr; a payoff that finds you &rarr; an insight you can't miss.</li>
                 </ul>
-                <p class="exp-note">Read another way, these are a <strong>reference an LLM can learn from</strong> — the patterns, the rules and the kill-criteria that turn raw data into something you can think with. Pick a <a href="#components">component</a>, compose a <a href="#dashboards">dashboard</a>, or write an <a href="#essays">essay</a>: the library teaches the move.</p>
+                <p class="exp-note" data-a11y="principles-note">Read another way, these are a <strong>reference an LLM can learn from</strong> — the patterns, the rules and the kill-criteria that turn raw data into something you can think with. Pick a <a href="#components">component</a>, compose a <a href="#dashboards">dashboard</a>, or write an <a href="#essays">essay</a>: the library teaches the move.</p>
             </section>
         </div>
     </main>

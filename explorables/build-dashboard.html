@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, viewport-fit=cover" />
+    <title>Build a dashboard — Monkey Got Thumbs</title>
+    <link rel="canonical" href="https://monkey-got-thumbs.com/explorables/build-dashboard.html">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#0E0B1A" />
+    <meta name="color-scheme" content="dark">
+    <link rel="stylesheet" href="/assets/css/tokens.css">
+    <link rel="stylesheet" href="/assets/css/base.css">
+    <link rel="stylesheet" href="/assets/css/layout.css">
+    <meta name="description" content="How to build a coordinated explorable dashboard — many components wired into one model — with a copy-paste prompt for an AI agent." />
+    <meta name="author" content="Monkey Got Thumbs" />
+    <meta property="og:title" content="Build a dashboard — Monkey Got Thumbs">
+    <meta property="og:description" content="How to build a coordinated explorable dashboard — many components wired into one model — with a copy-paste prompt for an AI agent.">
+    <meta property="og:url" content="https://monkey-got-thumbs.com/explorables/build-dashboard.html">
+    <meta property="og:image" content="https://monkey-got-thumbs.com/social-card.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:site_name" content="Monkey Got Thumbs">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:type" content="article">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+    <style>
+        .recipe { max-width: 50rem; margin-inline: auto; }
+        .recipe-head { max-width: 50rem; margin: 0 0 var(--space-xl); }
+        .recipe-head h1 { margin: var(--space-sm) 0; }
+        .recipe-head .lede { margin-inline: 0; text-align: start; }
+        .recipe-section { margin: 0 0 var(--space-3xl); }
+        .recipe-section > h2 { font-family: var(--font-display); color: var(--color-accent); letter-spacing: .02em; margin: 0 0 var(--space-md); }
+        .recipe-steps { padding-inline-start: 1.4rem; display: grid; gap: 0.6rem; }
+        .recipe-steps li { color: var(--color-fg-secondary); line-height: 1.6; }
+        .recipe-steps li b { color: var(--color-fg); }
+        .kill-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.5rem; }
+        .kill-list li { color: var(--color-fg-secondary); line-height: 1.55; padding-inline-start: 1.4rem; position: relative; }
+        .kill-list li::before { content: '✕'; position: absolute; inset-inline-start: 0; color: var(--color-accent); font-weight: 700; }
+        .wild-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.5rem; }
+        .wild-list a { color: var(--color-accent); text-decoration: none; font-weight: var(--font-weight-semibold); }
+        .wild-list a:hover, .wild-list a:focus-visible { text-decoration: underline; }
+        .prompt { white-space: pre-wrap; font: 13.5px/1.6 var(--font-mono); background: var(--color-bg-secondary); border: 1px solid var(--color-border); border-radius: 12px; padding: 16px 18px; overflow-x: auto; }
+        .copy-btn { font: inherit; font-size: 13px; cursor: pointer; border: 1px solid var(--color-border); background: transparent; color: var(--color-accent); border-radius: 8px; padding: 5px 12px; margin-bottom: 8px; }
+    </style>
+    <link rel="stylesheet" href="/assets/css/accessibility.css">
+    <script src="/assets/js/a11y-init.js"></script>
+    <script src="/assets/js/accessibility.js" defer></script>
+    <link rel="stylesheet" href="/assets/css/journey.css">
+    <script src="/assets/js/journey.js" defer></script>
+    <script src="/assets/js/copy.js" defer></script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <mgt-header></mgt-header>
+    <main id="main-content">
+        <div class="recipe section-pad">
+            <nav aria-label="Breadcrumb">
+                <ul class="breadcrumbs">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/explorables/">Explorables</a></li>
+                    <li><span aria-current="page">Build a dashboard</span></li>
+                </ul>
+            </nav>
+
+            <header class="recipe-head">
+                <span class="eyebrow">explorable library · recipe</span>
+                <h1 data-a11y="title">Build a dashboard</h1>
+                <p class="lede" data-a11y="lede">A <strong>dashboard</strong> is many components wired into <em>one</em> coordinated model: a single hero lever drives every panel at once. Here is the recipe, and a prompt you can hand straight to an AI.</p>
+            </header>
+
+            <section class="recipe-section">
+                <h2>Anatomy</h2>
+                <ol class="recipe-steps">
+                    <li data-a11y="step-spine"><b>Find the spine.</b> Pick a single hero lever — a rate, a budget, a shock — that propagates through everything else.</li>
+                    <li data-a11y="step-compute"><b>Write one compute(state).</b> Derive all outputs from the levers, so every panel reads from it and dragging any handle re-runs compute() and updates every panel at once.</li>
+                    <li data-a11y="step-panel"><b>Make each panel a component.</b> Every one obeys the component rules — marks-are-handles, reasons in prose, auto-scale, no flash, honest.</li>
+                    <li data-a11y="step-cite"><b>Cite your source prominently.</b> For any data-derived dashboard, say it was built from {X} and link it so the reader can open it and compare.</li>
+                    <li data-a11y="step-fact"><b>Separate fact from model.</b> Treat exact, official numbers precisely; label directional or illustrative relationships as such; never fabricate an unknowable — let the reader set it, or drop the claim.</li>
+                    <li data-a11y="step-tight"><b>Keep it tight.</b> A hero panel plus three to six supporting panels is plenty; the win is that one gesture moves the whole system.</li>
+                </ol>
+            </section>
+
+            <section class="recipe-section">
+                <h2>The build prompt</h2>
+                <p data-a11y="prompt-intro">Copy this into your agent:</p>
+                <button class="copy-btn" data-target="prompt-dashboard">Copy</button>
+                <pre id="prompt-dashboard" class="prompt">You are building a coordinated explorable DASHBOARD from {SOURCE / DATA}.
+
+A dashboard is many components wired into ONE model:
+1. Find the spine — a single HERO lever (a rate, a budget, a shock) that propagates through everything.
+2. Write one compute(state) that derives ALL outputs from the levers (the coupling). Every panel reads from it; dragging ANY handle re-runs compute() and updates EVERY panel at once.
+3. Each panel is a component — obey all the component rules: marks-are-handles, reasons-in-prose, auto-scale, no-flash, honest.
+4. Cite your source prominently (built from {X}; open it to compare) for any data-derived dashboard.
+5. Honesty is the hard part: separate exact/official numbers (model them precisely) from directional/illustrative relationships (label them clearly). Never fabricate an unknowable — let the reader SET it (e.g. a current price), or drop the claim.
+6. A hero panel + 3-6 supporting panels is plenty. The win is that one gesture moves the whole system.
+
+Kill it if: the panels do not actually couple (it is just charts side by side); a number is invented; or the line between fact and model is blurred.</pre>
+            </section>
+
+            <section class="recipe-section">
+                <h2>Kill-criteria</h2>
+                <ul class="kill-list">
+                    <li data-a11y="kill-couple">Panels do not couple — it is just charts side by side.</li>
+                    <li data-a11y="kill-invented">A number is invented to fill a panel.</li>
+                    <li data-a11y="kill-blurred">The line between official fact and directional model is blurred.</li>
+                    <li data-a11y="kill-gesture">A hero gesture moves one panel but not the system.</li>
+                </ul>
+            </section>
+
+            <section class="recipe-section">
+                <h2>See it in the wild</h2>
+                <ul class="wild-list">
+                    <li><a href="/explorables/fed-reserve-dashboard.html">The Federal Reserve →</a></li>
+                    <li><a href="/explorables/national-debt-dashboard.html">The US national debt →</a></li>
+                    <li><a href="/explorables/nz-economy-dashboard.html">The NZ economy →</a></li>
+                </ul>
+            </section>
+        </div>
+    </main>
+    <mgt-footer></mgt-footer>
+    <script src="/assets/js/tracking.js" defer></script>
+    <script type="module" src="/assets/js/app.js"></script>
+    <script type="module" src="/components/core/mgt-header.js"></script>
+    <script type="module" src="/components/core/mgt-footer.js"></script>
+</body>
+</html>

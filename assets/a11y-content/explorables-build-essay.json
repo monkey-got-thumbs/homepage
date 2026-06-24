@@ -1,0 +1,93 @@
+{
+"lede": [
+"An <strong>essay</strong> is a long piece of writing where the words themselves come alive. Change a number, or change your whole point of view, and the writing thinks it all through again, right in front of you. Here is how to make one, plus a prompt you can hand straight to an AI.",
+"An <strong>essay</strong> is long-form writing where the prose itself is interactive: change a number, or your whole point of view, and the argument thinks itself through again around you. Here is the recipe, plus a prompt you can hand straight to an AI.",
+"An <strong>essay</strong> is long-form writing where the prose itself is interactive: change a number, or your whole point of view, and the argument re-reasons around you. Here is the recipe, and a prompt you can hand straight to an AI.",
+"An <strong>essay</strong>: long-form prose that is itself interactive — change a number or your point of view and the argument re-reasons around you. The recipe follows, with a prompt for an AI.",
+"<strong>Essay</strong>: interactive long-form prose; change a value or stance and the argument re-reasons. Recipe and AI prompt below."
+],
+"anatomy-model": [
+"Put <strong>one shared model</strong> underneath the whole piece — a single <code>compute()</code> that every part of the essay reads from. Every number the reader can drag, and every chart, feeds into it. So when they change just one thing, the writing, the charts and the conclusions all think themselves through again at the same time. It might even reframe the whole essay — and that is exactly the point.",
+"Put <strong>one coupled model</strong> under the whole piece — a <code>compute()</code> the entire essay reads from, fed by every draggable number and every chart handle. Change one thing and the prose, the charts and the conclusions all re-reason at once, possibly reframing the entire essay — which is the point.",
+"Put <strong>one coupled model</strong> under the whole piece — a <code>compute()</code> the entire essay reads from, fed by every scrubbable number and every chart handle, so changing one re-reasons the prose, the charts and the conclusions at once, possibly reframing the entire essay — which is the point.",
+"Put <strong>one coupled model</strong> beneath the piece — a <code>compute()</code> the whole essay reads from, fed by every scrubbable number and chart handle, so one change re-reasons prose, charts and conclusions at once, possibly reframing the essay — the point.",
+"<strong>One coupled model</strong> under it all: a <code>compute()</code> every part reads, fed by all scrubbables and chart handles. One change re-reasons everything, possibly reframing the essay — the point."
+],
+"anatomy-prose": [
+"Make the <strong>writing react</strong>. When a number passes a certain point, the sentences themselves rewrite — looking back to what caused it and forward to what it leads to. The words keep changing as the reader drags.",
+"Make the <strong>prose reactive</strong>: sentences rewrite at thresholds, reasoning back to the cause and forward to the consequence, with the words changing as the reader drags.",
+"Make the <strong>prose reactive</strong>: sentences rewrite at thresholds, reasoning backward to the cause and forward to the consequence, with the words changing as the reader drags.",
+"<strong>Reactive prose</strong>: sentences rewrite at thresholds, reasoning back to cause and forward to consequence as the reader drags.",
+"<strong>Reactive prose</strong>: sentences rewrite at thresholds — cause backward, consequence forward — live as the reader drags."
+],
+"anatomy-callouts": [
+"Keep the callouts <strong>always live</strong>. Work out their numbers afresh on every single change. Never let them freeze at whatever value they happened to show the first time they popped up.",
+"Keep callouts <strong>permanently live</strong>: recompute their numbers on every change, and never freeze them at the values they had when first triggered.",
+"Keep callouts <strong>permanently live</strong>: recompute their numbers on every change and never freeze them at the values they had when first triggered.",
+"Keep callouts <strong>permanently live</strong>: recompute on every change; never freeze them at trigger-time values.",
+"Callouts <strong>permanently live</strong>: recompute every change; never freeze at trigger-time."
+],
+"anatomy-learning": [
+"Build a <strong>learning layer</strong> — this matters most for short or guided pieces. Open with a question. Gently nudge the reader's first move. Then give them a payoff that finds them: a callout that pops up and names the insight for them. And make that insight a place the reader reaches for, only to discover they cannot quite have it yet.",
+"Build a <strong>learning layer</strong> (especially for short or guided pieces): open with a question, nudge the first move, give a payoff that finds the reader (a callout that appears and names the insight), and make the insight a place the reader reaches for and discovers they cannot have.",
+"Build a <strong>learning layer</strong> (especially for short or guided pieces): open with a question, nudge the first move, give a payoff that finds the reader (a callout that appears and names the insight), and make the insight a place the reader reaches for and discovers they cannot have.",
+"Build a <strong>learning layer</strong> (short/guided pieces especially): open with a question, nudge the first move, give a payoff that finds the reader (a callout naming the insight), and make the insight a place they reach for but cannot have.",
+"<strong>Learning layer</strong> (short/guided): question; nudge first move; payoff that finds the reader (callout names the insight); insight as a place reached for but withheld."
+],
+"anatomy-decompose": [
+"Never just state a floor or a threshold as a given. <strong>Break it down</strong> instead, so the reader can see exactly why it is there.",
+"Never assert a floor or threshold — <strong>break it down</strong> so the reader sees exactly why it exists.",
+"Never assert a floor or threshold — <strong>decompose it</strong> so the reader sees exactly why it exists.",
+"Never assert a floor or threshold — <strong>decompose it</strong> so the reader sees why it exists.",
+"Don't assert floors or thresholds — <strong>decompose</strong> so the reader sees why."
+],
+"anatomy-lens": [
+"You can also add a <strong>point-of-view lens</strong> if you like — worker, employer, treasury, society. Switching it reframes the whole essay and reorders what matters most.",
+"Optionally add a <strong>perspective lens</strong> (worker, employer, treasury, society) that reframes the whole essay and reorders what matters.",
+"Optionally add a <strong>perspective lens</strong> (worker, employer, treasury, society) that reframes the whole essay and reorders what matters.",
+"Optionally add a <strong>perspective lens</strong> (worker, employer, treasury, society) that reframes the essay and reorders what matters.",
+"Optional <strong>perspective lens</strong> (worker / employer / treasury / society): reframes the essay, reorders priorities."
+],
+"anatomy-honest": [
+"Stay <strong>honest</strong>. Make it clear which parts are the model's guesses and which are plain fact. Mark any forecast that is just for illustration. Never make numbers up. And keep the motion gentle and steady — nothing flashing, and respect anyone who has asked for reduced motion.",
+"Stay <strong>honest</strong>: label model versus fact clearly, mark illustrative forecast tails, never fabricate, and keep motion steady — no flashing, and reduced-motion gated.",
+"Stay <strong>honest</strong>: label model versus fact clearly, mark illustrative forecast tails, never fabricate, and keep motion steady with no flashing and reduced-motion gated.",
+"Stay <strong>honest</strong>: label model versus fact, mark illustrative forecast tails, never fabricate; motion steady, no flashing, reduced-motion gated.",
+"<strong>Honest</strong>: label model vs fact, mark illustrative tails, never fabricate; steady motion, no flashing, reduced-motion gated."
+],
+"copy-line": [
+"Copy this and paste it into your AI agent:",
+"Copy this into your agent:",
+"Copy this into your agent:",
+"Copy this into your agent:",
+"Paste into your agent:"
+],
+"kill-unclear": [
+"You can fiddle with it, but it is not clear what you are meant to learn.",
+"You can twiddle, but it is not obvious what you would learn.",
+"You can twiddle but it is not obvious what you would learn.",
+"You can twiddle but it is not obvious what you would learn.",
+"Twiddling reveals no obvious lesson."
+],
+"kill-asserted": [
+"An important number is simply stated rather than explained (break it down instead).",
+"A load-bearing number is asserted rather than explained (decompose it).",
+"A load-bearing number is asserted instead of explained (decompose it).",
+"A load-bearing number is asserted, not explained (decompose it).",
+"A load-bearing number is asserted, not decomposed."
+],
+"kill-stale": [
+"A callout shows old numbers instead of working them out fresh as things change.",
+"A callout shows stale numbers instead of recomputing live.",
+"A callout shows stale numbers instead of recomputing live.",
+"A callout shows stale numbers instead of recomputing live.",
+"A callout shows stale numbers, not live ones."
+],
+"kill-fabricated": [
+"Any number has been made up.",
+"Any value is made up.",
+"Any value is fabricated.",
+"Any value is fabricated.",
+"Any value is fabricated."
+]
+}

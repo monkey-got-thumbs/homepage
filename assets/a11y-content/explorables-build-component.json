@@ -1,0 +1,142 @@
+{
+  "hero-h1": [
+    "Build a little piece",
+    "Build a component",
+    "Build a component",
+    "Build a component",
+    "Build a component"
+  ],
+  "hero-lede": [
+    "A <strong>component</strong> is the tiniest explorable there is: just one idea, and one thing you can play with. Once you can make these, the bigger things — whole dashboards and essays — are really just lots of components put together. So here is how to make one, step by step, and a ready-made prompt you can hand straight to an AI to do it for you.",
+    "A <strong>component</strong> is the smallest explorable: one idea, one thing to play with. Get good at these, and dashboards and essays are just lots of them joined up. Here's the recipe, plus a prompt you can hand straight to an AI.",
+    "A <strong>component</strong> is the smallest explorable: one idea, one interaction. Master these and dashboards and essays are just compositions of them. Here is the recipe, and a prompt you can hand straight to an AI.",
+    "A <strong>component</strong> is the smallest explorable: one idea, one interaction. Master these and dashboards and essays are mere compositions of them. Here's the recipe, plus a prompt to hand an AI.",
+    "A <strong>component</strong>: smallest explorable — one idea, one interaction. Dashboards and essays are compositions of these. Recipe and AI-ready prompt below."
+  ],
+  "anatomy-representation": [
+    "Let the shape of your data choose how it looks. Comparing things turns into bars. Parts of a whole turn into a stack. A change over time turns into a rising line. A spread of values turns into a curve. A link between two things turns into a scatter with a line through it. A web of connections turns into a graph. A trade-off turns into a Pareto scatter. And something whose make-up changes over time turns into a stacked area you can paint.",
+    "Let the data's shape pick the picture. Comparison becomes bars, parts-of-a-whole becomes a stack, a trend becomes a rising line, a spread becomes a curve, a link becomes a scatter with a fit line, a web becomes a graph, a trade-off becomes a Pareto scatter, and make-up-over-time becomes a stacked area you can paint.",
+    "Pick the representation from the data's shape — comparison becomes bars, part-to-whole becomes a stack, a trend becomes a cumulative line, a distribution becomes a curve, a relationship becomes a scatter with a fit, a network becomes a graph, a trade-off becomes a Pareto scatter, and composition-over-time becomes a stacked area you can paint.",
+    "Derive the representation from the data's shape: comparison → bars, part-to-whole → stack, trend → cumulative line, distribution → curve, relationship → scatter with fit, network → graph, trade-off → Pareto scatter, composition-over-time → paintable stacked area.",
+    "Representation follows data shape: comparison→bars, part-to-whole→stack, trend→cumulative line, distribution→curve, relationship→scatter+fit, network→graph, trade-off→Pareto, composition-over-time→paintable stacked area."
+  ],
+  "anatomy-handles": [
+    "Make the marks on the chart the things you grab. The reader drags the bar, the dot, the point or the curve itself — not some hidden handle off to the side. And every number written into the sentences can be grabbed and dragged too.",
+    "Make the marks themselves the handles: the reader drags the bar, node, point or curve directly, not a hidden grip — and every number in the prose is draggable too.",
+    "Make the marks themselves the handles, so the reader drags the bar, node, point or curve directly rather than a hidden grip, and every number written in the prose is scrubbable too.",
+    "The marks are the handles: the reader drags the bar, node, point or curve directly, never a hidden grip — and every number in the prose is scrubbable.",
+    "Marks are handles — drag bar/node/point/curve directly, never a hidden grip; every in-prose number is scrubbable."
+  ],
+  "anatomy-verb": [
+    "Match what the reader can do to the kind of data. If the data is a model or a guess about the future, let them change the inputs. But if the data is a real record of what already happened, only let them look at it in new ways — pivot it, brush it, normalise it, replay a what-if — and never let them change a real fact.",
+    "Match the verb to the data. For model or forecast data, let the reader edit the inputs. For recorded or historical data, give only analytical verbs — pivot, brush, normalise, counterfactual-replay — and never let them edit a fact.",
+    "Match the verb to the data: for model data let the reader edit the inputs, but for recorded or historical data give only analytical verbs — pivot, brush, normalise, counterfactual-replay — and never let them edit a fact.",
+    "Match the verb to the data: model data → edit the inputs; recorded or historical data → analytical verbs only (pivot, brush, normalise, counterfactual-replay), never editing a fact.",
+    "Verb matches data: model→edit inputs; historical→analytical only (pivot, brush, normalise, counterfactual-replay); never edit a fact."
+  ],
+  "anatomy-reason": [
+    "Make it think out loud. A caption underneath works itself out live — running backwards to say what caused this, and forwards to say what it leads to — and the actual words change as the reader drags.",
+    "Make it reason: a caption recomputes live, running back to the cause and forward to the consequence, the words changing as the reader drags.",
+    "Make it reason: a caption recomputes live, running backward to the cause and forward to the consequence, with the words changing as the reader drags.",
+    "Make it reason: a caption recomputes live — backward to the cause, forward to the consequence — words changing as the reader drags.",
+    "It reasons: a live caption, backward to cause and forward to consequence, words changing on drag."
+  ],
+  "anatomy-autoscale": [
+    "Make every axis stretch on its own to fit whatever the reader drags, so nothing ever gets cut off the edge. Never lock an axis to a fixed size.",
+    "Auto-scale every axis to fit the dragged values so nothing gets cut off — never pin a fixed axis.",
+    "Auto-scale every axis to fit the dragged values so nothing clips, never pinning a fixed axis.",
+    "Auto-scale every axis to the dragged values so nothing clips; never pin a fixed axis.",
+    "Auto-scale axes to dragged values — never pin a fixed axis that clips."
+  ],
+  "anatomy-motion": [
+    "Don't use any flashing, and don't make things pulse or fade in and out — that can cause headaches and even seizures. Use only gentle, steady movement that goes one way, and turn it off for anyone who has asked their device to reduce motion.",
+    "No flashing or opacity-pulse — it can cause headaches and seizures. Use only steady, one-way motion, and switch it off behind prefers-reduced-motion.",
+    "Use no flashing or opacity-pulse — that risks headaches and seizures — only steady directional motion, gated behind prefers-reduced-motion.",
+    "No flashing or opacity-pulse (it risks headaches and seizures) — only steady directional motion, gated behind prefers-reduced-motion.",
+    "No flashing/opacity-pulse (seizure risk); steady directional motion only, gated behind prefers-reduced-motion."
+  ],
+  "anatomy-honest": [
+    "Always be honest. Never make up numbers just to fill a chart — work them out, ask for them, or use a simpler picture instead. And always show clearly which parts are real and which parts are just a guess or a model.",
+    "Stay honest: never fabricate data to fill a chart — derive it, ask for it, or drop to a humbler picture — and show clearly what's real versus modelled.",
+    "Stay honest: never fabricate data to fill a chart — derive it, elicit it, or drop to a humbler representation — and show clearly what is real versus modelled.",
+    "Stay honest: never fabricate data to fill a chart — derive it, elicit it, or drop to a humbler representation — and show clearly real versus modelled.",
+    "Honest: never fabricate to fill a chart — derive, elicit, or drop to a humbler form; show real vs modelled."
+  ],
+  "anatomy-shipping": [
+    "Deliver it as one file that stands on its own. Work out where the pointer is on screen using svg.createSVGPoint() and getScreenCTM().inverse(), use setPointerCapture so dragging stays smooth, and set touch-action:none so it works on a touchscreen.",
+    "Ship one self-contained file. Map pointer coordinates with svg.createSVGPoint() and getScreenCTM().inverse(), use setPointerCapture, and set touch-action:none.",
+    "Ship a self-contained single file, mapping pointer coordinates with svg.createSVGPoint() and getScreenCTM().inverse(), using setPointerCapture, and setting touch-action:none.",
+    "Ship a self-contained single file: map pointer coords with svg.createSVGPoint() and getScreenCTM().inverse(), use setPointerCapture, set touch-action:none.",
+    "Self-contained single file: svg.createSVGPoint() + getScreenCTM().inverse() for coords, setPointerCapture, touch-action:none."
+  ],
+  "prompt-intro": [
+    "Copy this and paste it into your AI agent:",
+    "Copy this into your agent:",
+    "Copy this into your agent:",
+    "Paste this into your agent:",
+    "Paste into your agent:"
+  ],
+  "kill-caption": [
+    "The point only comes through if you read the caption. It has to come through just from moving things around.",
+    "The insight only lands if you read the caption — it must land from manipulation alone.",
+    "The insight only lands if you read the caption — it must land from manipulation alone.",
+    "The insight lands only via the caption — it must land from manipulation alone.",
+    "Insight lands only via caption, not manipulation."
+  ],
+  "kill-fabricated": [
+    "A number has been made up.",
+    "Any number is made up.",
+    "Any number is fabricated.",
+    "Any number is fabricated.",
+    "Any fabricated number."
+  ],
+  "kill-clip": [
+    "An axis cuts things off the edge instead of stretching to fit.",
+    "An axis cuts things off instead of auto-scaling.",
+    "An axis clips instead of auto-scaling.",
+    "An axis clips instead of auto-scaling.",
+    "An axis clips, not auto-scales."
+  ],
+  "kill-flash": [
+    "Anything flashes, or pulses in and out.",
+    "Anything flashes or pulses.",
+    "Anything flashes or pulses.",
+    "Anything flashes or pulses.",
+    "Anything flashes or pulses."
+  ],
+  "kill-verb": [
+    "What the reader can do works against the data — for example, letting them change something that really happened.",
+    "The verb fights the data — e.g. editing a historical fact.",
+    "The verb fights the data (e.g. edit a historical fact).",
+    "The verb fights the data (e.g. editing a historical fact).",
+    "Verb fights the data (e.g. editing a fact)."
+  ],
+  "example-document": [
+    "<a href=\"/explorables/document.html\">The living budget</a> — a document",
+    "<a href=\"/explorables/document.html\">The living budget</a> — document",
+    "<a href=\"/explorables/document.html\">The living budget</a> — document",
+    "<a href=\"/explorables/document.html\">The living budget</a> — document",
+    "<a href=\"/explorables/document.html\">The living budget</a> — document"
+  ],
+  "example-network": [
+    "<a href=\"/explorables/network.html\">The critical path</a> — a network",
+    "<a href=\"/explorables/network.html\">The critical path</a> — network",
+    "<a href=\"/explorables/network.html\">The critical path</a> — network",
+    "<a href=\"/explorables/network.html\">The critical path</a> — network",
+    "<a href=\"/explorables/network.html\">The critical path</a> — network"
+  ],
+  "example-uncertainty": [
+    "<a href=\"/explorables/uncertainty.html\">How long, really?</a> — uncertainty",
+    "<a href=\"/explorables/uncertainty.html\">How long, really?</a> — uncertainty",
+    "<a href=\"/explorables/uncertainty.html\">How long, really?</a> — uncertainty",
+    "<a href=\"/explorables/uncertainty.html\">How long, really?</a> — uncertainty",
+    "<a href=\"/explorables/uncertainty.html\">How long, really?</a> — uncertainty"
+  ],
+  "example-components": [
+    "<a href=\"/explorables/components.html\">Fifteen more, in miniature</a>",
+    "<a href=\"/explorables/components.html\">Fifteen more, in miniature</a>",
+    "<a href=\"/explorables/components.html\">Fifteen more, in miniature</a>",
+    "<a href=\"/explorables/components.html\">Fifteen more, in miniature</a>",
+    "<a href=\"/explorables/components.html\">Fifteen more, in miniature</a>"
+  ]
+}

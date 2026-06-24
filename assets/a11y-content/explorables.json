@@ -7,25 +7,32 @@
     "Explorables"
   ],
   "hero-lede": [
-    "Most charts just sit there for you to look <em>at</em>. These are different. You play <em>with</em> them. Every single number — the ones on the chart <em>and</em> the ones in the writing — is something you can grab and move. When you drag it, the whole thing works itself out again, right in front of your eyes. None of the words are stuck. You don't get the idea by reading it. You get it by having a go.",
+    "Most charts you just look <em>at</em>. These are different — you play <em>with</em> them. Every single number — the ones on the chart <em>and</em> the ones in the writing — is something you can grab and move. When you drag it, the whole thing works itself out again, right in front of your eyes. None of the words are stuck. You don't get the idea by reading it. You get it by having a go.",
     "Most charts you just look <em>at</em>. These you think <em>with</em>. Every number — on the chart <em>and</em> in the sentence — is a handle you can drag, and the whole thing re-reasons in front of you. Nothing here is fixed; you get it by playing, not by reading.",
     "Most charts you look <em>at</em>. An explorable you think <em>with</em>. Every number — on the chart <em>and</em> in the sentence — is a handle: drag it, and the whole thing re-reasons in front of you. Nothing here is fixed text; the understanding is something you reach by playing, not by reading.",
     "You look <em>at</em> most charts; you think <em>with</em> these. Every number, on the chart <em>and</em> in the prose, is a draggable handle: move it and the whole thing re-reasons live. Understanding comes from playing, not reading.",
     "Think <em>with</em>, not <em>at</em>. Every number is a draggable handle; drag it, the whole thing re-reasons. Understanding by play, not reading."
   ],
-  "rule-manipulate": [
-    "You find the idea by <b>moving things around</b> yourself. Even if you took all the words away, the point would still come through.",
-    "You reach the idea by <b>manipulating it</b> — take the words away and the point still comes through.",
-    "You reach the insight by <b>manipulating it</b> — strip the words and the point still lands.",
-    "You reach the insight by <b>manipulating it</b>; strip the words and the point still lands.",
-    "Insight via <b>manipulation</b>; works wordless."
+  "hero-lede2": [
+    "It's a small <strong>library</strong> in three parts — <a href=\"#components\">Components</a>, <a href=\"#dashboards\">Dashboards</a> and <a href=\"#essays\">Essays</a>. Each one is a working example <em>and</em> a thing you can learn the pattern from: a way of doing it that you — or an AI building the next one — can pick up and copy.",
+    "It's a small <strong>library</strong> in three parts — <a href=\"#components\">Components</a>, <a href=\"#dashboards\">Dashboards</a> and <a href=\"#essays\">Essays</a>. Each is a working example <em>and</em> a pattern to learn: a vocabulary you — or an AI building the next one — can pick up.",
+    "It's a small <strong>library</strong> in three parts — <a href=\"#components\">Components</a>, <a href=\"#dashboards\">Dashboards</a> and <a href=\"#essays\">Essays</a>. Each is a working example <em>and</em> a teachable pattern: a vocabulary you — or an AI building the next one — can learn from.",
+    "A small <strong>library</strong> in three parts — <a href=\"#components\">Components</a>, <a href=\"#dashboards\">Dashboards</a> and <a href=\"#essays\">Essays</a>. Each is a working example <em>and</em> a teachable pattern: a vocabulary you — or an AI building the next — can learn from.",
+    "A three-part <strong>library</strong> — <a href=\"#components\">Components</a>, <a href=\"#dashboards\">Dashboards</a>, <a href=\"#essays\">Essays</a>: each a working example <em>and</em> a teachable pattern for you or an AI."
   ],
-  "rule-honest": [
-    "It stays <b>honest</b> with you. It never makes up data, the lines on the chart never get cut off to fool you, and there's <b>no flashing</b> — anything that moves moves gently, and it stops moving if you've asked your device to slow motion down.",
-    "It stays <b>honest</b>: no made-up data, no axes that cut things off, and <b>no flashing</b> — motion is gentle and respects reduced-motion.",
-    "It stays <b>honest</b>: no fabricated data, no axes that clip, and <b>no flashing</b> (motion is steady and respects reduced-motion).",
-    "Stays <b>honest</b>: no fabricated data, no clipped axes, <b>no flashing</b> — steady motion that respects reduced-motion.",
-    "<b>Honest</b>: no fabricated data, unclipped axes, <b>no flashing</b>; reduced-motion safe."
+  "components-lede": [
+    "The building blocks — one idea, one thing to play with. Start here. There's a document that reacts as you change it, a network of things that depend on each other, a curve for how unsure you are, a frontier for weighing one thing against another, and a budget over time — plus a box of fifteen more. This is the set of pieces that every dashboard and essay is put together from.",
+    "The building blocks — one idea, one interaction. Reach for these first: a reactive document, a dependency network, an uncertainty curve, a trade-off frontier, a budget trend — plus a catalogue of fifteen more. This is the vocabulary every dashboard and essay is built from.",
+    "The building blocks — one idea, one interaction. Reach for these first: a reactive document, a dependency network, an uncertainty curve, a trade-off frontier, a budget trend — plus a catalogue of fifteen more. This is the vocabulary every dashboard and essay is assembled from.",
+    "The building blocks — one idea, one interaction. Reach for these first: a reactive document, dependency network, uncertainty curve, trade-off frontier, budget trend — plus a catalogue of fifteen more. The vocabulary every dashboard and essay is assembled from.",
+    "Building blocks — one idea each: reactive document, dependency network, uncertainty curve, trade-off frontier, budget trend, plus fifteen more. The vocabulary dashboards and essays assemble from."
+  ],
+  "build-component": [
+    "<a class=\"card-link\" href=\"/explorables/build-component.html\">How to build one of these →</a>",
+    "<a class=\"card-link\" href=\"/explorables/build-component.html\">How to build a component →</a>",
+    "<a class=\"card-link\" href=\"/explorables/build-component.html\">How to build a component →</a>",
+    "<a class=\"card-link\" href=\"/explorables/build-component.html\">How to build a component →</a>",
+    "<a class=\"card-link\" href=\"/explorables/build-component.html\">Build a component →</a>"
   ],
   "card-budget": [
     "Change the numbers right inside the sentence and watch it sort itself out again. Lock in a goal you care about, and let your income shift around to keep everything adding up.",
@@ -48,6 +55,20 @@
     "Shape an estimate's low / likely / high; see your real chance of beating a deadline — the area past the line is the risk.",
     "Set low / likely / high; read your odds of beating the deadline. Area past the line = risk."
   ],
+  "card-tradeoff": [
+    "Five different ways you could deliver, each plotted by how much it costs and how long it takes. Drag one and watch it cross the line of the best real choices — or end up beaten on both cost and time.",
+    "Five ways to deliver, plotted on cost versus time. Drag one and watch it cross the frontier of the best real choices — or get beaten on both.",
+    "Five ways to deliver, plotted on cost vs time. Drag one and watch it cross the frontier of real choices — or get beaten on both.",
+    "Five ways to deliver, plotted on cost vs time. Drag one: it crosses the frontier of real choices, or gets beaten on both.",
+    "Five delivery options on cost vs time. Drag one across the frontier — or get beaten on both."
+  ],
+  "card-trend": [
+    "The line of what you've spent, rising up toward the line of your budget. Drag the months along, or drag the budget itself, and see exactly the moment you cross over it.",
+    "The spend curve climbing toward the budget line — drag the months, or the budget itself, and see exactly when you cross it.",
+    "The spend curve climbing toward the budget line — drag the months, or the budget itself, and see exactly when you cross it.",
+    "The spend curve climbing toward the budget line — drag the months, or the budget, and see exactly when you cross it.",
+    "Spend curve vs budget line — drag months or budget; see exactly when you cross."
+  ],
   "card-catalogue": [
     "A box of smaller ideas that keeps growing — things like waterfalls, maps of risk &amp; what-matters-most, sankeys, calendars, sensitivity, and capacity grids. Each one is a quick little working demo you can grab and drag.",
     "A growing kit of smaller ideas — waterfalls, risk &amp; priority maps, sankeys, calendars, sensitivity, capacity grids — each a quick live demo to drag.",
@@ -55,19 +76,68 @@
     "A growing kit of component ideas — waterfalls, risk &amp; priority maps, sankeys, calendars, sensitivity, capacity grids — each a quick draggable demo.",
     "Growing component kit: waterfalls, risk &amp; priority maps, sankeys, calendars, sensitivity, capacity grids — each a draggable demo."
   ],
-  "guided-h2": [
-    "Guided ones — find out the <em>why</em>",
-    "Guided — find the <em>why</em>",
-    "Guided — discover the <em>why</em>",
-    "Guided — discover the <em>why</em>",
-    "Guided — the <em>why</em>"
+  "dashboards-lede": [
+    "Lots of components wired up into one model that all moves together: pull one main lever and every panel changes at once. Each one is built from data the public can see and from video transcripts, and tells you where its information came from so you can go and check it.",
+    "Many components wired into one model that moves together: one hero lever drives every panel at once. Each is built from public data and video transcripts, and cites its source so you can check it.",
+    "Many components wired into one coordinated model: a single hero lever drives every panel at once. Each is built from public data and video transcripts, and cites its source so you can check it.",
+    "Many components wired into one coordinated model: a single hero lever drives every panel at once. Each is built from public data and video transcripts, and cites its source.",
+    "Components wired into one coordinated model: one hero lever drives every panel. Built from public data and video transcripts; each cites its source."
   ],
-  "guided-lede": [
-    "These don't just hand you the controls to fiddle with. Each one asks you a question, gives you a gentle nudge for your first move, and then the answer comes to you on its own. The whole point is a spot you keep reaching for — until you realise you simply can't have it.",
-    "These don't just let you fiddle — each one asks a question, nudges your first move, and the insight finds you. The point is a place you reach for and find you can't have.",
-    "These don't just let you twiddle — each poses a question, nudges your first move, and the insight finds you. The point is a place you reach for and discover you can't have.",
-    "These don't just let you twiddle — each poses a question, nudges your first move, and the insight finds you. The point is a place you reach for and can't have.",
-    "Each poses a question, nudges your move, lets the insight find you — toward a point you reach for but can't have."
+  "build-dashboard": [
+    "<a class=\"card-link\" href=\"/explorables/build-dashboard.html\">How to build one of these →</a>",
+    "<a class=\"card-link\" href=\"/explorables/build-dashboard.html\">How to build a dashboard →</a>",
+    "<a class=\"card-link\" href=\"/explorables/build-dashboard.html\">How to build a dashboard →</a>",
+    "<a class=\"card-link\" href=\"/explorables/build-dashboard.html\">How to build a dashboard →</a>",
+    "<a class=\"card-link\" href=\"/explorables/build-dashboard.html\">Build a dashboard →</a>"
+  ],
+  "card-fed": [
+    "One dial for the interest rate, and it drives inflation, unemployment, the corridor and the ripple all at once — the two-jobs \"oven\" the Fed has to run. Built from a USAFacts explainer.",
+    "One rate dial drives inflation, unemployment, the corridor and the ripple at once — the dual-mandate \"oven\". Built from a USAFacts explainer.",
+    "One rate dial drives inflation, unemployment, the corridor and the ripple at once — the dual-mandate \"oven\". Built from a USAFacts explainer.",
+    "One rate dial drives inflation, unemployment, the corridor and ripple at once — the dual-mandate \"oven\". From a USAFacts explainer.",
+    "One rate dial drives inflation, unemployment, corridor, ripple — the dual-mandate \"oven\". From a USAFacts explainer."
+  ],
+  "card-debt": [
+    "How the budget leads to the deficit, and the deficit leads to the debt — plus the interest, the debt-against-the-economy number, and the ceiling that all come with it. Push the years forward and watch the whole thing move.",
+    "Budget → deficit → debt, plus the interest, debt-to-GDP and ceiling that follow. Project the years forward and watch it all move.",
+    "Budget → deficit → debt, and the interest, debt-to-GDP and ceiling that follow. Project the years forward and watch it all move.",
+    "Budget → deficit → debt, with the interest, debt-to-GDP and ceiling that follow. Project the years forward; watch it all move.",
+    "Budget → deficit → debt, plus interest, debt-to-GDP, ceiling. Project years forward; watch it move."
+  ],
+  "card-nz-economy": [
+    "The Reserve Bank's main interest rate (the OCR), inflation set against the 1 to 3 percent target band, what an oil-price shock would do, and a stress test for the banks — all built from six months' worth of RBNZ videos.",
+    "The Reserve Bank's OCR, inflation against the 1–3% band, the oil-shock outlook and a bank stress test — built from six months of RBNZ videos.",
+    "The Reserve Bank's OCR, inflation vs the 1–3% band, the oil-shock outlook and a bank stress test — built from six months of RBNZ videos.",
+    "The Reserve Bank's OCR, inflation vs the 1–3% band, an oil-shock outlook and a bank stress test — from six months of RBNZ videos.",
+    "RBNZ's OCR, inflation vs the 1–3% band, oil-shock outlook, bank stress test — from six months of RBNZ videos."
+  ],
+  "essays-lede": [
+    "Longer writing where the words themselves are something you can play with — change a number, or your whole way of looking at it, and the argument works itself out again around you. It also has short <em>guided</em> ones that ask you a question and turn the answer into a spot you keep reaching for, then find out you can't have.",
+    "Long-form writing where the prose itself is interactive — change a number, or your whole point of view, and the argument re-reasons around you. Includes short <em>guided</em> explorables that ask a question and make the insight a place you reach for and find you can't have.",
+    "Long-form writing where the prose itself is interactive — change a number, or your whole point of view, and the argument re-reasons around you. Includes short <em>guided</em> explorables that pose a question and make the insight a place you reach for and discover you can't have.",
+    "Long-form writing where the prose itself is interactive — change a number, or your point of view, and the argument re-reasons. Includes short <em>guided</em> explorables that pose a question and make the insight a place you reach for and can't have.",
+    "Interactive long-form prose — change a number or your viewpoint and the argument re-reasons. Plus short <em>guided</em> explorables: a question, an insight you reach for but can't have."
+  ],
+  "build-essay": [
+    "<a class=\"card-link\" href=\"/explorables/build-essay.html\">How to build one of these →</a>",
+    "<a class=\"card-link\" href=\"/explorables/build-essay.html\">How to build an essay →</a>",
+    "<a class=\"card-link\" href=\"/explorables/build-essay.html\">How to build an essay →</a>",
+    "<a class=\"card-link\" href=\"/explorables/build-essay.html\">How to build an essay →</a>",
+    "<a class=\"card-link\" href=\"/explorables/build-essay.html\">Build an essay →</a>"
+  ],
+  "card-bitcoin": [
+    "Four little machines you can drive for yourself: the cap of 21 million coins, the loop that keeps the difficulty in check, the four-year cycle, and \"what if you'd bought back then?\"",
+    "Four little machines you can drive: the 21M supply, the difficulty feedback loop, the four-year cycle, and \"what if you'd bought?\"",
+    "Four little machines you can drive: the 21M supply, the difficulty feedback loop, the four-year cycle, and \"what if you'd bought?\"",
+    "Four little machines to drive: the 21M supply, the difficulty feedback loop, the four-year cycle, and \"what if you'd bought?\"",
+    "Four drivable machines: 21M supply, difficulty loop, four-year cycle, \"what if you'd bought?\""
+  ],
+  "card-retraining": [
+    "Think of retraining the job market as one big living thing, all joined up. Change any number, or switch whose eyes you're looking through — a worker, an employer, the Treasury, or society as a whole — and the entire essay works itself out again around you.",
+    "Retraining the job market as one living system — change any number, or your viewpoint (worker, employer, Treasury, society), and the whole essay re-reasons around you.",
+    "Retraining the job market as one living system — change any number, or your perspective (worker, employer, Treasury, society), and the whole essay re-reasons around you.",
+    "Retraining the job market as one living system — change any number, or your perspective (worker, employer, Treasury, society), and the essay re-reasons around you.",
+    "Retraining as one living system: change any number or perspective (worker, employer, Treasury, society); the essay re-reasons."
   ],
   "card-phillips": [
     "Drag the one lever the central bank gets to pull, and find the corner that everyone is hoping for — then discover that no matter where you set the dial, you can never quite get there.",
@@ -83,32 +153,67 @@
     "Your wallet vs a loaf of bread. Print all you like — affordable loaves won't budge. Find out why, and what actually lifts them.",
     "Wallet vs loaf: printing won't move loaves you can afford. See why, and what does."
   ],
-  "card-nz-economy": [
-    "The Reserve Bank's main interest rate (the OCR), inflation set against the 1 to 3 percent target band, what an oil-price shock would do, and a stress test for the banks — all built from six months' worth of RBNZ videos.",
-    "The Reserve Bank's OCR, inflation against the 1–3% band, the oil-shock outlook and a bank stress test — built from six months of RBNZ videos.",
-    "The Reserve Bank's OCR, inflation vs the 1–3% band, the oil-shock outlook and a bank stress test — built from six months of RBNZ videos.",
-    "The Reserve Bank's OCR, inflation vs the 1–3% band, an oil-shock outlook and a bank stress test — from six months of RBNZ videos.",
-    "RBNZ's OCR, inflation vs the 1–3% band, oil-shock outlook, bank stress test — from six months of RBNZ videos."
+  "card-jobs-inflation": [
+    "Unemployment isn't just one thing — it's three of them, stacked on top of each other. Print money and watch which band gets smaller, and why the floor right at the bottom won't move.",
+    "Unemployment isn't one thing — it's three, stacked. Print money and watch which band shrinks, and why the floor underneath won't move.",
+    "Unemployment isn't one thing — it's three, stacked. Print money and watch which band shrinks, and why the floor underneath won't move.",
+    "Unemployment isn't one thing — it's three, stacked. Print money: watch which band shrinks, and why the floor underneath won't move.",
+    "Unemployment is three stacked bands. Print money: see which shrinks, why the floor won't move."
   ],
-  "card-retraining": [
-    "Think of retraining the job market as one big living thing, all joined up. Change any number, or switch whose eyes you're looking through — a worker, an employer, the Treasury, or society as a whole — and the entire essay works itself out again around you.",
-    "Retraining the job market as one living system — change any number, or your viewpoint (worker, employer, Treasury, society), and the whole essay re-reasons around you.",
-    "Retraining the job market as one living system — change any number, or your perspective (worker, employer, Treasury, society), and the whole essay re-reasons around you.",
-    "Retraining the job market as one living system — change any number, or your perspective (worker, employer, Treasury, society), and the essay re-reasons around you.",
-    "Retraining as one living system: change any number or perspective (worker, employer, Treasury, society); the essay re-reasons."
+  "principles-lede": [
+    "All three libraries follow the same simple rules — the directions for building a new one, whether you're a person or an AI agent doing the building:",
+    "All three libraries follow the same laws — the guide for building a new one, whether you're a person or an LLM agent:",
+    "All three libraries obey the same laws — the direction for building a new one, whether you're a person or an LLM agent:",
+    "All three libraries obey the same laws — the direction for building a new one, whether you're a person or an LLM agent:",
+    "All three libraries obey the same laws — the build spec, for a person or an LLM agent:"
   ],
-  "dashboards-h2": [
-    "Dashboards &amp; essays — made from real sources",
-    "Dashboards &amp; essays — from real sources",
-    "Dashboards &amp; essays — built from real sources",
-    "Dashboards &amp; essays — built from real sources",
-    "Dashboards &amp; essays — from real sources"
+  "rule-manipulate": [
+    "You find the idea by <b>moving things around</b> yourself. Even if you took all the words away, the point would still come through.",
+    "You reach the idea by <b>manipulating it</b> — take the words away and the point still comes through.",
+    "You reach the insight by <b>manipulating it</b> — strip the words and the point still lands.",
+    "You reach the insight by <b>manipulating it</b>; strip the words and the point still lands.",
+    "Insight via <b>manipulation</b>; works wordless."
   ],
-  "dashboards-lede": [
-    "These are explorables that work together, all built from data the public can see and from the transcripts of videos. Every single one tells you where its information came from, so you can go and check it for yourself.",
-    "Explorables that work together, built from public data and video transcripts — every one cites its source so you can compare.",
-    "Coordinated explorables built from public data and video transcripts — every one cites its source so you can compare.",
-    "Coordinated explorables built from public data and video transcripts — each cites its source so you can compare.",
-    "Coordinated explorables from public data and video transcripts — each cites its source."
+  "rule-handle": [
+    "<b>Every value is a handle</b> you can take hold of — whether it's a bar, a dot in a network, or a number sitting in the writing.",
+    "<b>Every value is a handle</b> — whether it's a bar, a node, or a number in the prose.",
+    "<b>Every value is a handle</b>, whether it's a bar, a node, or a number in the prose.",
+    "<b>Every value is a handle</b> — a bar, a node, or a number in the prose.",
+    "<b>Every value is a handle</b>: bar, node, or number in the prose."
+  ],
+  "rule-reasons": [
+    "It <b>thinks it through</b> — back to what caused something, and forward to what happens next — and the words change as you change things.",
+    "It <b>reasons</b> — back to the cause, forward to what happens next — and the words change as you do.",
+    "It <b>reasons</b> — backward to the cause, forward to what happens next — and the words change as you do.",
+    "It <b>reasons</b> — backward to the cause, forward to the effect — and the words change as you do.",
+    "It <b>reasons</b> backward to cause, forward to effect; the words track you."
+  ],
+  "rule-honest": [
+    "It stays <b>honest</b> with you. It never makes up data, the lines on the chart never get cut off to fool you, and there's <b>no flashing</b> — anything that moves moves gently, and it stops moving if you've asked your device to slow motion down.",
+    "It stays <b>honest</b>: no made-up data, no axes that cut things off, and <b>no flashing</b> — motion is gentle and respects reduced-motion.",
+    "It stays <b>honest</b>: no fabricated data, no axes that clip, and <b>no flashing</b> (motion is steady and respects reduced-motion).",
+    "Stays <b>honest</b>: no fabricated data, no clipped axes, <b>no flashing</b> — steady motion that respects reduced-motion.",
+    "<b>Honest</b>: no fabricated data, unclipped axes, <b>no flashing</b>; reduced-motion safe."
+  ],
+  "rule-simple-complex": [
+    "The very same idea works just as well whether the data is <b>simple or complicated</b>.",
+    "The same idea handles <b>simple and complex</b> data alike.",
+    "The same idea handles <b>simple and complex</b> data alike.",
+    "The same idea handles <b>simple and complex</b> data alike.",
+    "Same idea, <b>simple or complex</b> data."
+  ],
+  "rule-guided": [
+    "<b>Guided discovery:</b> a question &rarr; a little nudge for your first move &rarr; a payoff that comes to find you &rarr; an idea you simply can't miss.",
+    "<b>Guided discovery:</b> a question &rarr; a first-move nudge &rarr; a payoff that finds you &rarr; an insight you can't miss.",
+    "<b>Guided discovery:</b> a question &rarr; a first-move nudge &rarr; a payoff that finds you &rarr; an insight you can't miss.",
+    "<b>Guided discovery:</b> question &rarr; first-move nudge &rarr; a payoff that finds you &rarr; an insight you can't miss.",
+    "<b>Guided discovery:</b> question &rarr; nudge &rarr; payoff &rarr; unmissable insight."
+  ],
+  "principles-note": [
+    "Looked at another way, these are a <strong>reference an AI can learn from</strong> — the patterns, the rules, and the things that should stop a build, all turning raw data into something you can think with. Pick a <a href=\"#components\">component</a>, put together a <a href=\"#dashboards\">dashboard</a>, or write an <a href=\"#essays\">essay</a>: the library shows you the move.",
+    "Read another way, these are a <strong>reference an LLM can learn from</strong> — the patterns, the rules and the kill-criteria that turn raw data into something you can think with. Pick a <a href=\"#components\">component</a>, compose a <a href=\"#dashboards\">dashboard</a>, or write an <a href=\"#essays\">essay</a>: the library teaches the move.",
+    "Read another way, these are a <strong>reference an LLM can learn from</strong> — the patterns, the rules and the kill-criteria that turn raw data into something you can think with. Pick a <a href=\"#components\">component</a>, compose a <a href=\"#dashboards\">dashboard</a>, or write an <a href=\"#essays\">essay</a>: the library teaches the move.",
+    "Read another way, these are a <strong>reference an LLM can learn from</strong> — the patterns, rules and kill-criteria that turn raw data into something you can think with. Pick a <a href=\"#components\">component</a>, compose a <a href=\"#dashboards\">dashboard</a>, or write an <a href=\"#essays\">essay</a>: the library teaches the move.",
+    "Read another way: a <strong>reference an LLM can learn from</strong> — patterns, rules, kill-criteria that turn data into something thinkable. Pick a <a href=\"#components\">component</a>, compose a <a href=\"#dashboards\">dashboard</a>, or write an <a href=\"#essays\">essay</a>."
   ]
 }

@@ -1,0 +1,93 @@
+{
+"title": [
+"Make a dashboard",
+"Make a dashboard",
+"Build a dashboard",
+"Build a dashboard",
+"Build a dashboard"
+],
+"lede": [
+"A <strong>dashboard</strong> is lots of little panels all joined together so they work as <em>one</em> thing. You pull on one main handle, and every panel moves at the same time. Here is a simple way to make one, plus a ready-made prompt you can give to an AI.",
+"A <strong>dashboard</strong> is many panels joined into <em>one</em> coordinated model: pull one main lever and every panel moves together. Here's the recipe, plus a prompt you can hand to an AI.",
+"A <strong>dashboard</strong> is many components wired into <em>one</em> coordinated model: a single hero lever drives every panel at once. Here is the recipe, and a prompt you can hand straight to an AI.",
+"A <strong>dashboard</strong> wires many components into <em>one</em> coordinated model: one hero lever drives every panel at once. Here's the recipe, plus an AI-ready prompt.",
+"A <strong>dashboard</strong>: many components, <em>one</em> coupled model; one hero lever drives every panel. Recipe and AI prompt below."
+],
+"step-spine": [
+"<b>Find the main handle.</b> Pick one big control — like a rate, a budget, or a sudden shock — that flows on and changes everything else.",
+"<b>Find the spine.</b> Pick one hero lever — a rate, a budget, a shock — that flows through everything else.",
+"<b>Find the spine.</b> Pick a single hero lever — a rate, a budget, a shock — that propagates through everything else.",
+"<b>Find the spine.</b> Choose one hero lever — a rate, budget, or shock — that propagates through everything.",
+"<b>Spine.</b> One hero lever — rate, budget, shock — propagating everywhere."
+],
+"step-compute": [
+"<b>Make one place that works out the numbers.</b> Call it compute(state). It takes the handles and figures out every result. Each panel just reads from it. So when you drag any handle, it runs again and every panel updates together.",
+"<b>Write one compute(state).</b> It derives all outputs from the levers, so every panel reads from it — and dragging any handle re-runs it, updating every panel at once.",
+"<b>Write one compute(state).</b> Derive all outputs from the levers, so every panel reads from it and dragging any handle re-runs compute() and updates every panel at once.",
+"<b>Write one compute(state).</b> Derive all outputs from the levers; every panel reads it, so dragging any handle re-runs compute() and updates every panel at once.",
+"<b>One compute(state).</b> All outputs derive from levers; any drag re-runs it and updates every panel."
+],
+"step-panel": [
+"<b>Make each panel its own small piece.</b> Every panel should follow the same rules: the marks you see are the handles you grab, it explains itself in plain words, it scales itself, it doesn't flash, and it stays honest.",
+"<b>Make each panel a component.</b> Every one follows the component rules — marks-are-handles, reasons in prose, auto-scale, no flash, honest.",
+"<b>Make each panel a component.</b> Every one obeys the component rules — marks-are-handles, reasons in prose, auto-scale, no flash, honest.",
+"<b>Each panel a component.</b> Obey the component rules: marks-are-handles, reasons in prose, auto-scale, no flash, honest.",
+"<b>Each panel a component.</b> Rules: marks-are-handles, reasons-in-prose, auto-scale, no-flash, honest."
+],
+"step-cite": [
+"<b>Show where the data came from, right up front.</b> If your dashboard is built on real data, say which source it came from and link to it, so the reader can open it and check for themselves.",
+"<b>Cite your source up front.</b> For any data-derived dashboard, say it was built from {X} and link it so the reader can open it and compare.",
+"<b>Cite your source prominently.</b> For any data-derived dashboard, say it was built from {X} and link it so the reader can open it and compare.",
+"<b>Cite your source prominently.</b> For any data-derived dashboard, name {X} and link it so the reader can open and compare.",
+"<b>Cite prominently.</b> Name the source {X}, link it, let the reader compare."
+],
+"step-fact": [
+"<b>Keep real facts and your own guesses apart.</b> Use exact, official numbers carefully and exactly. When something is just a rough idea of how things relate, say so clearly. And never make up a number you can't know — let the reader set it themselves, or just leave the claim out.",
+"<b>Separate fact from model.</b> Treat exact, official numbers precisely; label rough or illustrative relationships as such; never invent an unknowable — let the reader set it, or drop the claim.",
+"<b>Separate fact from model.</b> Treat exact, official numbers precisely; label directional or illustrative relationships as such; never fabricate an unknowable — let the reader set it, or drop the claim.",
+"<b>Separate fact from model.</b> Treat official numbers precisely; label directional or illustrative relationships as such; never fabricate an unknowable — let the reader set it, or drop the claim.",
+"<b>Fact vs model.</b> Official numbers precise; mark directional ones; never fabricate an unknowable — let the reader set it, or drop it."
+],
+"step-tight": [
+"<b>Keep it small.</b> One main panel plus three to six helper panels is plenty. The whole point is that one move changes the entire system at once.",
+"<b>Keep it tight.</b> One hero panel plus three to six supporting panels is plenty; the win is that one gesture moves the whole system.",
+"<b>Keep it tight.</b> A hero panel plus three to six supporting panels is plenty; the win is that one gesture moves the whole system.",
+"<b>Keep it tight.</b> A hero panel plus three to six supporting panels is plenty; the win: one gesture moves the whole system.",
+"<b>Tight.</b> Hero panel + 3–6 supporting panels; one gesture moves the whole system."
+],
+"prompt-intro": [
+"Copy this and paste it into your AI helper:",
+"Copy this into your agent:",
+"Copy this into your agent:",
+"Paste this into your agent:",
+"Paste into your agent:"
+],
+"kill-couple": [
+"The panels don't really join up — they're just charts sitting next to each other.",
+"The panels don't actually join up — it's just charts side by side.",
+"Panels do not couple — it is just charts side by side.",
+"Panels don't couple — just charts side by side.",
+"Panels don't couple; just charts side by side."
+],
+"kill-invented": [
+"A number was made up just to fill a panel.",
+"A number is made up to fill a panel.",
+"A number is invented to fill a panel.",
+"A number is invented to fill a panel.",
+"A number is invented to fill a panel."
+],
+"kill-blurred": [
+"It's hard to tell which numbers are real official facts and which are just a rough model.",
+"The line between official fact and rough model is blurred.",
+"The line between official fact and directional model is blurred.",
+"The fact–model line is blurred.",
+"Fact and model are blurred."
+],
+"kill-gesture": [
+"The main handle only moves one panel, not the whole thing.",
+"A hero gesture moves one panel but not the whole system.",
+"A hero gesture moves one panel but not the system.",
+"A hero gesture moves one panel, not the system.",
+"Hero gesture moves one panel, not the system."
+]
+}

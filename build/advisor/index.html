@@ -128,9 +128,10 @@
 
             <header class="advisor-hero">
                 <span class="eyebrow">free · no sign-up</span>
-                <h1>Paste what you asked AI. Get friendly feedback.</h1>
-                <p class="lead">Pop in the instructions you gave AI (and a couple of example messages), and we'll read it over like a patient friend. You'll get <strong>one round of plain-English feedback</strong>: what's working, what might confuse it, what your examples actually produce, and how to ask so you get a better answer. It's <strong>one helpful read, not a chat</strong> — no back-and-forth. Each time you tap the button, it takes a fresh look.</p>
+                <h1>See what makes an AI helper good.</h1>
+                <p class="lead">There's a worked example below, <strong>already filled in</strong> — a little helper for a shoe shop. Tap the button and watch it get read over like a patient friend would: <strong>one round of plain-English feedback</strong> on what's working, what might confuse the AI, and how to make it better. Then tweak it, or swap in an ask of your own. One helpful read, not a chat.</p>
             </header>
+            <p class="advisor-new"><strong>Brand new to this?</strong> Start with the two-minute explorable — <a href="/build/">build a good ask, piece by piece →</a> — then come back and try it here.</p>
 
             <div class="preview-note" id="preview-note" hidden>
                 <p><strong>The live feedback is just about ready.</strong> While we finish it off, open <em>“See what a good set of instructions looks like”</em> at the bottom — it shows you exactly the kind of thing that works (the same checklist this helper uses).</p>
@@ -140,13 +141,13 @@
                 <div class="field">
                     <label for="agent-name">What's your helper for?</label>
                     <p class="help" id="name-help">One line is plenty. For example: “Helps customers with refund questions for an online shoe shop.”</p>
-                    <input type="text" id="agent-name" name="agentName" maxlength="80" aria-describedby="name-help" autocomplete="off">
+                    <input type="text" id="agent-name" name="agentName" maxlength="80" aria-describedby="name-help" autocomplete="off" value="Helps customers with refund questions for an online shoe shop.">
                 </div>
 
                 <div class="field">
-                    <label for="system-prompt">The instructions you gave AI <span aria-hidden="true">*</span></label>
-                    <p class="help" id="sp-help">This is the bit you write to tell AI who to be and how to help — its job, what it should and shouldn't do, its tone, and the kind of answer you want back. Paste it here; this is what we look over.</p>
-                    <textarea id="system-prompt" name="systemPrompt" maxlength="6000" required aria-describedby="sp-help sp-count"></textarea>
+                    <label for="system-prompt">The helper's instructions <span aria-hidden="true">*</span></label>
+                    <p class="help" id="sp-help">This is the bit you write to tell AI who to be and how to help — its job, what it should and shouldn't do, its tone, and the kind of answer you want back. We've filled in an example; tweak it or paste your own.</p>
+                    <textarea id="system-prompt" name="systemPrompt" maxlength="6000" required aria-describedby="sp-help sp-count">You are a warm, careful customer-support assistant for a small online shoe shop. Answer only from our policy: full refunds within 30 days with proof of purchase; exchanges within 60 days; faulty items are always covered. Keep replies short and friendly. If a question falls outside the policy, or you're unsure, say so plainly and offer to pass it to a human — never invent a rule or promise a refund you can't give.</textarea>
                     <span class="char-count" id="sp-count" aria-live="off">0 / 6000</span>
                 </div>
 
@@ -155,7 +156,7 @@
                     <p class="help">One to three things a real person might actually say to your helper. We'll show you what your helper does with each one.</p>
                     <div class="test-input">
                         <label class="sr-only" for="test-1">Example message 1</label>
-                        <textarea id="test-1" name="test1" maxlength="1500" aria-label="Example message 1" placeholder="e.g. I bought these trainers 40 days ago and they fell apart — can I get a refund?"></textarea>
+                        <textarea id="test-1" name="test1" maxlength="1500" aria-label="Example message 1" placeholder="e.g. I bought these trainers 40 days ago and they fell apart — can I get a refund?">I bought these trainers 40 days ago and they fell apart — can I get a refund?</textarea>
                     </div>
                     <div class="test-input" id="test-2-wrap" hidden>
                         <label class="sr-only" for="test-2">Example message 2</label>
@@ -171,7 +172,7 @@
                 <div class="field">
                     <label for="rubric">What would a great answer look like? <span class="help" style="display:inline">(optional)</span></label>
                     <p class="help" id="rubric-help">Tell us what “good” means to you, and we'll check the examples against it. For instance: “Mentions the 30-day policy, stays friendly, and never promises a refund it can't actually give.”</p>
-                    <textarea id="rubric" name="rubric" maxlength="1000" aria-describedby="rubric-help"></textarea>
+                    <textarea id="rubric" name="rubric" maxlength="1000" aria-describedby="rubric-help">Mentions the 30-day refund window, stays warm, and never promises a refund it can't actually give.</textarea>
                 </div>
 
                 <div class="honeypot" aria-hidden="true">

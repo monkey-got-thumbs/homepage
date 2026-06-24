@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, viewport-fit=cover" />
+    <title>Build a component — Explorables — Monkey Got Thumbs</title>
+    <link rel="canonical" href="https://monkey-got-thumbs.com/explorables/build-component.html">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#0E0B1A" />
+    <meta name="color-scheme" content="dark">
+    <link rel="stylesheet" href="/assets/css/tokens.css">
+    <link rel="stylesheet" href="/assets/css/base.css">
+    <link rel="stylesheet" href="/assets/css/layout.css">
+    <meta name="description" content="How to build an explorable component — a single-idea interactive primitive — with a copy-paste prompt for an AI agent." />
+    <meta name="author" content="Monkey Got Thumbs" />
+    <meta property="og:title" content="Build a component — Explorables — Monkey Got Thumbs">
+    <meta property="og:description" content="How to build an explorable component — a single-idea interactive primitive — with a copy-paste prompt for an AI agent.">
+    <meta property="og:url" content="https://monkey-got-thumbs.com/explorables/build-component.html">
+    <meta property="og:image" content="https://monkey-got-thumbs.com/social-card.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:site_name" content="Monkey Got Thumbs">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:type" content="article">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+    <style>
+        .recipe { max-width: 50rem; margin-inline: auto; }
+        .recipe header { margin: 0 0 var(--space-xl); }
+        .recipe header h1 { margin: var(--space-sm) 0; }
+        .recipe header .lede { margin-inline: 0; text-align: start; }
+        .recipe .eyebrow { color: var(--color-accent); font-family: var(--font-mono); font-size: var(--font-size-xs); letter-spacing: .04em; text-transform: lowercase; }
+        .recipe section { margin: 0 0 var(--space-2xl); }
+        .recipe section > h2 { font-family: var(--font-display); color: var(--color-accent); letter-spacing: .02em; margin: 0 0 var(--space-sm); }
+        .recipe ol, .recipe ul { color: var(--color-fg-secondary); line-height: 1.6; padding-inline-start: 1.4rem; display: grid; gap: 0.55rem; }
+        .recipe li { padding-inline-start: 0.2rem; }
+        .recipe .examples a { color: var(--color-accent); text-decoration: none; font-weight: var(--font-weight-semibold); }
+        .recipe .examples a:hover, .recipe .examples a:focus-visible { text-decoration: underline; }
+        .prompt { white-space: pre-wrap; font: 13.5px/1.6 var(--font-mono); background: var(--color-bg-secondary); border: 1px solid var(--color-border); border-radius: 12px; padding: 16px 18px; overflow-x: auto; }
+        .copy-btn { font: inherit; font-size: 13px; cursor: pointer; border: 1px solid var(--color-border); background: transparent; color: var(--color-accent); border-radius: 8px; padding: 5px 12px; margin-bottom: 8px; }
+    </style>
+    <link rel="stylesheet" href="/assets/css/accessibility.css">
+    <script src="/assets/js/a11y-init.js"></script>
+    <script src="/assets/js/accessibility.js" defer></script>
+    <link rel="stylesheet" href="/assets/css/journey.css">
+    <script src="/assets/js/journey.js" defer></script>
+    <script src="/assets/js/copy.js" defer></script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <mgt-header></mgt-header>
+    <main id="main-content">
+        <div class="recipe">
+            <nav aria-label="Breadcrumb">
+                <ul class="breadcrumbs">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/explorables/">Explorables</a></li>
+                    <li><span aria-current="page">Build a component</span></li>
+                </ul>
+            </nav>
+
+            <header>
+                <span class="eyebrow">explorable library · recipe</span>
+                <h1 data-a11y="hero-h1">Build a component</h1>
+                <p class="lede" data-a11y="hero-lede">A <strong>component</strong> is the smallest explorable: one idea, one interaction. Master these and dashboards and essays are just compositions of them. Here is the recipe, and a prompt you can hand straight to an AI.</p>
+            </header>
+
+            <section>
+                <h2>Anatomy</h2>
+                <ol>
+                    <li data-a11y="anatomy-representation">Pick the representation from the data's shape — comparison becomes bars, part-to-whole becomes a stack, a trend becomes a cumulative line, a distribution becomes a curve, a relationship becomes a scatter with a fit, a network becomes a graph, a trade-off becomes a Pareto scatter, and composition-over-time becomes a stacked area you can paint.</li>
+                    <li data-a11y="anatomy-handles">Make the marks themselves the handles, so the reader drags the bar, node, point or curve directly rather than a hidden grip, and every number written in the prose is scrubbable too.</li>
+                    <li data-a11y="anatomy-verb">Match the verb to the data: for model data let the reader edit the inputs, but for recorded or historical data give only analytical verbs — pivot, brush, normalise, counterfactual-replay — and never let them edit a fact.</li>
+                    <li data-a11y="anatomy-reason">Make it reason: a caption recomputes live, running backward to the cause and forward to the consequence, with the words changing as the reader drags.</li>
+                    <li data-a11y="anatomy-autoscale">Auto-scale every axis to fit the dragged values so nothing clips, never pinning a fixed axis.</li>
+                    <li data-a11y="anatomy-motion">Use no flashing or opacity-pulse — that risks headaches and seizures — only steady directional motion, gated behind prefers-reduced-motion.</li>
+                    <li data-a11y="anatomy-honest">Stay honest: never fabricate data to fill a chart — derive it, elicit it, or drop to a humbler representation — and show clearly what is real versus modelled.</li>
+                    <li data-a11y="anatomy-shipping">Ship a self-contained single file, mapping pointer coordinates with svg.createSVGPoint() and getScreenCTM().inverse(), using setPointerCapture, and setting touch-action:none.</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>The build prompt</h2>
+                <p data-a11y="prompt-intro">Copy this into your agent:</p>
+                <button class="copy-btn" data-target="prompt-component">Copy</button>
+                <pre id="prompt-component" class="prompt">You are building a single-file explorable COMPONENT — one idea, one interaction — from {DATA OR CONCEPT}.
+
+Non-negotiable rules:
+1. The MARKS are the handles. The reader manipulates the representation directly — drag the bar, node, point or curve itself. AND every number in the prose is scrubbable (drag a number in a sentence to change it).
+2. Match the verb to the data: model/forecast data -> edit the inputs; historical/recorded data -> analytical verbs (pivot, brush, normalise, counterfactual-replay) — never let the reader edit a recorded fact.
+3. It reasons. A caption recomputes live, backward to the cause and forward to the consequence; the words change as the reader drags.
+4. Honest. Never fabricate data to fill a chart — derive it, elicit it, or drop to a humbler representation. Mark real vs modelled (solid vs ghost/hatch).
+5. Auto-scale every axis to fit dragged values — never a fixed axis that clips.
+6. NO flashing / opacity-pulse. Steady directional motion only, gated behind @media (prefers-reduced-motion: reduce).
+7. Self-contained: one HTML file, inline CSS, no libraries, works offline. Map pointer coords with svg.createSVGPoint() + getScreenCTM().inverse(); call el.setPointerCapture; set touch-action:none.
+8. Scale-by-factor handles need a zero-recovery guard (if the base series is all zero, spread the dragged target evenly) and gentle sensitivity.
+
+Pick the representation from the data's shape: comparison -> bars; part-to-whole -> stacked; trend -> cumulative line; distribution -> a curve (not a dot-plot); relationship -> scatter + fit; network/dependency -> a graph (marks are nodes you drag/scrub); trade-off -> a Pareto scatter; composition-over-time -> a stacked area you can smoothly paint.
+
+Kill it if: the point only lands via the caption (it must land from manipulation alone); a number is fabricated; an axis clips; anything flashes; or the manipulation verb fights the data's nature.</pre>
+            </section>
+
+            <section>
+                <h2>Kill-criteria</h2>
+                <ul>
+                    <li data-a11y="kill-caption">The insight only lands if you read the caption — it must land from manipulation alone.</li>
+                    <li data-a11y="kill-fabricated">Any number is fabricated.</li>
+                    <li data-a11y="kill-clip">An axis clips instead of auto-scaling.</li>
+                    <li data-a11y="kill-flash">Anything flashes or pulses.</li>
+                    <li data-a11y="kill-verb">The verb fights the data (e.g. edit a historical fact).</li>
+                </ul>
+            </section>
+
+            <section class="examples">
+                <h2>See it in the wild</h2>
+                <ul>
+                    <li data-a11y="example-document"><a href="/explorables/document.html">The living budget</a> — document</li>
+                    <li data-a11y="example-network"><a href="/explorables/network.html">The critical path</a> — network</li>
+                    <li data-a11y="example-uncertainty"><a href="/explorables/uncertainty.html">How long, really?</a> — uncertainty</li>
+                    <li data-a11y="example-components"><a href="/explorables/components.html">Fifteen more, in miniature</a></li>
+                </ul>
+            </section>
+        </div>
+    </main>
+    <mgt-footer></mgt-footer>
+    <script src="/assets/js/tracking.js" defer></script>
+    <script type="module" src="/assets/js/app.js"></script>
+    <script type="module" src="/components/core/mgt-header.js"></script>
+    <script type="module" src="/components/core/mgt-footer.js"></script>
+</body>
+</html>
