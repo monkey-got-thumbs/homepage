@@ -7,9 +7,9 @@
   :root{--ink:#EDECF6;--mut:#B9B5D3;--faint:rgba(237,236,246,0.13);--bg:#0E0B1A;--acc:#A6FF4D;--good:#5FD08A;--hot:#F0705A;--cold:#6BA8E5;--gold:#E8B24D;--mono:"SFMono-Regular",ui-monospace,Menlo,monospace}
   *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}
   .wrap{max-width:660px;margin:0 auto;padding:40px 24px 90px}
-  .kick{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--acc);font-weight:700;font-family:var(--mono)}
+  .kick{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--color-accent);font-weight:700;font-family:var(--mono)}
   h1{font-size:27px;line-height:1.2;letter-spacing:-0.02em;margin:.3em 0 .35em}
-  .lede{font-size:17px;color:#B9B5D3;margin:0 0 22px}
+  .lede{font-size:17px;color:var(--mut);margin:0 0 22px}
   .stage{background:#17122B;border:1px solid var(--faint);border-radius:16px;padding:18px 20px;box-shadow:0 1px 3px #0000000d}
   .step{display:flex;gap:10px;align-items:flex-start;font-size:15px;background:#1e1733;border:1px solid var(--faint);border-radius:10px;padding:11px 14px;margin:0 0 16px}
   .step .n{font-family:var(--mono);font-weight:700;color:#fff;background:var(--acc);border-radius:50%;width:22px;height:22px;min-width:22px;line-height:22px;text-align:center;font-size:12px}
@@ -24,10 +24,20 @@
   .takeaway{font-size:16px;line-height:1.55;margin:24px 0 0;padding:16px 18px;border:2px dashed var(--faint);border-radius:12px;color:var(--mut)}
   .takeaway.lit{border-color:var(--good);color:var(--ink);background:#13271b}
   .takeaway b{color:var(--good)}
+  /* takeaway is prose: its accent must adapt per scheme (default stays mint) */
+  html[data-scheme="light"]    .takeaway b{color:var(--color-accent)}
+  html[data-scheme="sepia"]    .takeaway b{color:var(--color-accent)}
+  html[data-scheme="contrast"] .takeaway b{color:var(--color-accent)}
+  html[data-scheme="light"]    .takeaway.lit,
+  html[data-scheme="sepia"]    .takeaway.lit,
+  html[data-scheme="contrast"] .takeaway.lit{border-color:var(--color-accent);color:var(--color-fg);background:transparent}
   .hint{font-size:12px;color:var(--mut);font-family:var(--mono);text-align:center;margin:8px 0 0}
   html[data-scheme="light"]    { --bg:#ffffff; --ink:#16161c; --mut:#545163; --faint:rgba(0,0,0,.14); }
   html[data-scheme="contrast"] { --bg:#000000; --ink:#ffffff; --mut:#ededed; --faint:#ffffff; }
   html[data-scheme="sepia"]    { --bg:#f4ecd8; --ink:#3b2f1e; --mut:#6b5a3e; --faint:rgba(59,47,30,.18); }
+  /* fig-dark figures keep the page's valid dark data-viz palette under light/sepia */
+  html[data-scheme="light"] .fig-dark,
+  html[data-scheme="sepia"] .fig-dark { --ink:#EDECF6; --mut:#B9B5D3; --faint:rgba(237,236,246,0.13); --bg:#0E0B1A; }
   html[data-cvd="safe"] { --acc:#004D40; --good:#004D40; --cold:#1E88E5; --hot:#FE6100; --gold:#FFC107; }
 </style>
 <link rel="stylesheet" href="/assets/css/accessibility.css">
@@ -41,7 +51,7 @@
   <h1>Why can't we just have low inflation <em>and</em> low unemployment?</h1>
   <p class="lede">Everyone wants both: cheap groceries <em>and</em> a job for everyone. The Reserve Bank has one lever to get there — the cash rate. Let's find out if it can.</p>
 
-  <div class="stage">
+  <div class="stage fig-dark">
     <div class="step" id="step"><span class="n" id="stepN">1</span><span id="stepT"><b>Drag the cash rate</b> until inflation hits the 2% target.</span></div>
 
     <svg id="dial" viewBox="0 0 620 70" preserveAspectRatio="xMidYMid meet"></svg>

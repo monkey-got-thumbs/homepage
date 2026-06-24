@@ -18,6 +18,27 @@
   html[data-scheme="contrast"] { --bg:#000000; --ink:#ffffff; --mut:#ededed; --faint:#ffffff; }
   html[data-scheme="sepia"]    { --bg:#f4ecd8; --ink:#3b2f1e; --mut:#6b5a3e; --faint:rgba(59,47,30,.18); }
 
+  /* Prose semantic colours adapt per scheme (the inline 74%/26% stats and the
+     "low · likely · high" hint live in running prose, so they must stay
+     readable on the active scheme's page background, not the dark figure). */
+  .doc .ok,.hint .ok  { color:var(--ok-prose,var(--ok)) }
+  .doc .late          { color:var(--late-prose,var(--late)) }
+  .hint .h            { color:var(--handle-prose,var(--handle)) }
+  html[data-scheme="light"]    { --ok-prose:#1769b3; --late-prose:#c0392b; --handle-prose:#1f7a34; }
+  html[data-scheme="contrast"] { --ok-prose:#7fdfff; --late-prose:#ff8a7a; --handle-prose:#7CFFB0; }
+  html[data-scheme="sepia"]    { --ok-prose:#1a5f9e; --late-prose:#a8341f; --handle-prose:#2f6a32; }
+
+  /* The chart is a dark-surfaced data-viz figure: under light/sepia, fig-dark
+     gives it a dark background, so re-pin this page's local text/grid vars back
+     to their dark-theme values inside the figure (light marks stay valid on
+     dark). --ok/--late/--handle/--dead are left to :root/CVD so the colour-blind
+     palette still applies inside the chart. */
+  html[data-scheme="light"] .fig-dark,
+  html[data-scheme="sepia"] .fig-dark {
+    --bg:#0E0B1A; --ink:#EDECF6; --mut:#B9B5D3; --faint:rgba(237,236,246,0.13);
+    padding:6px 4px;
+  }
+
   html[data-cvd="safe"] { --ok:#1E88E5; --handle:#004D40; --late:#FE6100; --dead:#785EF0; }
 </style>
 <link rel="stylesheet" href="/assets/css/accessibility.css">
@@ -29,8 +50,8 @@
 <div class="wrap">
   <div class="kick">Uncertainty · how long will Council consent really take?</div>
   <p class="doc" id="doc"></p>
-  <p class="hint">↔ drag the <span style="color:var(--handle)">low · likely · high</span> markers under the axis · drag the dark deadline line</p>
-  <svg id="sv" viewBox="0 0 900 240" preserveAspectRatio="xMidYMid meet"></svg>
+  <p class="hint">↔ drag the <span class="h">low · likely · high</span> markers under the axis · drag the dark deadline line</p>
+  <svg id="sv" class="fig-dark" viewBox="0 0 900 240" preserveAspectRatio="xMidYMid meet"></svg>
 </div>
 
 <script src="uncertainty.js"></script>

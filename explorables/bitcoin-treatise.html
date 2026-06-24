@@ -14,7 +14,7 @@
   .wrap{max-width:720px;margin:0 auto;padding:54px 24px 110px}
   .kick{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--btc);font-weight:700;font-family:var(--mono)}
   h1{font-size:34px;line-height:1.15;letter-spacing:-0.02em;margin:.3em 0 .2em;font-weight:700}
-  .standfirst{font-size:19px;color:#B9B5D3;margin:0 0 8px}
+  .standfirst{font-size:19px;color:var(--mut);margin:0 0 8px}
   h2{font-size:13px;text-transform:uppercase;letter-spacing:.07em;color:var(--mut);margin:56px 0 6px;font-family:var(--mono)}
   p{margin:0 0 16px}
   .fig{background:var(--card);border:1px solid var(--faint);border-radius:14px;padding:16px 18px;margin:18px 0 22px;box-shadow:0 1px 2px #0000000a}
@@ -28,9 +28,26 @@
   em.q{color:var(--mut);font-style:italic}
 
   /* ===== Accessibility engine: scheme overrides (dark :root stays default) ===== */
-  html[data-scheme="light"]    { --bg:#ffffff; --card:#f4f4f1; --ink:#16161c; --mut:#545163; --faint:rgba(0,0,0,.14); }
+  /* light/sepia also darken the accent locals so PROSE marks (.kick, .scrub,
+     .live, inline “halving”) pass AA; figures re-pin them back inside .fig-dark */
+  html[data-scheme="light"]    { --bg:#ffffff; --card:#f4f4f1; --ink:#16161c; --mut:#545163; --faint:rgba(0,0,0,.14);
+                                 --btc:#8f6000; --c1:#0a5fb0; --c2:#1f7a34; --hot:#b3261e; --good:#1f7a34; }
   html[data-scheme="contrast"] { --bg:#000000; --card:#000000; --ink:#ffffff; --mut:#ededed; --faint:#ffffff; }
-  html[data-scheme="sepia"]    { --bg:#f4ecd8; --card:#ece0c4; --ink:#3b2f1e; --mut:#6b5a3e; --faint:rgba(59,47,30,.18); }
+  html[data-scheme="sepia"]    { --bg:#f4ecd8; --card:#ece0c4; --ink:#3b2f1e; --mut:#6b5a3e; --faint:rgba(59,47,30,.18);
+                                 --btc:#7a4a1f; --c1:#1f5a8a; --c2:#3a6b2e; --hot:#8a2f1f; --good:#3a6b2e; }
+
+  /* ===== Data-viz figures keep their dark theme under light/sepia =====
+     fig-dark (accessibility.css) re-pins the global --color-* tokens + a dark
+     surface, but this page's charts read its bespoke locals (--ink/--mut/--card
+     /--bg/--faint). Re-pin those to dark values inside .fig-dark so the SVG
+     marks stay light-on-dark and self-consistent. No-op in default/contrast. */
+  html[data-scheme="light"] .fig-dark,
+  html[data-scheme="sepia"] .fig-dark {
+    --bg:#0E0B1A; --card:#17122B; --ink:#EDECF6; --mut:#B9B5D3; --faint:rgba(237,236,246,0.13);
+    --btc:#E8B24D; --c1:#6BA8E5; --c2:#5FD08A; --hot:#F0705A; --good:#5FD08A;
+  }
+  html[data-scheme="light"] .fig-dark .cap,
+  html[data-scheme="sepia"] .fig-dark .cap { color:var(--ink); }
 
   /* ===== Colour-blind-safe data-viz palette ===== */
   html[data-cvd="safe"] { --btc:#FFC107; --c1:#1E88E5; --c2:#004D40; --hot:#FE6100; --good:#004D40; }
@@ -40,7 +57,7 @@
 <script src="/assets/js/accessibility.js" defer></script>
 </head>
 <body>
-<div style="background:#17122B;color:#EDECF6;font:13px/1 -apple-system,system-ui,sans-serif;padding:10px 18px;border-bottom:1px solid rgba(255,255,255,.08)"><a href="/explorables/" style="color:#A6FF4D;text-decoration:none;font-weight:700">← Explorables</a> <span style="opacity:.6">· Monkey Got Thumbs</span></div>
+<div style="background:var(--card);color:var(--mut);font:13px/1 -apple-system,system-ui,sans-serif;padding:10px 18px;border-bottom:1px solid var(--faint)"><a href="/explorables/" style="color:var(--color-link);text-decoration:none;font-weight:700">← Explorables</a> <span style="opacity:.6">· Monkey Got Thumbs</span></div>
 <div class="wrap">
   <div class="kick">An explorable treatise</div>
   <h1>Bitcoin, over time</h1>
@@ -50,7 +67,7 @@
   <h2>1 · A coin with a hard cap</h2>
   <p>Bitcoin's supply isn't decided by a central bank; it's decided by arithmetic. New coins are paid to miners as a <b>block reward</b>, and that reward <b>halves every 210,000 blocks</b> — roughly every four years. It began at 50 coins per block in 2009 and has stepped down ever since: 25 in 2012, 12.5 in 2016, 6.25 in 2020, 3.125 in 2024. Summed to infinity it converges on <b>21 million coins, and not one more</b>.</p>
   <p>The consequence is front-loaded scarcity. By <span class="scrub" data-s="supYear">2024</span>, roughly <span class="live" id="supPct">—</span> of every bitcoin that will ever exist had already been mined.</p>
-  <div class="fig">
+  <div class="fig fig-dark">
     <div class="hint">↔ drag the year cursor — reward, new coins/day and the share mined all follow the schedule</div>
     <svg id="supply" viewBox="0 0 660 230" preserveAspectRatio="xMidYMid meet"></svg>
     <p class="cap" id="capSupply"></p>
@@ -59,17 +76,17 @@
 
   <h2>2 · Why a block every ten minutes</h2>
   <p>If anyone can mine, what stops a flood of blocks as more computers join? A feedback loop. The network targets <b>one block every ten minutes</b>; every 2,016 blocks (~two weeks) it measures how fast blocks actually arrived and re-sets the <b>difficulty</b> to pull the average back to ten. Add hashpower and blocks briefly come faster — then difficulty rises and claws the rhythm back.</p>
-  <div class="fig">
+  <div class="fig fig-dark">
     <div class="hint">↔ drag the hashpower bar · then press “let difficulty retarget” and watch the rhythm settle</div>
     <svg id="diff" viewBox="0 0 660 170" preserveAspectRatio="xMidYMid meet"></svg>
     <p class="cap" id="capDiff"></p>
-    <button id="retarget" style="font:inherit;font-size:13px;font-family:var(--mono);margin-top:6px;padding:4px 11px;border:1px solid var(--ink);background:var(--ink);color:#fff;border-radius:7px;cursor:pointer">↻ let difficulty retarget</button>
+    <button id="retarget" style="font:inherit;font-size:13px;font-family:var(--mono);margin-top:6px;padding:4px 11px;border:1px solid var(--ink);background:var(--ink);color:var(--bg);border-radius:7px;cursor:pointer">↻ let difficulty retarget</button>
   </div>
   <p>The point that trips people up: <b>more miners do not make more coins</b>. The reward schedule is fixed (§1). Extra hashpower buys only one thing — a more expensive chain to attack. Energy in, security out; issuance unchanged.</p>
 
   <h2>3 · The four-year rhythm</h2>
   <p>Because the new supply is cut in half on a clock, Bitcoin's history has a beat. Each <span style="color:var(--btc);font-weight:700">halving</span> (the dotted lines) has been loosely followed by a mania and then a brutal hangover — drawdowns of 80% or more are normal, not exceptional.</p>
-  <div class="fig">
+  <div class="fig fig-dark">
     <div class="hint">↔ drag the year cursor along the (log-scale) price path · halvings marked in orange</div>
     <svg id="price" viewBox="0 0 660 230" preserveAspectRatio="xMidYMid meet"></svg>
     <p class="cap" id="capPrice"></p>

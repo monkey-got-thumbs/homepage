@@ -14,9 +14,9 @@
   .wrap{max-width:1080px;margin:0 auto;padding:24px 22px 80px}
   .src{display:flex;gap:14px;align-items:center;background:var(--card);border:1px solid var(--faint);border-radius:12px;padding:12px 16px;margin-bottom:6px}
   .src .play{font-size:20px}.src .t{font-weight:650;font-size:14px}.src .m{font-size:12px;color:var(--mut)}
-  .src a{color:var(--acc);text-decoration:none;font-family:var(--mono);font-size:12px;word-break:break-all}
+  .src a{color:var(--color-link);text-decoration:none;font-family:var(--mono);font-size:12px;word-break:break-all}
   h1{font-size:23px;letter-spacing:-0.02em;margin:14px 0 2px}
-  .lede{color:#B9B5D3;font-size:15px;margin:0 0 16px;max-width:64ch}
+  .lede{color:var(--mut);font-size:15px;margin:0 0 16px;max-width:64ch}
   .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}@media(max-width:780px){.grid{grid-template-columns:1fr}}
   .card{background:var(--card);border:1px solid var(--faint);border-radius:14px;padding:16px 18px;box-shadow:0 1px 2px #0000000a;margin-bottom:16px}
   .card.full{grid-column:1/-1}
@@ -29,15 +29,32 @@
   .hot{color:var(--hot)}.good{color:var(--good)}.cold{color:var(--cold)}
   .seg{display:inline-flex;gap:4px;margin:0 0 8px}.seg button{font:inherit;font-size:12px;font-family:var(--mono);padding:3px 9px;border:1px solid var(--faint);background:#120E22;color:var(--ink);border-radius:7px;cursor:pointer}.seg button.on{background:var(--ink);color:#0E0B1A;border-color:var(--ink)}
   .facts{font-size:13px;line-height:1.7;margin:6px 0 0;padding:0;list-style:none}.facts li{padding-inline-start:1.2rem;position:relative}.facts li::before{content:'›';position:absolute;left:0;color:var(--acc);font-weight:700}
-  .quote{font-size:13.5px;line-height:1.5;border-inline-start:3px solid var(--acc);padding:2px 0 2px 12px;margin:10px 0;color:#EDECF6}.quote span{display:block;color:var(--mut);font-size:11.5px;margin-top:3px}
+  .quote{font-size:13.5px;line-height:1.5;border-inline-start:3px solid var(--acc);padding:2px 0 2px 12px;margin:10px 0;color:var(--ink)}.quote span{display:block;color:var(--mut);font-size:11.5px;margin-top:3px}
   .srcs{columns:2;font-size:12px;line-height:1.5}@media(max-width:600px){.srcs{columns:1}}
-  .srcs a{color:var(--acc);text-decoration:none}.srcs li{break-inside:avoid;margin-bottom:4px;list-style:none}
+  .srcs a{color:var(--color-link);text-decoration:none}.srcs li{break-inside:avoid;margin-bottom:4px;list-style:none}
   .note{font-size:12px;color:var(--mut);line-height:1.5;border-top:1px solid var(--faint);margin-top:18px;padding-top:12px}
 
   /* Accessibility engine: colour-scheme overrides (dark :root above stays default) */
   html[data-scheme="light"]    { --bg:#ffffff; --card:#f4f4f1; --ink:#16161c; --mut:#545163; --faint:rgba(0,0,0,.14); }
   html[data-scheme="contrast"] { --bg:#000000; --card:#000000; --ink:#ffffff; --mut:#ededed; --faint:#ffffff; }
   html[data-scheme="sepia"]    { --bg:#f4ecd8; --card:#ece0c4; --ink:#3b2f1e; --mut:#6b5a3e; --faint:rgba(59,47,30,.18); }
+
+  /* Accessibility engine: re-pin this page's local data-viz tokens to their dark
+     values inside fig-dark figures, so the charts/captions stay light-on-dark and
+     valid under the light/sepia schemes (default + contrast already render correctly). */
+  html[data-scheme="light"]:not([data-cvd="safe"]) .fig-dark,
+  html[data-scheme="sepia"]:not([data-cvd="safe"]) .fig-dark {
+    --ink:#EDECF6;--mut:#B9B5D3;--faint:rgba(237,236,246,0.13);--bg:#0E0B1A;--card:#17122B;
+    --acc:#A6FF4D;--band:#5FD08A;--hot:#F0705A;--cold:#6BA8E5;--warn:#E8B24D;--good:#5FD08A;
+  }
+  /* under cvd=safe keep the colour-blind-safe hues (blue/orange/amber are already
+     bright enough) but lift only the dark green so it stays legible on the fig-dark
+     surface — the page's safe palette was tuned for the light surface. */
+  html[data-scheme="light"][data-cvd="safe"] .fig-dark,
+  html[data-scheme="sepia"][data-cvd="safe"] .fig-dark {
+    --ink:#EDECF6;--mut:#B9B5D3;--faint:rgba(237,236,246,0.13);--bg:#0E0B1A;--card:#17122B;
+    --acc:#2EA84B;--band:#2EA84B;--good:#2EA84B;
+  }
 
   /* Accessibility engine: colour-blind-safe data-viz palette */
   html[data-cvd="safe"] {
@@ -64,7 +81,7 @@
   <h1>The NZ Economy — explorable</h1>
   <p class="lede">The Reserve Bank (RBNZ) sets one lever — the <b>Official Cash Rate</b>, now <b>2.25%</b> — to keep inflation near the <b>2% midpoint of its 1–3% band</b> without choking a fragile recovery. New Governor Anna Breman is <em>holding</em>, judging a fresh oil-shock inflation spike temporary. Drive the levers below; every dotted number is a handle.</p>
 
-  <div class="card full">
+  <div class="card full fig-dark">
     <h2>The OCR balancing act · the RBNZ's one lever</h2>
     <p class="h2sub">Drag the OCR. Anchored to the real current readings (OCR 2.25%, inflation 3.1%, unemployment 5.3%). Higher cools inflation toward 2% but lifts unemployment — the two-sided risk Breman keeps naming. Directional model, not a forecast.</p>
     <svg id="hero" viewBox="0 0 1040 210" preserveAspectRatio="xMidYMid meet"></svg>
@@ -72,26 +89,26 @@
   </div>
 
   <div class="grid">
-    <div class="card">
+    <div class="card fig-dark">
       <h2>The OCR path · 6 months of decisions</h2>
       <p class="h2sub">After ~325bps of cuts from a 5.5% peak, the easing paused at 2.25% and held. Drag the marker through the meetings.</p>
       <svg id="path" viewBox="0 0 480 170" preserveAspectRatio="xMidYMid meet"></svg>
       <p class="cap" id="capPath"></p>
     </div>
-    <div class="card">
+    <div class="card fig-dark">
       <h2>Inflation vs the 1–3% target band</h2>
       <p class="h2sub">One oil shock between February and April reshaped the outlook. Flip the view.</p>
       <div class="seg" id="inflSeg"><button data-v="feb" class="on">Feb 2026 view</button><button data-v="apr">Apr 2026 view (post oil shock)</button></div>
       <svg id="infl" viewBox="0 0 480 168" preserveAspectRatio="xMidYMid meet"></svg>
       <p class="cap" id="capInfl"></p>
     </div>
-    <div class="card">
+    <div class="card fig-dark">
       <h2>First-round vs second-round</h2>
       <p class="h2sub">A cost shock spikes prices once (look through it) — unless it feeds wages &amp; expectations (a spiral to prevent). Drag the pass-through.</p>
       <svg id="round" viewBox="0 0 480 168" preserveAspectRatio="xMidYMid meet"></svg>
       <p class="cap" id="capRound"></p>
     </div>
-    <div class="card">
+    <div class="card fig-dark">
       <h2>Cost of living = purchasing power</h2>
       <p class="h2sub">Conway's point: it's not just how fast prices rise, but incomes vs prices. Prices are ~26% up since 2020 — drag income growth.</p>
       <svg id="col" viewBox="0 0 480 168" preserveAspectRatio="xMidYMid meet"></svg>
@@ -99,7 +116,7 @@
     </div>
   </div>
 
-  <div class="card full">
+  <div class="card full fig-dark">
     <h2>Financial-stability stress test · May 2026 FSR</h2>
     <p class="h2sub">The RBNZ shocks the banks on purpose: unemployment to 10.5%, GDP −6.5%, house prices −35%. Drag the severity — do banks stay above their minimum capital?</p>
     <svg id="stress" viewBox="0 0 1040 150" preserveAspectRatio="xMidYMid meet"></svg>

@@ -8,7 +8,7 @@
     --cyc:#6BA8E5;--fric:#8C72D4;--struc:#B79BEA;--infl:#F0705A;--mono:"SFMono-Regular",ui-monospace,Menlo,monospace}
   *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}
   .wrap{max-width:700px;margin:0 auto;padding:40px 24px 90px}
-  .kick{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--acc);font-weight:700;font-family:var(--mono)}
+  .kick{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--color-accent);font-weight:700;font-family:var(--mono)}
   h1{font-size:27px;line-height:1.2;letter-spacing:-0.02em;margin:.3em 0 .35em}
   .lede{font-size:17px;color:var(--mut);margin:0 0 22px}
   .stage{background:#17122B;border:1px solid var(--faint);border-radius:16px;padding:18px 20px;box-shadow:0 1px 3px #0000000d}
@@ -20,18 +20,29 @@
   .legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-inline-end:4px;vertical-align:-1px}
   .read{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin:8px 0 2px;font-family:var(--mono);font-size:13px}
   .read .v{font-size:18px;font-weight:700}.chip{padding:2px 10px;border-radius:20px;font-size:12px;font-weight:700}
+  /* chip state colours are set inline by JS as light-tinted text on a pale pill (fails AA in every scheme);
+     force a dark readable text on those pale backgrounds — wins over the inline style. */
+  .chip{color:#16161c !important}
   .reform{margin:14px 0 2px}
   .callout{font-size:14.5px;line-height:1.5;border-inline-start:3px solid var(--gold);background:#2b2410;padding:10px 14px;border-radius:8px;margin:14px 0 0}
   .callout.reveal{border-color:var(--hot);background:#2e1714}
   .callout .lbl{font-family:var(--mono);font-size:11px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.06em;display:block;margin-bottom:3px}
   .callout.reveal .lbl{color:var(--hot)}
   .takeaway{font-size:16px;line-height:1.55;margin:24px 0 0;padding:16px 18px;border:2px dashed var(--faint);border-radius:12px;color:var(--mut)}
-  .takeaway.lit{border-color:var(--good);color:var(--ink);background:#13271b}.takeaway b{color:var(--good)}
+  .takeaway b{color:var(--color-accent)}
+  .takeaway.lit{border-color:var(--good);color:var(--ink);background:#13271b}.takeaway.lit b{color:var(--good)}
   .note{font-size:12px;color:var(--mut);line-height:1.5;border-top:1px solid var(--faint);margin-top:18px;padding-top:12px}
 
   html[data-scheme="light"]    { --bg:#ffffff; --ink:#16161c; --mut:#545163; --faint:rgba(0,0,0,.14); }
   html[data-scheme="contrast"] { --bg:#000000; --ink:#ffffff; --mut:#ededed; --faint:#ffffff; }
   html[data-scheme="sepia"]    { --bg:#f4ecd8; --ink:#3b2f1e; --mut:#6b5a3e; --faint:rgba(59,47,30,.18); }
+
+  /* Data-viz panel keeps its valid dark theme under light/sepia: re-pin this
+     page's LOCAL tokens (the SVG text + panels read these, not the site --color-* set). */
+  html[data-scheme="light"] .fig-dark,
+  html[data-scheme="sepia"] .fig-dark {
+    --ink:#EDECF6; --mut:#B9B5D3; --faint:rgba(237,236,246,0.13); --bg:#0E0B1A;
+  }
 
   html[data-cvd="safe"] {
     --acc:#004D40; --good:#004D40; --hot:#FE6100; --cold:#1E88E5; --gold:#FFC107;
@@ -49,7 +60,7 @@
   <h1>Print money: do you get <em>jobs</em>, or just <em>inflation</em>?</h1>
   <p class="lede">The economy's in a slump — 6.5% unemployment. The central bank can print money to stimulate it. The catch is that <b>unemployment isn't one thing</b> — it's three, stacked. Printing can only reach one of them. Drag and watch which.</p>
 
-  <div class="stage">
+  <div class="stage fig-dark">
     <div class="step" id="step"><span class="n" id="stepN">1</span><span id="stepT"><b>Print money</b> — drag right across the chart. Watch the <b style="color:var(--cyc)">top band</b> shrink.</span></div>
 
     <svg id="chart" viewBox="0 0 640 320" preserveAspectRatio="xMidYMid meet"></svg>

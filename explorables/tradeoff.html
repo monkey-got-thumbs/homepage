@@ -13,10 +13,13 @@
   .doc{font-size:19px;line-height:1.6}.doc .front{color:var(--front);font-weight:680}.doc .dom{color:var(--mut);font-weight:680}
   .hint{font-size:12.5px;color:var(--mut);margin:16px 0 4px}
   svg{display:block;width:100%;height:auto;touch-action:none;user-select:none}
-  html[data-scheme="light"]    { --bg:#ffffff; --ink:#16161c; --mut:#545163; --faint:rgba(0,0,0,.14); }
+  html[data-scheme="light"]    { --bg:#ffffff; --ink:#16161c; --mut:#545163; --faint:rgba(0,0,0,.14); --front:#0a5fb0; }
   html[data-scheme="contrast"] { --bg:#000000; --ink:#ffffff; --mut:#ededed; --faint:#ffffff; }
-  html[data-scheme="sepia"]    { --bg:#f4ecd8; --ink:#3b2f1e; --mut:#6b5a3e; --faint:rgba(59,47,30,.18); }
+  html[data-scheme="sepia"]    { --bg:#f4ecd8; --ink:#3b2f1e; --mut:#6b5a3e; --faint:rgba(59,47,30,.18); --front:#1f5a8a; }
   html[data-cvd="safe"] { --front:#1E88E5; --dom:#785EF0; }
+  /* keep the chart's own tokens on their dark values when fig-dark re-pins it (light/sepia only) */
+  html[data-scheme="light"] .fig-dark,
+  html[data-scheme="sepia"] .fig-dark { --bg:#0E0B1A; --ink:#EDECF6; --mut:#B9B5D3; --faint:rgba(237,236,246,0.13); --front:#6BA8E5; --dom:#6f6b85; }
 </style>
 <link rel="stylesheet" href="/assets/css/accessibility.css">
 <script src="/assets/js/a11y-init.js"></script>
@@ -28,7 +31,7 @@
   <div class="kick">Trade-off · five ways to deliver, cost vs time</div>
   <p class="doc" id="doc"></p>
   <p class="hint">↙ cheaper &amp; faster is better · drag any point to reprice/retime it · the dashed line is the frontier of real choices; greyed options are beaten on both</p>
-  <svg id="sv" viewBox="0 0 760 320" preserveAspectRatio="xMidYMid meet"></svg>
+  <svg id="sv" class="fig-dark" viewBox="0 0 760 320" preserveAspectRatio="xMidYMid meet"></svg>
 </div>
 
 <script src="tradeoff.js"></script>

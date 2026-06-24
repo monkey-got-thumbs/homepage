@@ -9,6 +9,7 @@
     --ink:#EDECF6;--mut:#B9B5D3;--faint:rgba(237,236,246,0.13);--bg:#0E0B1A;
     --inc:#EDECF6;--rent:#6BA8E5;--food:#5FD08A;--fun:#E8B24D;--transport:#B79BEA;--goal:#F0705A;
     --good:#5FD08A;--warn:#E8B24D;--bad:#F0705A;--ghost:#B9B5D3;
+    --link:#A6FF4D;--link-alt:var(--ghost);
     --mono:"SFMono-Regular",ui-monospace,Menlo,monospace;
   }
   *{box-sizing:border-box}
@@ -23,8 +24,8 @@
   .verdict{font-weight:680}.v-good{color:var(--good)}.v-warn{color:var(--warn)}.v-bad{color:var(--bad)}
   .lock{cursor:pointer;user-select:none;border:none;font-size:0.8em}
   .line{margin-top:34px;font-size:15px;color:var(--mut);line-height:1.7}
-  .line a{color:#A6FF4D;cursor:pointer;border-bottom:1px dotted #A6FF4D;margin-inline-end:14px}
-  .line a.alt{color:var(--ghost);border-color:var(--ghost)}
+  .line a{color:var(--link);cursor:pointer;border-bottom:1px dotted var(--link);margin-inline-end:14px}
+  .line a.alt{color:var(--link-alt);border-color:var(--link-alt)}
   .panel{margin-top:14px;font-size:17px;color:var(--ink);animation:fade .22s ease}
   @keyframes fade{from{opacity:0;transform:translateY(-3px)}to{opacity:1}}
   .gnum{color:var(--ghost);font-family:var(--mono);font-weight:600}
@@ -38,6 +39,17 @@
   html[data-scheme="light"]    { --bg:#ffffff; --ink:#16161c; --mut:#545163; --faint:rgba(0,0,0,.14); }
   html[data-scheme="contrast"] { --bg:#000000; --ink:#ffffff; --mut:#ededed; --faint:#ffffff; }
   html[data-scheme="sepia"]    { --bg:#f4ecd8; --ink:#3b2f1e; --mut:#6b5a3e; --faint:rgba(59,47,30,.18); }
+  /* The scrubbers / verdicts / links are interactive numbers inline in running prose,
+     so they must adapt to the scheme (they can't be re-pinned dark like a boxed figure).
+     Re-map the dark-tuned data colours to AA-passing equivalents on the light surfaces.
+     Default + contrast keep their original values (both already pass). */
+  html[data-scheme="light"], html[data-scheme="sepia"] {
+    --inc:var(--ink);
+    --rent:#1456a0; --food:#1b6e2e; --fun:#8a5a00; --transport:#5b3fa0; --goal:#b5341a;
+    --good:#1b6e2e; --warn:#8a5a00; --bad:#c01e1e;
+    --link:#0a5fb0; --link-alt:var(--mut);
+  }
+  html[data-scheme="sepia"] { --link:#8a4b1f; }
   html[data-cvd="safe"] {
     --inc:#1E88E5; --rent:#1E88E5; --food:#004D40; --fun:#FFC107; --transport:#785EF0; --goal:#FE6100;
     --good:#004D40; --warn:#FFC107; --bad:#D81B60;

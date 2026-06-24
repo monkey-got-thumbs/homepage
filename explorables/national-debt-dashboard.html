@@ -17,9 +17,9 @@
   .wrap{max-width:1080px;margin:0 auto;padding:24px 22px 80px}
   .src{display:flex;gap:14px;align-items:center;background:var(--card);border:1px solid var(--faint);border-radius:12px;padding:12px 16px;margin-bottom:6px}
   .src .play{font-size:22px}.src .t{font-weight:650;font-size:14px}.src .m{font-size:12px;color:var(--mut)}
-  .src a{color:var(--dom);text-decoration:none;font-family:var(--mono);font-size:12px;word-break:break-all}
+  .src a{color:var(--color-link);text-decoration:none;font-family:var(--mono);font-size:12px;word-break:break-all}
   h1{font-size:24px;letter-spacing:-0.02em;margin:14px 0 2px}
-  .lede{color:#B9B5D3;font-size:15px;margin:0 0 16px;max-width:62ch}
+  .lede{color:var(--mut);font-size:15px;margin:0 0 16px;max-width:62ch}
   .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}@media(max-width:780px){.grid{grid-template-columns:1fr}}
   .card{background:var(--card);border:1px solid var(--faint);border-radius:14px;padding:16px 18px;box-shadow:0 1px 2px #0000000a;margin-bottom:16px}
   .card.full{grid-column:1/-1}
@@ -39,6 +39,8 @@
   html[data-scheme="light"]    { --bg:#ffffff; --card:#f4f4f1; --ink:#16161c; --mut:#545163; --faint:rgba(0,0,0,.14); }
   html[data-scheme="contrast"] { --bg:#000000; --card:#000000; --ink:#ffffff; --mut:#ededed; --faint:#ffffff; }
   html[data-scheme="sepia"]    { --bg:#f4ecd8; --card:#ece0c4; --ink:#3b2f1e; --mut:#6b5a3e; --faint:rgba(59,47,30,.18); }
+  /* keep this page's local tokens dark inside the dark-pinned figures (light/sepia) */
+  html[data-scheme="light"] .fig-dark, html[data-scheme="sepia"] .fig-dark { --bg:#0E0B1A; --card:#17122B; --ink:#EDECF6; --mut:#B9B5D3; --faint:rgba(237,236,246,0.13); }
 
   /* Colour-blind-safe data-viz palette */
   html[data-cvd="safe"] {
@@ -63,7 +65,7 @@
   <h1>The US National Debt — explorable</h1>
   <p class="lede">It starts each year with a budget. Spend more than you take in and the gap — the deficit — is borrowed and piled onto the debt (≈$38T). Drive the budget below and the years forward; the cost of interest, the debt-to-GDP ratio, and the room left under the ceiling all follow.</p>
 
-  <div class="card full">
+  <div class="card full fig-dark">
     <h2>The engine · budget → deficit → debt</h2>
     <p class="h2sub">FY2024 actuals to start. Drag the bars (or the numbers) and the years slider; everything downstream uses the projected debt.</p>
     <svg id="hero" viewBox="0 0 1040 200" preserveAspectRatio="xMidYMid meet"></svg>
@@ -71,25 +73,25 @@
   </div>
 
   <div class="grid">
-    <div class="card">
+    <div class="card fig-dark">
       <h2>What interest costs</h2>
       <p class="h2sub">Interest = debt × the average rate it's borrowed at. Drag the rate; watch it pass defense and Medicare (it was the 3rd-largest line in 2024).</p>
       <svg id="int" viewBox="0 0 480 160" preserveAspectRatio="xMidYMid meet"></svg>
       <p class="cap" id="capInt"></p>
     </div>
-    <div class="card">
+    <div class="card fig-dark">
       <h2>Debt-to-GDP</h2>
       <p class="h2sub">Public debt against the size of the economy — like a mortgage vs your income. Drag GDP.</p>
       <svg id="dgp" viewBox="0 0 480 160" preserveAspectRatio="xMidYMid meet"></svg>
       <p class="cap" id="capDgp"></p>
     </div>
-    <div class="card">
+    <div class="card fig-dark">
       <h2>The debt ceiling</h2>
       <p class="h2sub">Congress's legal cap. Raised/revised 78× since 1960; the 2025 bill set it to $41.1T.</p>
       <svg id="ceil" viewBox="0 0 480 150" preserveAspectRatio="xMidYMid meet"></svg>
       <p class="cap" id="capCeil"></p>
     </div>
-    <div class="card">
+    <div class="card fig-dark">
       <h2>Who owns it</h2>
       <p class="h2sub">2024 split. Tap a slice to drill in.</p>
       <svg id="own" viewBox="0 0 480 96" preserveAspectRatio="xMidYMid meet"></svg>
@@ -97,7 +99,7 @@
     </div>
   </div>
 
-  <div class="card full">
+  <div class="card full fig-dark">
     <h2>230 years of debt</h2>
     <p class="h2sub">Nominal (not inflation-adjusted), log scale — from Hamilton's $71M to ~$38T. Drag the marker.</p>
     <svg id="hist" viewBox="0 0 1040 220" preserveAspectRatio="xMidYMid meet"></svg>
