@@ -46,7 +46,7 @@ html[data-scheme="sepia"] {
   --color-fg: #3b2f1e;
   --color-fg-secondary: #2a2012;
   --color-muted: #6b5a3e;
-  --color-accent: #8a5a2b;
+  --color-accent: #7a4a1f;            /* darkened: passes AA (>=4.5) as text on the sepia secondary surface */
   --color-brand: #7a5230;
   --color-brand-lighter: #7a5230;
   --color-link: #8a4b1f;
@@ -69,6 +69,22 @@ html[data-cvd="safe"] {
 /* explorables expose a hook: pages opt their data-viz vars into the safe set */
 html[data-cvd="safe"] .cb-aware {
   --v1: var(--cb-1); --v2: var(--cb-2); --v3: var(--cb-3); --v4: var(--cb-4); --v5: var(--cb-5);
+}
+
+/* ---- Data-viz figures keep their dark theme under light/sepia ----
+   Charts are dark-surfaced media: their light-on-dark internals (hardcoded
+   chart colours + token text) stay valid and self-consistent in every scheme.
+   Default + contrast schemes already render these correctly, so this only
+   re-pins the two schemes that would otherwise wash the figures out. */
+html[data-scheme="light"] .fig-dark,
+html[data-scheme="sepia"] .fig-dark {
+  --color-bg: #0E0B1A; --color-bg-secondary: #17122B;
+  --color-fg: #EDECF6; --color-fg-secondary: #F3F2FA; --color-muted: #B9B5D3;
+  --color-accent: #A6FF4D; --color-brand: #503E94; --color-brand-light: #6A55C0;
+  --color-brand-lighter: #B7A7F2; --color-link: #9BE85A; --color-link-hover: #A6FF4D;
+  --color-border: rgba(255,255,255,0.10); --color-border-light: rgba(255,255,255,0.05); --color-divider: rgba(255,255,255,0.06);
+  --color-success: #4ADE80; --color-warning: #FBBF24; --color-error: #F87171; --color-info: #60A5FA;
+  background: #15112c; color: #EDECF6; border-radius: var(--radius, 12px);
 }
 
 /* ---- "Simulate my vision" — feColorMatrix filters over the whole document ---- */

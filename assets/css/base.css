@@ -73,7 +73,7 @@ h2 {
 
 h3 {
   font-size: clamp(1.25rem, 2.2vw, 1.5rem);
-  color: var(--color-brand-light);
+  color: var(--color-brand-lighter);
   margin-top: var(--space-xl);
   margin-bottom: var(--space-md);
 }
@@ -147,7 +147,7 @@ ul li::marker {
 }
 
 ol li::marker {
-  color: var(--color-brand-light);
+  color: var(--color-brand-lighter);
 }
 
 /* ===== BLOCKQUOTES ===== */
@@ -439,7 +439,7 @@ details[open] > summary {
 }
 
 .text-brand {
-  color: var(--color-brand-light);
+  color: var(--color-brand-lighter);
 }
 
 .text-sm {
