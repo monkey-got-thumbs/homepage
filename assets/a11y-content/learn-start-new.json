@@ -69,12 +69,12 @@
     "<strong>It sometimes gets things wrong</strong> — and sounds sure while doing it. Treat it like a chatty friend who misremembers: great for ideas and drafts, but double-check anything that matters.",
     "<strong>It can be wrong, confidently.</strong> Great for drafts; verify what matters."
   ],
-  "truth-helper": [
-    "<strong>It's a helper, not a boss.</strong> It never decides anything for you, not once. You ask it a question, it makes a suggestion, and then you choose what to do with that. You stay in charge the whole way through.",
-    "<strong>It's a helper, not a boss.</strong> It never decides anything for you. You ask, it suggests, and you choose what to do with it. You stay in charge the whole time.",
-    "<strong>It's a helper, not a boss.</strong> It never decides anything for you. You ask, it suggests, and you choose what to do with it. You stay in charge the whole time.",
-    "<strong>It's a helper, not a boss.</strong> It never decides for you — you ask, it suggests, you choose. You stay in charge.",
-    "<strong>A helper, not a boss.</strong> It suggests; you decide. You stay in charge."
+  "truth-agent": [
+    "<strong>It's an agent, not a boss.</strong> It never decides anything for you, not once. You ask it a question, it makes a suggestion, and then you choose what to do with that. You stay in charge the whole way through.",
+    "<strong>It's an agent, not a boss.</strong> It never decides anything for you. You ask, it suggests, and you choose what to do with it. You stay in charge the whole time.",
+    "<strong>It's an agent, not a boss.</strong> It never decides anything for you. You ask, it suggests, and you choose what to do with it. You stay in charge the whole time.",
+    "<strong>It's an agent, not a boss.</strong> It never decides for you — you ask, it suggests, you choose. You stay in charge.",
+    "<strong>An agent, not a boss.</strong> It suggests; you decide. You stay in charge."
   ],
   "truth-more": [
     "<strong>The more you say, the better it helps.</strong> Just a few extra words about what you actually want can make a world of difference. And please don't worry about getting this “right” just yet — it is a gentle habit, and we will grow it together, bit by bit.",

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, viewport-fit=cover" />
-    <title>The free AI helper — paste what you asked, get friendly feedback | Monkey Got Thumbs</title>
+    <title>The free AI agent — paste what you asked, get friendly feedback | Monkey Got Thumbs</title>
     <link rel="canonical" href="https://monkey-got-thumbs.com/build/advisor/">
     <meta name="robots" content="index, follow, max-image-preview:large">
     <meta name="theme-color" content="#0E0B1A" />
@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="/assets/css/layout.css">
     <meta name="description" content="Paste what you asked AI plus a couple of example messages, and get one round of friendly, plain-English feedback so you can ask better. Free, no sign-up." />
     <meta name="author" content="Monkey Got Thumbs" />
-    <meta property="og:title" content="The free AI helper — paste what you asked, get friendly feedback | Monkey Got Thumbs">
+    <meta property="og:title" content="The free AI agent — paste what you asked, get friendly feedback | Monkey Got Thumbs">
     <meta property="og:description" content="Paste what you asked AI, get one round of kind, plain-English feedback so you can ask better. Free.">
     <meta property="og:url" content="https://monkey-got-thumbs.com/build/advisor/">
     <meta property="og:type" content="website">
@@ -30,12 +30,12 @@
     { "@context": "https://schema.org", "@type": "WebApplication", "name": "Agent Builder Advisor",
       "applicationCategory": "BusinessApplication", "operatingSystem": "Web browser",
       "url": "https://monkey-got-thumbs.com/build/advisor/",
-      "description": "A friendly, one-round helper: paste what you asked AI, see what it produces, and get plain-English feedback on how to ask better.",
+      "description": "A friendly, one-round agent: paste what you asked AI, see what it produces, and get plain-English feedback on how to ask better.",
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
       "breadcrumb": { "@type": "BreadcrumbList", "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://monkey-got-thumbs.com/" },
         { "@type": "ListItem", "position": 2, "name": "Make things", "item": "https://monkey-got-thumbs.com/build/" },
-        { "@type": "ListItem", "position": 3, "name": "The free AI helper" }
+        { "@type": "ListItem", "position": 3, "name": "The free AI agent" }
     ]}}
     </script>
     <style>
@@ -106,6 +106,34 @@
         .annotated summary { cursor: pointer; font-weight: var(--font-weight-semibold); color: var(--color-accent); }
         .annotated pre { font-family: var(--font-mono); font-size: 0.8rem; white-space: pre-wrap; overflow-wrap: anywhere; background: var(--color-bg); border: 1px solid var(--color-border); border-radius: 6px; padding: 0.75rem; }
         .annotated .ann { color: var(--color-accent); }
+        /* embedded "build a better ask" explorable */
+        .ask-lab { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1rem,3vw,2rem); align-items: start; margin: var(--space-lg) 0; }
+        @media (max-width: 760px) { .ask-lab { grid-template-columns: 1fr; } }
+        .ask-col { background: var(--color-bg-secondary); border: 1px solid var(--color-border); border-radius: 16px; padding: clamp(1rem,2.5vw,1.5rem); }
+        .ask-h { font-size: var(--font-size-xs); text-transform: uppercase; letter-spacing: .07em; color: var(--color-muted); margin: 0 0 var(--space-sm); font-family: var(--font-mono); }
+        .ask-text { font-size: var(--font-size-lg); line-height: 1.6; min-height: 5.5em; }
+        .ask-part.base { color: var(--color-fg); font-weight: var(--font-weight-semibold); }
+        .ask-part:not(.base) { color: var(--color-accent); }
+        .ask-hint { font-size: var(--font-size-sm); color: var(--color-muted); margin: var(--space-md) 0 var(--space-sm); }
+        .ask-chips { display: flex; flex-wrap: wrap; gap: .5rem; }
+        .ask-chip { font: inherit; font-size: var(--font-size-sm); cursor: pointer; border: 1px solid var(--color-border); background: transparent; color: var(--color-fg); border-radius: 20px; padding: 6px 12px; }
+        .ask-chip.on { background: var(--color-accent); color: var(--color-bg); border-color: var(--color-accent); font-weight: var(--font-weight-semibold); }
+        .ask-tick { font-family: var(--font-mono); margin-inline-end: 5px; }
+        .ask-controls { display: flex; gap: 1rem; margin-top: var(--space-md); }
+        .ask-mini { font: inherit; font-size: var(--font-size-xs); cursor: pointer; background: none; border: none; color: var(--color-link); text-decoration: underline; padding: 0; }
+        .ask-meter-lab { font-size: var(--font-size-xs); color: var(--color-muted); }
+        .ask-meter-bar { height: 8px; border-radius: 5px; background: color-mix(in srgb, var(--color-fg) 12%, transparent); overflow: hidden; margin: 5px 0; }
+        .ask-meter-bar i { display: block; height: 100%; border-radius: 5px; transition: width .25s; }
+        .ask-meter-val { font-family: var(--font-mono); font-weight: 700; font-size: var(--font-size-lg); }
+        .ask-answer { font-size: var(--font-size-base); line-height: 1.65; color: var(--color-fg-secondary); margin-top: var(--space-md); }
+        .ask-answer .ans-generic { color: var(--color-muted); font-style: italic; }
+        .ask-answer .ans-list { margin: .3rem 0 0; padding-inline-start: 1.2rem; }
+        .ask-answer .ans-list li { margin-bottom: .3rem; }
+        .ask-answer .ans-list-h { margin: .6rem 0 .2rem; }
+        .ask-caption { margin: var(--space-lg) 0 0; font-size: var(--font-size-lg); color: var(--color-fg); }
+        .ask-callout { margin: var(--space-lg) 0 0; border: 1px solid var(--color-accent); background: color-mix(in srgb, var(--color-accent) 8%, var(--color-bg-secondary)); border-radius: 14px; padding: 16px 20px; line-height: 1.6; }
+        .ask-lbl { display: block; font-family: var(--font-mono); font-size: var(--font-size-xs); text-transform: uppercase; letter-spacing: .06em; color: var(--color-accent); font-weight: 700; margin-bottom: 5px; }
+        @media (prefers-reduced-motion: reduce) { .ask-meter-bar i { transition: none; } }
     </style>
     <link rel="stylesheet" href="/assets/css/accessibility.css">
     <script src="/assets/js/a11y-init.js"></script>
@@ -122,30 +150,58 @@
                 <ul class="breadcrumbs">
                     <li><a href="/">Home</a></li>
                     <li><a href="/build/">Make things</a></li>
-                    <li><span aria-current="page">The free AI helper</span></li>
+                    <li><span aria-current="page">The free AI agent</span></li>
                 </ul>
             </nav>
 
             <header class="advisor-hero">
                 <span class="eyebrow">free · no sign-up</span>
-                <h1>See what makes an AI helper good.</h1>
-                <p class="lead">There's a worked example below, <strong>already filled in</strong> — a little helper for a shoe shop. Tap the button and watch it get read over like a patient friend would: <strong>one round of plain-English feedback</strong> on what's working, what might confuse the AI, and how to make it better. Then tweak it, or swap in an ask of your own. One helpful read, not a chat.</p>
+                <h1>See what makes an AI agent good.</h1>
+                <p class="lead">Two ways to get it, both right here. <strong>First</strong>, build a good “ask” one piece at a time below and watch the answer change in front of you. <strong>Then</strong>, when you're ready, paste an agent of your own for a plain-English read on it — no jargon, no chat.</p>
             </header>
-            <p class="advisor-new"><strong>Brand new to this?</strong> Start with the two-minute explorable — <a href="/build/">build a good ask, piece by piece →</a> — then come back and try it here.</p>
+
+            <!-- LEAD WITH THE EXPLORABLE: learn the move by doing -->
+            <section class="section-pad" aria-label="Build a better ask" style="margin-top:var(--space-md)">
+                <span class="eyebrow">first, get the feel</span>
+                <div class="ask-lab">
+                    <div class="ask-col">
+                        <h2 class="ask-h">Your ask</h2>
+                        <div class="ask-text" id="askText"></div>
+                        <p class="ask-hint">Tap a piece to add it. Each one tells the AI something it can't guess.</p>
+                        <div class="ask-chips" id="chips"></div>
+                        <div class="ask-controls"><button class="ask-mini" id="askAll">Add everything</button><button class="ask-mini" id="askNone">Start vague again</button></div>
+                    </div>
+                    <div class="ask-col">
+                        <h2 class="ask-h">What the AI gives back</h2>
+                        <div class="ask-meter" id="meter"></div>
+                        <div class="ask-answer" id="answer"></div>
+                    </div>
+                </div>
+                <p class="ask-caption" id="askCaption"></p>
+                <div class="ask-callout" id="askCallout" hidden></div>
+            </section>
+
+            <hr style="border:none;border-top:1px solid var(--color-border);margin:var(--space-2xl) 0">
+
+            <header class="advisor-hero" style="margin-top:0">
+                <span class="eyebrow">when you're ready</span>
+                <h2 style="margin-bottom:var(--space-sm)">Got an agent of your own? Get a read on it.</h2>
+                <p class="lead">Paste its instructions below — we've left a shoe-shop example in to show the shape — and get the same plain-English feedback. Don't have one yet? No rush; just play with the pieces above.</p>
+            </header>
 
             <div class="preview-note" id="preview-note" hidden>
-                <p><strong>The live feedback is just about ready.</strong> While we finish it off, open <em>“See what a good set of instructions looks like”</em> at the bottom — it shows you exactly the kind of thing that works (the same checklist this helper uses).</p>
+                <p><strong>The live feedback is just about ready.</strong> While we finish it off, open <em>“See what a good set of instructions looks like”</em> at the bottom — it shows you exactly the kind of thing that works (the same checklist this agent uses).</p>
             </div>
 
             <form class="advisor-form card" id="advisor-form" novalidate>
                 <div class="field">
-                    <label for="agent-name">What's your helper for?</label>
+                    <label for="agent-name">What's your agent for?</label>
                     <p class="help" id="name-help">One line is plenty. For example: “Helps customers with refund questions for an online shoe shop.”</p>
                     <input type="text" id="agent-name" name="agentName" maxlength="80" aria-describedby="name-help" autocomplete="off" value="Helps customers with refund questions for an online shoe shop.">
                 </div>
 
                 <div class="field">
-                    <label for="system-prompt">The helper's instructions <span aria-hidden="true">*</span></label>
+                    <label for="system-prompt">The agent's instructions <span aria-hidden="true">*</span></label>
                     <p class="help" id="sp-help">This is the bit you write to tell AI who to be and how to help — its job, what it should and shouldn't do, its tone, and the kind of answer you want back. We've filled in an example; tweak it or paste your own.</p>
                     <textarea id="system-prompt" name="systemPrompt" maxlength="6000" required aria-describedby="sp-help sp-count">You are a warm, careful customer-support assistant for a small online shoe shop. Answer only from our policy: full refunds within 30 days with proof of purchase; exchanges within 60 days; faulty items are always covered. Keep replies short and friendly. If a question falls outside the policy, or you're unsure, say so plainly and offer to pass it to a human — never invent a rule or promise a refund you can't give.</textarea>
                     <span class="char-count" id="sp-count" aria-live="off">0 / 6000</span>
@@ -153,7 +209,7 @@
 
                 <fieldset>
                     <legend>A couple of example messages</legend>
-                    <p class="help">One to three things a real person might actually say to your helper. We'll show you what your helper does with each one.</p>
+                    <p class="help">One to three things a real person might actually say to your agent. We'll show you what your agent does with each one.</p>
                     <div class="test-input">
                         <label class="sr-only" for="test-1">Example message 1</label>
                         <textarea id="test-1" name="test1" maxlength="1500" aria-label="Example message 1" placeholder="e.g. I bought these trainers 40 days ago and they fell apart — can I get a refund?">I bought these trainers 40 days ago and they fell apart — can I get a refund?</textarea>
@@ -196,7 +252,7 @@
                     <div id="critique-issues"></div>
                 </div>
                 <div class="card" id="runs-card">
-                    <h2>What your helper said</h2>
+                    <h2>What your agent said</h2>
                     <p class="muted" style="font-size:var(--font-size-sm)">A practice run of your instructions on each example message you gave.</p>
                     <div id="runs-list"></div>
                 </div>
@@ -217,7 +273,7 @@
             <details class="annotated card">
                 <summary>See what a good set of instructions looks like</summary>
                 <p class="muted" style="font-size:var(--font-size-sm);margin-top:var(--space-md)">Clear instructions tend to say five things: the <span class="ann">job</span>, what's <span class="ann">in and out of bounds</span>, the <span class="ann">tone</span>, what to do <span class="ann">when it's not sure</span>, and the <span class="ann">shape of the answer</span>. See how each line leaves nothing to guess:</p>
-                <pre>You are a <span class="ann">helper for refund questions</span> at Northwind Shoes, an online shop.
+                <pre>You are a <span class="ann">agent for refund questions</span> at Northwind Shoes, an online shop.
 
 <span class="ann">Your job:</span> help customers understand the returns policy and start a return.
 <span class="ann">The policy to follow:</span> refunds are allowed within 30 days of delivery,
@@ -228,7 +284,7 @@ something qualifies and, if it does, give the steps to start one. Never promise 
 <span class="ann">If you're not sure or it's outside your job:</span> say so, and offer to pass them
 to a person at support@northwind.example.
 <span class="ann">The answer:</span> a short, friendly reply, then a line "ELIGIBLE: yes/no/unclear".</pre>
-                <p class="muted" style="font-size:var(--font-size-sm)">Tap <strong>“Show me an example first”</strong> above to drop this (plus a couple of example messages) into the form and watch how the helper reads it.</p>
+                <p class="muted" style="font-size:var(--font-size-sm)">Tap <strong>“Show me an example first”</strong> above to drop this (plus a couple of example messages) into the form and watch how the agent reads it.</p>
             </details>
         </article>
     </main>
@@ -237,6 +293,7 @@ to a person at support@northwind.example.
     <script type="module" src="/assets/js/app.js"></script>
     <script type="module" src="/components/core/mgt-header.js"></script>
     <script type="module" src="/components/core/mgt-footer.js"></script>
+    <script src="/assets/js/build-explorable.js" defer></script>
     <script src="/assets/js/advisor.js?v=2" defer></script>
 </body>
 </html>

@@ -1,10 +1,10 @@
 {
   "hero-title": [
-    "A couple of little helpers",
-    "A couple of little helpers",
-    "A couple of little helpers",
-    "Two little helpers",
-    "Two helpers"
+    "A couple of little agents",
+    "A couple of little agents",
+    "A couple of little agents",
+    "Two little agents",
+    "Two agents"
   ],
   "hero-lede": [
     "We don't sell a big list of things. We made just two small tools. Both are meant to make AI feel friendly and helpful. On this page we tell you, in plain words, what each one really does for you.",
@@ -14,11 +14,11 @@
     "Two small AI tools. What each one does:"
   ],
   "chatyman-what": [
-    "A friendly AI helper you can add to your own website.",
-    "A friendly AI helper you can add to your own website.",
-    "A friendly AI helper you can pop onto your own website.",
-    "A friendly AI helper for your own website.",
-    "An AI helper for your website."
+    "A friendly AI agent you can add to your own website.",
+    "A friendly AI agent you can add to your own website.",
+    "A friendly AI agent you can pop onto your own website.",
+    "A friendly AI agent for your own website.",
+    "An AI agent for your website."
   ],
   "chatyman-desc": [
     "Do you have a website? chatyman is a small chat bubble that sits in the corner of it. When a visitor has a question, chatyman answers — kindly, and in your words. It reads your own pages first, so it talks about <em>your</em> place, not the whole internet.",
@@ -28,10 +28,10 @@
     "A chat bubble that answers visitors from <em>your</em> pages, in your voice."
   ],
   "advisor-what": [
-    "A <span class=\"free\">free</span> helper that makes the way you ask AI a lot better.",
-    "A <span class=\"free\">free</span> helper that makes the way you ask AI much better.",
-    "A <span class=\"free\">free</span> helper that makes the way you ask AI much better.",
-    "A <span class=\"free\">free</span> helper that improves how you ask AI.",
+    "A <span class=\"free\">free</span> agent that makes the way you ask AI a lot better.",
+    "A <span class=\"free\">free</span> agent that makes the way you ask AI much better.",
+    "A <span class=\"free\">free</span> agent that makes the way you ask AI much better.",
+    "A <span class=\"free\">free</span> agent that improves how you ask AI.",
     "A <span class=\"free\">free</span> tool for better AI prompts."
   ],
   "advisor-desc": [
@@ -49,11 +49,11 @@
     "A blank page plus a writers' room."
   ],
   "writers-desc": [
-    "Write your story the way you would in any document. When you finish a paragraph, press Enter. A line-up of helpers then reads it. They check the words, keep your genre and your voice, and remember your characters — so they can tell when one acts out of character. You decide whether to keep or change each suggestion. Nothing touches your words until you click.",
-    "Write your story like you would in any document. Finish a paragraph, press Enter, and a line-up of helpers reads it — checking the words, keeping your genre and voice, and remembering your characters so they can tell when one acts out of character. You keep or change each suggestion; nothing touches your words without a click.",
-    "Write your story like you would in any document. Finish a paragraph, press Enter, and a line-up of helpers reads it — checking the words, keeping your genre and voice, and remembering your characters so it can tell when one acts out of character. You keep or change each suggestion; nothing touches your words without a click.",
-    "Write as in any document. Finish a paragraph, press Enter, and a line-up of helpers checks the words, holds your genre and voice, and tracks your characters to catch out-of-character moments. Keep or change each suggestion; nothing changes without a click.",
-    "Write normally; press Enter and helpers check wording, hold voice and genre, and flag out-of-character moments. Nothing changes without a click."
+    "Write your story the way you would in any document. When you finish a paragraph, press Enter. A line-up of agents then reads it. They check the words, keep your genre and your voice, and remember your characters — so they can tell when one acts out of character. You decide whether to keep or change each suggestion. Nothing touches your words until you click.",
+    "Write your story like you would in any document. Finish a paragraph, press Enter, and a line-up of agents reads it — checking the words, keeping your genre and voice, and remembering your characters so they can tell when one acts out of character. You keep or change each suggestion; nothing touches your words without a click.",
+    "Write your story like you would in any document. Finish a paragraph, press Enter, and a line-up of agents reads it — checking the words, keeping your genre and voice, and remembering your characters so it can tell when one acts out of character. You keep or change each suggestion; nothing touches your words without a click.",
+    "Write as in any document. Finish a paragraph, press Enter, and a line-up of agents checks the words, holds your genre and voice, and tracks your characters to catch out-of-character moments. Keep or change each suggestion; nothing changes without a click.",
+    "Write normally; press Enter and agents check wording, hold voice and genre, and flag out-of-character moments. Nothing changes without a click."
   ],
   "see-title": [
     "A tiny change, a much better answer",

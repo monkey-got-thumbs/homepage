@@ -7,11 +7,11 @@
 "Why is AI so vague and useless?"
 ],
 "hero-lede": [
-"Most of the time the AI isn't really the problem — the way you ask is. A “helper” is simply a clear way of asking that you can save and use again and again. Right here, you can build one bit by bit, and you'll watch the answer get better as you go. And the lovely part is, <strong>you never have to touch the AI itself.</strong>",
-"Usually it isn't the AI — it's how you <em>ask</em>. A “helper” is just a clear ask you can reuse. Build one here, piece by piece, and watch the answer improve. <strong>You won't touch the AI once.</strong>",
-"Almost always, it isn't the AI — it's the <em>ask</em>. A “helper” is just a clear ask you can reuse. Build one here, a piece at a time, and watch the answer change in front of you. <strong>You won't touch the AI once.</strong>",
-"Almost always it's the <em>ask</em>, not the AI. A helper is a reusable, clear ask. Build one here, piece by piece, and watch the answer change. <strong>You won't touch the AI once.</strong>",
-"It's the <em>ask</em>, not the AI. A helper is a reusable ask. Build one; watch it change. <strong>No AI required.</strong>"
+"Most of the time the AI isn't really the problem — the way you ask is. An “agent” is simply a clear way of asking that you can save and use again and again. Right here, you can build one bit by bit, and you'll watch the answer get better as you go. And the lovely part is, <strong>you never have to touch the AI itself.</strong>",
+"Usually it isn't the AI — it's how you <em>ask</em>. An “agent” is just a clear ask you can reuse. Build one here, piece by piece, and watch the answer improve. <strong>You won't touch the AI once.</strong>",
+"Almost always, it isn't the AI — it's the <em>ask</em>. An “agent” is just a clear ask you can reuse. Build one here, a piece at a time, and watch the answer change in front of you. <strong>You won't touch the AI once.</strong>",
+"Almost always it's the <em>ask</em>, not the AI. An agent is a reusable, clear ask. Build one here, piece by piece, and watch the answer change. <strong>You won't touch the AI once.</strong>",
+"It's the <em>ask</em>, not the AI. An agent is a reusable ask. Build one; watch it change. <strong>No AI required.</strong>"
 ],
 "ask-hint": [
 "Go ahead and tap any piece below to add it to your ask. Each piece you add gives the AI a useful detail that it would otherwise just have to guess at.",
@@ -49,18 +49,18 @@
 "Bring your own ask to the free Advisor for plain-English feedback."
 ],
 "step2-title": [
-"Make a helper that stays with you for next time",
-"Make a helper that sticks around for later",
-"Make a helper that sticks around",
-"Make a helper that sticks around",
-"Make a lasting helper"
+"Make an agent that stays with you for next time",
+"Make an agent that sticks around for later",
+"Make an agent that sticks around",
+"Make an agent that sticks around",
+"Make a lasting agent"
 ],
 "step2-body": [
-"Once an ask is working nicely, chatyman lets you save it as a little helper — with no code needed at all. It'll be ready and waiting whenever you need it, so you never have to start over from scratch each time.",
-"Once an ask works, chatyman lets you save it as a little helper — no code — ready whenever you need it, so you needn't start over.",
-"Once an ask works, chatyman lets you save it as a little helper — no code — ready whenever you need it, instead of starting from scratch each time.",
-"When an ask works, chatyman saves it as a no-code helper, ready whenever you need it instead of starting over.",
-"chatyman saves a working ask as a no-code, reusable helper."
+"Once an ask is working nicely, chatyman lets you save it as a little agent — with no code needed at all. It'll be ready and waiting whenever you need it, so you never have to start over from scratch each time.",
+"Once an ask works, chatyman lets you save it as a little agent — no code — ready whenever you need it, so you needn't start over.",
+"Once an ask works, chatyman lets you save it as a little agent — no code — ready whenever you need it, instead of starting from scratch each time.",
+"When an ask works, chatyman saves it as a no-code agent, ready whenever you need it instead of starting over.",
+"chatyman saves a working ask as a no-code, reusable agent."
 ],
 "step3-title": [
 "Get to understand why all of this actually works",

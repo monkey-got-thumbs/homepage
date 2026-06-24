@@ -1,4 +1,4 @@
-/* "Build a better ask" — an explorable that teaches prompt/helper-writing.
+/* "Build a better ask" — an explorable that teaches prompt/agent-writing.
    Toggle the ingredients of a good ask and watch a representative AI answer go
    from generic to genuinely useful — proving the problem was the ask, not the AI.
    CSP-safe (external). Representative answer (a worked example), not a live model. */
@@ -84,7 +84,7 @@
         "The answer just turned genuinely useful — and you <b>never touched the AI</b>. " +
         "That's the whole skill: tell it <b>who it's for</b>, <b>the specifics</b>, <b>the limits</b>, " +
         "and <b>what you want back</b>. Vague in, vague out — clear in, useful out. " +
-        "<em>That</em> is building a helper.";
+        "<em>That</em> is building an agent.";
     }
   }
 
