@@ -87,21 +87,54 @@
         }
         @media (min-width: 90rem) { .content.article-layout { max-width: 100%; } }
         /* Rubric + .explorable container/rhythm now live in shared layout.css (consistent site-wide) */
-        /* "Who should do this job?" explorable (built by /assets/js/explorable-jobsplit.js) */
+        /* "Who should do this job?" explorable — continuous augment-vs-replace slider
+           (behaviour in /assets/js/explorable-jobsplit.js). All colour comes from the
+           site tokens so it adapts to every scheme; .fig-dark keeps it valid on light/sepia. */
         .into { font-size: var(--font-size-lg); color: var(--color-fg-secondary); line-height: 1.7; }
-        .js-modes { display: flex; gap: 0.5rem; flex-wrap: wrap; }
-        .js-modes button { flex: 1; min-width: 7.5rem; padding: 0.6rem 0.5rem; border-radius: 9px; border: 1px solid var(--color-border); background: transparent; color: var(--color-fg); font: 600 0.92rem "Montserrat", sans-serif; cursor: pointer; transition: background .15s ease, border-color .15s ease; }
-        .js-modes button:hover { border-color: color-mix(in srgb, var(--color-accent) 50%, var(--color-border)); }
-        .js-modes button[aria-pressed="true"] { background: var(--color-accent); color: #11210a; border-color: var(--color-accent); }
-        .js-meters { display: flex; flex-direction: column; gap: 0.7rem; }
-        .js-meter { display: grid; grid-template-columns: 6.5rem 1fr; align-items: center; gap: 0.75rem; }
-        .js-meter__label { font-size: var(--font-size-sm); color: var(--color-fg-secondary); }
-        .js-bar { height: 12px; background: color-mix(in srgb, #000 35%, transparent); border-radius: 999px; overflow: hidden; }
-        .js-bar__fill { display: block; height: 100%; width: 14%; border-radius: 999px; background: var(--color-accent); transition: width .45s cubic-bezier(.2,.7,.2,1), background .3s ease; }
-        .js-bar__fill.is-low { background: var(--color-error); }
-        .js-time { color: var(--color-fg-secondary); }
-        .js-time strong { color: var(--color-fg); }
-        .js-caption { margin: 0; color: var(--color-fg-secondary); line-height: 1.65; min-height: 3.4em; }
+        #job-split { padding: 1.25rem 1.25rem 1.4rem; }
+
+        /* slider */
+        .js-control { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 0.6rem 0.85rem; margin-bottom: 0.85rem; }
+        .js-slider-label { font-size: var(--font-size-sm); color: var(--color-fg-secondary); font-weight: 600; }
+        .js-slider { width: 100%; min-width: 0; accent-color: var(--color-accent); touch-action: none; cursor: ew-resize; height: 1.6rem; }
+        .js-slider:focus-visible { outline: var(--focus-outline); outline-offset: 4px; border-radius: 6px; }
+        .js-slider-val { font: 700 1.05rem var(--font-mono, "SFMono-Regular", ui-monospace, Menlo, monospace); color: var(--color-accent); min-width: 3.2ch; text-align: end; }
+        .js-ends { grid-column: 2; display: flex; justify-content: space-between; font-size: 0.72rem; letter-spacing: .02em; text-transform: uppercase; color: var(--color-muted); margin-top: -0.35rem; }
+
+        /* review toggle */
+        .js-check { display: inline-flex; align-items: center; gap: 0.55rem; font-size: var(--font-size-sm); color: var(--color-fg-secondary); cursor: pointer; margin-bottom: 1rem; }
+        .js-check input { width: 1.05rem; height: 1.05rem; accent-color: var(--color-accent); cursor: pointer; }
+        .js-check.is-moot { color: var(--color-muted); }
+
+        /* readouts */
+        .js-readouts { display: flex; flex-direction: column; gap: 0.65rem; margin-bottom: 1.1rem; }
+        .js-readout { display: grid; grid-template-columns: 6.5rem 1fr 5.5rem; align-items: center; gap: 0.75rem; }
+        .js-readout__label { font-size: var(--font-size-sm); color: var(--color-fg-secondary); }
+        .js-readout__bar { height: 12px; background: color-mix(in srgb, #000 35%, transparent); border-radius: 999px; overflow: hidden; }
+        .js-readout__fill { display: block; height: 100%; width: 14%; border-radius: 999px; background: var(--color-accent); transition: width .35s cubic-bezier(.2,.7,.2,1), background .3s ease; }
+        .js-readout__fill.is-low { background: var(--color-error); }
+        .js-readout__num { font: 600 var(--font-size-sm)/1 var(--font-mono, "SFMono-Regular", ui-monospace, Menlo, monospace); color: var(--color-fg); text-align: end; }
+
+        /* chart */
+        .js-chart { display: block; width: 100%; height: auto; margin: 0 0 0.9rem; touch-action: none; user-select: none; overflow: visible; }
+
+        /* reactive prose */
+        .js-sentence { margin: 0; color: var(--color-fg-secondary); line-height: 1.65; min-height: 3.4em; }
+        .js-sentence strong { color: var(--color-fg); }
+        .js-payoff { margin: 0.9rem 0 0; padding: 0.85rem 1rem; line-height: 1.55; border-radius: 10px;
+                     border-inline-start: 3px solid var(--color-accent);
+                     background: color-mix(in srgb, var(--color-accent) 12%, transparent); color: var(--color-fg); }
+        .js-payoff strong { color: var(--color-accent); }
+        html[data-scheme="light"] .js-payoff strong,
+        html[data-scheme="sepia"] .js-payoff strong,
+        html[data-scheme="contrast"] .js-payoff strong { color: var(--color-accent); }
+
+        @media (prefers-reduced-motion: reduce) {
+            .js-readout__fill { transition: none; }
+        }
+        @media (max-width: 30rem) {
+            .js-readout { grid-template-columns: 5rem 1fr 4rem; gap: 0.5rem; }
+        }
     </style>
     <link rel="stylesheet" href="/assets/css/accessibility.css">
     <script src="/assets/js/a11y-init.js"></script>
@@ -136,26 +169,51 @@
 
             <p class="into" data-a11y="example-intro">Here's the whole idea in one job. Maria runs a busy clinic and owes the board a report on 400 patient comments by Friday. Try each way of getting it done:</p>
 
-            <figure class="explorable" id="job-split">
-                <figcaption>Who should do this job?</figcaption>
-                <div class="js-modes" role="group" aria-label="Choose who does the job">
-                    <button type="button" data-mode="maria" aria-pressed="true">Maria alone</button>
-                    <button type="button" data-mode="ai" aria-pressed="false">AI alone</button>
-                    <button type="button" data-mode="both" aria-pressed="false">Maria + AI</button>
+            <figure class="explorable fig-dark" id="job-split">
+                <figcaption>Who should do this job? Slide the work between Maria and the AI.</figcaption>
+
+                <!-- Slider: how much of the 400 comments Maria hands to the AI -->
+                <div class="js-control">
+                    <label class="js-slider-label" for="js-hand">Hand to the AI</label>
+                    <input class="js-slider" type="range" id="js-hand" min="0" max="100" step="1" value="0"
+                           aria-describedby="js-handval js-sentence"
+                           aria-valuetext="0% to the AI — Maria does it all herself" />
+                    <output class="js-slider-val" id="js-handval" for="js-hand" data-handval>0%</output>
+                    <div class="js-ends" aria-hidden="true"><span>Maria alone</span><span>AI alone</span></div>
                 </div>
-                <div class="js-meters">
-                    <div class="js-meter">
-                        <span class="js-meter__label">Speed</span>
-                        <span class="js-bar"><span class="js-bar__fill" data-speed-bar></span></span>
+
+                <!-- Does Maria still review the AI's work? Only matters once the AI does some. -->
+                <label class="js-check">
+                    <input type="checkbox" id="js-review" data-review checked />
+                    <span>Maria reviews the AI's work before it ships</span>
+                </label>
+
+                <!-- Live readouts -->
+                <div class="js-readouts">
+                    <div class="js-readout">
+                        <span class="js-readout__label">Speed</span>
+                        <span class="js-readout__bar"><span class="js-readout__fill" data-speed-fill></span></span>
+                        <span class="js-readout__num" data-speed-num>slow</span>
                     </div>
-                    <div class="js-meter">
-                        <span class="js-meter__label">Got it right</span>
-                        <span class="js-bar"><span class="js-bar__fill" data-acc-bar></span></span>
+                    <div class="js-readout">
+                        <span class="js-readout__label">Got it right</span>
+                        <span class="js-readout__bar"><span class="js-readout__fill" data-trust-fill></span></span>
+                        <span class="js-readout__num" data-trust-num>spot on</span>
                     </div>
                 </div>
-                <p class="js-time">Done in <strong data-time>a full day</strong></p>
-                <p class="js-caption" role="status" aria-live="polite" data-caption>Accurate — but reading 400 comments by hand ate the whole day, and the report is late.</p>
-                <noscript><p class="js-caption">Maria alone: accurate but slow. AI alone: instant, but it mislabels comments and no one catches it. Maria + AI: fast <em>and</em> right — the machine sorts the 400, Maria makes the calls. That pairing is augmented intelligence.</p></noscript>
+
+                <!-- Speed × trustworthiness chart. The whole trade-off curve is drawn;
+                     the "you" dot moves as you slide, and can be dragged directly. -->
+                <svg class="js-chart" data-chart viewBox="0 0 620 320" preserveAspectRatio="xMidYMid meet"
+                     role="img" aria-label="A chart of speed against got-it-right. Maria alone sits slow but spot-on; AI alone unchecked sits fast but wrong; the reviewed middle reaches both."></svg>
+
+                <p class="js-sentence" id="js-sentence" role="status" aria-live="polite" data-sentence>
+                    At <strong>0% to the AI</strong>, Maria reads all 400 comments herself: spot-on, but it eats the whole day.
+                </p>
+
+                <p class="js-payoff" data-payoff hidden></p>
+
+                <noscript><p class="js-sentence">Maria alone: accurate but slow. AI alone with no one checking: instant, but it mislabels comments and the mistakes ship. The middle — AI sorts the 400, Maria reviews and makes the calls — is fast <em>and</em> right. That pairing is augmented intelligence.</p></noscript>
             </figure>
 
             <p data-a11y="explorable-takeaway">Only the last button fills both bars — and that's the whole idea in one picture: <strong>the machine handles the volume, you keep the judgment</strong> (the priorities, the mistakes only a person would catch, the final call). "AI that replaces you" is the middle button: fast, but with no one in the loop, its confident errors sail straight through.</p>

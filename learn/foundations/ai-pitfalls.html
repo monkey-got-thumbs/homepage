@@ -68,26 +68,111 @@
         .lead { font-size: var(--font-size-lg); color: var(--color-fg-secondary); line-height: 1.7; }
         .into { font-size: var(--font-size-lg); color: var(--color-fg-secondary); line-height: 1.7; }
 
-        /* "Spot the made-up one" explorable (built by /assets/js/explorable-spot.js).
-           Container + even rhythm from shared .explorable in layout.css. */
+        /* "Spot the made-up one" — multi-round explorable (built by
+           /assets/js/explorable-spot.js). Container + rhythm from shared .explorable
+           in layout.css; #spot-it carries .fig-dark so the chart-like surface stays
+           valid under light/sepia. All reveal is colour + icon + text — never a flash. */
         #spot-it figcaption { font-family: var(--font-display); letter-spacing: 0.02em; font-size: var(--font-size-xl); color: var(--color-fg); }
         .spot-q { margin: 0; color: var(--color-fg-secondary); line-height: 1.7; }
         .spot-q strong { color: var(--color-fg); }
-        .spot-opts { display: flex; flex-direction: column; gap: 0.55rem; }
-        .spot-opt { text-align: start; font: 500 0.95rem "Montserrat", sans-serif; color: var(--color-fg); line-height: 1.6;
-            background: color-mix(in srgb, #000 18%, transparent); border: 1px solid var(--color-border);
-            border-radius: 10px; padding: 0.75rem 0.9rem; cursor: pointer; position: relative;
-            transition: border-color .15s ease, background .15s ease; }
-        .spot-opt:hover:not(:disabled) { border-color: color-mix(in srgb, var(--color-accent) 50%, var(--color-border)); }
-        .spot-opt:disabled { cursor: default; }
-        .spot-opt.is-true { border-color: color-mix(in srgb, var(--color-accent) 40%, var(--color-border)); }
-        .spot-opt.is-true::after { content: "✓ true"; color: var(--color-accent); font-size: var(--font-size-xs); font-weight: 700; display: block; margin-top: 0.4rem; letter-spacing: .04em; }
-        .spot-opt.is-fake { border-color: color-mix(in srgb, var(--color-error) 55%, var(--color-border)); background: color-mix(in srgb, var(--color-error) 9%, transparent); }
-        .spot-opt.is-fake::after { content: "✗ made up"; color: var(--color-error); font-size: var(--font-size-xs); font-weight: 700; display: block; margin-top: 0.4rem; letter-spacing: .04em; }
-        .spot-opt.is-picked { outline: 2px solid color-mix(in srgb, var(--color-accent) 60%, transparent); outline-offset: 2px; }
+
+        /* progress rail of round dots */
+        .spot-rail { display: flex; gap: 0.4rem; }
+        .spot-dot { width: 0.7rem; height: 0.7rem; border-radius: var(--radius-full);
+            background: color-mix(in srgb, var(--color-fg) 18%, transparent);
+            border: 1px solid var(--color-border); transition: background .2s ease, transform .2s ease; }
+        .spot-dot.is-done { background: var(--color-accent); border-color: var(--color-accent); }
+        .spot-dot.is-now { background: color-mix(in srgb, var(--color-accent) 55%, transparent);
+            border-color: var(--color-accent); transform: scale(1.18); }
+
+        /* scoreboard + sober counter */
+        .spot-board { display: flex; flex-wrap: wrap; align-items: baseline;
+            justify-content: space-between; gap: 0.5rem 1rem;
+            padding: 0.7rem 0.9rem; border-radius: var(--radius);
+            background: color-mix(in srgb, var(--color-brand) 16%, transparent);
+            border: 1px solid color-mix(in srgb, var(--color-accent) 16%, var(--color-border)); }
+        .spot-score { margin: 0; color: var(--color-fg); font-weight: 600; }
+        .spot-score strong { color: var(--color-accent); }
+        .spot-sober { margin: 0; color: var(--color-muted); font-size: var(--font-size-sm); line-height: 1.5; }
+        .spot-sober strong { color: var(--color-fg-secondary); }
+        .spot-sober-n { color: var(--color-accent); font-weight: 700; font-variant-numeric: tabular-nums; }
+
+        /* claim list */
+        .spot-opts { display: flex; flex-direction: column; gap: 0.6rem; }
+        .spot-opt { display: block; width: 100%; text-align: start;
+            font: 500 0.95rem "Montserrat", sans-serif; color: var(--color-fg); line-height: 1.55;
+            background: color-mix(in srgb, #000 22%, transparent); border: 1px solid var(--color-border);
+            border-radius: 12px; padding: 0.8rem 0.95rem; cursor: pointer; position: relative;
+            transition: border-color .15s ease, background .15s ease, transform .12s ease; }
+        .spot-opt:hover:not([disabled]):not([aria-disabled="true"]) {
+            border-color: color-mix(in srgb, var(--color-accent) 55%, var(--color-border));
+            transform: translateY(-1px); }
+        .spot-opt:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+        .spot-opt[disabled], .spot-opt[aria-disabled="true"] { cursor: default; }
+        .spot-opt-text { display: block; }
+        .spot-opt-note { display: inline-block; margin-top: 0.4rem; font-size: var(--font-size-xs);
+            font-weight: 700; letter-spacing: .03em; color: var(--color-warning);
+            background: color-mix(in srgb, var(--color-warning) 14%, transparent);
+            border-radius: var(--radius-sm); padding: 0.1rem 0.45rem; }
+
+        /* identical confidence meter on every claim — the visible "aha" */
+        .spot-meter { display: flex; align-items: center; gap: 0.5rem; margin-top: 0.6rem;
+            font-size: var(--font-size-xs); color: var(--color-muted); }
+        .spot-meter-lbl { white-space: nowrap; letter-spacing: .03em; }
+        .spot-meter-track { flex: 1; height: 6px; border-radius: var(--radius-full);
+            background: color-mix(in srgb, var(--color-fg) 12%, transparent); overflow: hidden; }
+        .spot-meter-fill { display: block; height: 100%; width: 96%;
+            background: linear-gradient(90deg, color-mix(in srgb, var(--color-accent) 55%, transparent), var(--color-accent)); }
+        .spot-meter-val { white-space: nowrap; font-weight: 700; color: var(--color-fg-secondary); }
+
+        /* reveal — colour + icon, no flashing */
+        .spot-opt.is-true { border-color: color-mix(in srgb, var(--color-accent) 45%, var(--color-border)); }
+        .spot-opt.is-true::after { content: "✓ true"; color: var(--color-accent); font-size: var(--font-size-xs);
+            font-weight: 700; display: block; margin-top: 0.45rem; letter-spacing: .04em; }
+        .spot-opt.is-fake { border-color: color-mix(in srgb, var(--color-error) 60%, var(--color-border));
+            background: color-mix(in srgb, var(--color-error) 12%, transparent); }
+        .spot-opt.is-fake::after { content: "✗ made up"; color: var(--color-error); font-size: var(--font-size-xs);
+            font-weight: 700; display: block; margin-top: 0.45rem; letter-spacing: .04em; }
+        .spot-opt.is-fake .spot-meter-fill { background: linear-gradient(90deg, color-mix(in srgb, var(--color-error) 55%, transparent), var(--color-error)); }
+        .spot-opt.is-picked { outline: 2px solid color-mix(in srgb, var(--color-accent) 70%, transparent); outline-offset: 2px; }
+
+        /* result panel: verdict + why + how to verify */
         .spot-result { margin: 0; color: var(--color-fg-secondary); line-height: 1.7;
-            padding: 0.8rem 0.95rem; border-radius: 9px; background: color-mix(in srgb, var(--color-brand) 14%, transparent); }
+            padding: 0.9rem 1rem; border-radius: var(--radius);
+            background: color-mix(in srgb, var(--color-brand) 16%, transparent);
+            border-inline-start: 3px solid var(--color-accent); }
+        .spot-result:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+        .spot-result.is-right { border-inline-start-color: var(--color-success); }
+        .spot-result.is-wrong { border-inline-start-color: var(--color-error); }
+        .spot-result p { margin: 0 0 0.6rem; }
+        .spot-result p:last-child { margin-bottom: 0; }
         .spot-result strong { color: var(--color-fg); }
+        .spot-verdict { display: flex; align-items: baseline; gap: 0.45rem; font-size: var(--font-size-lg); }
+        .spot-icon { font-weight: 700; }
+        .spot-result.is-right .spot-icon { color: var(--color-success); }
+        .spot-result.is-wrong .spot-icon { color: var(--color-error); }
+        .spot-why-lbl, .spot-check-lbl { display: block; font-size: var(--font-size-xs);
+            font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: var(--color-muted); margin-bottom: 0.1rem; }
+        .spot-check { color: var(--color-fg-secondary); }
+        .spot-check-lbl { color: var(--color-accent); }
+        .spot-insight { margin-top: 0.9rem; padding-top: 0.8rem;
+            border-top: 1px solid color-mix(in srgb, var(--color-accent) 24%, var(--color-border)); }
+        .spot-insight-line { color: var(--color-fg-secondary); }
+        .spot-insight-line strong { color: var(--color-fg); }
+
+        /* next / restart */
+        .spot-nav { display: flex; }
+        .spot-next { font: 600 0.9rem "Montserrat", sans-serif; color: var(--color-bg);
+            background: var(--color-accent); border: none; border-radius: var(--radius);
+            padding: 0.6rem 1.1rem; cursor: pointer; transition: filter .15s ease; }
+        .spot-next:hover { filter: brightness(1.08); }
+        .spot-next:focus-visible { outline: 2px solid var(--color-fg); outline-offset: 2px; }
+
+        @media (prefers-reduced-motion: reduce) {
+            .spot-opt, .spot-dot, .spot-next { transition: none; }
+            .spot-opt:hover:not([disabled]):not([aria-disabled="true"]) { transform: none; }
+            .spot-dot.is-now { transform: none; }
+        }
 
         @media (min-width: 64rem) {
             .content.article-layout {
@@ -133,16 +218,15 @@
 
             <p class="into" data-a11y="explorable-intro">See for yourself. You asked AI for three quick facts — pick the one you think it made up:</p>
 
-            <figure class="explorable" id="spot-it">
+            <figure class="explorable fig-dark" id="spot-it">
                 <figcaption>Spot the made-up one</figcaption>
-                <p class="spot-q" data-a11y="spot-question">Three "quick facts about honey." The AI sounds equally sure about all three — but <strong>one is invented.</strong> Which?</p>
+                <p class="spot-q">Several rounds of "quick facts." Each one the AI states with the <strong>same calm certainty</strong> — but one per round is invented. Catch it, see why it was made up, and learn the one-line way you'd check.</p>
                 <div class="spot-opts">
-                    <button type="button" class="spot-opt" data-claim data-fake="false">Honey never really spoils — sealed pots thousands of years old have been found still edible.</button>
-                    <button type="button" class="spot-opt" data-claim data-fake="false">Bees make honey from the nectar they gather from flowers.</button>
-                    <button type="button" class="spot-opt" data-claim data-fake="true">A single worker bee makes about a full jar of honey in its lifetime.</button>
+                    <p class="spot-opt" aria-disabled="true">Honey never really spoils — sealed pots thousands of years old have been found still edible.</p>
+                    <p class="spot-opt" aria-disabled="true">Bees make honey from the nectar they gather from flowers.</p>
+                    <p class="spot-opt is-fake" aria-disabled="true">A single worker bee makes about a full jar of honey in its lifetime. <span class="spot-opt-note">✗ this is the invented one</span></p>
                 </div>
-                <p class="spot-result" data-spot-result role="status" aria-live="polite" hidden></p>
-                <noscript><p class="spot-result">The third is invented — a single bee makes only about a twelfth of a teaspoon of honey in its whole life. The point: the AI sounded just as sure about the false one. Confidence tells you nothing; verify what matters.</p></noscript>
+                <noscript><p class="spot-result is-wrong">The third is invented — a single bee makes only about a twelfth of a teaspoon of honey in its whole life. The point: the AI sounded just as sure about the false one. Confidence tells you nothing; verify what matters. (Turn on JavaScript for the full game — several rounds, each trickier.)</p></noscript>
             </figure>
 
             <mgt-credit>Built so you get it by trying it — Bret Victor's idea of an explorable explanation.</mgt-credit>

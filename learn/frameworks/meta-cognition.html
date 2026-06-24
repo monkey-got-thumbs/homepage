@@ -77,18 +77,56 @@
         .tool-card { background: var(--color-bg-secondary); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 1.5rem; margin: 1rem 0; }
         .tool-card h3 { margin-top: 0; color: var(--color-accent); }
 
-        /* "Coffee problem" explorable (built by /assets/js/explorable-coffee.js) */
-        .coffee-dial { background: color-mix(in srgb, var(--color-bg-secondary) 90%, transparent); border: 1px solid color-mix(in srgb, var(--color-accent) 18%, var(--color-border)); border-radius: var(--radius-lg); padding: clamp(1.3rem, 3vw, 1.9rem); margin-block: var(--space-2xl); }
-        .coffee-dial .cd-label { display: block; font-weight: var(--font-weight-semibold); margin-bottom: 0.6rem; }
-        .coffee-dial .cd-ends { color: var(--color-muted); font-weight: var(--font-weight-normal); font-size: var(--font-size-sm); float: right; }
-        .coffee-dial input[type="range"] { width: 100%; accent-color: var(--color-accent); margin-bottom: var(--space-md); }
-        .coffee-dial .cd-ask { margin: 0 0 0.5rem; }
-        .coffee-dial .cd-ask strong { color: var(--color-accent); }
-        .coffee-dial .cd-got { margin: 0 0 0.85rem; color: var(--color-fg-secondary); display: flex; gap: 0.5rem; align-items: baseline; min-height: 2.6em; }
-        .coffee-dial .cd-face { font-size: 1.5rem; line-height: 1; }
-        .coffee-dial .cd-meter { height: 8px; background: color-mix(in srgb, #000 35%, transparent); border-radius: 999px; overflow: hidden; }
-        .coffee-dial .cd-meter-fill { display: block; height: 100%; width: 6%; background: linear-gradient(90deg, var(--color-error), var(--color-warning) 55%, var(--color-accent)); border-radius: 999px; transition: width var(--transition-base); }
+        /* "The coffee problem" explorable (built by /assets/js/explorable-coffee.js).
+           .fig-dark keeps the dark figure surface valid under light/sepia schemes. */
+        .coffee-dial { background: var(--color-bg-secondary); border: 1px solid color-mix(in srgb, var(--color-accent) 18%, var(--color-border)); border-radius: var(--radius-lg); padding: clamp(1.3rem, 3vw, 1.9rem); margin-block: var(--space-2xl); }
+        .coffee-dial .cd-controls { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1rem, 3vw, 2rem); margin-bottom: var(--space-lg); }
+        @media (max-width: 620px) { .coffee-dial .cd-controls { grid-template-columns: 1fr; gap: var(--space-md); } }
+        .coffee-dial .cd-label { display: block; font-weight: var(--font-weight-normal); margin-bottom: 0.5rem; color: var(--color-fg-secondary); }
+        .coffee-dial .cd-label strong { color: var(--color-fg); }
+        .coffee-dial .cd-now { display: inline-block; color: var(--color-accent); font-weight: var(--font-weight-semibold); }
+        .coffee-dial input[type="range"] { width: 100%; accent-color: var(--color-accent); margin: 0; touch-action: none; }
+        .coffee-dial input[type="range"]:focus-visible { outline: var(--focus-outline); outline-offset: 4px; border-radius: 4px; }
+        .coffee-dial .cd-ends { display: flex; justify-content: space-between; color: var(--color-muted); font-size: var(--font-size-xs); margin-top: 0.3rem; }
+
+        .coffee-dial .cd-stage { display: grid; grid-template-columns: 1.25fr 1fr; gap: clamp(1rem, 3vw, 1.6rem); align-items: start; }
+        @media (max-width: 620px) { .coffee-dial .cd-stage { grid-template-columns: 1fr; } }
+        .coffee-dial .cd-exchange { background: color-mix(in srgb, #000 22%, var(--color-bg-secondary)); border: 1px solid var(--color-border); border-radius: var(--radius); padding: clamp(0.9rem, 2.5vw, 1.2rem); }
+        .coffee-dial .cd-who { display: block; font-family: var(--font-mono); font-size: var(--font-size-xs); text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-muted); margin-bottom: 0.25rem; }
+        .coffee-dial .cd-ask { margin: 0 0 0.9rem; }
+        .coffee-dial .cd-ask strong { color: var(--color-accent); font-size: var(--font-size-lg); font-weight: var(--font-weight-semibold); }
+        .coffee-dial .cd-reply { margin: 0 0 1rem; color: var(--color-fg-secondary); line-height: 1.6; min-height: 5.5em; }
+        .coffee-dial .cd-reply b { color: var(--color-fg); font-weight: var(--font-weight-semibold); }
+        .coffee-dial .cd-face { font-size: 1.2rem; line-height: 1; margin-inline-start: 0.45rem; vertical-align: -0.1em; }
+        .coffee-dial .cd-meter-row { display: flex; align-items: center; gap: 0.6rem; }
+        .coffee-dial .cd-meter { flex: 1; height: 9px; background: color-mix(in srgb, #000 40%, transparent); border-radius: 999px; overflow: hidden; }
+        .coffee-dial .cd-meter-fill { display: block; height: 100%; width: 6%; background: var(--color-error); border-radius: 999px; transition: width var(--transition-base), background var(--transition-base); }
+        .coffee-dial .cd-meter-val { font-family: var(--font-mono); font-weight: var(--font-weight-bold); font-size: var(--font-size-base); min-width: 3ch; text-align: right; }
         .coffee-dial .cd-meter-label { font-size: var(--font-size-xs); color: var(--color-muted); margin: 0.35rem 0 0; }
+
+        .coffee-dial .cd-guess { background: color-mix(in srgb, var(--color-warning) 7%, var(--color-bg-secondary)); border: 1px dashed color-mix(in srgb, var(--color-warning) 40%, var(--color-border)); border-radius: var(--radius); padding: clamp(0.9rem, 2.5vw, 1.2rem); transition: border-color var(--transition-base), background var(--transition-base); }
+        .coffee-dial[data-good="true"] .cd-guess { background: color-mix(in srgb, var(--color-success) 8%, var(--color-bg-secondary)); border-style: solid; border-color: color-mix(in srgb, var(--color-success) 40%, var(--color-border)); }
+        .coffee-dial .cd-guess-head { margin: 0 0 0.6rem; font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold); color: var(--color-fg); }
+        .coffee-dial .cd-guess-list { margin: 0; padding: 0; list-style: none; }
+        .coffee-dial .cd-guess-list li { font-size: var(--font-size-sm); color: var(--color-muted); line-height: 1.5; padding: 0.3rem 0 0.3rem 1.25rem; position: relative; border-top: 1px solid var(--color-border-light); }
+        .coffee-dial .cd-guess-list li:first-child { border-top: 0; }
+        .coffee-dial .cd-guess-list li::before { content: "?"; position: absolute; inset-inline-start: 0; color: var(--color-warning); font-weight: var(--font-weight-bold); }
+        .coffee-dial .cd-guess-list li em { color: var(--color-fg-secondary); font-style: italic; }
+        .coffee-dial .cd-guess-list .cd-guess-none { color: var(--color-success); padding-inline-start: 1.25rem; }
+        .coffee-dial .cd-guess-list .cd-guess-none::before { content: "✓"; color: var(--color-success); }
+
+        .coffee-dial .cd-move { margin: var(--space-lg) 0 0; line-height: 1.65; color: var(--color-fg-secondary); }
+        .coffee-dial .cd-move strong { color: var(--color-fg); }
+        .coffee-dial .cd-move em { color: var(--color-accent); font-style: italic; }
+
+        .coffee-dial .cd-payoff { margin: var(--space-lg) 0 0; border: 1px solid var(--color-accent); background: color-mix(in srgb, var(--color-accent) 9%, var(--color-bg-secondary)); border-radius: var(--radius); padding: 0.95rem 1.15rem; line-height: 1.6; color: var(--color-fg-secondary); }
+        .coffee-dial .cd-payoff strong { color: var(--color-fg); }
+        .coffee-dial .cd-payoff-lbl { display: block; font-family: var(--font-mono); font-size: var(--font-size-xs); text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-accent); font-weight: var(--font-weight-bold); margin-bottom: 0.35rem; }
+
+        @media (prefers-reduced-motion: reduce) {
+            .coffee-dial .cd-meter-fill,
+            .coffee-dial .cd-guess { transition: none; }
+        }
     </style>
     <link rel="stylesheet" href="/assets/css/accessibility.css">
     <script src="/assets/js/a11y-init.js"></script>
@@ -277,14 +315,53 @@
                     Ask a friend to "grab me a coffee" and they just <em>know</em> the unspoken rules — a cup from the café, not a sack of raw beans or a whole plantation. Everyday language leans on a mountain of shared common sense. An AI doesn't share it by default, and today's models are eager — one well-known developer, Simon Willison, calls them "relentlessly proactive." So a vague ask sends a keen agent somewhere you never meant. Drag the dial:
                 </p>
 
-                <div id="coffee-dial" class="coffee-dial">
-                    <label class="cd-label" for="cd-range">How clearly did you ask? <span class="cd-ends">vague → clear</span></label>
-                    <input type="range" id="cd-range" min="0" max="4" value="0" step="1" aria-describedby="cd-out">
-                    <div class="cd-out" id="cd-out" aria-live="polite">
-                        <p class="cd-ask">You said: <strong data-ask>“coffee”</strong></p>
-                        <p class="cd-got"><span class="cd-face" data-face aria-hidden="true">😵</span> <span>The AI <span data-got>buys you a coffee plantation in Colombia.</span></span></p>
-                        <div class="cd-meter" role="progressbar" aria-label="how close to what you meant" aria-valuemin="0" aria-valuemax="100" aria-valuenow="6"><span class="cd-meter-fill" data-match style="width:6%"></span></div>
-                        <p class="cd-meter-label">how close to what you <em>meant</em></p>
+                <div id="coffee-dial" class="coffee-dial fig-dark" data-good="false">
+                    <div class="cd-controls">
+                        <div class="cd-control">
+                            <label class="cd-label" for="cd-spec">How <strong>specific</strong> is your ask? <span class="cd-now" data-spec-out>barely a hint</span></label>
+                            <input type="range" id="cd-spec" data-spec min="0" max="100" value="0" step="1"
+                                   aria-describedby="cd-stage" aria-valuetext="barely a hint">
+                            <span class="cd-ends" aria-hidden="true">just a word <span>fully precise</span></span>
+                        </div>
+                        <div class="cd-control">
+                            <label class="cd-label" for="cd-ctx">How much <strong>context</strong> did you give? <span class="cd-now" data-ctx-out>none of your situation</span></label>
+                            <input type="range" id="cd-ctx" data-ctx min="0" max="100" value="0" step="1"
+                                   aria-describedby="cd-stage" aria-valuetext="none of your situation">
+                            <span class="cd-ends" aria-hidden="true">nothing said <span>the bits that matter</span></span>
+                        </div>
+                    </div>
+
+                    <div class="cd-stage" id="cd-stage" aria-live="polite">
+                        <div class="cd-exchange">
+                            <p class="cd-ask"><span class="cd-who">You ask</span><strong data-ask>“coffee”</strong></p>
+                            <p class="cd-reply"><span class="cd-who">The AI<span class="cd-face" data-face aria-hidden="true">😵</span></span><span data-reply>“On it. I’ve put a deposit on a <b>coffee plantation in Colombia</b> — 220 hectares, great soil. Shall I arrange the flight?”</span></p>
+                            <div class="cd-meter-row">
+                                <div class="cd-meter" data-meter role="progressbar" aria-label="how useful the answer is" aria-valuemin="0" aria-valuemax="100" aria-valuenow="6">
+                                    <span class="cd-meter-fill" data-meter-fill style="width:6%;background:var(--color-error)"></span>
+                                </div>
+                                <span class="cd-meter-val" data-meter-val style="color:var(--color-error)">6%</span>
+                            </div>
+                            <p class="cd-meter-label">how useful the answer actually is</p>
+                        </div>
+
+                        <div class="cd-guess">
+                            <p class="cd-guess-head" data-guess-head>What the AI still has to guess (6)</p>
+                            <ul class="cd-guess-list" data-guess-list>
+                                <li>Did you mean a <em>drink</em>, or beans, or a whole plantation?</li>
+                                <li>What kind of coffee — flat white? filter? oat milk?</li>
+                                <li>From <em>where</em> — a café, the kitchen, anywhere?</li>
+                                <li><em>When</em> do you need it — now, or next month?</li>
+                                <li>How much of a rush are you in?</li>
+                                <li>Are you paying — and how?</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <p class="cd-move" data-move data-a11y="coffee-move">Right now you’ve said almost nothing — and a keen agent fills every gap <em>itself</em>. Drag a slider and watch the guessing shrink.</p>
+
+                    <div class="cd-payoff" data-payoff hidden>
+                        <span class="cd-payoff-lbl">⚡ there it is</span>
+                        The answer just turned <strong>genuinely useful</strong> — and you never touched the AI. All you did was notice what <em>you</em> were leaving unsaid and put the few bits that matter into words. That noticing — watching your own thinking before you ask — <strong>is meta-cognition</strong>. Same move works for any prompt you’ll ever write.
                     </div>
                 </div>
 

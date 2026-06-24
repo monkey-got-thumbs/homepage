@@ -69,24 +69,79 @@
         .into { font-size: var(--font-size-lg); color: var(--color-fg-secondary); line-height: 1.7; }
 
         /* "Three ways it helps" explorable (built by /assets/js/explorable-howhelps.js).
-           Container + even rhythm come from shared .explorable in layout.css. */
+           Container + even rhythm come from shared .explorable in layout.css.
+           A real little model per mode: drag how much you lean on AI; an SVG bar
+           splits the task into "AI carries the effort" and "the part only you can do"
+           (a floor it never crosses), with prose + numbers recomputing live. */
         #how-helps figcaption { font-family: var(--font-display); letter-spacing: 0.02em; font-size: var(--font-size-xl); color: var(--color-fg); }
-        .hh-modes { display: flex; gap: 0.5rem; flex-wrap: wrap; }
-        .hh-modes button { flex: 1; min-width: 8rem; padding: 0.6rem 0.5rem; border-radius: 9px; border: 1px solid var(--color-border); background: transparent; color: var(--color-fg); font: 600 0.9rem "Montserrat", sans-serif; cursor: pointer; transition: background .15s ease, border-color .15s ease; }
-        .hh-modes button:hover { border-color: color-mix(in srgb, var(--color-accent) 50%, var(--color-border)); }
+
+        /* mode + kind toggles */
+        .hh-modes, .hh-kinds { display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center; }
+        .hh-modes button, .hh-kinds button {
+            min-width: 7rem; padding: 0.6rem 0.7rem; border-radius: 9px;
+            border: 1px solid var(--color-border); background: transparent; color: var(--color-fg);
+            font: 600 0.9rem "Montserrat", sans-serif; cursor: pointer;
+            transition: background .15s ease, border-color .15s ease, color .15s ease;
+        }
+        .hh-modes button { flex: 1; }
+        .hh-modes button:hover, .hh-kinds button:hover { border-color: color-mix(in srgb, var(--color-accent) 50%, var(--color-border)); }
         .hh-modes button[aria-pressed="true"] { background: var(--color-accent); color: #11210a; border-color: var(--color-accent); }
-        /* one self-contained result block so the shared gap spaces modes vs result only */
-        .hh-result { display: flex; flex-direction: column; gap: 0.55rem; }
-        .hh-row { display: grid; grid-template-columns: 6.5rem 1fr; align-items: center; gap: 0.75rem; }
-        .hh-label { font-size: var(--font-size-sm); color: var(--color-fg-secondary); }
-        .hh-track { height: 12px; background: color-mix(in srgb, #000 35%, transparent); border-radius: 999px; overflow: hidden; }
-        .hh-fill { display: block; height: 100%; border-radius: 999px; }
-        .hh-fill--you { width: 100%; background: color-mix(in srgb, var(--color-muted) 55%, transparent); }
-        .hh-fill--ai { width: 16%; background: var(--color-accent); transition: width .45s cubic-bezier(.2,.7,.2,1); }
-        .hh-scenario { margin: 0.5rem 0 0; color: var(--color-fg-secondary); line-height: 1.65; }
-        .hh-scenario strong { color: var(--color-fg); }
-        .hh-yours { margin: 0.4rem 0 0; font-size: var(--font-size-sm); color: var(--color-fg-secondary); padding: 0.55rem 0.75rem; border-radius: 8px; background: color-mix(in srgb, var(--color-brand) 14%, transparent); }
-        .hh-yours strong { color: var(--color-fg); }
+        .hh-kinds { gap: 0.4rem; }
+        .hh-kinds-label { color: var(--color-muted); font-size: var(--font-size-sm); margin-inline-end: 0.15rem; }
+        .hh-kinds button { font-size: var(--font-size-sm); padding: 0.45rem 0.7rem; min-width: 0; min-height: 2.25rem; }
+        .hh-kinds button[aria-pressed="true"] { border-color: var(--color-accent); color: var(--color-fg); background: color-mix(in srgb, var(--color-accent) 16%, transparent); }
+
+        /* the dark data-viz stage — .fig-dark keeps the chart palette valid under
+           light/sepia (it re-pins --color-* to the dark values). The --hh-* tokens
+           are declared ON the stage so they resolve against those re-pinned colours,
+           keeping the SVG self-consistent in every scheme. */
+        .hh-stage {
+            --hh-ai: var(--color-accent);
+            --hh-ai-ink: #11210a;
+            --hh-you: color-mix(in srgb, var(--color-muted) 32%, transparent);
+            --hh-you-ink: var(--color-fg);
+            --hh-floor: var(--color-brand-lighter);
+            --hh-edge: var(--color-fg);
+            --hh-edge-ink: #11210a;
+            --hh-mut: var(--color-muted);
+            display: flex; flex-direction: column; gap: var(--space-md);
+            padding: clamp(1rem, 3vw, 1.4rem); border-radius: var(--radius-lg);
+        }
+        .hh-chart { display: block; width: 100%; height: auto; touch-action: none; user-select: none; -webkit-user-select: none; overflow: visible; }
+        .hh-chart .hh-handle:focus { outline: none; }
+        .hh-chart .hh-handle:focus-visible circle { stroke: var(--color-accent); stroke-width: 3; }
+        .hh-aiseg { transition: width .18s ease; }
+
+        /* slider row */
+        .hh-slide { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 0.5rem 0.9rem; }
+        .hh-slide-label { grid-column: 1 / -1; font-size: var(--font-size-sm); color: var(--color-fg-secondary); font-weight: var(--font-weight-semibold); }
+        .hh-slide input[type="range"] { width: 100%; accent-color: var(--color-accent); margin: 0; }
+        .hh-slide-out { font-family: var(--font-mono); font-weight: 700; color: var(--color-accent); min-width: 3.2ch; text-align: end; font-size: var(--font-size-sm); }
+
+        .hh-reclaim { margin: 0; color: var(--color-fg-secondary); font-size: var(--font-size-sm); }
+        .hh-reclaim strong { color: var(--color-accent); font-family: var(--font-mono); font-size: 1.15rem; }
+
+        /* live prose */
+        .hh-prose { margin: 0; color: var(--color-fg-secondary); line-height: 1.7; }
+        .hh-prose b { color: var(--color-fg); }
+        .hh-prose .hh-floor-note b { color: var(--color-brand-lighter); }
+        .hh-prose .hh-floor-note b:first-child { color: var(--color-fg); }
+
+        /* closing insight — dim until you've explored the floor, then lit */
+        .hh-insight {
+            margin: 0; line-height: 1.6; font-size: var(--font-size-sm);
+            padding: 0.75rem 0.95rem; border-radius: 10px;
+            border: 1px dashed var(--color-border); color: var(--color-muted);
+            transition: border-color .2s ease, background .2s ease, color .2s ease;
+        }
+        .hh-insight.is-lit { border-style: solid; border-color: color-mix(in srgb, var(--color-accent) 45%, var(--color-border)); background: color-mix(in srgb, var(--color-accent) 9%, transparent); color: var(--color-fg-secondary); }
+        .hh-ins-lbl { display: block; font-size: var(--font-size-xs); font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: var(--color-muted); margin-bottom: 0.25rem; }
+        .hh-insight.is-lit .hh-ins-lbl { color: var(--color-accent); }
+
+        /* no flashing / motion under reduced-motion */
+        @media (prefers-reduced-motion: reduce) {
+            .hh-aiseg, .hh-modes button, .hh-kinds button, .hh-insight { transition: none; }
+        }
 
         @media (min-width: 64rem) {
             .content.article-layout {
@@ -130,23 +185,45 @@
                 <p data-a11y="enduring-idea"><strong>The one idea to keep:</strong> AI takes the effort; you keep the call. That's the same deal in all three.</p>
             </div>
 
-            <p class="into" data-a11y="explorable-intro">Tap each one to see the slog shrink — and what stays yours:</p>
+            <p class="into" data-a11y="explorable-intro">Pick a way, pick a kind of work, then drag how much you lean on AI — and watch the slog shrink while the part that stays yours holds its ground:</p>
 
-            <figure class="explorable" id="how-helps">
+            <figure class="explorable" id="how-helps" data-mode="speed">
                 <figcaption>Three ways it helps</figcaption>
-                <div class="hh-modes" role="group" aria-label="Three ways AI helps">
+
+                <div class="hh-modes" role="group" aria-label="Pick a way AI helps">
                     <button type="button" data-mode="speed" aria-pressed="true">Speed it up</button>
                     <button type="button" data-mode="boring" aria-pressed="false">Take the boring jobs</button>
                     <button type="button" data-mode="think" aria-pressed="false">Think it through with you</button>
                 </div>
-                <div class="hh-result">
-                    <div class="hh-row"><span class="hh-label">On your own</span><span class="hh-track"><span class="hh-fill hh-fill--you"></span></span></div>
-                    <div class="hh-row"><span class="hh-label">With AI</span><span class="hh-track"><span class="hh-fill hh-fill--ai" data-ai-bar></span></span></div>
-                    <p class="hh-scenario"><strong>On your own:</strong> <span data-before>Writing the monthly report from a blank page — a whole afternoon gone.</span></p>
-                    <p class="hh-scenario"><strong>With AI:</strong> <span data-after>AI hands you a solid first draft in minutes. You shape it into the real thing.</span></p>
-                    <p class="hh-yours">You stay in charge — <span data-yours>you keep the angle and the final wording.</span></p>
+
+                <div class="hh-kinds" role="group" aria-label="Pick a kind of work">
+                    <span class="hh-kinds-label">on…</span>
+                    <button type="button" data-kind="writing" aria-pressed="true">Writing</button>
+                    <button type="button" data-kind="admin" aria-pressed="false">Admin</button>
+                    <button type="button" data-kind="planning" aria-pressed="false">Planning</button>
                 </div>
-                <noscript><p class="hh-scenario">Three ways: it speeds work up (a blank-page report becomes a draft in minutes), it takes the boring repetitive jobs (sorting, formatting, looking things up), and it helps you think (offering angles to react to). Each time, AI does the effort and you make the call.</p></noscript>
+
+                <div class="hh-stage fig-dark">
+                    <svg class="hh-chart" data-chart viewBox="0 0 620 132" preserveAspectRatio="xMidYMid meet"
+                         role="img" aria-label="A bar splitting the task into the effort AI carries and the part only you can do"></svg>
+
+                    <div class="hh-slide">
+                        <label class="hh-slide-label" for="hh-lean">How much you lean on AI for this</label>
+                        <input type="range" id="hh-lean" data-lean min="0" max="100" value="70" step="1"
+                               aria-describedby="hh-prose" aria-valuetext="70% — AI carries most of it">
+                        <output class="hh-slide-out" data-lean-out aria-hidden="true">70%</output>
+                    </div>
+
+                    <p class="hh-reclaim">You reclaim <strong data-reclaim>—</strong> <span>of this slog</span></p>
+                </div>
+
+                <p class="hh-prose" id="hh-prose" data-prose aria-live="polite" data-a11y="explorable-prose">
+                    Drag the handle to lean on AI and watch the effort shrink — while the part only you can do holds its ground.
+                </p>
+
+                <p class="hh-insight" data-insight aria-live="polite"></p>
+
+                <noscript><p class="hh-prose">Three ways: it <strong>speeds work up</strong> (a blank-page report becomes a draft in minutes), it <strong>takes the boring repetitive jobs</strong> (sorting, formatting, looking things up), and it <strong>helps you think</strong> (offering angles to react to). Each time AI carries the effort and you keep the part only you can do — the angle, the judgment, the final call.</p></noscript>
             </figure>
 
             <mgt-credit>Built so you get it by changing it — Bret Victor's idea of an explorable explanation.</mgt-credit>

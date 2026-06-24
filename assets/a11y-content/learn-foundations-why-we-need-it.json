@@ -21,11 +21,11 @@
     "<strong>Keep this:</strong> don't compete with AI — delegate busywork, keep judgment. Learnable; a little goes far."
   ],
   "week-intro": [
-    "Here is what a normal week can look like. Tick the jobs that repeat a lot — the ones you would be glad to hand to AI:",
-    "Here's a normal week. Tick the repeating jobs you'd be happy to hand to AI:",
-    "Here's a normal week. Tick the repetitive jobs you'd happily hand to AI:",
-    "A normal week. Tick the repetitive jobs you'd happily hand off:",
-    "A normal week — tick the repetitive jobs to hand off:"
+    "Here is what a normal week can look like, drawn as blocks of time. Hand the jobs that repeat a lot to AI — the ones you would be glad to give away:",
+    "Here's a normal week, drawn as blocks of time. Hand the repeating jobs to AI — the ones you'd be happy to give away:",
+    "Here's a normal week, drawn as blocks of time. Hand the repetitive jobs to AI — the ones you'd happily give away:",
+    "A normal week, as blocks of time. Hand the repetitive jobs to AI:",
+    "A normal week, as blocks — hand off the repetitive jobs:"
   ],
   "week-figcaption": [
     "Your week, made lighter",
@@ -34,12 +34,12 @@
     "Your week, reshaped",
     "Your week, reshaped"
   ],
-  "week-caption": [
-    "Tick the repeating jobs above. Notice that not one of them is the part that really needs you.",
-    "Tick the repeating jobs above. Notice none of them is the part that needs you.",
-    "Tick the repetitive jobs above. Notice none of them is the part that needs you.",
-    "Tick the repetitive jobs above — none is the part that needs you.",
-    "Tick the repetitive jobs — none needs you."
+  "week-hint": [
+    "Give the <span class=\"yw-key yw-key--busy\">busywork</span> blocks to AI — tap one, or drag across a few. The <span class=\"yw-key yw-key--human\">outlined</span> blocks are the part that needs you, and they can never be given away.",
+    "Hand the <span class=\"yw-key yw-key--busy\">busywork</span> to AI — tap a block, or drag across several. The <span class=\"yw-key yw-key--human\">outlined</span> blocks are the part that needs you: they can never be handed over.",
+    "Hand the <span class=\"yw-key yw-key--busy\">busywork</span> to the AI — click a block, or drag across several. The <span class=\"yw-key yw-key--human\">outlined</span> blocks are the part that needs you: they can never be handed over.",
+    "Hand the <span class=\"yw-key yw-key--busy\">busywork</span> to the AI — click or drag. The <span class=\"yw-key yw-key--human\">outlined</span> blocks need you, and can never be handed over.",
+    "Hand the <span class=\"yw-key yw-key--busy\">busywork</span> to AI (click/drag). <span class=\"yw-key yw-key--human\">Outlined</span> blocks stay yours."
   ],
   "the-reason": [
     "That is the whole reason it's worth your time. AI takes on the jobs that repeat. You keep the things only a person can do: reading the mood in a room, weighing what is fair, holding the background story that never shows up in the numbers, and knowing when the \"right\" answer is actually the wrong one. The edge isn't <em>having</em> AI — everyone has that now. The edge is being good at telling it what to do. And that is exactly what you can learn here.",
