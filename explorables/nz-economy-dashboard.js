@@ -1,0 +1,177 @@
+
+"use strict";
+const $=s=>document.querySelector(s);
+const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+const pc=v=>v.toFixed(2)+"%";const pc1=v=>v.toFixed(1)+"%";
+const NEUTRAL=3.0;
+const ST={ocr:2.25};
+const inflAt=o=>clamp(3.1-0.9*(o-2.25),0,8);
+const unempAt=o=>clamp(5.3+0.6*(o-2.25),3,12);
+
+/* ===== HERO ===== */
+function gauge(s,x0,y0,gw,label,val,lo,hi,band,mid){
+  const mx=8,gv=v=>x0+clamp(v,0,mx)/mx*gw;
+  let g=`<text x="${x0}" y="${y0-8}" font-size="12" fill="var(--ink)">${label}</text>`;
+  if(band)g+=`<rect x="${gv(band[0])}" y="${y0}" width="${(gv(band[1])-gv(band[0])).toFixed(1)}" height="18" fill="var(--band)" opacity=".16"/>`;
+  g+=`<rect x="${x0}" y="${y0}" width="${gw}" height="18" rx="4" fill="none" stroke="var(--faint)"/>`;
+  const inBand=band&&val>=band[0]&&val<=band[1];const col=inBand?'var(--good)':(val>(mid||band?band[1]:hi)?'var(--hot)':'var(--cold)');
+  g+=`<rect x="${x0}" y="${y0}" width="${(gv(val)-x0).toFixed(1)}" height="18" rx="4" fill="${col}"/>`;
+  if(mid!=null)g+=`<line x1="${gv(mid)}" y1="${y0-4}" x2="${gv(mid)}" y2="${y0+22}" stroke="var(--ink)" stroke-width="2"/><text x="${gv(mid)}" y="${y0+34}" font-size="9" text-anchor="middle" fill="var(--ink)">${mid}% goal</text>`;
+  g+=`<text x="${(gv(val)+8).toFixed(1)}" y="${y0+14}" font-size="13" font-family="var(--mono)" font-weight="700" fill="${col}">${pc1(val)}</text>`;
+  return g;
+}
+function drawHero(){const sv=$("#hero"),W=1040,o=ST.ocr,infl=inflAt(o),unemp=unempAt(o);
+  const L=60,R=60,axY=58,x=v=>L+v/6*(W-L-R);let s="";
+  s+=`<text x="${L}" y="26" font-size="12" fill="var(--mut)">Official Cash Rate</text>`;
+  s+=`<line x1="${L}" y1="${axY}" x2="${W-R}" y2="${axY}" stroke="var(--faint)" stroke-width="4" stroke-linecap="round"/>`;
+  // neutral band 2.5-3.5
+  s+=`<rect x="${x(2.5).toFixed(1)}" y="${axY-7}" width="${(x(3.5)-x(2.5)).toFixed(1)}" height="14" fill="var(--mut)" opacity=".18"/><text x="${x(3.0).toFixed(1)}" y="${axY-12}" font-size="9" text-anchor="middle" fill="var(--mut)">neutral ~3%</text>`;
+  for(let v=0;v<=6;v++)s+=`<text x="${x(v).toFixed(1)}" y="${axY+18}" font-size="10" text-anchor="middle" fill="var(--mut)" font-family="var(--mono)">${v}%</text>`;
+  s+=`<g class="knob" style="cursor:ew-resize"><circle cx="${x(o).toFixed(1)}" cy="${axY}" r="11" fill="var(--acc)"/><text x="${x(o).toFixed(1)}" y="${axY-16}" font-size="12" text-anchor="middle" font-weight="700" fill="var(--acc)" font-family="var(--mono)">${pc(o)}</text></g>`;
+  s+=gauge(s,L,120,380,'Inflation',infl,0,6,[1,3],2);
+  s+=gauge(s,560,120,380,'Unemployment',unemp,3,10,null,null);
+  const stance=o<NEUTRAL-0.1?['accommodative','var(--cold)']:o>NEUTRAL+0.1?['restrictive','var(--hot)']:['neutral','var(--good)'];
+  s+=`<text x="${W-R}" y="26" font-size="12" text-anchor="end" fill="var(--mut)">stance:</text><text x="${W-R}" y="44" font-size="15" text-anchor="end" font-weight="700" fill="${stance[1]}">${stance[0]}</text>`;
+  sv.innerHTML=s;
+  $("#capHero").innerHTML=`At an OCR of ${SB('ocr',pc(o))} the model puts inflation ≈ <b class="${infl>3?'hot':infl<1?'cold':'good'}">${pc1(infl)}</b> (band 1–3%, goal 2%) and unemployment ≈ <b>${pc1(unemp)}</b>. The stance is <b style="color:${stance[1]}">${stance[0]}</b> (vs ~3% neutral). The RBNZ is <b>holding at 2.25%</b> — raising would chase inflation down toward 2% but cost jobs in a fragile recovery.`;
+}
+
+/* ===== OCR PATH ===== */
+const PATH=[{d:'2024 peak',o:5.5,n:'The tightening-cycle peak before the easing began.',q:''},
+ {d:'Nov 2025',o:2.25,n:'Cut 25bps to 2.25% — ~325bps of total easing. “Bring back boring.”',q:'“We want monetary policy off the front pages.”'},
+ {d:'Feb 2026',o:2.25,n:'Hold. Easing paused; a modest tightening path pencilled in from ~late 2026.',q:'“Get out and spend… so the recovery can broaden.”'},
+ {d:'Mar 2026',o:2.25,n:'Governor Breman warns of a near-term inflation spike from an oil shock.',q:'“I will not rule out hikes nor cuts.”'},
+ {d:'Apr 2026',o:2.25,n:'Hold by consensus. A hike was discussed but not advocated.',q:'“We were not close to a rate hike today in any way.”'},
+ {d:'May 2026',o:2.25,n:'Financial Stability Report — no rate decision; OCR unchanged.',q:'“NZ’s financial system is resilient.”'}];
+let pathI=4;
+function drawPath(){const sv=$("#path"),W=480,L=40,R=18,T=14,B=28,pw=W-L-R,ph=170-T-B;
+  const x=i=>L+i/(PATH.length-1)*pw,mx=6,y=v=>T+ph*(1-v/mx);let s="";
+  for(let v=0;v<=6;v+=2)s+=`<line x1="${L}" y1="${y(v).toFixed(1)}" x2="${W-R}" y2="${y(v).toFixed(1)}" stroke="var(--faint)"/><text x="${L-5}" y="${(y(v)+3).toFixed(1)}" font-size="9" text-anchor="end" fill="var(--mut)" font-family="var(--mono)">${v}%</text>`;
+  s+=`<rect x="${L}" y="${y(3.5).toFixed(1)}" width="${pw}" height="${(y(2.5)-y(3.5)).toFixed(1)}" fill="var(--mut)" opacity=".12"/><text x="${W-R}" y="${(y(3.5)-3).toFixed(1)}" font-size="8.5" text-anchor="end" fill="var(--mut)">neutral band</text>`;
+  let d="";PATH.forEach((p,i)=>d+=(i?"L":"M")+x(i).toFixed(1)+" "+y(p.o).toFixed(1)+" ");
+  s+=`<path d="${d}" fill="none" stroke="var(--acc)" stroke-width="2.6"/>`;
+  PATH.forEach((p,i)=>s+=`<circle cx="${x(i).toFixed(1)}" cy="${y(p.o).toFixed(1)}" r="${i===pathI?6:3.4}" fill="${i===pathI?'var(--hot)':'var(--acc)'}"/>`);
+  PATH.forEach((p,i)=>{if(i%1===0)s+=`<text x="${x(i).toFixed(1)}" y="${T+ph+15}" font-size="8" text-anchor="middle" fill="var(--mut)">${p.d.replace(' ',' ')}</text>`;});
+  sv.innerHTML=s;const p=PATH[pathI];
+  $("#capPath").innerHTML=`<b>${p.d}: OCR ${pc(p.o)}.</b> ${p.n}${p.q?` <span style="color:var(--mut)">${p.q}</span>`:''}`;
+}
+
+/* ===== INFLATION ===== */
+const Q=['Sep 25','Dec 25','Mar 26','Jun 26','Sep 26','Dec 26','Jun 27'];
+const INFL={feb:[3.0,3.1,2.8,2.5,2.3,2.1,2.0],apr:[3.0,3.1,3.0,4.2,3.4,2.7,2.1]};
+const INFL_ACT=2;//first 2 are actual
+let inflView='feb';
+function drawInfl(){const sv=$("#infl"),W=480,L=34,R=16,T=12,B=26,pw=W-L-R,ph=168-T-B;
+  const data=INFL[inflView],x=i=>L+i/(Q.length-1)*pw,mx=5,y=v=>T+ph*(1-v/mx);let s="";
+  // band 1-3
+  s+=`<rect x="${L}" y="${y(3).toFixed(1)}" width="${pw}" height="${(y(1)-y(3)).toFixed(1)}" fill="var(--band)" opacity=".14"/><text x="${W-R}" y="${(y(3)+10).toFixed(1)}" font-size="8" text-anchor="end" fill="var(--band)">1–3% band</text>`;
+  s+=`<line x1="${L}" y1="${y(2).toFixed(1)}" x2="${W-R}" y2="${y(2).toFixed(1)}" stroke="var(--band)" stroke-dasharray="4 3"/>`;
+  for(let v=0;v<=5;v++)s+=`<text x="${L-5}" y="${(y(v)+3).toFixed(1)}" font-size="8.5" text-anchor="end" fill="var(--mut)" font-family="var(--mono)">${v}</text>`;
+  Q.forEach((q,i)=>s+=`<text x="${x(i).toFixed(1)}" y="${T+ph+14}" font-size="8" text-anchor="middle" fill="var(--mut)">${q}</text>`);
+  // actual (solid) then forecast (dashed)
+  let da="";for(let i=0;i<INFL_ACT;i++)da+=(i?"L":"M")+x(i).toFixed(1)+" "+y(data[i]).toFixed(1)+" ";
+  let df="";for(let i=INFL_ACT-1;i<data.length;i++)df+=(i===INFL_ACT-1?"M":"L")+x(i).toFixed(1)+" "+y(data[i]).toFixed(1)+" ";
+  s+=`<path d="${da}" fill="none" stroke="var(--acc)" stroke-width="2.6"/>`;
+  s+=`<path d="${df}" fill="none" stroke="var(--acc)" stroke-width="2.2" stroke-dasharray="5 4"/>`;
+  data.forEach((v,i)=>{const peak=inflView==='apr'&&i===3;s+=`<circle cx="${x(i).toFixed(1)}" cy="${y(v).toFixed(1)}" r="${peak?4:2.6}" fill="${v>3?'var(--hot)':'var(--acc)'}"/>`;if(peak)s+=`<text x="${x(i).toFixed(1)}" y="${(y(v)-7).toFixed(1)}" font-size="9" text-anchor="middle" font-weight="700" fill="var(--hot)">4.2%</text>`;});
+  sv.innerHTML=s;
+  $("#capInfl").innerHTML=inflView==='feb'
+    ? `<b>February view:</b> inflation 3.1% easing back inside the band and to <b class="good">2% within ~12 months</b>. Solid = actual, dashed = forecast.`
+    : `<b>April view (after the oil shock):</b> a near-term spike to <b class="hot">4.2%</b> (Q2 2026) before returning to <b>2% medium-term</b>. Same start, one shock — a very different path.`;
+}
+
+/* ===== FIRST vs SECOND ROUND ===== */
+let pass=20; // % pass-through to wages/expectations
+function drawRound(){const sv=$("#round"),W=480,L=34,R=16,T=12,B=34,pw=W-L-R,ph=168-T-B;
+  const n=8,x=i=>L+i/(n-1)*pw,mx=5,y=v=>T+ph*(1-v/mx);
+  const entrenched=2+pass/100*2.6; // where it settles if it feeds through
+  const series=[3.1,3.4,4.2,3.6,3.0+ (pass/100*0.8), Math.max(2,entrenched-0.4*(1-pass/100)), entrenched, entrenched];
+  // shape: spike then settle toward entrenched (high pass) or toward 2 (low pass)
+  for(let i=4;i<n;i++){const t=(i-3)/(n-3);series[i]=4.2+(entrenched-4.2)*t;}
+  series[0]=3.1;series[1]=3.6;series[2]=4.2;series[3]=4.0;
+  let s="";
+  s+=`<rect x="${L}" y="${y(3).toFixed(1)}" width="${pw}" height="${(y(1)-y(3)).toFixed(1)}" fill="var(--band)" opacity=".14"/>`;
+  s+=`<line x1="${L}" y1="${y(2).toFixed(1)}" x2="${W-R}" y2="${y(2).toFixed(1)}" stroke="var(--band)" stroke-dasharray="4 3"/><text x="${W-R}" y="${(y(2)-3).toFixed(1)}" font-size="8" text-anchor="end" fill="var(--band)">2% target</text>`;
+  for(let v=0;v<=5;v++)s+=`<text x="${L-5}" y="${(y(v)+3).toFixed(1)}" font-size="8.5" text-anchor="end" fill="var(--mut)" font-family="var(--mono)">${v}</text>`;
+  let d="";series.forEach((v,i)=>d+=(i?"L":"M")+x(i).toFixed(1)+" "+y(v).toFixed(1)+" ");
+  const danger=pass>50;
+  s+=`<path d="${d}" fill="none" stroke="${danger?'var(--hot)':'var(--good)'}" stroke-width="2.6"/>`;
+  series.forEach((v,i)=>s+=`<circle cx="${x(i).toFixed(1)}" cy="${y(v).toFixed(1)}" r="2.4" fill="${danger?'var(--hot)':'var(--good)'}"/>`);
+  // slider
+  s+=`<text x="${L}" y="${T+ph+16}" font-size="9" fill="var(--mut)">look through ◀</text><text x="${W-R}" y="${T+ph+16}" font-size="9" text-anchor="end" fill="var(--mut)">▶ feeds wages</text>`;
+  s+=`<line x1="${L}" y1="${T+ph+24}" x2="${W-R}" y2="${T+ph+24}" stroke="var(--faint)" stroke-width="4" stroke-linecap="round"/>`;
+  const hx=L+pass/100*pw;s+=`<g class="rKnob" style="cursor:ew-resize"><circle cx="${hx.toFixed(1)}" cy="${T+ph+24}" r="8" fill="var(--ink)"/></g>`;
+  sv.innerHTML=s;
+  $("#capRound").innerHTML=danger
+    ? `Pass-through <b class="hot">${pass}%</b>: the shock is feeding wages &amp; expectations — inflation stays stuck near <b class="hot">${pc1(entrenched)}</b>. A <b>second-round</b> spiral — the RBNZ would need to <b>hike</b> to re-anchor.`
+    : `Pass-through <b class="good">${pass}%</b>: a one-off <b>first-round</b> cost spike the Bank can <b>look through</b> — inflation falls back toward <b>2%</b>. Hold.`;
+}
+
+/* ===== COST OF LIVING ===== */
+let incGrow=28; // % income growth since 2020 (prices ~26)
+const PRICE=26;
+function drawCol(){const sv=$("#col"),W=480,L=92,R=70;
+  const items=[['Prices',PRICE,'var(--hot)'],['Incomes',incGrow,'var(--cold)']];
+  const mx=Math.max(PRICE,incGrow,1)*1.15,x=v=>L+v/mx*(W-L-R);let s="";
+  items.forEach((it,i)=>{const y=24+i*40;s+=`<text x="${L-8}" y="${y+14}" font-size="11.5" text-anchor="end" fill="var(--ink)">${it[0]}</text>`+
+    `<rect x="${L}" y="${y}" width="${Math.max(2,x(it[1])-L).toFixed(1)}" height="20" rx="4" fill="${it[2]}" ${i===1?'class="cBar" style="cursor:ew-resize"':''}/>`+
+    `<text x="${(x(it[1])+6).toFixed(1)}" y="${y+15}" font-size="11" font-family="var(--mono)" fill="var(--mut)">+${it[1].toFixed(0)}%</text>`;});
+  const real=((1+incGrow/100)/(1+PRICE/100)-1)*100;
+  s+=`<text x="${L}" y="120" font-size="12" fill="var(--ink)">real purchasing power since 2020: <tspan font-family="var(--mono)" font-weight="700" fill="${real>=0?'var(--good)':'var(--hot)'}">${real>=0?'+':''}${real.toFixed(1)}%</tspan></text>`;
+  s+=`<text x="${L}" y="142" font-size="9.5" fill="var(--mut)">drag the incomes bar</text>`;
+  sv.innerHTML=s;
+  $("#capCol").innerHTML=real>=0
+    ? `Incomes up +${incGrow}% vs prices +26% → you're <b class="good">${real.toFixed(1)}% better off</b> in real terms. Conway: durable gains need <b>productivity</b>, not just pay rises.`
+    : `Incomes up +${incGrow}% but prices +26% → <b class="hot">${real.toFixed(1)}%</b> real — that's why “everything feels expensive” even as inflation falls.`;
+}
+
+/* ===== STRESS TEST ===== */
+let sev=1.0; // multiple of the FSR scenario
+const MINCAP=10.5, BASECAP=14.5;
+function drawStress(){const sv=$("#stress"),W=1040,L=40,R=20,T=16,B=30,pw=W-L-R,ph=150-T-B;
+  const cap=BASECAP-3.5*sev, x=v=>L+v/2*pw, y=v=>T+ph*(1-(v-7)/(16-7));let s="";
+  for(let v=8;v<=16;v+=2)s+=`<line x1="${L}" y1="${y(v).toFixed(1)}" x2="${W-R}" y2="${y(v).toFixed(1)}" stroke="var(--faint)"/><text x="${L-6}" y="${(y(v)+3).toFixed(1)}" font-size="9" text-anchor="end" fill="var(--mut)" font-family="var(--mono)">${v}%</text>`;
+  // min capital line
+  s+=`<line x1="${L}" y1="${y(MINCAP).toFixed(1)}" x2="${W-R}" y2="${y(MINCAP).toFixed(1)}" stroke="var(--hot)" stroke-width="2" stroke-dasharray="6 4"/><text x="${W-R}" y="${(y(MINCAP)-5).toFixed(1)}" font-size="10" text-anchor="end" fill="var(--hot)">minimum capital</text>`;
+  // FSR scenario marker at sev=1
+  s+=`<line x1="${x(1).toFixed(1)}" y1="${T}" x2="${x(1).toFixed(1)}" y2="${T+ph}" stroke="var(--mut)" stroke-dasharray="2 3"/><text x="${x(1).toFixed(1)}" y="${T+10}" font-size="9" text-anchor="middle" fill="var(--mut)">FSR scenario</text>`;
+  // capital curve as severity rises
+  let d="";for(let m=0;m<=2;m+=0.05){const c=BASECAP-3.5*m;d+=(d?"L":"M")+x(m).toFixed(1)+" "+y(c).toFixed(1)+" ";}
+  s+=`<path d="${d}" fill="none" stroke="var(--acc)" stroke-width="2" opacity=".4"/>`;
+  s+=`<circle cx="${x(sev).toFixed(1)}" cy="${y(cap).toFixed(1)}" r="7" fill="${cap>=MINCAP?'var(--good)':'var(--hot)'}"/>`;
+  s+=`<text x="${L}" y="${T+ph+22}" font-size="9.5" fill="var(--mut)">milder ◀ severity ▶ harsher  ·  drag the dot</text>`;
+  s+=`<rect class="sGrab" x="${L}" y="${T}" width="${pw}" height="${ph}" fill="transparent" style="cursor:ew-resize"/>`;
+  sv.innerHTML=s;
+  const pass=cap>=MINCAP;
+  $("#capStress").innerHTML=`At ${sev.toFixed(2)}× the FSR scenario (unemployment ${(5.3+sev*5.2).toFixed(1)}%, GDP ${(-6.5*sev).toFixed(1)}%, house prices ${(-35*sev).toFixed(0)}%), bank capital ≈ <b>${cap.toFixed(1)}%</b> — <b class="${pass?'good':'hot'}">${pass?'above the minimum: the system holds':'below the minimum: banks impaired'}</b>. The actual FSR scenario (1.0×) leaves banks resilient.`;
+}
+
+/* ===== sources ===== */
+const SRC=[['aE_afjrx3nc','Nov 2025 MPS press conference','RBNZ'],['lq6U3xYKBvc','New Governor apology','Stuff'],['Orc-v9yNLOc','Feb 2026 MPS press conference','RBNZ'],['NhNuRq-K4sQ','Breman explains the OCR decision','NZ Herald'],['IE8EQnOBqqw','Where rates are heading','RNZ'],['ORhrH5PP_3M','Proposal for cash in NZ','RBNZ'],['7ADF2frOuKM','Breman speaks to media','NZ Herald'],['1Eb3oLbqpTo','Breman warns of higher inflation','RNZ'],['0dNE7_FK5Sw','Why everything feels expensive (Conway)','RBNZ'],['5_nAAU5hsuM','Apr 2026 Monetary Policy Review','RBNZ'],['QKlQZ8D6FdU','OCR update','NZ Herald'],['lFwPwASGDjk','May 2026 Financial Stability Report','RBNZ'],['pTCI9ArSQBc','What is stress testing','RBNZ']];
+$("#srcList").innerHTML=SRC.map(v=>`<li>▸ <a href="https://www.youtube.com/watch?v=${v[0]}" target="_blank" rel="noopener">${v[1]}</a> <span style="color:var(--mut)">· ${v[2]}</span></li>`).join('');
+
+/* ===== wiring ===== */
+function SB(id,t){return `<span class="scrub" data-s="${id}">${t}</span>`;}
+function setOcr(o){ST.ocr=clamp(o,0,6);drawHero();}
+(function(){const sv=$("#hero");let on=false;const at=cx=>{const p=sv.createSVGPoint();p.x=cx;p.y=0;return (p.matrixTransform(sv.getScreenCTM().inverse()).x-60)/(1040-120)*6;};
+  sv.addEventListener("pointerdown",e=>{on=true;sv.setPointerCapture(e.pointerId);setOcr(Math.round(at(e.clientX)*20)/20);});
+  sv.addEventListener("pointermove",e=>{if(on)setOcr(Math.round(at(e.clientX)*20)/20);});sv.addEventListener("pointerup",()=>on=false);sv.addEventListener("pointercancel",()=>on=false);})();
+(function(){const sv=$("#path");let on=false;const at=cx=>{const p=sv.createSVGPoint();p.x=cx;p.y=0;const X=p.matrixTransform(sv.getScreenCTM().inverse()).x;return clamp(Math.round((X-40)/(480-58)*(PATH.length-1)),0,PATH.length-1);};
+  const set=e=>{pathI=at(e.clientX);drawPath();};sv.addEventListener("pointerdown",e=>{on=true;sv.setPointerCapture(e.pointerId);set(e);});sv.addEventListener("pointermove",e=>{if(on)set(e);});sv.addEventListener("pointerup",()=>on=false);})();
+$("#inflSeg").onclick=e=>{const v=e.target.dataset.v;if(!v)return;[...e.currentTarget.children].forEach(b=>b.classList.toggle('on',b===e.target));inflView=v;drawInfl();};
+(function(){const sv=$("#round");let on=false;const at=cx=>{const p=sv.createSVGPoint();p.x=cx;p.y=0;const X=p.matrixTransform(sv.getScreenCTM().inverse()).x;return clamp((X-34)/(480-34-16)*100,0,100);};
+  sv.addEventListener("pointerdown",e=>{if(!e.target.closest('.rKnob'))return;on=true;sv.setPointerCapture(e.pointerId);});
+  sv.addEventListener("pointermove",e=>{if(on){pass=Math.round(at(e.clientX));drawRound();}});sv.addEventListener("pointerup",()=>on=false);})();
+(function(){const sv=$("#col");let on=false;const at=cx=>{const p=sv.createSVGPoint();p.x=cx;p.y=0;const X=p.matrixTransform(sv.getScreenCTM().inverse()).x;const mx=Math.max(PRICE,incGrow,1)*1.15;return clamp((X-92)/(480-92-70)*mx,0,80);};
+  sv.addEventListener("pointerdown",e=>{if(!e.target.closest('.cBar'))return;on=true;sv.setPointerCapture(e.pointerId);});
+  sv.addEventListener("pointermove",e=>{if(on){incGrow=Math.round(at(e.clientX));drawCol();}});sv.addEventListener("pointerup",()=>on=false);})();
+(function(){const sv=$("#stress");let on=false;const at=cx=>{const p=sv.createSVGPoint();p.x=cx;p.y=0;const X=p.matrixTransform(sv.getScreenCTM().inverse()).x;return clamp((X-40)/(1040-60)*2,0,2);};
+  sv.addEventListener("pointerdown",e=>{if(!e.target.closest('.sGrab'))return;on=true;sv.setPointerCapture(e.pointerId);sev=Math.round(at(e.clientX)*100)/100;drawStress();});
+  sv.addEventListener("pointermove",e=>{if(on){sev=Math.round(at(e.clientX)*100)/100;drawStress();}});sv.addEventListener("pointerup",()=>on=false);})();
+// ocr text scrub
+let ps=null;
+document.addEventListener("pointerdown",e=>{const t=e.target.closest(".scrub");if(!t)return;e.preventDefault();t.classList.add("drag");ps={x:e.clientX,v:ST.ocr,el:t};t.setPointerCapture(e.pointerId);});
+document.addEventListener("pointermove",e=>{if(!ps)return;setOcr(Math.round((ps.v+(e.clientX-ps.x)*0.02)*20)/20);});
+document.addEventListener("pointerup",()=>{if(ps){ps.el.classList.remove("drag");ps=null;}});
+window.__NZ={ST,inflAt,unempAt,get pass(){return pass},get sev(){return sev},get pathI(){return pathI},get inflView(){return inflView}};
+drawHero();drawPath();drawInfl();drawRound();drawCol();drawStress();
