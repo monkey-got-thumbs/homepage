@@ -110,6 +110,9 @@
             .step { transition: none; }
         }
     </style>
+    <link rel="stylesheet" href="/assets/css/accessibility.css">
+    <script src="/assets/js/a11y-init.js"></script>
+    <script src="/assets/js/accessibility.js" defer></script>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -126,8 +129,8 @@
         <!-- HERO: one warm invitation, one clear action -->
         <header class="build-hero" aria-labelledby="hero-heading">
             <span class="eyebrow">you can make things</span>
-            <h1 id="hero-heading">Make a little AI helper of your own.</h1>
-            <p class="lede">It sounds technical, but it really isn't. A “helper” is just clear instructions you write for AI — telling it who to be and how to help. Do that well and AI does <em>so</em> much more for you. We'll show you, gently.</p>
+            <h1 id="hero-heading" data-a11y="hero-title">Make a little AI helper of your own.</h1>
+            <p class="lede" data-a11y="hero-lede">It sounds technical, but it really isn't. A “helper” is just clear instructions you write for AI — telling it who to be and how to help. Do that well and AI does <em>so</em> much more for you. We'll show you, gently.</p>
             <div class="hero-cta">
                 <a class="btn" href="/build/advisor/">Try the free helper — paste what you asked AI</a>
                 <small>No sign-up. No coding. Just paste what you asked and get friendly feedback.</small>
@@ -136,7 +139,7 @@
 
         <!-- REASSURANCE -->
         <section class="section-pad reveal" aria-label="A gentle promise">
-            <p class="reassure">You don't need to be techy. You don't need the right words. <strong>If you can describe what you want in plain English, you can already do this</strong> — and you'll get better every time you try.</p>
+            <p class="reassure" data-a11y="reassure">You don't need to be techy. You don't need the right words. <strong>If you can describe what you want in plain English, you can already do this</strong> — and you'll get better every time you try.</p>
         </section>
 
         <!-- THE BIG IDEA / DELIGHT: the free Advisor, framed as the friendly hands-on tool -->
@@ -145,16 +148,16 @@
                 <div class="gradient-card__inner">
                     <span class="eyebrow">start here</span>
                     <span class="pill pill--soon">Preview</span>
-                    <h2 id="advisor-heading">Get much better at asking AI — in one go</h2>
-                    <p>Here's the friendliest first step: paste in something you actually asked AI, and our free helper shows you how it works — a round of kind, plain-English feedback on what was good, what confused it, and how to ask so you get a better answer. It's like having a patient friend read over your shoulder.</p>
-                    <p>This one's a <strong>preview — a worked example for now</strong>, so you can see exactly what that feedback looks like before the live version lands. It's honest about being <strong>one round of feedback</strong>, no back-and-forth chat.</p>
+                    <h2 id="advisor-heading" data-a11y="advisor-title">Get much better at asking AI — in one go</h2>
+                    <p data-a11y="advisor-body">Here's the friendliest first step: paste in something you actually asked AI, and our free helper shows you how it works — a round of kind, plain-English feedback on what was good, what confused it, and how to ask so you get a better answer. It's like having a patient friend read over your shoulder.</p>
+                    <p data-a11y="advisor-preview">This one's a <strong>preview — a worked example for now</strong>, so you can see exactly what that feedback looks like before the live version lands. It's honest about being <strong>one round of feedback</strong>, no back-and-forth chat.</p>
                     <div class="cta">
                         <a class="btn" href="/build/advisor/">Open the free helper →</a>
                     </div>
                     <mgt-recall id="build-taste">
                         <details>
                             <summary>What's the one thing that makes AI helpers work?</summary>
-                            <p>Being specific. Tell it who it's helping, what it should and shouldn't do, and the kind of answer you want back. Vague in, vague out — clear in, genuinely useful out.</p>
+                            <p data-a11y="recall-answer">Being specific. Tell it who it's helping, what it should and shouldn't do, and the kind of answer you want back. Vague in, vague out — clear in, genuinely useful out.</p>
                         </details>
                     </mgt-recall>
                 </div>
@@ -165,26 +168,26 @@
         <section class="section-pad reveal" id="how" aria-labelledby="how-heading">
             <div class="head-centred">
                 <span class="eyebrow">how it goes</span>
-                <h2 id="how-heading">Three gentle steps. No rush.</h2>
-                <p class="muted">Start at the top. Each one quietly leads to the next — you don't have to choose.</p>
+                <h2 id="how-heading" data-a11y="how-title">Three gentle steps. No rush.</h2>
+                <p class="muted" data-a11y="how-sub">Start at the top. Each one quietly leads to the next — you don't have to choose.</p>
             </div>
             <ol class="path" role="list">
                 <li class="step">
                     <span class="step__num" aria-hidden="true">1</span>
-                    <h3>Get the knack of asking</h3>
-                    <p>Paste something you asked AI into the free helper and get friendly feedback. In a few goes, you'll just <em>feel</em> how to ask for what you actually want.</p>
+                    <h3 data-a11y="step1-title">Get the knack of asking</h3>
+                    <p data-a11y="step1-body">Paste something you asked AI into the free helper and get friendly feedback. In a few goes, you'll just <em>feel</em> how to ask for what you actually want.</p>
                     <a class="card-link" href="/build/advisor/">Try the free helper →</a>
                 </li>
                 <li class="step">
                     <span class="step__num" aria-hidden="true">2</span>
-                    <h3>Make a helper that sticks around</h3>
-                    <p>Once you've got the knack, chatyman lets you set up a little helper of your own — no code — that's ready whenever you need it, instead of starting from scratch each time.</p>
+                    <h3 data-a11y="step2-title">Make a helper that sticks around</h3>
+                    <p data-a11y="step2-body">Once you've got the knack, chatyman lets you set up a little helper of your own — no code — that's ready whenever you need it, instead of starting from scratch each time.</p>
                     <a class="card-link" href="/chatty/">Meet chatyman →</a>
                 </li>
                 <li class="step">
                     <span class="step__num" aria-hidden="true">3</span>
-                    <h3>Understand why it works</h3>
-                    <p>Want the “aha” moments? A few short, plain lessons explain what's really going on — and quietly make everything you make better.</p>
+                    <h3 data-a11y="step3-title">Understand why it works</h3>
+                    <p data-a11y="step3-body">Want the “aha” moments? A few short, plain lessons explain what's really going on — and quietly make everything you make better.</p>
                     <a class="card-link" href="/learn/">Learn the basics →</a>
                 </li>
             </ol>
@@ -194,8 +197,8 @@
         <section class="section-pad reveal" aria-labelledby="someday-heading">
             <div class="someday">
                 <span class="pill pill--soon">An idea we're working on</span>
-                <h2 id="someday-heading">One day, you might share what you make</h2>
-                <p>Some people who get the hang of this end up making helpers that other folks would love too. We'd like to make sharing — even earning a little from — what you make simple and friendly. We're honest: that part isn't ready yet. For now, just enjoy making things that help <em>you</em>.</p>
+                <h2 id="someday-heading" data-a11y="someday-title">One day, you might share what you make</h2>
+                <p data-a11y="someday-body">Some people who get the hang of this end up making helpers that other folks would love too. We'd like to make sharing — even earning a little from — what you make simple and friendly. We're honest: that part isn't ready yet. For now, just enjoy making things that help <em>you</em>.</p>
             </div>
         </section>
 
@@ -203,8 +206,8 @@
         <section class="section-pad reveal" aria-labelledby="belong-heading">
             <div class="belong">
                 <span class="eyebrow">you're not doing this alone</span>
-                <h2 id="belong-heading">Have a friendly nudge now and then</h2>
-                <p>Everyone here started out a little unsure. Get gentle, no-jargon notes when there's something new to try — and find people figuring it out alongside you.</p>
+                <h2 id="belong-heading" data-a11y="belong-title">Have a friendly nudge now and then</h2>
+                <p data-a11y="belong-body">Everyone here started out a little unsure. Get gentle, no-jargon notes when there's something new to try — and find people figuring it out alongside you.</p>
             </div>
             <div style="max-width:34rem;margin:var(--space-xl) auto 0;">
                 <mgt-newsletter heading="Come along for the ride" description="A friendly, no-jargon note now and then. No spam, no pressure, unsubscribe anytime."></mgt-newsletter>

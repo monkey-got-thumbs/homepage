@@ -1,0 +1,114 @@
+{
+  "hero-h1": [
+    "Things you can play with",
+    "Things to explore",
+    "Explorables",
+    "Explorables",
+    "Explorables"
+  ],
+  "hero-lede": [
+    "Most charts just sit there for you to look <em>at</em>. These are different. You play <em>with</em> them. Every single number — the ones on the chart <em>and</em> the ones in the writing — is something you can grab and move. When you drag it, the whole thing works itself out again, right in front of your eyes. None of the words are stuck. You don't get the idea by reading it. You get it by having a go.",
+    "Most charts you just look <em>at</em>. These you think <em>with</em>. Every number — on the chart <em>and</em> in the sentence — is a handle you can drag, and the whole thing re-reasons in front of you. Nothing here is fixed; you get it by playing, not by reading.",
+    "Most charts you look <em>at</em>. An explorable you think <em>with</em>. Every number — on the chart <em>and</em> in the sentence — is a handle: drag it, and the whole thing re-reasons in front of you. Nothing here is fixed text; the understanding is something you reach by playing, not by reading.",
+    "You look <em>at</em> most charts; you think <em>with</em> these. Every number, on the chart <em>and</em> in the prose, is a draggable handle: move it and the whole thing re-reasons live. Understanding comes from playing, not reading.",
+    "Think <em>with</em>, not <em>at</em>. Every number is a draggable handle; drag it, the whole thing re-reasons. Understanding by play, not reading."
+  ],
+  "rule-manipulate": [
+    "You find the idea by <b>moving things around</b> yourself. Even if you took all the words away, the point would still come through.",
+    "You reach the idea by <b>manipulating it</b> — take the words away and the point still comes through.",
+    "You reach the insight by <b>manipulating it</b> — strip the words and the point still lands.",
+    "You reach the insight by <b>manipulating it</b>; strip the words and the point still lands.",
+    "Insight via <b>manipulation</b>; works wordless."
+  ],
+  "rule-honest": [
+    "It stays <b>honest</b> with you. It never makes up data, the lines on the chart never get cut off to fool you, and there's <b>no flashing</b> — anything that moves moves gently, and it stops moving if you've asked your device to slow motion down.",
+    "It stays <b>honest</b>: no made-up data, no axes that cut things off, and <b>no flashing</b> — motion is gentle and respects reduced-motion.",
+    "It stays <b>honest</b>: no fabricated data, no axes that clip, and <b>no flashing</b> (motion is steady and respects reduced-motion).",
+    "Stays <b>honest</b>: no fabricated data, no clipped axes, <b>no flashing</b> — steady motion that respects reduced-motion.",
+    "<b>Honest</b>: no fabricated data, unclipped axes, <b>no flashing</b>; reduced-motion safe."
+  ],
+  "card-budget": [
+    "Change the numbers right inside the sentence and watch it sort itself out again. Lock in a goal you care about, and let your income shift around to keep everything adding up.",
+    "Scrub the numbers inside the sentence and watch it re-reason — pin a goal and let income flex to keep things balanced.",
+    "Scrub the numbers inside the sentence and watch it re-reason — pin a goal and let income flex to keep the books balanced.",
+    "Scrub the numbers in the sentence and it re-reasons — pin a goal, let income flex to keep the books balanced.",
+    "Scrub in-sentence numbers; pin a goal, income flexes to balance the books."
+  ],
+  "card-critical-path": [
+    "A project, with all its jobs and the way they depend on each other. Drop a delay onto any one job and watch the finish date slide back — and watch the slowest part of the project suddenly jump to a route that looked perfectly fine the day before.",
+    "A project's tasks and how they depend on each other. Drop a delay on one and watch the finish slip — and the bottleneck jump to a route that was fine yesterday.",
+    "A project's tasks and dependencies. Drop a delay onto one and watch the finish slip — and the bottleneck jump to a path that was fine yesterday.",
+    "A project's tasks and dependencies. Drop a delay on one: the finish slips and the bottleneck jumps to a path that was fine yesterday.",
+    "Tasks and dependencies. Delay one: finish slips, bottleneck jumps paths."
+  ],
+  "card-uncertainty": [
+    "Set out your guess at how a job might go — the quickest it could be, the most likely, and the slowest — and see your real chances of finishing before the deadline. The slice of the curve past the deadline line is the risk you're carrying.",
+    "Shape an estimate's low, likely and high, and see your real chance of beating a deadline — the area past the line is the risk.",
+    "Shape an estimate's low / likely / high and see your real chance of beating a deadline — the area past the line is the risk.",
+    "Shape an estimate's low / likely / high; see your real chance of beating a deadline — the area past the line is the risk.",
+    "Set low / likely / high; read your odds of beating the deadline. Area past the line = risk."
+  ],
+  "card-catalogue": [
+    "A box of smaller ideas that keeps growing — things like waterfalls, maps of risk &amp; what-matters-most, sankeys, calendars, sensitivity, and capacity grids. Each one is a quick little working demo you can grab and drag.",
+    "A growing kit of smaller ideas — waterfalls, risk &amp; priority maps, sankeys, calendars, sensitivity, capacity grids — each a quick live demo to drag.",
+    "A growing kit of smaller component ideas — waterfalls, risk &amp; priority maps, sankeys, calendars, sensitivity, capacity grids — each a quick live demo to drag.",
+    "A growing kit of component ideas — waterfalls, risk &amp; priority maps, sankeys, calendars, sensitivity, capacity grids — each a quick draggable demo.",
+    "Growing component kit: waterfalls, risk &amp; priority maps, sankeys, calendars, sensitivity, capacity grids — each a draggable demo."
+  ],
+  "guided-h2": [
+    "Guided ones — find out the <em>why</em>",
+    "Guided — find the <em>why</em>",
+    "Guided — discover the <em>why</em>",
+    "Guided — discover the <em>why</em>",
+    "Guided — the <em>why</em>"
+  ],
+  "guided-lede": [
+    "These don't just hand you the controls to fiddle with. Each one asks you a question, gives you a gentle nudge for your first move, and then the answer comes to you on its own. The whole point is a spot you keep reaching for — until you realise you simply can't have it.",
+    "These don't just let you fiddle — each one asks a question, nudges your first move, and the insight finds you. The point is a place you reach for and find you can't have.",
+    "These don't just let you twiddle — each poses a question, nudges your first move, and the insight finds you. The point is a place you reach for and discover you can't have.",
+    "These don't just let you twiddle — each poses a question, nudges your first move, and the insight finds you. The point is a place you reach for and can't have.",
+    "Each poses a question, nudges your move, lets the insight find you — toward a point you reach for but can't have."
+  ],
+  "card-phillips": [
+    "Drag the one lever the central bank gets to pull, and find the corner that everyone is hoping for — then discover that no matter where you set the dial, you can never quite get there.",
+    "Drag the central bank's one lever and find the corner everyone wants — and that no setting of the dial can ever reach.",
+    "Drag the central bank's one lever and discover the corner everyone wants — and that no setting of the dial can ever reach.",
+    "Drag the central bank's one lever and find the corner everyone wants — unreachable at any dial setting.",
+    "One lever; the corner everyone wants stays unreachable at any setting."
+  ],
+  "card-money-printing": [
+    "Your wallet on one side, a loaf of bread on the other. Print as much money as you like — the number of loaves you can actually buy won't change. Find out why that is, and what really does make it go up.",
+    "Your wallet vs a loaf of bread. Print all you want — the loaves you can afford won't move. Find out why, and what really does lift them.",
+    "Your wallet vs a loaf of bread. Print all you like — the loaves you can afford won't budge. Find out why, and what actually does lift them.",
+    "Your wallet vs a loaf of bread. Print all you like — affordable loaves won't budge. Find out why, and what actually lifts them.",
+    "Wallet vs loaf: printing won't move loaves you can afford. See why, and what does."
+  ],
+  "card-nz-economy": [
+    "The Reserve Bank's main interest rate (the OCR), inflation set against the 1 to 3 percent target band, what an oil-price shock would do, and a stress test for the banks — all built from six months' worth of RBNZ videos.",
+    "The Reserve Bank's OCR, inflation against the 1–3% band, the oil-shock outlook and a bank stress test — built from six months of RBNZ videos.",
+    "The Reserve Bank's OCR, inflation vs the 1–3% band, the oil-shock outlook and a bank stress test — built from six months of RBNZ videos.",
+    "The Reserve Bank's OCR, inflation vs the 1–3% band, an oil-shock outlook and a bank stress test — from six months of RBNZ videos.",
+    "RBNZ's OCR, inflation vs the 1–3% band, oil-shock outlook, bank stress test — from six months of RBNZ videos."
+  ],
+  "card-retraining": [
+    "Think of retraining the job market as one big living thing, all joined up. Change any number, or switch whose eyes you're looking through — a worker, an employer, the Treasury, or society as a whole — and the entire essay works itself out again around you.",
+    "Retraining the job market as one living system — change any number, or your viewpoint (worker, employer, Treasury, society), and the whole essay re-reasons around you.",
+    "Retraining the job market as one living system — change any number, or your perspective (worker, employer, Treasury, society), and the whole essay re-reasons around you.",
+    "Retraining the job market as one living system — change any number, or your perspective (worker, employer, Treasury, society), and the essay re-reasons around you.",
+    "Retraining as one living system: change any number or perspective (worker, employer, Treasury, society); the essay re-reasons."
+  ],
+  "dashboards-h2": [
+    "Dashboards &amp; essays — made from real sources",
+    "Dashboards &amp; essays — from real sources",
+    "Dashboards &amp; essays — built from real sources",
+    "Dashboards &amp; essays — built from real sources",
+    "Dashboards &amp; essays — from real sources"
+  ],
+  "dashboards-lede": [
+    "These are explorables that work together, all built from data the public can see and from the transcripts of videos. Every single one tells you where its information came from, so you can go and check it for yourself.",
+    "Explorables that work together, built from public data and video transcripts — every one cites its source so you can compare.",
+    "Coordinated explorables built from public data and video transcripts — every one cites its source so you can compare.",
+    "Coordinated explorables built from public data and video transcripts — each cites its source so you can compare.",
+    "Coordinated explorables from public data and video transcripts — each cites its source."
+  ]
+}

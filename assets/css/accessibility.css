@@ -1,0 +1,144 @@
+/* ===========================================================================
+   Accessibility engine — site-wide schemes, colour-vision, reading level, RTL
+   Overrides the design tokens in tokens.css via [data-*] on <html>.
+   =========================================================================== */
+
+/* ---- Colour schemes (remap the site --color-* tokens) ---- */
+html[data-scheme="light"] {
+  --color-bg: #ffffff;
+  --color-bg-secondary: #f4f4f1;
+  --color-fg: #16161c;
+  --color-fg-secondary: #000000;
+  --color-muted: #545163;
+  --color-accent: #1f7a34;            /* lime fails contrast on white → readable green */
+  --color-brand: #5b3fa0;
+  --color-brand-light: #6a55c0;
+  --color-brand-lighter: #5b3fa0;
+  --color-muted-strong: #3a3848;
+  --color-link: #0a5fb0;
+  --color-link-hover: #083f78;
+  --color-border: rgba(0,0,0,0.14);
+  --color-border-light: rgba(0,0,0,0.08);
+  --color-divider: rgba(0,0,0,0.10);
+  color-scheme: light;
+}
+html[data-scheme="contrast"] {
+  --color-bg: #000000;
+  --color-bg-secondary: #000000;
+  --color-fg: #ffffff;
+  --color-fg-secondary: #ffffff;
+  --color-muted: #ededed;
+  --color-accent: #ffff00;
+  --color-brand: #ffff00;
+  --color-brand-light: #ffff00;
+  --color-brand-lighter: #ffff00;
+  --color-link: #7fdfff;
+  --color-link-hover: #ffffff;
+  --color-border: #ffffff;
+  --color-border-light: rgba(255,255,255,0.7);
+  --color-divider: rgba(255,255,255,0.7);
+  color-scheme: dark;
+}
+html[data-scheme="contrast"] a { text-decoration: underline; }
+html[data-scheme="sepia"] {
+  --color-bg: #f4ecd8;
+  --color-bg-secondary: #ece0c4;
+  --color-fg: #3b2f1e;
+  --color-fg-secondary: #2a2012;
+  --color-muted: #6b5a3e;
+  --color-accent: #8a5a2b;
+  --color-brand: #7a5230;
+  --color-brand-lighter: #7a5230;
+  --color-link: #8a4b1f;
+  --color-link-hover: #5e3413;
+  --color-border: rgba(59,47,30,0.18);
+  --color-border-light: rgba(59,47,30,0.10);
+  --color-divider: rgba(59,47,30,0.12);
+  color-scheme: light;
+}
+
+/* ---- Colour-blind-safe palette (davidmathlogic + Okabe-Ito), applied when on ---- */
+html[data-cvd="safe"] {
+  --cb-1: #1E88E5;  --cb-2: #FFC107;  --cb-3: #D81B60;  --cb-4: #004D40;  --cb-5: #FE6100;  --cb-6: #785EF0;
+  /* nudge the site's semantic colours toward distinguishable hues */
+  --color-success: #1E88E5;   /* blue, not green — green/red is the worst axis */
+  --color-warning: #FFC107;
+  --color-error:   #D81B60;
+  --color-info:    #1E88E5;
+}
+/* explorables expose a hook: pages opt their data-viz vars into the safe set */
+html[data-cvd="safe"] .cb-aware {
+  --v1: var(--cb-1); --v2: var(--cb-2); --v3: var(--cb-3); --v4: var(--cb-4); --v5: var(--cb-5);
+}
+
+/* ---- "Simulate my vision" — feColorMatrix filters over the whole document ---- */
+html[data-sim="protan"]  body { filter: url(#a11y-sim-protan); }
+html[data-sim="deutan"]  body { filter: url(#a11y-sim-deutan); }
+html[data-sim="tritan"]  body { filter: url(#a11y-sim-tritan); }
+html[data-sim="achroma"] body { filter: url(#a11y-sim-achroma); }
+
+/* ---- Reading level (cognitive load): density via root font-size + prose measure/flow ---- */
+html[data-level="1"] { font-size: 108%; --a11y-measure: 34rem; --a11y-flow: 1.6em; }
+html[data-level="2"] { font-size: 104%; --a11y-measure: 38rem; --a11y-flow: 1.3em; }
+html[data-level="3"] { font-size: 100%; --a11y-measure: 42rem; --a11y-flow: 1.05em; }
+html[data-level="4"] { font-size: 98%;  --a11y-measure: 46rem; --a11y-flow: 0.9em; }
+html[data-level="5"] { font-size: 96%;  --a11y-measure: 52rem; --a11y-flow: 0.78em; }
+/* apply measure + flow to prose only (never grids) */
+main p, main li, .prose p, .prose li { max-width: var(--a11y-measure, none); }
+main p + p, .prose p + p { margin-block-start: var(--a11y-flow, 1em); }
+/* reading-level text variants: show only the active level's copy */
+[data-a11y-level] { display: none; }
+html[data-level="1"] [data-a11y-level="1"],
+html[data-level="2"] [data-a11y-level="2"],
+html[data-level="3"] [data-a11y-level="3"],
+html[data-level="4"] [data-a11y-level="4"],
+html[data-level="5"] [data-a11y-level="5"] { display: revert; }
+
+/* ---- Logo adaptation per scheme (logo art is light-on-dark by default) ---- */
+html[data-scheme="light"]   .mgt-logo img, html[data-scheme="light"]   img.logo,
+html[data-scheme="sepia"]   .mgt-logo img, html[data-scheme="sepia"]   img.logo { filter: brightness(0.55) saturate(1.1); }
+html[data-scheme="contrast"] .mgt-logo img, html[data-scheme="contrast"] img.logo { filter: brightness(0) invert(1); }
+
+/* ===========================================================================
+   The accessibility panel
+   =========================================================================== */
+.a11y-fab {
+  position: fixed; inset-block-end: 18px; left: 18px; z-index: 2147483000;   /* bottom-left: clears the "Need help?" widget */
+  width: 52px; height: 52px; border-radius: 50%; border: 2px solid var(--color-bg);
+  background: var(--color-accent); color: #0E0B1A; cursor: pointer; font-size: 26px;
+  display: grid; place-items: center; box-shadow: 0 4px 16px rgba(0,0,0,.45);
+}
+html[data-scheme="contrast"] .a11y-fab { color: #000; }
+.a11y-panel {
+  position: fixed; inset-block-end: 82px; left: 18px; z-index: 2147483000;
+  width: 330px; max-width: calc(100vw - 36px); max-height: calc(100vh - 120px); overflow:auto;
+  background: var(--color-bg-secondary); color: var(--color-fg);
+  border: 1px solid var(--color-border); border-radius: 16px;
+  box-shadow: 0 12px 48px rgba(0,0,0,.5); padding: 16px 18px;
+  font: 15px/1.5 var(--font-sans, system-ui); display: none;
+}
+.a11y-panel.open { display: block; }
+.a11y-panel h3 { font-size: 11.5px; text-transform: uppercase; letter-spacing: .06em;
+  color: var(--color-muted); margin: 15px 0 7px; font-weight: 700; }
+.a11y-panel h3:first-of-type { margin-top: 4px; }
+.a11y-panel .small { font-weight: 400; text-transform: none; letter-spacing: 0; }
+.a11y-row { display: flex; gap: 7px; flex-wrap: wrap; }
+.a11y-opt {
+  border: 1px solid var(--color-border); background: transparent; color: var(--color-fg);
+  border-radius: 9px; padding: 7px 11px; cursor: pointer; font: inherit; font-size: 13px;
+}
+.a11y-opt[aria-pressed="true"] { background: var(--color-accent); color: #0E0B1A; border-color: var(--color-accent); font-weight: 700; }
+html[data-scheme="contrast"] .a11y-opt[aria-pressed="true"] { color: #000; }
+.a11y-opt .dot { display: inline-block; width: 12px; height: 12px; border-radius: 3px;
+  vertical-align: -1px; margin-inline-end: 5px; border: 1px solid rgba(128,128,128,.4); }
+.a11y-feel { display: flex; gap: 8px; }
+.a11y-feel button { flex: 1; border: 1px solid var(--color-border); background: transparent;
+  color: var(--color-fg); border-radius: 11px; padding: 10px; cursor: pointer; font: inherit; text-align: start; }
+.a11y-feel button .big { font-size: 19px; display: block; }
+.a11y-feel button small { color: var(--color-muted); font-size: 12px; }
+.a11y-foot { margin-top: 15px; display: flex; justify-content: space-between; align-items: center;
+  font-size: 12px; color: var(--color-muted); }
+.a11y-foot button { background: none; border: none; color: var(--color-link); cursor: pointer; font: inherit; }
+.a11y-note { font-size: 11px; color: var(--color-muted); margin-top: 6px; opacity: .7; }
+
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }

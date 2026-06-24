@@ -49,6 +49,9 @@
         .exp-grid .card p { margin: 0; color: var(--color-fg-secondary); line-height: 1.6; flex: 1; }
         .exp-grid .card .card-link { margin-top: var(--space-sm); }
     </style>
+    <link rel="stylesheet" href="/assets/css/accessibility.css">
+    <script src="/assets/js/a11y-init.js"></script>
+    <script src="/assets/js/accessibility.js" defer></script>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -56,15 +59,15 @@
     <main id="main-content">
         <div class="exp-home">
             <header class="exp-head">
-                <h1>Explorables</h1>
-                <p class="lede">Most charts you look <em>at</em>. An explorable you think <em>with</em>. Every number — on the chart <em>and</em> in the sentence — is a handle: drag it, and the whole thing re-reasons in front of you. Nothing here is fixed text; the understanding is something you reach by playing, not by reading.</p>
+                <h1 data-a11y="hero-h1">Explorables</h1>
+                <p class="lede" data-a11y="hero-lede">Most charts you look <em>at</em>. An explorable you think <em>with</em>. Every number — on the chart <em>and</em> in the sentence — is a handle: drag it, and the whole thing re-reasons in front of you. Nothing here is fixed text; the understanding is something you reach by playing, not by reading.</p>
             </header>
 
             <ul class="exp-rules">
-                <li>You reach the insight by <b>manipulating it</b> — strip the words and the point still lands.</li>
+                <li data-a11y="rule-manipulate">You reach the insight by <b>manipulating it</b> — strip the words and the point still lands.</li>
                 <li><b>Every value is a handle</b>, whether it's a bar, a node, or a number in the prose.</li>
                 <li>It <b>reasons</b> — backward to the cause, forward to what happens next — and the words change as you do.</li>
-                <li>It stays <b>honest</b>: no fabricated data, no axes that clip, and <b>no flashing</b> (motion is steady and respects reduced-motion).</li>
+                <li data-a11y="rule-honest">It stays <b>honest</b>: no fabricated data, no axes that clip, and <b>no flashing</b> (motion is steady and respects reduced-motion).</li>
                 <li>The same idea handles <b>simple and complex</b> data alike.</li>
             </ul>
 
@@ -73,19 +76,19 @@
                 <article class="card">
                     <span class="tagline">document</span>
                     <h3>The living budget</h3>
-                    <p>Scrub the numbers inside the sentence and watch it re-reason — pin a goal and let income flex to keep the books balanced.</p>
+                    <p data-a11y="card-budget">Scrub the numbers inside the sentence and watch it re-reason — pin a goal and let income flex to keep the books balanced.</p>
                     <a class="card-link" href="/explorables/document.html">Open the explorable →</a>
                 </article>
                 <article class="card">
                     <span class="tagline">network</span>
                     <h3>The critical path</h3>
-                    <p>A project's tasks and dependencies. Drop a delay onto one and watch the finish slip — and the bottleneck jump to a path that was fine yesterday.</p>
+                    <p data-a11y="card-critical-path">A project's tasks and dependencies. Drop a delay onto one and watch the finish slip — and the bottleneck jump to a path that was fine yesterday.</p>
                     <a class="card-link" href="/explorables/network.html">Open the explorable →</a>
                 </article>
                 <article class="card">
                     <span class="tagline">uncertainty</span>
                     <h3>How long, really?</h3>
-                    <p>Shape an estimate's low / likely / high and see your real chance of beating a deadline — the area past the line is the risk.</p>
+                    <p data-a11y="card-uncertainty">Shape an estimate's low / likely / high and see your real chance of beating a deadline — the area past the line is the risk.</p>
                     <a class="card-link" href="/explorables/uncertainty.html">Open the explorable →</a>
                 </article>
                 <article class="card">
@@ -103,24 +106,24 @@
                 <article class="card">
                     <span class="tagline">catalogue · 15</span>
                     <h3>Fifteen more, in miniature</h3>
-                    <p>A growing kit of smaller component ideas — waterfalls, risk &amp; priority maps, sankeys, calendars, sensitivity, capacity grids — each a quick live demo to drag.</p>
+                    <p data-a11y="card-catalogue">A growing kit of smaller component ideas — waterfalls, risk &amp; priority maps, sankeys, calendars, sensitivity, capacity grids — each a quick live demo to drag.</p>
                     <a class="card-link" href="/explorables/components.html">Browse the catalogue →</a>
                 </article>
             </div>
 
-            <h2 style="margin:var(--space-2xl) 0 var(--space-md)">Guided — discover the <em>why</em></h2>
-            <p class="lede" style="margin:0 0 var(--space-lg)">These don't just let you twiddle — each poses a question, nudges your first move, and the insight finds you. The point is a place you reach for and discover you can't have.</p>
+            <h2 style="margin:var(--space-2xl) 0 var(--space-md)" data-a11y="guided-h2">Guided — discover the <em>why</em></h2>
+            <p class="lede" style="margin:0 0 var(--space-lg)" data-a11y="guided-lede">These don't just let you twiddle — each poses a question, nudges your first move, and the insight finds you. The point is a place you reach for and discover you can't have.</p>
             <div class="exp-grid">
                 <article class="card">
                     <span class="tagline">guided · trade-off</span>
                     <h3>Low inflation <em>and</em> low unemployment?</h3>
-                    <p>Drag the central bank's one lever and discover the corner everyone wants — and that no setting of the dial can ever reach.</p>
+                    <p data-a11y="card-phillips">Drag the central bank's one lever and discover the corner everyone wants — and that no setting of the dial can ever reach.</p>
                     <a class="card-link" href="/explorables/guided-tradeoff.html">Open the explorable →</a>
                 </article>
                 <article class="card">
                     <span class="tagline">guided · money</span>
                     <h3>Can the government just print money?</h3>
-                    <p>Your wallet vs a loaf of bread. Print all you like — the loaves you can afford won't budge. Find out why, and what actually does lift them.</p>
+                    <p data-a11y="card-money-printing">Your wallet vs a loaf of bread. Print all you like — the loaves you can afford won't budge. Find out why, and what actually does lift them.</p>
                     <a class="card-link" href="/explorables/guided-money-printing.html">Open the explorable →</a>
                 </article>
                 <article class="card">
@@ -131,8 +134,8 @@
                 </article>
             </div>
 
-            <h2 style="margin:var(--space-2xl) 0 var(--space-md)">Dashboards &amp; essays — built from real sources</h2>
-            <p class="lede" style="margin:0 0 var(--space-lg)">Coordinated explorables built from public data and video transcripts — every one cites its source so you can compare.</p>
+            <h2 style="margin:var(--space-2xl) 0 var(--space-md)" data-a11y="dashboards-h2">Dashboards &amp; essays — built from real sources</h2>
+            <p class="lede" style="margin:0 0 var(--space-lg)" data-a11y="dashboards-lede">Coordinated explorables built from public data and video transcripts — every one cites its source so you can compare.</p>
             <div class="exp-grid">
                 <article class="card">
                     <span class="tagline">dashboard · from a video</span>
@@ -149,7 +152,7 @@
                 <article class="card">
                     <span class="tagline">dashboard · 13 videos</span>
                     <h3>The NZ economy</h3>
-                    <p>The Reserve Bank's OCR, inflation vs the 1–3% band, the oil-shock outlook and a bank stress test — built from six months of RBNZ videos.</p>
+                    <p data-a11y="card-nz-economy">The Reserve Bank's OCR, inflation vs the 1–3% band, the oil-shock outlook and a bank stress test — built from six months of RBNZ videos.</p>
                     <a class="card-link" href="/explorables/nz-economy-dashboard.html">Open the dashboard →</a>
                 </article>
                 <article class="card">
@@ -161,7 +164,7 @@
                 <article class="card">
                     <span class="tagline">reactive essay</span>
                     <h3>Moving the floor</h3>
-                    <p>Retraining the job market as one living system — change any number, or your perspective (worker, employer, Treasury, society), and the whole essay re-reasons around you.</p>
+                    <p data-a11y="card-retraining">Retraining the job market as one living system — change any number, or your perspective (worker, employer, Treasury, society), and the whole essay re-reasons around you.</p>
                     <a class="card-link" href="/explorables/reform-retraining-essay.html">Open the essay →</a>
                 </article>
             </div>

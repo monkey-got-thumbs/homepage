@@ -63,6 +63,9 @@
         .review-row { text-align: center; margin-top: var(--space-2xl); }
         .review-row a { color: var(--color-accent); font-weight: var(--font-weight-semibold); }
     </style>
+    <link rel="stylesheet" href="/assets/css/accessibility.css">
+    <script src="/assets/js/a11y-init.js"></script>
+    <script src="/assets/js/accessibility.js" defer></script>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -78,46 +81,46 @@
 
             <header class="learn-head">
                 <span class="eyebrow">your learning home</span>
-                <h1>Find your footing with AI</h1>
-                <p class="lede">However you got here, there's a gentle next step waiting. Brand new? Start at the very beginning. Already dabbling? Jump to whatever you fancy. There are no wrong moves here.</p>
+                <h1 data-a11y="hero-title">Find your footing with AI</h1>
+                <p class="lede" data-a11y="hero-lede">However you got here, there's a gentle next step waiting. Brand new? Start at the very beginning. Already dabbling? Jump to whatever you fancy. There are no wrong moves here.</p>
             </header>
 
             <a class="start-here gradient-card" href="/learn/start/new.html">
                 <div class="gradient-card__inner">
                     <span class="emoji" aria-hidden="true">🌱</span>
                     <div class="grow">
-                        <h2>Brand new to AI? Start right here.</h2>
-                        <p>A friendly five-minute intro — what AI is, how to try it, and three things that'll make you feel instantly more in control.</p>
+                        <h2 data-a11y="start-here-title">Brand new to AI? Start right here.</h2>
+                        <p data-a11y="start-here-desc">A friendly five-minute intro — what AI is, how to try it, and three things that'll make you feel instantly more in control.</p>
                     </div>
                     <span class="go">Begin the gentle intro →</span>
                 </div>
             </a>
 
-            <p class="learn-sub">Or wander into whatever pulls you:</p>
+            <p class="learn-sub" data-a11y="browse-sub">Or wander into whatever pulls you:</p>
             <div class="learn-grid">
                 <article class="card">
                     <h3>Foundations</h3>
-                    <p>The big picture in plain words — what AI is, what it isn't, and why it's worth your time. No jargon, no rush.</p>
+                    <p data-a11y="card-foundations">The big picture in plain words — what AI is, what it isn't, and why it's worth your time. No jargon, no rush.</p>
                     <a class="card-link" href="/learn/foundations/">Get the basics →</a>
                 </article>
                 <article class="card">
                     <h3>Frameworks</h3>
-                    <p>Handy mental models that make AI click — and quietly make you much better at using it.</p>
+                    <p data-a11y="card-frameworks">Handy mental models that make AI click — and quietly make you much better at using it.</p>
                     <a class="card-link" href="/learn/frameworks/">See the ideas →</a>
                 </article>
                 <article class="card">
                     <h3>The human side</h3>
-                    <p>Staying in charge, trusting wisely, and keeping it healthy. The part most guides skip.</p>
+                    <p data-a11y="card-human">Staying in charge, trusting wisely, and keeping it healthy. The part most guides skip.</p>
                     <a class="card-link" href="/learn/human-factors/">Mind the human bits →</a>
                 </article>
                 <article class="card">
                     <h3>Guided paths</h3>
-                    <p>Prefer a set route? Follow a path from curious beginner to genuinely confident, one step at a time.</p>
+                    <p data-a11y="card-paths">Prefer a set route? Follow a path from curious beginner to genuinely confident, one step at a time.</p>
                     <a class="card-link" href="/learn/learning-paths/">Pick a path →</a>
                 </article>
                 <article class="card">
                     <h3>Wander the notes</h3>
-                    <p>A cosy web of short, linked ideas to drift through whenever you're curious. No order required.</p>
+                    <p data-a11y="card-notes">A cosy web of short, linked ideas to drift through whenever you're curious. No order required.</p>
                     <a class="card-link" href="/notes/">Have a wander →</a>
                 </article>
             </div>

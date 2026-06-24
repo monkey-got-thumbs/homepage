@@ -1,0 +1,100 @@
+{
+  "page-title": [
+    "Notes",
+    "Notes",
+    "Notes",
+    "Notes",
+    "Notes"
+  ],
+  "lead": [
+    "This is a growing web of short, linked ideas about something we call augmented intelligence. The big idea is simple: <strong>AI is one tool for thinking, not the thinker</strong>. You stay in charge. Each note here makes just one point, in a few words. And each note links to the others. So you can pick a thread and follow it wherever it goes. Don't worry about getting lost — you won't lose your place.",
+    "A growing web of short, linked ideas about augmented intelligence — the belief that <strong>AI is one tool for thinking, not the thinker</strong>. Each note makes one point and links to the others, so you can follow a thread without losing your place.",
+    "A growing web of short, linked ideas about augmented intelligence — the conviction that <strong>AI is one tool for thinking, not the thinker</strong>. Each note states one claim and links to the others. Follow a thread; you won't lose your place.",
+    "A growing web of linked notes on augmented intelligence — the conviction that <strong>AI is one tool for thinking, not the thinker</strong>. Each states one claim and links to the rest; follow any thread without losing your place.",
+    "Linked notes on augmented intelligence: <strong>AI is a tool for thinking, not the thinker</strong>. One claim each, cross-linked. Follow any thread."
+  ],
+  "how-to-read": [
+    "<strong>How to read this:</strong> these are <em>evergreen notes</em>. That just means each one has a title that says a single thing, stays short, and links to the notes near it. So here's all you do: start anywhere you like, and follow the links from there. At the bottom of each note, a little list called \"Linked from\" shows you which other notes point back to it.",
+    "<strong>How to read this:</strong> these are <em>evergreen notes</em> — each titled with one claim, kept short, and linked to its neighbours. Start anywhere and follow the links. The \"Linked from\" list at the foot of each note shows what points back to it.",
+    "<strong>How to read this:</strong> these are <em>evergreen notes</em> — each titled with a single claim, kept short, and linked to its neighbours. Start anywhere and follow the links. \"Linked from\" at the foot of each note shows what points back to it.",
+    "<strong>How to read this:</strong> <em>evergreen notes</em> — each titled with one claim, short, linked to its neighbours. Start anywhere, follow the links; \"Linked from\" at each foot shows the backlinks.",
+    "<strong>Reading:</strong> <em>evergreen notes</em> — one-claim titles, short, cross-linked. Start anywhere; \"Linked from\" lists backlinks."
+  ],
+  "sum-explanation": [
+    "A true explanation is tied to specific details. You can't swap those details out — if you tried, the whole thing would fall apart. A fake explanation is different: it could fit any outcome at all, so it never really commits to anything.",
+    "A real explanation commits to specific details you can't swap out without breaking it. A fake one would fit any outcome equally well.",
+    "A real explanation commits to specifics you can't swap out without breaking it; a fake one would fit any outcome equally well.",
+    "A real explanation commits to specifics you can't swap without breaking it; a fake one fits any outcome equally.",
+    "Real explanations are hard to vary; fake ones fit any outcome."
+  ],
+  "sum-one-tool": [
+    "AI is the newest tool we have for stretching our thinking further. But there's a catch: it never gives you the goal, the judgment, or the responsibility. Those parts stay with you.",
+    "AI is the newest tool for extending thought — but it never supplies the goal, the judgment, or the responsibility. Those stay with you.",
+    "AI is the newest tool for extending thought, but it never supplies the goal, the judgment, or the responsibility.",
+    "AI extends thought but supplies neither the goal, the judgment, nor the responsibility.",
+    "AI extends thought; goal, judgment, responsibility stay yours."
+  ],
+  "sum-augmentation": [
+    "When you automate a task, the quality can only get as good as the system's blind spots allow — that's the cap. But when you augment a person instead, you keep a human in the loop, and that raises how good things can get.",
+    "Automation caps quality at the system's blind spots. Augmentation keeps a human in the loop and raises the ceiling.",
+    "Automation caps quality at the system's blind spots; augmentation keeps the human in the loop and raises the ceiling.",
+    "Automation caps quality at the system's blind spots; augmentation keeps a human in the loop, raising the ceiling.",
+    "Automation caps at blind spots; augmentation keeps the human in the loop, raising the ceiling."
+  ],
+  "sum-judgment": [
+    "You can hand an AI the actual doing of a job. But you don't have to hand over the deciding — the part where you work out what really matters, and whose interests should win.",
+    "You can hand an AI the doing without handing over the deciding — what matters, and whose interest wins.",
+    "You can hand an AI the doing without handing over the deciding about what matters and whose interest wins.",
+    "Hand over the doing, not the deciding about what matters and whose interest wins.",
+    "Delegate the doing; keep deciding what matters and whose interest wins."
+  ],
+  "sum-linked": [
+    "A pile of saved notes just sits there doing nothing. The real value isn't in the notes themselves — it's in the links between ideas, the connections that let one note reach another.",
+    "A pile of saved notes is inert. The value lives in the links between ideas that let one note reach another.",
+    "A pile of saved notes is inert; the value lives in the links between ideas that make one note reach another.",
+    "Saved notes are inert; value lives in the links that make one note reach another.",
+    "Stored notes are inert; links create the value."
+  ],
+  "sum-retrieval": [
+    "Pulling an idea back out of your own head — actually trying to remember it — makes the memory much stronger. It works far better than simply reading the idea over again.",
+    "Pulling an idea back out of your head strengthens memory far more than reading it again.",
+    "Pulling an idea back out of your head strengthens memory far more than reading it again.",
+    "Recalling an idea strengthens memory far more than rereading it.",
+    "Retrieval beats rereading for memory."
+  ],
+  "sum-show-data": [
+    "You understand something best when you can see the real thing and poke at it for yourself. Just reading a claim that someone made about it doesn't get you there.",
+    "Understanding comes from seeing and poking the real thing, not from reading someone's claim about it.",
+    "Understanding comes from seeing and poking the real thing, not from reading a claim someone made about it.",
+    "Understanding comes from seeing and poking the real thing, not from a claim about it.",
+    "Understanding comes from poking the real thing, not a claim about it."
+  ],
+  "sum-structure": [
+    "Giving an AI request a clear, defined shape makes it precise, and it lets you check the answer field by field. Freeform prose sounds smooth and fluent, but you can't really verify it.",
+    "A defined shape makes an AI request precise and its output checkable field by field. Freeform prose is fluent but unverifiable.",
+    "A defined shape makes an AI request precise and its output checkable field by field; freeform prose is fluent but unverifiable.",
+    "A defined shape makes a request precise and output checkable field by field; freeform prose is fluent but unverifiable.",
+    "Structured requests are precise and field-checkable; freeform prose is fluent but unverifiable."
+  ],
+  "sum-compounds": [
+    "Working well with AI is a skill, and like any skill it grows from doing it again and again. Skills also compound — they build on themselves. So even a small head start keeps widening over time.",
+    "Working well with AI is a skill built from reps, and skills compound, so a small head start widens over time.",
+    "Working well with AI is a skill built from reps, and skills compound, so a small head start widens over time.",
+    "Working well with AI is a skill built from reps; skills compound, so a small head start widens.",
+    "AI skill compounds with reps; small head starts widen."
+  ],
+  "sum-trust": [
+    "When you trust what an AI gives you, treat that trust as a probability — a guess you keep updating as you learn more. Don't let it be just a vibe based on how smooth and fluent the answer sounds.",
+    "Trusting an AI output should be a probability you update, not a vibe from how fluent it sounds.",
+    "Trusting an AI output should be a probability you update, not a vibe from how fluent it sounds.",
+    "Trust in an AI output is a probability you update, not a vibe from its fluency.",
+    "Trust is a calibrated, updatable probability, not fluency-driven vibe."
+  ],
+  "credit": [
+    "The evergreen-notes way of working that this page is built on comes from Andy Matuschak. We rebuilt how it works in our own words. You can read more on our <a href=\"/learn/influences.html\">Influences &amp; credits</a> page.",
+    "The evergreen-notes practice behind this page is Andy Matuschak's; we rebuilt the mechanism in our own words. See <a href=\"/learn/influences.html\">Influences &amp; credits</a>.",
+    "The evergreen-notes practice behind this page is Andy Matuschak's; we re-implemented the mechanism in our own words. See <a href=\"/learn/influences.html\">Influences &amp; credits</a>.",
+    "The evergreen-notes practice behind this page is Andy Matuschak's; we re-implemented the mechanism in our own words. See <a href=\"/learn/influences.html\">Influences &amp; credits</a>.",
+    "Evergreen-notes practice: Andy Matuschak's; mechanism re-implemented here. See <a href=\"/learn/influences.html\">Influences &amp; credits</a>."
+  ]
+}

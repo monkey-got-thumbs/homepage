@@ -121,6 +121,9 @@
             }
         }
     </style>
+    <link rel="stylesheet" href="/assets/css/accessibility.css">
+    <script src="/assets/js/a11y-init.js"></script>
+    <script src="/assets/js/accessibility.js" defer></script>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -133,8 +136,8 @@
                 <source type="image/webp" srcset="/hero-400.webp 400w, /hero.webp 800w" sizes="(max-width: 571px) 70vw, 400px">
                 <img src="/hero.png" srcset="/hero-400.png 400w, /hero.png 800w" sizes="(max-width: 571px) 70vw, 400px" alt="Monkey Got Thumbs — a friendly monkey, thumbs up, on a dark background" width="800" height="1200" loading="eager" decoding="async" fetchpriority="high">
             </picture>
-            <h1 id="hero-title">Let's get comfortable with AI.</h1>
-            <p class="home-lede">Curious but not sure where to start? You're in exactly the right place. We'll take it slow, skip the jargon, and walk with you from “what even <em>is</em> this?” to genuinely confident — at your own pace.</p>
+            <h1 id="hero-title" data-a11y="hero-title">Let's get comfortable with AI.</h1>
+            <p class="home-lede" data-a11y="hero-lede">Curious but not sure where to start? You're in exactly the right place. We'll take it slow, skip the jargon, and walk with you from “what even <em>is</em> this?” to genuinely confident — at your own pace.</p>
             <div class="hero-cta">
                 <a class="btn" href="/learn/start/new.html">Start here — it's friendlier than you think</a>
                 <small>No sign-up. No jargon. No assumption you know a thing.</small>
@@ -144,33 +147,33 @@
 
         <!-- REASSURANCE -->
         <section class="home-section reveal" aria-label="A gentle promise">
-            <p class="reassure">You don't need a tech background. You don't need to “get” everything at once. <strong>This is a calm, gentle path from curious to confident</strong> — with people walking it alongside you.</p>
+            <p class="reassure" data-a11y="reassure">You don't need a tech background. You don't need to “get” everything at once. <strong>This is a calm, gentle path from curious to confident</strong> — with people walking it alongside you.</p>
         </section>
 
         <!-- THE JOURNEY: a path, not a menu of choices -->
         <section class="home-section reveal" id="path" aria-labelledby="path-title">
             <div class="section-head">
                 <span class="eyebrow">the journey</span>
-                <h2 id="path-title">Three gentle steps. Go at your speed.</h2>
-                <p class="muted">No need to choose — just start at the top. Each step quietly opens the next.</p>
+                <h2 id="path-title" data-a11y="path-title">Three gentle steps. Go at your speed.</h2>
+                <p class="muted" data-a11y="path-sub">No need to choose — just start at the top. Each step quietly opens the next.</p>
             </div>
             <ol class="path" role="list">
                 <li class="step">
                     <span class="step__num" aria-hidden="true">1</span>
-                    <h3>Get comfortable</h3>
-                    <p>Start with the basics, explained like a good friend would — plain words, no rush. Pretty soon “chatty” stops feeling like a mystery and starts feeling like a tool you actually get.</p>
+                    <h3 data-a11y="step1-title">Get comfortable</h3>
+                    <p data-a11y="step1-desc">Start with the basics, explained like a good friend would — plain words, no rush. Pretty soon “chatty” stops feeling like a mystery and starts feeling like a tool you actually get.</p>
                     <a class="card-link" href="/learn/start/new.html">Take the first step →</a>
                 </li>
                 <li class="step">
                     <span class="step__num" aria-hidden="true">2</span>
-                    <h3>Get good — and enjoy it</h3>
-                    <p>Short, playful lessons that genuinely stick: little visual explainers you can poke at, real examples, and gentle prompts that pop back just before you'd forget.</p>
+                    <h3 data-a11y="step2-title">Get good — and enjoy it</h3>
+                    <p data-a11y="step2-desc">Short, playful lessons that genuinely stick: little visual explainers you can poke at, real examples, and gentle prompts that pop back just before you'd forget.</p>
                     <a class="card-link" href="/learn/">See how we teach →</a>
                 </li>
                 <li class="step">
                     <span class="step__num" aria-hidden="true">3</span>
-                    <h3>Find your people</h3>
-                    <p>It all sticks better with company. Join people who started exactly where you are — swapping what works, cheering each other on, figuring it out together.</p>
+                    <h3 data-a11y="step3-title">Find your people</h3>
+                    <p data-a11y="step3-desc">It all sticks better with company. Join people who started exactly where you are — swapping what works, cheering each other on, figuring it out together.</p>
                     <a class="card-link" href="/community/">Meet the community →</a>
                 </li>
             </ol>
@@ -181,8 +184,8 @@
             <div class="delight">
                 <div class="delight__inner">
                     <span class="eyebrow">why it sticks</span>
-                    <h2 id="stick-title">Our pages remember what you learn</h2>
-                    <p>Most things you read, you forget by next week. So our lessons gently quiz you — a quick prompt now, then again right before it'd slip away. It's the science of memory, made to feel like a game. Have a go (it saves only in your browser):</p>
+                    <h2 id="stick-title" data-a11y="stick-title">Our pages remember what you learn</h2>
+                    <p data-a11y="stick-desc">Most things you read, you forget by next week. So our lessons gently quiz you — a quick prompt now, then again right before it'd slip away. It's the science of memory, made to feel like a game. Have a go (it saves only in your browser):</p>
                     <mgt-recall id="home-taste">
                         <details>
                             <summary>What does it really mean to be “comfortable” with AI?</summary>
@@ -197,8 +200,8 @@
         <section class="home-section reveal" aria-labelledby="see-title">
             <div class="section-head">
                 <span class="eyebrow">see it, don't just read it</span>
-                <h2 id="see-title">We show you what's actually happening</h2>
-                <p class="muted">AI feels like magic until you see the moving parts. So we show them — side by side, in plain view.</p>
+                <h2 id="see-title" data-a11y="see-title">We show you what's actually happening</h2>
+                <p class="muted" data-a11y="see-sub">AI feels like magic until you see the moving parts. So we show them — side by side, in plain view.</p>
             </div>
             <div class="worked home-demo" style="max-width:46rem;margin-inline:auto;">
                 <h3>Asking “chatty” to plan a birthday — before &amp; after a tiny tweak</h3>
@@ -214,7 +217,7 @@
                         <p>Now it plans <em>your</em> party. Same tool — one small habit you'll learn here.</p>
                     </div>
                 </div>
-                <p>That tiny shift — telling it what you really mean — is the whole game. We'll make it second nature.</p>
+                <p data-a11y="demo-closer">That tiny shift — telling it what you really mean — is the whole game. We'll make it second nature.</p>
             </div>
         </section>
 
@@ -222,8 +225,8 @@
         <section class="home-section reveal" aria-labelledby="belong-title">
             <div class="belong">
                 <span class="eyebrow">you're not doing this alone</span>
-                <h2 id="belong-title">Find your people</h2>
-                <p>Everyone here started out a little unsure. Get gentle, no-hype notes in your inbox, and join a community of like minds who are getting comfortable with AI — together.</p>
+                <h2 id="belong-title" data-a11y="belong-title">Find your people</h2>
+                <p data-a11y="belong-desc">Everyone here started out a little unsure. Get gentle, no-hype notes in your inbox, and join a community of like minds who are getting comfortable with AI — together.</p>
             </div>
             <div style="max-width:34rem;margin:var(--space-xl) auto 0;">
                 <mgt-newsletter heading="Come along for the ride" description="A friendly, no-jargon note now and then. No spam, no pressure, unsubscribe anytime."></mgt-newsletter>

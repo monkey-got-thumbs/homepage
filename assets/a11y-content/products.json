@@ -1,0 +1,135 @@
+{
+  "hero-title": [
+    "A couple of little helpers",
+    "A couple of little helpers",
+    "A couple of little helpers",
+    "Two little helpers",
+    "Two helpers"
+  ],
+  "hero-lede": [
+    "We don't sell a big list of things. We made just two small tools. Both are meant to make AI feel friendly and helpful. On this page we tell you, in plain words, what each one really does for you.",
+    "We don't have a big catalogue — just two small tools we built to make AI feel friendlier and more useful. Here's what each one really does for you, in plain words.",
+    "We don't have a big catalogue — just two small things we built to make AI feel friendlier and more useful. Here's what each one actually does for you, in plain words.",
+    "No big catalogue — two small tools that make AI friendlier and more useful. Here's what each does, plainly.",
+    "Two small AI tools. What each one does:"
+  ],
+  "chatyman-what": [
+    "A friendly AI helper you can add to your own website.",
+    "A friendly AI helper you can add to your own website.",
+    "A friendly AI helper you can pop onto your own website.",
+    "A friendly AI helper for your own website.",
+    "An AI helper for your website."
+  ],
+  "chatyman-desc": [
+    "Do you have a website? chatyman is a small chat bubble that sits in the corner of it. When a visitor has a question, chatyman answers — kindly, and in your words. It reads your own pages first, so it talks about <em>your</em> place, not the whole internet.",
+    "Have a website? chatyman is a little chat bubble in the corner that answers your visitors' questions — kindly, and in your own words. It reads your own pages, so it talks about <em>your</em> place, not the whole internet.",
+    "Got a website? chatyman is a little chat bubble in the corner that answers your visitors' questions — kindly, and in your words. It reads your own pages, so it talks about <em>your</em> place, not the whole internet.",
+    "A corner chat bubble for your site that answers visitors' questions in your words. It reads your pages, so it speaks about <em>your</em> place, not the whole internet.",
+    "A chat bubble that answers visitors from <em>your</em> pages, in your voice."
+  ],
+  "advisor-what": [
+    "A <span class=\"free\">free</span> helper that makes the way you ask AI a lot better.",
+    "A <span class=\"free\">free</span> helper that makes the way you ask AI much better.",
+    "A <span class=\"free\">free</span> helper that makes the way you ask AI much better.",
+    "A <span class=\"free\">free</span> helper that improves how you ask AI.",
+    "A <span class=\"free\">free</span> tool for better AI prompts."
+  ],
+  "advisor-desc": [
+    "When you ask AI to do a job, the way you word it changes everything. Paste in what you've written and add a couple of examples. The Advisor then shows you how it works (this is a preview): one round of friendly, honest feedback. It tells you what's working, what might trip you up, and exactly how to make it clearer.",
+    "When you ask AI to do a job, the way you word it changes everything. Paste in what you've written, add a couple of examples, and the Advisor shows you how it works (preview): one round of friendly, honest feedback — what's working, what might trip you up, and how to make it clearer.",
+    "When you ask AI to do a job for you, the way you word it changes everything. Paste in what you've written, add a couple of examples, and the Advisor shows you how it works (preview): one round of friendly, honest feedback — what's working, what might trip you up, and exactly how to make it clearer.",
+    "How you word a request changes everything. Paste your wording, add a few examples, and the Advisor (preview) gives one round of honest feedback — what works, what could trip you up, how to make it clearer.",
+    "Paste your prompt and examples; get one round of honest feedback on what works, what fails, and how to fix it (preview)."
+  ],
+  "writers-what": [
+    "A blank page with a whole writers' room sitting right beside it.",
+    "A blank page with a whole writers' room sitting beside it.",
+    "A blank page with a whole writers' room sitting beside it.",
+    "A blank page with a writers' room beside it.",
+    "A blank page plus a writers' room."
+  ],
+  "writers-desc": [
+    "Write your story the way you would in any document. When you finish a paragraph, press Enter. A line-up of helpers then reads it. They check the words, keep your genre and your voice, and remember your characters — so they can tell when one acts out of character. You decide whether to keep or change each suggestion. Nothing touches your words until you click.",
+    "Write your story like you would in any document. Finish a paragraph, press Enter, and a line-up of helpers reads it — checking the words, keeping your genre and voice, and remembering your characters so they can tell when one acts out of character. You keep or change each suggestion; nothing touches your words without a click.",
+    "Write your story like you would in any document. Finish a paragraph, press Enter, and a line-up of helpers reads it — checking the words, keeping your genre and voice, and remembering your characters so it can tell when one acts out of character. You keep or change each suggestion; nothing touches your words without a click.",
+    "Write as in any document. Finish a paragraph, press Enter, and a line-up of helpers checks the words, holds your genre and voice, and tracks your characters to catch out-of-character moments. Keep or change each suggestion; nothing changes without a click.",
+    "Write normally; press Enter and helpers check wording, hold voice and genre, and flag out-of-character moments. Nothing changes without a click."
+  ],
+  "see-title": [
+    "A tiny change, a much better answer",
+    "A tiny tweak, a much better answer",
+    "A tiny tweak, a much better answer",
+    "A tiny tweak, a far better answer",
+    "Small tweak, better answer"
+  ],
+  "see-intro": [
+    "This is just the kind of thing the Advisor helps you notice — the same job, asked in two different ways.",
+    "This is the kind of thing the Advisor helps you spot — the same job, asked two ways.",
+    "This is the kind of thing the Advisor helps you spot — the same job, asked two ways.",
+    "The kind of thing the Advisor helps you spot: one job, asked two ways.",
+    "One job, asked two ways."
+  ],
+  "see-recall-intro": [
+    "The Advisor is built to help you find these little changes by yourself. Have a quick go at remembering the idea now (it saves only in your own browser):",
+    "The Advisor is built to help you find those little tweaks for yourself. Have a quick go at remembering the idea (it saves only in your browser):",
+    "The Advisor is built to help you find those little tweaks for yourself. Have a quick go at remembering the idea (it saves only in your browser):",
+    "The Advisor helps you find these tweaks yourself. Try recalling the idea (saved only in your browser):",
+    "Recall the idea (saved in-browser only):"
+  ],
+  "promise-title": [
+    "A few quiet promises",
+    "A few quiet promises",
+    "A few quiet promises",
+    "A few quiet promises",
+    "Our promises"
+  ],
+  "promise-intro": [
+    "Whatever we make, we hold to the same simple ideas — the same ones we <a href=\"/learn/foundations/what-is-ai.html\">teach about</a>.",
+    "Whatever we make, we hold to the same simple ideas — the same ones we <a href=\"/learn/foundations/what-is-ai.html\">teach about</a>.",
+    "Whatever we make, we hold to the same simple ideas — the same ones we <a href=\"/learn/foundations/what-is-ai.html\">teach about</a>.",
+    "Whatever we build, we hold to the same ideas we <a href=\"/learn/foundations/what-is-ai.html\">teach about</a>.",
+    "The same ideas we <a href=\"/learn/foundations/what-is-ai.html\">teach about</a>."
+  ],
+  "promise-charge": [
+    "<strong>You stay in charge.</strong> AI helps you; you decide what to keep, what to change, and what to ignore. It never takes the wheel.",
+    "<strong>You stay in charge.</strong> AI helps; you decide what to keep, what to change, and what to ignore. It never takes the wheel.",
+    "<strong>You stay in charge.</strong> AI helps; you decide what to keep, what to change, and what to ignore. It never takes the wheel.",
+    "<strong>You stay in charge.</strong> AI assists; you decide what to keep, change, or ignore. It never takes the wheel.",
+    "<strong>You stay in charge.</strong> You decide what to keep, change, or ignore."
+  ],
+  "promise-privacy": [
+    "<strong>Your information stays yours.</strong> We keep things on your own device wherever we can, and we would never quietly pass your details around.",
+    "<strong>Your information stays yours.</strong> We keep things on your own device wherever we can, and we'd never quietly hand your details around.",
+    "<strong>Your information stays yours.</strong> We keep things on your own device wherever we can, and we'd never quietly hand your details around.",
+    "<strong>Your information stays yours.</strong> We keep data on your device where we can, and never quietly pass your details around.",
+    "<strong>Your information stays yours.</strong> Kept on your device; never passed around."
+  ],
+  "promise-nolockin": [
+    "<strong>Nothing locks you in.</strong> If you ever want to walk away, you can — and your stuff comes with you.",
+    "<strong>Nothing locks you in.</strong> If you ever want to walk away, you can — your stuff comes with you.",
+    "<strong>Nothing locks you in.</strong> If you ever want to walk away, you can — your stuff comes with you.",
+    "<strong>Nothing locks you in.</strong> Walk away whenever you like — your stuff comes with you.",
+    "<strong>Nothing locks you in.</strong> Leave anytime; your data goes with you."
+  ],
+  "promise-reliable": [
+    "<strong>Made to be reliable.</strong> We would rather make something simple and steady than something clever and fragile.",
+    "<strong>Made to be reliable.</strong> We'd rather make something simple and steady than something clever and fragile.",
+    "<strong>Made to be reliable.</strong> We'd rather make something simple and steady than something clever and fragile.",
+    "<strong>Made to be reliable.</strong> We prefer simple and steady over clever and fragile.",
+    "<strong>Made to be reliable.</strong> Simple and steady over clever and fragile."
+  ],
+  "touch-title": [
+    "We'll only nudge you when there's something good",
+    "We'll only nudge you when there's something good",
+    "We'll only nudge you when there's something good",
+    "We'll only write when there's something good",
+    "We only write when it's worth it"
+  ],
+  "touch-intro": [
+    "If you'd like to hear from us when we make something new, just pop your email in below. No spam, no pressure, and you can leave whenever you like.",
+    "If you'd like to hear when we make something new, pop your email in. No spam, no pressure, leave whenever you like.",
+    "If you'd like to hear when we make something new, pop your email in. No spam, no pressure, leave whenever you like.",
+    "Want to hear when we make something new? Add your email. No spam, no pressure, leave anytime.",
+    "Hear about new tools — add your email. No spam; leave anytime."
+  ]
+}

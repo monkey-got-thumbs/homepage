@@ -105,6 +105,9 @@
             }
         }
     </style>
+    <link rel="stylesheet" href="/assets/css/accessibility.css">
+    <script src="/assets/js/a11y-init.js"></script>
+    <script src="/assets/js/accessibility.js" defer></script>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -122,15 +125,15 @@
             <!-- HERO: one warm invitation -->
             <header class="community-head">
                 <span class="eyebrow">you're not doing this alone</span>
-                <h1>Find your people</h1>
-                <p class="lede">Learning something new is so much warmer with company. Here you'll find everyday people who started exactly where you are — a little unsure, plenty curious — getting comfortable with AI together.</p>
+                <h1 data-a11y="hero-h1">Find your people</h1>
+                <p class="lede" data-a11y="hero-lede">Learning something new is so much warmer with company. Here you'll find everyday people who started exactly where you are — a little unsure, plenty curious — getting comfortable with AI together.</p>
             </header>
 
             <!-- JOIN: the one clear, primary action -->
             <section class="join gradient-card reveal" aria-labelledby="join-title">
                 <div class="gradient-card__inner">
-                    <h2 id="join-title">The simplest way to join in</h2>
-                    <p>Pop your email below and we'll send a friendly, no-jargon note now and then — a small thing we've learned, a gentle nudge, a reminder you're not the only one figuring this out. That's it. That's the welcome.</p>
+                    <h2 id="join-title" data-a11y="join-h2">The simplest way to join in</h2>
+                    <p data-a11y="join-p">Pop your email below and we'll send a friendly, no-jargon note now and then — a small thing we've learned, a gentle nudge, a reminder you're not the only one figuring this out. That's it. That's the welcome.</p>
                     <mgt-newsletter heading="Come along for the ride" description="A warm, jargon-free note now and then. No spam, no pressure, unsubscribe any time."></mgt-newsletter>
                 </div>
             </section>
@@ -139,8 +142,8 @@
             <section class="reveal" style="margin-top: var(--space-2xl);" aria-labelledby="who-title">
                 <div class="section-head">
                     <span class="eyebrow">who's here</span>
-                    <h2 id="who-title">People just like you</h2>
-                    <p class="muted">Not experts. Not coders. Just curious folks, helping each other feel a little more at home with AI.</p>
+                    <h2 id="who-title" data-a11y="who-h2">People just like you</h2>
+                    <p class="muted" data-a11y="who-p">Not experts. Not coders. Just curious folks, helping each other feel a little more at home with AI.</p>
                 </div>
                 <div class="faces calm-grid">
                     <article class="card">
@@ -166,26 +169,26 @@
             <section class="reveal" style="margin-top: var(--space-2xl);" aria-labelledby="ways-title">
                 <div class="section-head">
                     <span class="eyebrow">ways to be part of it</span>
-                    <h2 id="ways-title">There's no wrong way in</h2>
-                    <p class="muted">Pick whatever feels comfortable today. You can always do more later — or nothing at all. No pressure here.</p>
+                    <h2 id="ways-title" data-a11y="ways-h2">There's no wrong way in</h2>
+                    <p class="muted" data-a11y="ways-p">Pick whatever feels comfortable today. You can always do more later — or nothing at all. No pressure here.</p>
                 </div>
                 <ol class="ways path" role="list">
                     <li class="step">
                         <span class="step__num" aria-hidden="true">1</span>
                         <h3>Get the friendly notes</h3>
-                        <p>The easiest start. A gentle, no-hype note now and then, so you've always got a quiet companion as you learn.</p>
+                        <p data-a11y="step1-p">The easiest start. A gentle, no-hype note now and then, so you've always got a quiet companion as you learn.</p>
                         <a class="card-link" href="#join-title">Join above →</a>
                     </li>
                     <li class="step">
                         <span class="step__num" aria-hidden="true">2</span>
                         <h3>Share your story</h3>
-                        <p>Had a lovely little win with AI? Or a moment where it went sideways? Tell us — your story might be exactly what helps the next nervous starter feel braver.</p>
+                        <p data-a11y="step2-p">Had a lovely little win with AI? Or a moment where it went sideways? Tell us — your story might be exactly what helps the next nervous starter feel braver.</p>
                         <a class="card-link" href="/contact/">Say hello →</a>
                     </li>
                     <li class="step">
                         <span class="step__num" aria-hidden="true">3</span>
                         <h3>Pass it on</h3>
-                        <p>Know someone who calls it "chatty" and feels a bit lost? Send them our way. Every kind nudge brings one more person in from the cold.</p>
+                        <p data-a11y="step3-p">Know someone who calls it "chatty" and feels a bit lost? Send them our way. Every kind nudge brings one more person in from the cold.</p>
                         <a class="card-link" href="/learn/">Show them where to start →</a>
                     </li>
                 </ol>
@@ -195,25 +198,25 @@
             <section class="reveal" style="margin-top: var(--space-2xl);" aria-labelledby="spirit-title">
                 <div class="section-head">
                     <span class="eyebrow">how we treat each other</span>
-                    <h2 id="spirit-title">The spirit of the place</h2>
-                    <p class="muted">A few gentle promises about what it feels like to be here.</p>
+                    <h2 id="spirit-title" data-a11y="spirit-h2">The spirit of the place</h2>
+                    <p class="muted" data-a11y="spirit-p">A few gentle promises about what it feels like to be here.</p>
                 </div>
                 <div class="calm-grid">
                     <article class="card">
                         <h3>Curious, not scared</h3>
-                        <p>AI is new and a bit strange — that's allowed. We meet it with curiosity instead of panic, and we never make you feel daft for asking.</p>
+                        <p data-a11y="spirit-curious">AI is new and a bit strange — that's allowed. We meet it with curiosity instead of panic, and we never make you feel daft for asking.</p>
                     </article>
                     <article class="card">
                         <h3>Honest, not hyped</h3>
-                        <p>No breathless "AI will change your life" talk. Just real, plain experiences — what worked, what didn't, and what's worth your time.</p>
+                        <p data-a11y="spirit-honest">No breathless "AI will change your life" talk. Just real, plain experiences — what worked, what didn't, and what's worth your time.</p>
                     </article>
                     <article class="card">
                         <h3>You stay in charge</h3>
-                        <p>AI is a helper, not the boss. We're here to make you more confident and more in control — never to replace your own good judgment.</p>
+                        <p data-a11y="spirit-charge">AI is a helper, not the boss. We're here to make you more confident and more in control — never to replace your own good judgment.</p>
                     </article>
                     <article class="card">
                         <h3>Kindness compounds</h3>
-                        <p>What you learn is worth more when you pass it on. A small tip shared today helps someone feel braver tomorrow. That's the whole idea.</p>
+                        <p data-a11y="spirit-kindness">What you learn is worth more when you pass it on. A small tip shared today helps someone feel braver tomorrow. That's the whole idea.</p>
                     </article>
                 </div>
             </section>
@@ -223,12 +226,12 @@
                 <div class="delight gradient-card">
                     <div class="gradient-card__inner">
                         <span class="eyebrow" style="display:block; text-align:center;">a little taste</span>
-                        <h2 id="delight-title">This is how we learn together</h2>
-                        <p>Small, friendly prompts that pop back just before you'd forget — the same way a good friend reminds you of something handy. Have a go (it saves only in your browser, nowhere else):</p>
+                        <h2 id="delight-title" data-a11y="delight-h2">This is how we learn together</h2>
+                        <p data-a11y="delight-p">Small, friendly prompts that pop back just before you'd forget — the same way a good friend reminds you of something handy. Have a go (it saves only in your browser, nowhere else):</p>
                         <mgt-recall id="community-belong">
                             <details>
                                 <summary>What does "community" actually mean here?</summary>
-                                <p>It's simpler than it sounds: friendly notes in your inbox, the chance to share your own story, and a warm welcome to people figuring AI out together. No experts required — just kind, curious folks like you.</p>
+                                <p data-a11y="recall-answer">It's simpler than it sounds: friendly notes in your inbox, the chance to share your own story, and a warm welcome to people figuring AI out together. No experts required — just kind, curious folks like you.</p>
                             </details>
                         </mgt-recall>
                     </div>
@@ -238,8 +241,8 @@
             <!-- GENTLE NEXT STEP -->
             <section class="reveal section-head" style="margin-top: var(--space-2xl);" aria-labelledby="next-title">
                 <span class="eyebrow">brand new?</span>
-                <h2 id="next-title">Not sure where to begin?</h2>
-                <p class="muted">No rush, no wrong moves. Start with a gentle five-minute intro whenever you're ready.</p>
+                <h2 id="next-title" data-a11y="next-h2">Not sure where to begin?</h2>
+                <p class="muted" data-a11y="next-p">No rush, no wrong moves. Start with a gentle five-minute intro whenever you're ready.</p>
                 <div class="cta" style="justify-content: center; margin-top: var(--space-md);">
                     <a href="/learn/start/new.html" class="btn">Start here — it's friendlier than you think</a>
                 </div>

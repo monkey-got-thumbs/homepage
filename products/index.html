@@ -87,6 +87,9 @@
             }
         }
     </style>
+    <link rel="stylesheet" href="/assets/css/accessibility.css">
+    <script src="/assets/js/a11y-init.js"></script>
+    <script src="/assets/js/accessibility.js" defer></script>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -103,8 +106,8 @@
             <!-- HEAD: one warm idea -->
             <header class="products-head">
                 <span class="eyebrow">things we made for you</span>
-                <h1>A couple of little helpers</h1>
-                <p class="lede">We don't have a big catalogue — just two small things we built to make AI feel friendlier and more useful. Here's what each one actually does for you, in plain words.</p>
+                <h1 data-a11y="hero-title">A couple of little helpers</h1>
+                <p class="lede" data-a11y="hero-lede">We don't have a big catalogue — just two small things we built to make AI feel friendlier and more useful. Here's what each one actually does for you, in plain words.</p>
             </header>
 
             <!-- THE TWO THINGS -->
@@ -113,8 +116,8 @@
 
                     <article class="thing card">
                         <h2>chatyman</h2>
-                        <p class="what">A friendly AI helper you can pop onto your own website.</p>
-                        <p>Got a website? chatyman is a little chat bubble in the corner that answers your visitors' questions — kindly, and in your words. It reads your own pages, so it talks about <em>your</em> place, not the whole internet.</p>
+                        <p class="what" data-a11y="chatyman-what">A friendly AI helper you can pop onto your own website.</p>
+                        <p data-a11y="chatyman-desc">Got a website? chatyman is a little chat bubble in the corner that answers your visitors' questions — kindly, and in your words. It reads your own pages, so it talks about <em>your</em> place, not the whole internet.</p>
                         <ul>
                             <li>It only answers from what you've told it, so it won't make things up.</li>
                             <li>The chats happen right there in your visitor's browser — nothing's sent off to be stored elsewhere.</li>
@@ -126,8 +129,8 @@
 
                     <article class="thing card">
                         <h2>Agent Builder Advisor</h2>
-                        <p class="what">A <span class="free">free</span> helper that makes the way you ask AI much better.</p>
-                        <p>When you ask AI to do a job for you, the way you word it changes everything. Paste in what you've written, add a couple of examples, and the Advisor shows you how it works (preview): one round of friendly, honest feedback — what's working, what might trip you up, and exactly how to make it clearer.</p>
+                        <p class="what" data-a11y="advisor-what">A <span class="free">free</span> helper that makes the way you ask AI much better.</p>
+                        <p data-a11y="advisor-desc">When you ask AI to do a job for you, the way you word it changes everything. Paste in what you've written, add a couple of examples, and the Advisor shows you how it works (preview): one round of friendly, honest feedback — what's working, what might trip you up, and exactly how to make it clearer.</p>
                         <ul>
                             <li>You get a quick, expert read — not a chat that goes round in circles.</li>
                             <li>It shows you what your wording would actually produce, so there are no surprises.</li>
@@ -139,8 +142,8 @@
 
                     <article class="thing card">
                         <h2>Writers Digest</h2>
-                        <p class="what">A blank page with a whole writers' room sitting beside it.</p>
-                        <p>Write your story like you would in any document. Finish a paragraph, press Enter, and a line-up of helpers reads it — checking the words, keeping your genre and voice, and remembering your characters so it can tell when one acts out of character. You keep or change each suggestion; nothing touches your words without a click.</p>
+                        <p class="what" data-a11y="writers-what">A blank page with a whole writers' room sitting beside it.</p>
+                        <p data-a11y="writers-desc">Write your story like you would in any document. Finish a paragraph, press Enter, and a line-up of helpers reads it — checking the words, keeping your genre and voice, and remembering your characters so it can tell when one acts out of character. You keep or change each suggestion; nothing touches your words without a click.</p>
                         <ul>
                             <li>It builds a quiet memory of your story — characters, places, what's happened — to catch slips.</li>
                             <li>Line up your own helpers, or add new ones, in whatever order you like.</li>
@@ -157,8 +160,8 @@
             <section class="reveal section-pad" aria-labelledby="see-title">
                 <div class="head-centred">
                     <span class="eyebrow">see it, don't just read it</span>
-                    <h2 id="see-title">A tiny tweak, a much better answer</h2>
-                    <p class="muted">This is the kind of thing the Advisor helps you spot — the same job, asked two ways.</p>
+                    <h2 id="see-title" data-a11y="see-title">A tiny tweak, a much better answer</h2>
+                    <p class="muted" data-a11y="see-intro">This is the kind of thing the Advisor helps you spot — the same job, asked two ways.</p>
                 </div>
                 <div class="worked advisor-demo">
                     <h3>Asking AI to reply to a customer — before &amp; after</h3>
@@ -174,7 +177,7 @@
                             <p>Now it sounds like <em>you</em>, and does exactly the job. Same tool — one small habit.</p>
                         </div>
                     </div>
-                    <p>The Advisor is built to help you find those little tweaks for yourself. Have a quick go at remembering the idea (it saves only in your browser):</p>
+                    <p data-a11y="see-recall-intro">The Advisor is built to help you find those little tweaks for yourself. Have a quick go at remembering the idea (it saves only in your browser):</p>
                     <mgt-recall id="products-taste">
                         <details>
                             <summary>Why does it help to tell AI exactly what you want?</summary>
@@ -188,16 +191,16 @@
             <section class="reveal section-pad" aria-labelledby="promise-title">
                 <div class="head-centred">
                     <span class="eyebrow">how we build</span>
-                    <h2 id="promise-title">A few quiet promises</h2>
-                    <p class="muted">Whatever we make, we hold to the same simple ideas — the same ones we <a href="/learn/foundations/what-is-ai.html">teach about</a>.</p>
+                    <h2 id="promise-title" data-a11y="promise-title">A few quiet promises</h2>
+                    <p class="muted" data-a11y="promise-intro">Whatever we make, we hold to the same simple ideas — the same ones we <a href="/learn/foundations/what-is-ai.html">teach about</a>.</p>
                 </div>
                 <div class="promise gradient-card">
                     <div class="gradient-card__inner">
                         <ul>
-                            <li><strong>You stay in charge.</strong> AI helps; you decide what to keep, what to change, and what to ignore. It never takes the wheel.</li>
-                            <li><strong>Your information stays yours.</strong> We keep things on your own device wherever we can, and we'd never quietly hand your details around.</li>
-                            <li><strong>Nothing locks you in.</strong> If you ever want to walk away, you can — your stuff comes with you.</li>
-                            <li><strong>Made to be reliable.</strong> We'd rather make something simple and steady than something clever and fragile.</li>
+                            <li data-a11y="promise-charge"><strong>You stay in charge.</strong> AI helps; you decide what to keep, what to change, and what to ignore. It never takes the wheel.</li>
+                            <li data-a11y="promise-privacy"><strong>Your information stays yours.</strong> We keep things on your own device wherever we can, and we'd never quietly hand your details around.</li>
+                            <li data-a11y="promise-nolockin"><strong>Nothing locks you in.</strong> If you ever want to walk away, you can — your stuff comes with you.</li>
+                            <li data-a11y="promise-reliable"><strong>Made to be reliable.</strong> We'd rather make something simple and steady than something clever and fragile.</li>
                         </ul>
                     </div>
                 </div>
@@ -207,8 +210,8 @@
             <section class="reveal section-pad" aria-labelledby="touch-title">
                 <div class="head-centred">
                     <span class="eyebrow">stay in touch</span>
-                    <h2 id="touch-title">We'll only nudge you when there's something good</h2>
-                    <p class="muted">If you'd like to hear when we make something new, pop your email in. No spam, no pressure, leave whenever you like.</p>
+                    <h2 id="touch-title" data-a11y="touch-title">We'll only nudge you when there's something good</h2>
+                    <p class="muted" data-a11y="touch-intro">If you'd like to hear when we make something new, pop your email in. No spam, no pressure, leave whenever you like.</p>
                 </div>
                 <div class="newsletter-wrap">
                     <mgt-newsletter heading="Hear about new helpers" description="A friendly note now and then when there's something worth knowing. Unsubscribe anytime." compact></mgt-newsletter>
