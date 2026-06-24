@@ -222,6 +222,7 @@ class MGTHeader extends HTMLElement {
           <nav id="main-nav" role="navigation" aria-label="Primary">
             <a href="/">Home</a>
             <a href="/learn/">Learn</a>
+            <a href="/explorables/">Explorables</a>
             <a href="/build/">Build</a>
             <a href="/products/">Products</a>
             <a href="/notes/">Notes</a>

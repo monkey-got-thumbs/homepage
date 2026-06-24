@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Which option? — Explorable</title>
+<style>
+  :root{--ink:#23221f;--mut:#8f8f88;--faint:#ecebe5;--bg:#fcfcf9;--front:#3a6ea5;--dom:#bdbcb4;--mono:"SFMono-Regular",ui-monospace,Menlo,monospace}
+  *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}
+  .bb{background:#17122B;color:#EDECF6;font:13px/1 system-ui;padding:10px 18px;border-bottom:1px solid rgba(255,255,255,.08)}
+  .bb a{color:#A6FF4D;text-decoration:none;font-weight:700}.bb span{opacity:.6}
+  .wrap{max-width:760px;margin:0 auto;padding:34px 24px 80px}
+  .kick{font-size:11px;text-transform:uppercase;letter-spacing:.09em;color:var(--mut);margin-bottom:12px}
+  .doc{font-size:19px;line-height:1.6}.doc .front{color:var(--front);font-weight:680}.doc .dom{color:var(--mut);font-weight:680}
+  .hint{font-size:12.5px;color:var(--mut);margin:16px 0 4px}
+  svg{display:block;width:100%;height:auto;touch-action:none;user-select:none}
+</style>
+</head>
+<body>
+<div class="bb"><a href="/explorables/">← Explorables</a> <span>· Monkey Got Thumbs</span></div>
+<div class="wrap">
+  <div class="kick">Trade-off · five ways to deliver, cost vs time</div>
+  <p class="doc" id="doc"></p>
+  <p class="hint">↙ cheaper &amp; faster is better · drag any point to reprice/retime it · the dashed line is the frontier of real choices; greyed options are beaten on both</p>
+  <svg id="sv" viewBox="0 0 760 320" preserveAspectRatio="xMidYMid meet"></svg>
+</div>
+<script>
+"use strict";
+const $=s=>document.querySelector(s),M=t=>"$"+t.toFixed(1)+"M";
+const O=[{id:'std',name:'Standard',cost:4.8,time:24},{id:'fast',name:'Fast-track',cost:6.2,time:16},{id:'phase',name:'Phased',cost:4.2,time:30},{id:'prem',name:'Premium',cost:6.8,time:20},{id:'lean',name:'Lean',cost:3.9,time:34}];
+const dom=(o,s)=>s.some(j=>j!==o&&j.cost<=o.cost&&j.time<=o.time&&(j.cost<o.cost||j.time<o.time));
+const front=s=>s.filter(o=>!dom(o,s)).sort((a,b)=>a.time-b.time);
+const W=760,L=64,R=20,Tm=16,Bm=44,Cmin=3.5,Cmax=7.2,Tmin=14,Tmax=36,H=320;
+const ax=t=>L+(t-Tmin)/(Tmax-Tmin)*(W-L-R),ay=c=>Tm+(c-Cmin)/(Cmax-Cmin)*(H-Tm-Bm);
+const axI=px=>Tmin+(px-L)/(W-L-R)*(Tmax-Tmin),ayI=py=>Cmin+(py-Tm)/(H-Tm-Bm)*(Cmax-Cmin);
+function draw(){let s="";
+  for(let t=16;t<=36;t+=4){const x=ax(t);s+=`<line x1="${x}" y1="${Tm}" x2="${x}" y2="${H-Bm}" stroke="var(--faint)"/><text x="${x}" y="${H-Bm+16}" font-size="10" text-anchor="middle" fill="var(--mut)">${t}w</text>`;}
+  for(let c=4;c<=7;c++){const y=ay(c);s+=`<line x1="${L}" y1="${y}" x2="${W-R}" y2="${y}" stroke="var(--faint)"/><text x="${L-8}" y="${y+3}" font-size="10" text-anchor="end" fill="var(--mut)">$${c}M</text>`;}
+  const fr=front(O);let d="";fr.forEach((o,i)=>d+=(i?"L":"M")+ax(o.time).toFixed(1)+" "+ay(o.cost).toFixed(1)+" ");
+  s+=`<path d="${d}" fill="none" stroke="var(--front)" stroke-width="2" stroke-dasharray="6 4"/>`;
+  O.forEach(o=>{const onF=fr.includes(o),x=ax(o.time),y=ay(o.cost);
+    s+=`<g class="pt" data-id="${o.id}" style="cursor:move"><circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="9" fill="${onF?'var(--front)':'var(--dom)'}"/></g>`+
+       `<text x="${x.toFixed(1)}" y="${(y-14).toFixed(1)}" font-size="11" text-anchor="middle" fill="${onF?'var(--ink)':'var(--mut)'}">${o.name}</text>`+
+       `<text x="${x.toFixed(1)}" y="${(y+22).toFixed(1)}" font-size="9.5" text-anchor="middle" font-family="var(--mono)" fill="var(--mut)">${M(o.cost)}·${o.time}w</text>`;});
+  $("#sv").innerHTML=s;const fn=fr.map(o=>o.name),dn=O.filter(o=>!fr.includes(o)).map(o=>o.name);
+  $("#doc").innerHTML=`<span class="front">On the frontier: ${fn.join(", ")}</span> — each a real trade. `+(dn.length?`<span class="dom">${dn.join(", ")} ${dn.length>1?'are':'is'} dominated</span> — something beats ${dn.length>1?'them':'it'} on both.`:`Nothing is dominated — every option is a genuine choice.`);}
+(function(){const sv=$("#sv");let d=null;const pt=e=>{const p=sv.createSVGPoint();p.x=e.clientX;p.y=e.clientY;return p.matrixTransform(sv.getScreenCTM().inverse());};
+  sv.addEventListener("pointerdown",e=>{const g=e.target.closest(".pt");if(!g)return;d=O.find(o=>o.id===g.dataset.id);sv.setPointerCapture(e.pointerId);});
+  sv.addEventListener("pointermove",e=>{if(!d)return;const l=pt(e);d.time=Math.max(Tmin,Math.min(Tmax,Math.round(axI(l.x))));d.cost=Math.max(Cmin,Math.min(Cmax,Math.round(ayI(l.y)*10)/10));draw();});
+  sv.addEventListener("pointerup",()=>d=null);sv.addEventListener("pointercancel",()=>d=null);})();
+draw();
+</script>
+</body>
+</html>

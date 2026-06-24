@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Explorable — the template</title>
+<style>
+  :root{
+    --ink:#23221f;--mut:#9b9a92;--faint:#edece6;--bg:#fcfcf9;
+    --inc:#23221f;--rent:#3a6ea5;--food:#5b9279;--fun:#cf8a33;--transport:#7a5ea8;--goal:#b5562f;
+    --good:#3f8f5b;--warn:#cf8a33;--bad:#c25244;--ghost:#9aa0b5;
+    --mono:"SFMono-Regular",ui-monospace,Menlo,monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}
+  .wrap{max-width:680px;margin:0 auto;padding:64px 28px 90px}
+  .kick{font-size:11px;text-transform:uppercase;letter-spacing:.09em;color:var(--mut);margin-bottom:20px}
+  .doc{font-size:25px;line-height:2.0;letter-spacing:-0.015em}
+  .scrub{font-family:var(--mono);font-weight:600;font-variant-numeric:tabular-nums;cursor:ew-resize;border-bottom:2px dotted currentColor;padding:0 1px;touch-action:none;border-radius:2px;white-space:nowrap}
+  .scrub:hover,.scrub.drag{background:#0000000d}
+  .s-inc{color:var(--inc)}.s-rent{color:var(--rent)}.s-food{color:var(--food)}.s-fun{color:var(--fun)}.s-transport{color:var(--transport)}.s-goal{color:var(--goal)}
+  .live{font-weight:680;font-variant-numeric:tabular-nums}
+  .verdict{font-weight:680}.v-good{color:var(--good)}.v-warn{color:var(--warn)}.v-bad{color:var(--bad)}
+  .lock{cursor:pointer;user-select:none;border:none;font-size:0.8em}
+  .line{margin-top:34px;font-size:15px;color:var(--mut);line-height:1.7}
+  .line a{color:var(--goal);cursor:pointer;border-bottom:1px dotted var(--goal);margin-right:14px}
+  .line a.alt{color:var(--ghost);border-color:var(--ghost)}
+  .panel{margin-top:14px;font-size:17px;color:var(--ink);animation:fade .22s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(-3px)}to{opacity:1}}
+  .gnum{color:var(--ghost);font-family:var(--mono);font-weight:600}
+  .btn{font:inherit;font-size:13px;font-weight:600;padding:3px 11px;border-radius:7px;border:1px solid var(--ink);background:var(--ink);color:#fff;cursor:pointer;margin-right:6px}
+  .btn.ghost{background:transparent;color:var(--ink);border-color:var(--faint)}
+  .chip{font:inherit;font-size:12px;font-family:var(--mono);padding:2px 8px;border:1px solid var(--faint);border-radius:20px;cursor:pointer;margin:0 1px;color:var(--mut)}
+  .chip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .whatif{margin-top:18px;padding:14px 16px;border:1px dashed var(--ghost);border-radius:11px;font-size:16px;color:var(--ink);line-height:1.8;animation:fade .22s ease}
+  .whatif .h{font-size:10px;text-transform:uppercase;letter-spacing:.07em;color:var(--ghost);font-weight:700;display:block;margin-bottom:5px}
+  .note{margin-top:60px;font-size:12px;color:var(--mut);line-height:1.6;border-top:1px solid var(--faint);padding-top:16px}
+</style>
+</head>
+<body>
+<div style="background:#17122B;color:#EDECF6;font:13px/1 -apple-system,system-ui,sans-serif;padding:10px 18px;border-bottom:1px solid rgba(255,255,255,.08)"><a href="/explorables/" style="color:#A6FF4D;text-decoration:none;font-weight:700">&larr; Explorables</a> <span style="opacity:.6">&middot; Monkey Got Thumbs</span></div>
+<div class="wrap">
+  <div class="kick">A monthly budget · drag any underlined number</div>
+  <div class="doc" id="doc"></div>
+  <div id="extra"></div>
+  <div class="note" id="note"></div>
+</div>
+
+<script>
+"use strict";
+const $=s=>document.querySelector(s);
+const money=v=>(v<0?"-$":"$")+Math.abs(Math.round(v)).toLocaleString();
+const CATS=["rent","food","fun","transport"];
+const META={income:{s:18,st:10},rent:{s:14,st:10},food:{s:12,st:10},fun:{s:12,st:10},transport:{s:12,st:10},target:{s:14,st:10}};
+const M={income:4200,rent:1650,food:620,fun:380,transport:260,target:1600,locked:false,move:false,proposeOn:null,alt:null};
+window.__M=M;
+const spend=s=>s.rent+s.food+s.fun+s.transport;
+const income=s=>s.locked?s.target+spend(s):s.income;
+const savings=s=>s.locked?s.target:s.income-spend(s);
+const gap=s=>s.locked?0:s.target-(s.income-spend(s));
+const verdict=s=>{const v=savings(s),p=v/income(s);return v<0?['v-bad','overdrawn']:p<0.10?['v-bad','very tight']:p<0.22?['v-warn','tight']:['v-good','comfortable'];};
+const solve=s=>{const g=gap(s);if(g<=0)return null;const order=s.proposeOn?[s.proposeOn,...CATS.filter(c=>c!==s.proposeOn)]:["fun","transport","food","rent"];for(const c of order)if(s[c]>=g)return{cat:c,amt:g};return null;};
+const N=(o,w,c="",tag="M")=>`<span class="scrub s-${w} ${c}" data-o="${tag}" data-w="${w}">${money(o[w])}</span>`;
+const lock=()=>`<span class="lock" data-act="lock" title="${M.locked?'income is flexing to hold your goal':'let income flex to your goal'}">${M.locked?'🔒':'🔓'}</span>`;
+
+function draw(){
+  const [vc,vw]=verdict(M), sav=savings(M), g=gap(M);
+  const inc=M.locked?`<span class="gnum">${money(income(M))}</span> ${lock()}`:`${N(M,'income')} ${lock()}`;
+  // calm core sentence (neutral, succinct)
+  $("#doc").innerHTML=`Take-home ${inc}. After rent ${N(M,'rent')}, food ${N(M,'food')}, `+
+    `fun ${N(M,'fun')} and transport ${N(M,'transport')}, <span class="live ${vc}">${money(sav)}</span> remains — `+
+    `<span class="verdict ${vc}">${vw}</span>.`;
+  // one adaptive line; powers tucked behind links
+  const fwd = sav>0?`On track for <span class="live">${money(sav*12)}</span> a year.`:`The gap widens <span class="verdict v-bad">${money(-sav*12)}</span> a year.`;
+  let ex="";
+  if(M.locked){
+    ex=`<div class="line">Balanced to your ${N(M,'target','s-goal')} goal — income absorbs each change. ${fwd}</div>`;
+  } else if(g>0){
+    if(!M.move){
+      ex=`<div class="line"><span class="verdict v-warn">${money(g)}</span> below your ${N(M,'target','s-goal')} goal. ${fwd}<br>`+
+         `<a data-act="move">smallest move ▸</a><a class="alt" data-act="fork">compare a what-if ▸</a></div>`;
+    } else {
+      const s=solve(M);
+      ex=`<div class="panel">Smallest move: cut <span style="color:var(--${s.cat})">${s.cat}</span> by <span class="gnum">${money(s.amt)}</span> → hits ${money(M.target)}. `+
+         `<button class="btn" data-act="apply">apply</button><button class="btn ghost" data-act="dismiss">dismiss</button><br>`+
+         `<span style="font-size:13px;color:var(--mut)">or steer onto </span>`+CATS.map(c=>`<span class="chip ${(M.proposeOn||'fun')===c?'on':''}" data-act="steer" data-cat="${c}">${c}</span>`).join("")+`</div>`;
+    }
+  } else {
+    ex=`<div class="line"><span class="verdict v-good">${money(-g)}</span> past your ${N(M,'target','s-goal')} goal. ${fwd}<br><a class="alt" data-act="fork">compare a what-if ▸</a></div>`;
+  }
+  // hand-authored rival (only when forked)
+  if(M.alt){
+    const aSav=M.alt.income-spend(M.alt), d=aSav-savings(M), dg=M.alt.target-aSav;
+    ex+=`<div class="whatif"><span class="h">your what-if — scrub it</span>`+
+      `Income ${N(M.alt,'income','','ALT')} → rent ${N(M.alt,'rent','','ALT')}, food ${N(M.alt,'food','','ALT')}, fun ${N(M.alt,'fun','','ALT')}, transport ${N(M.alt,'transport','','ALT')}: `+
+      `saves <span class="live">${money(aSav)}</span> (<span class="verdict ${d>=0?'v-good':'v-bad'}">${d>=0?'+':''}${money(d)}</span> vs now), `+
+      `<span class="verdict ${dg<=0?'v-good':'v-warn'}">${dg<=0?money(-dg)+' past':money(dg)+' short of'}</span> the ${money(M.alt.target)} goal. `+
+      `<button class="btn" data-act="adopt">adopt</button><button class="btn ghost" data-act="discard">discard</button></div>`;
+  }
+  $("#extra").innerHTML=ex;
+  $("#note").textContent="One sentence by default. The 🔒 balances income to your goal; “smallest move” is the agent’s proposal; “what-if” forks a copy you steer by hand. Everything computes from the numbers above — nothing is fixed text.";
+}
+
+const stateOf=t=>t==="ALT"?M.alt:M;
+let sc=null;
+document.addEventListener("pointerdown",e=>{const sb=e.target.closest(".scrub");if(!sb)return;
+  e.preventDefault();sb.classList.add("drag");const o=stateOf(sb.dataset.o);
+  sc={o,w:sb.dataset.w,x:e.clientX,v:o[sb.dataset.w],el:sb,m:META[sb.dataset.w]};sb.setPointerCapture(e.pointerId);});
+document.addEventListener("pointermove",e=>{if(!sc)return;let nv=sc.v+(e.clientX-sc.x)*sc.m.s;nv=Math.max(0,Math.round(nv/sc.m.st)*sc.m.st);sc.o[sc.w]=nv;draw();});
+document.addEventListener("pointerup",()=>{if(sc){sc.el.classList.remove("drag");sc=null;}});
+document.addEventListener("click",e=>{const t=e.target.closest("[data-act]");if(!t)return;const a=t.dataset.act;
+  if(a==="lock")M.locked=!M.locked;
+  else if(a==="move")M.move=true;
+  else if(a==="dismiss")M.move=false;
+  else if(a==="steer")M.proposeOn=t.dataset.cat;
+  else if(a==="apply"){const s=solve(M);if(s)M[s.cat]-=s.amt;M.move=false;M.proposeOn=null;}
+  else if(a==="fork")M.alt={income:income(M),rent:M.rent,food:M.food,fun:M.fun,transport:M.transport,target:M.target};
+  else if(a==="adopt"){Object.assign(M,{income:M.alt.income,rent:M.alt.rent,food:M.alt.food,fun:M.alt.fun,transport:M.alt.transport,target:M.alt.target,locked:false,alt:null});}
+  else if(a==="discard")M.alt=null;
+  else return;
+  draw();
+});
+draw();
+</script>
+</body>
+</html>
