@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The US National Debt — an explorable dashboard</title>
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+<link rel="stylesheet" href="/assets/css/tokens.css">
 <link rel="stylesheet" href="/assets/css/accessibility.css">
 <script src="/assets/js/a11y-init.js"></script>
 <script src="/assets/js/accessibility.js" defer></script>
@@ -52,10 +54,17 @@
     --for:#785EF0;   /* purple */
     --dom:#1E88E5;   /* blue */
   }
+
+  /* breadcrumb — site way-finding, aligned to the content column */
+  .exp-crumb{max-width:1080px;margin:16px auto 0;padding:0 24px;font-size:13px;color:var(--color-muted,#B9B5D3);display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+  .exp-crumb a{color:var(--color-link,#8FE34D);text-decoration:none;font-weight:600}
+  .exp-crumb a:hover{text-decoration:underline}
+  .exp-crumb span{opacity:.55}
 </style>
 </head>
 <body>
-<div style="background:#17122B;color:#EDECF6;font:13px/1 -apple-system,system-ui,sans-serif;padding:10px 18px;border-bottom:1px solid rgba(255,255,255,.08)"><a href="/explorables/" style="color:#A6FF4D;text-decoration:none;font-weight:700">← Explorables</a> <span style="opacity:.6">· Monkey Got Thumbs</span></div>
+<mgt-header></mgt-header>
+<nav aria-label="Breadcrumb" class="exp-crumb"><a href="/">Home</a><span>›</span><a href="/explorables/">Explorables</a><span>›</span><span aria-current="page">The US National Debt</span></nav>
 <div class="wrap">
   <div class="src"><span class="play">▶</span><div style="flex:1">
     <div class="t">How Big Is the US National Debt? · Just the Facts</div>
@@ -121,7 +130,11 @@
   <p class="note">Built from the cited USAFacts video's transcript for side-by-side comparison. Figures are the video's (nominal, approximate); the forward projection is a simple deficit×years extrapolation (real debt also compounds via interest and varies with rates) — illustrative, not a forecast. Not financial advice.</p>
 </div>
 
+<mgt-footer></mgt-footer>
 
 <script src="national-debt-dashboard.js"></script>
+<script type="module" src="/assets/js/app.js"></script>
+<script type="module" src="/components/core/mgt-header.js"></script>
+<script type="module" src="/components/core/mgt-footer.js"></script>
 </body>
 </html>

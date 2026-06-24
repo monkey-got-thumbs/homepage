@@ -71,8 +71,10 @@ function setupAccessibilityBaseline() {
  * Setup skip-to-content link
  */
 function setupSkipLink() {
-  // Ensure main content has the skip target id (every page's static link points here)
-  const main = document.querySelector('main');
+  // Ensure main content has the skip target id (every page's static link points here).
+  // Pages without a <main> (the standalone explorables) fall back to their content wrapper.
+  const main = document.querySelector('main') ||
+    document.querySelector('.wrap, .essay, .content, [role="main"]');
   if (main && !main.id) {
     main.id = 'main-content';
   }

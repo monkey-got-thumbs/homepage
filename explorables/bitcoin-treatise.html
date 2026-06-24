@@ -51,13 +51,22 @@
 
   /* ===== Colour-blind-safe data-viz palette ===== */
   html[data-cvd="safe"] { --btc:#FFC107; --c1:#1E88E5; --c2:#004D40; --hot:#FE6100; --good:#004D40; }
+
+  /* breadcrumb — site way-finding, aligned to the content column */
+  .exp-crumb{max-width:720px;margin:16px auto 0;padding:0 24px;font-size:13px;color:var(--color-muted,#B9B5D3);display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+  .exp-crumb a{color:var(--color-link,#8FE34D);text-decoration:none;font-weight:600}
+  .exp-crumb a:hover{text-decoration:underline}
+  .exp-crumb span{opacity:.55}
 </style>
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+<link rel="stylesheet" href="/assets/css/tokens.css">
 <link rel="stylesheet" href="/assets/css/accessibility.css">
 <script src="/assets/js/a11y-init.js"></script>
 <script src="/assets/js/accessibility.js" defer></script>
 </head>
 <body>
-<div style="background:var(--card);color:var(--mut);font:13px/1 -apple-system,system-ui,sans-serif;padding:10px 18px;border-bottom:1px solid var(--faint)"><a href="/explorables/" style="color:var(--color-link);text-decoration:none;font-weight:700">← Explorables</a> <span style="opacity:.6">· Monkey Got Thumbs</span></div>
+<mgt-header></mgt-header>
+<nav aria-label="Breadcrumb" class="exp-crumb"><a href="/">Home</a><span>›</span><a href="/explorables/">Explorables</a><span>›</span><span aria-current="page">Bitcoin, over time</span></nav>
 <div class="wrap">
   <div class="kick">An explorable treatise</div>
   <h1>Bitcoin, over time</h1>
@@ -102,7 +111,11 @@
   <p class="note"><b>Honesty notes.</b> §1 and §2 are computed from Bitcoin's <i>actual protocol rules</i> (the 21M cap, the halving schedule, the 10-minute target and difficulty retarget) — exact, not estimated. §3 and §4 use <i>approximate year-end prices</i> (rounded, for shape, not accounting) and the “price you hold until” is one <i>you set</i> — I won't fabricate a current figure. Nothing here is financial advice; bitcoin is extremely volatile and has fallen 80%+ more than once. Everything is recomputed live from what you drag.</p>
 </div>
 
+<mgt-footer></mgt-footer>
 
 <script src="bitcoin-treatise.js"></script>
+<script type="module" src="/assets/js/app.js"></script>
+<script type="module" src="/components/core/mgt-header.js"></script>
+<script type="module" src="/components/core/mgt-footer.js"></script>
 </body>
 </html>

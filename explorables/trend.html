@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Are we over budget? — Explorable</title>
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+<link rel="stylesheet" href="/assets/css/tokens.css">
 <link rel="stylesheet" href="/assets/css/accessibility.css">
 <script src="/assets/js/a11y-init.js"></script>
 <script src="/assets/js/accessibility.js" defer></script>
@@ -34,10 +36,16 @@
   html[data-scheme="sepia"]    { --p-tot:#155a96; --p-bud:#b03521; --p-over:#b03521; --p-ok:#1a6b3d; }
   html[data-scheme="contrast"] { --p-tot:#9cc7f2; --p-bud:#ff9d8a; --p-over:#ff9d8a; --p-ok:#7ee2a6; }
   html[data-cvd="safe"] { --line:#1E88E5; --bar:#004D40; --budget:#FE6100; --over:#FE6100; }
+  /* breadcrumb — site way-finding, aligned to the content column */
+  .exp-crumb{max-width:760px;margin:16px auto 0;padding:0 24px;font-size:13px;color:var(--color-muted,#B9B5D3);display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+  .exp-crumb a{color:var(--color-link,#8FE34D);text-decoration:none;font-weight:600}
+  .exp-crumb a:hover{text-decoration:underline}
+  .exp-crumb span{opacity:.55}
 </style>
 </head>
 <body>
-<div class="bb"><a href="/explorables/">← Explorables</a> <span>· Monkey Got Thumbs</span></div>
+<mgt-header></mgt-header>
+<nav aria-label="Breadcrumb" class="exp-crumb"><a href="/">Home</a><span>›</span><a href="/explorables/">Explorables</a><span>›</span><span aria-current="page">Are we over budget?</span></nav>
 <div class="wrap">
   <div class="kick">Trend · 12 months of spend vs a $4.0M budget</div>
   <div class="doc" id="doc"></div>
@@ -45,6 +53,11 @@
   <figure class="chart fig-dark"><svg id="sv" viewBox="0 0 760 280" preserveAspectRatio="xMidYMid meet"></svg></figure>
 </div>
 
+<mgt-footer></mgt-footer>
+
 <script src="trend.js"></script>
+<script type="module" src="/assets/js/app.js"></script>
+<script type="module" src="/components/core/mgt-header.js"></script>
+<script type="module" src="/components/core/mgt-footer.js"></script>
 </body>
 </html>

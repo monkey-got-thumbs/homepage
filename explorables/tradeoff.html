@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Which option? — Explorable</title>
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+<link rel="stylesheet" href="/assets/css/tokens.css">
 <style>
   :root{--ink:#EDECF6;--mut:#B9B5D3;--faint:rgba(237,236,246,0.13);--bg:#0E0B1A;--front:#6BA8E5;--dom:#6f6b85;--mono:"SFMono-Regular",ui-monospace,Menlo,monospace}
   *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}
-  .bb{background:#17122B;color:#EDECF6;font:13px/1 system-ui;padding:10px 18px;border-bottom:1px solid rgba(255,255,255,.08)}
-  .bb a{color:#A6FF4D;text-decoration:none;font-weight:700}.bb span{opacity:.6}
   .wrap{max-width:760px;margin:0 auto;padding:34px 24px 80px}
   .kick{font-size:11px;text-transform:uppercase;letter-spacing:.09em;color:var(--mut);margin-bottom:12px}
   .doc{font-size:19px;line-height:1.6}.doc .front{color:var(--front);font-weight:680}.doc .dom{color:var(--mut);font-weight:680}
@@ -20,13 +20,19 @@
   /* keep the chart's own tokens on their dark values when fig-dark re-pins it (light/sepia only) */
   html[data-scheme="light"] .fig-dark,
   html[data-scheme="sepia"] .fig-dark { --bg:#0E0B1A; --ink:#EDECF6; --mut:#B9B5D3; --faint:rgba(237,236,246,0.13); --front:#6BA8E5; --dom:#6f6b85; }
+  /* breadcrumb — site way-finding, aligned to the content column */
+  .exp-crumb{max-width:760px;margin:16px auto 0;padding:0 24px;font-size:13px;color:var(--color-muted,#B9B5D3);display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+  .exp-crumb a{color:var(--color-link,#8FE34D);text-decoration:none;font-weight:600}
+  .exp-crumb a:hover{text-decoration:underline}
+  .exp-crumb span{opacity:.55}
 </style>
 <link rel="stylesheet" href="/assets/css/accessibility.css">
 <script src="/assets/js/a11y-init.js"></script>
 <script src="/assets/js/accessibility.js" defer></script>
 </head>
 <body>
-<div class="bb"><a href="/explorables/">← Explorables</a> <span>· Monkey Got Thumbs</span></div>
+<mgt-header></mgt-header>
+<nav aria-label="Breadcrumb" class="exp-crumb"><a href="/">Home</a><span>›</span><a href="/explorables/">Explorables</a><span>›</span><span aria-current="page">Which option?</span></nav>
 <div class="wrap">
   <div class="kick">Trade-off · five ways to deliver, cost vs time</div>
   <p class="doc" id="doc"></p>
@@ -34,6 +40,11 @@
   <svg id="sv" class="fig-dark" viewBox="0 0 760 320" preserveAspectRatio="xMidYMid meet"></svg>
 </div>
 
+<mgt-footer></mgt-footer>
+
 <script src="tradeoff.js"></script>
+<script type="module" src="/assets/js/app.js"></script>
+<script type="module" src="/components/core/mgt-header.js"></script>
+<script type="module" src="/components/core/mgt-footer.js"></script>
 </body>
 </html>

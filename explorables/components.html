@@ -32,8 +32,15 @@ html[data-cvd="safe"][data-scheme="light"] .comp.fig-dark,
 html[data-cvd="safe"][data-scheme="sepia"] .comp.fig-dark {
   --c1:#1E88E5; --c2:#5FD08A; --c3:#FFC107; --c4:#B79BEA; --hot:#FF6F9F;
 }
-</style><link rel="stylesheet" href="/assets/css/accessibility.css"><script src="/assets/js/a11y-init.js"></script><script src="/assets/js/accessibility.js" defer></script></head><body>
-<div style="background:var(--color-bg-secondary);color:var(--color-fg);font:13px/1 -apple-system,system-ui,sans-serif;padding:10px 18px;border-bottom:1px solid var(--color-border)"><a href="/explorables/" style="color:var(--color-link);text-decoration:none;font-weight:700">← Explorables</a> <span style="opacity:.6">· Monkey Got Thumbs</span></div><div class="wrap">
+/* breadcrumb — site way-finding, aligned to the content column */
+.exp-crumb{max-width:1040px;margin:16px auto 0;padding:0 24px;font-size:13px;color:var(--color-muted,#B9B5D3);display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.exp-crumb a{color:var(--color-link,#8FE34D);text-decoration:none;font-weight:600}
+.exp-crumb a:hover{text-decoration:underline}
+.exp-crumb span{opacity:.55}
+</style><link rel="icon" type="image/png" sizes="32x32" href="/favicon.png"><link rel="stylesheet" href="/assets/css/tokens.css"><link rel="stylesheet" href="/assets/css/accessibility.css"><script src="/assets/js/a11y-init.js"></script><script src="/assets/js/accessibility.js" defer></script></head><body>
+<mgt-header></mgt-header>
+<nav aria-label="Breadcrumb" class="exp-crumb"><a href="/">Home</a><span>›</span><a href="/explorables/">Explorables</a><span>›</span><span aria-current="page">Component catalogue</span></nav>
+<div class="wrap">
 <h1>The component catalogue</h1><p class="sub">Fifteen more explorable ideas, each in miniature. Drag the marks — the caption reasons as you go. Part of our growing kit for thinking <em>with</em> data, not just looking at it.</p>
 <h2>Composition</h2><div class="grid">
 <section class="comp fig-dark" id="c-waterfall"><h3>Variance bridge (plan → actual)</h3><svg id="s-waterfall" viewBox="0 0 320 150" preserveAspectRatio="xMidYMid meet"></svg><p class="cap" id="cap-waterfall"></p></section>
@@ -74,5 +81,12 @@ html[data-cvd="safe"][data-scheme="sepia"] .comp.fig-dark {
 <h2>Capacity</h2><div class="grid">
 <section class="comp fig-dark" id="c-allocgrid"><h3>Who is on what</h3><svg id="s-allocgrid" viewBox="0 0 320 150" preserveAspectRatio="xMidYMid meet"></svg><p class="cap" id="cap-allocgrid"></p></section>
 </div>
-</div><script src="components.js"></script>
+</div>
+
+<mgt-footer></mgt-footer>
+
+<script src="components.js"></script>
+<script type="module" src="/assets/js/app.js"></script>
+<script type="module" src="/components/core/mgt-header.js"></script>
+<script type="module" src="/components/core/mgt-footer.js"></script>
 </body></html>

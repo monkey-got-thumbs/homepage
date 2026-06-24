@@ -65,13 +65,22 @@
     --hot:#FE6100;   /* red-orange → orange */
     --warn:#FFC107;  /* amber → amber */
   }
+
+  /* breadcrumb — site way-finding, aligned to the content column */
+  .exp-crumb{max-width:1080px;margin:16px auto 0;padding:0 22px;font-size:13px;color:var(--color-muted,#B9B5D3);display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+  .exp-crumb a{color:var(--color-link,#8FE34D);text-decoration:none;font-weight:600}
+  .exp-crumb a:hover{text-decoration:underline}
+  .exp-crumb span{opacity:.55}
 </style>
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+<link rel="stylesheet" href="/assets/css/tokens.css">
 <link rel="stylesheet" href="/assets/css/accessibility.css">
 <script src="/assets/js/a11y-init.js"></script>
 <script src="/assets/js/accessibility.js" defer></script>
 </head>
 <body>
-<div style="background:#17122B;color:#EDECF6;font:13px/1 -apple-system,system-ui,sans-serif;padding:10px 18px;border-bottom:1px solid rgba(255,255,255,.08)"><a href="/explorables/" style="color:#A6FF4D;text-decoration:none;font-weight:700">← Explorables</a> <span style="opacity:.6">· Monkey Got Thumbs</span></div>
+<mgt-header></mgt-header>
+<nav aria-label="Breadcrumb" class="exp-crumb"><a href="/">Home</a><span>›</span><a href="/explorables/">Explorables</a><span>›</span><span aria-current="page">The NZ Economy</span></nav>
 <div class="wrap">
   <div class="src"><span class="play">▶</span><div style="flex:1">
     <div class="t">The NZ economy through the Reserve Bank's eyes · Nov 2025 – May 2026</div>
@@ -151,7 +160,11 @@
   <p class="note">Built from auto-transcripts of the cited videos for side-by-side comparison. Hard figures (OCR, CPI, GDP, the FSR scenario) are the RBNZ's own; the OCR→inflation/unemployment relationship and the forecast tails back to 2% are <b>directional illustrations</b> of what officials described, not forecasts. Governor’s name is Anna Breman (mis-transcribed in places). Not financial advice.</p>
 </div>
 
+<mgt-footer></mgt-footer>
 
 <script src="nz-economy-dashboard.js"></script>
+<script type="module" src="/assets/js/app.js"></script>
+<script type="module" src="/components/core/mgt-header.js"></script>
+<script type="module" src="/components/core/mgt-footer.js"></script>
 </body>
 </html>

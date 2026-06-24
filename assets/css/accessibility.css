@@ -87,6 +87,16 @@ html[data-scheme="sepia"] .fig-dark {
   background: #15112c; color: #EDECF6; border-radius: var(--radius, 12px);
 }
 
+/* ---- Skip-link (styled here so pages without base.css — the standalone
+   explorables — still hide it until focus and keep it contrast-valid) ---- */
+.skip-link {
+  position: absolute; top: -48px; inset-inline-start: 0; z-index: 1000;
+  background: var(--color-accent); color: var(--color-bg);
+  padding: var(--space-sm, 0.5rem) var(--space-md, 1rem); text-decoration: none;
+  border-radius: 0 0 var(--radius, 12px) 0; font-weight: 700;
+}
+.skip-link:focus { top: 0; outline: none; }
+
 /* ---- "Simulate my vision" — feColorMatrix filters over the whole document ---- */
 html[data-sim="protan"]  body { filter: url(#a11y-sim-protan); }
 html[data-sim="deutan"]  body { filter: url(#a11y-sim-deutan); }
