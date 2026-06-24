@@ -781,3 +781,6 @@ a.wikilink:hover { border-bottom-color: var(--color-accent); }
     @keyframes reveal-rise { from { transform: translateY(22px); } to { transform: translateY(0); } }
   }
 }
+
+.notes-group { margin: var(--space-2xl) 0 var(--space-md); font-size: var(--font-size-xl); }
+.notes-group:first-of-type { margin-top: var(--space-lg); }
