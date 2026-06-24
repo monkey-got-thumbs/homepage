@@ -101,10 +101,25 @@
         .js-slider-val { font: 700 1.05rem var(--font-mono, "SFMono-Regular", ui-monospace, Menlo, monospace); color: var(--color-accent); min-width: 3.2ch; text-align: end; }
         .js-ends { grid-column: 2; display: flex; justify-content: space-between; font-size: 0.72rem; letter-spacing: .02em; text-transform: uppercase; color: var(--color-muted); margin-top: -0.35rem; }
 
-        /* review toggle */
-        .js-check { display: inline-flex; align-items: center; gap: 0.55rem; font-size: var(--font-size-sm); color: var(--color-fg-secondary); cursor: pointer; margin-bottom: 1rem; }
-        .js-check input { width: 1.05rem; height: 1.05rem; accent-color: var(--color-accent); cursor: pointer; }
-        .js-check.is-moot { color: var(--color-muted); }
+        /* review toggle — a proper switch; this control is the whole point */
+        .js-check { display: inline-flex; align-items: center; gap: 0.6rem; font-size: var(--font-size-sm); color: var(--color-fg-secondary); font-weight: 600; cursor: pointer; margin-bottom: 1rem; }
+        .js-check input {
+            appearance: none; -webkit-appearance: none; flex: none; position: relative;
+            width: 2.6rem; height: 1.45rem; border-radius: 999px; cursor: pointer;
+            background: color-mix(in srgb, #000 35%, transparent);
+            border: 1.5px solid var(--color-border);
+            transition: background .2s ease, border-color .2s ease;
+        }
+        .js-check input::after {
+            content: ""; position: absolute; top: 50%; left: 0.16rem;
+            width: 1.05rem; height: 1.05rem; border-radius: 50%;
+            background: var(--color-muted); transform: translateY(-50%);
+            transition: transform .2s ease, background .2s ease;
+        }
+        .js-check input:checked { background: color-mix(in srgb, var(--color-accent) 30%, transparent); border-color: var(--color-accent); }
+        .js-check input:checked::after { transform: translateY(-50%) translateX(1.15rem); background: var(--color-accent); }
+        .js-check input:focus-visible { outline: var(--focus-outline); outline-offset: 3px; }
+        .js-check.is-moot { color: var(--color-muted); opacity: 0.65; }
 
         /* readouts */
         .js-readouts { display: flex; flex-direction: column; gap: 0.65rem; margin-bottom: 1.1rem; }
@@ -184,7 +199,7 @@
 
                 <!-- Does Maria still review the AI's work? Only matters once the AI does some. -->
                 <label class="js-check">
-                    <input type="checkbox" id="js-review" data-review checked />
+                    <input type="checkbox" id="js-review" data-review />
                     <span>Maria reviews the AI's work before it ships</span>
                 </label>
 

@@ -75,7 +75,11 @@
     var W = 620, H = 320, L = 56, R = 22, T = 24, B = 46;
     var pw = W - L - R, ph = H - T - B;
     var X = function (s) { return L + (s / 100) * pw; };          // speed 0..100
-    var Y = function (t) { return T + ph * (1 - t / 100); };      // trust 0..100
+    // Got-it-right never drops below the AI's raw ~34, so a full 0..100 axis wastes
+    // the bottom third and squashes the action into a sliver at the top. Plot only
+    // the band the data actually lives in (Y_MIN..100) so the collapse uses the height.
+    var Y_MIN = 25;
+    var Y = function (t) { return T + ph * (1 - (clamp(t, Y_MIN, 100) - Y_MIN) / (100 - Y_MIN)); };
 
     function curve(rev) {
         var d = '';
@@ -88,45 +92,53 @@
 
     function drawChart(h, rev) {
         var s = '';
-        // grid
+        // grid — vertical lines on speed (0..100), horizontal lines on the trust domain
         var g;
         for (g = 0; g <= 100; g += 25) {
             s += '<line x1="' + X(g).toFixed(1) + '" y1="' + T + '" x2="' + X(g).toFixed(1) + '" y2="' + (T + ph) + '" stroke="var(--color-border)"/>';
-            s += '<line x1="' + L + '" y1="' + Y(g).toFixed(1) + '" x2="' + (W - R) + '" y2="' + Y(g).toFixed(1) + '" stroke="var(--color-border)"/>';
+        }
+        var hLines = [25, 50, 75, 100], hi;
+        for (hi = 0; hi < hLines.length; hi++) {
+            s += '<line x1="' + L + '" y1="' + Y(hLines[hi]).toFixed(1) + '" x2="' + (W - R) + '" y2="' + Y(hLines[hi]).toFixed(1) + '" stroke="var(--color-border)"/>';
         }
         // axis labels
         s += '<text x="' + X(50).toFixed(1) + '" y="' + (T + ph + 34) + '" font-size="12" text-anchor="middle" fill="var(--color-fg)">Speed (throughput) →</text>';
         s += '<text x="16" y="' + (T + ph / 2).toFixed(1) + '" font-size="12" text-anchor="middle" fill="var(--color-fg)" transform="rotate(-90 16 ' + (T + ph / 2).toFixed(1) + ')">Got it right →</text>';
         s += '<text x="' + (L - 8) + '" y="' + (Y(100) + 4).toFixed(1) + '" font-size="9.5" text-anchor="end" fill="var(--color-muted)">100%</text>';
-        s += '<text x="' + (L - 8) + '" y="' + (Y(0) - 2).toFixed(1) + '" font-size="9.5" text-anchor="end" fill="var(--color-muted)">0%</text>';
+        s += '<text x="' + (L - 8) + '" y="' + (Y(Y_MIN) - 2).toFixed(1) + '" font-size="9.5" text-anchor="end" fill="var(--color-muted)">' + Y_MIN + '%</text>';
 
         // sweet-spot region (top-right-ish: fast AND right)
         var sx = X(speedOf(0.40, true)), sx2 = X(speedOf(0.80, true));
         var syTop = Y(100), syBot = Y(78);
         s += '<rect x="' + Math.min(sx, sx2).toFixed(1) + '" y="' + syTop.toFixed(1) + '" width="' + Math.abs(sx2 - sx).toFixed(1) +
-             '" height="' + (syBot - syTop).toFixed(1) + '" rx="8" fill="var(--color-accent)" opacity="0.12" stroke="var(--color-accent)" stroke-dasharray="5 4"/>';
+             '" height="' + (syBot - syTop).toFixed(1) + '" rx="8" fill="var(--color-accent)" fill-opacity="0.18" stroke="var(--color-accent)" stroke-opacity="0.85" stroke-dasharray="5 4"/>';
         s += '<text x="' + ((sx + sx2) / 2).toFixed(1) + '" y="' + (syTop - 7).toFixed(1) + '" font-size="10.5" text-anchor="middle" font-weight="700" fill="var(--color-accent)">the sweet spot</text>';
 
         // the two trade-off curves
         s += '<path d="' + curve(true) + '" fill="none" stroke="var(--color-accent)" stroke-width="2.4" opacity="0.9"/>';
         s += '<path d="' + curve(false) + '" fill="none" stroke="var(--color-error)" stroke-width="2" stroke-dasharray="5 4" opacity="0.75"/>';
 
-        // anchor labels on the two ends so the extremes are named
-        s += '<text x="' + (X(14) + 8).toFixed(1) + '" y="' + (Y(100) + 4).toFixed(1) + '" font-size="9.5" fill="var(--color-muted)">Maria alone</text>';
-        s += '<text x="' + (X(100) - 4).toFixed(1) + '" y="' + (Y(AI_RAW) + 4).toFixed(1) + '" font-size="9.5" text-anchor="end" fill="var(--color-error)">AI alone, unchecked</text>';
+        // anchor labels on the two ends so the extremes are named — offset clear of
+        // the curve start (top-left) and the dashed end (bottom-right) so nothing stacks
+        s += '<text x="' + (X(14) + 8).toFixed(1) + '" y="' + (Y(100) + 22).toFixed(1) + '" font-size="9.5" fill="var(--color-muted)">Maria alone</text>';
+        s += '<text x="' + (X(100) - 4).toFixed(1) + '" y="' + (Y(AI_RAW) + 16).toFixed(1) + '" font-size="9.5" text-anchor="end" fill="var(--color-error)">AI alone, unchecked</text>';
 
-        // legend
+        // legend — parked at the empty bottom-left of the plot, out of the curves' way
+        var lgY = T + ph - 8;
         s += '<g font-size="9.5">' +
-             '<line x1="' + (L + 6) + '" y1="' + (T + 12) + '" x2="' + (L + 28) + '" y2="' + (T + 12) + '" stroke="var(--color-accent)" stroke-width="2.4"/>' +
-             '<text x="' + (L + 33) + '" y="' + (T + 15) + '" fill="var(--color-muted)">reviewed</text>' +
-             '<line x1="' + (L + 96) + '" y1="' + (T + 12) + '" x2="' + (L + 118) + '" y2="' + (T + 12) + '" stroke="var(--color-error)" stroke-width="2" stroke-dasharray="5 4"/>' +
-             '<text x="' + (L + 123) + '" y="' + (T + 15) + '" fill="var(--color-muted)">unchecked</text></g>';
+             '<line x1="' + (L + 6) + '" y1="' + lgY + '" x2="' + (L + 28) + '" y2="' + lgY + '" stroke="var(--color-accent)" stroke-width="2.4"/>' +
+             '<text x="' + (L + 33) + '" y="' + (lgY + 3) + '" fill="var(--color-muted)">reviewed</text>' +
+             '<line x1="' + (L + 96) + '" y1="' + lgY + '" x2="' + (L + 118) + '" y2="' + lgY + '" stroke="var(--color-error)" stroke-width="2" stroke-dasharray="5 4"/>' +
+             '<text x="' + (L + 123) + '" y="' + (lgY + 3) + '" fill="var(--color-muted)">unchecked</text></g>';
 
-        // current "you" point
+        // current "you" point — its label is clamped inside the plot so it never
+        // rides off the top edge or overlaps the corner labels at the extremes
         var cx = X(speedOf(h, rev)), cy = Y(trustOf(h, rev));
         var pColor = inSweetSpot(h, rev) ? 'var(--color-accent)' : (rev ? 'var(--color-fg)' : 'var(--color-error)');
+        var lblX = clamp(cx, L + 14, W - R - 14);
+        var lblY = Math.max(cy - 13, T + 9);
         s += '<circle cx="' + cx.toFixed(1) + '" cy="' + cy.toFixed(1) + '" r="8" fill="' + pColor + '" stroke="var(--color-bg)" stroke-width="2"/>';
-        s += '<text x="' + cx.toFixed(1) + '" y="' + (cy - 13).toFixed(1) + '" font-size="10" text-anchor="middle" font-weight="700" fill="' + pColor + '">you</text>';
+        s += '<text x="' + lblX.toFixed(1) + '" y="' + lblY.toFixed(1) + '" font-size="10" text-anchor="middle" font-weight="700" fill="' + pColor + '">you</text>';
 
         chart.innerHTML = s;
     }
@@ -138,13 +150,13 @@
             return 'At <strong>0% to the AI</strong>, Maria reads all 400 comments herself: spot-on, but it eats the whole day.';
         }
         if (pct === 100 && !rev) {
-            return 'At <strong>100% to the AI with no one checking</strong>, the report is done in 2 minutes — but the AI’s confident mislabels ship straight to the board. Fast, and <strong>wrong</strong>.';
+            return 'At <strong>100% to the AI with no one checking</strong>, the report is done in 2 minutes — but the AI’s confident mislabels ship straight to the board. Fast, and <strong>wrong</strong>. <strong>Turn on review</strong> to keep the speed without the mistakes.';
         }
         if (pct === 100 && rev) {
             return 'The AI does <strong>everything</strong> and Maria reviews all of it. Fast and right — but she’s now checking 400 machine guesses by hand, which is slower than letting it carry just the bulk.';
         }
         if (!rev) {
-            return 'You’ve handed <strong>' + pct + '%</strong> to the AI with <strong>no one reviewing</strong>. Each point you give it, its uncaught mistakes seep into the report — watch “got it right” slide down the red line.';
+            return 'You’ve handed <strong>' + pct + '%</strong> to the AI with <strong>no one reviewing</strong>. Each point you give it, its uncaught mistakes seep into the report — watch “got it right” slide down the red line. <strong>Turn on review</strong> to climb back to the green one.';
         }
         if (inSweetSpot(h, rev)) {
             return 'At <strong>~' + pct + '% to the AI, with you reviewing</strong>, you’re fast <strong>and</strong> right — the AI sorts the bulk, Maria catches its mislabels and makes the call. <strong>That sweet spot in the middle is augmented intelligence.</strong>';

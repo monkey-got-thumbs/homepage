@@ -295,7 +295,7 @@ button:focus-visible {
 
 /* ===== FORM ELEMENTS (base styles) ===== */
 
-input,
+input:not([type="checkbox"]):not([type="radio"]),
 textarea,
 select {
   appearance: none;
