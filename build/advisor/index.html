@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, viewport-fit=cover" />
-    <title>The free AI agent — paste what you asked, get friendly feedback | Monkey Got Thumbs</title>
+    <title>Agents, in plain English — Monkey Got Thumbs</title>
     <link rel="canonical" href="https://monkey-got-thumbs.com/build/advisor/">
     <meta name="robots" content="index, follow, max-image-preview:large">
     <meta name="theme-color" content="#0E0B1A" />
@@ -11,281 +11,178 @@
     <link rel="stylesheet" href="/assets/css/tokens.css">
     <link rel="stylesheet" href="/assets/css/base.css">
     <link rel="stylesheet" href="/assets/css/layout.css">
-    <meta name="description" content="Paste what you asked AI plus a couple of example messages, and get one round of friendly, plain-English feedback so you can ask better. Free, no sign-up." />
+    <meta name="description" content="What's an AI agent, really? A gentle, playable essay — see why the 'ask' decides everything, then build a real agent piece by piece and watch it go from a reckless guesser to a careful, reliable worker." />
     <meta name="author" content="Monkey Got Thumbs" />
-    <meta property="og:title" content="The free AI agent — paste what you asked, get friendly feedback | Monkey Got Thumbs">
-    <meta property="og:description" content="Paste what you asked AI, get one round of kind, plain-English feedback so you can ask better. Free.">
+    <meta property="og:title" content="Agents, in plain English — Monkey Got Thumbs">
+    <meta property="og:description" content="Build a real AI agent piece by piece and watch it go from reckless guesser to reliable worker. No code, no jargon.">
     <meta property="og:url" content="https://monkey-got-thumbs.com/build/advisor/">
-    <meta property="og:type" content="website">
+    <meta property="og:type" content="article">
     <meta property="og:locale" content="en_GB">
     <meta property="og:image" content="https://monkey-got-thumbs.com/social-card.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:type" content="image/png">
-    <meta property="og:image:alt" content="Monkey Got Thumbs — a friendly monkey, thumbs up, on a dark background">
     <meta property="og:site_name" content="Monkey Got Thumbs">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
     <script type="application/ld+json">
-    { "@context": "https://schema.org", "@type": "WebApplication", "name": "Agent Builder Advisor",
-      "applicationCategory": "BusinessApplication", "operatingSystem": "Web browser",
+    { "@context": "https://schema.org", "@type": "LearningResource", "name": "Agents, in plain English",
       "url": "https://monkey-got-thumbs.com/build/advisor/",
-      "description": "A friendly, one-round agent: paste what you asked AI, see what it produces, and get plain-English feedback on how to ask better.",
-      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "learningResourceType": "interactive explainer",
+      "description": "A playable essay on what AI agents are, how they work, and how to build one piece by piece.",
       "breadcrumb": { "@type": "BreadcrumbList", "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://monkey-got-thumbs.com/" },
         { "@type": "ListItem", "position": 2, "name": "Make things", "item": "https://monkey-got-thumbs.com/build/" },
-        { "@type": "ListItem", "position": 3, "name": "The free AI agent" }
+        { "@type": "ListItem", "position": 3, "name": "Agents, in plain English" }
     ]}}
     </script>
     <style>
-        /* Calm, warm backdrop to match the rest of the site */
-        body {
-            background:
-                radial-gradient(60rem 40rem at 78% -8%, color-mix(in srgb, var(--color-brand) 22%, transparent), transparent 70%),
-                radial-gradient(48rem 36rem at 8% 14%, color-mix(in srgb, var(--color-accent) 8%, transparent), transparent 68%),
-                var(--color-bg);
-            background-attachment: fixed;
-        }
-
-        /* top-level wrapper — breadcrumb, head + form all share the content column's left edge */
-        .advisor-wrap { max-width: var(--content-col); margin-inline: auto; }
-
-        /* left-aligned head — shares the breadcrumb's left edge */
-        .advisor-hero { max-width: 46rem; margin: var(--space-lg) 0 var(--space-2xl); text-align: start; }
-        .advisor-hero h1 { margin-bottom: var(--space-sm); }
-        .advisor-hero .lead { color: var(--color-fg-secondary); line-height: 1.8; max-width: 44rem; margin-inline: 0; text-align: start; }
-
-        /* the form + results + example keep a comfortable typing/reading measure, left-aligned in the column */
-        .advisor-form, .preview-note, .results, .annotated { max-width: var(--container-md); }
-
-        .preview-note {
-            background: color-mix(in srgb, var(--color-warning) 10%, var(--color-bg-secondary));
-            border: 1px solid color-mix(in srgb, var(--color-warning) 40%, transparent);
-            border-radius: var(--radius-sm); padding: var(--space-md) var(--space-lg);
-            margin-bottom: var(--space-lg);
-        }
-        .preview-note p { margin: 0; }
-
-        .advisor-form fieldset { border: 0; padding: 0; margin: 0 0 var(--space-lg); }
-        .advisor-form legend { font-weight: var(--font-weight-bold); color: var(--color-accent); margin-bottom: var(--space-xs); padding: 0; }
-        .field { margin-bottom: var(--space-lg); }
-        .field > label { display: block; font-weight: var(--font-weight-semibold); margin-bottom: 0.35rem; }
-        .field .help { color: var(--color-muted); font-size: var(--font-size-sm); margin: 0 0 0.4rem; }
-        .advisor-form textarea { min-height: 4.5rem; font-family: var(--font-mono); font-size: var(--font-size-sm); line-height: 1.5; }
-        #system-prompt { min-height: 12rem; }
-        .char-count { display: block; text-align: end; color: var(--color-muted); font-size: var(--font-size-xs); margin-top: -0.6rem; }
-        .char-count.over { color: var(--color-error); }
-        .test-input { margin-bottom: var(--space-md); }
-        .honeypot { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
-        .advisor-actions { display: flex; flex-wrap: wrap; gap: var(--space-sm); align-items: center; }
-        #cf-slot { margin: var(--space-md) 0; min-height: 0; }
-        #advisor-status { margin-top: var(--space-md); min-height: 1.4rem; font-size: var(--font-size-sm); }
-        #advisor-status.error { color: var(--color-error); }
-        #advisor-status.loading { color: var(--color-info); }
-
-        .results { margin-top: var(--space-2xl); }
-        .results > .card { margin-bottom: var(--space-lg); }
-        .results h2 { margin-top: 0; }
-        .issue { padding: var(--space-sm) 0; border-bottom: 1px solid var(--color-border); }
-        .issue:last-child { border-bottom: 0; }
-        .issue .why, .imp .why, .run .note { color: var(--color-muted); font-size: var(--font-size-sm); margin: 0.25rem 0 0; }
-        .sev { margin-inline-end: 0.5rem; }
-        .sev--high { color: var(--color-error); border-color: color-mix(in srgb, var(--color-error) 50%, transparent); }
-        .sev--medium { color: var(--color-warning); border-color: color-mix(in srgb, var(--color-warning) 50%, transparent); }
-        .sev--low { color: var(--color-info); border-color: color-mix(in srgb, var(--color-info) 50%, transparent); }
-        .run { padding: var(--space-sm) 0; border-bottom: 1px solid var(--color-border); }
-        .run:last-child { border-bottom: 0; }
-        .run .io { font-family: var(--font-mono); font-size: 0.8rem; white-space: pre-wrap; overflow-wrap: anywhere; background: var(--color-bg); border: 1px solid var(--color-border); border-radius: 6px; padding: 0.6rem 0.75rem; margin: 0.35rem 0; }
-        .run .io-label { font-size: var(--font-size-xs); text-transform: uppercase; letter-spacing: var(--letter-spacing-wide); color: var(--color-muted); }
-        .imp { padding: var(--space-sm) 0; border-bottom: 1px solid var(--color-border); }
-        .imp:last-child { border-bottom: 0; }
-        .improved-wrap { position: relative; }
-        #improved-prompt { font-family: var(--font-mono); font-size: 0.8rem; white-space: pre-wrap; overflow-wrap: anywhere; background: var(--color-bg); border: 1px solid var(--color-border); border-radius: 6px; padding: 0.75rem; margin: 0.5rem 0 0; }
-        .annotated { margin-top: var(--space-2xl); }
-        .annotated summary { cursor: pointer; font-weight: var(--font-weight-semibold); color: var(--color-accent); }
-        .annotated pre { font-family: var(--font-mono); font-size: 0.8rem; white-space: pre-wrap; overflow-wrap: anywhere; background: var(--color-bg); border: 1px solid var(--color-border); border-radius: 6px; padding: 0.75rem; }
-        .annotated .ann { color: var(--color-accent); }
-        /* embedded "build a better ask" explorable */
-        .ask-lab { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1rem,3vw,2rem); align-items: start; margin: var(--space-lg) 0; }
-        @media (max-width: 760px) { .ask-lab { grid-template-columns: 1fr; } }
-        .ask-col { background: var(--color-bg-secondary); border: 1px solid var(--color-border); border-radius: 16px; padding: clamp(1rem,2.5vw,1.5rem); }
-        .ask-h { font-size: var(--font-size-xs); text-transform: uppercase; letter-spacing: .07em; color: var(--color-muted); margin: 0 0 var(--space-sm); font-family: var(--font-mono); }
-        .ask-text { font-size: var(--font-size-lg); line-height: 1.6; min-height: 5.5em; }
-        .ask-part.base { color: var(--color-fg); font-weight: var(--font-weight-semibold); }
-        .ask-part:not(.base) { color: var(--color-accent); }
-        .ask-hint { font-size: var(--font-size-sm); color: var(--color-muted); margin: var(--space-md) 0 var(--space-sm); }
-        .ask-chips { display: flex; flex-wrap: wrap; gap: .5rem; }
-        .ask-chip { font: inherit; font-size: var(--font-size-sm); cursor: pointer; border: 1px solid var(--color-border); background: transparent; color: var(--color-fg); border-radius: 20px; padding: 6px 12px; }
-        .ask-chip.on { background: var(--color-accent); color: var(--color-bg); border-color: var(--color-accent); font-weight: var(--font-weight-semibold); }
-        .ask-tick { font-family: var(--font-mono); margin-inline-end: 5px; }
-        .ask-controls { display: flex; gap: 1rem; margin-top: var(--space-md); }
-        .ask-mini { font: inherit; font-size: var(--font-size-xs); cursor: pointer; background: none; border: none; color: var(--color-link); text-decoration: underline; padding: 0; }
-        .ask-meter-lab { font-size: var(--font-size-xs); color: var(--color-muted); }
-        .ask-meter-bar { height: 8px; border-radius: 5px; background: color-mix(in srgb, var(--color-fg) 12%, transparent); overflow: hidden; margin: 5px 0; }
-        .ask-meter-bar i { display: block; height: 100%; border-radius: 5px; transition: width .25s; }
-        .ask-meter-val { font-family: var(--font-mono); font-weight: 700; font-size: var(--font-size-lg); }
-        .ask-answer { font-size: var(--font-size-base); line-height: 1.65; color: var(--color-fg-secondary); margin-top: var(--space-md); }
-        .ask-answer .ans-generic { color: var(--color-muted); font-style: italic; }
-        .ask-answer .ans-list { margin: .3rem 0 0; padding-inline-start: 1.2rem; }
-        .ask-answer .ans-list li { margin-bottom: .3rem; }
-        .ask-answer .ans-list-h { margin: .6rem 0 .2rem; }
-        .ask-caption { margin: var(--space-lg) 0 0; font-size: var(--font-size-lg); color: var(--color-fg); }
-        .ask-callout { margin: var(--space-lg) 0 0; border: 1px solid var(--color-accent); background: color-mix(in srgb, var(--color-accent) 8%, var(--color-bg-secondary)); border-radius: 14px; padding: 16px 20px; line-height: 1.6; }
-        .ask-lbl { display: block; font-family: var(--font-mono); font-size: var(--font-size-xs); text-transform: uppercase; letter-spacing: .06em; color: var(--color-accent); font-weight: 700; margin-bottom: 5px; }
-        @media (prefers-reduced-motion: reduce) { .ask-meter-bar i { transition: none; } }
+        body { background:
+            radial-gradient(60rem 40rem at 78% -8%, color-mix(in srgb, var(--color-brand) 22%, transparent), transparent 70%),
+            radial-gradient(48rem 36rem at 8% 14%, color-mix(in srgb, var(--color-accent) 8%, transparent), transparent 68%),
+            var(--color-bg);
+            background-attachment: fixed; }
+        .essay { max-width: 50rem; margin-inline: auto; }
+        .essay .eyebrow { color: var(--color-accent); }
+        .essay h1 { margin: var(--space-sm) 0; }
+        .essay h2 { font-family: var(--font-display); color: var(--color-accent); letter-spacing: .02em; margin: var(--space-3xl) 0 var(--space-sm); }
+        .essay p { line-height: 1.78; }
+        .essay .lede { font-size: var(--font-size-lg); color: var(--color-fg-secondary); }
+        /* interactives */
+        .bx { max-width: var(--content-col); margin: var(--space-xl) auto; }
+        .bx-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1rem,3vw,2rem); align-items: start; }
+        @media (max-width: 760px) { .bx-grid { grid-template-columns: 1fr; } }
+        .bx-col { background: var(--color-bg-secondary); border: 1px solid var(--color-border); border-radius: 16px; padding: clamp(1rem,2.5vw,1.4rem); }
+        .bx-h { font: 700 var(--font-size-xs)/1 var(--font-mono); text-transform: uppercase; letter-spacing: .07em; color: var(--color-muted); margin: 0 0 var(--space-sm); }
+        .bx-asm { font-family: var(--font-mono); font-size: var(--font-size-sm); line-height: 1.7; min-height: 6em; }
+        .bx-part.base { color: var(--color-muted); }
+        .bx-part:not(.base) { color: var(--color-accent); display: block; }
+        .bx-hint { font-size: var(--font-size-sm); color: var(--color-muted); margin: var(--space-md) 0 var(--space-sm); }
+        .bx-chips { display: flex; flex-wrap: wrap; gap: .5rem; }
+        .bx-chip { font: inherit; font-size: var(--font-size-sm); cursor: pointer; border: 1px solid var(--color-border); background: transparent; color: var(--color-fg); border-radius: 20px; padding: 6px 12px; }
+        .bx-chip.on { background: var(--color-accent); color: var(--color-bg); border-color: var(--color-accent); font-weight: var(--font-weight-semibold); }
+        .bx-tick { font-family: var(--font-mono); margin-inline-end: 5px; }
+        .bx-controls { display: flex; gap: 1rem; margin-top: var(--space-md); }
+        .bx-controls button { font: inherit; font-size: var(--font-size-xs); cursor: pointer; background: none; border: none; color: var(--color-link); text-decoration: underline; padding: 0; }
+        .bx-meter-lab { font-size: var(--font-size-xs); color: var(--color-muted); }
+        .bx-meter-bar { height: 8px; border-radius: 5px; background: color-mix(in srgb, var(--color-fg) 12%, transparent); overflow: hidden; margin: 5px 0; }
+        .bx-meter-bar i { display: block; height: 100%; border-radius: 5px; transition: width .25s; }
+        .bx-meter-val { font: 700 var(--font-size-lg) var(--font-mono); }
+        .bx-out { margin-top: var(--space-md); line-height: 1.6; color: var(--color-fg-secondary); }
+        .bx-out .bx-generic { color: var(--color-muted); font-style: italic; }
+        .bx-out .bx-q, .bx-out .bx-a { margin: .4rem 0; }
+        .bx-who { display: block; font: 700 var(--font-size-xs)/1 var(--font-mono); text-transform: uppercase; letter-spacing: .05em; color: var(--color-muted); margin-bottom: 2px; }
+        .bx-out .bx-flag { color: var(--color-warning); font-size: var(--font-size-sm); margin-top: .5rem; }
+        .bx-out .bx-good { color: var(--color-success); font-size: var(--font-size-sm); margin-top: .5rem; }
+        .bx-list { margin: .3rem 0 0; padding-inline-start: 1.2rem; }
+        .bx-list-h { margin: .6rem 0 .2rem; }
+        .bx-cap { margin: var(--space-lg) 0 0; text-align: center; font-size: var(--font-size-lg); color: var(--color-fg); }
+        .bx-callout { margin: var(--space-lg) 0 0; border: 1px solid var(--color-accent); background: color-mix(in srgb, var(--color-accent) 8%, var(--color-bg-secondary)); border-radius: 14px; padding: 16px 20px; line-height: 1.6; }
+        .bx-lbl { display: block; font: 700 var(--font-size-xs)/1 var(--font-mono); text-transform: uppercase; letter-spacing: .06em; color: var(--color-accent); margin-bottom: 5px; }
+        .recap { background: var(--color-bg-secondary); border: 1px solid var(--color-border); border-radius: 14px; padding: var(--space-lg) var(--space-xl); }
+        .recap ol { margin: 0; padding-inline-start: 1.4rem; line-height: 2; }
+        .next-steps { display: flex; flex-wrap: wrap; gap: var(--space-md); margin-top: var(--space-lg); }
+        .honest { font-size: var(--font-size-sm); color: var(--color-muted); border-inline-start: 3px solid var(--color-border); padding-inline-start: var(--space-md); }
+        @media (prefers-reduced-motion: reduce) { .bx-meter-bar i { transition: none; } }
     </style>
     <link rel="stylesheet" href="/assets/css/accessibility.css">
     <script src="/assets/js/a11y-init.js"></script>
     <script src="/assets/js/accessibility.js" defer></script>
     <link rel="stylesheet" href="/assets/css/journey.css">
     <script src="/assets/js/journey.js" defer></script>
+    <script src="/assets/js/agents-essay.js" defer></script>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
     <mgt-header></mgt-header>
     <main id="main-content">
-        <article class="advisor-wrap">
+        <article class="essay section-pad">
             <nav aria-label="Breadcrumb">
                 <ul class="breadcrumbs">
                     <li><a href="/">Home</a></li>
                     <li><a href="/build/">Make things</a></li>
-                    <li><span aria-current="page">The free AI agent</span></li>
+                    <li><span aria-current="page">Agents, in plain English</span></li>
                 </ul>
             </nav>
 
-            <header class="advisor-hero">
-                <span class="eyebrow">free · no sign-up</span>
-                <h1>See what makes an AI agent good.</h1>
-                <p class="lead">Two ways to get it, both right here. <strong>First</strong>, build a good “ask” one piece at a time below and watch the answer change in front of you. <strong>Then</strong>, when you're ready, paste an agent of your own for a plain-English read on it — no jargon, no chat.</p>
+            <header>
+                <span class="eyebrow">an explorable essay</span>
+                <h1 data-a11y="hero-title">Agents, in plain English.</h1>
+                <p class="lede" data-a11y="hero-lede">You keep hearing the word <em>agent</em>. It sounds technical and a bit intimidating. It isn't. By the end of this page you'll have <strong>built one yourself</strong> — no code, no jargon — just by playing with the pieces. Drag, tap, and watch.</p>
             </header>
 
-            <!-- LEAD WITH THE EXPLORABLE: learn the move by doing -->
-            <section class="section-pad" aria-label="Build a better ask" style="margin-top:var(--space-md)">
-                <span class="eyebrow">first, get the feel</span>
-                <div class="ask-lab">
-                    <div class="ask-col">
-                        <h2 class="ask-h">Your ask</h2>
-                        <div class="ask-text" id="askText"></div>
-                        <p class="ask-hint">Tap a piece to add it. Each one tells the AI something it can't guess.</p>
-                        <div class="ask-chips" id="chips"></div>
-                        <div class="ask-controls"><button class="ask-mini" id="askAll">Add everything</button><button class="ask-mini" id="askNone">Start vague again</button></div>
+            <h2 data-a11y="s1-h">So… what <em>is</em> an agent?</h2>
+            <p data-a11y="s1-p1">An agent is just an AI you've given <strong>standing instructions</strong> to. You write down, once, who it should be and how it should help — and from then on it behaves that way every time, for anyone who talks to it. That's the whole idea: <strong>a little worker you describe in words.</strong></p>
+            <p data-a11y="s1-p2">It isn't a robot, it isn't code, and it isn't magic. If you can describe a job to a new colleague in plain English, you can write an agent. The only skill is learning <em>which</em> words actually matter — so let's feel that first.</p>
+
+            <h2 data-a11y="s2-h">The one thing that decides everything: the ask</h2>
+            <p data-a11y="s2-p1">Here's the secret nobody tells beginners: the AI is the <em>same</em> for everyone. The reason one person gets gold and another gets mush is simply <strong>what they tell it</strong>. Watch — take this vague request and add a piece at a time:</p>
+
+            <div class="bx" id="ask-demo">
+                <div class="bx-grid">
+                    <div class="bx-col">
+                        <h3 class="bx-h">Your ask</h3>
+                        <div class="bx-asm"></div>
+                        <p class="bx-hint">Tap a piece to add it. Each one tells the AI something it can't guess.</p>
+                        <div class="bx-chips"></div>
+                        <div class="bx-controls"><button class="bx-all">Add everything</button><button class="bx-none">Start vague</button></div>
                     </div>
-                    <div class="ask-col">
-                        <h2 class="ask-h">What the AI gives back</h2>
-                        <div class="ask-meter" id="meter"></div>
-                        <div class="ask-answer" id="answer"></div>
+                    <div class="bx-col">
+                        <h3 class="bx-h">What the AI gives back</h3>
+                        <div class="bx-meter"></div>
+                        <div class="bx-out"></div>
                     </div>
                 </div>
-                <p class="ask-caption" id="askCaption"></p>
-                <div class="ask-callout" id="askCallout" hidden></div>
-            </section>
-
-            <hr style="border:none;border-top:1px solid var(--color-border);margin:var(--space-2xl) 0">
-
-            <header class="advisor-hero" style="margin-top:0">
-                <span class="eyebrow">when you're ready</span>
-                <h2 style="margin-bottom:var(--space-sm)">Got an agent of your own? Get a read on it.</h2>
-                <p class="lead">Paste its instructions below — we've left a shoe-shop example in to show the shape — and get the same plain-English feedback. Don't have one yet? No rush; just play with the pieces above.</p>
-            </header>
-
-            <div class="preview-note" id="preview-note" hidden>
-                <p><strong>The live feedback is just about ready.</strong> While we finish it off, open <em>“See what a good set of instructions looks like”</em> at the bottom — it shows you exactly the kind of thing that works (the same checklist this agent uses).</p>
+                <p class="bx-cap"></p>
+                <div class="bx-callout" hidden></div>
             </div>
 
-            <form class="advisor-form card" id="advisor-form" novalidate>
-                <div class="field">
-                    <label for="agent-name">What's your agent for?</label>
-                    <p class="help" id="name-help">One line is plenty. For example: “Helps customers with refund questions for an online shoe shop.”</p>
-                    <input type="text" id="agent-name" name="agentName" maxlength="80" aria-describedby="name-help" autocomplete="off" value="Helps customers with refund questions for an online shoe shop.">
-                </div>
+            <h2 data-a11y="s3-h">From a one-off ask to a reusable agent</h2>
+            <p data-a11y="s3-p1">That birthday request was a <em>one-off</em> — you asked once, you got an answer. An <strong>agent</strong> is the same trick, but written down once and pointed at a <em>job</em> instead of a single question — and it talks to strangers, not just you. So it needs a couple more pieces: the <strong>facts</strong> it must stick to, and the <strong>limits</strong> of what it's allowed to promise. Let's build a real one.</p>
 
-                <div class="field">
-                    <label for="system-prompt">The agent's instructions <span aria-hidden="true">*</span></label>
-                    <p class="help" id="sp-help">This is the bit you write to tell AI who to be and how to help — its job, what it should and shouldn't do, its tone, and the kind of answer you want back. We've filled in an example; tweak it or paste your own.</p>
-                    <textarea id="system-prompt" name="systemPrompt" maxlength="6000" required aria-describedby="sp-help sp-count">You are a warm, careful customer-support assistant for a small online shoe shop. Answer only from our policy: full refunds within 30 days with proof of purchase; exchanges within 60 days; faulty items are always covered. Keep replies short and friendly. If a question falls outside the policy, or you're unsure, say so plainly and offer to pass it to a human — never invent a rule or promise a refund you can't give.</textarea>
-                    <span class="char-count" id="sp-count" aria-live="off">0 / 6000</span>
-                </div>
+            <h2 data-a11y="s4-h">Build one, piece by piece</h2>
+            <p data-a11y="s4-p1">Meet a shoe shop that wants an agent to handle refund questions. Below, it has <strong>no instructions at all</strong> — so when a real customer writes in, watch what it does. Then add each instruction and see it grow up.</p>
 
-                <fieldset>
-                    <legend>A couple of example messages</legend>
-                    <p class="help">One to three things a real person might actually say to your agent. We'll show you what your agent does with each one.</p>
-                    <div class="test-input">
-                        <label class="sr-only" for="test-1">Example message 1</label>
-                        <textarea id="test-1" name="test1" maxlength="1500" aria-label="Example message 1" placeholder="e.g. I bought these trainers 40 days ago and they fell apart — can I get a refund?">I bought these trainers 40 days ago and they fell apart — can I get a refund?</textarea>
+            <div class="bx" id="agent-builder">
+                <div class="bx-grid">
+                    <div class="bx-col">
+                        <h3 class="bx-h">The agent's instructions</h3>
+                        <div class="bx-asm"></div>
+                        <p class="bx-hint">Add the pieces in order, or in any order — see what each one fixes.</p>
+                        <div class="bx-chips"></div>
+                        <div class="bx-controls"><button class="bx-all">Add everything</button><button class="bx-none">Strip it back</button></div>
                     </div>
-                    <div class="test-input" id="test-2-wrap" hidden>
-                        <label class="sr-only" for="test-2">Example message 2</label>
-                        <textarea id="test-2" name="test2" maxlength="1500" aria-label="Example message 2"></textarea>
-                    </div>
-                    <div class="test-input" id="test-3-wrap" hidden>
-                        <label class="sr-only" for="test-3">Example message 3</label>
-                        <textarea id="test-3" name="test3" maxlength="1500" aria-label="Example message 3"></textarea>
-                    </div>
-                    <button type="button" class="btn btn--secondary" id="add-input">+ Add another example</button>
-                </fieldset>
-
-                <div class="field">
-                    <label for="rubric">What would a great answer look like? <span class="help" style="display:inline">(optional)</span></label>
-                    <p class="help" id="rubric-help">Tell us what “good” means to you, and we'll check the examples against it. For instance: “Mentions the 30-day policy, stays friendly, and never promises a refund it can't actually give.”</p>
-                    <textarea id="rubric" name="rubric" maxlength="1000" aria-describedby="rubric-help">Mentions the 30-day refund window, stays warm, and never promises a refund it can't actually give.</textarea>
-                </div>
-
-                <div class="honeypot" aria-hidden="true">
-                    <label for="website">Leave this field empty</label>
-                    <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
-                </div>
-
-                <div id="cf-slot"></div>
-
-                <div class="advisor-actions">
-                    <button type="submit" class="btn" id="analyze-btn">Give me feedback</button>
-                    <button type="button" class="btn btn--secondary" id="load-example">Show me an example first</button>
-                </div>
-                <div id="advisor-status" role="status" aria-live="polite" aria-atomic="true"></div>
-            </form>
-
-            <section class="results" id="results" tabindex="-1" aria-live="polite" hidden>
-                <div class="card" id="critique-card">
-                    <h2>How your instructions read</h2>
-                    <p id="critique-summary"></p>
-                    <div id="critique-issues"></div>
-                </div>
-                <div class="card" id="runs-card">
-                    <h2>What your agent said</h2>
-                    <p class="muted" style="font-size:var(--font-size-sm)">A practice run of your instructions on each example message you gave.</p>
-                    <div id="runs-list"></div>
-                </div>
-                <div class="card" id="improvements-card">
-                    <h2>Little changes that'll help</h2>
-                    <div id="improvements-list"></div>
-                </div>
-                <div class="card" id="improved-card">
-                    <h2>A friendlier version to start from</h2>
-                    <p class="muted" style="font-size:var(--font-size-sm)">A starting point, not a magic fix — have a read rather than just pasting it. The notes above explain why each change helps.</p>
-                    <div class="improved-wrap">
-                        <pre id="improved-prompt"></pre>
-                        <button type="button" class="btn btn--secondary" id="copy-improved" style="margin-top:var(--space-sm)">Copy</button>
+                    <div class="bx-col">
+                        <h3 class="bx-h">A real customer writes in…</h3>
+                        <div class="bx-meter"></div>
+                        <div class="bx-out"></div>
                     </div>
                 </div>
-            </section>
+                <p class="bx-cap"></p>
+                <div class="bx-callout" hidden></div>
+            </div>
 
-            <details class="annotated card">
-                <summary>See what a good set of instructions looks like</summary>
-                <p class="muted" style="font-size:var(--font-size-sm);margin-top:var(--space-md)">Clear instructions tend to say five things: the <span class="ann">job</span>, what's <span class="ann">in and out of bounds</span>, the <span class="ann">tone</span>, what to do <span class="ann">when it's not sure</span>, and the <span class="ann">shape of the answer</span>. See how each line leaves nothing to guess:</p>
-                <pre>You are a <span class="ann">agent for refund questions</span> at Northwind Shoes, an online shop.
+            <h2 data-a11y="s5-h">You just built an agent.</h2>
+            <p data-a11y="s5-p1">That's genuinely it. Every agent — a support assistant, a writing buddy, a study helper — is the same seven plain-English pieces, aimed at a different job:</p>
+            <div class="recap">
+                <ol data-a11y="s5-recap">
+                    <li><strong>Who it is</strong> — give it a role.</li>
+                    <li><strong>Its job</strong> — what it helps with (and what it shouldn't touch).</li>
+                    <li><strong>The facts</strong> it must follow — your policy, your prices, your truth.</li>
+                    <li><strong>Its limits</strong> — what it must never promise or do.</li>
+                    <li><strong>When it's unsure</strong> — say so, and hand off to a human.</li>
+                    <li><strong>Its tone</strong> — warm, plain, brief.</li>
+                    <li><strong>The answer shape</strong> — how the reply should look.</li>
+                </ol>
+            </div>
+            <p class="honest" data-a11y="s5-honest">Honest note: every reply above is a <em>representative example</em>, not a live AI call — we show what good (and bad) instructions actually produce, so you can learn the move without the noise.</p>
 
-<span class="ann">Your job:</span> help customers understand the returns policy and start a return.
-<span class="ann">The policy to follow:</span> refunds are allowed within 30 days of delivery,
-for unworn items with proof of purchase. Faulty items can be returned any time.
-<span class="ann">What you can't do:</span> you can't approve refunds yourself — explain whether
-something qualifies and, if it does, give the steps to start one. Never promise money back.
-<span class="ann">Tone:</span> warm, plain English, 3 sentences at most unless they ask for more.
-<span class="ann">If you're not sure or it's outside your job:</span> say so, and offer to pass them
-to a person at support@northwind.example.
-<span class="ann">The answer:</span> a short, friendly reply, then a line "ELIGIBLE: yes/no/unclear".</pre>
-                <p class="muted" style="font-size:var(--font-size-sm)">Tap <strong>“Show me an example first”</strong> above to drop this (plus a couple of example messages) into the form and watch how the agent reads it.</p>
-            </details>
+            <h2 data-a11y="s6-h">Now make it yours.</h2>
+            <p data-a11y="s6-p1">You've got the skill. Here's where it goes next.</p>
+            <div class="next-steps">
+                <a class="btn" href="/chatty/">Save one as a real agent → chatyman</a>
+                <a class="btn btn--secondary" href="/learn/">Understand why it works →</a>
+            </div>
         </article>
     </main>
     <mgt-footer></mgt-footer>
@@ -293,7 +190,5 @@ to a person at support@northwind.example.
     <script type="module" src="/assets/js/app.js"></script>
     <script type="module" src="/components/core/mgt-header.js"></script>
     <script type="module" src="/components/core/mgt-footer.js"></script>
-    <script src="/assets/js/build-explorable.js" defer></script>
-    <script src="/assets/js/advisor.js?v=2" defer></script>
 </body>
 </html>
