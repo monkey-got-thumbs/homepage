@@ -1,17 +1,17 @@
 {
   "hero-title": [
-    "A couple of little agents",
-    "A couple of little agents",
-    "A couple of little agents",
-    "Two little agents",
-    "Two agents"
+    "Just a handful of little agents we made for you",
+    "A few little agents we made for you",
+    "A few little agents",
+    "A few small agents",
+    "A few agents"
   ],
   "hero-lede": [
-    "We don't sell a big list of things. We made just two small tools. Both are meant to make AI feel friendly and helpful. On this page we tell you, in plain words, what each one really does for you.",
-    "We don't have a big catalogue — just two small tools we built to make AI feel friendlier and more useful. Here's what each one really does for you, in plain words.",
-    "We don't have a big catalogue — just two small things we built to make AI feel friendlier and more useful. Here's what each one actually does for you, in plain words.",
-    "No big catalogue — two small tools that make AI friendlier and more useful. Here's what each does, plainly.",
-    "Two small AI tools. What each one does:"
+    "We don't have a big shop full of things. We just made a few small things, to help AI feel friendlier and more useful for you. Here, in plain words, is what each one actually does for you.",
+    "We don't have a big catalogue — just a few small things we built to make AI feel friendlier and more useful for you. Here's what each one really does for you, in plain words.",
+    "We don't have a big catalogue — just a few small things we built to make AI feel friendlier and more useful. Here's what each one actually does for you, in plain words.",
+    "No big catalogue — just a few small things that make AI friendlier and more useful. Here's what each one does, plainly.",
+    "A few small things that make AI friendlier. What each does:"
   ],
   "chatyman-what": [
     "A friendly AI agent you can add to your own website.",
@@ -28,18 +28,18 @@
     "A chat bubble that answers visitors from <em>your</em> pages, in your voice."
   ],
   "advisor-what": [
-    "A <span class=\"free\">free</span> agent that makes the way you ask AI a lot better.",
-    "A <span class=\"free\">free</span> agent that makes the way you ask AI much better.",
-    "A <span class=\"free\">free</span> agent that makes the way you ask AI much better.",
-    "A <span class=\"free\">free</span> agent that improves how you ask AI.",
-    "A <span class=\"free\">free</span> tool for better AI prompts."
+    "A <span class=\"free\">free</span> little guide you can play with, that shows you what an AI agent is — and how you'd build one yourself.",
+    "A <span class=\"free\">free</span>, playable guide to what an AI agent is — and how you can build one.",
+    "A <span class=\"free\">free</span>, playable guide to what an AI agent is — and how to build one.",
+    "A <span class=\"free\">free</span>, playable guide to what an agent is — and how to build one.",
+    "A <span class=\"free\">free</span> playable guide to AI agents."
   ],
   "advisor-desc": [
-    "When you ask AI to do a job, the way you word it changes everything. Paste in what you've written and add a couple of examples. The Advisor then shows you how it works (this is a preview): one round of friendly, honest feedback. It tells you what's working, what might trip you up, and exactly how to make it clearer.",
-    "When you ask AI to do a job, the way you word it changes everything. Paste in what you've written, add a couple of examples, and the Advisor shows you how it works (preview): one round of friendly, honest feedback — what's working, what might trip you up, and how to make it clearer.",
-    "When you ask AI to do a job for you, the way you word it changes everything. Paste in what you've written, add a couple of examples, and the Advisor shows you how it works (preview): one round of friendly, honest feedback — what's working, what might trip you up, and exactly how to make it clearer.",
-    "How you word a request changes everything. Paste your wording, add a few examples, and the Advisor (preview) gives one round of honest feedback — what works, what could trip you up, how to make it clearer.",
-    "Paste your prompt and examples; get one round of honest feedback on what works, what fails, and how to fix it (preview)."
+    "Not quite sure what people mean when they say \"agent\"? This isn't a long page of reading — it's a little thing you play with, and it takes about two minutes. First you build a good \"ask\" one piece at a time, and you watch the answer change as you go. Then you put together a real little agent, and watch it grow up — from a careless guesser that just blurts something out, into a careful, reliable worker. You learn it by doing it, not by being told.",
+    "Not sure what people mean by an \"agent\"? This is a two-minute thing you play with, not a wall of text. You build a good \"ask\" piece by piece and watch the answer change; then you put together a real little agent and watch it go from a reckless guesser into a careful, reliable worker. You learn by doing.",
+    "Not sure what people mean by an \"agent\"? This is a two-minute explorable, not a wall of text. Build a good \"ask\" piece by piece and watch the answer change; then assemble a real little agent and watch it go from a reckless guesser to a careful, reliable worker. You learn by doing.",
+    "Unsure what an \"agent\" is? A two-minute explorable, not a wall of text. Build an \"ask\" piece by piece and watch the answer change; then assemble a real agent and watch it go from reckless guesser to careful, reliable worker. Learn by doing.",
+    "A two-minute explorable: build an \"ask\", then an agent — from reckless guesser to reliable worker. Learn by doing."
   ],
   "writers-what": [
     "A blank page with a whole writers' room sitting right beside it.",

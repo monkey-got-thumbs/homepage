@@ -132,7 +132,7 @@ class MGTFooter extends HTMLElement {
               <h2 id="footer-about">About</h2>
               <p>
                 <strong>Monkey Got Thumbs</strong> helps everyday people get
-                comfortable with AI and make little helpers of their own — no
+                comfortable with AI and make little agents of their own — no
                 coding, no jargon, at your own pace, with a friendly community
                 alongside you.
               </p>
@@ -162,7 +162,7 @@ class MGTFooter extends HTMLElement {
               <h2 id="footer-products">Products</h2>
               <ul>
                 <li><a href="/chatty/">chatyman</a></li>
-                <li><a href="/products/advisor/">Agent Builder Advisor</a></li>
+                <li><a href="/build/advisor/">Agents, in plain English</a></li>
                 <li><a href="/writers-digest/">Writers Digest</a></li>
                 <li><a href="/products/">All products</a></li>
               </ul>
