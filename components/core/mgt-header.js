@@ -73,6 +73,7 @@ class MGTHeader extends HTMLElement {
           object-fit: contain;   /* logo is 200x300 — contain prevents squashing into the square box */
           border-radius: 8px;
           flex-shrink: 0;
+          filter: var(--logo-filter, none);   /* per-scheme adaptation (custom props pierce shadow DOM) */
         }
 
         .brand-text {

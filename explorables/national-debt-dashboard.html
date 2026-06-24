@@ -3,6 +3,9 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The US National Debt — an explorable dashboard</title>
+<link rel="stylesheet" href="/assets/css/accessibility.css">
+<script src="/assets/js/a11y-init.js"></script>
+<script src="/assets/js/accessibility.js" defer></script>
 <style>
   :root{
     --ink:#EDECF6;--mut:#B9B5D3;--faint:rgba(237,236,246,0.13);--bg:#0E0B1A;--card:#17122B;
@@ -31,6 +34,22 @@
   .seg{display:inline-flex;gap:4px;margin:0 0 6px}.seg button{font:inherit;font-size:12px;font-family:var(--mono);padding:3px 9px;border:1px solid var(--faint);background:#120E22;color:var(--ink);border-radius:7px;cursor:pointer}.seg button.on{background:var(--ink);color:#0E0B1A;border-color:var(--ink)}
   .facts{font-size:13px;line-height:1.7;margin:6px 0 0;padding:0;list-style:none}.facts li{padding-left:1.2rem;position:relative}.facts li::before{content:'›';position:absolute;left:0;color:var(--spend);font-weight:700}
   .note{font-size:12px;color:var(--mut);line-height:1.5;border-top:1px solid var(--faint);margin-top:18px;padding-top:12px}
+
+  /* Accessibility engine — scheme overrides (dark :root remains default) */
+  html[data-scheme="light"]    { --bg:#ffffff; --card:#f4f4f1; --ink:#16161c; --mut:#545163; --faint:rgba(0,0,0,.14); }
+  html[data-scheme="contrast"] { --bg:#000000; --card:#000000; --ink:#ffffff; --mut:#ededed; --faint:#ffffff; }
+  html[data-scheme="sepia"]    { --bg:#f4ecd8; --card:#ece0c4; --ink:#3b2f1e; --mut:#6b5a3e; --faint:rgba(59,47,30,.18); }
+
+  /* Colour-blind-safe data-viz palette */
+  html[data-cvd="safe"] {
+    --rev:#004D40;   /* green */
+    --good:#004D40;  /* green */
+    --spend:#FE6100; /* orange */
+    --hot:#D81B60;   /* red */
+    --int:#FFC107;   /* amber */
+    --for:#785EF0;   /* purple */
+    --dom:#1E88E5;   /* blue */
+  }
 </style>
 </head>
 <body>

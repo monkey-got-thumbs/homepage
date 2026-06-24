@@ -94,10 +94,11 @@ html[data-level="3"] [data-a11y-level="3"],
 html[data-level="4"] [data-a11y-level="4"],
 html[data-level="5"] [data-a11y-level="5"] { display: revert; }
 
-/* ---- Logo adaptation per scheme (logo art is light-on-dark by default) ---- */
-html[data-scheme="light"]   .mgt-logo img, html[data-scheme="light"]   img.logo,
-html[data-scheme="sepia"]   .mgt-logo img, html[data-scheme="sepia"]   img.logo { filter: brightness(0.55) saturate(1.1); }
-html[data-scheme="contrast"] .mgt-logo img, html[data-scheme="contrast"] img.logo { filter: brightness(0) invert(1); }
+/* ---- Logo adaptation per scheme (the header logo lives in shadow DOM; custom
+   properties inherit across the boundary, so we drive .brand-logo's filter) ---- */
+html[data-scheme="light"]    { --logo-filter: drop-shadow(0 1px 1px rgba(0,0,0,.35)) saturate(1.05); }
+html[data-scheme="sepia"]    { --logo-filter: drop-shadow(0 1px 1px rgba(59,47,30,.4)) sepia(.15); }
+html[data-scheme="contrast"] { --logo-filter: contrast(1.2); }
 
 /* ===========================================================================
    The accessibility panel

@@ -13,7 +13,14 @@
   .doc{font-size:19px;line-height:1.6}.doc .front{color:var(--front);font-weight:680}.doc .dom{color:var(--mut);font-weight:680}
   .hint{font-size:12.5px;color:var(--mut);margin:16px 0 4px}
   svg{display:block;width:100%;height:auto;touch-action:none;user-select:none}
+  html[data-scheme="light"]    { --bg:#ffffff; --ink:#16161c; --mut:#545163; --faint:rgba(0,0,0,.14); }
+  html[data-scheme="contrast"] { --bg:#000000; --ink:#ffffff; --mut:#ededed; --faint:#ffffff; }
+  html[data-scheme="sepia"]    { --bg:#f4ecd8; --ink:#3b2f1e; --mut:#6b5a3e; --faint:rgba(59,47,30,.18); }
+  html[data-cvd="safe"] { --front:#1E88E5; --dom:#785EF0; }
 </style>
+<link rel="stylesheet" href="/assets/css/accessibility.css">
+<script src="/assets/js/a11y-init.js"></script>
+<script src="/assets/js/accessibility.js" defer></script>
 </head>
 <body>
 <div class="bb"><a href="/explorables/">← Explorables</a> <span>· Monkey Got Thumbs</span></div>

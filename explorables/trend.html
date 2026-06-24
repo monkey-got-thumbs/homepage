@@ -3,6 +3,9 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Are we over budget? — Explorable</title>
+<link rel="stylesheet" href="/assets/css/accessibility.css">
+<script src="/assets/js/a11y-init.js"></script>
+<script src="/assets/js/accessibility.js" defer></script>
 <style>
   :root{--ink:#EDECF6;--mut:#B9B5D3;--faint:rgba(237,236,246,0.13);--bg:#0E0B1A;--line:#6BA8E5;--budget:#F0705A;--bar:#5FD08A;--over:#F0705A;--mono:"SFMono-Regular",ui-monospace,Menlo,monospace}
   *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}
@@ -16,6 +19,10 @@
   .doc .num{font-family:var(--mono);font-weight:680}.doc .over{color:var(--over);font-weight:680}.doc .ok{color:var(--bar);font-weight:680}
   .hint{font-size:12.5px;color:var(--mut);margin:14px 0 4px}
   svg{display:block;width:100%;height:auto;touch-action:none;user-select:none}
+  html[data-scheme="light"]    { --bg:#ffffff; --ink:#16161c; --mut:#545163; --faint:rgba(0,0,0,.14); }
+  html[data-scheme="contrast"] { --bg:#000000; --ink:#ffffff; --mut:#ededed; --faint:#ffffff; }
+  html[data-scheme="sepia"]    { --bg:#f4ecd8; --ink:#3b2f1e; --mut:#6b5a3e; --faint:rgba(59,47,30,.18); }
+  html[data-cvd="safe"] { --line:#1E88E5; --bar:#004D40; --budget:#FE6100; --over:#FE6100; }
 </style>
 </head>
 <body>
