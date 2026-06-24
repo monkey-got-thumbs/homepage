@@ -64,7 +64,7 @@
         .content { padding-block: 2rem; }
         .content h2 { margin-top: 2.5rem; }
         .content p { line-height: 1.8; margin-bottom: 1.25rem; }
-        .content ul, .content ol { margin-bottom: 1.25rem; padding-left: 1.5rem; }
+        .content ul, .content ol { margin-bottom: 1.25rem; padding-inline-start: 1.5rem; }
         .content li { margin-bottom: 0.5rem; line-height: 1.7; }
         .page-meta { color: var(--color-muted); font-size: var(--font-size-sm); margin-top: 0.5rem; }
         .lead { font-size: var(--font-size-lg); color: var(--color-fg-secondary); line-height: 1.7; }
@@ -111,7 +111,7 @@
 
             <header>
                 <h1>Meta-Cognition</h1>
-                <p class="lead">Meta-cognition is thinking about thinking — the ability to observe, evaluate, and adjust your own reasoning process. In augmented intelligence, it is the feedback loop and control surface that determines whether AI makes you smarter or just faster at being wrong.</p>
+                <p class="lead" data-a11y="lead">Meta-cognition is thinking about thinking — the ability to observe, evaluate, and adjust your own reasoning process. In augmented intelligence, it is the feedback loop and control surface that determines whether AI makes you smarter or just faster at being wrong.</p>
                 <p class="page-meta">Advanced &middot; 8 min read</p>
             </header>
 
@@ -121,12 +121,12 @@
             </aside>
 
             <div class="enduring">
-                <p><strong>The one idea to keep:</strong> Meta-cognition is the control surface for directing AI — when you watch your own thinking (name what you actually want, the constraints, the structure), you lead the AI instead of being led by it.</p>
+                <p data-a11y="enduring"><strong>The one idea to keep:</strong> Meta-cognition is the control surface for directing AI — when you watch your own thinking (name what you actually want, the constraints, the structure), you lead the AI instead of being led by it.</p>
             </div>
 
             <section>
                 <h2>Why Meta-Cognition Matters for AI</h2>
-                <p>
+                <p data-a11y="why-outsourcing">
                     When you use AI without meta-cognition, you are outsourcing your thinking to a system that <a href="/learn/foundations/ai-pitfalls.html">cannot think</a>. You accept its outputs, build on its suggestions, and follow its reasoning — without ever asking whether the reasoning is sound.
                 </p>
                 <p>
@@ -139,7 +139,7 @@
 
             <div class="worked">
                 <h3>The same request, with and without meta-cognition</h3>
-                <p>
+                <p data-a11y="worked-dan">
                     Dan needs to write to a customer whose project is running late. He fires off the obvious prompt. Then he stops, watches his own thinking, and notices that he never told the AI what he actually wants — so he names the goal, the constraints, and the structure before asking again.
                 </p>
                 <div class="split">
@@ -189,33 +189,33 @@
 
             <section>
                 <h2>Thinking Tools</h2>
-                <p>
+                <p data-a11y="thinking-tools-intro">
                     In the <a href="/learn/foundations/three-pillars.html">augmented intelligence framework</a>, meta-cognition encompasses "thinking toys" — lightweight cognitive tools that help you reason about your own reasoning. These are not formal systems. They are habits of mind that you can learn and practise.
                 </p>
 
                 <div class="tool-card">
                     <h3>Mental Models</h3>
-                    <p>Simplified representations of how something works. When you approach an AI task with a clear mental model — "this model is a pattern matcher, not a reasoner" — you automatically adjust your expectations and verification strategy. The model is not true in a comprehensive sense, but it is useful as a guide for action.</p>
+                    <p data-a11y="card-mental-models">Simplified representations of how something works. When you approach an AI task with a clear mental model — "this model is a pattern matcher, not a reasoner" — you automatically adjust your expectations and verification strategy. The model is not true in a comprehensive sense, but it is useful as a guide for action.</p>
                 </div>
 
                 <div class="tool-card">
                     <h3>Prompt Engineering as Thinking</h3>
-                    <p>The act of writing a good prompt is itself a meta-cognitive exercise. To write a clear prompt, you must first clarify your own thinking: what exactly do I need? What context is essential? What constraints should I specify? What format should the output take? Many people discover that the process of constructing the prompt solves half the problem before the AI even responds.</p>
+                    <p data-a11y="card-prompt-engineering">The act of writing a good prompt is itself a meta-cognitive exercise. To write a clear prompt, you must first clarify your own thinking: what exactly do I need? What context is essential? What constraints should I specify? What format should the output take? Many people discover that the process of constructing the prompt solves half the problem before the AI even responds.</p>
                 </div>
 
                 <div class="tool-card">
                     <h3>Cognitive Scaffolding</h3>
-                    <p>Breaking complex problems into structured sub-problems. Instead of asking AI to "write a marketing strategy," you scaffold: define the audience, identify the channels, specify the constraints, then ask for each component separately. The scaffolding forces you to think through the problem structure, which makes the AI's contributions more targeted and verifiable.</p>
+                    <p data-a11y="card-scaffolding">Breaking complex problems into structured sub-problems. Instead of asking AI to "write a marketing strategy," you scaffold: define the audience, identify the channels, specify the constraints, then ask for each component separately. The scaffolding forces you to think through the problem structure, which makes the AI's contributions more targeted and verifiable.</p>
                 </div>
 
                 <div class="tool-card">
                     <h3>Rubber Ducking with AI</h3>
-                    <p>Explaining your reasoning to AI as a way of testing it. The classic "rubber duck debugging" technique — explaining your code to an inanimate object to find errors — becomes vastly more powerful when the object can ask clarifying questions. Use AI as a thought partner: explain your reasoning, ask it to find the weak points, then evaluate its critique with the same rigour.</p>
+                    <p data-a11y="card-rubber-ducking">Explaining your reasoning to AI as a way of testing it. The classic "rubber duck debugging" technique — explaining your code to an inanimate object to find errors — becomes vastly more powerful when the object can ask clarifying questions. Use AI as a thought partner: explain your reasoning, ask it to find the weak points, then evaluate its critique with the same rigour.</p>
                 </div>
 
                 <div class="tool-card">
                     <h3>Socratic Questioning</h3>
-                    <p>Using AI to ask you questions rather than give you answers. Instead of "give me the answer," try "ask me the questions I should be asking about this problem." This reversal forces you to engage with the problem space rather than passively receiving solutions.</p>
+                    <p data-a11y="card-socratic">Using AI to ask you questions rather than give you answers. Instead of "give me the answer," try "ask me the questions I should be asking about this problem." This reversal forces you to engage with the problem space rather than passively receiving solutions.</p>
                 </div>
             </section>
 
@@ -242,12 +242,12 @@
 
             <section>
                 <h2>The Control Surface</h2>
-                <p>
+                <p data-a11y="control-surface-intro">
                     In engineering, a control surface is the part of a system you adjust to change its behaviour — the steering wheel of a car, the rudder of a plane. Meta-cognition is the control surface of augmented intelligence.
                 </p>
 
                 <div class="highlight-box">
-                    <p><strong>Without meta-cognition, you have access to AI but no control over the quality of the collaboration.</strong> With it, you can adjust your approach in real time: rephrase when the output is wrong, scaffold when it is too broad, verify when it is plausible but unconfirmed.</p>
+                    <p data-a11y="control-surface-highlight"><strong>Without meta-cognition, you have access to AI but no control over the quality of the collaboration.</strong> With it, you can adjust your approach in real time: rephrase when the output is wrong, scaffold when it is too broad, verify when it is plausible but unconfirmed.</p>
                 </div>
 
                 <p>
@@ -271,7 +271,7 @@
 
             <section>
                 <h2>The coffee problem: you never say everything you mean</h2>
-                <p>
+                <p data-a11y="coffee-intro">
                     Ask a friend to "grab me a coffee" and they just <em>know</em> the unspoken rules — a cup from the café, not a sack of raw beans or a whole plantation. Everyday language leans on a mountain of shared common sense. An AI doesn't share it by default, and today's models are eager — one well-known developer, Simon Willison, calls them "relentlessly proactive." So a vague ask sends a keen helper somewhere you never meant. Drag the dial:
                 </p>
 
@@ -290,7 +290,7 @@
                     Folklore knew this forever: Midas forgot to add "except my dinner," and genies grant your <em>words</em>, not your <em>wish</em>. <strong>In plain language, what we want is always under-specified</strong> — and a clever helper will happily fill the gaps you leave.
                 </p>
                 <div class="highlight-box">
-                    <p><strong>This is meta-cognition's real job:</strong> noticing the limits you'd leave unsaid, and putting the few that matter into words. Before you ask, wonder — "what am I assuming it already knows?" — then say that part.</p>
+                    <p data-a11y="coffee-highlight"><strong>This is meta-cognition's real job:</strong> noticing the limits you'd leave unsaid, and putting the few that matter into words. Before you ask, wonder — "what am I assuming it already knows?" — then say that part.</p>
                 </div>
             </section>
 
@@ -303,7 +303,7 @@
 
             <section>
                 <h2>Practising Meta-Cognition</h2>
-                <p>
+                <p data-a11y="practising-intro">
                     Meta-cognition is a skill, not a talent. You develop it through deliberate practice:
                 </p>
                 <ol>
@@ -326,7 +326,7 @@
 
             <div class="misconception">
                 <h3>The trap: "A better prompt just means a longer, more detailed prompt."</h3>
-                <p>Meta-cognition is not about piling on words — it is about noticing what you actually want before you ask. A short prompt that names the real goal, one or two true constraints, and the structure you need will out-perform a long prompt stuffed with detail you never examined. Dan's designed prompt was not longer because it was wordier; it was sharper because he had first watched his own thinking. Length is a side effect at most. The work is the noticing.</p>
+                <p data-a11y="misconception">Meta-cognition is not about piling on words — it is about noticing what you actually want before you ask. A short prompt that names the real goal, one or two true constraints, and the structure you need will out-perform a long prompt stuffed with detail you never examined. Dan's designed prompt was not longer because it was wordier; it was sharper because he had first watched his own thinking. Length is a side effect at most. The work is the noticing.</p>
             </div>
 
             <mgt-recall id="meta-trap">

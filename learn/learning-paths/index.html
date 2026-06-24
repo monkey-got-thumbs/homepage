@@ -35,9 +35,9 @@
     </script>
     <style>
         .hub { max-width: var(--content-col); margin-inline: auto; }
-        .hub-head { text-align: left; max-width: 46rem; margin: 0 0 var(--space-2xl); }
+        .hub-head { text-align: start; max-width: 46rem; margin: 0 0 var(--space-2xl); }
         .hub-head h1 { margin: var(--space-sm) 0; }
-        .hub-head .lede { margin-inline: 0; text-align: left; }
+        .hub-head .lede { margin-inline: 0; text-align: start; }
         .step h3 a { color: var(--color-fg); text-decoration: none; }
         .step h3 a:hover { color: var(--color-accent); }
         .step .meta { font-size: var(--font-size-xs); color: var(--color-muted); text-transform: uppercase; letter-spacing: 0.05em; margin: 0; }
@@ -64,37 +64,37 @@
             </nav>
             <header class="hub-head reveal">
                 <span class="eyebrow">a set route to follow</span>
-                <h1>Prefer a path? Follow this one</h1>
-                <p class="lede">If choosing what to read next feels like one decision too many, let us take care of it. Each path is a gentle, in-order route, so you can just relax and learn. Pick the one that sounds like you — and don't worry, you can switch any time.</p>
+                <h1 data-a11y="hero-title">Prefer a path? Follow this one</h1>
+                <p class="lede" data-a11y="hero-lede">If choosing what to read next feels like one decision too many, let us take care of it. Each path is a gentle, in-order route, so you can just relax and learn. Pick the one that sounds like you — and don't worry, you can switch any time.</p>
             </header>
             <h2 class="sr-only">The paths</h2>
             <ol class="path reveal">
                 <li class="step">
                     <span class="step__num" aria-hidden="true">1</span>
-                    <p class="meta">No experience needed · 5 short reads · about 20 min</p>
+                    <p class="meta" data-a11y="beginner-meta">No experience needed · 5 short reads · about 20 min</p>
                     <h3><a href="/learn/learning-paths/beginner.html">Just starting out</a></h3>
-                    <p>From "I'm a bit nervous" to "oh, I've got this" — what AI is, why it matters, and how to take your first steps with it. The perfect place to begin.</p>
+                    <p data-a11y="beginner-desc">From "I'm a bit nervous" to "oh, I've got this" — what AI is, why it matters, and how to take your first steps with it. The perfect place to begin.</p>
                     <a class="card-link go" href="/learn/learning-paths/beginner.html">Start here →</a>
                 </li>
                 <li class="step">
                     <span class="step__num" aria-hidden="true">2</span>
-                    <p class="meta">A step up · 5 short reads · after the first path</p>
+                    <p class="meta" data-a11y="practitioner-meta">A step up · 5 short reads · after the first path</p>
                     <h3><a href="/learn/learning-paths/practitioner.html">Getting it into your day</a></h3>
-                    <p>Ready to put it to use? The handy models, tools, and little habits that make AI a natural part of how you work.</p>
+                    <p data-a11y="practitioner-desc">Ready to put it to use? The handy models, tools, and little habits that make AI a natural part of how you work.</p>
                     <a class="card-link go" href="/learn/learning-paths/practitioner.html">Take it further →</a>
                 </li>
                 <li class="step">
                     <span class="step__num" aria-hidden="true">3</span>
-                    <p class="meta">For the curious · 5 short reads · after the second path</p>
+                    <p class="meta" data-a11y="researcher-meta">For the curious · 5 short reads · after the second path</p>
                     <h3><a href="/learn/learning-paths/researcher.html">Going deeper</a></h3>
-                    <p>For when you've caught the bug and want the whole picture — the thinking, the psychology, and where all this is heading.</p>
+                    <p data-a11y="researcher-desc">For when you've caught the bug and want the whole picture — the thinking, the psychology, and where all this is heading.</p>
                     <a class="card-link go" href="/learn/learning-paths/researcher.html">Go deeper →</a>
                 </li>
             </ol>
             <section class="gradient-card hub-next reveal">
                 <div class="gradient-card__inner">
-                    <h2>Rather just wander?</h2>
-                    <p>No path needed — dip into whatever pulls you: the <a href="/learn/foundations/">basics</a>, the <a href="/learn/frameworks/">handy mental models</a>, or the <a href="/learn/human-factors/">human side</a>. Or keep what you've learned fresh in your <a href="/learn/review/">review queue</a>.</p>
+                    <h2 data-a11y="wander-title">Rather just wander?</h2>
+                    <p data-a11y="wander-desc">No path needed — dip into whatever pulls you: the <a href="/learn/foundations/">basics</a>, the <a href="/learn/frameworks/">handy mental models</a>, or the <a href="/learn/human-factors/">human side</a>. Or keep what you've learned fresh in your <a href="/learn/review/">review queue</a>.</p>
                 </div>
             </section>
         </div>

@@ -65,17 +65,17 @@
         .content { padding-block: 2rem; }
         .content h2 { margin-top: 2.5rem; }
         .content p { line-height: 1.8; margin-bottom: 1.25rem; }
-        .content ul, .content ol { margin-bottom: 1.25rem; padding-left: 1.5rem; }
+        .content ul, .content ol { margin-bottom: 1.25rem; padding-inline-start: 1.5rem; }
         .content li { margin-bottom: 0.5rem; line-height: 1.7; }
         .page-meta { color: var(--color-muted); font-size: var(--font-size-sm); margin-top: 0.5rem; }
         .lead { font-size: var(--font-size-lg); color: var(--color-fg-secondary); line-height: 1.7; }
         .pillar { background: var(--color-bg-secondary); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 1.5rem 2rem; margin: 2rem 0; }
         .pillar h3 { margin-top: 0; font-size: var(--font-size-2xl); }
         .pillar .pillar-number { font-family: var(--font-display); font-size: var(--font-size-4xl); color: var(--color-accent); line-height: 1; margin-bottom: 0.5rem; display: block; }
-        .highlight-box { background: var(--color-bg-secondary); border-left: 4px solid var(--color-accent); padding: 1.25rem 1.5rem; border-radius: var(--radius-sm); margin: 1.5rem 0; }
+        .highlight-box { background: var(--color-bg-secondary); border-inline-start: 4px solid var(--color-accent); padding: 1.25rem 1.5rem; border-radius: var(--radius-sm); margin: 1.5rem 0; }
         .highlight-box p { margin-bottom: 0; }
         .framework-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: var(--font-size-sm); }
-        .framework-table th { text-align: left; padding: 0.75rem 1rem; background: var(--color-bg-secondary); color: var(--color-accent); border-bottom: 2px solid var(--color-border); }
+        .framework-table th { text-align: start; padding: 0.75rem 1rem; background: var(--color-bg-secondary); color: var(--color-accent); border-bottom: 2px solid var(--color-border); }
         .framework-table td { padding: 0.75rem 1rem; border-bottom: 1px solid var(--color-border); vertical-align: top; line-height: 1.6; }
         .framework-table tr:last-child td { border-bottom: none; }
         @media (max-width: 640px) {
@@ -116,8 +116,8 @@
             </nav>
 
             <header>
-                <h1>The Three Pillars of Augmented Intelligence</h1>
-                <p class="lead">Augmented intelligence is not just a buzzword or a marketing concept. It rests on three foundational pillars — intellectual commitments that determine whether human-AI collaboration produces reliable results or expensive noise.</p>
+                <h1 data-a11y="hero-title">The Three Pillars of Augmented Intelligence</h1>
+                <p class="lead" data-a11y="lead">Augmented intelligence is not just a buzzword or a marketing concept. It rests on three foundational pillars — intellectual commitments that determine whether human-AI collaboration produces reliable results or expensive noise.</p>
                 <p class="page-meta">Foundation &middot; 9 min read</p>
             </header>
 
@@ -127,15 +127,15 @@
             </aside>
 
             <div class="enduring">
-                <p><strong>The one idea to keep:</strong> run every AI answer through three questions before you trust it — is it logical and testable, is the explanation hard to vary, and is the output a clean structured object you can reuse? If it fails any one, you do not yet have knowledge — you have plausible-sounding text.</p>
+                <p data-a11y="enduring"><strong>The one idea to keep:</strong> run every AI answer through three questions before you trust it — is it logical and testable, is the explanation hard to vary, and is the output a clean structured object you can reuse? If it fails any one, you do not yet have knowledge — you have plausible-sounding text.</p>
             </div>
 
             <section>
                 <h2>Why Foundations Matter</h2>
-                <p>
+                <p data-a11y="why-anyone">
                     Anyone can use an AI chatbot. Type a question, get an answer. But using AI effectively — using it in a way that reliably produces correct, valuable, trustworthy output — requires something more than access to the tool. It requires an intellectual framework for evaluating what the tool gives you.
                 </p>
-                <p>
+                <p data-a11y="why-framework">
                     Without that framework, you cannot tell the difference between a correct answer and a <a href="/learn/foundations/ai-pitfalls.html">hallucination that sounds correct</a>. You cannot assess whether the AI's reasoning is sound or merely plausible. You cannot build on its output with confidence.
                 </p>
                 <p>
@@ -188,7 +188,7 @@ test: revert send time on next campaign and compare</div>
             <div class="pillar">
                 <span class="pillar-number">01</span>
                 <h3>Logic</h3>
-                <p>
+                <p data-a11y="logic-intro">
                     Logic — embodied in mathematics and the scientific method — is the discipline of forming and testing claims against reality.
                 </p>
                 <p>
@@ -201,7 +201,7 @@ test: revert send time on next campaign and compare</div>
                 <p>
                     Together, induction and deduction form a cycle: observe, hypothesise, predict, test, refine. This is the scientific method, and it is the single most reliable process humans have ever developed for reducing uncertainty.
                 </p>
-                <p>
+                <p data-a11y="logic-apply">
                     When you apply logic to AI output, you stop accepting answers on faith and start evaluating them against evidence. This is the difference between using AI passively (dangerous) and using AI critically (powerful).
                 </p>
             </div>
@@ -223,7 +223,7 @@ test: revert send time on next campaign and compare</div>
             <div class="pillar">
                 <span class="pillar-number">02</span>
                 <h3>Explanation</h3>
-                <p>
+                <p data-a11y="explanation-intro">
                     The second pillar draws on physicist David Deutsch's principle of "hard-to-vary" explanations. A good explanation is one that cannot be easily altered without losing its integrity. Every part of it does essential work.
                 </p>
                 <p>
@@ -236,7 +236,7 @@ test: revert send time on next campaign and compare</div>
                 <p>
                     Hard-to-vary explanations yield durable truths — conclusions you can build on with confidence because they are tightly bound to evidence. They ease mental strain because you do not have to hold multiple competing interpretations. The explanation works, or it does not.
                 </p>
-                <p>
+                <p data-a11y="explanation-ai">
                     This matters enormously when working with AI because AI generates easy-to-vary explanations all day long. It produces text that <em>sounds</em> explanatory but is not actually bound to evidence. The pillar of Explanation gives you the filter to distinguish real insight from plausible-sounding noise.
                 </p>
             </div>
@@ -258,10 +258,10 @@ test: revert send time on next campaign and compare</div>
             <div class="pillar">
                 <span class="pillar-number">03</span>
                 <h3>Architected Data Objects</h3>
-                <p>
+                <p data-a11y="ado-intro">
                     The third pillar is about structure. Architected Data Objects (ADOs) are standardised, efficient data structures that encapsulate truth into shareable, universally interpretable units.
                 </p>
-                <p>
+                <p data-a11y="ado-map">
                     Think of a map. A map is an ADO — it compresses enormous complexity (the physical geography of a region) into a standardised structure (pixels with defined coordinates, scales, and legend entries) that anyone can read, share, and build upon. The map loses detail compared to walking the terrain yourself, but it gains transmissibility, reproducibility, and computational utility.
                 </p>
                 <p>
@@ -293,7 +293,7 @@ test: revert send time on next campaign and compare</div>
 
             <section>
                 <h2>The Five-Part Framework</h2>
-                <p>
+                <p data-a11y="framework-intro">
                     The three pillars support a practical framework of five capabilities that together describe how humans and machines can think together:
                 </p>
 
@@ -329,7 +329,7 @@ test: revert send time on next campaign and compare</div>
                 </table>
 
                 <div class="highlight-box">
-                    <p><strong>How they connect:</strong> Cognitive artifacts supply the units of thought. Interfaces provide the access points. Memory acts as the substrate. Explanation serves as the translation layer. Meta-cognition forms the feedback loop and control surface. Together, they create an extensible system for human-AI collaboration.</p>
+                    <p data-a11y="how-connect"><strong>How they connect:</strong> Cognitive artifacts supply the units of thought. Interfaces provide the access points. Memory acts as the substrate. Explanation serves as the translation layer. Meta-cognition forms the feedback loop and control surface. Together, they create an extensible system for human-AI collaboration.</p>
                 </div>
             </section>
 
@@ -343,7 +343,7 @@ test: revert send time on next campaign and compare</div>
                     <li><strong>Explanation</strong> — Is this explanation hard to vary? Could I swap parts of it without changing the conclusion? If so, the conclusion is not actually supported.</li>
                     <li><strong>ADOs</strong> — Is the information structured in a way that can be reliably shared, reused, and built upon? Or is it loose text that will degrade with each interpretation?</li>
                 </ol>
-                <p>
+                <p data-a11y="putting-together">
                     When you run AI output through these three filters, you catch hallucinations, identify weak reasoning, and transform vague suggestions into actionable knowledge. That is the practice of augmented intelligence — not just using AI, but using it with intellectual discipline.
                 </p>
             </section>
@@ -357,7 +357,7 @@ test: revert send time on next campaign and compare</div>
 
             <div class="misconception">
                 <h3>The trap: "If it sounds confident and detailed, it has passed the pillars."</h3>
-                <p>Fluency is not evidence. An answer can be long, articulate, and full of reasonable-sounding phrases while still failing every pillar — untestable, easy to vary, and unstructured. The pillars are not a vibe check on how the text reads; they are deliberate questions you ask against the content. Nadia's first answer sounded perfectly competent, and that is exactly why it was dangerous to paste.</p>
+                <p data-a11y="trap">Fluency is not evidence. An answer can be long, articulate, and full of reasonable-sounding phrases while still failing every pillar — untestable, easy to vary, and unstructured. The pillars are not a vibe check on how the text reads; they are deliberate questions you ask against the content. Nadia's first answer sounded perfectly competent, and that is exactly why it was dangerous to paste.</p>
             </div>
 
             <mgt-recall id="pil-trap">

@@ -1,0 +1,44 @@
+{
+  "hero-title": [
+    "A page can help you remember what you learn",
+    "A page can help you remember what you learn",
+    "A page can remember what you learn",
+    "A page can remember what you learn",
+    "Pages that make reading stick"
+  ],
+  "reading-leaks": [
+    "Most of what we read just slips away. You finish an essay, you nod along as you go, and a week later all you have left is a fuzzy sense of what it was about. The page itself did nothing to help the ideas stay. It just sat there on the screen. But a page does not have to be so quiet and passive. It can gently ask you to say back what you just read. And then it can ask you again later, picking the right moments to do it.",
+    "Most reading slips away. You finish an essay, nod along, and a week later you keep only a vague sense of it. The page did nothing to help the ideas stay — it just sat there. But a page need not be passive. It can ask you to recall what you just read, and ask again later, at the right moments.",
+    "Most reading leaks. You finish an essay, nod along, and a week later keep only a vague shape of it. The page played no part in whether the ideas survived; it just sat there. But a page does not have to be passive. It can ask you to recall what you just read, and ask again later, at the right moments.",
+    "Most reading leaks. You finish an essay, nod along, and a week later keep only its vague shape. The page played no part in whether the ideas survived. Yet it need not be passive: it can ask you to recall what you read, and ask again later, at the right moments.",
+    "Most reading leaks; the page plays no part in retention. But it need not be passive — it can prompt recall, then re-prompt at the right intervals."
+  ],
+  "quantum-country": [
+    "Andy Matuschak and Michael Nielsen built this idea into something called Quantum Country. It is an essay that teaches you quantum computing, and right inside the writing it tucks short questions that ask you to recall what you have learned. They gave the form a name: the mnemonic medium, which just means text that plans its own review for you. When you read it, you are also remembering it, because the words and the little tests sit together in the same place.",
+    "Andy Matuschak and Michael Nielsen built this into Quantum Country, an essay that teaches quantum computing while embedding short recall prompts right in the prose. They called the form the mnemonic medium: text that schedules its own review. Reading it is also remembering it, because the writing and the testing share one place.",
+    "Andy Matuschak and Michael Nielsen built this into Quantum Country, an essay that teaches quantum computing while embedding short recall prompts directly in the prose. They called the form the mnemonic medium: text that schedules its own review. Reading it is also remembering it, because the writing and the testing live in the same place.",
+    "Andy Matuschak and Michael Nielsen built this into Quantum Country — an essay teaching quantum computing that embeds short recall prompts directly in the prose. They named the form the mnemonic medium: text that schedules its own review. Reading it is remembering it, because writing and testing occupy the same place.",
+    "Matuschak and Nielsen's Quantum Country embeds recall prompts in the prose — the mnemonic medium: text that schedules its own review. Reading is remembering; writing and testing share one place."
+  ],
+  "two-effects": [
+    "Two well-known effects do the real work here. The first is that <a href=\"/notes/retrieval-beats-rereading.html\" class=\"wikilink\">Retrieval, not rereading, is what makes it stick</a> — trying to pull an idea back out of your head is what gives you the recall. The second is that <a href=\"/notes/spacing-fights-forgetting.html\" class=\"wikilink\">Spacing the practice fights the forgetting curve</a> — that is what gets the timing right. Both of these are folded straight into the reading itself. And because each prompt can link out to other related ideas, what you keep starts to grow like a web instead of a plain pile: <a href=\"/notes/knowledge-compounds-when-linked.html\" class=\"wikilink\">Knowledge compounds when it's linked, not just stored</a>. This is how our recall cards work underneath.",
+    "Two known effects do the work. <a href=\"/notes/retrieval-beats-rereading.html\" class=\"wikilink\">Retrieval, not rereading, is what makes it stick</a> supplies the recall, and <a href=\"/notes/spacing-fights-forgetting.html\" class=\"wikilink\">Spacing the practice fights the forgetting curve</a> supplies the timing — both folded into the reading itself. And because the prompts link out to related ideas, what you keep grows a web rather than a pile: <a href=\"/notes/knowledge-compounds-when-linked.html\" class=\"wikilink\">Knowledge compounds when it's linked, not just stored</a>. This is the mechanism behind our recall cards.",
+    "Two known effects do the lifting here — <a href=\"/notes/retrieval-beats-rereading.html\" class=\"wikilink\">Retrieval, not rereading, is what makes it stick</a> supplies the recall, and <a href=\"/notes/spacing-fights-forgetting.html\" class=\"wikilink\">Spacing the practice fights the forgetting curve</a> supplies the timing — fused into the reading itself. And because the prompts can link out to related ideas, what you retain grows a web rather than a pile: <a href=\"/notes/knowledge-compounds-when-linked.html\" class=\"wikilink\">Knowledge compounds when it's linked, not just stored</a>. This is the mechanism behind our recall cards.",
+    "Two known effects do the lifting, fused into the reading itself: <a href=\"/notes/retrieval-beats-rereading.html\" class=\"wikilink\">Retrieval, not rereading, is what makes it stick</a> supplies recall, <a href=\"/notes/spacing-fights-forgetting.html\" class=\"wikilink\">Spacing the practice fights the forgetting curve</a> supplies timing. And because prompts link out, what you retain grows a web rather than a pile: <a href=\"/notes/knowledge-compounds-when-linked.html\" class=\"wikilink\">Knowledge compounds when it's linked, not just stored</a>. This is the mechanism behind our recall cards.",
+    "Two fused effects: <a href=\"/notes/retrieval-beats-rereading.html\" class=\"wikilink\">Retrieval, not rereading, is what makes it stick</a> (recall) and <a href=\"/notes/spacing-fights-forgetting.html\" class=\"wikilink\">Spacing the practice fights the forgetting curve</a> (timing). Linked prompts make retention a web, not a pile: <a href=\"/notes/knowledge-compounds-when-linked.html\" class=\"wikilink\">Knowledge compounds when it's linked, not just stored</a>. The mechanism behind our recall cards."
+  ],
+  "next-step": [
+    "Want to see how all of this fits together? Take a look at <a href=\"/learn/review/\">how review works</a>. After that, go read something that asks you to give the ideas back.",
+    "See <a href=\"/learn/review/\">how review works</a>. Then read something that asks you to give it back.",
+    "See <a href=\"/learn/review/\">how review works</a>. Next, read something that asks for it back.",
+    "See <a href=\"/learn/review/\">how review works</a>; next, read something that asks for it back.",
+    "See <a href=\"/learn/review/\">how review works</a>. Then: read something that asks for it back."
+  ],
+  "credit": [
+    "This is what we call an <strong>evergreen note</strong>. That means it is small, its title states one clear claim, and it links closely to lots of other notes. This way of writing comes from Andy Matuschak, and we have built it again here in our own words.",
+    "This is an <strong>evergreen note</strong> — small, claim-titled, and densely linked. It's a practice from Andy Matuschak, rebuilt here in our own words.",
+    "This is an <strong>evergreen note</strong> — atomic, claim-titled, and densely linked — a practice from Andy Matuschak, re-implemented in our own words.",
+    "An <strong>evergreen note</strong> — atomic, claim-titled, densely linked — a practice from Andy Matuschak, re-implemented in our own words.",
+    "An <strong>evergreen note</strong>: atomic, claim-titled, densely linked. Matuschak's practice, re-implemented in our words."
+  ]
+}

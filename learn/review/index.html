@@ -16,9 +16,9 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
     <style>
         .content { max-width: 42rem; margin-inline: auto; padding-block: 2rem; }
-        .content header { text-align: left; margin: 0 0 var(--space-2xl); }
-        .content header h1 { text-align: left; }
-        .lead { font-size: var(--font-size-lg); color: var(--color-fg-secondary); line-height: 1.7; text-align: left; }
+        .content header { text-align: start; margin: 0 0 var(--space-2xl); }
+        .content header h1 { text-align: start; }
+        .lead { font-size: var(--font-size-lg); color: var(--color-fg-secondary); line-height: 1.7; text-align: start; }
         .rv-stats { display: flex; gap: 0.75rem; flex-wrap: wrap; margin: 1.5rem 0; }
         .rv-stat { flex: 1; min-width: 120px; background: var(--color-bg-secondary); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 1rem 1.25rem; text-align: center; }
         .rv-stat b { display: block; font-family: var(--font-display); font-size: var(--font-size-3xl); color: var(--color-accent); line-height: 1.1; }
@@ -56,8 +56,8 @@
                 </ul>
             </nav>
             <header>
-                <h1>Your review</h1>
-                <p class="lead">The recall cards you collect as you read, brought back right before you'd forget. No account, no cloud — your whole memory schedule lives in this browser.</p>
+                <h1 data-a11y="review-title">Your review</h1>
+                <p class="lead" data-a11y="review-lead">The recall cards you collect as you read, brought back right before you'd forget. No account, no cloud — your whole memory schedule lives in this browser.</p>
             </header>
 
             <div class="rv-stats" id="stats" hidden></div>
@@ -65,8 +65,8 @@
 
             <noscript>
                 <div class="rv-done">
-                    <h2>Review needs JavaScript</h2>
-                    <p>Your spaced-repetition schedule runs entirely in your browser, so this page needs JavaScript enabled. The lessons themselves read fine without it.</p>
+                    <h2 data-a11y="noscript-title">Review needs JavaScript</h2>
+                    <p data-a11y="noscript-body">Your spaced-repetition schedule runs entirely in your browser, so this page needs JavaScript enabled. The lessons themselves read fine without it.</p>
                     <p><a class="btn" href="/learn/">Back to the Learning Hub</a></p>
                 </div>
             </noscript>

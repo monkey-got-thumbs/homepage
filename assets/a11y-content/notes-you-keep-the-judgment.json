@@ -1,0 +1,51 @@
+{
+  "hero-title": [
+    "Let the AI do the work. You stay the one who decides.",
+    "Hand over the work, but keep the deciding for yourself.",
+    "Delegate the task, keep the judgment",
+    "Delegate the task; keep the judgment.",
+    "Delegate work; keep judgment."
+  ],
+  "doing-vs-deciding": [
+    "Most work has two parts. One part is the doing. That means things like writing the email, putting a list in order, or pulling out the numbers. The other part is the deciding. That means choosing what matters here, what you can safely ignore, and whose needs win when two of them pull against each other. You can give the whole first part to an AI. But the second part, the deciding, is the part that only you can really own.",
+    "Most work has two parts: the doing and the deciding. The doing is things like drafting the email, sorting the list, or pulling the figures. The deciding is what matters here, what to ignore, and whose interest wins when two of them clash. You can hand the whole first part to an AI. The second part is the one only you can own.",
+    "There are two parts to most work: the doing and the deciding. The doing is drafting the email, sorting the list, pulling the figures. The deciding is what matters here, what to ignore, whose interest wins when two of them conflict. You can hand an AI the first part wholesale. The second part is the one only you can own.",
+    "Work splits in two: the doing and the deciding. Doing — drafting, sorting, pulling figures — hands off wholesale to an AI. Deciding — what matters, what to ignore, whose interest wins in a conflict — is yours alone to own.",
+    "Work has two parts: doing and deciding. Delegate the doing; own the deciding."
+  ],
+  "the-trap": [
+    "The trap is quiet, because it feels like saving time. The AI suggests something, and saying yes saves you a little thinking — so you say yes. Do that often enough and you have stopped deciding, but you never actually chose to stop. The thing you saved was your own judgment. That is the difference between handing over a job and handing over yourself. It is also the reason that <a href=\"/notes/autonomy-is-not-agency.html\" class=\"wikilink\">Autonomy is not the same as agency</a>.",
+    "The trap is quiet because it feels like efficiency. The AI offers a suggestion, and accepting it saves a little thought — so you accept. Do that often enough and you have stopped deciding without ever choosing to stop. What you saved was the judgment itself. That is the line between handing over a task and handing over yourself, and it is the same reason <a href=\"/notes/autonomy-is-not-agency.html\" class=\"wikilink\">Autonomy is not the same as agency</a>.",
+    "The trap is subtle because it feels like efficiency. The AI offers a recommendation, and accepting it saves a few minutes of thought — so you accept. Do that enough times and you've stopped deciding without ever choosing to stop. The effort you saved was the judgment itself. That's the line between handing over a task and handing over yourself, and it's the same reason <a href=\"/notes/autonomy-is-not-agency.html\" class=\"wikilink\">Autonomy is not the same as agency</a>.",
+    "The trap masquerades as efficiency. The AI recommends; accepting saves a few minutes' thought, so you accept. Repeat enough and you've stopped deciding without ever choosing to — the effort you saved was the judgment itself. That's the line between delegating a task and surrendering yourself, the same reason <a href=\"/notes/autonomy-is-not-agency.html\" class=\"wikilink\">Autonomy is not the same as agency</a>.",
+    "The trap reads as efficiency: each accepted recommendation skips the deciding, until judgment lapses by default. That's delegation becoming surrender — why <a href=\"/notes/autonomy-is-not-agency.html\" class=\"wikilink\">Autonomy is not the same as agency</a>."
+  ],
+  "honest-use": [
+    "Keeping your judgment is also how you use AI in an honest way. You weigh what it gives you instead of just going along with it. You do this because <a href=\"/notes/trust-is-a-calibrated-forecast.html\" class=\"wikilink\">Trust is a calibrated forecast, not a feeling</a> — it is not something you give by default. When you get this right, the machine handles the volume and you handle the deciding. That is exactly the deal in <a href=\"/notes/augmentation-beats-automation.html\" class=\"wikilink\">Augmenting a person beats automating the task</a>.",
+    "Keeping judgment is also how you use AI honestly: you weigh its output instead of just deferring to it, because <a href=\"/notes/trust-is-a-calibrated-forecast.html\" class=\"wikilink\">Trust is a calibrated forecast, not a feeling</a>, not a default setting. Done right, the machine handles the volume and you handle the deciding — which is exactly the bargain in <a href=\"/notes/augmentation-beats-automation.html\" class=\"wikilink\">Augmenting a person beats automating the task</a>.",
+    "Keeping judgment is also how you use AI honestly: you weigh its output instead of deferring to it, because <a href=\"/notes/trust-is-a-calibrated-forecast.html\" class=\"wikilink\">Trust is a calibrated forecast, not a feeling</a>, not a default setting. Done right, the machine does the volume and you do the deciding — which is exactly the bargain in <a href=\"/notes/augmentation-beats-automation.html\" class=\"wikilink\">Augmenting a person beats automating the task</a>.",
+    "Keeping judgment is also how you use AI honestly: weigh its output rather than defer to it, since <a href=\"/notes/trust-is-a-calibrated-forecast.html\" class=\"wikilink\">Trust is a calibrated forecast, not a feeling</a> or default. Done right, the machine handles volume, you handle deciding — the bargain in <a href=\"/notes/augmentation-beats-automation.html\" class=\"wikilink\">Augmenting a person beats automating the task</a>.",
+    "Judgment is also honest use: weigh output, don't defer — <a href=\"/notes/trust-is-a-calibrated-forecast.html\" class=\"wikilink\">Trust is a calibrated forecast, not a feeling</a>. Machine does volume; you decide — the <a href=\"/notes/augmentation-beats-automation.html\" class=\"wikilink\">Augmenting a person beats automating the task</a> bargain."
+  ],
+  "see-more": [
+    "You can read more about this in <a href=\"/learn/human-factors/agency-autonomy.html\">agency and autonomy</a>.",
+    "Read more on <a href=\"/learn/human-factors/agency-autonomy.html\">agency and autonomy</a>.",
+    "See more on <a href=\"/learn/human-factors/agency-autonomy.html\">agency and autonomy</a>.",
+    "More: <a href=\"/learn/human-factors/agency-autonomy.html\">agency and autonomy</a>.",
+    "More: <a href=\"/learn/human-factors/agency-autonomy.html\">agency and autonomy</a>."
+  ],
+  "next-note": [
+    "What to read next: learn how to tell the two apart in <a href=\"/notes/autonomy-is-not-agency.html\" class=\"wikilink\">Autonomy is not the same as agency</a>.",
+    "Next: learn to tell the two apart with <a href=\"/notes/autonomy-is-not-agency.html\" class=\"wikilink\">Autonomy is not the same as agency</a>.",
+    "Next: tell the two apart with <a href=\"/notes/autonomy-is-not-agency.html\" class=\"wikilink\">Autonomy is not the same as agency</a>.",
+    "Next, distinguish the two: <a href=\"/notes/autonomy-is-not-agency.html\" class=\"wikilink\">Autonomy is not the same as agency</a>.",
+    "Next: <a href=\"/notes/autonomy-is-not-agency.html\" class=\"wikilink\">Autonomy is not the same as agency</a>."
+  ],
+  "evergreen-credit": [
+    "This is an <strong>evergreen note</strong>. That means it is small, it has a title that states one clear claim, and it links to lots of other notes. The idea comes from Andy Matuschak, and we have built it again here in our own words.",
+    "This is an <strong>evergreen note</strong> — small, claim-titled, and richly linked. It is a practice from Andy Matuschak, rebuilt here in our own words.",
+    "This is an <strong>evergreen note</strong> — atomic, claim-titled, and densely linked — a practice from Andy Matuschak, re-implemented in our own words.",
+    "An <strong>evergreen note</strong>: atomic, claim-titled, densely linked — Andy Matuschak's practice, re-implemented in our words.",
+    "<strong>Evergreen note</strong>: atomic, claim-titled, densely linked. After Andy Matuschak."
+  ]
+}

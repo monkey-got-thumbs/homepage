@@ -66,17 +66,17 @@
     </script>
 
     <style>
-        .content { max-width: var(--measure); margin: 0 auto; padding: 2rem var(--gutter); text-align: left; }
+        .content { max-width: var(--measure); margin: 0 auto; padding: 2rem var(--gutter); text-align: start; }
         .content > * { min-width: 0; }
-        .content h1, .content h2, .content h3 { text-align: left; }
+        .content h1, .content h2, .content h3 { text-align: start; }
         .content h2 { margin-top: 2.5rem; }
         .content p { line-height: 1.8; margin-bottom: 1.25rem; }
-        .content ul, .content ol { margin-bottom: 1.25rem; padding-left: 1.5rem; }
+        .content ul, .content ol { margin-bottom: 1.25rem; padding-inline-start: 1.5rem; }
         .content li { margin-bottom: 0.5rem; line-height: 1.7; }
         .content pre, .content code { max-width: 100%; overflow-x: auto; }
         .page-meta { color: var(--color-muted); font-size: var(--font-size-sm); margin-top: 0.5rem; }
         .lead { font-size: var(--font-size-lg); color: var(--color-fg-secondary); line-height: 1.7; }
-        .highlight-box { background: var(--color-bg-secondary); border-left: 4px solid var(--color-accent); padding: 1.25rem 1.5rem; border-radius: var(--radius-sm); margin: 1.5rem 0; }
+        .highlight-box { background: var(--color-bg-secondary); border-inline-start: 4px solid var(--color-accent); padding: 1.25rem 1.5rem; border-radius: var(--radius-sm); margin: 1.5rem 0; }
         .highlight-box p { margin-bottom: 0; }
         .step-card { background: var(--color-bg-secondary); border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 1.5rem; margin-bottom: 1.25rem; transition: border-color 0.2s ease; }
         .step-card:hover { border-color: var(--color-accent); }
@@ -84,7 +84,7 @@
         .step-card h3 a { text-decoration: none; color: var(--color-brand-light); }
         .step-card h3 a:hover { text-decoration: none; color: var(--color-accent); }
         .step-meta { font-size: 0.875rem; color: var(--color-muted); margin-bottom: 0.75rem; }
-        .step-number { display: inline-flex; align-items: center; justify-content: center; width: 2rem; height: 2rem; background: var(--color-accent); color: var(--color-bg); border-radius: 50%; font-weight: 700; font-size: 0.875rem; margin-right: 0.75rem; flex-shrink: 0; }
+        .step-number { display: inline-flex; align-items: center; justify-content: center; width: 2rem; height: 2rem; background: var(--color-accent); color: var(--color-bg); border-radius: 50%; font-weight: 700; font-size: 0.875rem; margin-inline-end: 0.75rem; flex-shrink: 0; }
         .step-header { display: flex; align-items: center; gap: 0; margin-bottom: 0.5rem; }
         .step-takeaway { font-size: 0.9rem; color: var(--color-fg-secondary); font-style: italic; margin-top: 0.5rem; margin-bottom: 0; }
     </style>
@@ -108,28 +108,28 @@
             </nav>
 
             <header>
-                <h1>Beginner Path: Start Learning Augmented Intelligence Today</h1>
-                <p class="lead">This path is for anyone curious about AI and how it can amplify what you already do. No technical background needed, no jargon prerequisites, no prior experience required. Just bring your curiosity.</p>
+                <h1 data-a11y="hero-title">Beginner Path: Start Learning Augmented Intelligence Today</h1>
+                <p class="lead" data-a11y="hero-lead">This path is for anyone curious about AI and how it can amplify what you already do. No technical background needed, no jargon prerequisites, no prior experience required. Just bring your curiosity.</p>
                 <p class="page-meta">Beginner &middot; 5 modules &middot; ~20 min total</p>
             </header>
 
             <section>
                 <h2>What You Will Learn</h2>
-                <p>
+                <p data-a11y="what-intro">
                     Augmented intelligence is not about replacing yourself with a machine. It is about understanding what AI actually does well, what it does poorly, and how to combine its strengths with yours to achieve outcomes neither of you could manage alone.
                 </p>
-                <p>
+                <p data-a11y="what-outcomes">
                     By the end of this path you will understand the core philosophy of augmented intelligence, recognise the real limitations of current AI systems, and have a working mental model for how humans and machines think together. You will also know enough to decide whether the Practitioner Path is your next step.
                 </p>
 
                 <div class="highlight-box">
-                    <p><strong>No prerequisites.</strong> This path starts from zero and builds up. Each module links to the next, but you can also jump to whatever interests you most.</p>
+                    <p data-a11y="no-prereqs"><strong>No prerequisites.</strong> This path starts from zero and builds up. Each module links to the next, but you can also jump to whatever interests you most.</p>
                 </div>
             </section>
 
             <section>
                 <h2>Your Curriculum</h2>
-                <p>Work through these five modules in order. Each one builds on the last, giving you a progressively deeper understanding of augmented intelligence.</p>
+                <p data-a11y="curriculum-intro">Work through these five modules in order. Each one builds on the last, giving you a progressively deeper understanding of augmented intelligence.</p>
 
                 <div class="step-card">
                     <div class="step-header">
@@ -137,7 +137,7 @@
                         <h3><a href="/learn/foundations/what-is-ai.html">What is Augmented Intelligence?</a></h3>
                     </div>
                     <p class="step-meta">3 min read &middot; Foundations</p>
-                    <p>Start here. Learn the core definition: augmented intelligence is about amplifying human potential with machine capability, not replacing the human. You will explore the digital cyborg concept, understand the difference between artificial and augmented intelligence, and see why this distinction reshapes everything.</p>
+                    <p data-a11y="module-1-desc">Start here. Learn the core definition: augmented intelligence is about amplifying human potential with machine capability, not replacing the human. You will explore the digital cyborg concept, understand the difference between artificial and augmented intelligence, and see why this distinction reshapes everything.</p>
                     <p class="step-takeaway">Key takeaway: AI amplifies human potential — it does not replace it.</p>
                 </div>
 
@@ -147,7 +147,7 @@
                         <h3><a href="/learn/foundations/ai-pitfalls.html">AI's Pitfalls</a></h3>
                     </div>
                     <p class="step-meta">3 min read &middot; Foundations</p>
-                    <p>Before you depend on AI, you need to understand where it breaks. This module covers hallucination, the staggering costs of running large models, the lack of genuine reasoning, and the gap between what AI companies promise and what their technology actually delivers. Understanding these limitations is what separates effective practitioners from naive users.</p>
+                    <p data-a11y="module-2-desc">Before you depend on AI, you need to understand where it breaks. This module covers hallucination, the staggering costs of running large models, the lack of genuine reasoning, and the gap between what AI companies promise and what their technology actually delivers. Understanding these limitations is what separates effective practitioners from naive users.</p>
                     <p class="step-takeaway">Key takeaway: Know the limitations before depending on AI.</p>
                 </div>
 
@@ -157,7 +157,7 @@
                         <h3><a href="/learn/foundations/why-we-need-it.html">Why We Need It</a></h3>
                     </div>
                     <p class="step-meta">3 min read &middot; Foundations</p>
-                    <p>Now that you know what augmented intelligence is and what AI gets wrong, explore why the human-machine partnership matters. This module examines the growing complexity of modern work, the information overload problem, and why the future belongs to people who learn to think alongside machines rather than compete against them.</p>
+                    <p data-a11y="module-3-desc">Now that you know what augmented intelligence is and what AI gets wrong, explore why the human-machine partnership matters. This module examines the growing complexity of modern work, the information overload problem, and why the future belongs to people who learn to think alongside machines rather than compete against them.</p>
                     <p class="step-takeaway">Key takeaway: The future is human + machine, not human versus machine.</p>
                 </div>
 
@@ -167,7 +167,7 @@
                         <h3><a href="/learn/foundations/how-it-helps.html">How It Helps</a></h3>
                     </div>
                     <p class="step-meta">3 min read &middot; Foundations</p>
-                    <p>Theory is useful, but examples make it real. This module walks through concrete scenarios where augmented intelligence transforms daily work: compressing research cycles, automating the mechanical parts of creative work, scaling collaboration across teams, and reclaiming time for the thinking that actually requires a human brain.</p>
+                    <p data-a11y="module-4-desc">Theory is useful, but examples make it real. This module walks through concrete scenarios where augmented intelligence transforms daily work: compressing research cycles, automating the mechanical parts of creative work, scaling collaboration across teams, and reclaiming time for the thinking that actually requires a human brain.</p>
                     <p class="step-takeaway">Key takeaway: Real examples of augmented intelligence in action.</p>
                 </div>
 
@@ -177,24 +177,24 @@
                         <h3><a href="/learn/foundations/three-pillars.html">The Three Pillars</a></h3>
                     </div>
                     <p class="step-meta">9 min read &middot; Foundations</p>
-                    <p>Everything in augmented intelligence rests on three pillars: Logic (the scientific method and mathematical reasoning), Explanation (creating durable, hard-to-vary explanations), and Architected Data Objects (standardised structures that compress complexity). Understanding these pillars gives you the conceptual foundation for everything that follows in the Practitioner and Researcher paths.</p>
+                    <p data-a11y="module-5-desc">Everything in augmented intelligence rests on three pillars: Logic (the scientific method and mathematical reasoning), Explanation (creating durable, hard-to-vary explanations), and Architected Data Objects (standardised structures that compress complexity). Understanding these pillars gives you the conceptual foundation for everything that follows in the Practitioner and Researcher paths.</p>
                     <p class="step-takeaway">Key takeaway: Logic, Explanation, and Data Objects form the backbone of augmented intelligence.</p>
                 </div>
             </section>
 
             <section>
                 <h2>What Comes Next</h2>
-                <p>
+                <p data-a11y="next-summary">
                     Once you have worked through all five modules, you will have a solid understanding of what augmented intelligence is, why it matters, and the conceptual framework it rests on. That is enough to start applying these ideas informally in your own work.
                 </p>
-                <p>
+                <p data-a11y="next-practitioner">
                     If you want to go deeper and learn specific frameworks, tools, and strategies for integrating augmented intelligence into your professional workflow, the Practitioner Path is designed exactly for that. It builds directly on everything you have learned here.
                 </p>
             </section>
 
             <section class="card" style="margin-top: 2.5rem;">
                 <h2>Continue Learning</h2>
-                <p>Ready to apply what you have learned? Move on to the Practitioner Path for hands-on frameworks and strategies.</p>
+                <p data-a11y="continue-cta">Ready to apply what you have learned? Move on to the Practitioner Path for hands-on frameworks and strategies.</p>
                 <div class="cta">
                     <a href="/learn/learning-paths/practitioner.html" class="btn">Continue to Practitioner Path</a>
                     <a href="/learn/" class="btn btn--secondary">Back to Learning Hub</a>

@@ -1,0 +1,107 @@
+{
+  "hero-title": [
+    "The Three Big Ideas Behind Working Well With AI",
+    "The Three Pillars That Make AI Work Well",
+    "The Three Pillars of Augmented Intelligence",
+    "Augmented Intelligence: Three Foundational Pillars",
+    "Augmented Intelligence: Three Pillars"
+  ],
+  "lead": [
+    "\"Augmented intelligence\" is a fancy phrase, but the idea is simple: people and AI thinking together. It is not just a clever word to sell something. It stands on three big ideas. These three ideas decide whether you and the AI do good, trustworthy work together — or just make a lot of noise that sounds smart but cannot be relied on.",
+    "Augmented intelligence is more than a buzzword. It rests on three big ideas — choices about how you think — and those choices decide whether you and AI produce reliable work together, or just expensive noise that sounds clever.",
+    "Augmented intelligence is not just a buzzword or a marketing concept. It rests on three foundational pillars — intellectual commitments that determine whether human-AI collaboration produces reliable results or expensive noise.",
+    "Augmented intelligence rests on three foundational pillars — intellectual commitments that decide whether human-AI work yields reliable results or expensive noise.",
+    "Augmented intelligence rests on three pillars — intellectual commitments separating reliable human-AI results from expensive noise."
+  ],
+  "enduring": [
+    "<strong>The one idea to keep:</strong> before you trust anything an AI tells you, ask it three quick questions. First, does it make sense, and could you actually test it? Second, is the reason tight — would it fall apart if you changed one small part? Third, is the answer a neat, organised thing you could pick up and use again? If the answer fails even one of these, you do not really have knowledge yet. You just have text that sounds believable.",
+    "<strong>The one idea to keep:</strong> run every AI answer through three questions before you trust it — does it make sense and can you test it, is the reason hard to change without breaking, and is the output a clean structure you can reuse? Fail any one, and you don't have knowledge yet — just believable-sounding text.",
+    "<strong>The one idea to keep:</strong> run every AI answer through three questions before you trust it — is it logical and testable, is the explanation hard to vary, and is the output a clean structured object you can reuse? If it fails any one, you do not yet have knowledge — you have plausible-sounding text.",
+    "<strong>The one idea to keep:</strong> test every AI answer against three questions — logical and testable, hard to vary, and a clean reusable object? Fail any one and you have plausible-sounding text, not knowledge.",
+    "<strong>Keep this:</strong> trust an AI answer only if it is testable, hard to vary, and a clean reusable object. Fail one — it's plausible text, not knowledge."
+  ],
+  "why-anyone": [
+    "Anyone can use an AI chatbot. You type in a question, and you get an answer back. That part is easy. But using AI <em>well</em> — using it so it gives you answers that are correct, useful, and worth trusting — takes more than just having the tool. You need a way of thinking that helps you judge whether the answer it gave you is any good.",
+    "Anyone can use an AI chatbot — type a question, get an answer. But using AI well, so it reliably gives correct, valuable, trustworthy output, takes more than access to the tool. It takes a way of thinking for judging what the tool hands you.",
+    "Anyone can use an AI chatbot. Type a question, get an answer. But using AI effectively — using it in a way that reliably produces correct, valuable, trustworthy output — requires something more than access to the tool. It requires an intellectual framework for evaluating what the tool gives you.",
+    "Anyone can use a chatbot — type a question, get an answer. But using AI to reliably produce correct, valuable, trustworthy output takes more than access: it needs a framework for evaluating what the tool returns.",
+    "Anyone can prompt a chatbot. Reliable, trustworthy output needs a framework for evaluating what it returns."
+  ],
+  "why-framework": [
+    "Without that way of thinking, you cannot tell a right answer apart from a <a href=\"/learn/foundations/ai-pitfalls.html\">made-up answer that sounds right</a>. You cannot tell if the AI's thinking is solid or only sounds believable. And you cannot safely use its answer to build something bigger.",
+    "Without that framework, you cannot tell a correct answer from a <a href=\"/learn/foundations/ai-pitfalls.html\">hallucination that sounds correct</a>. You cannot judge whether the AI's reasoning is sound or merely plausible, or build on its output with confidence.",
+    "Without that framework, you cannot tell the difference between a correct answer and a <a href=\"/learn/foundations/ai-pitfalls.html\">hallucination that sounds correct</a>. You cannot assess whether the AI's reasoning is sound or merely plausible. You cannot build on its output with confidence.",
+    "Without it, you cannot separate a correct answer from a <a href=\"/learn/foundations/ai-pitfalls.html\">hallucination that sounds correct</a>, judge whether reasoning is sound or merely plausible, or build on the output confidently.",
+    "Without it, a correct answer and a convincing <a href=\"/learn/foundations/ai-pitfalls.html\">hallucination</a> are indistinguishable — reasoning unjudgeable, output unbuildable."
+  ],
+  "logic-intro": [
+    "Logic is the careful habit of making a claim and then checking it against the real world. We see it most clearly in maths and in the scientific method. The basic move is simple: don't just believe something — find a way to test whether it is actually true.",
+    "Logic — found in mathematics and the scientific method — is the discipline of making claims and testing them against reality, rather than just believing them.",
+    "Logic — embodied in mathematics and the scientific method — is the discipline of forming and testing claims against reality.",
+    "Logic — embodied in mathematics and the scientific method — is the discipline of forming and testing claims against reality.",
+    "Logic — maths and the scientific method — forms and tests claims against reality."
+  ],
+  "logic-apply": [
+    "When you use logic on what an AI tells you, you stop just believing its answers and start checking them against real evidence. This is a huge difference. Believing the AI without checking is risky. Checking it carefully makes you powerful, because now you know what is actually true.",
+    "When you apply logic to AI output, you stop taking answers on faith and start checking them against evidence. That is the difference between using AI passively (dangerous) and using AI critically (powerful).",
+    "When you apply logic to AI output, you stop accepting answers on faith and start evaluating them against evidence. This is the difference between using AI passively (dangerous) and using AI critically (powerful).",
+    "Applying logic to AI output, you stop accepting answers on faith and start evaluating them against evidence — the difference between passive use (dangerous) and critical use (powerful).",
+    "Applied to AI output, logic replaces faith with evidence — passive use (dangerous) becomes critical use (powerful)."
+  ],
+  "explanation-intro": [
+    "The second pillar comes from a physicist named David Deutsch. He talks about explanations that are \"hard to vary\". A good explanation is one you cannot easily change without it falling apart. Every single part of it is needed and is doing a real job.",
+    "The second pillar draws on physicist David Deutsch's idea of \"hard-to-vary\" explanations. A good explanation cannot be easily changed without falling apart — every part of it does real work.",
+    "The second pillar draws on physicist David Deutsch's principle of \"hard-to-vary\" explanations. A good explanation is one that cannot be easily altered without losing its integrity. Every part of it does essential work.",
+    "The second pillar draws on physicist David Deutsch's \"hard-to-vary\" principle: a good explanation cannot be altered without losing integrity — every part does essential work.",
+    "Pillar two: Deutsch's \"hard-to-vary\" explanations — alter any part and integrity is lost; every element does essential work."
+  ],
+  "explanation-ai": [
+    "This really matters with AI, because AI hands you easy-to-change explanations all the time. It makes text that <em>sounds</em> like a real explanation but is not actually tied to any evidence. The Explanation pillar is your filter. It helps you spot the difference between a real insight and words that just sound clever.",
+    "This matters with AI, because AI produces easy-to-vary explanations all day. It makes text that <em>sounds</em> explanatory but isn't tied to evidence. The Explanation pillar is the filter that separates real insight from plausible-sounding noise.",
+    "This matters enormously when working with AI because AI generates easy-to-vary explanations all day long. It produces text that <em>sounds</em> explanatory but is not actually bound to evidence. The pillar of Explanation gives you the filter to distinguish real insight from plausible-sounding noise.",
+    "This matters with AI, which generates easy-to-vary explanations constantly — text that <em>sounds</em> explanatory but isn't bound to evidence. The Explanation pillar is the filter distinguishing real insight from plausible noise.",
+    "AI generates easy-to-vary text that <em>sounds</em> explanatory but isn't bound to evidence. The Explanation pillar filters insight from noise."
+  ],
+  "ado-intro": [
+    "The third pillar is about structure — how things are arranged. Architected Data Objects, or ADOs for short, are neat, tidy ways of holding information. They pack truth into clear units that anyone can share and that everyone can understand the same way.",
+    "The third pillar is about structure. Architected Data Objects (ADOs) are standardised, efficient data structures that pack truth into shareable units anyone can interpret the same way.",
+    "The third pillar is about structure. Architected Data Objects (ADOs) are standardised, efficient data structures that encapsulate truth into shareable, universally interpretable units.",
+    "The third pillar is structure. Architected Data Objects (ADOs) are standardised, efficient structures that encapsulate truth into shareable, universally interpretable units.",
+    "Pillar three: structure. Architected Data Objects (ADOs) encapsulate truth into standardised, shareable, universally interpretable units."
+  ],
+  "ado-map": [
+    "Think of a map. A map is an ADO. It takes something huge and complicated — the real shape of a whole region — and squeezes it into a tidy, standard form: dots and lines with set positions, a scale, and a key that explains the symbols. Anyone can read it, share it, and use it to plan. Yes, a map leaves out detail you would get by walking the land yourself. But in return it can be copied, passed around, and worked with easily.",
+    "Think of a map. A map is an ADO — it compresses enormous complexity (a region's geography) into a standard structure (points with set coordinates, scales, and a legend) that anyone can read, share, and build on. A map loses detail versus walking the terrain, but gains transmissibility, reproducibility, and computational use.",
+    "Think of a map. A map is an ADO — it compresses enormous complexity (the physical geography of a region) into a standardised structure (pixels with defined coordinates, scales, and legend entries) that anyone can read, share, and build upon. The map loses detail compared to walking the terrain yourself, but it gains transmissibility, reproducibility, and computational utility.",
+    "A map is an ADO: it compresses a region's geography into a standardised structure (defined coordinates, scales, legend entries) anyone can read, share, and build upon — trading detail for transmissibility, reproducibility, and computational utility.",
+    "A map is an ADO: standardised structure (coordinates, scale, legend) trading terrain detail for transmissibility, reproducibility, and computational utility."
+  ],
+  "framework-intro": [
+    "These three pillars hold up a useful, hands-on framework made of five skills. Put together, these five skills describe all the ways people and machines can think side by side:",
+    "The three pillars support a practical framework of five capabilities that, together, describe how humans and machines can think together:",
+    "The three pillars support a practical framework of five capabilities that together describe how humans and machines can think together:",
+    "The three pillars support a practical five-capability framework describing how humans and machines think together:",
+    "The pillars support a five-capability framework for how humans and machines think together:"
+  ],
+  "how-connect": [
+    "<strong>How they fit together:</strong> Cognitive artifacts give you the small pieces of thought to work with. Interfaces are the doors you use to reach information. Memory is the ground it all sits on. Explanation is the layer that turns hard ideas into plain ones. And meta-cognition is the steering wheel and the feedback loop that keeps it all on track. Together, all five make a system you can keep growing for people and AI to work as a team.",
+    "<strong>How they connect:</strong> Cognitive artifacts supply the units of thought. Interfaces are the access points. Memory is the substrate. Explanation is the translation layer. Meta-cognition is the feedback loop and control surface. Together they form an extensible system for human-AI collaboration.",
+    "<strong>How they connect:</strong> Cognitive artifacts supply the units of thought. Interfaces provide the access points. Memory acts as the substrate. Explanation serves as the translation layer. Meta-cognition forms the feedback loop and control surface. Together, they create an extensible system for human-AI collaboration.",
+    "<strong>How they connect:</strong> Cognitive artifacts supply thought-units; interfaces, access points; memory, the substrate; explanation, the translation layer; meta-cognition, the feedback loop and control surface — together, an extensible system for human-AI collaboration.",
+    "<strong>Connections:</strong> artifacts = units; interfaces = access; memory = substrate; explanation = translation; meta-cognition = control loop — an extensible human-AI system."
+  ],
+  "putting-together": [
+    "When you run an AI's answer through these three filters, you catch the made-up bits, you spot the weak reasoning, and you turn vague suggestions into real, usable knowledge. That is what augmented intelligence actually means in practice: not just using AI, but using it with care and clear thinking.",
+    "When you run AI output through these three filters, you catch hallucinations, spot weak reasoning, and turn vague suggestions into usable knowledge. That is the practice of augmented intelligence — not just using AI, but using it with intellectual discipline.",
+    "When you run AI output through these three filters, you catch hallucinations, identify weak reasoning, and transform vague suggestions into actionable knowledge. That is the practice of augmented intelligence — not just using AI, but using it with intellectual discipline.",
+    "Run AI output through these three filters to catch hallucinations, expose weak reasoning, and turn vague suggestions into actionable knowledge — augmented intelligence in practice: using AI with intellectual discipline.",
+    "These filters catch hallucinations, expose weak reasoning, and convert vagueness into actionable knowledge — augmented intelligence: AI used with discipline."
+  ],
+  "trap": [
+    "Sounding sure of itself is not proof. An AI answer can be long, well-written, and full of reasonable-sounding phrases, and still fail every single pillar — you cannot test it, you could change its parts easily, and it has no tidy structure. The pillars are not about how nice the writing feels. They are real questions you ask about what the answer actually says. Remember Nadia's first answer? It sounded perfectly competent. That is exactly why it would have been dangerous to paste it into her report.",
+    "Fluency is not evidence. An answer can be long, articulate, and full of reasonable-sounding phrases while failing every pillar — untestable, easy to vary, and unstructured. The pillars aren't a vibe check on how text reads; they're deliberate questions you ask of the content. Nadia's first answer sounded competent, which is exactly why pasting it was dangerous.",
+    "Fluency is not evidence. An answer can be long, articulate, and full of reasonable-sounding phrases while still failing every pillar — untestable, easy to vary, and unstructured. The pillars are not a vibe check on how the text reads; they are deliberate questions you ask against the content. Nadia's first answer sounded perfectly competent, and that is exactly why it was dangerous to paste.",
+    "Fluency is not evidence: an articulate, reasonable-sounding answer can still be untestable, easy to vary, and unstructured — failing every pillar. The pillars aren't a vibe check on the prose; they're deliberate questions against the content. Nadia's first answer sounded competent — exactly why pasting it was dangerous.",
+    "Fluency isn't evidence: polished answers can be untestable, easy to vary, and unstructured. Pillars interrogate content, not prose. Nadia's competent-sounding answer was dangerous precisely for that."
+  ]
+}

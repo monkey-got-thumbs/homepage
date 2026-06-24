@@ -1,0 +1,37 @@
+{
+  "note-title": [
+    "Helping a person do their work is better than taking the work away from them",
+    "Helping a person beats taking over their task",
+    "Augmenting a person beats automating the task",
+    "Augmenting the person beats automating the task",
+    "Augment people, don't automate tasks"
+  ],
+  "lede-automation-vs-augmentation": [
+    "There are two ways to use a tool. One way asks: how do we take the person out of this job? The other way asks: how do we help the person do this job better? That sounds like a small difference, but it matters a lot when something surprising happens. A tool that does everything on its own can handle every case it was built for. But one day a case comes along that nobody planned for, and the tool just quietly gets it wrong. Nobody is watching, so nobody notices. When a person stays involved, they spot the odd case that the plan never thought of, and they fix it.",
+    "There are two questions you can ask. Automation asks: how do we take the person out of the loop? Augmentation asks: how do we help the person do better? The difference seems small until something unexpected happens. A fully automated pipeline handles every case it was built for, then quietly fails on the one it wasn't — its quality is capped at the system's blind spots, and nobody is watching that gap. A person who stays in the loop catches the case the design never saw coming.",
+    "Automation asks: how do we remove the person? Augmentation asks: how do we make the person better? The difference sounds small until something unexpected happens. An automated pipeline handles every case it was designed for and quietly fails on the one it wasn't — its quality is capped at the system's blind spots, and nobody is watching the gap. A person kept in the loop catches the case the design never anticipated.",
+    "Automation removes the person; augmentation improves them. The gap looks small until the unexpected arrives. An automated pipeline handles its designed cases and silently fails the rest — quality capped at the system's blind spots, with no one watching the gap. A person in the loop catches what the design never anticipated.",
+    "Automation removes the person; augmentation improves them. Pipelines silently fail outside their design — quality capped at blind spots, unwatched. A human in the loop catches the unanticipated case."
+  ],
+  "engelbart": [
+    "Back in the 1960s, a man named Douglas Engelbart made this the whole point of his work. He called it \"augmenting human intellect.\" His goal was not to replace people. It was to help people understand and do more than they could before. That idea is still true today. So let the machine do the heavy lifting — the boring repeated work, the rough first try, the search through a thousand files. Keep the part that really needs a human: deciding what counts as good, deciding what to leave out, and deciding when you are done.",
+    "Douglas Engelbart made this the whole point of his 1960s work on \"augmenting human intellect\": the goal was not to replace people but to extend what they could understand and do. That idea still holds. Hand the machine the volume — the repetition, the first draft, the search across a thousand files. Keep for yourself the part that needs a human: what counts as good, what's worth ignoring, when to stop.",
+    "Douglas Engelbart made this the whole point of his work on \"augmenting human intellect\" in the 1960s: the goal was not to replace people but to extend what they could understand and do. That framing still holds. Hand the machine the volume — the repetition, the first draft, the search across a thousand files. Keep for yourself the part that needs a human: what counts as good, what's worth ignoring, when to stop.",
+    "Engelbart built his 1960s \"augmenting human intellect\" work on this: not replacing people but extending what they could understand and do. The framing still holds. Give the machine volume — repetition, first drafts, searching a thousand files. Keep the human part: what counts as good, what to ignore, when to stop.",
+    "Engelbart's 1960s \"augmenting human intellect\": extend, don't replace. Machine takes volume — repetition, drafts, search. Human keeps judgment — what's good, what to ignore, when to stop."
+  ],
+  "tool-not-thinker": [
+    "This is why <a href=\"/notes/ai-is-one-tool-for-thought.html\" class=\"wikilink\">AI is one tool for thinking, not the thinker</a>, and not something that thinks for you. The tool is worth using because it lifts your ceiling — it helps you reach higher. It does not decide things in your place. So <a href=\"/notes/you-keep-the-judgment.html\" class=\"wikilink\">Delegate the task, keep the judgment</a>.",
+    "This is why <a href=\"/notes/ai-is-one-tool-for-thought.html\" class=\"wikilink\">AI is one tool for thinking, not the thinker</a>, rather than a stand-in for one. The tool earns its place by lifting your ceiling, not by deciding in your place — so <a href=\"/notes/you-keep-the-judgment.html\" class=\"wikilink\">Delegate the task, keep the judgment</a>.",
+    "This is why <a href=\"/notes/ai-is-one-tool-for-thought.html\" class=\"wikilink\">AI is one tool for thinking, not the thinker</a> rather than a substitute for one. The tool earns its keep by lifting your ceiling, not by deciding in your place — so <a href=\"/notes/you-keep-the-judgment.html\" class=\"wikilink\">Delegate the task, keep the judgment</a>.",
+    "Hence <a href=\"/notes/ai-is-one-tool-for-thought.html\" class=\"wikilink\">AI is one tool for thinking, not the thinker</a>, not a substitute. The tool earns its keep by raising your ceiling, not deciding for you — so <a href=\"/notes/you-keep-the-judgment.html\" class=\"wikilink\">Delegate the task, keep the judgment</a>.",
+    "Hence <a href=\"/notes/ai-is-one-tool-for-thought.html\" class=\"wikilink\">AI is one tool for thinking, not the thinker</a>. It raises your ceiling; it doesn't decide. So <a href=\"/notes/you-keep-the-judgment.html\" class=\"wikilink\">Delegate the task, keep the judgment</a>."
+  ],
+  "next-handoff": [
+    "What's next? Practice the handoff. Learn how to <a href=\"/notes/you-keep-the-judgment.html\" class=\"wikilink\">delegate the task but keep the judgment</a>.",
+    "Next, practice the handoff by learning how to <a href=\"/notes/you-keep-the-judgment.html\" class=\"wikilink\">delegate the task but keep the judgment</a>.",
+    "Next: practice the handoff by learning to <a href=\"/notes/you-keep-the-judgment.html\" class=\"wikilink\">delegate the task but keep the judgment</a>.",
+    "Next: practice the handoff — learn to <a href=\"/notes/you-keep-the-judgment.html\" class=\"wikilink\">delegate the task but keep the judgment</a>.",
+    "Next: <a href=\"/notes/you-keep-the-judgment.html\" class=\"wikilink\">delegate the task, keep the judgment</a>."
+  ]
+}

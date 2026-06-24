@@ -34,12 +34,12 @@
     </script>
     <style>
         .exp-home { max-width: var(--content-col); margin-inline: auto; }
-        .exp-head { text-align: left; max-width: 46rem; margin: 0 0 var(--space-xl); }
+        .exp-head { text-align: start; max-width: 46rem; margin: 0 0 var(--space-xl); }
         .exp-head h1 { margin: var(--space-sm) 0; }
-        .exp-head .lede { margin-inline: 0; text-align: left; }
+        .exp-head .lede { margin-inline: 0; text-align: start; }
         .exp-rules { list-style: none; padding: 0; margin: 0 0 var(--space-2xl); display: grid; gap: 0.5rem; max-width: 48rem; }
-        .exp-rules li { color: var(--color-fg-secondary); line-height: 1.55; padding-left: 1.4rem; position: relative; }
-        .exp-rules li::before { content: '→'; position: absolute; left: 0; color: var(--color-accent); font-weight: 700; }
+        .exp-rules li { color: var(--color-fg-secondary); line-height: 1.55; padding-inline-start: 1.4rem; position: relative; }
+        .exp-rules li::before { content: '→'; position: absolute; inset-inline-start: 0; color: var(--color-accent); font-weight: 700; }
         .exp-rules b { color: var(--color-fg); }
         .exp-grid { display: grid; gap: clamp(1.25rem, 2vw, 2rem); grid-template-columns: repeat(auto-fill, minmax(min(100%, 19rem), 1fr)); }
         .exp-grid > * { min-width: 0; }

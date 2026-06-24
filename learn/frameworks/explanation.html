@@ -64,7 +64,7 @@
         .content { padding-block: 2rem; }
         .content h2 { margin-top: 2.5rem; }
         .content p { line-height: 1.8; margin-bottom: 1.25rem; }
-        .content ul, .content ol { margin-bottom: 1.25rem; padding-left: 1.5rem; }
+        .content ul, .content ol { margin-bottom: 1.25rem; padding-inline-start: 1.5rem; }
         .content li { margin-bottom: 0.5rem; line-height: 1.7; }
         .page-meta { color: var(--color-muted); font-size: var(--font-size-sm); margin-top: 0.5rem; }
         .lead { font-size: var(--font-size-lg); color: var(--color-fg-secondary); line-height: 1.7; }
@@ -95,8 +95,8 @@
             </nav>
 
             <header>
-                <h1>Explanation</h1>
-                <p class="lead">Explanation is the translation layer of augmented intelligence. It transforms complex representations — whether from a neural network, a dataset, or your own reasoning — into communicable form. Without it, AI output is opaque, and opaque output cannot be trusted.</p>
+                <h1 data-a11y="hero-h1">Explanation</h1>
+                <p class="lead" data-a11y="lead">Explanation is the translation layer of augmented intelligence. It transforms complex representations — whether from a neural network, a dataset, or your own reasoning — into communicable form. Without it, AI output is opaque, and opaque output cannot be trusted.</p>
                 <p class="page-meta">Advanced &middot; 9 min read</p>
             </header>
 
@@ -106,7 +106,7 @@
             </aside>
 
             <div class="enduring">
-                <p><strong>The one idea to keep:</strong> A genuine explanation is hard to vary and falsifiable — change one part and it breaks, and it commits to claims that could be proven wrong. AI "explanations" are usually plausible post-hoc text, easy to vary and rarely falsifiable. Do not trust an explanation because it reads well; demand the parts that make it checkable, then check them.</p>
+                <p data-a11y="enduring"><strong>The one idea to keep:</strong> A genuine explanation is hard to vary and falsifiable — change one part and it breaks, and it commits to claims that could be proven wrong. AI "explanations" are usually plausible post-hoc text, easy to vary and rarely falsifiable. Do not trust an explanation because it reads well; demand the parts that make it checkable, then check them.</p>
             </div>
 
             <section>
@@ -114,10 +114,10 @@
                 <p>
                     Ask a large language model to explain why it gave a particular answer. It will produce a fluent, confident paragraph. It will sound like an explanation. It will have the grammatical structure of an explanation. But it is not an explanation — it is more generated text.
                 </p>
-                <p>
+                <p data-a11y="core-problem">
                     This is the core problem. AI systems can produce outputs that resemble reasoning, but the process that generated those outputs is fundamentally different from human reasoning. A language model does not "decide" to give an answer and then explain its decision. It generates the answer and the explanation through the same statistical process — predicting the next token in a sequence.
                 </p>
-                <p>
+                <p data-a11y="restaurant-analogy">
                     When someone asks you why you chose a particular restaurant, you can trace your actual reasoning: you wanted Thai food, this place had good reviews, it was within walking distance. Each element of the explanation corresponds to an actual factor in your decision. AI explanations do not have this correspondence. The "explanation" is a post-hoc construction that may or may not reflect the computational process that produced the output.
                 </p>
                 <p>
@@ -159,7 +159,7 @@
 
             <section>
                 <h2>Genuine Explanation vs Generated Text</h2>
-                <p>
+                <p data-a11y="deutsch-intro">
                     <a href="/learn/foundations/three-pillars.html">David Deutsch's concept of hard-to-vary explanations</a> gives us a precise tool for distinguishing genuine explanation from noise. A genuine explanation has specific properties:
                 </p>
                 <ul>
@@ -169,7 +169,7 @@
                 </ul>
 
                 <div class="highlight-box">
-                    <p><strong>The test:</strong> When AI gives you an explanation, ask — can I remove or change any part of this and still reach the same conclusion? If yes, the explanation is easy to vary, and you should not trust it. If removing any element breaks the reasoning chain, you may have a genuine explanation worth building on.</p>
+                    <p data-a11y="the-test"><strong>The test:</strong> When AI gives you an explanation, ask — can I remove or change any part of this and still reach the same conclusion? If yes, the explanation is easy to vary, and you should not trust it. If removing any element breaks the reasoning chain, you may have a genuine explanation worth building on.</p>
                 </div>
 
                 <mgt-recall id="exp-hardtovary">
@@ -189,7 +189,7 @@
 
             <section>
                 <h2>Interpretability and the Black Box</h2>
-                <p>
+                <p data-a11y="black-box-intro">
                     Modern AI systems are often described as <a href="/learn/foundations/ai-pitfalls.html">black boxes</a> — you put data in, you get results out, but you cannot see what happens in between. This is not a metaphor. A large neural network contains billions of parameters whose interactions are genuinely opaque, even to the researchers who built it.
                 </p>
                 <p>
@@ -198,7 +198,7 @@
                 <p>
                     This work is valuable but limited. Current interpretability methods can tell you which input tokens the model weighted most heavily, but they cannot tell you why those tokens mattered in a way that constitutes a genuine explanation. The gap between "what the model did" and "why the model did it" remains large.
                 </p>
-                <p>
+                <p data-a11y="build-from-outside">
                     For practitioners, this means you cannot rely on the AI to explain itself. You must build explanation from the outside — by testing the output against known facts, by comparing results across different prompts, by verifying claims independently. The explanation comes from your process, not from the model.
                 </p>
 
@@ -219,13 +219,13 @@
 
             <section>
                 <h2>Knowledge Distillation</h2>
-                <p>
+                <p data-a11y="distillation-intro">
                     Knowledge distillation is the process of compressing complex knowledge into simpler, more communicable forms. In machine learning, it literally means training a smaller model to replicate the behaviour of a larger one. But the concept applies far more broadly.
                 </p>
                 <p>
                     Every time you take a 50-page research paper and extract three key findings, you are performing knowledge distillation. Every time you create a diagram that captures the essential logic of a complex system, you are distilling knowledge. The value is not just compression — it is the creation of understanding.
                 </p>
-                <p>
+                <p data-a11y="distillation-judgment">
                     AI can assist with distillation, but it cannot do it for you. A language model can summarise a paper, but it cannot determine which findings are most important to your specific context. It can generate a diagram description, but it cannot judge whether the diagram captures the essential relationships or misses the crucial one. The distillation requires your understanding of what matters — the AI provides speed, you provide judgment.
                 </p>
                 <p>
@@ -249,7 +249,7 @@
 
             <section>
                 <h2>Making AI Output Verifiable</h2>
-                <p>
+                <p data-a11y="verifiable-intro">
                     If you cannot explain how an AI reached its output, the next best thing is to make the output verifiable — to structure your workflow so that AI claims can be checked against reality before you act on them.
                 </p>
                 <p>
@@ -264,7 +264,7 @@
                 </ol>
 
                 <div class="highlight-box">
-                    <p><strong>The principle:</strong> You do not need to understand how the AI works internally. You need to build a process around the AI that catches errors before they reach production. Explanation is not just about understanding the model — it is about making the entire workflow transparent and correctable.</p>
+                    <p data-a11y="the-principle"><strong>The principle:</strong> You do not need to understand how the AI works internally. You need to build a process around the AI that catches errors before they reach production. Explanation is not just about understanding the model — it is about making the entire workflow transparent and correctable.</p>
                 </div>
 
                 <mgt-recall id="exp-verifiable">
@@ -277,7 +277,7 @@
 
             <section>
                 <h2>Explanation as a Practice</h2>
-                <p>
+                <p data-a11y="practice-intro">
                     In the augmented intelligence framework, explanation is not a feature you wait for AI companies to build. It is a practice you develop. Every time you take an AI output and translate it into a form that someone else (or your future self) can understand and verify, you are practising explanation.
                 </p>
                 <p>
@@ -289,7 +289,7 @@
 
                 <div class="misconception">
                     <h3>The trap: "If the AI gives reasons, it explained itself."</h3>
-                    <p>Reasons that read fluently are the cheapest thing a language model produces — they come from the same next-token process as the answer, so the model can supply confident-sounding justification for any output, including a wrong one. Fluent reasons are not evidence of a real reasoning chain. The test is not whether reasons were given but whether they are hard to vary and falsifiable: can you remove a part without the conclusion changing, and could the claim turn out to be false? If not, you have generated text wearing the costume of an explanation.</p>
+                    <p data-a11y="trap-text">Reasons that read fluently are the cheapest thing a language model produces — they come from the same next-token process as the answer, so the model can supply confident-sounding justification for any output, including a wrong one. Fluent reasons are not evidence of a real reasoning chain. The test is not whether reasons were given but whether they are hard to vary and falsifiable: can you remove a part without the conclusion changing, and could the claim turn out to be false? If not, you have generated text wearing the costume of an explanation.</p>
                 </div>
 
                 <mgt-recall id="exp-trap">

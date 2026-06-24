@@ -47,9 +47,9 @@
         .products-page { max-width: var(--content-col); margin-inline: auto; }
 
         /* left-aligned head — shares the column's left edge with breadcrumb + cards */
-        .products-head { text-align: left; max-width: 46rem; margin: 0 0 var(--space-2xl); }
+        .products-head { text-align: start; max-width: 46rem; margin: 0 0 var(--space-2xl); }
         .products-head h1 { margin: var(--space-sm) 0; }
-        .products-head .lede { margin-inline: 0; text-align: left; }
+        .products-head .lede { margin-inline: 0; text-align: start; }
 
         /* the two things — generous, calm cards */
         .things { display: grid; gap: clamp(1.25rem, 3vw, 2rem); grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); }
@@ -59,7 +59,7 @@
         .thing p { margin: 0; color: var(--color-fg-secondary); line-height: 1.75; }
         .thing .pill { align-self: flex-start; margin-top: 0.2rem; }
         .thing .btn { align-self: flex-start; margin-top: var(--space-sm); }
-        .thing ul { margin: 0.25rem 0 0; padding-left: 1.2rem; color: var(--color-fg-secondary); }
+        .thing ul { margin: 0.25rem 0 0; padding-inline-start: 1.2rem; color: var(--color-fg-secondary); }
         .thing ul li { margin-bottom: 0.4rem; line-height: 1.7; }
         .thing .free { color: var(--color-accent); font-weight: var(--font-weight-semibold); }
 

@@ -35,7 +35,7 @@ class MGTFooter extends HTMLElement {
           border-top: 1px solid var(--border);
           color: var(--muted);
           font-size: 0.875rem;
-          text-align: left;
+          text-align: start;
         }
 
         .footer-container {

@@ -33,7 +33,7 @@
   #page p{margin:0 0 1.1em}
   #title{font-family:var(--serif);font-size:30px;font-weight:600;color:var(--ink);border:none;outline:none;background:transparent;width:100%;max-width:760px;margin:0 auto 6px;display:block;padding:0 72px}
   /* sidebar */
-  #sidebar{width:360px;min-width:360px;background:var(--panel);border-left:1px solid #2c261f;display:flex;flex-direction:column}
+  #sidebar{width:360px;min-width:360px;background:var(--panel);border-inline-start:1px solid #2c261f;display:flex;flex-direction:column}
   .tabs{display:flex;border-bottom:1px solid #2c261f}
   .tabs button{flex:1;background:transparent;border:none;color:var(--soft);padding:11px 6px;font-size:12.5px;font-weight:600;border-bottom:2px solid transparent}
   .tabs button.active{color:var(--panelink);border-bottom-color:var(--accent)}
@@ -53,7 +53,7 @@
   .btn.sm{padding:5px 10px;font-size:12px}
   /* suggestion cards (inline under the editor, anchored) */
   #suggestions{position:fixed;right:380px;bottom:18px;width:340px;max-height:60vh;overflow-y:auto;display:flex;flex-direction:column;gap:8px;z-index:30}
-  .sugg{background:#2a251e;border:1px solid #3a332a;border-left:3px solid var(--accent2);border-radius:10px;padding:10px 12px;font-size:13px;box-shadow:0 8px 24px rgba(0,0,0,.4)}
+  .sugg{background:#2a251e;border:1px solid #3a332a;border-inline-start:3px solid var(--accent2);border-radius:10px;padding:10px 12px;font-size:13px;box-shadow:0 8px 24px rgba(0,0,0,.4)}
   .sugg .agent{font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--accent2)}
   .sugg .reason{color:var(--soft);font-size:12px;margin:4px 0}
   .sugg .repl{font-family:var(--serif);background:#211d18;border:1px solid #3a332a;border-radius:6px;padding:6px 8px;margin:5px 0;color:var(--paper)}

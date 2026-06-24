@@ -1,0 +1,65 @@
+{
+  "hero-title": [
+    "Small ideas that help AI make sense",
+    "Little ideas that help AI make sense",
+    "Little ideas that make AI click",
+    "Small ideas that make AI click",
+    "Mental models for AI"
+  ],
+  "hero-lede": [
+    "These are simple ways of thinking. They quietly turn \"I use the chat thing sometimes\" into \"I really know how to get the best from it\". You can read them in order, one after another. Or you can just pick the one that sounds good to you right now.",
+    "These are simple ways of thinking that quietly turn \"I use chatty sometimes\" into \"I really know how to get the best from it\". Read them in order, or just pick the one that speaks to you.",
+    "These are the simple ways of thinking that quietly turn \"I use chatty sometimes\" into \"I really know how to get the best from it\". Read them in order, or just grab the one that speaks to you.",
+    "Simple ways of thinking that turn casual use into real fluency. Read them in order, or grab whichever speaks to you.",
+    "Mental models that turn casual use into fluency. Read in order or pick one."
+  ],
+  "step-meta-cognition": [
+    "A gentle habit of noticing your own thinking. When you do this, you stay in charge of the AI. It does not quietly start leading you instead.",
+    "A gentle habit of noticing your own thinking, so you stay in charge of the AI rather than being quietly led by it.",
+    "A gentle habit of noticing your own thinking, so you're always steering the AI rather than being quietly led by it.",
+    "Noticing your own thinking, so you steer the AI rather than being led by it.",
+    "Watch your own thinking; steer, don't get steered."
+  ],
+  "step-explanation": [
+    "How to tell a real, solid answer from one that just <em>sounds</em> right. And how to ask the AI to show you the thinking behind its answer.",
+    "How to tell a real, solid answer from one that just <em>sounds</em> right — and how to ask for the reasoning behind it.",
+    "How to tell a real, solid answer from one that just <em>sounds</em> right — and how to ask for the reasoning behind it.",
+    "How to tell a solid answer from one that merely <em>sounds</em> right — and how to ask for the reasoning.",
+    "Tell solid answers from ones that just <em>sound</em> right; demand the reasoning."
+  ],
+  "step-memory": [
+    "How to build up a little second brain. It gets more useful with every note you add. This page even remembers the things you have picked up as you go along.",
+    "How to build up a little second brain that gets more useful with every note you add. This page even remembers what you've learned as you go.",
+    "How to build up a little second brain that gets more useful with every note you add. This page even remembers what you've picked up as you go.",
+    "Build a second brain that compounds with every note. This page even remembers what you've picked up.",
+    "Build a compounding second brain; this page tracks what you've learned."
+  ],
+  "step-interfaces": [
+    "Typing into a chat is only one way in. You can also talk, show, and point. There are friendlier ways to work with AI, and they open up new things you can do.",
+    "Typing into a chat is only one way in. Talking, showing, pointing — there are friendlier ways to work with AI, and they open up new things.",
+    "Typing into a chat is only one way in. Talking, showing, pointing — there are friendlier ways to work with AI, and they open up new things.",
+    "A chat box is one way in. Talking, showing, pointing — friendlier modes that open up new things.",
+    "Chat is one input. Voice, vision, pointing — richer modes unlock more."
+  ],
+  "step-artifacts": [
+    "A simple template or checklist often gets you much better results than a big wall of words. Here is how to set the AI up so it can do well.",
+    "A simple template or checklist often gets you far better results than a wall of words. Here's how to set AI up to succeed.",
+    "A simple template or checklist often gets you far better results than a wall of words. Here's how to set AI up to succeed.",
+    "A template or checklist often beats a wall of words. Here's how to set AI up to succeed.",
+    "Templates beat prose dumps. Set AI up to succeed."
+  ],
+  "next-title": [
+    "When you're ready, what would you like to do next?",
+    "When you're ready, what's next?",
+    "When you're ready, what's next?",
+    "What's next?",
+    "Next"
+  ],
+  "next-body": [
+    "These reads cover the <em>how</em> — how the tools work. The <a href=\"/learn/human-factors/\">human side</a> covers the <em>you</em> — staying in charge, trusting wisely, and keeping it all healthy. Or you can settle in with your <a href=\"/learn/review/\">review queue</a> to help today's ideas stick.",
+    "These cover the <em>how</em>. The <a href=\"/learn/human-factors/\">human side</a> covers the <em>you</em> — staying in charge, trusting wisely, and keeping it healthy. Or settle in with your <a href=\"/learn/review/\">review queue</a> to make today's ideas stick.",
+    "These cover the <em>how</em>. The <a href=\"/learn/human-factors/\">human side</a> covers the <em>you</em> — staying in charge, trusting wisely, and keeping it healthy. Or settle in with your <a href=\"/learn/review/\">review queue</a> to make today's ideas stick.",
+    "These cover the <em>how</em>. The <a href=\"/learn/human-factors/\">human side</a> covers the <em>you</em> — staying in charge, trusting wisely, keeping it healthy. Or hit your <a href=\"/learn/review/\">review queue</a> to make today's ideas stick.",
+    "These cover the <em>how</em>. The <a href=\"/learn/human-factors/\">human side</a> covers the <em>you</em>. Or use your <a href=\"/learn/review/\">review queue</a> to retain it."
+  ]
+}

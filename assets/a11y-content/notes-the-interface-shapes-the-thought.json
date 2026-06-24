@@ -1,0 +1,37 @@
+{
+  "title": [
+    "The shape of your AI tool changes what you can think",
+    "The shape of your tool changes how you think",
+    "The interface shapes what you can think",
+    "The interface shapes thought",
+    "Interface shapes thought"
+  ],
+  "three-minds": [
+    "Take one AI model and give it three different shapes. You get three different ways of thinking. A chat box makes you think in turns: you ask, you read, you ask again. Your earlier work slides up and away off the top of the screen. A canvas lets you think in space: you can put your options next to each other, drag them about, and see them all at once. A direct tool lets you think by doing: you grab the thing and change it, and it answers you straight back. The engine inside is the same. But the things you are able to do are not.",
+    "Put the same model behind three different interfaces and you get three different ways of thinking. In a chat box you think in turns: ask, read, ask again, while your earlier work scrolls away above you. On a canvas you think in space: you lay options side by side, drag them around, and compare them at a glance. In a direct tool you think by doing: you grab the thing, change it, and the result answers back. It is the same engine underneath, but the moves you can make are not the same.",
+    "Put the same model behind three interfaces and you get three different minds. In a chat box, you think in turns: ask, read, ask again, and the work scrolls away above you. On a canvas, you think in space: lay options side by side, drag them around, compare at a glance. In a direct-manipulation tool, you think by doing: grab the thing and change it, and the result answers back. Same engine underneath; the moves you can make are not the same.",
+    "One model, three interfaces, three minds. Chat is turn-based: ask, read, ask again, while prior work scrolls away. A canvas is spatial: lay options side by side and compare at a glance. A direct-manipulation tool is enactive: grab the thing, change it, and the result answers back. Same engine; different available moves.",
+    "One model, three interfaces, three minds. Chat: turn-based, work scrolls away. Canvas: spatial, side-by-side comparison. Direct manipulation: enactive, grab-and-change. Same engine, different moves."
+  ],
+  "easy-and-unthinkable": [
+    "The shape of the tool decides which moves are easy and which are so hard you would never even try them. Chat makes it easy to \"ask one more question.\" But it makes \"compare six drafts at the same time\" almost impossible. So reaching for chat without thinking is a real choice, not a safe or empty one. It quietly shuts the door on whole ways of working. Douglas Engelbart built his systems to grow human thinking, not just to answer questions. And Bret Victor says the medium itself sets the limit on how much you can understand.",
+    "The interface decides which moves are easy and which are nearly unthinkable. Chat makes \"ask one more question\" easy and \"compare six drafts at once\" almost impossible. That is why defaulting to chat is a real choice, not a neutral one — it quietly closes off whole ways of working. Douglas Engelbart designed his systems to augment human intellect rather than just answer queries, and Bret Victor argues that the medium itself sets the ceiling on understanding.",
+    "The interface decides which moves are easy and which are effectively unthinkable. Chat makes \"ask one more question\" easy and \"compare six drafts at once\" almost impossible. That is why defaulting to chat is a real choice, not a neutral one — it quietly forecloses whole ways of working. Douglas Engelbart designed his systems to augment human intellect rather than just answer queries, and Bret Victor argues the medium itself sets the ceiling on understanding.",
+    "The interface decides which moves are easy and which are effectively unthinkable. Chat makes \"ask one more question\" trivial and \"compare six drafts at once\" near-impossible. Defaulting to chat is a real choice, not a neutral one — it forecloses whole ways of working. Engelbart designed systems to augment intellect, not just answer queries; Victor argues the medium sets the ceiling on understanding.",
+    "The interface fixes which moves are easy and which are unthinkable. Chat: one more question, trivial; six drafts side by side, near-impossible. Defaulting to chat forecloses whole working modes. Engelbart: augment intellect, not answer queries. Victor: the medium caps understanding."
+  ],
+  "representation-is-the-idea": [
+    "This is the same lesson as <a href=\"/notes/tools-for-thought-change-what-you-think.html\" class=\"wikilink\">Tools for thought change what you can think</a>. The way you show an idea is not just a wrapper around it. The way you show it is part of the idea itself. This is also why <a href=\"/notes/show-the-data.html\" class=\"wikilink\">Show the data; don't just assert it</a> matters so much. A tool that puts the real thing in front of you lets you think with it, and not only about it.",
+    "This is the same lesson as <a href=\"/notes/tools-for-thought-change-what-you-think.html\" class=\"wikilink\">Tools for thought change what you can think</a>: the representation is not just a wrapper around the idea, it is part of the idea. And it is why <a href=\"/notes/show-the-data.html\" class=\"wikilink\">Show the data; don't just assert it</a> matters — an interface that puts the real thing in front of you lets you think with it, not just about it.",
+    "This is the same lesson as <a href=\"/notes/tools-for-thought-change-what-you-think.html\" class=\"wikilink\">Tools for thought change what you can think</a>: the representation is not a wrapper around the idea, it is part of the idea. And it is why <a href=\"/notes/show-the-data.html\" class=\"wikilink\">Show the data; don't just assert it</a> matters — an interface that exposes the real thing lets you think with it, not just about it.",
+    "Same lesson as <a href=\"/notes/tools-for-thought-change-what-you-think.html\" class=\"wikilink\">Tools for thought change what you can think</a>: the representation is not a wrapper around the idea, it is part of it. Hence <a href=\"/notes/show-the-data.html\" class=\"wikilink\">Show the data; don't just assert it</a> — an interface that exposes the real thing lets you think with it, not just about it.",
+    "Per <a href=\"/notes/tools-for-thought-change-what-you-think.html\" class=\"wikilink\">Tools for thought change what you can think</a>: the representation is part of the idea, not a wrapper. Hence <a href=\"/notes/show-the-data.html\" class=\"wikilink\">Show the data; don't just assert it</a> — exposing the real thing lets you think with it, not about it."
+  ],
+  "next-prompt": [
+    "Next, try this: look at the AI tool you use now, and ask what it makes hard to even start.",
+    "Next: ask what your current AI interface makes hard to even attempt.",
+    "Next: ask what your current AI interface makes hard to even attempt.",
+    "Next: ask what your current AI interface makes hard to attempt.",
+    "Next: what does your AI interface make hard to attempt?"
+  ]
+}

@@ -16,13 +16,13 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
 
     <style>
-        .lp { max-width: var(--measure); margin: 0 auto; padding: 3rem var(--gutter); text-align: left; }
+        .lp { max-width: var(--measure); margin: 0 auto; padding: 3rem var(--gutter); text-align: start; }
         .lp > * { min-width: 0; }
         .lp-hero { text-align: center; margin-bottom: 2.5rem; }
         .lp h1 { font-family: var(--font-display); color: var(--color-accent); font-size: clamp(2rem, 5vw, 3rem); line-height: 1.2; margin-bottom: 1rem; }
         .lp .subtitle { font-size: var(--font-size-lg); color: var(--color-fg-secondary); line-height: 1.7; margin-bottom: 0; }
-        .lp-section { text-align: left; margin-bottom: 2rem; }
-        .lp-section h2 { font-size: var(--font-size-xl); margin-bottom: 0.75rem; text-align: left; }
+        .lp-section { text-align: start; margin-bottom: 2rem; }
+        .lp-section h2 { font-size: var(--font-size-xl); margin-bottom: 0.75rem; text-align: start; }
         .lp-section p { line-height: 1.8; margin-bottom: 1rem; }
         .paths { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 14rem), 1fr)); gap: clamp(1.25rem, 2vw, 2rem); margin: 2rem 0; }
         .paths .card { padding: 1.25rem; text-align: center; min-width: 0; }
@@ -45,16 +45,16 @@
         <div class="lp">
             <div class="lp-hero">
                 <img src="/logo.png" alt="Monkey Got Thumbs" class="lp-logo" width="60" height="60">
-                <h1>Upskill With AI: from using it to using it well</h1>
-                <p class="subtitle">The gap between "using AI" and "using AI well" is where all the value is — and it's a learnable skill. Here's how to close it.</p>
+                <h1 data-a11y="hero-title">Upskill With AI: from using it to using it well</h1>
+                <p class="subtitle" data-a11y="hero-subtitle">The gap between "using AI" and "using AI well" is where all the value is — and it's a learnable skill. Here's how to close it.</p>
             </div>
 
             <div class="lp-section">
-                <h2>From using AI to using it well</h2>
-                <p>
+                <h2 data-a11y="intro-heading">From using AI to using it well</h2>
+                <p data-a11y="intro-difference">
                     Lots of people are using AI now, and it's already part of most working days. The difference that matters isn't how much you use it — it's how well: checking its output, spotting when it's confidently wrong, and keeping your own judgment in the loop.
                 </p>
-                <p>
+                <p data-a11y="intro-skill">
                     And that's the good part: using AI well is a skill anyone can pick up. No coding, no maths — just a few good habits, which is exactly what these paths teach.
                 </p>
             </div>
@@ -66,23 +66,23 @@
             <div class="paths">
                 <div class="card">
                     <h3>Beginner</h3>
-                    <p>New to AI. Start with fundamentals: what it is, its pitfalls, and how to use it safely.</p>
+                    <p data-a11y="card-beginner">New to AI. Start with fundamentals: what it is, its pitfalls, and how to use it safely.</p>
                     <a href="/learn/learning-paths/beginner.html" class="btn">Start</a>
                 </div>
                 <div class="card">
                     <h3>Practitioner</h3>
-                    <p>Ready to apply. Learn frameworks, tools, and practical workflows for your job.</p>
+                    <p data-a11y="card-practitioner">Ready to apply. Learn frameworks, tools, and practical workflows for your job.</p>
                     <a href="/learn/learning-paths/practitioner.html" class="btn">Start</a>
                 </div>
                 <div class="card">
                     <h3>Researcher</h3>
-                    <p>Go deep. Explore theory, psychology, and the science of human-AI collaboration.</p>
+                    <p data-a11y="card-researcher">Go deep. Explore theory, psychology, and the science of human-AI collaboration.</p>
                     <a href="/learn/learning-paths/researcher.html" class="btn">Start</a>
                 </div>
             </div>
 
             <div class="lp-cta">
-                <h2>Get Weekly Insights Delivered</h2>
+                <h2 data-a11y="cta-heading">Get Weekly Insights Delivered</h2>
                 <mgt-newsletter heading="Free AI Upskilling Newsletter" description="Actionable strategies for working with AI, delivered weekly."></mgt-newsletter>
             </div>
 

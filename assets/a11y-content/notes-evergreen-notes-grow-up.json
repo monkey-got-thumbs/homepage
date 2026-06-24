@@ -1,0 +1,44 @@
+{
+  "title": [
+    "Notes that you keep changing, not just save",
+    "Notes written to keep growing, not just to be filed away",
+    "Evergreen notes are written to evolve, not to file",
+    "Evergreen notes evolve; they aren't filed and forgotten",
+    "Evergreen notes evolve, not archive"
+  ],
+  "lede-write-once": [
+    "Most notes get written once and then left alone. You write down a quick summary of a meeting, or a nice line from a book. You save it under the day's date. Then you never look at it again. A note like that only caught a single moment, not a real idea, so it can't grow with you. A year later it feels like digging up old bones, not like something you know. Made this way, the note was always going to go stale.",
+    "Most notes are written once and then forgotten. You jot down a meeting summary or a quote from a book, file it under a date, and never open it again. It saved a moment, not an idea, so it can't grow — and a year later it feels like archaeology, not knowledge. Built that way, a note was always going to rot.",
+    "Most notes are write-once. You jot a meeting summary or a book quote, file it under a date, and never open it again. It captured a moment, not an idea, so it can't grow — and a year later it's archaeology, not knowledge. The format guaranteed it would rot.",
+    "Most notes are write-once: a meeting summary or book quote, filed by date, never reopened. They capture a moment, not an idea, so they can't grow; a year on they're archaeology, not knowledge. The format guarantees rot.",
+    "Write-once notes capture moments, not ideas. Filed by date, never reopened, they rot into archaeology, not knowledge."
+  ],
+  "evergreen-defined": [
+    "Evergreen notes work the other way around. The name comes from Andy Matuschak. Each note holds just one idea. Its title says a clear claim, not just a topic. And you rewrite the note as you understand the idea better, instead of leaving it stuck at the first try. Because every note is small and is about one idea, you can link it to any other note it touches. That is exactly why <a href=\"/notes/knowledge-compounds-when-linked.html\" class=\"wikilink\">Knowledge compounds when it's linked, not just stored</a>. And because you keep improving a note instead of starting over, it slowly gets sharper and moves toward <a href=\"/notes/a-good-explanation-is-hard-to-vary.html\" class=\"wikilink\">A good explanation is hard to vary</a>.",
+    "Evergreen notes are built the other way. The term comes from Andy Matuschak: each note holds a single idea, its title states a clear claim, and you rewrite it as your understanding grows rather than leaving it stuck at the first draft. Because each note is small and built around one idea, it can link to anything else it touches — which is exactly why <a href=\"/notes/knowledge-compounds-when-linked.html\" class=\"wikilink\">Knowledge compounds when it's linked, not just stored</a>. And because you revise instead of restart, the note keeps sharpening toward <a href=\"/notes/a-good-explanation-is-hard-to-vary.html\" class=\"wikilink\">A good explanation is hard to vary</a> over time.",
+    "Evergreen notes are built the other way. The term comes from Andy Matuschak: each note holds one concept, carries a title that states a claim, and gets rewritten as your understanding improves rather than frozen at first draft. Because each one is atomic and concept-titled, it can be linked to anything else it touches — which is exactly why <a href=\"/notes/knowledge-compounds-when-linked.html\" class=\"wikilink\">Knowledge compounds when it's linked, not just stored</a>. And because you revise instead of restart, the note sharpens toward <a href=\"/notes/a-good-explanation-is-hard-to-vary.html\" class=\"wikilink\">A good explanation is hard to vary</a> over time.",
+    "Evergreen notes invert this. The term is Andy Matuschak's: each note holds one concept, carries a claim-stating title, and is rewritten as understanding improves rather than frozen at first draft. Being atomic and concept-titled, each links to anything it touches — which is why <a href=\"/notes/knowledge-compounds-when-linked.html\" class=\"wikilink\">Knowledge compounds when it's linked, not just stored</a>. And revising rather than restarting sharpens it toward <a href=\"/notes/a-good-explanation-is-hard-to-vary.html\" class=\"wikilink\">A good explanation is hard to vary</a>.",
+    "Evergreen notes (Matuschak): atomic, claim-titled, rewritten not frozen. Atomicity enables linking — <a href=\"/notes/knowledge-compounds-when-linked.html\" class=\"wikilink\">Knowledge compounds when it's linked, not just stored</a> — and revision sharpens toward <a href=\"/notes/a-good-explanation-is-hard-to-vary.html\" class=\"wikilink\">A good explanation is hard to vary</a>."
+  ],
+  "this-collection": [
+    "This whole collection is made this way too. Every note you read here is meant to be opened again and made better, never buried and left for dead. That is what makes it <a href=\"/notes/\">the notes web</a>, a living thing, instead of just an old archive.",
+    "This collection is built the same way. Every note here is meant to be reopened and improved, not buried — and that's what makes it <a href=\"/notes/\">the notes web</a> rather than an archive.",
+    "This very collection is built that way. Every note here is meant to be reopened and improved, not entombed — that's what makes it <a href=\"/notes/\">the notes web</a> rather than an archive.",
+    "This collection works the same way: every note is meant to be reopened and improved, not entombed — which makes it <a href=\"/notes/\">the notes web</a>, not an archive.",
+    "Every note here is reopened and improved, not entombed — <a href=\"/notes/\">the notes web</a>, not an archive."
+  ],
+  "next-link": [
+    "Up next: learn how to shape your thinking so that a machine can check it for you, because <a href=\"/notes/structure-beats-freeform.html\" class=\"wikilink\">Structure beats freeform text for working with AI</a>.",
+    "Next, shape your thinking so a machine can check it, because <a href=\"/notes/structure-beats-freeform.html\" class=\"wikilink\">Structure beats freeform text for working with AI</a>.",
+    "Next: shape your thinking so a machine can check it, because <a href=\"/notes/structure-beats-freeform.html\" class=\"wikilink\">Structure beats freeform text for working with AI</a>.",
+    "Next: shape thinking so a machine can check it — <a href=\"/notes/structure-beats-freeform.html\" class=\"wikilink\">Structure beats freeform text for working with AI</a>.",
+    "Next: make thinking machine-checkable — <a href=\"/notes/structure-beats-freeform.html\" class=\"wikilink\">Structure beats freeform text for working with AI</a>."
+  ],
+  "credit": [
+    "This is an <strong>evergreen note</strong>. That means it holds one idea, its title makes a clear claim, and it's tied to lots of other notes. The idea comes from Andy Matuschak, and we've written it again here in our own words.",
+    "This is an <strong>evergreen note</strong> — it holds one idea, has a claim for a title, and links to many other notes. It's a practice from Andy Matuschak, rebuilt here in our own words.",
+    "This is an <strong>evergreen note</strong> — atomic, claim-titled, and densely linked — a practice from Andy Matuschak, re-implemented in our own words.",
+    "An <strong>evergreen note</strong> — atomic, claim-titled, densely linked — a Matuschak practice, re-implemented in our own words.",
+    "An <strong>evergreen note</strong>: atomic, claim-titled, densely linked. After Matuschak, in our words."
+  ]
+}

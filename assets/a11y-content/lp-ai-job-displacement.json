@@ -1,0 +1,86 @@
+{
+  "hero-title": [
+    "AI can take the boring jobs off your plate",
+    "AI can take the boring busywork off your plate",
+    "AI can take the busywork off your plate",
+    "Hand the busywork to AI",
+    "Offload your busywork to AI"
+  ],
+  "hero-subtitle": [
+    "You stay in charge of the big decisions. AI does the slow, boring parts for you — looking things up, writing first tries, and the fiddly little admin jobs. The people who get more done aren't smarter. They've just learned how to tell AI what to do, and you can learn that too.",
+    "You keep the judgment; AI takes on the grind — the research, the first drafts, the fiddly admin. The people who get more done are the ones who've learned how to direct it well, and that's a skill anyone can pick up.",
+    "You keep the judgment; AI handles the grind — the research, the first drafts, the fiddly admin. The people who get more done are simply the ones who've learned to direct it well, and that's a skill anyone can pick up.",
+    "You keep the judgment; AI handles the grind — research, first drafts, fiddly admin. The people who get more done have simply learned to direct it well, a skill anyone can pick up.",
+    "Keep the judgment; delegate the grind — research, drafts, admin. The edge is direction, a learnable skill."
+  ],
+  "stat-quality": [
+    "Better work when you guide AI the right way (Harvard/BCG study, 2023)",
+    "Higher-quality work when you direct AI well (Harvard/BCG, 2023)",
+    "Higher-quality work when you direct AI well (Harvard/BCG, 2023)",
+    "Higher-quality work when AI is well directed (Harvard/BCG, 2023)",
+    "Higher quality, well-directed AI (Harvard/BCG, 2023)"
+  ],
+  "stat-faster": [
+    "Quicker at doing the very same jobs (Harvard/BCG study, 2023)",
+    "Faster on the same tasks (Harvard/BCG, 2023)",
+    "Faster on the same tasks (Harvard/BCG, 2023)",
+    "Faster on identical tasks (Harvard/BCG, 2023)",
+    "Faster, same tasks (Harvard/BCG, 2023)"
+  ],
+  "stat-nocode": [
+    "No computer code to learn before you begin",
+    "No coding needed to get started",
+    "Coding needed to get started",
+    "Coding required to start",
+    "Coding required"
+  ],
+  "why-heading": [
+    "Why \"just use AI more\" isn't enough on its own",
+    "Why \"just use AI\" isn't the whole answer",
+    "Why \"just use AI\" isn't the whole answer",
+    "Why \"just use AI\" falls short",
+    "Why \"just use AI\" fails"
+  ],
+  "why-p1": [
+    "\n                    AI is strong, but it still makes mistakes. Sometimes it sounds very sure and is simply wrong. If you trust it without checking, those mistakes slip past you. So the real skill isn't using AI more often. It's knowing AI well enough to tell when you can trust it and when you should double-check.\n                ",
+    "\n                    AI is powerful but still unreliable — today's models can sound confident and still be wrong. Lean on it blindly and those mistakes slip through. So the skill isn't using AI more; it's understanding it well enough to know when to trust it and when to check.\n                ",
+    "\n                    AI is powerful but still unreliable — today's models can confidently get things wrong. Lean on it blindly and those mistakes slip through. So the skill isn't using AI more; it's understanding it well enough to know when to trust it and when to check.\n                ",
+    "\n                    AI is powerful but unreliable — today's models can be confidently wrong. Lean on it blindly and the errors slip through. The skill isn't using AI more; it's knowing when to trust it and when to check.\n                ",
+    "\n                    AI is powerful but unreliable; it's confidently wrong at times. Blind trust lets errors through. The skill: knowing when to trust and when to verify.\n                "
+  ],
+  "why-p2": [
+    "\n                    Here's the good news: this is something you can learn, and it isn't technical. You don't have to write code or understand the maths. You just need a few good habits.\n                ",
+    "\n                    Good news: this is a learnable skill, not a technical one. You don't need to code or understand the maths — you just need a few good habits.\n                ",
+    "\n                    Good news: that's a learnable skill, not a technical one. You don't need to code or understand the maths — you need a few good habits.\n                ",
+    "\n                    Good news: it's a learnable skill, not a technical one. No coding or maths required — just a few good habits.\n                ",
+    "\n                    It's learnable, not technical. No code, no maths — just a few habits.\n                "
+  ],
+  "path-heading": [
+    "A better way: let people and AI work together",
+    "The Smarter Path: Augmented Intelligence",
+    "The Smarter Path: Augmented Intelligence",
+    "The Smarter Path: Augmented Intelligence",
+    "Augmented intelligence"
+  ],
+  "path-p1": [
+    "\n                    Augmented intelligence just means people and AI working as a team. You stay in control. AI does the mechanical work — looking things up, writing drafts, sorting data. You do the thinking — making plans, using judgment, and caring for the people around you.\n                ",
+    "\n                    Augmented intelligence is the practice of pairing human judgment with machine capability. You stay in control. AI handles the mechanical work — research, drafting, data processing. You handle the thinking — strategy, judgment, relationships.\n                ",
+    "\n                    Augmented intelligence is the practice of pairing human judgment with machine capability. You stay in control. AI handles the mechanical work — research, drafting, data processing. You handle the thinking — strategy, judgment, relationships.\n                ",
+    "\n                    Augmented intelligence pairs human judgment with machine capability. You stay in control: AI handles the mechanical work — research, drafting, data processing — while you handle strategy, judgment, and relationships.\n                ",
+    "\n                    Augmented intelligence pairs human judgment with machine capability: AI does the mechanical work, you own strategy, judgment, and relationships.\n                "
+  ],
+  "path-p2": [
+    "\n                    Harvard researchers found that people who use AI this way do work that is 40% better and finish their tasks 25% faster. What made the difference? They knew how to tell the AI what to do.\n                ",
+    "\n                    Harvard research shows professionals who use AI this way produce 40% higher quality work and finish tasks 25% faster. The key? They knew how to direct it.\n                ",
+    "\n                    Harvard research shows that professionals using AI this way produce 40% higher quality work and complete tasks 25% faster. The key? They knew how to direct it.\n                ",
+    "\n                    Harvard research shows professionals using AI this way produce 40% higher-quality work and complete tasks 25% faster — because they knew how to direct it.\n                ",
+    "\n                    Harvard: this approach yields 40% higher-quality work, 25% faster — the differentiator is direction.\n                "
+  ],
+  "cta-heading": [
+    "Learn how to make AI work for you",
+    "Learn to make AI work for you",
+    "Learn to make AI work for you",
+    "Make AI work for you",
+    "Put AI to work"
+  ]
+}

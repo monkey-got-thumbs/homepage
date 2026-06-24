@@ -74,7 +74,7 @@
         .spot-q { margin: 0; color: var(--color-fg-secondary); line-height: 1.7; }
         .spot-q strong { color: var(--color-fg); }
         .spot-opts { display: flex; flex-direction: column; gap: 0.55rem; }
-        .spot-opt { text-align: left; font: 500 0.95rem "Montserrat", sans-serif; color: var(--color-fg); line-height: 1.6;
+        .spot-opt { text-align: start; font: 500 0.95rem "Montserrat", sans-serif; color: var(--color-fg); line-height: 1.6;
             background: color-mix(in srgb, #000 18%, transparent); border: 1px solid var(--color-border);
             border-radius: 10px; padding: 0.75rem 0.9rem; cursor: pointer; position: relative;
             transition: border-color .15s ease, background .15s ease; }
@@ -120,20 +120,20 @@
             </nav>
 
             <header>
-                <h1>Where it slips up</h1>
-                <p class="lead">AI's big catch: it can be <em>confidently</em> wrong. It states made-up things in the exact same calm, certain voice it uses for true ones — so the only safe move is to check what matters.</p>
+                <h1 data-a11y="hero-title">Where it slips up</h1>
+                <p class="lead" data-a11y="hero-lead">AI's big catch: it can be <em>confidently</em> wrong. It states made-up things in the exact same calm, certain voice it uses for true ones — so the only safe move is to check what matters.</p>
                 <p class="page-meta">Beginner &middot; 3 min read</p>
             </header>
 
             <div class="enduring">
-                <p><strong>The one idea to keep:</strong> AI predicts plausible words, not verified facts. It sounds sure either way — so your job is to check, not to trust the tone.</p>
+                <p data-a11y="enduring-idea"><strong>The one idea to keep:</strong> AI predicts plausible words, not verified facts. It sounds sure either way — so your job is to check, not to trust the tone.</p>
             </div>
 
-            <p class="into">See for yourself. You asked AI for three quick facts — pick the one you think it made up:</p>
+            <p class="into" data-a11y="explorable-intro">See for yourself. You asked AI for three quick facts — pick the one you think it made up:</p>
 
             <figure class="explorable" id="spot-it">
                 <figcaption>Spot the made-up one</figcaption>
-                <p class="spot-q">Three "quick facts about honey." The AI sounds equally sure about all three — but <strong>one is invented.</strong> Which?</p>
+                <p class="spot-q" data-a11y="spot-question">Three "quick facts about honey." The AI sounds equally sure about all three — but <strong>one is invented.</strong> Which?</p>
                 <div class="spot-opts">
                     <button type="button" class="spot-opt" data-claim data-fake="false">Honey never really spoils — sealed pots thousands of years old have been found still edible.</button>
                     <button type="button" class="spot-opt" data-claim data-fake="false">Bees make honey from the nectar they gather from flowers.</button>
@@ -145,23 +145,23 @@
 
             <mgt-credit>Built so you get it by trying it — Bret Victor's idea of an explorable explanation.</mgt-credit>
 
-            <p>That's the whole pitfall in one go. AI is fluent, not accountable — it has no internal sense of true versus false, only of what words usually come next. The fix isn't to distrust it; it's to keep a <strong>human check</strong> on anything that matters. That check is the heart of <a href="/learn/foundations/what-is-ai.html">augmented intelligence</a>: you let AI do the work, and you stay the one who verifies and decides.</p>
+            <p data-a11y="pitfall-summary">That's the whole pitfall in one go. AI is fluent, not accountable — it has no internal sense of true versus false, only of what words usually come next. The fix isn't to distrust it; it's to keep a <strong>human check</strong> on anything that matters. That check is the heart of <a href="/learn/foundations/what-is-ai.html">augmented intelligence</a>: you let AI do the work, and you stay the one who verifies and decides.</p>
 
             <mgt-recall id="pit-confidence">
                 <details>
-                    <summary>Why can't you trust an AI answer just because it sounds confident?</summary>
-                    <p>It predicts plausible words, not verified facts — so it states made-up things in the same confident voice as true ones. Confidence tells you nothing about truth; verify anything that matters.</p>
+                    <summary data-a11y="recall-q">Why can't you trust an AI answer just because it sounds confident?</summary>
+                    <p data-a11y="recall-a">It predicts plausible words, not verified facts — so it states made-up things in the same confident voice as true ones. Confidence tells you nothing about truth; verify anything that matters.</p>
                 </details>
             </mgt-recall>
 
             <section class="tryit" aria-labelledby="tryit-pit">
-                <h2 id="tryit-pit">Try it on your own work</h2>
-                <p>Next time you lean on an AI answer for something that matters — a fact, a number, a recommendation:</p>
+                <h2 id="tryit-pit" data-a11y="tryit-title">Try it on your own work</h2>
+                <p data-a11y="tryit-intro">Next time you lean on an AI answer for something that matters — a fact, a number, a recommendation:</p>
                 <ol>
-                    <li>Take its most confident-sounding claim.</li>
-                    <li>Check it against a real source — and notice how convincing the wrong version can look.</li>
+                    <li data-a11y="tryit-step1">Take its most confident-sounding claim.</li>
+                    <li data-a11y="tryit-step2">Check it against a real source — and notice how convincing the wrong version can look.</li>
                 </ol>
-                <p>If you can't think of a way to check a task, that's the task to keep a closer eye on.</p>
+                <p data-a11y="tryit-close">If you can't think of a way to check a task, that's the task to keep a closer eye on.</p>
             </section>
 
             <div class="recall-cta" data-recall-cta hidden>
@@ -173,8 +173,8 @@
             </div>
 
             <section class="card" style="margin-top: 2.5rem;">
-                <h2>Continue Learning</h2>
-                <p>Next: the three things that turn a clever guesser into something you can rely on.</p>
+                <h2 data-a11y="continue-title">Continue Learning</h2>
+                <p data-a11y="continue-desc">Next: the three things that turn a clever guesser into something you can rely on.</p>
                 <div class="cta">
                     <a href="/learn/foundations/three-pillars.html" class="btn">The three pillars</a>
                     <a href="/learn/foundations/how-it-helps.html" class="btn btn--secondary">How it helps</a>

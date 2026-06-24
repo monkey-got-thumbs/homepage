@@ -35,9 +35,9 @@
     </script>
     <style>
         .content { padding-block: 2rem; }
-        .content > header { text-align: left; margin: 0 0 var(--space-2xl); }
-        .content > header h1 { text-align: left; }
-        .lead { font-size: var(--font-size-lg); color: var(--color-fg-secondary); line-height: 1.7; text-align: left; margin-inline: 0; }
+        .content > header { text-align: start; margin: 0 0 var(--space-2xl); }
+        .content > header h1 { text-align: start; }
+        .lead { font-size: var(--font-size-lg); color: var(--color-fg-secondary); line-height: 1.7; text-align: start; margin-inline: 0; }
         .content p { line-height: 1.8; margin-bottom: 1.25rem; }
         .infl { background: var(--color-bg-secondary); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 1.5rem; margin: 1.25rem 0; }
         .infl h2 { margin: 0 0 0.5rem; font-size: var(--font-size-xl); color: var(--color-brand-light); }
@@ -66,19 +66,19 @@
                 </ul>
             </nav>
             <header>
-                <h1>Influences &amp; Credits</h1>
-                <p class="lead">Almost nothing here is original to us. The way this site teaches — recall cards woven into the prose, interactive explanations, the idea that your understanding should compound over time — comes from a handful of people who thought hard about how minds and tools work together. This page names them.</p>
+                <h1 data-a11y="hero-title">Influences &amp; Credits</h1>
+                <p class="lead" data-a11y="lead">Almost nothing here is original to us. The way this site teaches — recall cards woven into the prose, interactive explanations, the idea that your understanding should compound over time — comes from a handful of people who thought hard about how minds and tools work together. This page names them.</p>
             </header>
 
             <div class="pledge">
-                <p><strong>Our pledge.</strong> We implement their <em>mechanisms</em> in our own words and our own code. We don't copy their writing, their notes, or their designs pixel-for-pixel, and we don't claim their work as ours.</p>
-                <p>Wherever we use one of these ideas, you'll find a small "↳ Influences &amp; credits" note linking back here — and from here, straight to the source. Honestly: the originals are better than anything we'll write. Go read them.</p>
+                <p data-a11y="pledge-1"><strong>Our pledge.</strong> We implement their <em>mechanisms</em> in our own words and our own code. We don't copy their writing, their notes, or their designs pixel-for-pixel, and we don't claim their work as ours.</p>
+                <p data-a11y="pledge-2">Wherever we use one of these ideas, you'll find a small "↳ Influences &amp; credits" note linking back here — and from here, straight to the source. Honestly: the originals are better than anything we'll write. Go read them.</p>
             </div>
 
             <section class="infl">
                 <h2>Douglas Engelbart</h2>
                 <p class="borrowed">The whole premise · used: everywhere</p>
-                <p>The phrase "augmented intelligence" exists because of Engelbart's 1962 framing of <em>augmenting human intellect</em>: tools should raise human capability, not replace the human. That is the thesis of this entire site — AI is simply one of those tools.</p>
+                <p data-a11y="engelbart">The phrase "augmented intelligence" exists because of Engelbart's 1962 framing of <em>augmenting human intellect</em>: tools should raise human capability, not replace the human. That is the thesis of this entire site — AI is simply one of those tools.</p>
                 <p class="links">
                     <a href="https://www.dougengelbart.org/content/view/138/" target="_blank" rel="noopener">"Augmenting Human Intellect" (1962) ↗</a>
                     <a href="https://en.wikipedia.org/wiki/Douglas_Engelbart" target="_blank" rel="noopener">About Engelbart ↗</a>
@@ -88,7 +88,7 @@
             <section class="infl">
                 <h2>Andy Matuschak</h2>
                 <p class="borrowed">Mnemonic medium · evergreen notes · prompt-writing · used: the recall cards, the review queue, our notes practice</p>
-                <p>Our recall cards — prose interrupted by quick "did this stick?" prompts, scheduled to return just before you'd forget — are our take on the <strong>mnemonic medium</strong> he pioneered (with Michael Nielsen). The way we think about writing those prompts (one idea, precise, answerable, effortful) follows his prompt-writing guidance. His "Why books don't work" is why we don't just hand you paragraphs and hope. His <strong>evergreen notes</strong> practice (atomic, concept-oriented, densely linked) guides how we structure ideas.</p>
+                <p data-a11y="matuschak">Our recall cards — prose interrupted by quick "did this stick?" prompts, scheduled to return just before you'd forget — are our take on the <strong>mnemonic medium</strong> he pioneered (with Michael Nielsen). The way we think about writing those prompts (one idea, precise, answerable, effortful) follows his prompt-writing guidance. His "Why books don't work" is why we don't just hand you paragraphs and hope. His <strong>evergreen notes</strong> practice (atomic, concept-oriented, densely linked) guides how we structure ideas.</p>
                 <p class="links">
                     <a href="https://andymatuschak.org/" target="_blank" rel="noopener">andymatuschak.org ↗</a>
                     <a href="https://andymatuschak.org/books/" target="_blank" rel="noopener">Why books don't work ↗</a>
@@ -100,7 +100,7 @@
             <section class="infl">
                 <h2>Michael Nielsen</h2>
                 <p class="borrowed">Tools for thought · long-term memory · used: the recall cards, our framing</p>
-                <p>With Matuschak, Nielsen built <em>Quantum Country</em> and wrote "How can we develop transformative tools for thought?" — the clearest argument we know for designing media that change how you think rather than just what you read. His "Augmenting Long-term Memory" shaped how we treat spaced repetition as a serious tool, not a gimmick.</p>
+                <p data-a11y="nielsen">With Matuschak, Nielsen built <em>Quantum Country</em> and wrote "How can we develop transformative tools for thought?" — the clearest argument we know for designing media that change how you think rather than just what you read. His "Augmenting Long-term Memory" shaped how we treat spaced repetition as a serious tool, not a gimmick.</p>
                 <p class="links">
                     <a href="https://quantum.country/" target="_blank" rel="noopener">Quantum Country ↗</a>
                     <a href="https://numinous.productions/ttft/" target="_blank" rel="noopener">Transformative tools for thought ↗</a>
@@ -111,7 +111,7 @@
             <section class="infl">
                 <h2>Bret Victor</h2>
                 <p class="borrowed">Explorable explanations · "show the data" · used: our interactive widgets</p>
-                <p>Our interactive pieces — like the explorable on <a href="/learn/foundations/why-we-need-it.html">Why it's worth your time</a> where ticking off jobs adds up the hours you'd hand back — follow Victor's principle that people understand what they can <em>see</em> and manipulate. "Show the data; make state visible; give immediate feedback." When we add interactivity, it's to earn understanding, never decoration.</p>
+                <p data-a11y="victor">Our interactive pieces — like the explorable on <a href="/learn/foundations/why-we-need-it.html">Why it's worth your time</a> where ticking off jobs adds up the hours you'd hand back — follow Victor's principle that people understand what they can <em>see</em> and manipulate. "Show the data; make state visible; give immediate feedback." When we add interactivity, it's to earn understanding, never decoration.</p>
                 <p class="links">
                     <a href="https://worrydream.com/" target="_blank" rel="noopener">worrydream.com ↗</a>
                     <a href="https://worrydream.com/LearnableProgramming/" target="_blank" rel="noopener">Learnable Programming ↗</a>
@@ -122,7 +122,7 @@
             <section class="infl">
                 <h2>Ted Nelson</h2>
                 <p class="borrowed">Hypertext &amp; transclusion · used: the "never lose context" navigation we're building</p>
-                <p>Nelson imagined documents where following a link never makes you lose your place — ideas shown side by side, in context. That lineage informs the connected, context-keeping navigation we're adding to our notes and lessons.</p>
+                <p data-a11y="nelson">Nelson imagined documents where following a link never makes you lose your place — ideas shown side by side, in context. That lineage informs the connected, context-keeping navigation we're adding to our notes and lessons.</p>
                 <p class="links">
                     <a href="https://en.wikipedia.org/wiki/Ted_Nelson" target="_blank" rel="noopener">About Ted Nelson ↗</a>
                     <a href="https://en.wikipedia.org/wiki/Transclusion" target="_blank" rel="noopener">Transclusion ↗</a>
@@ -132,7 +132,7 @@
             <section class="infl">
                 <h2>The science of learning</h2>
                 <p class="borrowed">Retrieval practice · cognitive load · used: why recall cards work, why pages stay calm</p>
-                <p>Recall cards rest on the <em>retrieval-practice (testing) effect</em> — recalling something strengthens it more than re-reading — established over decades by researchers including Henry Roediger and Jeffrey Karpicke. We keep pages uncluttered and reveal detail gradually because of John Sweller's <em>cognitive load theory</em>. We cite the effects, not invented numbers.</p>
+                <p data-a11y="science">Recall cards rest on the <em>retrieval-practice (testing) effect</em> — recalling something strengthens it more than re-reading — established over decades by researchers including Henry Roediger and Jeffrey Karpicke. We keep pages uncluttered and reveal detail gradually because of John Sweller's <em>cognitive load theory</em>. We cite the effects, not invented numbers.</p>
                 <p class="links">
                     <a href="https://en.wikipedia.org/wiki/Testing_effect" target="_blank" rel="noopener">Testing effect ↗</a>
                     <a href="https://en.wikipedia.org/wiki/Cognitive_load" target="_blank" rel="noopener">Cognitive load theory ↗</a>
@@ -141,7 +141,7 @@
 
             <section class="card">
                 <h2>Standing on shoulders</h2>
-                <p>If any of this resonates, please support the people above directly — read their work, follow them, back their projects. We're just trying to put their ideas to work for everyday learners. Spotted something we should credit and haven't? <a href="/contact/">Tell us</a> and we'll fix it.</p>
+                <p data-a11y="closing">If any of this resonates, please support the people above directly — read their work, follow them, back their projects. We're just trying to put their ideas to work for everyday learners. Spotted something we should credit and haven't? <a href="/contact/">Tell us</a> and we'll fix it.</p>
             </section>
         </article>
     </main>

@@ -104,7 +104,7 @@
   /* ---- reading-level content swap (pre-generated per page; graceful if absent) ---- */
   var CONTENT = null, CONTENT_TRIED = false;
   function pageSlug() {
-    var p = location.pathname.replace(/index\.html$/, '').replace(/\/$/, '');
+    var p = location.pathname.replace(/index\.html$/, '').replace(/\.html$/, '').replace(/\/$/, '');
     if (p === '' ) return 'home';
     return p.replace(/^\//, '').replace(/\//g, '-') || 'home';
   }

@@ -1,0 +1,72 @@
+{
+  "hero-title": [
+    "Want a path to follow? Here is one",
+    "Would you like a path to follow? Try this one",
+    "Prefer a path? Follow this one",
+    "Prefer a guided path? Take this one",
+    "Prefer a set path? Take it"
+  ],
+  "hero-lede": [
+    "Maybe picking what to read next feels like too much right now. That's okay. Let us choose the order for you. Each path takes you through things one step at a time, so you can relax and just learn. Pick the path that sounds most like you. And don't worry — you can change to another one whenever you want.",
+    "If picking what to read next feels like one decision too many, let us handle it for you. Each path is a gentle route that goes in order, so you can relax and learn at your own pace. Pick the one that sounds like you — and don't worry, you can switch any time you like.",
+    "If choosing what to read next feels like one decision too many, let us take care of it. Each path is a gentle, in-order route, so you can just relax and learn. Pick the one that sounds like you — and don't worry, you can switch any time.",
+    "When choosing what to read next is one decision too many, let us handle it. Each path is a gentle, ordered route — just relax and learn. Pick the one that fits you; switch any time.",
+    "Too many choices? Each path is a fixed, ordered route. Pick the one that fits; switch any time."
+  ],
+  "beginner-meta": [
+    "No experience needed · 5 quick reads · about 20 minutes",
+    "No experience needed · 5 short reads · about 20 min",
+    "No experience needed · 5 short reads · about 20 min",
+    "No experience needed · 5 reads · ~20 min",
+    "No experience · 5 reads · ~20 min"
+  ],
+  "beginner-desc": [
+    "This path goes from \"I'm a bit nervous about this\" to \"oh, I've got this.\" You'll learn what AI is, why it matters, and how to take your very first steps with it. It's the perfect place to begin.",
+    "Go from \"I'm a bit nervous\" to \"oh, I've got this\" — what AI is, why it matters, and how to take your first steps with it. It's the perfect place to begin.",
+    "From \"I'm a bit nervous\" to \"oh, I've got this\" — what AI is, why it matters, and how to take your first steps with it. The perfect place to begin.",
+    "From nervous to confident — what AI is, why it matters, and your first steps with it. The place to begin.",
+    "Nervous to confident: what AI is, why it matters, first steps. Start here."
+  ],
+  "practitioner-meta": [
+    "A step up · 5 quick reads · do this after the first path",
+    "A step up · 5 short reads · after the first path",
+    "A step up · 5 short reads · after the first path",
+    "A step up · 5 reads · after path one",
+    "Step up · 5 reads · after path 1"
+  ],
+  "practitioner-desc": [
+    "Ready to actually use AI in your day? This path covers the handy mental models, the tools, and the small habits that make AI feel like a natural part of how you work.",
+    "Ready to put it to use? You'll learn the handy models, tools, and little habits that make AI a natural part of how you work.",
+    "Ready to put it to use? The handy models, tools, and little habits that make AI a natural part of how you work.",
+    "Ready to apply it? The models, tools, and habits that make AI part of how you work.",
+    "Apply it: the models, tools, and habits that fold AI into your work."
+  ],
+  "researcher-meta": [
+    "For curious minds · 5 quick reads · do this after the second path",
+    "For the curious · 5 short reads · after the second path",
+    "For the curious · 5 short reads · after the second path",
+    "For the curious · 5 reads · after path two",
+    "Curious · 5 reads · after path 2"
+  ],
+  "researcher-desc": [
+    "This one is for when you've really caught the bug and want to see the whole picture — the deeper thinking behind it all, the psychology of how we use it, and where all of this is heading next.",
+    "For when you've caught the bug and want the whole picture — the deeper thinking, the psychology, and where all of this is heading.",
+    "For when you've caught the bug and want the whole picture — the thinking, the psychology, and where all this is heading.",
+    "For when you want the whole picture — the thinking, the psychology, and where this is heading.",
+    "The whole picture: the thinking, the psychology, where it's heading."
+  ],
+  "wander-title": [
+    "Would you rather just explore on your own?",
+    "Rather just explore on your own?",
+    "Rather just wander?",
+    "Rather wander freely?",
+    "Wander instead?"
+  ],
+  "wander-desc": [
+    "You don't need a path at all. Feel free to dip into whatever pulls at your interest: the <a href=\"/learn/foundations/\">basics</a>, the <a href=\"/learn/frameworks/\">handy mental models</a>, or the <a href=\"/learn/human-factors/\">human side</a> of all this. Or you can keep what you've already learned fresh in your <a href=\"/learn/review/\">review queue</a>.",
+    "No path needed — dip into whatever pulls you: the <a href=\"/learn/foundations/\">basics</a>, the <a href=\"/learn/frameworks/\">handy mental models</a>, or the <a href=\"/learn/human-factors/\">human side</a>. Or keep what you've learned fresh in your <a href=\"/learn/review/\">review queue</a>.",
+    "No path needed — dip into whatever pulls you: the <a href=\"/learn/foundations/\">basics</a>, the <a href=\"/learn/frameworks/\">handy mental models</a>, or the <a href=\"/learn/human-factors/\">human side</a>. Or keep what you've learned fresh in your <a href=\"/learn/review/\">review queue</a>.",
+    "No path needed — dip into what pulls you: the <a href=\"/learn/foundations/\">basics</a>, the <a href=\"/learn/frameworks/\">mental models</a>, or the <a href=\"/learn/human-factors/\">human side</a>. Or keep prior learning fresh in your <a href=\"/learn/review/\">review queue</a>.",
+    "Browse freely: <a href=\"/learn/foundations/\">basics</a>, <a href=\"/learn/frameworks/\">mental models</a>, <a href=\"/learn/human-factors/\">human side</a>. Or revisit via <a href=\"/learn/review/\">review queue</a>."
+  ]
+}

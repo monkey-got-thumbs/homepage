@@ -65,11 +65,11 @@
         .content { padding-block: 2rem; }
         .content h2 { margin-top: 2.5rem; }
         .content p { line-height: 1.8; margin-bottom: 1.25rem; }
-        .content ul, .content ol { margin-bottom: 1.25rem; padding-left: 1.5rem; }
+        .content ul, .content ol { margin-bottom: 1.25rem; padding-inline-start: 1.5rem; }
         .content li { margin-bottom: 0.5rem; line-height: 1.7; }
         .page-meta { color: var(--color-muted); font-size: var(--font-size-sm); margin-top: 0.5rem; }
         .lead { font-size: var(--font-size-lg); color: var(--color-fg-secondary); line-height: 1.7; }
-        .highlight-box { background: var(--color-bg-secondary); border-left: 4px solid var(--color-accent); padding: 1.25rem 1.5rem; border-radius: var(--radius-sm); margin: 1.5rem 0; }
+        .highlight-box { background: var(--color-bg-secondary); border-inline-start: 4px solid var(--color-accent); padding: 1.25rem 1.5rem; border-radius: var(--radius-sm); margin: 1.5rem 0; }
         .highlight-box p { margin-bottom: 0; }
     </style>
     <link rel="stylesheet" href="/assets/css/accessibility.css">
@@ -93,8 +93,8 @@
             </nav>
 
             <header>
-                <h1>Agency and Autonomy: Intrinsic Motivation in Augmented Intelligence</h1>
-                <p class="lead">Agency is not a single trait. It is the integration of worldview, charity, and reason — shaped by intrinsic motivation and constrained by the same bounded rationality that limits all human cognition.</p>
+                <h1 data-a11y="hero-title">Agency and Autonomy: Intrinsic Motivation in Augmented Intelligence</h1>
+                <p class="lead" data-a11y="lead">Agency is not a single trait. It is the integration of worldview, charity, and reason — shaped by intrinsic motivation and constrained by the same bounded rationality that limits all human cognition.</p>
                 <p class="page-meta">Human Factors &middot; 7 min read</p>
             </header>
 
@@ -104,12 +104,12 @@
             </aside>
 
             <div class="enduring">
-                <p><strong>The one idea to keep:</strong> You can hand a task to AI without handing over the decision. Autonomy is being free to act; agency is owning the choices that shape the work. Delegate the doing — keep the judgment about what matters and why.</p>
+                <p data-a11y="enduring-idea"><strong>The one idea to keep:</strong> You can hand a task to AI without handing over the decision. Autonomy is being free to act; agency is owning the choices that shape the work. Delegate the doing — keep the judgment about what matters and why.</p>
             </div>
 
             <section>
                 <h2>What Agency Actually Means</h2>
-                <p>
+                <p data-a11y="what-agency-means">
                     Agency is frequently confused with autonomy, but the two are distinct. Autonomy is the freedom to act. Agency is the capacity to act meaningfully — to integrate your understanding of the world, your intentions toward others, and your ability to reason into coherent action. A person can have autonomy (no one is stopping them) without agency (they do not know what to do or why).
                 </p>
                 <p>
@@ -139,7 +139,7 @@
                         <p>Whose request wins when two are equally cheap.</p>
                     </div>
                 </div>
-                <p>The AI hands her a clear picture of the options. It never tells her the answer is "ship the enterprise feature" — that ranking comes from her read of the team's purpose, her relationships, and what she's willing to trade. She delegated the legwork. She kept the decision. That is agency preserved, not surrendered.</p>
+                <p data-a11y="worked-conclusion">The AI hands her a clear picture of the options. It never tells her the answer is "ship the enterprise feature" — that ranking comes from her read of the team's purpose, her relationships, and what she's willing to trade. She delegated the legwork. She kept the decision. That is agency preserved, not surrendered.</p>
             </div>
 
             <mgt-recall id="agc-autonomy-vs-agency">
@@ -158,16 +158,16 @@
 
             <section>
                 <h2>The Worldview Spectrum</h2>
-                <p>
+                <p data-a11y="worldview-spectrum">
                     Worldview operates on a continuum from 0 (purely combative) to 10 (purely collaborative). At the combative end, every interaction is a competition. Resources are scarce, other people are threats, and the goal is to win. At the collaborative end, every interaction is an opportunity. Resources can be created, other people are potential partners, and the goal is to build.
                 </p>
                 <p>
                     Most people do not sit at either extreme. They occupy a range, shifting position depending on context. You might approach a salary negotiation with a worldview of 3 (largely competitive) and a brainstorming session with a worldview of 8 (largely collaborative). This is normal and healthy.
                 </p>
                 <div class="highlight-box">
-                    <p><strong>Maturity defined:</strong> Maturity is the skill of compartmentalising worldview — recognising which mode a situation calls for and shifting accordingly. An immature agent applies the same worldview to every context. A mature agent reads the situation and adapts, without losing coherence or integrity.</p>
+                    <p data-a11y="maturity-defined"><strong>Maturity defined:</strong> Maturity is the skill of compartmentalising worldview — recognising which mode a situation calls for and shifting accordingly. An immature agent applies the same worldview to every context. A mature agent reads the situation and adapts, without losing coherence or integrity.</p>
                 </div>
-                <p>
+                <p data-a11y="worldview-in-ai-work">
                     In AI-augmented work, worldview matters because it determines how you approach the collaboration itself. A combative worldview treats the AI as a tool to be exploited or a threat to be contained. A collaborative worldview treats the AI as a partner whose capabilities complement your own. The augmented intelligence framework explicitly favours collaboration — not because competition is always wrong, but because human-AI interaction is structurally positive-sum. The AI does not lose when you gain.
                 </p>
             </section>
@@ -188,7 +188,7 @@
 
             <section>
                 <h2>The Intrinsic Motivation Triad</h2>
-                <p>
+                <p data-a11y="motivation-intro">
                     Spirit — the inner drive that shapes worldview and sustains engagement — is fuelled by three intrinsic motivators. These are not management buzzwords. They are fundamental psychological needs identified by decades of self-determination research:
                 </p>
                 <ol>
@@ -196,7 +196,7 @@
                     <li><strong>Mastery</strong> — The drive to get better at something that matters. Mastery is not about being the best — it is about the experience of growth. When you can feel yourself improving, engagement is self-sustaining. When growth stalls, motivation decays.</li>
                     <li><strong>Autonomy</strong> — The freedom to choose how you approach your work. Autonomy is not the absence of structure — it is the presence of choice within structure. People who have clear goals but freedom in how to pursue them outperform those who are micromanaged, even when the micromanager's instructions are technically optimal.</li>
                 </ol>
-                <p>
+                <p data-a11y="triad-feedback-loop">
                     These three motivators interact with worldview in a feedback loop. When purpose, mastery, and autonomy are satisfied, worldview trends collaborative — you have the psychological resources to be generous. When they are thwarted, worldview trends combative — scarcity makes people defensive. This is why <a href="/learn/human-factors/burnout-resilience.html">burnout</a> does not just reduce productivity; it fundamentally shifts how people relate to each other and to their work.
                 </p>
             </section>
@@ -217,13 +217,13 @@
 
             <section>
                 <h2>Prioritisation Under Bounded Rationality</h2>
-                <p>
+                <p data-a11y="prioritisation-bounded">
                     Agency requires prioritisation, and prioritisation is where <a href="/learn/human-factors/bounded-rationality.html">bounded rationality</a> bites hardest. You have a finite pool of time, energy, and focus. Multiple demands compete for that pool. Every "yes" to one demand is an implicit "no" to others. Prioritisation is the system for making those trade-offs explicitly rather than letting urgency decide by default.
                 </p>
                 <p>
                     Prioritisation ranges from 0 to 1, where 0 means complete neglect and 1 means total allocation. No single demand should reach 1 for long, because that means everything else has dropped to 0. The goal is a distribution that reflects your values and goals rather than your anxiety and obligations.
                 </p>
-                <p>
+                <p data-a11y="ai-helps-tradeoffs">
                     This is where AI augmentation becomes powerful. An AI cannot determine your priorities — that requires human judgment about values, relationships, and meaning. But it can help you see the trade-offs clearly. It can surface what you are neglecting. It can model the consequences of different allocations. It can hold the full picture while you focus on one piece, preventing the tunnel vision that bounded rationality tends to create.
                 </p>
                 <div class="highlight-box">
@@ -253,7 +253,7 @@
 
             <section>
                 <h2>Agency in the Age of AI</h2>
-                <p>
+                <p data-a11y="ai-age-challenge">
                     The introduction of AI into knowledge work creates a specific challenge for agency: the temptation to delegate not just tasks but judgment. When an AI can generate plans, draft strategies, and recommend priorities, the path of least resistance is to let it decide. This feels efficient, but it is the erosion of agency disguised as productivity.
                 </p>
                 <p>
@@ -266,7 +266,7 @@
 
             <div class="misconception">
                 <h3>The trap: "Letting the AI decide saves me effort"</h3>
-                <p>It does save effort — that is exactly why it is dangerous. The decisions you skip are the ones that carry your values, your sense of purpose, and your read of what matters. Each time you accept the AI's ranking without owning it, you keep the autonomy (no one made you) but quietly trade away the agency. Effort saved on the choices that define your work is not a discount; it is a transfer of who is actually driving.</p>
+                <p data-a11y="misconception-effort">It does save effort — that is exactly why it is dangerous. The decisions you skip are the ones that carry your values, your sense of purpose, and your read of what matters. Each time you accept the AI's ranking without owning it, you keep the autonomy (no one made you) but quietly trade away the agency. Effort saved on the choices that define your work is not a discount; it is a transfer of who is actually driving.</p>
             </div>
 
             <mgt-recall id="agc-trap">
@@ -285,7 +285,7 @@
 
             <section class="tryit" aria-labelledby="tryit-agc">
                 <h2 id="tryit-agc">Try it on your own work</h2>
-                <p>Pick one task you are tempted to fully hand to AI — a plan, a prioritised list, a strategy. Use it to delegate the work without delegating the decision.</p>
+                <p data-a11y="tryit-intro">Pick one task you are tempted to fully hand to AI — a plan, a prioritised list, a strategy. Use it to delegate the work without delegating the decision.</p>
                 <ol>
                     <li><strong>Name the decision first.</strong> Before you ask the AI for anything, write the choice that is actually yours: what this work is for, who it serves, what you are willing to neglect. That sentence is the part you keep.</li>
                     <li><strong>Ask for options and trade-offs, not a verdict.</strong> Have the AI lay out the alternatives and what each one costs or starves — but do not ask it to pick. Make it show the picture; you do the ranking.</li>

@@ -1,0 +1,114 @@
+{
+  "hero-title": [
+    "Ways to talk to AI",
+    "How you talk to AI",
+    "Interfaces",
+    "Interfaces",
+    "Interfaces"
+  ],
+  "lead": [
+    "An interface is just the way you reach an AI — the door you walk through to use it. The door you pick does not only change how you use the AI; it changes what you can use it for at all. A typing box only lets you type. Talking out loud sets your hands free. A picture or chart can show you a pattern that words would hide. So the way in really does shape the way you think.",
+    "An interface is how you reach AI. The way in changes not just how you use it but what you can use it for. A chat box keeps you to text. Voice frees your hands. A visual interface shows patterns words would hide. The interface shapes the thinking.",
+    "Interfaces are the access points of augmented intelligence. They determine not just how you use AI, but what you can use it for. A chatbox constrains you to text. A voice agent frees your hands. A visual interface reveals patterns invisible in words. The interface shapes the cognition.",
+    "Interfaces are the access points of augmented intelligence — they set not just how you use AI but what for. A chatbox confines you to text; voice frees your hands; a visual interface reveals patterns words hide. The interface shapes the cognition.",
+    "Interfaces are the access points of augmented intelligence: they bound not how but what. Chatbox = text; voice = hands free; visual = hidden patterns. Interface shapes cognition."
+  ],
+  "enduring-idea": [
+    "<strong>The one idea to keep:</strong> The interface is not just a window you look at the AI through — it is part of how you think with it. Whether you reach for a chat box, your voice, a drawing canvas, or the space around you changes which problems you even try, and how good the answer can be. Pick the interface that fits the job, and the right one stops feeling like a tool. It starts to feel like part of your own thinking.",
+    "<strong>The one idea to keep:</strong> The interface is not a window onto AI — it is part of how you think with it. Whether you reach for a chat box, your voice, a visual canvas, or your physical space changes which problems you try and how good the result can be. Fit the interface to the task, and the right one feels less like a tool and more like an extension of your thinking.",
+    "<strong>The one idea to keep:</strong> The interface is not a window onto AI — it is part of how you think with it. Whether you reach for a chatbox, your voice, a visual canvas, or your physical space changes which problems you even attempt and how good the result can be. Choose the interface to fit the task, and the right one stops feeling like a tool and starts feeling like an extension of your own thinking.",
+    "<strong>The one idea to keep:</strong> The interface is not a window onto AI — it is part of how you think with it. Chatbox, voice, visual canvas, or physical space each changes which problems you attempt and how good the result can be. Fit the interface to the task and it stops feeling like a tool — it becomes an extension of your thinking.",
+    "<strong>Keep this:</strong> The interface isn't a window onto AI — it's part of how you think with it. Chatbox, voice, canvas, or space shapes which problems you attempt and how well. Fit it to the task; it becomes an extension of thought."
+  ],
+  "shapes-chat-window": [
+    "For most people, AI is a chat window. You type something, and the AI types back. This is the way nearly everyone meets AI, and it holds you back more than it seems. Chat is not bad. The trouble is that it is one thin, narrow channel, and every kind of work with AI has to squeeze through it.",
+    "Most people meet AI as a chat window: you type, the AI types back. This is the main way we use it, and it is quietly limiting — not because chat is bad, but because it is one narrow channel that all human–AI work has to squeeze through.",
+    "Most people's experience of AI is a chat window. You type a message, the AI types back. This is the dominant paradigm, and it is profoundly limiting — not because chat is bad, but because it represents a single, narrow channel through which human-AI collaboration must squeeze.",
+    "Most people's experience of AI is a chat window: you type, it types back. This dominant paradigm is profoundly limiting — not because chat is bad, but because it forces all human–AI collaboration through one narrow channel.",
+    "AI for most people is a chat window — type, it replies. The dominant paradigm is limiting: not chat's fault, but one narrow channel for all collaboration."
+  ],
+  "not-neutral-conduit": [
+    "The interface is not just a neutral pipe that carries your words through. It quietly shapes which problems you even think to tackle, how you describe them, and what kinds of answers are even possible. A surgeon would not work through a tiny keyhole if the whole door were standing open. Yet that is more or less what a chat-only interface does to working with AI.",
+    "The interface is not a neutral pipe. It shapes which problems you think to solve, how you frame them, and what answers are possible. A surgeon would not operate through a keyhole if the door were open — yet that is what a chat-only interface imposes on AI work.",
+    "The interface is not a neutral conduit. It actively shapes what problems you think to solve, how you frame them, and what kinds of answers are possible. A surgeon would not operate through a keyhole if the door were open. Yet that is essentially what a chat-only interface imposes on AI collaboration.",
+    "The interface is no neutral conduit. It shapes what problems you think to solve, how you frame them, and what answers are possible. A surgeon would not operate through a keyhole with the door open — yet a chat-only interface imposes exactly that.",
+    "The interface isn't neutral: it shapes which problems you attempt, how you frame them, and what answers are possible. Chat-only AI is operating through a keyhole with the door open."
+  ],
+  "worked-intro": [
+    "Here is one job — crop a photo so the person sits in the right third of the frame — done two ways. Watch how the interface, not the AI itself, decides how much work it takes and how it turns out.",
+    "Same job — crop a photo so a person sits in the right third — done two ways. Watch how the interface, not the model, decides the effort and the outcome.",
+    "Same task — crop a photo so a person sits in the right third of the frame — done two ways. Watch how the interface, not the model, decides the effort and the outcome.",
+    "One task — crop a photo so a person sits in the right third — done two ways. Watch the interface, not the model, set the effort and outcome.",
+    "Crop a photo, person in the right third, two ways. The interface, not the model, sets effort and outcome."
+  ],
+  "worked-conclusion": [
+    "The chatbot turned a feel-it-in-space judgment into a translation job: turn the feeling into words, turn the words into the AI's guess, then turn the guess back into a feeling. The visual interface let you make the call right where it lives — on the picture itself. Neither one is cleverer than the other. One just matches the shape of the task, and that match is the whole reason it took less effort and came out better.",
+    "The chatbot turned a spatial judgment into a translation job: feeling into words, words into the AI's guess, guess back into feeling. The visual interface let you make the call where it lives — on the image. Neither is smarter; one fits the shape of the task, and that fit is the whole difference in effort and result.",
+    "The chatbot turned a spatial judgment into a translation exercise: feeling into words, words into the AI's guess, guess back into feeling. The visual interface let you make the judgment where it lives — on the image. Neither interface is smarter; one simply fits the shape of the task, and that fit is the whole difference in effort and result.",
+    "The chatbot turned a spatial judgment into a translation exercise: feeling to words, words to the AI's guess, guess back to feeling. The visual interface let you judge where it lives — on the image. Neither is smarter; one fits the task's shape, and that fit is the whole difference.",
+    "The chatbot made a spatial judgment a translation exercise; the visual interface let you judge on the image. Neither is smarter — fit to the task is the whole difference."
+  ],
+  "nl-oldest": [
+    "Natural language — plain talking and writing — is the oldest, most natural interface we have. People have been using it for tens of thousands of years. The fact that AI can now understand it and answer back in it is a huge deal: you no longer have to learn a special search code, programming, or fiddly menus to use powerful computing. You can just say what you mean.",
+    "Natural language is the oldest and most natural interface we have — we have used it for tens of thousands of years. That AI can now understand and produce it is revolutionary: you no longer need special query languages, programming, or complex menus to use powerful computation.",
+    "Natural language is the oldest and most intuitive interface humans possess. We have been communicating in natural language for tens of thousands of years. The fact that AI can now understand and generate natural language is revolutionary — it removes the need to learn specialised query languages, programming syntax, or complex menu systems to interact with powerful computation.",
+    "Natural language is our oldest, most intuitive interface — tens of thousands of years old. That AI now understands and generates it is revolutionary: no specialised query languages, programming syntax, or menu systems needed to wield powerful computation.",
+    "Natural language is our oldest interface. AI understanding and generating it removes the need for query languages, syntax, or menus to access computation."
+  ],
+  "nl-paradox": [
+    "<strong>The strange part:</strong> natural language is the easiest AI interface to pick up and the one most likely to go wrong. The skill of working with AI in plain words is really about knowing when to be exact, when to give more background, and when to stop typing and switch to a different way of working altogether.",
+    "<strong>The paradox:</strong> natural language is the most accessible AI interface and the most error-prone. The skill of working with AI in plain words is knowing when to be precise, when to give context, and when to switch to a different modality entirely.",
+    "<strong>The paradox:</strong> Natural language is the most accessible AI interface and the most error-prone. The skill of working with AI through natural language lies in knowing when to be precise, when to provide context, and when to switch to a different modality entirely.",
+    "<strong>The paradox:</strong> natural language is the most accessible AI interface and the most error-prone. The skill lies in knowing when to be precise, when to add context, and when to switch modality entirely.",
+    "<strong>The paradox:</strong> natural language is the most accessible interface and the most error-prone. Skill = knowing when to be precise, when to add context, when to switch modality."
+  ],
+  "voice-frees-body": [
+    "Voice interfaces add something text simply cannot: they free your body. You can work with AI while you drive, cook, walk, or use your hands for something else. This is not just handy — it is a real, big change in when and where working with AI can happen at all.",
+    "Voice interfaces add what text cannot: they free your body. You can work with AI while driving, cooking, walking, or using your hands. This is not mere convenience — it is a real expansion of when and where AI collaboration can happen.",
+    "Voice interfaces add a dimension that text cannot: they free your body. You can interact with AI while driving, cooking, walking, or working with your hands. This is not a convenience — it is a fundamental expansion of when and where AI collaboration can happen.",
+    "Voice adds what text cannot: it frees your body. You can work with AI while driving, cooking, walking, or using your hands — a fundamental expansion of when and where collaboration can happen, not mere convenience.",
+    "Voice frees the body: collaborate while driving, cooking, walking, hands busy. A fundamental expansion of when and where, not mere convenience."
+  ],
+  "visual-creatures": [
+    "We are visual creatures. We take in pictures faster than text, we spot patterns in images that hide inside tables of numbers, and we remember what we see better than what we are told. And yet most AI interfaces hand back their answers as plain text.",
+    "Humans are visual creatures. We process images faster than text, we spot patterns invisible in tables of numbers, and we remember what we see better than what we hear. Yet most AI interfaces present their output as text.",
+    "Humans are visual creatures. We process visual information faster than text, we detect patterns in images that are invisible in tables of numbers, and we remember visual information more reliably than verbal information. Yet most AI interfaces present their output as text.",
+    "Humans are visual creatures: we process images faster than text, detect patterns invisible in number tables, and remember visuals more reliably than words. Yet most AI interfaces output text.",
+    "We are visual: faster than text, pattern-spotting beyond number tables, better recall. Yet AI mostly outputs text."
+  ],
+  "spatial-frontier": [
+    "Spatial computing is the leading edge of AI interfaces — the chance to place AI help right inside the world around you. Instead of turning to a screen to ask a question, the answer shows up where you need it, when you need it, pinned to the real objects and places you are working with.",
+    "Spatial computing is the frontier of AI interfaces — the chance to embed AI help directly in your physical surroundings. Instead of turning to a screen to ask, the information appears where and when you need it, anchored to the real objects and spaces you are working with.",
+    "Spatial computing represents the frontier of AI interfaces — the possibility of embedding AI assistance directly into your physical environment. Instead of switching to a screen to ask AI a question, the information appears where you need it, when you need it, anchored to the physical objects and spaces you are working with.",
+    "Spatial computing is the frontier of AI interfaces — embedding assistance directly into your physical environment. Instead of switching to a screen, information appears where and when you need it, anchored to the objects and spaces you work with.",
+    "Spatial computing is the interface frontier: AI embedded in your environment. No screen-switching — information appears anchored to real objects, where and when needed."
+  ],
+  "spatial-dissolve-boundary": [
+    "What this means for augmented intelligence is huge. Spatial interfaces erase the line between \"using AI\" and \"doing the work.\" You are no longer flipping back and forth between your task and your AI helper — the help is folded right into the task itself. That cuts the cost of switching your attention, keeps you in the flow, and opens up kinds of teamwork between you and AI that a flat screen simply cannot allow.",
+    "The implications for augmented intelligence are large. Spatial interfaces dissolve the line between \"using AI\" and \"doing work.\" You no longer switch between your task and your AI helper — the help is woven into the task. This cuts switching costs, preserves flow, and enables collaboration impossible on a flat screen.",
+    "The implications for augmented intelligence are profound. Spatial interfaces dissolve the boundary between \"using AI\" and \"doing work.\" You are no longer switching between your task and your AI assistant — the assistance is woven into the task itself. This reduces cognitive switching costs, preserves flow state, and enables forms of human-AI collaboration that are impossible on a flat screen.",
+    "The implications are profound. Spatial interfaces dissolve the boundary between \"using AI\" and \"doing work\" — assistance is woven into the task, not a separate screen. This cuts switching costs, preserves flow, and enables collaboration impossible on a flat screen.",
+    "Spatial interfaces dissolve the \"using AI\" / \"doing work\" boundary: assistance woven into the task. Lower switching cost, preserved flow, collaboration impossible on flat screens."
+  ],
+  "empty-text-box": [
+    "Older software has interfaces you can poke around in — menus, buttons, little pop-up hints. You can click about and learn as you go. But AI tools, especially the ones driven by plain typing, have an \"empty text box\" problem: the blank box gives you no clue about what the tool can do, how to ask for it, or what a good question even looks like. This is why so many people barely use AI — not because it cannot do the thing, but because the interface never shows them it can.",
+    "Traditional software has discoverable interfaces — menus, buttons, tooltips — so you can explore and learn by clicking. AI systems driven by natural language have an \"empty text box\" problem: the interface gives no hint of what the system can do or what good input looks like. This is why many people underuse AI — the interface fails to reveal the capability.",
+    "Traditional software has discoverable interfaces — menus, buttons, tooltips. You can explore and learn by clicking around. AI systems, particularly those driven by natural language, have an \"empty text box\" problem: the interface gives no indication of what the system can do, how to ask for it, or what good input looks like. This is why so many people underuse AI — not because the capability is missing, but because the interface fails to reveal it.",
+    "Traditional software is discoverable — menus, buttons, tooltips you learn by clicking. Natural-language AI has an \"empty text box\" problem: no indication of what it can do, how to ask, or what good input looks like. People underuse AI not for missing capability but because the interface hides it.",
+    "Traditional software is discoverable (menus, buttons, tooltips). Natural-language AI has the \"empty text box\" problem — no cue to capability, phrasing, or good input. Underuse follows from a hidden, not missing, capability."
+  ],
+  "design-principle": [
+    "<strong>The rule for good design:</strong> the best AI interface is one that makes <a href=\"/learn/frameworks/memory-systems.html\">what you already know</a> count for more — not one that takes the place of knowing things. It should boost what you can already do, not leave you leaning on it for everything.",
+    "<strong>The design principle:</strong> the best AI interface makes <a href=\"/learn/frameworks/memory-systems.html\">your knowledge</a> more powerful, not one that replaces the need for knowledge. It should amplify what you can already do, not create a dependency.",
+    "<strong>The design principle:</strong> The best AI interface is one that makes <a href=\"/learn/frameworks/memory-systems.html\">your knowledge</a> more powerful, not one that replaces the need for knowledge. It should amplify your existing capability, not create a dependency.",
+    "<strong>The design principle:</strong> the best AI interface makes <a href=\"/learn/frameworks/memory-systems.html\">your knowledge</a> more powerful, not one that replaces the need for it. Amplify existing capability; do not create dependency.",
+    "<strong>Principle:</strong> the best interface makes <a href=\"/learn/frameworks/memory-systems.html\">your knowledge</a> more powerful, not redundant. Amplify capability, not dependency."
+  ],
+  "trap-chatbot-default": [
+    "Because a chat window is where most people first met AI, it is easy to treat it as the natural home for every job. It is not. The chat box is just one interface among many, and for jobs that are about space, pictures, busy hands, or things out in the world, it is often the worst fit — it makes you turn everything into words and then back again. Reaching for chat without thinking quietly caps what you can do. The real skill is not \"write better prompts.\" It is noticing when a job wants your voice, your hands on a canvas, or facts laid right over the thing in front of you.",
+    "Because the chat window was most people's first encounter with AI, it is easy to treat it as the natural home for every task. It is not. The chatbox is one interface among many, and for spatial, visual, hands-busy, or in-the-world tasks it is often the worst fit — it forces you to translate everything into prose and back. Reaching for chat by reflex quietly caps what you can do. The skill is not \"prompt better\"; it is noticing when the task wants your voice, your hands on a canvas, or information laid over the thing in front of you.",
+    "Because the chat window was most people's first encounter with AI, it is easy to treat it as the natural home for every task. It is not. The chatbox is just one interface among many, and for spatial, visual, hands-busy, or in-the-world tasks it is often the worst fit — it forces you to translate everything into prose and back again. Reaching for chat by reflex quietly caps what you can do. The skill is not \"prompt better\"; it is noticing when the task wants your voice, your hands on a canvas, or information laid over the thing in front of you.",
+    "Because chat was most people's first encounter with AI, it is easy to treat it as the home for every task. It is not. The chatbox is one interface among many, and for spatial, visual, hands-busy, or in-the-world tasks it is often the worst fit — it forces everything into prose and back. Reflexive chat quietly caps you. The skill is not \"prompt better\"; it is noticing when the task wants your voice, your hands on a canvas, or information over the thing itself.",
+    "Chat being the first encounter makes it a default it shouldn't be. For spatial, visual, hands-busy, or in-world tasks it is often the worst fit — prose round-trips cap you. The skill isn't \"prompt better\" but matching modality: voice, canvas, or overlay."
+  ]
+}

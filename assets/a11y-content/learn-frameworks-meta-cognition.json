@@ -1,0 +1,114 @@
+{
+  "lead": [
+    "Meta-cognition is just thinking about your own thinking. It means you watch how you think, ask if it makes sense, and change it when it doesn't. When you work with AI, this is the steering wheel. It decides one thing: does the AI make you smarter, or does it just make you wrong faster?",
+    "Meta-cognition is thinking about thinking — watching, checking, and adjusting how you reason. When you work with AI, it acts as your feedback loop and steering wheel: it decides whether AI makes you smarter or just faster at being wrong.",
+    "Meta-cognition is thinking about thinking — the ability to observe, evaluate, and adjust your own reasoning process. In augmented intelligence, it is the feedback loop and control surface that determines whether AI makes you smarter or just faster at being wrong.",
+    "Meta-cognition is thinking about thinking — observing, evaluating, and adjusting your own reasoning. In augmented intelligence it is the feedback loop and control surface deciding whether AI makes you smarter or merely faster at being wrong.",
+    "Meta-cognition: observing, evaluating, and steering your own reasoning. In augmented intelligence it is the control loop deciding whether AI sharpens you or just accelerates error."
+  ],
+  "enduring": [
+    "<strong>The one idea to keep:</strong> Meta-cognition is how you steer AI. When you watch your own thinking — and say plainly what you want, what the limits are, and how it should be laid out — you lead the AI. If you don't, the AI leads you.",
+    "<strong>The one idea to keep:</strong> Meta-cognition is the steering wheel for AI — when you watch your own thinking and name what you want, the limits, and the structure, you lead the AI instead of it leading you.",
+    "<strong>The one idea to keep:</strong> Meta-cognition is the control surface for directing AI — when you watch your own thinking (name what you actually want, the constraints, the structure), you lead the AI instead of being led by it.",
+    "<strong>The one idea to keep:</strong> Meta-cognition is the control surface for directing AI — watch your own thinking, name the goal, constraints, and structure, and you lead the AI rather than being led.",
+    "<strong>Keep this:</strong> Meta-cognition is AI's control surface — name your goal, constraints, and structure, and you lead the AI instead of it leading you."
+  ],
+  "why-outsourcing": [
+    "When you use AI without meta-cognition, you hand your thinking over to a system that <a href=\"/learn/foundations/ai-pitfalls.html\">cannot really think</a>. You take what it gives you. You build on its ideas. You follow where it leads — and you never once stop to ask if any of it is actually right.",
+    "When you use AI without meta-cognition, you hand your thinking to a system that <a href=\"/learn/foundations/ai-pitfalls.html\">cannot think</a>. You accept its outputs, build on its suggestions, and follow its reasoning — without ever stopping to ask whether that reasoning holds up.",
+    "When you use AI without meta-cognition, you are outsourcing your thinking to a system that <a href=\"/learn/foundations/ai-pitfalls.html\">cannot think</a>. You accept its outputs, build on its suggestions, and follow its reasoning — without ever asking whether the reasoning is sound.",
+    "Use AI without meta-cognition and you outsource your thinking to a system that <a href=\"/learn/foundations/ai-pitfalls.html\">cannot think</a> — accepting its outputs, building on its suggestions, and following its reasoning without ever asking whether the reasoning is sound.",
+    "Without meta-cognition you outsource thinking to a system that <a href=\"/learn/foundations/ai-pitfalls.html\">cannot think</a>: accepting outputs and following its reasoning unchecked."
+  ],
+  "worked-dan": [
+    "Dan has to email a customer because their project is late. First he sends the obvious prompt. Then he pauses. He watches his own thinking and notices something: he never told the AI what he really wants. So before he asks again, he spells out the goal, the limits, and the shape the email should take.",
+    "Dan needs to email a customer whose project is running late. He fires off the obvious prompt — then he stops, watches his own thinking, and notices he never told the AI what he actually wants. So he names the goal, the constraints, and the structure before asking again.",
+    "Dan needs to write to a customer whose project is running late. He fires off the obvious prompt. Then he stops, watches his own thinking, and notices that he never told the AI what he actually wants — so he names the goal, the constraints, and the structure before asking again.",
+    "Dan must email a customer whose project is late. He fires the obvious prompt, then stops, watches his own thinking, and notices he never told the AI what he actually wants — so he names the goal, constraints, and structure before asking again.",
+    "Dan, emailing a late-project customer, fires the obvious prompt, then notices he never stated what he wants — and re-asks with goal, constraints, and structure named."
+  ],
+  "thinking-tools-intro": [
+    "In the <a href=\"/learn/foundations/three-pillars.html\">augmented intelligence framework</a>, meta-cognition includes what we call \"thinking toys\" — small, simple tools that help you think about your own thinking. They are not big formal systems. They are just habits of mind. You can learn them, and you get better at them with practice.",
+    "In the <a href=\"/learn/foundations/three-pillars.html\">augmented intelligence framework</a>, meta-cognition includes \"thinking toys\" — light cognitive tools that help you reason about your own reasoning. They are not formal systems but habits of mind you can learn and practise.",
+    "In the <a href=\"/learn/foundations/three-pillars.html\">augmented intelligence framework</a>, meta-cognition encompasses \"thinking toys\" — lightweight cognitive tools that help you reason about your own reasoning. These are not formal systems. They are habits of mind that you can learn and practise.",
+    "In the <a href=\"/learn/foundations/three-pillars.html\">augmented intelligence framework</a>, meta-cognition encompasses \"thinking toys\" — lightweight cognitive tools for reasoning about your reasoning. Not formal systems but learnable, practisable habits of mind.",
+    "In the <a href=\"/learn/foundations/three-pillars.html\">augmented intelligence framework</a>, meta-cognition covers \"thinking toys\": lightweight, learnable habits of mind for reasoning about reasoning."
+  ],
+  "card-mental-models": [
+    "A mental model is a simple picture of how something works. Take this one: \"AI matches patterns, it doesn't really reason.\" Hold that picture in your head before an AI task, and you automatically expect the right things and know what to double-check. The picture isn't the whole truth. But it doesn't need to be. It just needs to help you act well.",
+    "A mental model is a simplified picture of how something works. Bring a clear one to an AI task — \"this model is a pattern matcher, not a reasoner\" — and you automatically adjust your expectations and what you check. The model isn't fully true, but it's useful as a guide for acting.",
+    "Simplified representations of how something works. When you approach an AI task with a clear mental model — \"this model is a pattern matcher, not a reasoner\" — you automatically adjust your expectations and verification strategy. The model is not true in a comprehensive sense, but it is useful as a guide for action.",
+    "Simplified representations of how something works. Approach an AI task with a clear model — \"a pattern matcher, not a reasoner\" — and you automatically adjust expectations and verification. Not comprehensively true, but useful as a guide for action.",
+    "Simplified representations of how things work. \"A pattern matcher, not a reasoner\" recalibrates expectations and verification. Useful as a guide, not literally true."
+  ],
+  "card-prompt-engineering": [
+    "Writing a good prompt is itself an act of thinking about your thinking. To write one clearly, you first have to get clear in your own head: What do I actually need? What background matters? What limits should I set? What should the answer look like? Lots of people find that just building the prompt solves half the problem — before the AI says a single word.",
+    "Writing a good prompt is itself a meta-cognitive exercise. To write a clear prompt you first have to clarify your own thinking: what exactly do I need, what context is essential, what constraints matter, what format should the output take? Many people find that building the prompt solves half the problem before the AI even responds.",
+    "The act of writing a good prompt is itself a meta-cognitive exercise. To write a clear prompt, you must first clarify your own thinking: what exactly do I need? What context is essential? What constraints should I specify? What format should the output take? Many people discover that the process of constructing the prompt solves half the problem before the AI even responds.",
+    "Writing a good prompt is itself a meta-cognitive exercise: to write clearly you must first clarify your own thinking — what you need, the essential context, the constraints, the output format. Often constructing the prompt solves half the problem before the AI responds.",
+    "A good prompt is a meta-cognitive act: clarifying need, context, constraints, and format up front — often solving half the problem before the AI responds."
+  ],
+  "card-scaffolding": [
+    "This means breaking a big, hard problem into smaller, ordered pieces. So instead of asking AI to \"write a marketing strategy,\" you build it up step by step: say who the audience is, list the channels, set the limits, then ask for each part on its own. Doing this forces you to think through how the problem is built — and that makes the AI's answers sharper and easier to check.",
+    "Breaking complex problems into structured sub-problems. Instead of asking AI to \"write a marketing strategy,\" you scaffold: define the audience, list the channels, set the constraints, then ask for each part separately. The scaffolding forces you to think through the problem's structure, making the AI's contributions more targeted and easier to verify.",
+    "Breaking complex problems into structured sub-problems. Instead of asking AI to \"write a marketing strategy,\" you scaffold: define the audience, identify the channels, specify the constraints, then ask for each component separately. The scaffolding forces you to think through the problem structure, which makes the AI's contributions more targeted and verifiable.",
+    "Breaking complex problems into structured sub-problems. Rather than \"write a marketing strategy,\" scaffold: define audience, channels, constraints, then request each component separately. This forces you through the problem structure, making the AI's contributions more targeted and verifiable.",
+    "Decompose complex problems into ordered sub-problems — audience, channels, constraints, then each component — forcing structural thinking and yielding targeted, verifiable AI output."
+  ],
+  "card-rubber-ducking": [
+    "This means explaining your thinking to the AI as a way of testing it. There's an old trick called \"rubber duck debugging\": you explain your code out loud to a toy duck, and the act of explaining helps you spot your own mistakes. It works much better when the listener can ask questions back. So use AI as a thinking partner — explain your reasoning, ask it to find the weak spots, then judge its answer just as carefully.",
+    "Explaining your reasoning to AI as a way of testing it. The old \"rubber duck debugging\" trick — explaining your code to an inanimate object to find errors — gets far more powerful when the object can ask questions back. Use AI as a thought partner: explain your reasoning, ask it to find the weak points, then weigh its critique with the same rigour.",
+    "Explaining your reasoning to AI as a way of testing it. The classic \"rubber duck debugging\" technique — explaining your code to an inanimate object to find errors — becomes vastly more powerful when the object can ask clarifying questions. Use AI as a thought partner: explain your reasoning, ask it to find the weak points, then evaluate its critique with the same rigour.",
+    "Explaining your reasoning to AI to test it. \"Rubber duck debugging\" — explaining code to an object to surface errors — grows vastly more powerful when the object asks clarifying questions. Use AI as a thought partner: explain, ask it to find weak points, then evaluate its critique rigorously.",
+    "Test reasoning by explaining it to AI — \"rubber duck debugging\" that talks back. Explain, request weak points, evaluate the critique rigorously."
+  ],
+  "card-socratic": [
+    "This means using AI to ask you questions instead of handing you answers. So rather than saying \"give me the answer,\" try \"ask me the questions I should be asking about this problem.\" Flipping it this way pushes you to dig into the problem yourself, instead of just sitting back and taking whatever solution lands.",
+    "Using AI to ask you questions rather than give you answers. Instead of \"give me the answer,\" try \"ask me the questions I should be asking about this problem.\" This reversal pushes you to engage with the problem yourself rather than passively receiving solutions.",
+    "Using AI to ask you questions rather than give you answers. Instead of \"give me the answer,\" try \"ask me the questions I should be asking about this problem.\" This reversal forces you to engage with the problem space rather than passively receiving solutions.",
+    "Using AI to ask you questions, not give answers. Instead of \"give me the answer,\" try \"ask me the questions I should be asking.\" The reversal forces engagement with the problem space rather than passive receipt of solutions.",
+    "Have AI question you, not answer you: \"ask what I should be asking.\" The reversal forces engagement over passive solution-taking."
+  ],
+  "control-surface-intro": [
+    "In engineering, a control surface is the part you move to change how the whole thing behaves — the steering wheel in a car, the rudder on a plane. Meta-cognition does the same job for working with AI. It is the part you adjust to steer the whole thing.",
+    "In engineering, a control surface is the part of a system you adjust to change its behaviour — a car's steering wheel, a plane's rudder. Meta-cognition is the control surface of augmented intelligence.",
+    "In engineering, a control surface is the part of a system you adjust to change its behaviour — the steering wheel of a car, the rudder of a plane. Meta-cognition is the control surface of augmented intelligence.",
+    "In engineering, a control surface is the part you adjust to change a system's behaviour — a car's steering wheel, a plane's rudder. Meta-cognition is the control surface of augmented intelligence.",
+    "A control surface is what you adjust to change a system's behaviour — wheel, rudder. Meta-cognition is augmented intelligence's control surface."
+  ],
+  "control-surface-highlight": [
+    "<strong>Without meta-cognition, you can use AI but you can't control how good the work together is.</strong> With it, you can change course as you go: if the answer is wrong, ask again differently; if it's too broad, break it into steps; if it sounds right but you're not sure, check it.",
+    "<strong>Without meta-cognition, you have access to AI but no control over how good the collaboration is.</strong> With it, you can adjust as you go: rephrase when the output is wrong, scaffold when it is too broad, verify when it is plausible but unconfirmed.",
+    "<strong>Without meta-cognition, you have access to AI but no control over the quality of the collaboration.</strong> With it, you can adjust your approach in real time: rephrase when the output is wrong, scaffold when it is too broad, verify when it is plausible but unconfirmed.",
+    "<strong>Without meta-cognition you have access to AI but no control over the collaboration's quality.</strong> With it, you adjust in real time: rephrase when output is wrong, scaffold when it is too broad, verify when plausible but unconfirmed.",
+    "<strong>Without meta-cognition: AI access, no quality control.</strong> With it: rephrase wrong output, scaffold broad output, verify plausible-but-unconfirmed output — in real time."
+  ],
+  "coffee-intro": [
+    "Ask a friend to \"grab me a coffee\" and they just <em>know</em> all the unspoken rules — bring a cup from the café, not a bag of raw beans and definitely not a whole coffee farm. Everyday talk rests on a huge pile of shared common sense. An AI doesn't have that pile by default. And today's models are very eager to help — one well-known developer, Simon Willison, calls them \"relentlessly proactive.\" So a fuzzy request can send a keen helper somewhere you never meant to go. Drag the dial:",
+    "Ask a friend to \"grab me a coffee\" and they just <em>know</em> the unspoken rules — a cup from the café, not a sack of raw beans or a whole plantation. Everyday language leans on a mountain of shared common sense. An AI doesn't share it by default, and today's models are eager — one well-known developer, Simon Willison, calls them \"relentlessly proactive.\" So a vague ask sends a keen helper somewhere you never meant. Drag the dial:",
+    "Ask a friend to \"grab me a coffee\" and they just <em>know</em> the unspoken rules — a cup from the café, not a sack of raw beans or a whole plantation. Everyday language leans on a mountain of shared common sense. An AI doesn't share it by default, and today's models are eager — one well-known developer, Simon Willison, calls them \"relentlessly proactive.\" So a vague ask sends a keen helper somewhere you never meant. Drag the dial:",
+    "Ask a friend to \"grab me a coffee\" and they just <em>know</em> the unspoken rules — a café cup, not raw beans or a plantation. Everyday language leans on shared common sense an AI doesn't share by default, and today's models are eager — Simon Willison calls them \"relentlessly proactive.\" A vague ask sends a keen helper somewhere you never meant. Drag the dial:",
+    "\"Grab me a coffee\" works because a friend <em>knows</em> the unspoken rules — a café cup, not beans or a plantation. AI lacks that shared common sense and runs eager (Willison: \"relentlessly proactive\"), so vague asks land far off. Drag the dial:"
+  ],
+  "coffee-highlight": [
+    "<strong>This is meta-cognition's real job:</strong> spotting the limits you'd normally leave unsaid, and putting the few that really matter into words. Before you ask, take a second to wonder — \"what am I assuming it already knows?\" — and then say that part out loud.",
+    "<strong>This is meta-cognition's real job:</strong> noticing the limits you'd leave unsaid, and putting the few that matter into words. Before you ask, wonder — \"what am I assuming it already knows?\" — then say that part.",
+    "<strong>This is meta-cognition's real job:</strong> noticing the limits you'd leave unsaid, and putting the few that matter into words. Before you ask, wonder — \"what am I assuming it already knows?\" — then say that part.",
+    "<strong>This is meta-cognition's real job:</strong> noticing the limits you'd leave unsaid and wording the few that matter. Before asking, wonder — \"what am I assuming it already knows?\" — then say that.",
+    "<strong>Meta-cognition's real job:</strong> surface the few unsaid limits that matter. Ask yourself what you assume it knows — then state it."
+  ],
+  "misconception": [
+    "Meta-cognition is not about adding more and more words. It's about noticing what you actually want before you ask. A short prompt that names the real goal, one or two true limits, and the shape you need will beat a long prompt crammed with detail you never thought hard about. Dan's better prompt wasn't better because it was wordier; it was sharper because he watched his own thinking first. Length is, at most, a side effect. The real work is the noticing.",
+    "Meta-cognition is not about piling on words — it is about noticing what you actually want before you ask. A short prompt that names the real goal, one or two true constraints, and the structure you need will beat a long prompt stuffed with detail you never examined. Dan's designed prompt wasn't better because it was wordier; it was sharper because he watched his own thinking first. Length is a side effect at most. The work is the noticing.",
+    "Meta-cognition is not about piling on words — it is about noticing what you actually want before you ask. A short prompt that names the real goal, one or two true constraints, and the structure you need will out-perform a long prompt stuffed with detail you never examined. Dan's designed prompt was not longer because it was wordier; it was sharper because he had first watched his own thinking. Length is a side effect at most. The work is the noticing.",
+    "Meta-cognition isn't piling on words — it is noticing what you actually want before you ask. A short prompt naming the real goal, one or two true constraints, and the needed structure out-performs a long one stuffed with unexamined detail. Dan's prompt was sharper, not wordier, because he watched his thinking first. Length is at most a side effect; the work is the noticing.",
+    "Better prompt ≠ longer prompt. Naming the real goal, a true constraint or two, and the needed structure beats unexamined bulk. The work is noticing what you want, not adding words."
+  ],
+  "practising-intro": [
+    "Meta-cognition is a skill, not a born talent. Anyone can build it — you just need to practise on purpose:",
+    "Meta-cognition is a skill, not a talent. You build it through deliberate practice:",
+    "Meta-cognition is a skill, not a talent. You develop it through deliberate practice:",
+    "Meta-cognition is a skill, not a talent — developed through deliberate practice:",
+    "Meta-cognition is a learnable skill, built by deliberate practice:"
+  ]
+}

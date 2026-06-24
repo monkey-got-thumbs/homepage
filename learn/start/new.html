@@ -52,10 +52,10 @@
         .start { max-width: var(--content-col); margin-inline: auto; }
 
         /* Warm, left-aligned opening — shares the breadcrumb's left edge */
-        .start-head { text-align: left; max-width: 46rem; margin: 0 0 var(--space-2xl); }
-        .start-head .emoji { font-size: 1.4rem; line-height: 1; display: inline-block; margin-right: 0.5rem; vertical-align: -0.12em; }
+        .start-head { text-align: start; max-width: 46rem; margin: 0 0 var(--space-2xl); }
+        .start-head .emoji { font-size: 1.4rem; line-height: 1; display: inline-block; margin-inline-end: 0.5rem; vertical-align: -0.12em; }
         .start-head h1 { margin: var(--space-sm) 0; }
-        .start-head .lede { margin-inline: 0; text-align: left; }
+        .start-head .lede { margin-inline: 0; text-align: start; }
 
         /* prose + the single first action stay at a readable measure, left-aligned to the column edge */
         .start > section, .start > .next { max-width: 46rem; }
@@ -113,19 +113,19 @@
             <header class="start-head">
                 <span class="emoji" aria-hidden="true">🌱</span>
                 <span class="eyebrow">your gentle first step</span>
-                <h1>Welcome. You're in exactly the right place.</h1>
-                <p class="lede">Never used AI before? Wonderful — that's who this page is for. We'll go slow, skip every bit of jargon, and the only thing you'll do today is type one sentence. That's it. Take a breath; you've got this.</p>
+                <h1 data-a11y="hero-title">Welcome. You're in exactly the right place.</h1>
+                <p class="lede" data-a11y="hero-lede">Never used AI before? Wonderful — that's who this page is for. We'll go slow, skip every bit of jargon, and the only thing you'll do today is type one sentence. That's it. Take a breath; you've got this.</p>
             </header>
 
             <!-- ONE clear idea, said simply -->
             <section class="reveal" aria-labelledby="what-title">
-                <h2 id="what-title">So, what even <em>is</em> it?</h2>
-                <p style="color:var(--color-fg-secondary);line-height:1.8;">
+                <h2 id="what-title" data-a11y="what-title">So, what even <em>is</em> it?</h2>
+                <p style="color:var(--color-fg-secondary);line-height:1.8;" data-a11y="what-p1">
                     You know how you type a question into Google and get a page of links? AI is a bit like that — except you ask in
                     plain, everyday words, and instead of links, you get a written answer back. You can ask it to explain something,
                     tidy up an email, suggest ideas, or just chat. You talk; it talks back. Honestly, that's the heart of it.
                 </p>
-                <p style="color:var(--color-fg-secondary);line-height:1.8;">
+                <p style="color:var(--color-fg-secondary);line-height:1.8;" data-a11y="what-p2">
                     Lots of people call it “chatty” (you might know it as ChatGPT). There's nothing to install and nothing to learn first.
                     If you can send a text message, you already have every skill you need.
                 </p>
@@ -135,8 +135,8 @@
             <section class="try reveal gradient-card" aria-labelledby="try-title" style="margin-top:var(--space-2xl);">
                 <div class="gradient-card__inner">
                     <span class="eyebrow">the one thing to try</span>
-                    <h2 id="try-title">Say hello to it</h2>
-                    <p>
+                    <h2 id="try-title" data-a11y="try-title">Say hello to it</h2>
+                    <p data-a11y="try-p">
                         Open one of these (both are free, and a quick sign-up is all it takes), then type something you'd
                         normally Google — or just say <em>“hello, what can you help me with?”</em> See what comes back. There's no wrong thing to say.
                     </p>
@@ -150,24 +150,24 @@
 
             <!-- Reassurance: you can't break anything -->
             <section class="reveal" aria-labelledby="safe-title" style="margin-top:var(--space-2xl);">
-                <h2 id="safe-title">You honestly can't break anything</h2>
-                <p style="color:var(--color-fg-secondary);line-height:1.8;">
+                <h2 id="safe-title" data-a11y="safe-title">You honestly can't break anything</h2>
+                <p style="color:var(--color-fg-secondary);line-height:1.8;" data-a11y="safe-p">
                     This is the part everyone worries about, so let's settle it now. There's no wrong button. You won't break the computer,
                     and you won't break the AI. If an answer isn't useful, you just ask again in different words — like carrying on a chat.
                     Nobody's watching, nobody's judging, and there's no clock. Poke around as much as you like.
                 </p>
 
                 <ul class="truths">
-                    <li>
+                    <li data-a11y="truth-wrong">
                         <strong>It sometimes gets things wrong.</strong>
                         And it can sound very sure while doing it. So treat it like a helpful, chatty friend who occasionally misremembers —
                         lovely for ideas and first drafts, but worth double-checking anything that really matters.
                     </li>
-                    <li>
+                    <li data-a11y="truth-helper">
                         <strong>It's a helper, not a boss.</strong>
                         It never decides anything for you. You ask, it suggests, and you choose what to do with it. You stay in charge the whole time.
                     </li>
-                    <li>
+                    <li data-a11y="truth-more">
                         <strong>The more you say, the better it helps.</strong>
                         A few extra words about what you actually want makes a world of difference. Don't worry about getting this “right” yet —
                         it's a gentle habit, and we'll grow it together.
@@ -192,8 +192,8 @@
 
             <!-- The big players, light touch, optional reading -->
             <section class="reveal" aria-labelledby="who-title" style="margin-top:var(--space-2xl);">
-                <h2 id="who-title">If you're wondering who the big names are</h2>
-                <p style="color:var(--color-fg-secondary);line-height:1.8;">
+                <h2 id="who-title" data-a11y="who-title">If you're wondering who the big names are</h2>
+                <p style="color:var(--color-fg-secondary);line-height:1.8;" data-a11y="who-p">
                     You don't need to memorise any of this — pick one above and you're sorted. But if you're curious, here are the
                     ones you'll hear about most. They all do much the same thing.
                 </p>
@@ -207,7 +207,7 @@
 
             <!-- ONE gentle next step -->
             <div class="next reveal">
-                <p>That's the whole first step. Had a little play? Whenever you're ready — no rush at all — there's a gentle next bit waiting.</p>
+                <p data-a11y="next-p">That's the whole first step. Had a little play? Whenever you're ready — no rush at all — there's a gentle next bit waiting.</p>
                 <a href="/learn/foundations/what-is-ai.html" class="btn">Show me the next gentle step →</a>
                 <a href="/learn/" class="back">← Back to your learning home</a>
             </div>

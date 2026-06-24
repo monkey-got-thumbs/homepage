@@ -1,0 +1,86 @@
+{
+  "hero-title": [
+    "You are the one in charge",
+    "You're still the one in charge here",
+    "You're still the one in charge",
+    "You stay in charge",
+    "You're in charge"
+  ],
+  "hero-lede": [
+    "AI is just a tool. You are the person using it. These are short, easy reads about the human parts that most guides leave out: how much to trust AI, how to make good choices, how to look after your energy, and how to stay in control. Pick whichever one feels right for you today.",
+    "AI is the tool — you're the person using it. These short reads cover the human bits most guides skip: how much to trust it, how to make good calls, how to protect your energy, and how to stay in control. Read whichever one feels right for you today.",
+    "AI is the tool — you're the person. These short reads are about the human bits most guides skip: how much to trust it, how to make good calls, how to protect your energy, and how to stay firmly in the driver's seat. Read whichever feels right for you today.",
+    "AI is the tool; you're the person. Short reads on the human bits most guides skip: how far to trust it, how to decide well, how to guard your energy, how to stay in control. Read whichever fits today.",
+    "AI is the tool; you're the person. Short reads on the human bits guides skip: trust, judgment, energy, control. Read what fits."
+  ],
+  "card-trust-title": [
+    "<a href=\"/learn/human-factors/trust-protocols.html\">How much should you trust it?</a>",
+    "<a href=\"/learn/human-factors/trust-protocols.html\">How much to trust it</a>",
+    "<a href=\"/learn/human-factors/trust-protocols.html\">How much to trust it</a>",
+    "<a href=\"/learn/human-factors/trust-protocols.html\">Calibrating trust</a>",
+    "<a href=\"/learn/human-factors/trust-protocols.html\">Calibrated trust</a>"
+  ],
+  "card-trust-desc": [
+    "Not believing everything, and not doubting everything either — just a few simple habits for knowing when you can take AI at its word and when it is worth checking for yourself.",
+    "Not blind faith, and not constant suspicion either — just a few easy habits for knowing when to take AI at its word and when to double-check.",
+    "Not blind faith, not constant suspicion — just a few easy habits for knowing when to take AI at its word and when to double-check.",
+    "Neither blind faith nor constant suspicion — simple habits for knowing when to take AI at its word and when to verify.",
+    "Neither blind faith nor suspicion — habits for knowing when to trust AI and when to verify."
+  ],
+  "card-decide-title": [
+    "<a href=\"/learn/human-factors/bounded-rationality.html\">Making good choices</a>",
+    "<a href=\"/learn/human-factors/bounded-rationality.html\">Making good calls</a>",
+    "<a href=\"/learn/human-factors/bounded-rationality.html\">Making good calls</a>",
+    "<a href=\"/learn/human-factors/bounded-rationality.html\">Deciding well</a>",
+    "<a href=\"/learn/human-factors/bounded-rationality.html\">Bounded rationality</a>"
+  ],
+  "card-decide-desc": [
+    "We all have to decide things without enough time and without enough information. Here is how AI can quietly help you think more clearly, instead of just giving you even more to deal with.",
+    "We all make decisions without enough time or enough information. Here's how AI can quietly help you think more clearly instead of piling on more.",
+    "We all decide with not enough time and not enough information. Here's how AI can quietly help you think clearer instead of piling on more.",
+    "We all decide under limited time and information. How AI can help you think more clearly instead of adding load.",
+    "Deciding under limited time and information — how AI clarifies thinking instead of adding load."
+  ],
+  "card-energy-title": [
+    "<a href=\"/learn/human-factors/burnout-resilience.html\">Looking after your energy</a>",
+    "<a href=\"/learn/human-factors/burnout-resilience.html\">Looking after your energy</a>",
+    "<a href=\"/learn/human-factors/burnout-resilience.html\">Looking after your energy</a>",
+    "<a href=\"/learn/human-factors/burnout-resilience.html\">Protecting your energy</a>",
+    "<a href=\"/learn/human-factors/burnout-resilience.html\">Resilience</a>"
+  ],
+  "card-energy-desc": [
+    "Used in the right way, AI takes weight off your shoulders. Used in the wrong way, it just adds more. These are the gentle, practical things you can do to keep it on your side.",
+    "Used well, AI takes weight off your shoulders. Used badly, it piles more on. The gentle, practical levers that keep it on your side.",
+    "Used well, AI takes weight off your shoulders. Used badly, it adds more. The gentle, practical levers that keep it on your side.",
+    "Used well, AI lightens the load; used badly, it adds to it. The practical levers that keep it on your side.",
+    "AI lightens load or adds to it. The levers that keep it on your side."
+  ],
+  "card-driver-title": [
+    "<a href=\"/learn/human-factors/agency-autonomy.html\">Staying in the driver's seat</a>",
+    "<a href=\"/learn/human-factors/agency-autonomy.html\">Staying the driver</a>",
+    "<a href=\"/learn/human-factors/agency-autonomy.html\">Staying the driver</a>",
+    "<a href=\"/learn/human-factors/agency-autonomy.html\">Keeping the wheel</a>",
+    "<a href=\"/learn/human-factors/agency-autonomy.html\">Agency</a>"
+  ],
+  "card-driver-desc": [
+    "You can hand the boring jobs over to AI without handing over the choices that really matter. Here is how to keep the wheel firmly in your own hands.",
+    "You can hand the boring jobs to AI without handing over the choices that matter. Here's how to keep the wheel firmly in your hands.",
+    "You can hand the boring jobs to AI without handing over the choices that matter. How to keep the wheel firmly in your hands.",
+    "Delegate the dull jobs to AI without surrendering the choices that matter. How to keep the wheel in your hands.",
+    "Delegate dull work to AI; keep the choices. How to keep the wheel."
+  ],
+  "next-title": [
+    "When you are ready, what comes next?",
+    "When you're ready, what's next?",
+    "When you're ready, what's next?",
+    "What's next?",
+    "Next"
+  ],
+  "next-body": [
+    "Would you like a set route to follow? A guided <a href=\"/learn/learning-paths/\">path</a> takes you through everything, one gentle step at a time. Or you can keep things fresh in your <a href=\"/learn/review/\">review queue</a>.",
+    "Fancy a set route to follow? A guided <a href=\"/learn/learning-paths/\">path</a> walks you through everything, one gentle step at a time. Or keep things fresh in your <a href=\"/learn/review/\">review queue</a>.",
+    "Fancy a set route to follow? A guided <a href=\"/learn/learning-paths/\">path</a> walks you through everything, one gentle step at a time. Or keep things fresh in your <a href=\"/learn/review/\">review queue</a>.",
+    "Want a set route? A guided <a href=\"/learn/learning-paths/\">path</a> walks you through it step by step. Or keep things fresh in your <a href=\"/learn/review/\">review queue</a>.",
+    "Want structure? Follow a guided <a href=\"/learn/learning-paths/\">path</a>, or use your <a href=\"/learn/review/\">review queue</a>."
+  ]
+}

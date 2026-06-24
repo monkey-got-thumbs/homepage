@@ -1,0 +1,44 @@
+{
+  "title": [
+    "Spacing out your practice helps you forget less",
+    "Spacing your practice fights forgetting",
+    "Spacing the practice fights the forgetting curve",
+    "Spaced practice counters the forgetting curve",
+    "Spacing defeats the forgetting curve"
+  ],
+  "forgetting-curve": [
+    "Imagine you study a list of things the night before a test. A few days later, most of it is gone from your memory. This is normal, and it is not just bad luck. A long time ago, a man named Hermann Ebbinghaus drew a picture of how this works. He called it the forgetting curve. It shows that you forget a lot very fast at first, and then the forgetting slows down. If you learn something and then do nothing else, it falls off this curve quickly. But here is the good news: the curve is the same every time, so you can plan around it.",
+    "Cram a list the night before, and most of it is gone within a few days. That fading is not random. A researcher named Hermann Ebbinghaus mapped it long ago and called it the forgetting curve: a sharp early drop that slowly levels off. If you leave a freshly learned thing alone, it slides off the curve fast. The helpful part is that the curve is predictable, so you can work against it.",
+    "Cram a list the night before and it is mostly gone within days. That decay is not random — Hermann Ebbinghaus mapped it as the forgetting curve, a steep early drop that levels off. Left alone, a freshly learned thing slides off that curve quickly. The useful part is that the curve is predictable, so it can be worked against.",
+    "Cram the night before and most of it vanishes within days. The decay isn't random: Ebbinghaus charted it as the forgetting curve, a steep early drop that flattens out. Unrehearsed, new material falls off fast. Crucially, the curve is predictable — so it can be exploited.",
+    "Crammed material decays within days. Ebbinghaus's forgetting curve — steep early loss flattening over time — is predictable, hence exploitable."
+  ],
+  "spacing-effect": [
+    "The trick is to bring something back to mind right before you would have forgotten it. Each time you remember it at the right moment, the curve resets, and the next drop is gentler. Because of this, you can wait longer and longer between reviews: first a day, then a week, then a whole month. This is called the spacing effect. It is the reason that spreading your study out over time works much better than doing it all in one big session, even if you spend the same number of minutes. The same effort gives you much more that sticks.",
+    "The idea is to recall something just before you would have forgotten it. Each well-timed recall resets the curve and makes the next drop gentler, so you can leave longer gaps between reviews: a day, then a week, then a month. This is the spacing effect, and it is why spreading study out beats cramming the same total minutes into one sitting. The same effort, far more retained.",
+    "The move is to recall something just before you would have forgotten it. Each well-timed retrieval resets the curve and makes the next drop shallower, so the gaps between reviews can grow: a day, then a week, then a month. This is the spacing effect, and it is why spreading study out beats cramming the same total minutes into one sitting. Same effort, far more retained.",
+    "Recall something just before you'd forget it. Each well-timed retrieval resets the curve and flattens the next drop, so review gaps can stretch — a day, a week, a month. This is the spacing effect: distributing study beats massing the same minutes. Same effort, far more retained.",
+    "Retrieve just before forgetting; each well-timed recall resets the curve and flattens later loss, so gaps stretch — day, week, month. This spacing effect makes distributed study outperform massed study at equal cost."
+  ],
+  "two-halves": [
+    "Spacing and retrieval are two parts of the same way of learning. <a href=\"/notes/retrieval-beats-rereading.html\" class=\"wikilink\">Retrieval, not rereading, is what makes it stick</a> tells you what to do: pull the answer out of your own head. Spacing tells you when to do it. The easiest way is to keep both in a tool that watches the timing for you, because <a href=\"/notes/a-page-can-remember-for-you.html\" class=\"wikilink\">A page can remember what you learn</a>. That is exactly why our recall cards come back to you on a schedule, a few at a time, instead of all at once.",
+    "Spacing and retrieval are two halves of one method. <a href=\"/notes/retrieval-beats-rereading.html\" class=\"wikilink\">Retrieval, not rereading, is what makes it stick</a> gives you the action; spacing gives you the timing. Keep both in a tool that tracks the schedule for you, because <a href=\"/notes/a-page-can-remember-for-you.html\" class=\"wikilink\">A page can remember what you learn</a>. That is why our recall cards come back on a schedule rather than all at once.",
+    "Spacing and retrieval are two halves of one method — <a href=\"/notes/retrieval-beats-rereading.html\" class=\"wikilink\">Retrieval, not rereading, is what makes it stick</a> gives the act, spacing gives the schedule. Hold both in a tool that tracks timing for you, because <a href=\"/notes/a-page-can-remember-for-you.html\" class=\"wikilink\">A page can remember what you learn</a>. That is exactly why our recall cards come back on a schedule rather than all at once.",
+    "Spacing and retrieval are two halves of one method: <a href=\"/notes/retrieval-beats-rereading.html\" class=\"wikilink\">Retrieval, not rereading, is what makes it stick</a> supplies the act, spacing the schedule. Hold both in a tool that tracks timing, because <a href=\"/notes/a-page-can-remember-for-you.html\" class=\"wikilink\">A page can remember what you learn</a>. Hence our recall cards return on schedule, not all at once.",
+    "Retrieval and spacing are one method: <a href=\"/notes/retrieval-beats-rereading.html\" class=\"wikilink\">Retrieval, not rereading, is what makes it stick</a> is the act, spacing the schedule. Offload timing to a tool — <a href=\"/notes/a-page-can-remember-for-you.html\" class=\"wikilink\">A page can remember what you learn</a> — so recall cards return on schedule."
+  ],
+  "next-step": [
+    "Want to see how this works in practice? Take a look at <a href=\"/learn/review/\">how review works</a>. After that, try letting the schedule tell you when to study, instead of waiting until you feel like it.",
+    "See <a href=\"/learn/review/\">how review works</a>. Next, let the schedule decide when you study, rather than your mood.",
+    "See <a href=\"/learn/review/\">how review works</a>. Next, let the schedule decide when you study, not your mood.",
+    "See <a href=\"/learn/review/\">how review works</a>. Then let the schedule, not your mood, decide when you study.",
+    "See <a href=\"/learn/review/\">how review works</a>. Let the schedule, not mood, set study timing."
+  ],
+  "evergreen-credit": [
+    "This is an <strong>evergreen note</strong>. That means it is short, it makes one clear point, and it links to lots of other notes. It is a way of taking notes that comes from Andy Matuschak, and we have written it again here in our own words.",
+    "This is an <strong>evergreen note</strong> — short, built around one clear claim, and richly linked to other notes. It is a practice from Andy Matuschak, rewritten here in our own words.",
+    "This is an <strong>evergreen note</strong> — atomic, claim-titled, and densely linked — a practice from Andy Matuschak, re-implemented in our own words.",
+    "An <strong>evergreen note</strong>: atomic, claim-titled, densely linked — a practice from Andy Matuschak, re-implemented in our own words.",
+    "<strong>Evergreen note</strong>: atomic, claim-titled, densely linked. After Andy Matuschak; reworded."
+  ]
+}

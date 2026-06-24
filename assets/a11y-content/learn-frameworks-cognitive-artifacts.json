@@ -1,0 +1,121 @@
+{
+  "hero-title": [
+    "Cognitive Artifacts",
+    "Cognitive Artifacts",
+    "Cognitive Artifacts",
+    "Cognitive Artifacts",
+    "Cognitive Artifacts"
+  ],
+  "hero-lede": [
+    "A cognitive artifact is a clear, shareable piece of thinking. It is a way to pack an idea into a tidy shape — like a map, a checklist, or a filled-in form — so it can be saved, passed on, used again, and built on later. These tidy shapes are the building blocks of thinking that reaches beyond your own head. When you work alongside AI, they are the little parcels of thought you hand back and forth.",
+    "A cognitive artifact is a shareable, packaged piece of meaning and reasoning — a building block of thinking that extends beyond your own mind. It is how people fold thought into a shape that can be stored, passed on, reused, and built upon. When you work with AI, these artifacts are the units of thought you exchange.",
+    "Cognitive artifacts are encapsulated, shareable structures of meaning and reasoning — the building blocks of extended cognition. They are how humans package thought into forms that can be stored, transmitted, reused, and built upon. In augmented intelligence, they supply the units of thought.",
+    "Cognitive artifacts are encapsulated, shareable structures of meaning and reasoning — the building blocks of extended cognition. Humans use them to package thought into forms that can be stored, transmitted, reused, and built upon. In augmented intelligence, they are the units of thought.",
+    "Cognitive artifacts: encapsulated, shareable structures of meaning — extended cognition's building blocks. They package thought for storage, transmission, reuse. In augmented intelligence, the units of thought."
+  ],
+  "enduring-idea": [
+    "<strong>The one idea to keep:</strong> the shape you put around a question to an AI is part of the question. A cognitive artifact — a plan for what answers should look like, a form to fill in — turns a fuzzy ask into a clear shape. And a clear shape gives you something you can check one piece at a time, instead of reading a wall of words and guessing whether it is right.",
+    "<strong>The one idea to keep:</strong> the structure you put around a request to an AI is part of the request. A cognitive artifact — a schema, template, or filled-in form — turns a vague ask into a defined shape, and a defined shape lets you check it field by field instead of re-reading prose to guess whether it is right.",
+    "<strong>The one idea to keep:</strong> the structure you put around a request to an AI is part of the request. A cognitive artifact — a schema, template, or filled form — turns a vague ask into a defined shape, and a defined shape gives you something you can verify field by field instead of re-reading prose to guess whether it is right.",
+    "<strong>The one idea to keep:</strong> the structure around a request is part of the request. A cognitive artifact — schema, template, or filled form — turns a vague ask into a defined shape you can verify field by field, instead of re-reading prose to guess whether it is right.",
+    "<strong>Keep this:</strong> structure is part of the request. A cognitive artifact (schema, template, filled form) makes a vague ask a defined shape — verifiable field by field, not re-read and guessed at."
+  ],
+  "what-are-intro": [
+    "A map is a cognitive artifact. So is a checklist, a maths equation, a database plan, a yes-or-no flow chart, and a good ready-made prompt. Here is what they all have in common: each one takes hard, messy knowledge, squeezes it into a clear shape, and makes it easy to use for anyone who knows how to read that shape.",
+    "A map is a cognitive artifact. So is a checklist, a mathematical equation, a database schema, a decision tree, and a well-built prompt template. Here is what they share: each one takes complex knowledge, compresses it into a defined shape, and makes it usable by anyone who understands the format.",
+    "A map is a cognitive artifact. So is a checklist, a mathematical equation, a database schema, a decision tree, and a well-structured prompt template. What they share is this: each one takes complex knowledge, compresses it into a defined structure, and makes it usable by anyone who understands the format.",
+    "A map is a cognitive artifact. So is a checklist, an equation, a database schema, a decision tree, and a well-structured prompt template. Each compresses complex knowledge into a defined structure, usable by anyone who understands the format.",
+    "Maps, checklists, equations, schemas, decision trees, prompt templates — all cognitive artifacts. Each compresses complex knowledge into a defined, format-readable structure."
+  ],
+  "units-of-exchange": [
+    "When you work alongside AI, cognitive artifacts do one very important job: they are the parcels of thinking that you and the machine pass back and forth. When you give an AI a clear, well-built prompt, you are handing it a cognitive artifact. When the AI hands you back a tidy result — a neat block of data, a comparison grid, a laid-out analysis — that is a cognitive artifact too. How well the two of you work together depends, in a very direct way, on how good these artifacts are.",
+    "When you work with AI, cognitive artifacts take on a key role: they are the units of exchange between human and machine thinking. When you give an AI a well-built prompt, you are handing it a cognitive artifact. When the AI returns a structured output — a JSON object, a decision matrix, a laid-out analysis — it hands one back. How well you collaborate depends directly on how good these artifacts are.",
+    "In the context of augmented intelligence, cognitive artifacts take on a specific and critical role: they are the units of exchange between human and machine cognition. When you give an AI a well-structured prompt, you are handing it a cognitive artifact. When the AI returns a structured output — a JSON object, a decision matrix, a formatted analysis — it is handing one back. The quality of the collaboration depends directly on the quality of these artifacts.",
+    "In augmented intelligence, cognitive artifacts play a specific, critical role: they are the units of exchange between human and machine cognition. A well-structured prompt you give an AI is one; a structured output it returns — JSON, a decision matrix, a formatted analysis — is another. Collaboration quality tracks artifact quality.",
+    "In augmented intelligence, cognitive artifacts are the units of exchange between human and machine cognition: a structured prompt in, a structured output (JSON, matrix, analysis) back. Collaboration quality = artifact quality."
+  ],
+  "worked-intro": [
+    "Say you need an AI to look at one person's CV and judge whether they fit a job. The job you are asking for is exactly the same in both examples below. The one thing that changes is the artifact you hand over — and that single change decides whether you can trust the answer you get.",
+    "Suppose you need an AI to assess one job applicant against a role. The task is identical in both cases. The only thing that changes is the artifact you hand over — and that decides whether you can trust the answer.",
+    "Suppose you need an AI to assess one job applicant against a role. The task is identical in both cases. The only thing that changes is the artifact you hand over — and that changes whether you can trust the answer.",
+    "Suppose you need an AI to assess one applicant against a role. The task is identical both times; only the artifact you hand over changes — and that decides whether you can trust the answer.",
+    "Same task — assess one applicant against a role. Only the artifact changes, and that decides whether the answer is trustworthy."
+  ],
+  "ado-intro": [
+    "The <a href=\"/learn/foundations/three-pillars.html\">three pillars framework</a> talks about Architected Data Objects, or ADOs, as the third pillar of working with AI. ADOs are cognitive artifacts with a few set traits: they follow the same rules every time, they waste no space, and they are made to wrap up truth into pieces that can be shared and read the same way by everyone.",
+    "The <a href=\"/learn/foundations/three-pillars.html\">three pillars framework</a> introduces Architected Data Objects (ADOs) as the third pillar of augmented intelligence. ADOs are cognitive artifacts with a set of properties: they are standardised, efficient, and built to wrap up truth into shareable units that everyone reads the same way.",
+    "The <a href=\"/learn/foundations/three-pillars.html\">three pillars framework</a> introduces Architected Data Objects (ADOs) as the third pillar of augmented intelligence. ADOs are cognitive artifacts with a specific set of properties: they are standardised, efficient, and designed to encapsulate truth into shareable, universally interpretable units.",
+    "The <a href=\"/learn/foundations/three-pillars.html\">three pillars framework</a> names Architected Data Objects (ADOs) as the third pillar of augmented intelligence: cognitive artifacts that are standardised, efficient, and designed to encapsulate truth into shareable, universally interpretable units.",
+    "Per the <a href=\"/learn/foundations/three-pillars.html\">three pillars framework</a>, Architected Data Objects (ADOs) are the third pillar: standardised, efficient cognitive artifacts encapsulating truth as shareable, universally interpretable units."
+  ],
+  "ado-dashboard": [
+    "Picture the difference between a chat about how a project is going and a project dashboard. The chat is rich and full of detail, but it does not last — once it is over, the facts fade and shift a little with every retelling. The dashboard is laid out, stays put, and reads the same for everyone — anyone who looks sees the same facts, shown in the same way.",
+    "Think of the difference between a conversation about project status and a project dashboard. The conversation is rich, nuanced, and fleeting — once it ends, the information degrades with every retelling. The dashboard is structured, lasting, and consistent — anyone who looks sees the same information, in the same format.",
+    "Think of the difference between a conversation about project status and a project dashboard. The conversation is rich, nuanced, and ephemeral — once it ends, the information degrades with every retelling. The dashboard is structured, persistent, and consistent — anyone who looks at it sees the same information, interpreted through the same format.",
+    "Compare a conversation about project status with a project dashboard. The conversation is rich, nuanced, and ephemeral — once it ends, the information degrades with each retelling. The dashboard is structured, persistent, and consistent: everyone sees the same information through the same format.",
+    "Conversation vs dashboard: the conversation is rich but ephemeral and degrades with retelling; the dashboard is structured, persistent, consistent — same information, same format, for everyone."
+  ],
+  "ado-principle": [
+    "<strong>The ADO principle:</strong> Every time you turn loose, messy information into a clear shape, you make something that lasts longer, shares more easily, and works better with computers than the original ever did. Doing this is not wasted time. It is where a lot of the real value in working with AI actually comes from.",
+    "<strong>The ADO principle:</strong> Every time you turn loose information into a defined structure, you create something more durable, shareable, and computer-friendly than the original. This is not overhead — it is where much of the value in augmented intelligence is created.",
+    "<strong>The ADO principle:</strong> Every time you convert loose information into a defined structure, you create something more durable, shareable, and computationally useful than the original. This conversion is not overhead — it is where much of the value in augmented intelligence is created.",
+    "<strong>The ADO principle:</strong> Converting loose information into a defined structure yields something more durable, shareable, and computationally useful than the original. This is not overhead — it is where much of augmented intelligence's value is created.",
+    "<strong>ADO principle:</strong> Structuring loose information makes it more durable, shareable, and computationally useful. Not overhead — the source of much of augmented intelligence's value."
+  ],
+  "loose-intro": [
+    "Most of the time, AI gives you its answer as prose — paragraphs that read like a smart person talking to you. This kind of writing is easy to read but hard to actually use. And it gets weaker each time you try to pass it along or reuse it.",
+    "The default output of most AI interactions is prose — paragraphs that read like a knowledgeable person speaking. This prose is easy to consume but hard to use, and it degrades with every step of reuse.",
+    "The default output of most AI interactions is prose — paragraphs of text that read like a knowledgeable person speaking. This prose is easy to consume but difficult to use. It degrades with every step of reuse.",
+    "Most AI interactions default to prose — paragraphs that read like a knowledgeable person speaking. Easy to consume, hard to use, and it degrades with every step of reuse.",
+    "AI's default output is prose: knowledgeable-sounding paragraphs. Easy to consume, hard to use, degrades on reuse."
+  ],
+  "loose-argument": [
+    "This is the main reason to use cognitive artifacts when you work with AI: a small bit of effort spent on structure up front pays you back in a big way later — in how easily you can reuse the result, how much you can rely on it, and how well you can share it with others.",
+    "This is the core argument for cognitive artifacts in AI work: a small upfront investment in structure yields large returns in reusability, reliability, and collaborative value.",
+    "This is the fundamental argument for cognitive artifacts in AI work: a small upfront investment in structure yields large returns in reusability, reliability, and collaborative value.",
+    "The fundamental argument for cognitive artifacts in AI work: a small upfront investment in structure yields large returns in reusability, reliability, and collaborative value.",
+    "Core argument: small upfront structure, large returns in reusability, reliability, and collaborative value."
+  ],
+  "schema-generative": [
+    "Schemas may be the most powerful kind of cognitive artifact, because they make more of themselves. A schema does not just hold one fact — it sets the shape for a whole family of facts. A schema for \"meeting notes\" decides what gets written down after every meeting. A schema for \"bug report\" decides what details come with every problem found. The schema itself holds the team's hard-won sense of what really matters.",
+    "Schemas may be the most powerful type of cognitive artifact because they are generative — they do not just capture one piece of knowledge, they define the shape of a whole category of knowledge. A schema for \"meeting notes\" sets what gets captured from every meeting. A schema for \"bug report\" sets what context comes with every issue. The schema itself encodes the team's wisdom about what matters.",
+    "Schemas are perhaps the most powerful type of cognitive artifact because they are generative — they do not just capture one piece of knowledge, they define the shape of an entire category of knowledge. A schema for \"meeting notes\" determines what information gets captured from every meeting. A schema for \"bug report\" determines what context accompanies every issue. The schema itself encodes organisational wisdom about what matters.",
+    "Schemas are perhaps the most powerful cognitive artifact because they are generative: they do not capture one piece of knowledge but define the shape of an entire category. A \"meeting notes\" schema determines what every meeting captures; a \"bug report\" schema determines the context on every issue. The schema encodes organisational wisdom about what matters.",
+    "Schemas are the most powerful cognitive artifact because they are generative — defining the shape of a whole category, not one fact. A \"meeting notes\" or \"bug report\" schema sets what every instance captures, encoding organisational wisdom about what matters."
+  ],
+  "schema-in-practice": [
+    "<strong>In practice:</strong> Before you ask AI to write something, decide the shape you want back. Before you build a store of knowledge, design its schemas. Before you start a job you will do over and over, make the templates. These artifacts are the groundwork for working well with AI — they make every later step quicker and more reliable.",
+    "<strong>In practice:</strong> Before asking AI to generate content, define the output format. Before building a knowledge base, design the schemas. Before starting a repeated process, create the templates. These artifacts are the infrastructure of working well with AI — they make every later interaction quicker and more reliable.",
+    "<strong>In practice:</strong> Before asking AI to generate content, define the output format. Before building a knowledge base, design the schemas. Before starting a repeated process, create the templates. These artifacts are the infrastructure of effective augmented intelligence — they make every subsequent interaction more efficient and reliable.",
+    "<strong>In practice:</strong> Define the output format before asking AI to generate content; design the schemas before building a knowledge base; create the templates before starting a repeated process. These artifacts are the infrastructure of effective augmented intelligence — every subsequent interaction becomes more efficient and reliable.",
+    "<strong>In practice:</strong> Define formats before generating, schemas before knowledge bases, templates before repeated processes. This infrastructure makes every later interaction more efficient and reliable."
+  ],
+  "verifiable-intro": [
+    "There is one plain reason structured AI output beats loose prose: you can <a href=\"/learn/frameworks/explanation.html\">check it</a>.",
+    "There is a simple reason structured AI output beats freeform text: structured output is <a href=\"/learn/frameworks/explanation.html\">verifiable</a>.",
+    "There is a straightforward reason why structured AI output outperforms freeform text: structured output is <a href=\"/learn/frameworks/explanation.html\">verifiable</a>.",
+    "Structured AI output outperforms freeform text for one straightforward reason: it is <a href=\"/learn/frameworks/explanation.html\">verifiable</a>.",
+    "Structured AI output beats freeform text because it is <a href=\"/learn/frameworks/explanation.html\">verifiable</a>."
+  ],
+  "verifiable-prose-place": [
+    "This does not mean prose is never the right choice. <a href=\"/learn/frameworks/interfaces.html\">Plain language</a> is still the best way to explore ideas, brainstorm, and talk with other people. But when you need AI output that you will build on, share, save, or act on, give it a shape. The cognitive artifact you make will help you far more than the easy paragraph would have.",
+    "This does not mean prose is never right. <a href=\"/learn/frameworks/interfaces.html\">Natural language</a> remains the best interface for exploring, brainstorming, and talking between people. But when you need AI output you will build on, share, store, or act on — structure it. The cognitive artifact you create will serve you far better than the paragraph that was easier to produce.",
+    "This does not mean prose is never appropriate. <a href=\"/learn/frameworks/interfaces.html\">Natural language</a> remains the best interface for exploration, brainstorming, and communication between humans. But when you need AI output that you will build on, share, store, or act on — structure it. The cognitive artifact you create will serve you far better than the paragraph that was easier to produce.",
+    "Prose is not always wrong: <a href=\"/learn/frameworks/interfaces.html\">natural language</a> remains the best interface for exploration, brainstorming, and human communication. But when you will build on, share, store, or act on AI output — structure it. The cognitive artifact will serve you far better than the easier paragraph.",
+    "Prose has its place — <a href=\"/learn/frameworks/interfaces.html\">natural language</a> suits exploration, brainstorming, human communication. But output you will build on, share, store, or act on should be structured; the artifact serves you better than the easier paragraph."
+  ],
+  "continue-learning": [
+    "Cognitive artifacts give you the building blocks of thought. Have a look around the whole learning hub, or see how these ideas play out in real life.",
+    "Cognitive artifacts supply the units of thought. Explore the whole learning hub, or see how these ideas apply in practice.",
+    "Cognitive artifacts supply the units of thought. Explore the full learning hub or see how these concepts apply in practice.",
+    "Cognitive artifacts supply the units of thought. Explore the full learning hub or see these concepts applied in practice.",
+    "Cognitive artifacts supply the units of thought. Explore the hub, or see them applied."
+  ],
+  "trap-body": [
+    "It feels faster to type a sentence than to set up a schema, so structure can look like a fee you pay just to begin. But that view only counts the cost of making the artifact, never the cost of trusting the result. Loose prose pushes the real work — checking each claim, digging out the one fact you need, comparing it to last week's answer — onto every future reader, every single time. The structure is not extra work piled on top of the task; it is the checking work done once, up front, in a form that both the AI and the next person can reuse. You are not choosing between doing work and not doing work. You are only choosing where that work lands.",
+    "It feels faster to type a sentence than to define a schema, so structure looks like a tax on getting started. But that framing only counts the cost of writing the artifact, never the cost of trusting the result. Freeform prose pushes the real work — checking each claim, pulling out the data point you need, comparing it to last week's answer — onto every future reader, every time. The structure is not extra work added to the task; it is the verification work done once, up front, in a form the AI and the next person can both reuse. You are not choosing between effort and no effort. You are choosing where the effort lands.",
+    "It feels faster to type a sentence than to define a schema, so structure looks like a tax on getting started. But that framing only counts the cost of writing the artifact, never the cost of trusting the result. Freeform prose pushes the real work — checking each claim, extracting the data point you need, comparing it to last week's answer — onto every future reader, every time. The structure is not extra work added to the task; it is the verification work done once, up front, in a form the AI and the next person can both reuse. You are not choosing between effort and no effort. You are choosing where the effort lands.",
+    "Typing a sentence feels faster than defining a schema, so structure looks like a tax on starting. But that framing counts only the cost of writing the artifact, not the cost of trusting the result. Freeform prose pushes the real work — checking claims, extracting the data point you need, comparing against last week — onto every future reader, every time. Structure is not extra work; it is the verification done once, up front, in a form the AI and the next person can reuse. The choice is not effort versus none — it is where the effort lands.",
+    "Structure looks like a startup tax only if you count writing the artifact, not trusting the result. Freeform prose offloads the real work — verifying, extracting, comparing — onto every future reader, every time. Structure is that verification done once, reusably. The choice isn't effort vs none; it's where effort lands."
+  ]
+}

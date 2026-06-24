@@ -1,0 +1,114 @@
+{
+  "hero-title": [
+    "Why Our Thinking Has Limits — and How AI Can Help",
+    "Bounded Rationality: Why AI Helps Us Think",
+    "Bounded Rationality: Why We Need AI to Think Better",
+    "Bounded Rationality: Why AI Augments Human Thinking",
+    "Bounded Rationality: The Case for AI Augmentation"
+  ],
+  "lead": [
+    "Our thinking always runs up against three hard walls: we never know everything, we never have enough time, and our minds can only hold so much at once. AI cannot knock those walls down. But it can give us more room inside them.",
+    "Human thinking hits three real limits: we never have all the facts, we never have enough time, and we can only hold so much in mind at once. AI does not remove these limits, but it does give us more room to work inside them.",
+    "Human rationality is bounded by three hard constraints: incomplete information, limited time, and finite cognitive capacity. Augmented intelligence does not remove these bounds — it reshapes them.",
+    "Human rationality faces three hard bounds: incomplete information, limited time, finite cognitive capacity. Augmentation does not remove these bounds; it reshapes them.",
+    "Three bounds limit rationality: incomplete information, limited time, finite capacity. AI reshapes them, not removes them."
+  ],
+  "enduring-idea": [
+    "<strong>The one idea to keep:</strong> Every choice you make has limits around it — you never know everything, you never have enough time, your mind can only hold so much, and it doesn't always feel safe to admit you're unsure. AI cannot take those limits away. But it can give you more room inside each one, like a support that holds you up while you reach. The choice about what to do is still yours to make.",
+    "<strong>The one idea to keep:</strong> Every decision you make is bounded — by what you don't know, how little time you have, how much your mind can hold, and how safe it feels to be unsure. AI cannot remove those limits, but it can stretch each one like scaffolding around you. The judgment about what to do stays yours.",
+    "<strong>The one idea to keep:</strong> Every decision you make is bounded — by incomplete information, limited time, finite cognitive capacity, and how safe it feels to be uncertain. AI cannot remove those bounds, but it can extend each one as scaffolding. The judgment about what to do stays yours.",
+    "<strong>The one idea to keep:</strong> Every decision is bounded — by incomplete information, limited time, finite cognitive capacity, and the felt safety of uncertainty. AI cannot remove these bounds; it extends each as scaffolding. The judgment stays yours.",
+    "<strong>The one idea to keep:</strong> Decisions are bounded by information, time, capacity, and felt safety. AI extends these bounds as scaffolding; the judgment stays yours."
+  ],
+  "simon-satisfice": [
+    "A thinker named Herbert Simon gave us the words \"bounded rationality.\" He noticed something simple about people: we don't go looking for the very best answer. We look for an answer that is good enough. We settle for what works, given what we happen to know, how much time we've got, and how much thinking we have the energy for. Simon called this \"satisficing\" — being satisfied with enough.",
+    "Herbert Simon coined the phrase \"bounded rationality\" to describe a simple truth: people don't optimise, they satisfice. We don't hunt down the single best answer. We find one that is good enough, given what we know, how long we have, and how much mental energy we can spare.",
+    "Herbert Simon coined the term \"bounded rationality\" to describe a straightforward reality: humans do not optimise, they satisfice. We do not find the best possible answer — we find an answer that is good enough given what we know, how long we have, and how much mental energy we can spend.",
+    "Herbert Simon's \"bounded rationality\" names a plain reality: humans satisfice rather than optimise. We don't find the best answer — we find one good enough given what we know, the time we have, and the mental energy we can spend.",
+    "Herbert Simon's \"bounded rationality\": humans satisfice, not optimise — settling for good-enough given knowledge, time, and mental energy."
+  ],
+  "ai-extends-bounds": [
+    "Adding AI does not make these three limits go away. They stay. But AI can push each one a little wider. It can hold more facts in front of you at once. It can work through things faster than a tired brain can. And it can keep track of many moving parts at the same time without mixing them up the way a person would.",
+    "These limits don't vanish when you add AI. But AI can widen each one — keeping more information in view, working faster than tired neurons, and staying consistent across details that a human mind tends to blur together.",
+    "These constraints do not disappear when you add AI to the equation. But AI can extend each boundary — holding more information in context, processing faster than biological neurons, and maintaining consistency across variables that a human mind would blur together.",
+    "AI does not erase these constraints, but it extends each — holding more context, processing faster than biological neurons, and keeping consistency across variables a human mind would blur.",
+    "AI extends each constraint: more context held, faster processing, consistency across variables a human would blur."
+  ],
+  "worked-conclusion": [
+    "The AI made each limit a little roomier: it showed her more facts, wrote out options faster, and cut down how many things she had to hold in her head. But it never made the choice. Sam was the one who weighed what mattered, added what she knew that the tool didn't, and decided. That split — the AI stretches the limits, the person keeps the choice — is what bounded thinking looks like with good support around it.",
+    "The AI widened each limit: it surfaced more information, drafted options faster, and left fewer variables for her to juggle. But it never decided. Sam weighed what mattered, added context the tool couldn't see, and chose. That division — AI stretches the constraints, the human keeps the judgment — is bounded rationality with scaffolding around it.",
+    "The AI widened each bound: more information surfaced, options drafted faster, fewer variables for her to juggle. It never decided. Sam weighed what mattered, drew on context the tool could not see, and chose. That division — AI extends the constraints, the human keeps the judgment — is bounded rationality with scaffolding.",
+    "The AI widened each bound — more information surfaced, options drafted faster, fewer variables to juggle — but never decided. Sam weighed what mattered, drew on context the tool lacked, and chose. That division — AI extends the constraints, the human keeps the judgment — is bounded rationality with scaffolding.",
+    "AI widened each bound but never decided. Sam weighed what mattered, added context the tool lacked, and chose: AI extends constraints, the human keeps judgment — bounded rationality with scaffolding."
+  ],
+  "fourth-constraint-intro": [
+    "People usually talk about bounded thinking in terms of three things: facts, time, and brainpower. But there is a fourth limit, and the AUGI framework names it out loud: feeling safe. When you're scared of being judged, that fear bends your decisions just as hard as any limit on your memory or your time.",
+    "Bounded rationality is usually discussed in terms of information, time, and thinking power. But there's a fourth limit the AUGI framework names plainly: psychological safety. Fear of being judged distorts our decisions just as strongly as any limit on memory or time.",
+    "Bounded rationality is usually discussed in terms of information, time, and cognition. But there is a fourth constraint that the AUGI framework makes explicit: psychological safety. Fear of judgment distorts decision-making as powerfully as any cognitive limitation.",
+    "Bounded rationality is usually framed as information, time, and cognition. But the AUGI framework names a fourth constraint: psychological safety. Fear of judgment distorts decision-making as powerfully as any cognitive limit.",
+    "AUGI names a fourth constraint beyond information, time, and cognition: psychological safety. Fear of judgment distorts decisions as powerfully as any cognitive limit."
+  ],
+  "fear-behaviours": [
+    "When people are afraid of looking foolish, they go quiet. They stop asking the questions they need answered. They nod along to fuzzy instructions instead of asking what's really meant. They go along with the boss instead of pointing out a flaw in the plan. Each of these looks like a thinking mistake. But underneath, it's a feeling. It's how we protect ourselves in a place where <a href=\"/learn/human-factors/trust-protocols.html\">being curious gets you punished instead of thanked</a>.",
+    "When people fear looking incompetent, they stop asking clarifying questions. They accept vague instructions instead of seeking specifics. They defer to authority instead of challenging weak reasoning. Each behaviour looks like a thinking failure, but the real cause is emotional — a way of protecting yourself in a place where <a href=\"/learn/human-factors/trust-protocols.html\">curiosity is punished rather than rewarded</a>.",
+    "When people are afraid of looking incompetent, they stop asking clarifying questions. They accept ambiguous instructions rather than seeking specificity. They defer to authority rather than challenging flawed reasoning. Each of these behaviours looks like a cognitive failure, but the root cause is emotional — it is the self-protective response to an environment where <a href=\"/learn/human-factors/trust-protocols.html\">curiosity is punished rather than rewarded</a>.",
+    "Afraid of looking incompetent, people stop asking clarifying questions, accept ambiguous instructions, and defer to authority over challenging flawed reasoning. Each looks like a cognitive failure, but the cause is emotional — self-protection in an environment where <a href=\"/learn/human-factors/trust-protocols.html\">curiosity is punished, not rewarded</a>.",
+    "Fear of looking incompetent stops clarifying questions, accepts ambiguity, and defers to authority — failures that look cognitive but are emotional self-protection where <a href=\"/learn/human-factors/trust-protocols.html\">curiosity is punished, not rewarded</a>."
+  ],
+  "augi-insight": [
+    "<strong>The AUGI insight:</strong> Limited thinking is not only about the brain. It's also about how we work together. When teams don't have good ways to ask questions, admit they're unsure, or change their minds, every other limit gets worse. But fix those ways of working together, and you give everyone more room to think.",
+    "<strong>The AUGI insight:</strong> Bounded rationality isn't only a thinking problem. It's also a teamwork problem. Weak habits for asking questions, sharing doubts, and changing your mind make every other limit worse. Fix those habits and you widen the bounds.",
+    "<strong>The AUGI insight:</strong> Bounded rationality is not just a cognitive problem. It is also a collaboration problem. Inadequate protocols for asking questions, sharing uncertainty, and revising conclusions amplify every cognitive limitation. Fix the protocols and you extend the bounds.",
+    "<strong>The AUGI insight:</strong> Bounded rationality is not just cognitive but collaborative. Weak protocols for asking questions, sharing uncertainty, and revising conclusions amplify every cognitive limit. Fix the protocols and you extend the bounds.",
+    "<strong>The AUGI insight:</strong> Bounded rationality is collaborative, not just cognitive. Weak protocols for questions, uncertainty, and revision amplify every cognitive limit; fix them to extend the bounds."
+  ],
+  "scaffolding-intro": [
+    "A lot of people get augmented intelligence wrong. They think AI is meant to take over our thinking. It isn't. The bounded thinking idea makes this plain: the limits are built into how we are, not just bad luck you can clear away. You can't get rid of them. What you can do is build a kind of support around yourself that lets your thinking stretch further inside those limits.",
+    "A common mix-up about augmented intelligence is that AI replaces human thinking. It doesn't. The bounded rationality idea makes this clear: the limits are built in, not accidental. You can't remove them. What you can do is build scaffolding that lets human thinking reach further within those limits.",
+    "A common misunderstanding of augmented intelligence is that AI replaces human thinking. It does not. The bounded rationality framework makes this clear: the bounds are structural, not incidental. You cannot remove them. What you can do is build scaffolding that extends how far human cognition reaches within those bounds.",
+    "A common misreading of augmented intelligence is that AI replaces human thinking. It does not. Bounded rationality shows the bounds are structural, not incidental — you cannot remove them. You can build scaffolding that extends how far cognition reaches within them.",
+    "Augmented intelligence does not replace human thinking. The bounds are structural, not incidental; you cannot remove them, only build scaffolding that extends cognitive reach within them."
+  ],
+  "practical-test": [
+    "<strong>An easy way to check:</strong> Take the AI away for a moment. If your decision would fall apart completely without it, then the AI has stopped being a support and become a crutch you're leaning on. Good AI should leave you a sharper thinker even when it isn't around — because the ways of thinking and working it taught you stay with you, long after that one tool is gone.",
+    "<strong>A practical test:</strong> If taking the AI out of the process would make the decision collapse, the scaffolding has turned into a crutch. Good augmented intelligence should make you a better thinker even when the AI isn't there — because the frameworks and habits last beyond any single tool.",
+    "<strong>The practical test:</strong> If removing the AI from the process would cause the decision to collapse entirely, the scaffolding has become a crutch. Good augmented intelligence should make the human a better thinker even when the AI is not present, because the frameworks and protocols persist beyond any single tool.",
+    "<strong>The practical test:</strong> If removing the AI would collapse the decision entirely, the scaffolding has become a crutch. Good augmentation makes the human a better thinker even absent the AI, because the frameworks and protocols persist beyond any single tool.",
+    "<strong>The practical test:</strong> If removing the AI collapses the decision, the scaffolding is a crutch. Good augmentation leaves a better thinker even absent the tool — frameworks persist beyond it."
+  ],
+  "trap-title": [
+    "A common trap: \"If the AI gives me more, I'll decide better.\"",
+    "The trap: \"More information from AI means a better decision.\"",
+    "The trap: \"More information from AI means a better decision.\"",
+    "The trap: \"More AI information yields better decisions.\"",
+    "Trap: more AI information equals better decisions."
+  ],
+  "trap-body": [
+    "It sounds right, doesn't it? If not having enough facts is the problem, then surely more facts is the fix. But here's the catch: your own mind has a limit too. Drop twenty pages of AI notes on someone who's tired, and you haven't helped them — you've buried them. The very tool that can hand you three useful clues can also hide them under thirty useless ones. Good support doesn't pile on more and more. It sorts and shapes things, so your limited attention lands right where it counts. More isn't better. Better is better.",
+    "It feels obvious — if missing information is the problem, more information must be the cure. But your own capacity is bounded too. Drop twenty pages of AI context on a tired decision-maker and you haven't widened the limit, you've overloaded it. The same tool that surfaces three useful signals can bury them under thirty useless ones. Good scaffolding doesn't pile on information; it filters and frames it so your limited attention lands where it matters. More is not better. Better is better.",
+    "It feels obvious — if incomplete information is a constraint, then more information must be the cure. But human capacity is also bounded. Dump twenty pages of AI-generated context on a tired decision-maker and you have not extended the bound, you have overloaded it. The same tool that surfaces three relevant signals can bury them under thirty irrelevant ones. Good scaffolding does not maximise information; it filters and frames it so the human's limited attention lands where it matters. More is not better. Better is better.",
+    "It feels obvious — if incomplete information is a constraint, more must be the cure. But human capacity is bounded too. Twenty pages of AI context on a tired decision-maker doesn't extend the bound; it overloads it. The same tool that surfaces three relevant signals can bury them under thirty irrelevant ones. Good scaffolding doesn't maximise information; it filters and frames it so limited attention lands where it matters. More is not better. Better is better.",
+    "Obvious but wrong: capacity is bounded too. Twenty pages on a tired decision-maker overloads rather than extends; relevant signals get buried under irrelevant ones. Good scaffolding filters and frames, not maximises. Better, not more."
+  ],
+  "bounded-attention-intro": [
+    "Limited thinking also means limited attention. Wherever you work, lots of things are pulling at you at once — and you've only got so much focus, energy, and time to go around. A message from a coworker, a ping from an app, a deadline on a project — each one is like a person tapping your shoulder, asking for a slice of the same small pool of attention.",
+    "Bounded rationality also means bounded attention. In any workplace, many demands compete for one finite pool of focus, energy, and time. A request from a colleague, a notification from a system, a deadline from a project — each is an \"asker\" pulling from the same limited cognitive budget.",
+    "Bounded rationality also means bounded attention. In any work environment, multiple demands compete for a finite pool of focus, energy, and time. Requests from colleagues, notifications from systems, deadlines from projects — each is an \"asker\" drawing from the same limited cognitive budget.",
+    "Bounded rationality also means bounded attention. Many demands compete for one finite pool of focus, energy, and time — colleague requests, system notifications, project deadlines — each an \"asker\" drawing on the same limited cognitive budget.",
+    "Bounded rationality means bounded attention: requests, notifications, and deadlines all draw on one finite cognitive budget."
+  ],
+  "tryit-title": [
+    "Give it a go with your own work",
+    "Try it with your own work",
+    "Try it on your own work",
+    "Apply it to your own work",
+    "Apply it: your own work"
+  ],
+  "tryit-intro": [
+    "Think of one real choice you have to make right now. Pick something where you don't know everything, where there's a deadline coming, and where there are more pieces than you can keep straight in your head all at once.",
+    "Pick one real decision you're facing right now — something where you don't have all the facts, where there's a deadline, and where there are more moving parts than you can comfortably hold in your head.",
+    "Pick one real decision you are facing right now — something with incomplete information, a deadline, and more moving parts than you can comfortably hold in your head.",
+    "Pick one real decision you face now — incomplete information, a deadline, and more moving parts than you can comfortably hold in mind.",
+    "Pick one live decision: incomplete information, a deadline, too many moving parts to hold in mind."
+  ]
+}

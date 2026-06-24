@@ -1,0 +1,44 @@
+{
+  "hero-title": [
+    "The more you practise, the better you get — so start today",
+    "The skill keeps growing the more you do it, so start now",
+    "The skill compounds, so start now",
+    "The skill compounds — so begin now",
+    "Skill compounds. Begin."
+  ],
+  "skill-by-doing": [
+    "Working well with AI is not something you can just look up and know. It is a skill, and you build a skill by doing it. Over time you learn the things it is good at, and you learn when it makes stuff up. You learn how to ask for a task in a way that gives you a useful answer. And you learn when an answer is wrong and you should just toss it out. You cannot get any of this by only reading about it. You get it by trying — small, real tries on work you truly care about.",
+    "Working well with AI isn't a fact you can simply look up; it's a skill you build by doing. Over time you learn where it's strong, where it bluffs, how to frame a task so the answer is useful, and when to throw the answer out. None of that comes from reading about it. It comes from reps — small, real attempts on work you actually care about.",
+    "Working well with AI is not a fact you look up; it's a skill you build by doing. You learn where it's strong, where it bluffs, how to frame a task so the output is useful, and when to throw the answer out. None of that arrives by reading about it. It arrives through reps — small, real attempts on work you actually care about.",
+    "Working well with AI is a skill you build by doing, not a fact you look up. You learn its strengths, its bluffs, how to frame a task for useful output, and when to discard the answer. Reading won't teach it. Reps will — small, real attempts on work you care about.",
+    "AI skill is built, not looked up. Learn its strengths, bluffs, framing, and when to discard output — through reps on real work, not reading."
+  ],
+  "skills-compound": [
+    "And skills grow on top of each other. Every time you try, the next try gets a little sharper. So the person who began a month ago is not just one month in front of you — they are pulling further and further ahead. Waiting for the tools to \"settle down\" can feel like the safe, sensible choice. But really it just means you start later, from nothing, while that gap keeps growing. The tries won't be any easier because you put them off. You will simply have done fewer of them.",
+    "And skills compound. Each rep makes the next one a little sharper, so the person who started a month ago isn't just a month ahead — they're pulling away. Waiting for the tools to \"settle down\" feels prudent, but it really just means starting later from zero while the gap widens. The reps don't get easier because you delayed; you've simply done fewer of them.",
+    "And skills compound. Each rep makes the next one sharper, so the person who started a month ago isn't a month ahead, they're pulling away. Waiting for the tools to \"settle down\" feels prudent, but it just means starting later from zero while the gap widens. The reps don't get easier because you delayed; you simply did fewer of them.",
+    "Skills compound. Each rep sharpens the next, so whoever started a month ago isn't a month ahead — they're pulling away. Waiting for the tools to \"settle down\" feels prudent but just means starting later from zero as the gap widens. Delay doesn't ease the reps; it only means you've done fewer.",
+    "Skills compound: each rep sharpens the next, so early starters pull away, not merely lead. Waiting to \"settle\" only means a later start from zero against a widening gap; delay subtracts reps, not difficulty."
+  ],
+  "habit-retrieval": [
+    "There's a habit that makes all of this stick, and it's the same one behind learning anything at all: <a href=\"/notes/retrieval-beats-rereading.html\" class=\"wikilink\">Retrieval, not rereading, is what makes it stick</a>. In plain words, that means do the thing and then try to remember what worked — don't just collect clever tips you never actually use. And keep the picture honest while you're at it. You are practising a tool here; you are not handing your thinking over to it. After all, <a href=\"/notes/ai-is-one-tool-for-thought.html\" class=\"wikilink\">AI is one tool for thinking, not the thinker</a>.",
+    "The habit that makes this stick is the same one behind learning anything: <a href=\"/notes/retrieval-beats-rereading.html\" class=\"wikilink\">Retrieval, not rereading, is what makes it stick</a>, so do the thing and then recall what worked, rather than collecting tips you never use. Keep the frame honest, too — you're practising a tool, not handing over your thinking, because <a href=\"/notes/ai-is-one-tool-for-thought.html\" class=\"wikilink\">AI is one tool for thinking, not the thinker</a>.",
+    "The habit that makes this stick is the same one behind learning anything: <a href=\"/notes/retrieval-beats-rereading.html\" class=\"wikilink\">Retrieval, not rereading, is what makes it stick</a>, so do the thing and recall what worked rather than collecting tips you never use. Keep the frame honest, too — you're practicing a tool, not outsourcing your head, because <a href=\"/notes/ai-is-one-tool-for-thought.html\" class=\"wikilink\">AI is one tool for thinking, not the thinker</a>.",
+    "What makes it stick is what makes anything stick: <a href=\"/notes/retrieval-beats-rereading.html\" class=\"wikilink\">Retrieval, not rereading, is what makes it stick</a> — do the thing and recall what worked, don't hoard unused tips. Keep the frame honest: you're practicing a tool, not outsourcing your head, because <a href=\"/notes/ai-is-one-tool-for-thought.html\" class=\"wikilink\">AI is one tool for thinking, not the thinker</a>.",
+    "Stickiness comes from <a href=\"/notes/retrieval-beats-rereading.html\" class=\"wikilink\">Retrieval, not rereading, is what makes it stick</a>: do, then recall — don't hoard tips. Stay honest: <a href=\"/notes/ai-is-one-tool-for-thought.html\" class=\"wikilink\">AI is one tool for thinking, not the thinker</a>."
+  ],
+  "next-step": [
+    "So here's your next step: pick just one real task this week, and do it with AI helping you along the way.",
+    "Next, pick one real task this week and do it with AI helping in the loop.",
+    "Next: pick one real task this week and do it with AI in the loop.",
+    "Next: pick one real task this week, AI in the loop.",
+    "Next: one real task this week, AI in the loop."
+  ],
+  "evergreen-credit": [
+    "This is an <strong>evergreen note</strong>. That means it's small, it has a title that states one clear claim, and it links to lots of other notes. It's a way of working that comes from Andy Matuschak, which we've built again here in our own words.",
+    "This is an <strong>evergreen note</strong> — small, claim-titled, and densely linked. It's a practice from Andy Matuschak, re-built here in our own words.",
+    "This is an <strong>evergreen note</strong> — atomic, claim-titled, and densely linked — a practice from Andy Matuschak, re-implemented in our own words.",
+    "An <strong>evergreen note</strong>: atomic, claim-titled, densely linked — a Andy Matuschak practice, re-implemented in our words.",
+    "<strong>Evergreen note</strong>: atomic, claim-titled, densely linked. After Andy Matuschak; re-implemented."
+  ]
+}

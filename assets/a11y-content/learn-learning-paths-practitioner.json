@@ -1,0 +1,100 @@
+{
+  "hero-title": [
+    "Practitioner Path: Use AI Helpers in Your Everyday Work",
+    "Practitioner Path: Put Augmented Intelligence to Work in Your Job",
+    "Practitioner Path: Apply Augmented Intelligence in Your Work",
+    "Practitioner Path: Applying Augmented Intelligence at Work",
+    "Practitioner Path: Applied Augmented Intelligence"
+  ],
+  "hero-lead": [
+    "You already know the big ideas. Now you get to use them. This path hands you simple tools, ways of thinking, and steady habits so you can make AI a real part of your work.",
+    "You understand the ideas. Now you can start using them. This path gives you the tools, thinking habits, and workflow ideas to make augmented intelligence part of your working day.",
+    "You understand the concepts. Now it is time to apply them. This path gives you the frameworks, thinking tools, and workflow strategies to integrate augmented intelligence into your professional life.",
+    "You know the concepts; now apply them. This path delivers the frameworks, thinking tools, and workflow strategies to integrate augmented intelligence into your professional practice.",
+    "From concepts to practice: frameworks, thinking tools, and workflows for integrating augmented intelligence into professional work."
+  ],
+  "for-who": [
+    "This path is for working people who have finished the <a href=\"/learn/learning-paths/beginner.html\">Beginner Path</a>, or who already get the basics of augmented intelligence well. It is for people who are ready to stop just learning and start doing.",
+    "This path is for professionals who have finished the <a href=\"/learn/learning-paths/beginner.html\">Beginner Path</a> (or who already know the basics of augmented intelligence well) and are ready to move from understanding to doing.",
+    "\n                    This path is designed for professionals who have completed the <a href=\"/learn/learning-paths/beginner.html\">Beginner Path</a> (or who already have a solid grasp of augmented intelligence fundamentals) and are ready to move from understanding to application.\n                ",
+    "For professionals who have completed the <a href=\"/learn/learning-paths/beginner.html\">Beginner Path</a> (or already grasp augmented intelligence fundamentals) and are ready to move from understanding to application.",
+    "For professionals past the <a href=\"/learn/learning-paths/beginner.html\">Beginner Path</a> (or fluent in the fundamentals) ready to move from understanding to application."
+  ],
+  "for-who-roles": [
+    "Maybe you work with information and want a better way to do research and make sense of it. Maybe you lead a team and want safe, steady ways for people and AI to work together. Maybe you build, design, or plan things and you can feel that AI could change how you work, but you are not sure where to begin.",
+    "Maybe you are a knowledge worker who wants a better way to handle research and analysis. Maybe you lead a team and want dependable human-AI workflows. Maybe you are a developer, designer, or strategist who senses AI could change your process but isn't sure where to start.",
+    "\n                    Maybe you are a knowledge worker who wants to restructure how you handle research and analysis. Maybe you lead a team and want to establish reliable human-AI workflows. Maybe you are a developer, designer, or strategist who senses that AI could transform your process but does not know where to start applying it systematically.\n                ",
+    "Perhaps you are a knowledge worker restructuring how you research and analyse, a leader establishing reliable human-AI workflows, or a developer, designer, or strategist who senses AI could transform your process but lacks a systematic starting point.",
+    "Knowledge workers restructuring research, leaders building human-AI workflows, builders and strategists seeking a systematic entry point: this is for you."
+  ],
+  "prereq": [
+    "<strong>You need the <a href=\"/learn/learning-paths/beginner.html\">Beginner Path</a> first.</strong> This path expects you to already know what augmented intelligence is, why it matters, what today's AI cannot do well, and the three main building blocks. If any of that feels new, do the Beginner Path before this one.",
+    "<strong>Prerequisite: the <a href=\"/learn/learning-paths/beginner.html\">Beginner Path</a>.</strong> This path assumes you know what augmented intelligence is, why it matters, the limits of today's AI, and the three foundational pillars. If any of those are unfamiliar, start with the Beginner Path first.",
+    "<strong>Prerequisite: <a href=\"/learn/learning-paths/beginner.html\">Beginner Path</a>.</strong> This path assumes you understand what augmented intelligence is, why it matters, the limitations of current AI, and the three foundational pillars. If any of those are unfamiliar, start with the Beginner Path first.",
+    "<strong>Prerequisite: <a href=\"/learn/learning-paths/beginner.html\">Beginner Path</a>.</strong> Assumes you understand augmented intelligence, why it matters, current AI's limitations, and the three foundational pillars. If any are unfamiliar, start there first.",
+    "<strong>Prerequisite: <a href=\"/learn/learning-paths/beginner.html\">Beginner Path</a>.</strong> Assumes fluency in augmented intelligence, its rationale, current AI's limits, and the three foundational pillars."
+  ],
+  "curriculum-intro": [
+    "These five modules sit on top of the basics and give you tools you can really use. Take them in order — each one adds a new skill to how you work with AI.",
+    "These five modules build on the basics and give you practical, usable tools. Work through them in order — each one adds a new skill to your augmented intelligence practice.",
+    "These five modules build on the foundations and give you actionable frameworks. Work through them in order — each one adds a new layer of capability to your augmented intelligence practice.",
+    "These five modules build on the foundations with actionable frameworks. Work through them in order; each adds a layer of capability to your augmented intelligence practice.",
+    "Five modules, in order, each adding a layer of capability atop the foundations."
+  ],
+  "mod-meta-cognition": [
+    "Meta-cognition means thinking about your own thinking. With AI, it means having a clear plan for how you guide the AI, check what it gives back, and mix its ideas with yours. This module shows you ways of thinking, how to write good prompts on purpose, and simple steps that turn messy guessing into a clear, repeatable way of working with AI.",
+    "Meta-cognition is thinking about your own thinking. With augmented intelligence, it means building deliberate ways to direct AI, judge its output, and blend its reasoning with your own. This module covers mental models, prompt engineering as a real skill, and the scaffolding that turns AI use from trial-and-error into a systematic practice.",
+    "Meta-cognition is thinking about your own thinking. In the context of augmented intelligence, it means developing deliberate strategies for how you direct AI, evaluate its output, and integrate its reasoning with your own. This module covers mental models, prompt engineering as a cognitive discipline, and the scaffolding techniques that turn AI interaction from trial-and-error into a systematic practice.",
+    "Meta-cognition is thinking about your thinking. With augmented intelligence, it means deliberate strategies for directing AI, evaluating its output, and integrating its reasoning with yours. Covers mental models, prompt engineering as a cognitive discipline, and scaffolding that turns AI interaction from trial-and-error into systematic practice.",
+    "Thinking about your thinking: deliberate strategies to direct AI, evaluate output, and integrate its reasoning. Mental models, prompt engineering as discipline, and scaffolding for systematic practice."
+  ],
+  "mod-explanation": [
+    "One of the biggest dangers in working with AI is taking answers you cannot explain. This module teaches you how to ask for, and make, explanations that are clear, easy to check, and hard to twist. Using the ideas of thinker David Deutsch, you will learn to tell real understanding from answers that just sound right — a key skill, because AI can write smooth but empty text on any subject.",
+    "A big risk in AI-augmented work is accepting outputs you cannot explain. This module teaches you to create and demand explanations that are clear, checkable, and hard to vary. Drawing on David Deutsch's ideas, you will learn to tell real understanding from plausible-sounding pattern-matching — vital when AI can write convincing but hollow text on any topic.",
+    "One of the biggest risks in AI-augmented work is accepting outputs you cannot explain. This module teaches you how to create and demand explanations that are transparent, verifiable, and hard to vary. Drawing on David Deutsch's epistemology, you will learn to distinguish genuine understanding from pattern-matched plausibility — a critical skill when AI can generate convincing but hollow text on any topic.",
+    "A key risk in AI-augmented work is accepting outputs you cannot explain. This module teaches you to create and demand explanations that are transparent, verifiable, and hard to vary. Drawing on David Deutsch's epistemology, you will distinguish genuine understanding from pattern-matched plausibility — critical when AI generates convincing but hollow text.",
+    "Never accept unexplainable outputs. Create and demand transparent, verifiable, hard-to-vary explanations. Via Deutsch's epistemology, distinguish genuine understanding from pattern-matched plausibility — critical against convincing, hollow AI text."
+  ],
+  "mod-memory-systems": [
+    "Your brain can only hold a little in mind at once. And AI does not really remember anything from one chat to the next. This module shows you how to build systems that fill that gap: tools for keeping your own notes and knowledge, ways to store and find facts, ways to feed the right facts to AI, and good ideas for shaping memory so both you and your AI tools get better over time.",
+    "Your brain has limited working memory. AI has no lasting memory between sessions, at least. This module shows how to build knowledge systems that bridge the gap: personal knowledge tools, vector stores, retrieval-augmented generation, and the principles of memory design that make both you and your AI tools more effective over time.",
+    "Your brain has limited working memory. AI has no persistent memory at all (between sessions, at least). This module explores how to build knowledge management systems that bridge the gap: personal knowledge management tools, vector stores, retrieval-augmented generation, and the principles of designing memory architectures that make both you and your AI tools more effective over time.",
+    "Your working memory is limited; AI has no persistent memory between sessions. This module explores knowledge management systems that bridge the gap: PKM tools, vector stores, retrieval-augmented generation, and principles for designing memory architectures that make you and your AI tools more effective over time.",
+    "Limited working memory; no persistent AI memory between sessions. Bridge the gap with knowledge management systems: PKM tools, vector stores, retrieval-augmented generation, and memory-architecture design principles."
+  ],
+  "mod-trust-protocols": [
+    "Trust is what good teamwork is built on, whether between people or between people and machines. This module shows you how to build steady ways of working with AI: checking its work on a regular rhythm, judging how sure you can be, and setting things up so trust is earned step by step, not just given. You will learn the rhythm of staying curious and how the way you engage shapes how good the results are.",
+    "Trust is the foundation of good teamwork, whether between people or between people and machines. This module covers how to build dependable human-AI workflows by setting verification rhythms, calibrating how confident to be, and designing processes where trust is earned step by step rather than assumed. You will learn the cadence of curiosity and how engagement patterns shape the quality of AI-augmented results.",
+    "Trust is the infrastructure of effective collaboration, whether between humans or between humans and machines. This module covers how to build reliable human-AI workflows by establishing verification cadences, calibrating confidence levels, and designing processes where trust is earned incrementally rather than assumed. You will learn the cadence of curiosity and how engagement patterns shape the quality of AI-augmented outcomes.",
+    "Trust is the infrastructure of collaboration, human or machine. This module builds reliable human-AI workflows through verification cadences, calibrated confidence, and processes where trust is earned incrementally, not assumed. You will learn the cadence of curiosity and how engagement patterns shape AI-augmented outcomes.",
+    "Trust underpins collaboration. Build reliable human-AI workflows via verification cadences, calibrated confidence, and incrementally earned trust. Learn the cadence of curiosity and how engagement shapes outcomes."
+  ],
+  "mod-burnout": [
+    "Working with AI can quietly turn into working all the time if you do not set clear limits. This module looks at what causes burnout — how much your mind is carrying, how much you feel you owe, and how much rest you get — and teaches ways to keep your AI-augmented work healthy for the long run. Because the best version of you is the one who can keep going for months and years, not just push hard for one week.",
+    "AI-augmented work can easily become always-on work if you are not deliberate about limits. This module looks at the burnout equation — how cognitive load, obligation, and recovery relate — and teaches ways to keep AI-augmented practice sustainable. Because the most productive you is the one who can keep going for months and years, not just sprint for a week.",
+    "AI-augmented work can easily become always-on work if you are not deliberate about boundaries. This module addresses the burnout equation — the relationship between cognitive load, obligation, and recovery — and teaches strategies for sustainable AI-augmented practice. Because the most productive version of you is the one that can sustain the work over months and years, not just sprint for a week.",
+    "AI-augmented work easily becomes always-on without deliberate boundaries. This module addresses the burnout equation — the relationship between cognitive load, obligation, and recovery — and teaches strategies for sustainable practice. The most productive you sustains the work over months and years, not a one-week sprint.",
+    "Without boundaries, AI-augmented work goes always-on. The burnout equation — cognitive load, obligation, recovery — and strategies for sustainable practice. Sustained output over years beats a one-week sprint."
+  ],
+  "after-toolkit": [
+    "Finishing the Practitioner Path gives you a real set of tools for working with AI: ways to think, standards for explanations, ways to handle memory and knowledge, ways to build trust, and habits to keep going without burning out. That alone can change how you work in a big way.",
+    "Finishing the Practitioner Path gives you a working toolkit for augmented intelligence: thinking frameworks, explanation standards, memory systems, trust protocols, and sustainability habits. That is enough to change how you work in a big way.",
+    "\n                    Completing the Practitioner Path gives you a working toolkit for augmented intelligence: thinking frameworks, explanation standards, memory architectures, trust protocols, and sustainability practices. That is enough to significantly transform how you work.\n                ",
+    "Completing the Practitioner Path gives you a working toolkit for augmented intelligence: thinking frameworks, explanation standards, memory architectures, trust protocols, and sustainability practices — enough to significantly transform how you work.",
+    "The Practitioner Path yields a working toolkit: thinking frameworks, explanation standards, memory architectures, trust protocols, sustainability practices — enough to transform how you work."
+  ],
+  "after-researcher": [
+    "If you want to understand the deeper ideas — the science of how we think, how to design good interactions, and the psychology of people and AI working together — the Researcher Path goes there. It is made for people who want to push past today's best practices and explore what augmented intelligence can really do.",
+    "If you want the deeper theory — the cognitive science, the interaction design principles, the psychology of human-AI collaboration — the Researcher Path takes you there. It is for people who want to push the limits of what augmented intelligence can do, not just apply existing best practices.",
+    "\n                    If you want to understand the deeper theory — the cognitive science, the interaction design principles, the psychology of human-AI collaboration — the Researcher Path takes you there. It is designed for people who want to push the boundaries of what augmented intelligence can do, not just apply existing best practices.\n                ",
+    "For the deeper theory — cognitive science, interaction design principles, the psychology of human-AI collaboration — the Researcher Path takes you there. It is for those who want to push the boundaries of augmented intelligence, not just apply existing best practices.",
+    "For the deeper theory — cognitive science, interaction design, the psychology of human-AI collaboration — take the Researcher Path: for those pushing the boundaries, not just applying best practices."
+  ],
+  "continue-learning": [
+    "Ready for the deeper ideas? The Researcher Path looks at the science of thinking, how to design good interactions, and the newest work on people and AI working together.",
+    "Ready for the deeper theory? The Researcher Path explores cognitive science, interaction design, and the latest in human-AI collaboration.",
+    "Ready for the deep theory? The Researcher Path explores cognitive science, interaction design, and the cutting edge of human-AI collaboration.",
+    "Ready for deep theory? The Researcher Path explores cognitive science, interaction design, and the cutting edge of human-AI collaboration.",
+    "Deep theory next: cognitive science, interaction design, the cutting edge of human-AI collaboration."
+  ]
+}

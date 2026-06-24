@@ -1,0 +1,37 @@
+{
+  "title": [
+    "Why a fill-in shape works better than a wall of words when you ask AI",
+    "Why structure beats plain text when you work with AI",
+    "Structure beats freeform text for working with AI",
+    "Structure beats freeform output when working with AI",
+    "Structure over freeform for AI work"
+  ],
+  "contract-example": [
+    "Imagine you ask an AI to give you \"a summary of this contract.\" What you get back reads nicely, like a little story. But to know if it's right, you have to read the whole thing very carefully. Now imagine you ask it something different. You ask it to fill in a few named blanks: who the parties are, how long it lasts, the payment, how it ends, and which law applies. Now you get an answer you can check one blank at a time. The first way sounds good and quietly hides the parts it missed. The second way shows you right away if a blank came back empty or wrong.",
+    "Ask an AI for \"a summary of this contract\" and you get smooth, readable prose that you still have to study closely before you can trust it. Ask it instead to fill in named fields — the parties, the term, the payment, how it ends, the governing law — and you get an answer you can check one box at a time. The freeform version reads well but quietly hides its gaps; the structured one tells you straight away when a field came back empty or wrong.",
+    "Ask an AI for \"a summary of this contract\" and you get fluent prose you have to read closely to trust. Ask it to fill in named fields — parties, term, payment, termination, governing law — and you get an answer you can check one box at a time. The freeform version reads well and hides its gaps; the structured one tells you instantly when a field came back empty or wrong.",
+    "Ask for \"a summary of this contract\" and you get fluent prose you must read closely to trust. Ask for named fields — parties, term, payment, termination, governing law — and you get an answer checkable box by box. Freeform reads well and hides its gaps; structure flags an empty or wrong field instantly.",
+    "Freeform summary: fluent, must read to trust, hides gaps. Named fields (parties, term, payment, termination, governing law): checkable per box, flags empties and errors instantly."
+  ],
+  "defined-shape": [
+    "A defined shape — some fields, a schema, a template to fill in — is what we call a cognitive artifact. That just means it does some of your thinking for you, outside your head. It decides what a good answer must include before the AI ever starts. That makes your request clear and lets you check the answer line by line. It's the same reason <a href=\"/notes/knowledge-compounds-when-linked.html\" class=\"wikilink\">Knowledge compounds when it's linked, not just stored</a> instead of piling up as plain text, and the same care that gives you <a href=\"/notes/a-good-explanation-is-hard-to-vary.html\" class=\"wikilink\">A good explanation is hard to vary</a>.",
+    "A defined shape — fields, a schema, a template — is a cognitive artifact: it holds part of your thinking outside your head and settles what a good answer must contain before the model even runs. That makes the request clear and the output checkable line by line. It's the same reason <a href=\"/notes/knowledge-compounds-when-linked.html\" class=\"wikilink\">Knowledge compounds when it's linked, not just stored</a> rather than piling up as prose, and the same discipline that gives you <a href=\"/notes/a-good-explanation-is-hard-to-vary.html\" class=\"wikilink\">A good explanation is hard to vary</a>.",
+    "A defined shape — fields, a schema, a template — is a cognitive artifact: it carries part of the thinking outside your head and pins down what a good answer must contain before the model ever runs. That makes the request precise and the output verifiable line by line. It's the same reason <a href=\"/notes/knowledge-compounds-when-linked.html\" class=\"wikilink\">Knowledge compounds when it's linked, not just stored</a> rather than piling up as prose, and the same discipline that produces <a href=\"/notes/a-good-explanation-is-hard-to-vary.html\" class=\"wikilink\">A good explanation is hard to vary</a>.",
+    "A defined shape — fields, schema, template — is a cognitive artifact: it offloads part of the thinking and pins down what a good answer must contain before the model runs, making the request precise and the output verifiable line by line. Same reason <a href=\"/notes/knowledge-compounds-when-linked.html\" class=\"wikilink\">Knowledge compounds when it's linked, not just stored</a> rather than piling up as prose; same discipline behind <a href=\"/notes/a-good-explanation-is-hard-to-vary.html\" class=\"wikilink\">A good explanation is hard to vary</a>.",
+    "A defined shape (fields, schema, template) is a cognitive artifact: it externalises thinking and fixes the required answer before the model runs — precise request, line-verifiable output. Cf. <a href=\"/notes/knowledge-compounds-when-linked.html\" class=\"wikilink\">Knowledge compounds when it's linked, not just stored</a>; <a href=\"/notes/a-good-explanation-is-hard-to-vary.html\" class=\"wikilink\">A good explanation is hard to vary</a>."
+  ],
+  "not-bureaucracy": [
+    "Structure isn't red tape, and it isn't extra busywork. It just moves the checking to one place, right at the start, into a shape you can use again and again — so you don't have to read every new answer all over again from the beginning. You can read more about this in <a href=\"/learn/frameworks/cognitive-artifacts.html\">the frameworks for cognitive artifacts</a>.",
+    "Structure isn't bureaucracy. It moves the checking to one place, up front, in a form you can reuse — so you're not re-reading every output from scratch. See <a href=\"/learn/frameworks/cognitive-artifacts.html\">the frameworks for cognitive artifacts</a>.",
+    "Structure isn't bureaucracy. It relocates the checking to once, up front, in a form you can reuse — so you're not re-reading every output from scratch. See <a href=\"/learn/frameworks/cognitive-artifacts.html\">the frameworks for cognitive artifacts</a>.",
+    "Structure isn't bureaucracy. It relocates checking to once, up front, in a reusable form — so you're not re-reading every output from scratch. See <a href=\"/learn/frameworks/cognitive-artifacts.html\">the frameworks for cognitive artifacts</a>.",
+    "Not bureaucracy: checking moves up front into a reusable form, ending per-output re-reads. See <a href=\"/learn/frameworks/cognitive-artifacts.html\">the frameworks for cognitive artifacts</a>."
+  ],
+  "next-step": [
+    "What comes next: judge an explanation by what it actually promises and commits to, because <a href=\"/notes/a-good-explanation-is-hard-to-vary.html\" class=\"wikilink\">A good explanation is hard to vary</a>.",
+    "Next, judge explanations by what they commit to, because <a href=\"/notes/a-good-explanation-is-hard-to-vary.html\" class=\"wikilink\">A good explanation is hard to vary</a>.",
+    "Next: judge explanations by what they commit to, since <a href=\"/notes/a-good-explanation-is-hard-to-vary.html\" class=\"wikilink\">A good explanation is hard to vary</a>.",
+    "Next: judge explanations by their commitments, since <a href=\"/notes/a-good-explanation-is-hard-to-vary.html\" class=\"wikilink\">A good explanation is hard to vary</a>.",
+    "Next: judge explanations by commitments — <a href=\"/notes/a-good-explanation-is-hard-to-vary.html\" class=\"wikilink\">A good explanation is hard to vary</a>."
+  ]
+}

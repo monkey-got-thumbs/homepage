@@ -1,0 +1,65 @@
+{
+  "hero-title": [
+    "Let's start at the very beginning",
+    "Begin right here with the basics",
+    "Start with the basics",
+    "Start with the fundamentals",
+    "The fundamentals"
+  ],
+  "hero-lede": [
+    "You don't need to know anything yet, and there's nothing you missed. These are five short, easy reads. They tell you what AI really is, the things it's good at, the times it gets things wrong, and what makes it safe to trust. Everything is written in simple, everyday words.",
+    "You need no experience, and there's nothing to catch up on. These five short reads explain what AI really is, where it's good, where it goes wrong, and what makes it trustworthy — all in plain, friendly words.",
+    "No experience needed, and nothing to catch up on. These five short reads explain what AI really is, where it shines, where it slips up, and what makes it trustworthy — all in plain words.",
+    "No experience required. Five short reads cover what AI is, where it shines, where it slips, and what makes it trustworthy — plainly put.",
+    "Five short reads: what AI is, its strengths, its failures, and what makes it trustworthy."
+  ],
+  "card-what-is-ai": [
+    "Here is the big idea behind everything: AI is here to help you, not to take your place. There's also a small game where you decide who should do a task — you, or AI.",
+    "The simple idea at the heart of it: AI is here to help you, not replace you. There's also a small interactive bit where you decide who should do a job — you, or AI.",
+    "The simple idea at the heart of it all: AI is here to help you, not replace you. Plus a little interactive bit where you weigh up who should do a job — you, or AI.",
+    "The core idea: AI helps you, it doesn't replace you. Includes a short interactive task — you decide who should do the job, you or AI.",
+    "Core idea: AI assists, not replaces. Plus an interactive who-does-the-job choice."
+  ],
+  "card-why-need-it": [
+    "Why working <em>with</em> AI is better than two other choices: ignoring it, or letting it do everything for you. And why right now is a good time to start feeling comfortable with it.",
+    "Why working <em>with</em> AI beats both ignoring it and handing it everything — and why now is a good time to get comfortable with it.",
+    "Why working <em>with</em> AI beats both ignoring it and handing everything over to it — and why now's a good moment to get comfortable.",
+    "Why partnering <em>with</em> AI beats ignoring it or fully delegating to it — and why now's the moment to get comfortable.",
+    "Why working <em>with</em> AI beats ignoring or over-delegating — and why now."
+  ],
+  "card-how-it-helps": [
+    "The three simple, real-life ways AI makes your day easier: it does things faster, it takes over the dull jobs, and it helps you think problems through. We show you real examples of each one.",
+    "The three down-to-earth ways AI makes your day easier — doing things faster, taking the boring jobs, and helping you think things through — with real examples.",
+    "The three down-to-earth ways AI lightens your day — speeding things up, taking the boring jobs, and helping you think things through — with real examples.",
+    "Three practical ways AI lightens your day — speed, dull tasks, and clearer thinking — with real examples.",
+    "Three ways AI helps: speed, drudgery, thinking — with examples."
+  ],
+  "card-pitfalls": [
+    "Now the honest part: AI can sound very sure of itself and still be wrong. This read shows you the places where it usually gets things wrong, so you always know when it's worth checking again.",
+    "The honest part: AI can sound sure and still be wrong. Here's where it usually trips up, so you always know when to double-check.",
+    "The honest bit: AI can sound sure and still be wrong. Here's where it tends to trip, so you always know when to double-check.",
+    "The honest part: AI can sound confident and still be wrong. Here's where it trips, so you know when to verify.",
+    "AI can be confidently wrong. Where it fails, and when to verify."
+  ],
+  "card-three-pillars": [
+    "The three things that change AI from a clever guesser into something you can really count on. Once you've seen these three, you'll be able to tell good AI apart from shaky AI.",
+    "The three things that turn a clever guesser into something you can really rely on. Once you've seen them, you'll tell good AI from shaky AI.",
+    "The three things that turn a clever guesser into something you can rely on. Once you've seen them, you'll spot good AI from shaky AI.",
+    "The three things that turn a clever guesser into something reliable — and let you tell good AI from shaky AI.",
+    "Three things that make AI reliable, not just clever — and how to spot the difference."
+  ],
+  "next-title": [
+    "When you feel ready, here's what comes next",
+    "When you're ready, here's what's next",
+    "When you're ready, what's next?",
+    "What's next when you're ready",
+    "What's next"
+  ],
+  "next-body": [
+    "Got the basics now? Lovely. Next are the <a href=\"/learn/frameworks/\">handy mental models</a> that quietly make you better at all this. Or you can drop into your <a href=\"/learn/review/\">review queue</a> to help the things you just learned really stick. There's no rush — go whichever way feels right.",
+    "Got the basics? Lovely. Next come the <a href=\"/learn/frameworks/\">handy mental models</a> that quietly make you better at this — or drop into your <a href=\"/learn/review/\">review queue</a> to lock in what just clicked. No rush either way.",
+    "Got the basics? Lovely. Next come the <a href=\"/learn/frameworks/\">handy mental models</a> that quietly make you better at this — or pop into your <a href=\"/learn/review/\">review queue</a> to lock in what's just clicked. No rush either way.",
+    "Got the basics? Next come the <a href=\"/learn/frameworks/\">mental models</a> that quietly sharpen you — or hit your <a href=\"/learn/review/\">review queue</a> to lock in what clicked. No rush.",
+    "Next: the <a href=\"/learn/frameworks/\">mental models</a>, or your <a href=\"/learn/review/\">review queue</a> to consolidate."
+  ]
+}

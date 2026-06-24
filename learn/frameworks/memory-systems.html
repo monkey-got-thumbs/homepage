@@ -64,7 +64,7 @@
         .content { padding-block: 2rem; }
         .content h2 { margin-top: 2.5rem; }
         .content p { line-height: 1.8; margin-bottom: 1.25rem; }
-        .content ul, .content ol { margin-bottom: 1.25rem; padding-left: 1.5rem; }
+        .content ul, .content ol { margin-bottom: 1.25rem; padding-inline-start: 1.5rem; }
         .content li { margin-bottom: 0.5rem; line-height: 1.7; }
         .page-meta { color: var(--color-muted); font-size: var(--font-size-sm); margin-top: 0.5rem; }
         .lead { font-size: var(--font-size-lg); color: var(--color-fg-secondary); line-height: 1.7; }
@@ -95,8 +95,8 @@
             </nav>
 
             <header>
-                <h1>Memory Systems</h1>
-                <p class="lead">Memory is the substrate of augmented intelligence. Without persistent, well-organised knowledge structures, every AI interaction starts from zero. With them, each interaction builds on everything that came before — compounding your capability over time.</p>
+                <h1 data-a11y="hero-title">Memory Systems</h1>
+                <p class="lead" data-a11y="hero-lead">Memory is the substrate of augmented intelligence. Without persistent, well-organised knowledge structures, every AI interaction starts from zero. With them, each interaction builds on everything that came before — compounding your capability over time.</p>
                 <p class="page-meta">Advanced &middot; 10 min read</p>
             </header>
 
@@ -107,12 +107,12 @@
             <mgt-credit>The recall cards woven through this page are our take on the <strong>mnemonic medium</strong> by Andy Matuschak &amp; Michael Nielsen.</mgt-credit>
 
             <div class="enduring">
-                <p><strong>The one idea to keep:</strong> A memory system compounds only when a human decides what's worth keeping. Tools and AI add persistence, scale, and retrieval — but you supply the judgment about what matters. Capture that, and every future question can be answered against everything you've already learned.</p>
+                <p data-a11y="enduring-idea"><strong>The one idea to keep:</strong> A memory system compounds only when a human decides what's worth keeping. Tools and AI add persistence, scale, and retrieval — but you supply the judgment about what matters. Capture that, and every future question can be answered against everything you've already learned.</p>
             </div>
 
             <section>
                 <h2>The Three Layers of Memory</h2>
-                <p>
+                <p data-a11y="three-layers-intro">
                     In augmented intelligence, memory operates across three distinct layers, each with different strengths, limitations, and roles. Understanding these layers — and how they interact — is the foundation of effective knowledge management.
                 </p>
 
@@ -141,18 +141,18 @@ that you tend to blame sign-up, so this is the leak worth fixing first.</div>
                     <p>The AI didn't "remember" the study. Aisha's judgment decided it was worth capturing, the tool kept it, and embeddings surfaced it at the exact moment it answered a real question. That is all three layers compounding into one reply.</p>
                 </div>
 
-                <p>
+                <p data-a11y="layer-internal">
                     <strong>Layer 1: Internal memory (human).</strong> This is what you know — the knowledge stored in your brain through experience, education, and reflection. Internal memory is associative, contextual, and deeply integrated with your reasoning. You do not just recall facts; you recall them within webs of meaning that connect to other facts, emotions, and experiences. This makes internal memory extraordinarily powerful for judgment and creativity, but limited in capacity and unreliable in precision.
                 </p>
-                <p>
+                <p data-a11y="layer-external">
                     <strong>Layer 2: External memory (tools).</strong> This is knowledge stored outside your brain — in notes, documents, databases, bookmarks, file systems. Humans have used external memory for millennia: cave paintings, books, filing cabinets. Modern personal knowledge management (PKM) tools like Obsidian, Notion, and Roam Research are sophisticated external memory systems that let you capture, organise, link, and retrieve information far beyond what your brain can hold.
                 </p>
-                <p>
+                <p data-a11y="layer-machine">
                     <strong>Layer 3: Machine-augmented memory.</strong> This is the new layer — knowledge structures that are maintained, processed, and made retrievable by AI. Vector databases, embeddings, semantic graphs, and retrieval-augmented generation (RAG) systems. These do not just store information; they can find connections, surface relevant context, and deliver knowledge precisely when you need it.
                 </p>
 
                 <div class="highlight-box">
-                    <p><strong>The key insight:</strong> No single layer is sufficient. Internal memory provides judgment. External memory provides persistence and scale. Machine-augmented memory provides speed and pattern-matching. The most effective knowledge systems integrate all three.</p>
+                    <p data-a11y="key-insight"><strong>The key insight:</strong> No single layer is sufficient. Internal memory provides judgment. External memory provides persistence and scale. Machine-augmented memory provides speed and pattern-matching. The most effective knowledge systems integrate all three.</p>
                 </div>
 
                 <mgt-recall id="ms-layers-count">
@@ -177,7 +177,7 @@ that you tend to blame sign-up, so this is the leak worth fixing first.</div>
 
             <section>
                 <h2>PKM Tools and AI: A Powerful Combination</h2>
-                <p>
+                <p data-a11y="pkm-intro">
                     Personal knowledge management existed long before AI, and it matters independent of AI. The practice of capturing what you learn, organising it into retrievable structures, and reviewing it regularly produces compounding returns on every hour of intellectual work you do.
                 </p>
                 <p>
@@ -190,7 +190,7 @@ that you tend to blame sign-up, so this is the leak worth fixing first.</div>
                 <p>
                     This is not a small improvement. It is a qualitative shift in what a personal knowledge system can do. Your notes become a living knowledge base that grows more useful with every entry, because each new note creates new potential connections with everything already in the system.
                 </p>
-                <p>
+                <p data-a11y="pkm-human-role">
                     The human role remains critical, however. AI can surface connections and retrieve context, but it cannot determine what is worth capturing in the first place. The quality of your PKM system depends on your judgment about what matters, how you frame it, and what structure you give it. Garbage in, garbage out — no amount of semantic search can compensate for poorly captured knowledge.
                 </p>
 
@@ -215,7 +215,7 @@ that you tend to blame sign-up, so this is the leak worth fixing first.</div>
 
                 <div class="misconception">
                     <h3>The trap: "the AI will just remember everything for me"</h3>
-                    <p>It can't. An AI only "remembers" what was captured and put within its reach — and it has no way to sit through your day deciding which moments mattered. It can't notice the offhand insight in a meeting, judge that a half-formed idea is worth keeping, or frame why something matters to you. If nobody captures it, the AI never sees it. The system compounds because <em>you</em> keep feeding it the things worth keeping; the AI's job is retrieval, not noticing.</p>
+                    <p data-a11y="trap-remember">It can't. An AI only "remembers" what was captured and put within its reach — and it has no way to sit through your day deciding which moments mattered. It can't notice the offhand insight in a meeting, judge that a half-formed idea is worth keeping, or frame why something matters to you. If nobody captures it, the AI never sees it. The system compounds because <em>you</em> keep feeding it the things worth keeping; the AI's job is retrieval, not noticing.</p>
                 </div>
                 <mgt-recall id="ms-trap">
                     <details>
@@ -227,10 +227,10 @@ that you tend to blame sign-up, so this is the leak worth fixing first.</div>
 
             <section>
                 <h2>What RAG Is and Why It Matters</h2>
-                <p>
+                <p data-a11y="rag-intro">
                     Retrieval-Augmented Generation (RAG) is one of the most important patterns in applied AI. The concept is straightforward: before an AI generates a response, it first retrieves relevant information from an external knowledge base, then uses that information to ground its output.
                 </p>
-                <p>
+                <p data-a11y="rag-why">
                     Why does this matter? Because language models have a fundamental limitation: their knowledge is frozen at training time. A model trained on data from 2024 does not know about events in 2025. It does not know about your company's internal processes. It does not know about the research paper you read last week. RAG solves this by giving the model access to current, specific, relevant information at the moment of generation.
                 </p>
                 <p>
@@ -243,7 +243,7 @@ that you tend to blame sign-up, so this is the leak worth fixing first.</div>
                     <li>The system finds the document chunks whose vectors are most similar to your question vector.</li>
                     <li>Those relevant chunks are included in the prompt to the language model, which uses them to generate a grounded response.</li>
                 </ol>
-                <p>
+                <p data-a11y="rag-hallucination">
                     RAG does not eliminate <a href="/learn/foundations/ai-pitfalls.html">hallucination</a>, but it dramatically reduces it by anchoring the model's output to specific source material. It also makes the output more <a href="/learn/frameworks/explanation.html">verifiable</a> — you can check the retrieved sources against the generated response and assess whether the model used them faithfully.
                 </p>
 
@@ -269,7 +269,7 @@ that you tend to blame sign-up, so this is the leak worth fixing first.</div>
 
             <section>
                 <h2>Semantic Graphs and Embeddings</h2>
-                <p>
+                <p data-a11y="embeddings-intro">
                     Embeddings are the mathematical foundation of machine-augmented memory. When a piece of text is converted into an embedding, it becomes a point in a high-dimensional space where proximity reflects meaning. "Dog" and "puppy" are close together. "Dog" and "quantum mechanics" are far apart. This is what enables semantic search — finding information by meaning rather than by exact word matches.
                 </p>
                 <p>
@@ -307,7 +307,7 @@ that you tend to blame sign-up, so this is the leak worth fixing first.</div>
                 </ol>
 
                 <div class="highlight-box">
-                    <p><strong>The compound effect:</strong> A well-maintained knowledge system gets more valuable with every entry. After a year, you have a searchable, AI-augmented second brain that contains the distilled learning from everything you have read, built, and thought about. After five years, you have something no AI model can replicate — your unique knowledge, structured for instant retrieval.</p>
+                    <p data-a11y="compound-effect"><strong>The compound effect:</strong> A well-maintained knowledge system gets more valuable with every entry. After a year, you have a searchable, AI-augmented second brain that contains the distilled learning from everything you have read, built, and thought about. After five years, you have something no AI model can replicate — your unique knowledge, structured for instant retrieval.</p>
                 </div>
 
                 <mgt-recall id="ms-build-capture">
@@ -326,7 +326,7 @@ that you tend to blame sign-up, so this is the leak worth fixing first.</div>
 
             <section class="tryit" aria-labelledby="tryit-ms">
                 <h2 id="tryit-ms">Try it on your own work</h2>
-                <p>You don't need a vector database to start a knowledge system that compounds. You need one place to capture, and one decision repeated: <em>is this worth keeping?</em> Try this with whatever you're working on this week.</p>
+                <p data-a11y="tryit-intro">You don't need a vector database to start a knowledge system that compounds. You need one place to capture, and one decision repeated: <em>is this worth keeping?</em> Try this with whatever you're working on this week.</p>
                 <ol>
                     <li><strong>Capture one thing today.</strong> Open a single note (any tool you already use) and write down one finding, idea, or hard-won lesson from your work — in your own words, with a line about <em>why</em> it matters to you. That framing is the judgment only you can supply.</li>
                     <li><strong>Make it findable by meaning, not filing.</strong> Don't bury it in folders. Add a few plain-language tags and the question it would answer. The goal is that future-you can retrieve it by what it's <em>about</em>, even after forgetting it exists.</li>

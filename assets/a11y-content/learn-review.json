@@ -1,0 +1,30 @@
+{
+  "review-title": [
+    "Time to review",
+    "Your review time",
+    "Your review",
+    "Your review",
+    "Review"
+  ],
+  "review-lead": [
+    "As you read, you collect little cards that help you remember. This page brings each card back to you at just the right time — right before you would forget it. You do not need to sign in or make an account, and nothing goes to the internet. Everything about what you have learned and when to see it again is kept safely in this one web browser, on this one device.",
+    "While you read, you pick up recall cards. This page brings them back to you right before you'd forget — that's the moment they help most. There's no account and no cloud: your whole memory schedule stays right here in this browser.",
+    "The recall cards you collect as you read, brought back right before you'd forget. No account, no cloud — your whole memory schedule lives in this browser.",
+    "Recall cards gathered as you read, resurfaced just before you'd forget. No account, no cloud — your entire memory schedule lives in this browser.",
+    "Recall cards, resurfaced just before you'd forget. No account, no cloud; the schedule lives in this browser."
+  ],
+  "noscript-title": [
+    "This review page needs JavaScript turned on",
+    "Review needs JavaScript turned on",
+    "Review needs JavaScript",
+    "Review requires JavaScript",
+    "JavaScript required"
+  ],
+  "noscript-body": [
+    "The plan for when to show you each card is worked out right here in your browser. Because of that, this page only works when JavaScript is turned on. Don't worry though — the lessons themselves read just fine without it.",
+    "Your card schedule is worked out right here in your browser, so this page needs JavaScript switched on. The lessons themselves, though, read just fine without it.",
+    "Your spaced-repetition schedule runs entirely in your browser, so this page needs JavaScript enabled. The lessons themselves read fine without it.",
+    "Spaced repetition runs entirely in your browser, so this page needs JavaScript enabled. The lessons themselves read fine without it.",
+    "Spaced repetition runs in-browser; this page needs JavaScript. Lessons read fine without it."
+  ]
+}

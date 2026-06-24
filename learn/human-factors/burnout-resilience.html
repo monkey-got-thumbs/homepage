@@ -65,11 +65,11 @@
         .content { padding-block: 2rem; }
         .content h2 { margin-top: 2.5rem; }
         .content p { line-height: 1.8; margin-bottom: 1.25rem; }
-        .content ul, .content ol { margin-bottom: 1.25rem; padding-left: 1.5rem; }
+        .content ul, .content ol { margin-bottom: 1.25rem; padding-inline-start: 1.5rem; }
         .content li { margin-bottom: 0.5rem; line-height: 1.7; }
         .page-meta { color: var(--color-muted); font-size: var(--font-size-sm); margin-top: 0.5rem; }
         .lead { font-size: var(--font-size-lg); color: var(--color-fg-secondary); line-height: 1.7; }
-        .highlight-box { background: var(--color-bg-secondary); border-left: 4px solid var(--color-accent); padding: 1.25rem 1.5rem; border-radius: var(--radius-sm); margin: 1.5rem 0; }
+        .highlight-box { background: var(--color-bg-secondary); border-inline-start: 4px solid var(--color-accent); padding: 1.25rem 1.5rem; border-radius: var(--radius-sm); margin: 1.5rem 0; }
         .highlight-box p { margin-bottom: 0; }
     </style>
     <link rel="stylesheet" href="/assets/css/accessibility.css">
@@ -93,8 +93,8 @@
             </nav>
 
             <header>
-                <h1>Burnout and Resilience: Managing Human Energy in the AI Age</h1>
-                <p class="lead">Burnout is not a mystery. It is a predictable outcome of specific variables interacting under pressure. Understanding those variables gives you levers to pull before the damage is done.</p>
+                <h1 data-a11y="hero-title">Burnout and Resilience: Managing Human Energy in the AI Age</h1>
+                <p class="lead" data-a11y="lead">Burnout is not a mystery. It is a predictable outcome of specific variables interacting under pressure. Understanding those variables gives you levers to pull before the damage is done.</p>
                 <p class="page-meta">Human Factors &middot; 8 min read</p>
             </header>
 
@@ -104,19 +104,19 @@
             </aside>
 
             <div class="enduring">
-                <p><strong>The one idea to keep:</strong> Burnout is not a personal failing — it is the predictable result of self-doubt, expectation gaps, information asymmetry, and time pressure. Because most of those forces are environmental, resilience is something you build into the system, not just into the person.</p>
+                <p data-a11y="enduring"><strong>The one idea to keep:</strong> Burnout is not a personal failing — it is the predictable result of self-doubt, expectation gaps, information asymmetry, and time pressure. Because most of those forces are environmental, resilience is something you build into the system, not just into the person.</p>
             </div>
 
             <div class="worked">
-                <h3>Worked example: Ravi's quarter from overload to navigable</h3>
-                <p>Ravi is a product engineer who has just been handed a sprawling integration project with a fuzzy brief and an end-of-quarter deadline. By week two she is anxious: she does not really know what "done" looks like, she keeps comparing her rough drafts to the slick AI-generated mockups her manager pastes into chat, and she has quietly assumed the whole thing rests on her being brilliant. Her self-doubt is high, the expectation gap feels enormous, and she has told no one — so the timeline is silently burning down.</p>
+                <h3 data-a11y="worked-title">Worked example: Ravi's quarter from overload to navigable</h3>
+                <p data-a11y="worked-setup">Ravi is a product engineer who has just been handed a sprawling integration project with a fuzzy brief and an end-of-quarter deadline. By week two she is anxious: she does not really know what "done" looks like, she keeps comparing her rough drafts to the slick AI-generated mockups her manager pastes into chat, and she has quietly assumed the whole thing rests on her being brilliant. Her self-doubt is high, the expectation gap feels enormous, and she has told no one — so the timeline is silently burning down.</p>
                 <p>She pulls two of the levers from this article. First, she asks her lead for an early milestone review at the end of week three instead of waiting for a final hand-off. That single move converts a far-off, all-or-nothing judgment into early feedback, leaving most of the quarter to course-correct — she has effectively increased her time buffer (&#964;). Second, before that review she spends twenty minutes listing the integrations she shipped last quarter and pins it above her desk: concrete evidence of past wins that takes the edge off her self-doubt (S).</p>
                 <p>The effect is not magic, but it is real and traceable. The milestone review surfaces that two of her assumptions about scope were wrong — caught at 25% rather than 95% — which shrinks the information asymmetry (I) and narrows the expectation gap (&#916;E) she had been inflating in her head. With a lower S, a smaller &#916;E, and a larger &#964;, the same demanding project that felt like a crisis now feels like a hard-but-bounded challenge. Nothing about the workload changed; the variables around it did.</p>
             </div>
 
             <section>
                 <h2>The Burnout Equation</h2>
-                <p>
+                <p data-a11y="equation-intro">
                     Burnout can be modelled as a function of four variables. This is not a metaphor — it is a working equation that identifies the specific forces that push people toward exhaustion and disengagement:
                 </p>
                 <div class="highlight-box">
@@ -149,7 +149,7 @@
 
             <section>
                 <h2>The Balanced Equation: Where Trust Enters</h2>
-                <p>
+                <p data-a11y="trust-intro">
                     The burnout equation describes the forces pushing toward breakdown. But burnout does not happen in isolation — it happens within a collaborative context where <a href="/learn/human-factors/trust-protocols.html">trust</a> acts as a counterforce. The balanced equation makes this explicit:
                 </p>
                 <div class="highlight-box">
@@ -159,7 +159,7 @@
                 <p>
                     When trust is high, self-doubt decreases because you believe that your collaborators — human or AI — will support rather than judge you. Information asymmetry decreases because trusted relationships produce more transparent communication. The expectation gap shrinks because trusted teams negotiate expectations openly rather than imposing them unilaterally.
                 </p>
-                <p>
+                <p data-a11y="low-trust">
                     When trust is low, the opposite happens. Uncertainty about whether your work will be judged fairly inflates self-doubt. Unclear or inconsistent feedback widens the information gap. Expectations feel imposed rather than negotiated. Every variable in the numerator grows while the denominator shrinks. This is why low-trust environments are burnout factories — the mathematics are stacked against resilience.
                 </p>
             </section>
@@ -173,13 +173,13 @@
 
             <section>
                 <h2>AI and the Expectation Gap</h2>
-                <p>
+                <p data-a11y="ai-pressure">
                     The rise of AI tools has introduced a specific new pressure on the expectation gap. When an AI can generate a first draft in seconds, the perceived standard for speed and volume rises. When AI output looks polished on the surface, the perceived standard for quality rises. The human worker is now being benchmarked — explicitly or implicitly — against a machine that does not get tired, does not need breaks, and does not experience self-doubt.
                 </p>
                 <p>
                     This comparison is fundamentally unfair, but it is also fundamentally real. People feel it even when their managers do not enforce it. The expectation gap widens not because the human has become less capable, but because the reference point has shifted. Understanding this dynamic is the first step toward managing it.
                 </p>
-                <p>
+                <p data-a11y="ai-reframe">
                     The <a href="/learn/foundations/how-it-helps.html">augmented intelligence approach</a> reframes the relationship. AI is not the benchmark — it is the scaffolding. The question is not "can you produce output as fast as the AI?" It is "can you use the AI to produce better output than either of you could produce alone?" This reframing closes the expectation gap by changing what the expectation is.
                 </p>
             </section>
@@ -192,8 +192,8 @@
             </mgt-recall>
 
             <div class="misconception">
-                <h3>The trap: "AI will reduce my workload, so I'll be less stressed"</h3>
-                <p>It feels obvious — hand the grind to the machine and breathe easier. But stress is not driven by raw hours; it is driven by the gap between what is expected and what you believe you can deliver. When AI makes a task faster, the expectation simply rises to match: more features, more polish, more output in the same window. The expectation gap does not close, it relocates. Unless you deliberately renegotiate what "enough" means, the new baseline absorbs every efficiency gain and the pressure stays exactly where it was — sometimes higher, because now the work "should" be easy.</p>
+                <h3 data-a11y="trap-title">The trap: "AI will reduce my workload, so I'll be less stressed"</h3>
+                <p data-a11y="trap-body">It feels obvious — hand the grind to the machine and breathe easier. But stress is not driven by raw hours; it is driven by the gap between what is expected and what you believe you can deliver. When AI makes a task faster, the expectation simply rises to match: more features, more polish, more output in the same window. The expectation gap does not close, it relocates. Unless you deliberately renegotiate what "enough" means, the new baseline absorbs every efficiency gain and the pressure stays exactly where it was — sometimes higher, because now the work "should" be easy.</p>
             </div>
 
             <mgt-recall id="bur-trap">
@@ -234,10 +234,10 @@
 
             <section>
                 <h2>Resilience Is Structural, Not Individual</h2>
-                <p>
+                <p data-a11y="structural-intro">
                     The conventional approach to burnout puts the burden on the individual: practise self-care, set boundaries, manage your energy. These are not bad suggestions, but they are incomplete. The burnout equation shows that most of the variables are environmental, not personal. Self-doubt is amplified by culture. The expectation gap is shaped by leadership. Information asymmetry is a communication failure. Time buffers are a planning decision.
                 </p>
-                <p>
+                <p data-a11y="structural-resilience">
                     Resilience, therefore, is primarily a structural property of teams and systems rather than an individual character trait. A team with clear criteria, early feedback loops, transparent communication, and high <a href="/learn/human-factors/trust-protocols.html">trust</a> will be resilient even if individual members experience occasional self-doubt. A team without those structures will burn out even if every member is individually disciplined.
                 </p>
                 <p>
@@ -254,7 +254,7 @@
 
             <section class="tryit" aria-labelledby="tryit-bur">
                 <h2 id="tryit-bur">Try it on your own work</h2>
-                <p>Pick the project that is weighing on you most right now and pull a single resilience lever this week — the milestone-review lever, which buys back time buffer (&#964;) and exposes hidden expectation gaps early.</p>
+                <p data-a11y="tryit-intro">Pick the project that is weighing on you most right now and pull a single resilience lever this week — the milestone-review lever, which buys back time buffer (&#964;) and exposes hidden expectation gaps early.</p>
                 <ol>
                     <li>Name the project and write one sentence describing what "done" actually looks like. If you can't, that ambiguity is information asymmetry (I) you've just made visible.</li>
                     <li>Schedule an early checkpoint — sometime in the first third of the remaining time — with whoever will ultimately judge the work, and put it on the calendar today so it can't quietly slip.</li>

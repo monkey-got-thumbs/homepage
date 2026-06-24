@@ -16,17 +16,17 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
 
     <style>
-        .lp { max-width: var(--measure); margin: 0 auto; padding: 3rem var(--gutter); text-align: left; }
+        .lp { max-width: var(--measure); margin: 0 auto; padding: 3rem var(--gutter); text-align: start; }
         .lp > * { min-width: 0; }
         .lp-hero { text-align: center; margin-bottom: 2.5rem; }
         .lp h1 { font-family: var(--font-display); color: var(--color-accent); font-size: clamp(2rem, 5vw, 3rem); line-height: 1.2; margin-bottom: 1rem; }
         .lp .subtitle { font-size: var(--font-size-lg); color: var(--color-fg-secondary); line-height: 1.7; margin-bottom: 0; }
-        .lp-section { text-align: left; margin-bottom: 2rem; }
-        .lp-section h2 { font-size: var(--font-size-xl); margin-bottom: 0.75rem; text-align: left; }
+        .lp-section { text-align: start; margin-bottom: 2rem; }
+        .lp-section h2 { font-size: var(--font-size-xl); margin-bottom: 0.75rem; text-align: start; }
         .lp-section p, .lp-section li { line-height: 1.8; margin-bottom: 1rem; }
-        .lp-section ul { padding-left: 1.5rem; }
+        .lp-section ul { padding-inline-start: 1.5rem; }
         .quick-facts { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 19rem), 1fr)); gap: clamp(1.25rem, 2vw, 2rem); margin: 2rem 0; }
-        .quick-facts .card { padding: 1.25rem; text-align: left; min-width: 0; }
+        .quick-facts .card { padding: 1.25rem; text-align: start; min-width: 0; }
         .quick-facts .card h3 { margin-top: 0; font-size: var(--font-size-base); color: var(--color-accent); }
         .quick-facts .card p { font-size: var(--font-size-sm); margin: 0; }
         .lp-cta { margin-top: 2.5rem; padding: 2rem; background: var(--color-bg-secondary); border-radius: var(--radius); }
@@ -46,45 +46,45 @@
         <div class="lp">
             <div class="lp-hero">
                 <img src="/logo.png" alt="Monkey Got Thumbs" class="lp-logo" width="60" height="60">
-                <h1>Understand AI in 10 Minutes. No Jargon, No Hype.</h1>
-                <p class="subtitle">AI is everywhere. Most explanations are either too technical or too breathless. Here's what you actually need to know.</p>
+                <h1 data-a11y="hero-title">Understand AI in 10 Minutes. No Jargon, No Hype.</h1>
+                <p class="subtitle" data-a11y="hero-subtitle">AI is everywhere. Most explanations are either too technical or too breathless. Here's what you actually need to know.</p>
             </div>
 
             <div class="lp-section">
                 <h2>What AI Actually Does</h2>
-                <p>
+                <p data-a11y="what-does-1">
                     AI — specifically large language models like ChatGPT and Claude — predicts the next most likely word in a sequence. It's a very good pattern-matcher rather than a thinker — which is exactly why your judgement matters. Under the hood it's an extraordinarily sophisticated system trained on vast amounts of text.
                 </p>
-                <p>
+                <p data-a11y="what-does-2">
                     This makes it genuinely useful for all sorts of work: drafting text, summarising documents, generating code, processing data. It also has a few honest limitations worth knowing — once you do, you get far more out of it.
                 </p>
             </div>
 
             <div class="quick-facts">
                 <div class="card">
-                    <h3>It can get things wrong — confidently</h3>
-                    <p>AI sometimes states things that aren't true, and it says them just as smoothly as the right answers. A quick check from you keeps it honest.</p>
+                    <h3 data-a11y="card-wrong-title">It can get things wrong — confidently</h3>
+                    <p data-a11y="card-wrong-body">AI sometimes states things that aren't true, and it says them just as smoothly as the right answers. A quick check from you keeps it honest.</p>
                 </div>
                 <div class="card">
-                    <h3>It can't really explain itself</h3>
-                    <p>When AI "explains" its reasoning, that's more generated text — not a window into actual logic. Treat it as a helpful draft, not the final word.</p>
+                    <h3 data-a11y="card-explain-title">It can't really explain itself</h3>
+                    <p data-a11y="card-explain-body">When AI "explains" its reasoning, that's more generated text — not a window into actual logic. Treat it as a helpful draft, not the final word.</p>
                 </div>
                 <div class="card">
-                    <h3>It's still early days</h3>
-                    <p>The tools are improving fast and the ground keeps shifting. That's good news — getting comfortable now puts you ahead of the curve.</p>
+                    <h3 data-a11y="card-early-title">It's still early days</h3>
+                    <p data-a11y="card-early-body">The tools are improving fast and the ground keeps shifting. That's good news — getting comfortable now puts you ahead of the curve.</p>
                 </div>
                 <div class="card">
-                    <h3>It works best with you</h3>
-                    <p>Used well, AI lifts the quality of your work — and you're the key variable. Your direction and judgement are what make it shine.</p>
+                    <h3 data-a11y="card-withyou-title">It works best with you</h3>
+                    <p data-a11y="card-withyou-body">Used well, AI lifts the quality of your work — and you're the key variable. Your direction and judgement are what make it shine.</p>
                 </div>
             </div>
 
             <div class="lp-section">
-                <h2>The Better Approach: Augmented Intelligence</h2>
-                <p>
+                <h2 data-a11y="approach-title">The Better Approach: Augmented Intelligence</h2>
+                <p data-a11y="approach-1">
                     Instead of treating AI as a replacement for human thinking, augmented intelligence treats it as an amplifier. You direct. AI assists. You verify. AI generates. You decide. AI processes.
                 </p>
-                <p>
+                <p data-a11y="approach-2">
                     The result is a compounding advantage: reclaimed time, higher quality output, and skills that get more valuable every year — not less.
                 </p>
             </div>

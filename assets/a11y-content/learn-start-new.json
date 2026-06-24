@@ -1,0 +1,107 @@
+{
+  "hero-title": [
+    "Hello, and welcome. You are in just the right spot.",
+    "Welcome. You're in just the right place.",
+    "Welcome. You're in exactly the right place.",
+    "Welcome — you're in the right place.",
+    "Welcome. Right place."
+  ],
+  "hero-lede": [
+    "Have you never used AI before? That is wonderful, because this page is made just for you. We will go nice and slow. We will skip all the tricky words. And the only thing you will do today is type one short sentence. That is all. So take a slow breath. You can do this.",
+    "Never used AI before? Lovely — this page is made for you. We'll go slow, skip all the jargon, and the only thing you'll do today is type one sentence. That's it. Take a breath; you've got this.",
+    "Never used AI before? Wonderful — that's who this page is for. We'll go slow, skip every bit of jargon, and the only thing you'll do today is type one sentence. That's it. Take a breath; you've got this.",
+    "New to AI? Good — this page is for you. We'll go slow, skip the jargon, and today you'll type just one sentence. Take a breath; you've got this.",
+    "New to AI? This page is for you. No jargon. Today: type one sentence."
+  ],
+  "what-title": [
+    "So what <em>is</em> it, really?",
+    "So, what even <em>is</em> it?",
+    "So, what even <em>is</em> it?",
+    "So what <em>is</em> it?",
+    "What <em>is</em> it?"
+  ],
+  "what-p1": [
+    "You know how you type a question into Google and get back a page of links? AI is a little like that. But there are two differences. First, you ask using plain, everyday words — the way you'd talk to a friend. Second, instead of links, you get a written answer back. You can ask it to explain something. You can ask it to tidy up an email. You can ask it for ideas, or you can simply chat. You talk, and it talks back. Honestly, that is the heart of it.",
+    "You know how you type a question into Google and get back a page of links? AI is a bit like that — except you ask using plain, everyday words, and instead of links you get a written answer back. You can ask it to explain something, tidy up an email, suggest ideas, or just chat. You talk; it talks back. That's really the heart of it.",
+    "You know how you type a question into Google and get a page of links? AI is a bit like that — except you ask in plain, everyday words, and instead of links, you get a written answer back. You can ask it to explain something, tidy up an email, suggest ideas, or just chat. You talk; it talks back. Honestly, that's the heart of it.",
+    "Like typing a question into Google — but you ask in plain words and get a written answer, not links. Ask it to explain things, tidy an email, suggest ideas, or just chat. You talk; it talks back. That's the heart of it.",
+    "Like a Google search, but you ask in plain words and get a written answer. Explain, edit, brainstorm, chat. You talk; it talks back."
+  ],
+  "what-p2": [
+    "Lots of people call it “chatty” — you might know it by the name ChatGPT. There is nothing to install on your computer, and there is nothing you have to learn first. If you can send a text message to a friend, then you already have every single skill you need.",
+    "Lots of people call it “chatty” (you might know it as ChatGPT). There's nothing to install and nothing to learn first. If you can send a text message, you already have every skill you need.",
+    "Lots of people call it “chatty” (you might know it as ChatGPT). There's nothing to install and nothing to learn first. If you can send a text message, you already have every skill you need.",
+    "People call it “chatty” (you may know it as ChatGPT). Nothing to install, nothing to learn first. If you can text, you can do this.",
+    "Often called “chatty” (e.g. ChatGPT). Nothing to install. If you can text, you can use it."
+  ],
+  "try-title": [
+    "Let's just say hello to it",
+    "Say hello to it",
+    "Say hello to it",
+    "Say hello to it",
+    "Say hello"
+  ],
+  "try-p": [
+    "Open one of the two below. Both are free, and all it takes is a quick sign-up. Then type in something you would normally Google — or you can simply say <em>“hello, what can you help me with?”</em> Then see what comes back to you. There is no wrong thing to say here, so don't worry one bit.",
+    "Open one of these (both are free, and a quick sign-up is all it takes), then type something you'd normally Google — or just say <em>“hello, what can you help me with?”</em> See what comes back. There's no wrong thing to say.",
+    "Open one of these (both are free, and a quick sign-up is all it takes), then type something you'd normally Google — or just say <em>“hello, what can you help me with?”</em> See what comes back. There's no wrong thing to say.",
+    "Open one (both free, quick sign-up), then type something you'd normally Google — or just say <em>“hello, what can you help me with?”</em> See what comes back. There's no wrong thing to say.",
+    "Open one (free, quick sign-up). Type a question, or say <em>“hello, what can you help me with?”</em> No wrong answer."
+  ],
+  "safe-title": [
+    "You really, truly cannot break anything",
+    "You honestly can't break anything",
+    "You honestly can't break anything",
+    "You can't break anything",
+    "Nothing to break"
+  ],
+  "safe-p": [
+    "This is the part that worries almost everyone, so let's put it to rest right now. There is no wrong button to press. You will not break the computer. And you will not break the AI either. If an answer isn't helpful, you simply ask again using different words — just like carrying on a chat with someone. Nobody is watching you. Nobody is judging you. And there is no clock ticking. So please, poke around as much as you like.",
+    "This is the part everyone worries about, so let's settle it now. There's no wrong button. You won't break the computer, and you won't break the AI. If an answer isn't useful, you just ask again in different words — like carrying on a chat. Nobody's watching or judging, and there's no clock. Poke around as much as you like.",
+    "This is the part everyone worries about, so let's settle it now. There's no wrong button. You won't break the computer, and you won't break the AI. If an answer isn't useful, you just ask again in different words — like carrying on a chat. Nobody's watching, nobody's judging, and there's no clock. Poke around as much as you like.",
+    "Everyone worries about this, so let's settle it. No wrong button — you can't break the computer or the AI. If an answer isn't useful, ask again in different words, like a chat. Nobody's watching or judging; no clock. Poke around as much as you like.",
+    "No wrong button; nothing breaks. If an answer's off, rephrase. No watchers, no clock. Explore freely."
+  ],
+  "truth-wrong": [
+    "<strong>It sometimes gets things wrong.</strong> And here's the tricky part: it can sound very sure of itself even when it is wrong. So think of it like a friendly, chatty pal who sometimes misremembers things. It's wonderful for ideas and for first drafts. But anything that really matters is worth a quick double-check of your own.",
+    "<strong>It sometimes gets things wrong.</strong> And it can sound very sure while doing it. So treat it like a helpful, chatty friend who sometimes misremembers — lovely for ideas and first drafts, but worth double-checking anything that really matters.",
+    "<strong>It sometimes gets things wrong.</strong> And it can sound very sure while doing it. So treat it like a helpful, chatty friend who occasionally misremembers — lovely for ideas and first drafts, but worth double-checking anything that really matters.",
+    "<strong>It sometimes gets things wrong</strong> — and sounds sure while doing it. Treat it like a chatty friend who misremembers: great for ideas and drafts, but double-check anything that matters.",
+    "<strong>It can be wrong, confidently.</strong> Great for drafts; verify what matters."
+  ],
+  "truth-helper": [
+    "<strong>It's a helper, not a boss.</strong> It never decides anything for you, not once. You ask it a question, it makes a suggestion, and then you choose what to do with that. You stay in charge the whole way through.",
+    "<strong>It's a helper, not a boss.</strong> It never decides anything for you. You ask, it suggests, and you choose what to do with it. You stay in charge the whole time.",
+    "<strong>It's a helper, not a boss.</strong> It never decides anything for you. You ask, it suggests, and you choose what to do with it. You stay in charge the whole time.",
+    "<strong>It's a helper, not a boss.</strong> It never decides for you — you ask, it suggests, you choose. You stay in charge.",
+    "<strong>A helper, not a boss.</strong> It suggests; you decide. You stay in charge."
+  ],
+  "truth-more": [
+    "<strong>The more you say, the better it helps.</strong> Just a few extra words about what you actually want can make a world of difference. And please don't worry about getting this “right” just yet — it is a gentle habit, and we will grow it together, bit by bit.",
+    "<strong>The more you say, the better it helps.</strong> A few extra words about what you actually want makes a big difference. Don't worry about getting this “right” yet — it's a gentle habit, and we'll grow it together.",
+    "<strong>The more you say, the better it helps.</strong> A few extra words about what you actually want makes a world of difference. Don't worry about getting this “right” yet — it's a gentle habit, and we'll grow it together.",
+    "<strong>The more you say, the better it helps.</strong> A few extra words about what you want makes a big difference. Don't worry about getting it “right” yet — it's a habit we'll grow together.",
+    "<strong>More context, better help.</strong> A few extra words go far. A habit we'll build."
+  ],
+  "who-title": [
+    "If you're wondering who the big names are",
+    "If you're wondering who the big names are",
+    "If you're wondering who the big names are",
+    "The big names, briefly",
+    "The big names"
+  ],
+  "who-p": [
+    "You really don't need to memorise any of this. Pick one of the two above and you are all sorted. But if you happen to be curious, here are the names you'll hear about the most. The good news is they all do much the same sort of thing.",
+    "You don't need to memorise any of this — pick one above and you're sorted. But if you're curious, here are the ones you'll hear about most. They all do much the same thing.",
+    "You don't need to memorise any of this — pick one above and you're sorted. But if you're curious, here are the ones you'll hear about most. They all do much the same thing.",
+    "No need to memorise this — pick one above and you're sorted. But if you're curious, here are the names you'll hear most. They all do much the same thing.",
+    "No need to memorise — pick one above. The common names, all broadly similar:"
+  ],
+  "next-p": [
+    "And that is the whole first step. Did you have a little play around? Whenever you feel ready — and there is truly no rush at all — there's a gentle next bit waiting here for you.",
+    "That's the whole first step. Had a little play? Whenever you're ready — no rush at all — there's a gentle next bit waiting.",
+    "That's the whole first step. Had a little play? Whenever you're ready — no rush at all — there's a gentle next bit waiting.",
+    "That's the whole first step. Had a play? Whenever you're ready — no rush — there's a gentle next bit waiting.",
+    "First step done. When ready, a gentle next bit awaits."
+  ]
+}

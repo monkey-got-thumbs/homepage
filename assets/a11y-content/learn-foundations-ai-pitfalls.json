@@ -1,0 +1,107 @@
+{
+  "hero-title": [
+    "Where AI can get things wrong",
+    "Where AI slips up",
+    "Where it slips up",
+    "Where it goes wrong",
+    "The failure mode"
+  ],
+  "hero-lead": [
+    "Here is the big thing to watch with AI: it can be <em>sure of itself</em> and still be wrong. When it makes something up, it says it in the very same calm, steady voice it uses for true things. The words don't sound any different. So the one safe thing you can do is check the parts that really matter to you.",
+    "The big thing to watch with AI: it can be <em>confidently</em> wrong. It says made-up things in the same calm, certain voice it uses for true ones — the tone never changes. So the safe move is to check what matters.",
+    "AI's big catch: it can be <em>confidently</em> wrong. It states made-up things in the exact same calm, certain voice it uses for true ones — so the only safe move is to check what matters.",
+    "AI's main catch: it can be <em>confidently</em> wrong, voicing fabrications in the same calm, certain tone as facts. The only safe move is to check what matters.",
+    "AI can be <em>confidently</em> wrong: fabrications carry the same certain tone as facts. Check what matters."
+  ],
+  "enduring-idea": [
+    "<strong>The one idea to keep:</strong> AI puts together words that sound likely, not facts it has checked. It sounds sure whether it's right or wrong. So your job is to check things for yourself — don't go by how confident it sounds.",
+    "<strong>The one idea to keep:</strong> AI predicts likely words, not checked facts. It sounds sure either way — so your job is to check, not to trust the tone.",
+    "<strong>The one idea to keep:</strong> AI predicts plausible words, not verified facts. It sounds sure either way — so your job is to check, not to trust the tone.",
+    "<strong>The one idea to keep:</strong> AI predicts plausible words, not verified facts — and sounds equally sure either way. Check; don't trust the tone.",
+    "<strong>Keep this:</strong> AI predicts plausible words, not verified facts, sounding sure either way. Verify; ignore tone."
+  ],
+  "explorable-intro": [
+    "Let's try it together. Imagine you asked AI for three quick facts. Read them, and pick the one you think it just made up:",
+    "See for yourself. You asked AI for three quick facts — read them and pick the one you think it made up:",
+    "See for yourself. You asked AI for three quick facts — pick the one you think it made up:",
+    "Try it. You asked AI for three quick facts — pick the made-up one:",
+    "Three AI facts. Pick the fake:"
+  ],
+  "spot-question": [
+    "Here are three \"quick facts about honey.\" The AI sounds just as sure about every one of them — but <strong>one of them is made up.</strong> Can you tell which?",
+    "Three \"quick facts about honey.\" The AI sounds equally sure about all of them — but <strong>one is invented.</strong> Which one?",
+    "Three \"quick facts about honey.\" The AI sounds equally sure about all three — but <strong>one is invented.</strong> Which?",
+    "Three \"honey facts,\" all stated with equal certainty — but <strong>one is invented.</strong> Which?",
+    "Three confident \"honey facts.\" <strong>One is invented.</strong> Which?"
+  ],
+  "pitfall-summary": [
+    "And that's the whole problem, right there. AI is good with words, but it isn't responsible for them. It has no real sense of what is true and what is false — it only knows which words usually come next. The answer isn't to stop using it. The answer is to keep a <strong>human check</strong> on anything that matters to you. That check is the heart of <a href=\"/learn/foundations/what-is-ai.html\">augmented intelligence</a>: you let AI do the work, and you stay the person who checks it and makes the call.",
+    "That's the whole pitfall, in one go. AI is fluent, but not accountable — it has no inner sense of true versus false, only of which words usually come next. The fix isn't to distrust it; it's to keep a <strong>human check</strong> on anything that matters. That check is the heart of <a href=\"/learn/foundations/what-is-ai.html\">augmented intelligence</a>: you let AI do the work, and you stay the one who verifies and decides.",
+    "That's the whole pitfall in one go. AI is fluent, not accountable — it has no internal sense of true versus false, only of what words usually come next. The fix isn't to distrust it; it's to keep a <strong>human check</strong> on anything that matters. That check is the heart of <a href=\"/learn/foundations/what-is-ai.html\">augmented intelligence</a>: you let AI do the work, and you stay the one who verifies and decides.",
+    "That's the whole pitfall. AI is fluent, not accountable — no internal sense of true versus false, only of what words come next. The fix isn't distrust; it's a <strong>human check</strong> on anything that matters. That check is the core of <a href=\"/learn/foundations/what-is-ai.html\">augmented intelligence</a>: AI does the work, you verify and decide.",
+    "The whole pitfall: AI is fluent, not accountable — it models likely words, not truth. The fix is a <strong>human check</strong> on what matters — the core of <a href=\"/learn/foundations/what-is-ai.html\">augmented intelligence</a>: AI works, you verify and decide."
+  ],
+  "recall-q": [
+    "Why can't you just trust an AI answer because it sounds sure of itself?",
+    "Why can't you trust an AI answer just because it sounds confident?",
+    "Why can't you trust an AI answer just because it sounds confident?",
+    "Why does an AI's confidence not prove it's right?",
+    "Why doesn't AI confidence imply correctness?"
+  ],
+  "recall-a": [
+    "Because it puts together words that sound likely, not facts it has checked. So it says made-up things in the very same sure voice it uses for true ones. How confident it sounds tells you nothing about whether it's true — so check anything that matters.",
+    "Because it predicts likely words, not checked facts — so it states made-up things in the same confident voice as true ones. Confidence tells you nothing about truth; verify anything that matters.",
+    "It predicts plausible words, not verified facts — so it states made-up things in the same confident voice as true ones. Confidence tells you nothing about truth; verify anything that matters.",
+    "It predicts plausible words, not verified facts, voicing fabrications as confidently as truths. Confidence is no signal of truth; verify what matters.",
+    "It predicts plausible words, not verified facts; confidence is uncorrelated with truth. Verify what matters."
+  ],
+  "tryit-title": [
+    "Try this with your own work",
+    "Try it on your own work",
+    "Try it on your own work",
+    "Try it on your own work",
+    "Try it"
+  ],
+  "tryit-intro": [
+    "Next time you rely on an AI answer for something that really matters — a fact, a number, or a suggestion to act on:",
+    "Next time you lean on an AI answer for something that matters — a fact, a number, a recommendation:",
+    "Next time you lean on an AI answer for something that matters — a fact, a number, a recommendation:",
+    "When you lean on an AI answer that matters — a fact, a number, a recommendation:",
+    "For any AI answer that matters — a fact, number, or recommendation:"
+  ],
+  "tryit-step1": [
+    "Find the claim it sounds most sure about.",
+    "Take the claim it sounds most confident about.",
+    "Take its most confident-sounding claim.",
+    "Take its most confident claim.",
+    "Take its most confident claim."
+  ],
+  "tryit-step2": [
+    "Check it against a real, trusted source — and notice just how convincing the wrong answer can look.",
+    "Check it against a real source — and notice how convincing the wrong version can look.",
+    "Check it against a real source — and notice how convincing the wrong version can look.",
+    "Verify it against a real source — and note how convincing a wrong answer can look.",
+    "Verify against a real source; note how convincing wrong answers look."
+  ],
+  "tryit-close": [
+    "If you can't think of any way to check a task, that's the one to watch most closely.",
+    "If you can't think of a way to check a task, that's the one to keep a closer eye on.",
+    "If you can't think of a way to check a task, that's the task to keep a closer eye on.",
+    "If a task can't be checked, that's the one to watch most closely.",
+    "Unverifiable tasks need the closest watch."
+  ],
+  "continue-title": [
+    "Keep going",
+    "Continue Learning",
+    "Continue Learning",
+    "Continue learning",
+    "Next"
+  ],
+  "continue-desc": [
+    "Up next: the three things that turn a clever guesser into something you can really lean on.",
+    "Next: the three things that turn a clever guesser into something you can rely on.",
+    "Next: the three things that turn a clever guesser into something you can rely on.",
+    "Next: the three things that turn a clever guesser into something reliable.",
+    "Next: three things that make a guesser reliable."
+  ]
+}

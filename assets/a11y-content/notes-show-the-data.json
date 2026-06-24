@@ -1,0 +1,44 @@
+{
+  "title": [
+    "Show people the real thing. Don't just tell them about it.",
+    "Show the real thing; don't just tell people about it.",
+    "Show the data; don't just assert it",
+    "Show the data; don't merely assert it.",
+    "Show, don't assert."
+  ],
+  "lede-touch": [
+    "Imagine you tell a friend, \"changing the interest rate changes the payment a lot.\" They will nod, and then they will forget. Now imagine instead you show them a loan with a little slider for the rate. You let them drag the slider, and they watch the payment go up and down right away, as they move it. Now they really get it. They get it because they saw it happen with their own eyes, and they made it happen with their own hands. The sentence was just an idea floating in the air. The live, moving thing is real and solid. People learn the thing they can touch. They do not learn the sentence about it.",
+    "Tell a friend \"interest rates change the payment a lot\" and they nod, then forget. But show them a loan with a slider on the rate, let them drag it, and watch the payment move as they do — and now they understand it. They understand because they saw it happen and made it happen themselves. The sentence was just an abstract claim; the live thing is concrete and real. People learn the thing they can touch, not the words about it.",
+    "Tell someone \"interest rates affect the payment a lot\" and they nod and forget. Show them a loan with a slider on the rate, let them drag it, and watch the payment move in real time — now they understand it, because they saw it happen and made it happen themselves. The claim was abstract; the live thing is concrete. People learn the thing they can touch, not the sentence about it.",
+    "Tell someone \"interest rates affect the payment a lot\" and they nod and forget. Give them a loan with a draggable rate slider and the payment moves in real time — now they understand, because they made it happen. The claim was abstract; the live thing is concrete. People learn what they can touch, not the sentence about it.",
+    "Asserted claims are forgotten; a draggable rate slider that moves the payment live is understood. People learn what they manipulate, not the sentence about it."
+  ],
+  "victor-visible": [
+    "Bret Victor spent his whole career making one point. He says you should make the state of a thing visible, so people can see what is going on inside it. You should give people feedback right away, the moment they do something. And you should let people change the system with their own hands, instead of leaving them to guess what it does. When an explanation hides its data behind words, the reader just has to trust it on faith. But when the explanation shows the data and lets people poke at it, they can check it for themselves. This is also part of why <a href=\"/notes/a-good-explanation-is-hard-to-vary.html\" class=\"wikilink\">A good explanation is hard to vary</a>. When you can see the model, you can see exactly where it would break.",
+    "Bret Victor built his career on one idea: make the state visible, give people feedback right away, and let them change the system with their own hands instead of guessing what it does. When an explanation hides its data behind prose, the reader has to take it on faith. But when it shows the data and lets people poke at it, they can check it for themselves — which is also why <a href=\"/notes/a-good-explanation-is-hard-to-vary.html\" class=\"wikilink\">A good explanation is hard to vary</a>, since a visible model shows exactly where it would break.",
+    "Bret Victor built a career on this point: make the state visible, give immediate feedback, and let the person manipulate the system directly instead of guessing what it does. When an explanation hides its data behind prose, the reader has to take it on faith. When it shows the data and lets them poke it, they can check it for themselves — which is also why <a href=\"/notes/a-good-explanation-is-hard-to-vary.html\" class=\"wikilink\">A good explanation is hard to vary</a>, since a visible model exposes exactly where it would break.",
+    "Bret Victor's career rests on this: make the state visible, give immediate feedback, let the person manipulate the system directly rather than guess at it. Prose that hides its data demands faith; an explanation that shows the data and invites poking lets the reader verify it — which is also why <a href=\"/notes/a-good-explanation-is-hard-to-vary.html\" class=\"wikilink\">A good explanation is hard to vary</a>, since a visible model exposes exactly where it would break.",
+    "Victor's thesis: visible state, immediate feedback, direct manipulation over guesswork. Hidden data demands faith; shown data permits verification — hence <a href=\"/notes/a-good-explanation-is-hard-to-vary.html\" class=\"wikilink\">A good explanation is hard to vary</a>, since a visible model exposes its breaking points."
+  ],
+  "earn-place": [
+    "This is why we are careful about adding interactivity. When we add it, it has to earn its place. A slider that shows you how the numbers really move actually teaches you something. But a slider added just to look nice only decorates the page. And how you show a thing is never neutral, never just a plain choice. That is because <a href=\"/notes/the-interface-shapes-the-thought.html\" class=\"wikilink\">The interface shapes what you can think</a>. What you let people see and touch is what decides what they can come to understand.",
+    "This is why interactivity, when we add it, has to earn its place. A slider that shows how the numbers really move teaches you something; a slider added just to look nice only decorates. The way you show a thing is never neutral, because <a href=\"/notes/the-interface-shapes-the-thought.html\" class=\"wikilink\">The interface shapes what you can think</a> — what you let people see and touch decides what they can come to understand.",
+    "This is why interactivity, when we add it, has to earn its place. A slider that reveals how the numbers actually move teaches; a slider added for polish just decorates. The display is never neutral, because <a href=\"/notes/the-interface-shapes-the-thought.html\" class=\"wikilink\">The interface shapes what you can think</a> — what you let people see and touch decides what they can come to understand.",
+    "So interactivity must earn its place. A slider that reveals how the numbers actually move teaches; one added for polish merely decorates. The display is never neutral, because <a href=\"/notes/the-interface-shapes-the-thought.html\" class=\"wikilink\">The interface shapes what you can think</a> — what you let people see and touch decides what they can understand.",
+    "Interactivity must earn its place: a revealing slider teaches; a decorative one doesn't. The display is never neutral — <a href=\"/notes/the-interface-shapes-the-thought.html\" class=\"wikilink\">The interface shapes what you can think</a>; what's shown bounds what's understood."
+  ],
+  "see-foundations": [
+    "If you want to start at the beginning, you can read about <a href=\"/learn/foundations/what-is-ai.html\">the foundations of what AI is</a>.",
+    "To start from the basics, see <a href=\"/learn/foundations/what-is-ai.html\">the foundations of what AI is</a>.",
+    "See <a href=\"/learn/foundations/what-is-ai.html\">the foundations of what AI is</a>.",
+    "See <a href=\"/learn/foundations/what-is-ai.html\">the foundations of what AI is</a>.",
+    "See <a href=\"/learn/foundations/what-is-ai.html\">the foundations of what AI is</a>."
+  ],
+  "next-step": [
+    "Here is something to try next. Start noticing the claims you accept without question — the ones you believe even though you have never actually seen the thing for yourself.",
+    "Next, try this: start noticing the claims you accept even though you've never actually seen them for yourself.",
+    "Next: notice which claims you accept that you've never actually seen.",
+    "Next: notice which claims you accept yet have never actually seen.",
+    "Next: spot claims you accept but have never seen."
+  ]
+}
