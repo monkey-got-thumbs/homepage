@@ -138,34 +138,42 @@ class MGTFooter extends HTMLElement {
               </p>
             </section>
 
+            <section aria-labelledby="footer-learn">
+              <h2 id="footer-learn">Learn</h2>
+              <ul>
+                <li><a href="/learn/foundations/">Basics</a></li>
+                <li><a href="/learn/frameworks/">Key ideas</a></li>
+                <li><a href="/learn/human-factors/">The human side</a></li>
+                <li><a href="/learn/learning-paths/">Paths</a></li>
+                <li><a href="/explorables/">Explorables</a></li>
+                <li><a href="/notes/">Notes</a></li>
+                <li><a href="/resources/">Resources</a></li>
+              </ul>
+            </section>
+
+            <section aria-labelledby="footer-build">
+              <h2 id="footer-build">Build</h2>
+              <ul>
+                <li><a href="/build/">Make your own</a></li>
+              </ul>
+            </section>
+
             <section aria-labelledby="footer-products">
               <h2 id="footer-products">Products</h2>
               <ul>
                 <li><a href="/chatty/">chatyman</a></li>
-                <li><a href="/build/advisor/">Agent Builder Advisor</a></li>
+                <li><a href="/products/advisor/">Agent Builder Advisor</a></li>
+                <li><a href="/writers-digest/">Writers Digest</a></li>
                 <li><a href="/products/">All products</a></li>
-                <li><a href="/build/">Make AI helpers</a></li>
-              </ul>
-            </section>
-
-            <section aria-labelledby="footer-learning">
-              <h2 id="footer-learning">Learning</h2>
-              <ul>
-                <li><a href="/learn/foundations/">Foundations</a></li>
-                <li><a href="/learn/frameworks/">Frameworks</a></li>
-                <li><a href="/learn/human-factors/">Human Factors</a></li>
-                <li><a href="/notes/">Notes</a></li>
-                <li><a href="/learn/influences.html">Influences &amp; Credits</a></li>
               </ul>
             </section>
 
             <section aria-labelledby="footer-community">
               <h2 id="footer-community">Community</h2>
               <ul>
-                <li><a href="/community/">Get Involved</a></li>
-                <li><a href="/resources/case-studies/">Case Studies</a></li>
-                <li><a href="/resources/">External Resources</a></li>
-                <li><a href="/contact/">Contact Us</a></li>
+                <li><a href="/community/">Get involved</a></li>
+                <li><a href="/resources/case-studies/">Case studies</a></li>
+                <li><a href="/contact/">Contact</a></li>
               </ul>
             </section>
           </div>
@@ -173,6 +181,7 @@ class MGTFooter extends HTMLElement {
           <div class="footer-bottom">
             <p>&copy; 2026 Monkey Got Thumbs. All rights reserved.</p>
             <p>
+              <a href="/learn/influences.html">Influences &amp; credits</a> •
               <a href="/accessibility/">Accessibility Statement</a> •
               <a href="/privacy/">Privacy Policy</a> •
               <a href="/terms/">Terms of Use</a>
