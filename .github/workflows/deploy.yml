@@ -1,14 +1,13 @@
 name: Deploy site
 
-# Deploys the WHOLE monkey-got-thumbs.com site on every push to main.
-# Target: s3://mgt-prod-site (account 824604027328) behind CloudFront E2SM2CL28GMTT0.
-# This is the ONLY deploy path — there are no shell-script deploys. Uses the repo's
-# AWS_ACCESS_KEY_ID / AWS_SECRET_ACCESS_KEY secrets (IAM user github-actions, scoped to
-# the site bucket + CloudFront invalidation).
+# Deploys the whole site to mgt.codeology.co.nz on every push to main.
+# Target: codeology Org account 704225641352 — s3://codeology-mgt-site-704225641352
+# behind CloudFront E1HGY9I3DL1PFX. Auth is GitHub OIDC (no long-lived keys):
+# the workflow assumes IAM role `github-deploy`, whose trust is scoped to
+# repo:monkey-got-thumbs/homepage on refs/heads/main.
 #
-# The sync is ADDITIVE (no --delete): the self-hosted model stack under /vendor is
-# deployed out-of-band and is NOT in git, so a mirroring delete would wipe it. Files
-# removed from the repo therefore linger in S3 until manually pruned.
+# The sync is ADDITIVE for the main site (no --delete) and writers-digest is built
+# separately with its LLM endpoint pointed at the same-origin /api/wd Lambda.
 
 on:
   push:
@@ -16,11 +15,18 @@ on:
   workflow_dispatch:
 
 permissions:
+  id-token: write      # required for OIDC
   contents: read
 
 concurrency:
   group: deploy-site
   cancel-in-progress: false
+
+env:
+  AWS_REGION: ap-southeast-2
+  BUCKET: codeology-mgt-site-704225641352
+  DISTRIBUTION_ID: E1HGY9I3DL1PFX
+  DEPLOY_ROLE: arn:aws:iam::704225641352:role/github-deploy
 
 jobs:
   deploy:
@@ -28,19 +34,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Configure AWS credentials
+      - name: Configure AWS credentials (OIDC)
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: us-east-1
+          role-to-assume: ${{ env.DEPLOY_ROLE }}
+          aws-region: ${{ env.AWS_REGION }}
 
       # ── Main site → bucket root ──────────────────────────────────────
-      # Everything ships except infra/build files, markdown sources, and
-      # writers-digest/ (built separately below so its LLM config points at /api/wd).
       - name: Sync site to S3
         run: |
-          aws s3 sync . s3://mgt-prod-site/ \
+          aws s3 sync . s3://$BUCKET/ \
             --no-progress \
             --cache-control "public,max-age=60" \
             --exclude ".git/*" \
@@ -59,21 +62,21 @@ jobs:
             --exclude "**/.DS_Store" \
             --exclude "notes/*" --include "notes/*.html"
 
-      # ── Writers Digest → /writers-digest/ (point LLM at same-origin /api/wd) ──
+      # ── Writers Digest → /writers-digest/ (LLM at same-origin /api/wd) ──
       - name: Build + sync Writers Digest
         run: |
           rm -rf out && mkdir -p out/app
           cp writers-digest/index.html out/
           cp writers-digest/app/*.js out/app/
           printf "/* deploy config */\nwindow.WD_LLM_ENDPOINT = '/api/wd';\n" > out/app/config.js
-          aws s3 sync out s3://mgt-prod-site/writers-digest/ \
+          aws s3 sync out s3://$BUCKET/writers-digest/ \
             --no-progress --delete --cache-control "public,max-age=60"
 
       - name: Invalidate CloudFront
         run: |
           aws cloudfront create-invalidation \
-            --distribution-id E2SM2CL28GMTT0 \
+            --distribution-id $DISTRIBUTION_ID \
             --paths "/*"
 
       - name: Done
-        run: echo "✓ deployed https://monkey-got-thumbs.com/"
+        run: echo "✓ deployed https://mgt.codeology.co.nz/"
