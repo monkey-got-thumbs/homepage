@@ -10,12 +10,12 @@
  * This file is the integration seam: the imports below are the contract the
  * feature modules satisfy.
  * ====================================================================== */
-import { Z, loadIndex } from './core.js';
-import { llmJSON, setStop } from './llm.js';
+import { loadIndex } from './core.js';
+import { setStop } from './llm.js';
 import { loadSettings, getSettings, renderSettings } from './settings.js';
-import { loadBible, ingestParagraph, continuityCheck, renderBible } from './storybible.js';
+import { loadBible, ingestParagraph, renderBible } from './storybible.js';
 import { seedKB } from './rag.js';
-import { loadAgents, runPipeline, renderAgents } from './agents.js';
+import { loadAgents, runRoom, renderAgents } from './agents.js';
 import { renderResearch } from './workflows.js';
 import { initEditor } from './editor.js';
 
@@ -27,41 +27,20 @@ export function pushBusy(t){ busy++; setStatus(t||'thinking…'); stopBtn.style.
 export function popBusy(){ if(--busy<=0){ busy=0; setStatus('ready','ok'); stopBtn.style.display='none'; } }
 stopBtn.addEventListener('click', ()=>{ setStop(true); setTimeout(()=>setStop(false), 500); popBusy(); });
 
-/* ---- grammar / spelling / line-edit pass ----------------------------- */
-const GRAMMAR_SCHEMA = Z.object({ suggestions: Z.array(Z.object({
-  original: Z.string().describe('exact substring from the paragraph to replace'),
-  replacement: Z.string().describe('the corrected text'),
-  reason: Z.string().describe('short reason (spelling/grammar/clarity)'),
-})) });
-async function grammarPass(text){
-  if (text.trim().length < 4) return [];
-  const out = await llmJSON(
-    `Proofread this paragraph for spelling, grammar, and obvious clarity issues. Only flag real errors; do not rewrite style or voice. For each, give the exact original substring and its correction.\n\nParagraph:\n"""${text}"""`,
-    GRAMMAR_SCHEMA,
-    { system: 'You are a meticulous copy editor. Return only genuine corrections; if the paragraph is clean, return an empty list.' }
-  );
-  const sg = (out && out.suggestions) || [];
-  return sg.filter(s=>s.original && text.includes(s.original) && s.original!==s.replacement)
-    .map((s,i)=>({ id:'g'+Date.now()+i, agent:'Copy Editor', type:'replace', original:s.original, replacement:s.replacement, reason:s.reason||'correction' }));
-}
-
 /* ---- on-Enter orchestration ------------------------------------------ */
-// Called by the editor when a paragraph (one or more sentences) is completed.
-// Returns a flat list of suggestion objects {id,agent,type,original,replacement,reason}.
-async function onParagraph(text, fullDoc){
-  pushBusy('the room is reading…');
+// Called by the editor when a paragraph is finished. Runs the writers' room as a
+// transform pipeline and returns { rewritten, changed, trail, continuity }.
+async function onRoom(block, { priorTexts, fullDoc } = {}){
+  pushBusy('the room is working…');
   const settings = getSettings();
-  const ctx = { settings, fullDoc, paragraph:text };
   try {
-    // grammar + agent pipeline run together; continuity checked against the bible.
-    const [grammar, pipeline, continuity] = await Promise.all([
-      grammarPass(text).catch(()=>[]),
-      runPipeline(text, ctx).catch(()=>[]),
-      continuityCheck(text).catch(()=>[]),
-    ]);
-    // ingest into the story bible in the background (don't block suggestions)
-    ingestParagraph(text).catch(()=>{});
-    return [...grammar, ...pipeline, ...continuity];
+    const res = await runRoom(block, { settings, priorTexts, fullDoc });
+    // grow the story bible in the background (don't block the rewrite)
+    ingestParagraph(block).catch(()=>{});
+    return res;
+  } catch (e) {
+    console.warn('runRoom failed', e);
+    return { rewritten: block, changed:false, trail:[], continuity:[] };
   } finally { popBusy(); }
 }
 
@@ -71,7 +50,7 @@ function wireTabs(){
     document.querySelectorAll('.tabs button').forEach(x=>x.classList.remove('active'));
     document.querySelectorAll('.pane').forEach(x=>x.classList.remove('active'));
     b.classList.add('active'); $('#pane-'+b.dataset.tab).classList.add('active');
-    if (b.dataset.tab==='bible') renderBible($('#pane-bible'));
+    if (b.dataset.tab==='story') renderBible($('#story-bible'));   // bible grows; refresh on view
   }));
 }
 
@@ -82,15 +61,19 @@ function wireTabs(){
     try { const c = await (await fetch('/config')).json(); modelInfo.textContent = `${c.provider} · ${c.model}`; } catch {}
     setStatus('warming memory…');
     await loadIndex();
-    await Promise.all([ loadSettings(), loadBible(), loadAgents(), seedKB() ]);
+    // Fast, OPFS-backed loads gate the UI; KB seeding (model download) runs in the
+    // background so the editor + room are usable immediately. retrieve() returns []
+    // until the index is warm.
+    await Promise.all([ loadSettings(), loadBible(), loadAgents() ]);
+    seedKB().catch(()=>{});
 
     wireTabs();
-    renderAgents($('#pane-agents'), ()=>{});                // agent lineup (built-in + user-created, orderable, toggleable)
-    renderSettings($('#pane-settings'), ()=>{});            // POV / tense / outline / blurb / genre
-    renderBible($('#pane-bible'));                           // characters / locations / objects / continuity
+    renderAgents($('#pane-agents'), ()=>{});                // the pipeline (pinned anchors + draggable middles)
+    renderSettings($('#story-setup'), ()=>{});              // Story ▸ Setup: POV / tense / genre / voice / outline
+    renderBible($('#story-bible'));                          // Story ▸ Bible: characters / locations / continuity
     renderResearch($('#pane-research'));                    // ultracode: deep research + brainstorm + fact-check
 
-    initEditor({ page:$('#page'), title:$('#title'), suggestions:$('#suggestions') }, { onParagraph });
+    initEditor({ page:$('#page'), title:$('#title'), suggestions:$('#suggestions') }, { onRoom });
     setStatus('ready','ok');
   } catch (e) {
     console.error(e); setStatus('boot failed: '+(e.message||e), 'err');

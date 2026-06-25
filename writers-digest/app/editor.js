@@ -1,16 +1,16 @@
 /* editor.js — Writers Digest Word-like editor.
  *
- * A contenteditable "page" of <p> paragraphs, persisted to OPFS, with on-Enter
- * orchestration: when the writer finishes a paragraph and presses Enter, the
- * harness (via hooks.onParagraph) returns suggestion objects which we render as
- * keep/change cards anchored beside the page. Self-contained; nothing imports
- * this module except main.js which calls initEditor().
+ * A contenteditable "page" of <p> paragraphs, persisted to OPFS. On Enter, the
+ * paragraph you just finished is sent to the writers' room (hooks.onRoom). The
+ * room returns a REWRITTEN version (the chain of agents) plus continuity issues.
+ * We AUTO-APPLY the rewrite in place and drop a quiet ⟲ marker that reverts to
+ * your words; continuity issues become accept/reject cards that edit the prior
+ * paragraphs they reference.
  *
  * EXPORT: initEditor({ page, title, suggestions }, hooks)
- *   hooks = { onParagraph(text, fullDoc) -> Promise<suggestion[]> }
- *
- * Suggestion shape:
- *   { id, agent, type:'replace'|'note'|'insert', original?, replacement?, reason }
+ *   hooks = { onRoom(blockText, { priorTexts, fullDoc }) -> Promise<{
+ *              rewritten, changed, trail:[{agent,kind}], continuity:[{offset,original,replacement,reason}]
+ *            }> }
  * ====================================================================== */
 import { loadJSON, saveJSONSoon } from './core.js';
 
@@ -19,8 +19,19 @@ const MIN_WORDS = 3;
 
 /* ---- helpers ---------------------------------------------------------- */
 function wordCount(s){ return (String(s||'').trim().match(/\S+/g) || []).length; }
+function escapeHtml(s){ return String(s||'').replace(/[&<>"]/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
 
-// Walk up from a node to the closest <p> child of `page` (the block being edited).
+// Plain text of a paragraph, excluding any injected ⟲ marker.
+function paraText(node){
+  if (!node) return '';
+  let t = '';
+  for (const ch of node.childNodes){
+    if (ch.nodeType === 1 && ch.classList && ch.classList.contains('room-mark')) continue;
+    t += ch.textContent || '';
+  }
+  return t;
+}
+
 function closestParagraph(node, page){
   let n = node;
   while (n && n !== page){
@@ -29,15 +40,12 @@ function closestParagraph(node, page){
   }
   return null;
 }
-
-// The <p> the caret is currently inside.
 function caretParagraph(page){
   const sel = window.getSelection();
   if (!sel || sel.rangeCount === 0) return null;
   return closestParagraph(sel.anchorNode, page);
 }
 
-// Ensure the page is made of <p> blocks; wrap any stray text/inline nodes.
 function normalizeParagraphs(page){
   if (!page.querySelector('p')){
     const txt = page.textContent || '';
@@ -47,7 +55,6 @@ function normalizeParagraphs(page){
     page.appendChild(p);
     return;
   }
-  // wrap any direct non-<p> nodes into paragraphs
   const stray = [];
   for (const child of Array.from(page.childNodes)){
     if (child.nodeType === 1 && child.tagName === 'P') continue;
@@ -61,28 +68,18 @@ function normalizeParagraphs(page){
   }
 }
 
-function placeCaretAtEnd(node){
-  const sel = window.getSelection();
-  if (!sel) return;
-  const range = document.createRange();
-  range.selectNodeContents(node);
-  range.collapse(false);
-  sel.removeAllRanges();
-  sel.addRange(range);
-}
-
 /* ---- editor ----------------------------------------------------------- */
 export function initEditor({ page, title, suggestions }, hooks = {}){
-  const onParagraph = hooks.onParagraph || (async ()=>[]);
-
-  // nodes currently mid-flight (avoid re-entrant fires for the same <p>)
+  const onRoom = hooks.onRoom || (async ()=>null);
   const inFlight = new WeakSet();
+  const edited = new WeakMap();          // <p> → { original, rewritten, trail }
 
-  /* ---- persistence ---------------------------------------------------- */
+  /* ---- persistence (markers stripped from the saved HTML) ------------- */
   function persist(){
-    saveJSONSoon('manuscript.json', { title: title.value, html: page.innerHTML });
+    const clone = page.cloneNode(true);
+    clone.querySelectorAll('.room-mark').forEach(m => m.remove());
+    saveJSONSoon('manuscript.json', { title: title.value, html: clone.innerHTML });
   }
-
   (async function restore(){
     try {
       const doc = await loadJSON('manuscript.json', { title:'', html:'' });
@@ -101,131 +98,180 @@ export function initEditor({ page, title, suggestions }, hooks = {}){
     normTimer = setTimeout(()=>{ try { normalizeParagraphs(page); } catch {} }, 600);
   }
 
-  /* ---- on-Enter detection -------------------------------------------- */
+  /* ---- on-Enter: send the finished paragraph to the room -------------- */
   page.addEventListener('keydown', (e) => {
     if (e.key !== 'Enter' || e.shiftKey) return;
-
-    // The paragraph the caret is leaving.
     const leaving = caretParagraph(page);
     if (!leaving) return;
-    const text = (leaving.innerText || leaving.textContent || '').trim();
+    const text = paraText(leaving).trim();
 
-    // Let the browser create the new block, then maybe fire.
+    // snapshot the paragraphs that come BEFORE this one (for continuity radius)
+    const paras = Array.from(page.querySelectorAll(':scope > p'));
+    const idx = paras.indexOf(leaving);
+    const priorNodes = idx > 0 ? paras.slice(0, idx) : [];
+
     setTimeout(() => {
       try { normalizeParagraphs(page); } catch {}
       if (!text || wordCount(text) < MIN_WORDS) return;
       if (inFlight.has(leaving)) return;
-      fireParagraph(leaving, text);
+      fireRoom(leaving, text, priorNodes);
     }, 0);
   });
 
-  async function fireParagraph(node, text){
+  async function fireRoom(node, text, priorNodes){
     if (inFlight.has(node)) return;
     inFlight.add(node);
     try {
-      const list = await onParagraph(text, page.innerText);
-      if (Array.isArray(list) && list.length){
-        for (const s of list) renderSuggestion(s, node);
+      const priorTexts = priorNodes.map(n => paraText(n).trim());
+      const res = await onRoom(text, { priorTexts, fullDoc: page.innerText });
+      if (!res) return;
+
+      // auto-apply the room's rewrite of THIS block
+      if (res.changed && res.rewritten && node.isConnected){
+        applyRoomEdit(node, text, res.rewritten, res.trail || []);
+      }
+      // continuity issues edit PRIOR paragraphs (offset 1 = immediately before)
+      const cont = Array.isArray(res.continuity) ? res.continuity : [];
+      for (const c of cont){
+        const target = priorNodes[priorNodes.length - c.offset];
+        if (target && target.isConnected) renderContinuityCard(c, target);
       }
     } catch (err) {
-      console.warn('onParagraph failed', err);
+      console.warn('room failed', err);
     } finally {
       inFlight.delete(node);
     }
   }
 
-  /* ---- suggestion cards ---------------------------------------------- */
+  /* ---- auto-apply + quiet undo --------------------------------------- */
+  function applyRoomEdit(node, original, rewritten, trail){
+    node.querySelectorAll('.room-mark').forEach(m => m.remove());
+    node.textContent = rewritten;
+    const mark = document.createElement('span');
+    mark.className = 'room-mark';
+    mark.setAttribute('contenteditable', 'false');
+    mark.textContent = ' ⟲';
+    mark.title = 'Edited by your writers’ room — click to review or undo';
+    node.appendChild(mark);
+    edited.set(node, { original, rewritten, trail });
+    mark.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); openRoomPopover(node, mark); });
+    persist();
+  }
+
+  function openRoomPopover(node, mark){
+    closeRoomPopover();
+    const info = edited.get(node);
+    if (!info) return;
+    const pop = document.createElement('div');
+    pop.className = 'room-pop';
+    pop.id = 'roomPop';
+
+    const trail = document.createElement('div');
+    trail.className = 'rp-trail';
+    trail.textContent = info.trail && info.trail.length
+      ? 'Reshaped by ' + info.trail.map(t => t.agent).join(' · ')
+      : 'Lightly cleaned up';
+    pop.appendChild(trail);
+
+    const orig = document.createElement('div');
+    orig.className = 'rp-orig';
+    orig.textContent = info.original;
+    pop.appendChild(orig);
+
+    const acts = document.createElement('div');
+    acts.className = 'rp-acts';
+    const revert = document.createElement('button');
+    revert.className = 'change';
+    revert.textContent = 'Revert to my words';
+    revert.addEventListener('click', () => {
+      node.querySelectorAll('.room-mark').forEach(m => m.remove());
+      node.textContent = info.original;
+      edited.delete(node);
+      closeRoomPopover();
+      persist();
+    });
+    const keep = document.createElement('button');
+    keep.className = 'keep';
+    keep.textContent = 'Keep it';
+    keep.addEventListener('click', closeRoomPopover);
+    acts.appendChild(revert);
+    acts.appendChild(keep);
+    pop.appendChild(acts);
+
+    document.body.appendChild(pop);
+    const r = mark.getBoundingClientRect();
+    pop.style.top = (window.scrollY + r.bottom + 6) + 'px';
+    pop.style.left = Math.max(8, Math.min(window.scrollX + r.left - 8, window.innerWidth - 320)) + 'px';
+
+    const outside = (ev) => { if (!pop.contains(ev.target) && ev.target !== mark){ closeRoomPopover(); } };
+    pop._outside = outside;
+    setTimeout(() => document.addEventListener('mousedown', outside), 0);
+  }
+  function closeRoomPopover(){
+    const p = document.getElementById('roomPop');
+    if (p){ if (p._outside) document.removeEventListener('mousedown', p._outside); p.remove(); }
+  }
+
+  /* ---- continuity cards (edit a PRIOR paragraph) --------------------- */
   function trimCards(){
-    while (suggestions.children.length > MAX_CARDS){
-      suggestions.removeChild(suggestions.firstChild);
-    }
+    while (suggestions.children.length > MAX_CARDS) suggestions.removeChild(suggestions.firstChild);
   }
+  function removeCard(card){ if (card && card.parentNode) card.parentNode.removeChild(card); }
 
-  function applyReplace(node, original, replacement){
-    if (!node || !node.isConnected) return false;
-    const cur = node.innerText || node.textContent || '';
-    if (original && cur.includes(original)){
-      const next = cur.replace(original, replacement);
-      node.textContent = next;
-      return true;
-    }
-    // fallback: if original no longer matches, replace whole paragraph
-    if (replacement){ node.textContent = replacement; return true; }
-    return false;
-  }
-
-  function applyInsert(node, replacement){
-    if (!node || !node.isConnected) return false;
-    const p = document.createElement('p');
-    p.appendChild(document.createTextNode(replacement || ''));
-    if (node.nextSibling) node.parentNode.insertBefore(p, node.nextSibling);
-    else node.parentNode.appendChild(p);
-    return true;
-  }
-
-  function renderSuggestion(s, node){
-    if (!s || !s.reason && !s.replacement) return;
+  function renderContinuityCard(c, targetNode){
+    if (!c || !c.original || !c.replacement) return;
     const card = document.createElement('div');
-    card.className = 'sugg';
+    card.className = 'sugg cont';
 
     const agent = document.createElement('div');
     agent.className = 'agent';
-    agent.textContent = s.agent || 'Writers Room';
+    agent.textContent = 'Continuity · ¶ ' + c.offset + ' back';
     card.appendChild(agent);
 
     const reason = document.createElement('div');
     reason.className = 'reason';
-    reason.textContent = s.reason || '';
+    reason.textContent = c.reason || 'keeps the story consistent';
     card.appendChild(reason);
 
-    const type = s.type || 'note';
+    const repl = document.createElement('div');
+    repl.className = 'repl';
+    repl.innerHTML = '<span class="cont-was">' + escapeHtml(c.original) + '</span> → ' + escapeHtml(c.replacement);
+    card.appendChild(repl);
 
-    if ((type === 'replace' || type === 'insert') && s.replacement){
-      const repl = document.createElement('div');
-      repl.className = 'repl';
-      repl.textContent = s.replacement;
-      card.appendChild(repl);
-
-      const acts = document.createElement('div');
-      acts.className = 'acts';
-
-      const keep = document.createElement('button');
-      keep.className = 'keep';
-      keep.textContent = 'Keep';
-      keep.addEventListener('click', () => removeCard(card));
-
-      const change = document.createElement('button');
-      change.className = 'change';
-      change.textContent = 'Change';
-      change.addEventListener('click', () => {
-        let ok = false;
-        if (type === 'replace') ok = applyReplace(node, s.original, s.replacement);
-        else ok = applyInsert(node, s.replacement);
-        if (ok) persist();
-        removeCard(card);
-      });
-
-      acts.appendChild(keep);
-      acts.appendChild(change);
-      card.appendChild(acts);
-    } else {
-      // note: advisory only
-      const acts = document.createElement('div');
-      acts.className = 'acts';
-      const got = document.createElement('button');
-      got.className = 'keep';
-      got.textContent = 'Got it';
-      got.addEventListener('click', () => removeCard(card));
-      acts.appendChild(got);
-      card.appendChild(acts);
-    }
+    const acts = document.createElement('div');
+    acts.className = 'acts';
+    const apply = document.createElement('button');
+    apply.className = 'change';
+    apply.textContent = 'Apply';
+    apply.addEventListener('click', () => {
+      const cur = paraText(targetNode);
+      if (targetNode.isConnected && cur.includes(c.original)){
+        const mark = targetNode.querySelector('.room-mark');
+        targetNode.textContent = cur.replace(c.original, c.replacement);
+        if (mark) targetNode.appendChild(mark);     // preserve any existing marker glyph
+        flash(targetNode);
+        persist();
+      }
+      removeCard(card);
+    });
+    const ignore = document.createElement('button');
+    ignore.className = 'keep';
+    ignore.textContent = 'Ignore';
+    ignore.addEventListener('click', () => removeCard(card));
+    acts.appendChild(apply);
+    acts.appendChild(ignore);
+    card.appendChild(acts);
 
     suggestions.appendChild(card);
     trimCards();
   }
 
-  function removeCard(card){
-    if (card && card.parentNode) card.parentNode.removeChild(card);
+  function flash(node){
+    try {
+      node.style.transition = 'background .25s ease';
+      node.style.background = 'rgba(194,135,43,.28)';
+      setTimeout(() => { node.style.background = ''; }, 600);
+    } catch {}
   }
 
   return {
