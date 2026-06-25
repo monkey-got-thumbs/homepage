@@ -15,7 +15,7 @@
   *{box-sizing:border-box}
   html,body{margin:0;height:100%}
   body{background:var(--bg);color:var(--panelink);font-family:var(--ui);display:flex;flex-direction:column;height:100vh;overflow:hidden}
-  header{display:flex;align-items:center;gap:14px;padding:10px 16px;background:var(--panel);border-bottom:1px solid #36302705}
+  header{display:flex;align-items:center;gap:14px;padding:10px 16px;background:var(--panel);border-bottom:1px solid #2c261f}
   header .brand{font-weight:700;font-size:15px;letter-spacing:.2px}
   header .brand small{color:var(--soft);font-weight:500;font-style:italic}
   header .status{margin-left:auto;display:flex;align-items:center;gap:10px;font-size:12px;color:var(--soft)}
@@ -24,23 +24,49 @@
   button{font-family:inherit;cursor:pointer}
   .ghost{background:transparent;border:1px solid #463e33;border-radius:8px;color:var(--panelink);padding:6px 11px;font-size:12.5px}
   .ghost:hover{border-color:var(--accent2)}
-  main{flex:1;display:flex;overflow:hidden}
+
+  /* top tab bar */
+  .tabs{display:flex;gap:2px;background:var(--panel);border-bottom:1px solid #2c261f;padding:0 14px}
+  .tabs button{background:transparent;border:none;color:var(--soft);padding:11px 18px;font-size:13px;font-weight:600;border-bottom:2px solid transparent}
+  .tabs button:hover{color:var(--panelink)}
+  .tabs button.active{color:var(--panelink);border-bottom-color:var(--accent)}
+
+  main{flex:1;display:flex;overflow:hidden;min-height:0}
+  /* center column — tab-switched */
+  #centerWrap{flex:1;display:flex;flex-direction:column;overflow:hidden;min-width:0}
+  .pane{display:none;flex:1;overflow-y:auto;min-height:0}
+  .pane.active{display:block}
+  #pane-story.active{display:flex;flex-direction:column}
+  #pane-agents,#pane-research{padding:18px 20px}
+  main h3{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--soft);margin:0 0 10px}
+
+  /* story tools drawer (setup + bible) */
+  .story-tools{margin:14px 24px 0;border:1px solid #2c261f;border-radius:10px;background:var(--panel)}
+  .story-tools>summary{cursor:pointer;padding:10px 14px;font-size:11.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--soft);font-weight:700;list-style:none}
+  .story-tools>summary::-webkit-details-marker{display:none}
+  .story-tools>summary:before{content:"▸ ";color:var(--accent2)}
+  .story-tools[open]>summary:before{content:"▾ "}
+  .story-tools[open]>summary{border-bottom:1px solid #2c261f}
+  .story-tools-body{padding:10px 16px 16px}
+  .story-sep{height:1px;background:#2c261f;margin:16px 0}
+
   /* editor */
-  #editorWrap{flex:1;overflow-y:auto;display:flex;justify-content:center;padding:34px 24px 120px}
+  #editorWrap{flex:1;overflow-y:auto;display:flex;justify-content:center;padding:30px 24px 120px}
   #page{background:var(--paper);color:var(--ink);width:100%;max-width:760px;min-height:100%;border-radius:4px;
     box-shadow:0 12px 40px rgba(0,0,0,.45);padding:64px 72px;font-family:var(--serif);font-size:18px;line-height:1.7;outline:none}
   #page:empty:before{content:attr(data-placeholder);color:#bcae97;font-style:italic}
   #page p{margin:0 0 1.1em}
   #title{font-family:var(--serif);font-size:30px;font-weight:600;color:var(--ink);border:none;outline:none;background:transparent;width:100%;max-width:760px;margin:0 auto 6px;display:block;padding:0 72px}
-  /* sidebar */
-  #sidebar{width:360px;min-width:360px;background:var(--panel);border-inline-start:1px solid #2c261f;display:flex;flex-direction:column}
-  .tabs{display:flex;border-bottom:1px solid #2c261f}
-  .tabs button{flex:1;background:transparent;border:none;color:var(--soft);padding:11px 6px;font-size:12.5px;font-weight:600;border-bottom:2px solid transparent}
-  .tabs button.active{color:var(--panelink);border-bottom-color:var(--accent)}
-  .tabpanes{flex:1;overflow-y:auto}
-  .pane{display:none;padding:14px} .pane.active{display:block}
-  .pane h3{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--soft);margin:0 0 10px}
+
+  /* right column — the writers' room (only what you drag in) */
+  #room{width:360px;min-width:360px;background:var(--panel);border-inline-start:1px solid #2c261f;overflow-y:auto;padding:16px}
+  .room-list.drag-over{outline:2px dashed var(--accent2);outline-offset:5px;border-radius:12px}
+  .room-empty{border:1.5px dashed #463e33;border-radius:10px;color:var(--soft);font-size:12px;padding:16px 12px;text-align:center;margin-bottom:10px}
+
+  /* agent cards (room + library) */
   .card{background:var(--panel2);border:1px solid #342e25;border-radius:10px;padding:10px 12px;margin-bottom:10px;font-size:13px}
+  .card.lib{cursor:grab}
+  .card.dragging{opacity:.5}
   .card .row{display:flex;align-items:center;gap:8px}
   .card .name{font-weight:650}
   .card .kind{font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:var(--soft);border:1px solid #463e33;border-radius:999px;padding:1px 7px}
@@ -48,13 +74,13 @@
   .card .handle{cursor:grab;color:var(--soft);user-select:none}
   .card.pinned{border-color:#463e33;background:#24201a}
   .card .pin{font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:var(--accent2);border:1px solid var(--accent2);border-radius:999px;padding:1px 7px}
-  .story-sep{height:1px;background:#2c261f;margin:16px 0}
   .toggle{margin-left:auto}
   input,select,textarea{font-family:inherit;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:7px;padding:7px 9px;font-size:13px;width:100%}
   label{display:block;font-size:12px;color:var(--soft);margin:8px 0 3px}
   .btn{background:var(--accent);border:none;border-radius:8px;color:#fff;font-weight:600;padding:8px 14px;font-size:13px}
   .btn.sm{padding:5px 10px;font-size:12px}
-  /* suggestion cards (inline under the editor, anchored) */
+
+  /* suggestion cards (continuity — anchored bottom-right, left of the room) */
   #suggestions{position:fixed;right:380px;bottom:18px;width:340px;max-height:60vh;overflow-y:auto;display:flex;flex-direction:column;gap:8px;z-index:30}
   .sugg{background:#2a251e;border:1px solid #3a332a;border-inline-start:3px solid var(--accent2);border-radius:10px;padding:10px 12px;font-size:13px;box-shadow:0 8px 24px rgba(0,0,0,.4)}
   .sugg .agent{font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--accent2)}
@@ -66,6 +92,7 @@
   .sugg .acts .change{background:var(--accent);border-color:var(--accent);color:#fff}
   .sugg.cont{border-inline-start-color:var(--warn)}
   .sugg.cont .cont-was{text-decoration:line-through;color:var(--soft)}
+
   /* "edited by the room" quiet marker + its popover */
   .room-mark{color:var(--accent2);cursor:pointer;font-size:.82em;user-select:none;opacity:.8}
   .room-mark:hover{opacity:1}
@@ -78,6 +105,7 @@
   .room-pop .rp-acts button{font-size:11.5px;padding:5px 10px;border-radius:6px;border:1px solid #463e33;background:transparent;color:var(--panelink)}
   .room-pop .rp-acts .keep{background:var(--ok);border-color:var(--ok);color:#fff}
   .room-pop .rp-acts .change{background:var(--accent);border-color:var(--accent);color:#fff}
+
   .spin{display:inline-block;width:12px;height:12px;border:2px solid #463e33;border-top-color:var(--accent2);border-radius:50%;animation:spin .8s linear infinite;vertical-align:-2px}
   @keyframes spin{to{transform:rotate(360deg)}}
   .muted{color:var(--soft);font-size:12px}
@@ -95,31 +123,44 @@
       <span class="dot" id="statusDot"></span>
     </div>
   </header>
+
+  <!-- tabs live at the top -->
+  <nav class="tabs" id="topTabs">
+    <button data-tab="story" class="active">Story</button>
+    <button data-tab="agents">Agents</button>
+    <button data-tab="research">Research</button>
+  </nav>
+
   <main>
-    <div id="editorWrap">
-      <div style="width:100%;max-width:760px;margin:0 auto">
-        <input id="title" placeholder="Untitled story" />
-        <div id="page" contenteditable="true" spellcheck="false"
-             data-placeholder="Click here and start writing your story. Finish a paragraph, press Enter, and your writers' room reshapes it — click the ⟲ to see who touched it or revert…"></div>
-      </div>
-    </div>
-    <aside id="sidebar">
-      <div class="tabs">
-        <button data-tab="story" class="active">Story</button>
-        <button data-tab="agents">Agents</button>
-        <button data-tab="research">Research</button>
-      </div>
-      <div class="tabpanes">
-        <div class="pane active" id="pane-story">
-          <div id="story-setup"></div>
-          <div class="story-sep"></div>
-          <div id="story-bible"></div>
+    <!-- center: switches with the tabs -->
+    <div id="centerWrap">
+      <div class="pane active" id="pane-story">
+        <details class="story-tools">
+          <summary>Story setup &amp; bible</summary>
+          <div class="story-tools-body">
+            <div id="story-setup"></div>
+            <div class="story-sep"></div>
+            <div id="story-bible"></div>
+          </div>
+        </details>
+        <div id="editorWrap">
+          <div style="width:100%;max-width:760px;margin:0 auto">
+            <input id="title" placeholder="Untitled story" />
+            <div id="page" contenteditable="true" spellcheck="false"
+                 data-placeholder="Click here and start writing your story. Finish a paragraph, press Enter, and your writers' room reshapes it — click the ⟲ to see who touched it or revert…"></div>
+          </div>
         </div>
-        <div class="pane" id="pane-agents"></div>
-        <div class="pane" id="pane-research"></div>
       </div>
+      <div class="pane" id="pane-agents"></div>
+      <div class="pane" id="pane-research"></div>
+    </div>
+
+    <!-- right: the writers' room — only the agents you drag in -->
+    <aside id="room">
+      <div id="roomPane"></div>
     </aside>
   </main>
+
   <div id="suggestions"></div>
   <script src="./app/config.js"></script>
   <script type="module" src="./app/main.js"></script>

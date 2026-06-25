@@ -15,7 +15,7 @@ import { setStop } from './llm.js';
 import { loadSettings, getSettings, renderSettings } from './settings.js';
 import { loadBible, ingestParagraph, renderBible } from './storybible.js';
 import { seedKB } from './rag.js';
-import { loadAgents, runRoom, renderAgents } from './agents.js';
+import { loadAgents, runRoom, renderAgentsUI } from './agents.js';
 import { renderResearch } from './workflows.js';
 import { initEditor } from './editor.js';
 
@@ -44,11 +44,11 @@ async function onRoom(block, { priorTexts, fullDoc } = {}){
   } finally { popBusy(); }
 }
 
-/* ---- sidebar tabs ----------------------------------------------------- */
+/* ---- top tabs (switch the centre column; the room stays put) ---------- */
 function wireTabs(){
   document.querySelectorAll('.tabs button').forEach(b=>b.addEventListener('click', ()=>{
     document.querySelectorAll('.tabs button').forEach(x=>x.classList.remove('active'));
-    document.querySelectorAll('.pane').forEach(x=>x.classList.remove('active'));
+    document.querySelectorAll('#centerWrap .pane').forEach(x=>x.classList.remove('active'));
     b.classList.add('active'); $('#pane-'+b.dataset.tab).classList.add('active');
     if (b.dataset.tab==='story') renderBible($('#story-bible'));   // bible grows; refresh on view
   }));
@@ -68,7 +68,7 @@ function wireTabs(){
     seedKB().catch(()=>{});
 
     wireTabs();
-    renderAgents($('#pane-agents'), ()=>{});                // the pipeline (pinned anchors + draggable middles)
+    renderAgentsUI($('#roomPane'), $('#pane-agents'));       // right column = the room; Agents tab = the library to drag from
     renderSettings($('#story-setup'), ()=>{});              // Story ▸ Setup: POV / tense / genre / voice / outline
     renderBible($('#story-bible'));                          // Story ▸ Bible: characters / locations / continuity
     renderResearch($('#pane-research'));                    // ultracode: deep research + brainstorm + fact-check
