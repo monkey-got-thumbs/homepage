@@ -126,6 +126,11 @@ export function initEditor({ page, title, suggestions }, hooks = {}){
       const res = await onRoom(text, { priorTexts, fullDoc: page.innerText });
       if (!res) return;
 
+      // if the room couldn't reach the model, say so plainly (no silent no-op)
+      if (res.error && !res.changed){
+        renderErrorCard(res.error);
+        return;
+      }
       // auto-apply the room's rewrite of THIS block
       if (res.changed && res.rewritten && node.isConnected){
         applyRoomEdit(node, text, res.rewritten, res.trail || []);
@@ -264,6 +269,20 @@ export function initEditor({ page, title, suggestions }, hooks = {}){
 
     suggestions.appendChild(card);
     trimCards();
+  }
+
+  function renderErrorCard(err){
+    const msg = /\b(404|403|5\d\d)\b/.test(String(err)) ? `the model endpoint is unreachable (${err})` : String(err);
+    const card = document.createElement('div');
+    card.className = 'sugg err';
+    const agent = document.createElement('div'); agent.className = 'agent'; agent.textContent = 'Writers’ room — offline'; card.appendChild(agent);
+    const reason = document.createElement('div'); reason.className = 'reason';
+    reason.textContent = 'Your agents couldn’t run: ' + msg + '. Your text is untouched. (The room needs its model endpoint wired up.)';
+    card.appendChild(reason);
+    const acts = document.createElement('div'); acts.className = 'acts';
+    const ok = document.createElement('button'); ok.className = 'keep'; ok.textContent = 'Dismiss'; ok.addEventListener('click', () => removeCard(card));
+    acts.appendChild(ok); card.appendChild(acts);
+    suggestions.appendChild(card); trimCards();
   }
 
   function flash(node){

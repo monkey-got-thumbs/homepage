@@ -279,21 +279,26 @@ export async function runRoom(block, ctx = {}) {
   const room = roomOrder();
   let text = original;
   const trail = [];
+  const errs = [];
   for (const agent of room) {
     if (!agent.enabled || agent.pinned === 'end') continue;
     let next = text;
     try {
       next = agent.pinned === 'start' ? await copyEditPass(text) : await transformPass(agent, text, { settings, bible });
-    } catch { next = text; }
+    } catch (e) { next = text; errs.push(String((e && e.message) || e)); }
     next = (next || '').trim();
     if (next && norm(next) !== norm(text)) { text = next; trail.push({ agent: agent.name, kind: agent.kind }); }
   }
   let continuity = [];
   const end = room.find(a => a.pinned === 'end');
   if (end && end.enabled && end.radius && end.radius !== 'off') {
-    try { continuity = await continuityRepair(text, { settings, bible, priorTexts: ctx.priorTexts || [], radius: end.radius }); } catch { continuity = []; }
+    try { continuity = await continuityRepair(text, { settings, bible, priorTexts: ctx.priorTexts || [], radius: end.radius }); }
+    catch (e) { continuity = []; errs.push(String((e && e.message) || e)); }
   }
-  return { rewritten: text, changed: norm(text) !== norm(original), trail, continuity };
+  // If the agents ran but nothing changed AND calls were failing, the model
+  // endpoint is unreachable — surface that instead of silently doing nothing.
+  const error = (errs.length && !trail.length) ? errs[0] : null;
+  return { rewritten: text, changed: norm(text) !== norm(original), trail, continuity, error };
 }
 
 /* ====================================================================== *

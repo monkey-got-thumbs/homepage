@@ -33,15 +33,20 @@ stopBtn.addEventListener('click', ()=>{ setStop(true); setTimeout(()=>setStop(fa
 async function onRoom(block, { priorTexts, fullDoc } = {}){
   pushBusy('the room is working…');
   const settings = getSettings();
+  let res;
   try {
-    const res = await runRoom(block, { settings, priorTexts, fullDoc });
-    // grow the story bible in the background (don't block the rewrite)
-    ingestParagraph(block).catch(()=>{});
-    return res;
+    res = await runRoom(block, { settings, priorTexts, fullDoc });
+    ingestParagraph(block).catch(()=>{});   // grow the bible in the background
   } catch (e) {
     console.warn('runRoom failed', e);
-    return { rewritten: block, changed:false, trail:[], continuity:[] };
+    res = { rewritten: block, changed:false, trail:[], continuity:[], error:String((e&&e.message)||e) };
   } finally { popBusy(); }
+  // popBusy reset the status to "ready"; if the room couldn't reach the model, say so (after).
+  if (res && res.error){
+    const m = /\b(404|403|5\d\d)\b/.test(res.error) ? `model endpoint unreachable (${res.error})` : res.error;
+    setStatus('the room couldn’t reach the model — ' + m, 'err');
+  }
+  return res;
 }
 
 /* ---- top tabs (switch the centre column; the room stays put) ---------- */
