@@ -15,6 +15,7 @@ class MGTHeader extends HTMLElement {
     this.render();
     this.setupAccessibility();
     this.attachEventListeners();
+    this.setupCogSlider();
     // Header is position:fixed, so reserve its height on the page so content
     // doesn't slide underneath it. Re-measure after the logo/fonts settle.
     this.syncHeight();
@@ -27,6 +28,39 @@ class MGTHeader extends HTMLElement {
   syncHeight() {
     const header = this.shadowRoot && this.shadowRoot.querySelector('header');
     if (header) document.body.style.paddingBlockStart = header.offsetHeight + 'px';
+  }
+
+  // Reading-level slider — drives the shared accessibility engine (window.__A11Y),
+  // ramps the monkey-handle inversion from 0 (level 1) to 1 (level 5), and stays
+  // in sync if the level is changed elsewhere (e.g. the panel or Reset).
+  setupCogSlider() {
+    const s = this.shadowRoot && this.shadowRoot.getElementById('cogSlider');
+    if (!s) return;
+    const curLevel = () => {
+      const v = parseInt(document.documentElement.getAttribute('data-level') || '3', 10);
+      return v >= 1 && v <= 5 ? v : 3;
+    };
+    const setInvert = (v) => s.style.setProperty('--mk-invert', ((v - 1) / 4).toFixed(3));
+    const reflect = () => {
+      const v = curLevel();
+      if (s.value !== String(v)) s.value = String(v);
+      setInvert(v);
+      s.setAttribute('aria-valuetext', 'Reading level ' + v + ' of 5');
+    };
+    reflect();
+    s.addEventListener('input', () => {
+      const v = parseInt(s.value, 10) || 3;
+      setInvert(v);
+      if (window.__A11Y && typeof window.__A11Y.set === 'function') {
+        window.__A11Y.set('level', String(v)); // string keeps it consistent with the panel buttons
+      } else {
+        document.documentElement.setAttribute('data-level', String(v));
+        try { localStorage.setItem('a11y.level', String(v)); } catch (e) {}
+      }
+    });
+    if (window.MutationObserver) {
+      new MutationObserver(reflect).observe(document.documentElement, { attributes: true, attributeFilter: ['data-level'] });
+    }
   }
 
   render() {
@@ -207,6 +241,49 @@ class MGTHeader extends HTMLElement {
             margin-top: 0.5rem;
           }
         }
+
+        /* ===== Reading-level (cognitive-load) slider — the monkey-face handle
+           rides the header's bottom line. Left = simplest (level 1, lowest load),
+           right = densest (level 5, highest load); the monkey inverts across. ===== */
+        .cog-slider {
+          position: absolute;
+          inset-inline: clamp(1rem, 6vw, 5rem);
+          bottom: 0;
+          transform: translateY(50%);
+          block-size: 28px;
+          margin: 0;
+          -webkit-appearance: none;
+          appearance: none;
+          background: transparent;
+          cursor: pointer;
+          z-index: 102;
+          --mk-invert: 0.5;
+        }
+        .cog-slider::-webkit-slider-runnable-track { block-size: 2px; background: transparent; }
+        .cog-slider::-moz-range-track { block-size: 2px; background: transparent; }
+        .cog-slider::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          appearance: none;
+          inline-size: 28px; block-size: 28px; border-radius: 50%;
+          box-sizing: border-box;
+          background: var(--header-bg) url("/favicon.png") center/cover no-repeat;
+          border: 2px solid var(--accent);
+          box-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+          filter: invert(var(--mk-invert));
+          margin-top: -13px;
+        }
+        .cog-slider::-moz-range-thumb {
+          inline-size: 28px; block-size: 28px; border-radius: 50%;
+          box-sizing: border-box;
+          background: var(--header-bg) url("/favicon.png") center/cover no-repeat;
+          border: 2px solid var(--accent);
+          box-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+          filter: invert(var(--mk-invert));
+        }
+        .cog-slider:focus-visible { outline: none; }
+        .cog-slider:focus-visible::-webkit-slider-thumb { box-shadow: 0 0 0 3px var(--accent); }
+        .cog-slider:focus-visible::-moz-range-thumb { box-shadow: 0 0 0 3px var(--accent); }
+        @media (max-width: 767px) { .cog-slider { inset-inline: 1rem 4rem; } }
       </style>
 
       <header role="banner">
@@ -241,6 +318,9 @@ class MGTHeader extends HTMLElement {
             <a href="/build/">Build</a>
           </nav>
         </div>
+        <input type="range" class="cog-slider" id="cogSlider" min="1" max="5" step="1" value="3"
+          aria-label="Reading level — slide left for the simplest version, right for the densest"
+          title="Reading level — left: simplest · right: densest" />
       </header>
     `;
   }

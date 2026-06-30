@@ -44,9 +44,13 @@
         '<button class="a11y-opt" data-v="tritan">Tritanopia</button>' +
         '<button class="a11y-opt" data-v="achroma">No colour</button>' +
       '</div>' +
-      '<h3>How are you finding this?</h3><div class="a11y-feel">' +
-        '<button id="a11yPatron"><span class="big">&#128580;</span><strong>A bit patronising</strong><br><small>give me more credit</small></button>' +
-        '<button id="a11yFrust"><span class="big">&#128547;</span><strong>A bit much</strong><br><small>this is a lot at once</small></button>' +
+      '<h3>Reading level <span class="small">(use the slider in the top bar)</span></h3>' +
+      '<div class="a11y-row" data-group="level">' +
+        '<button class="a11y-opt" data-v="1">Simplest</button>' +
+        '<button class="a11y-opt" data-v="2">Simpler</button>' +
+        '<button class="a11y-opt" data-v="3">Default</button>' +
+        '<button class="a11y-opt" data-v="4">Denser</button>' +
+        '<button class="a11y-opt" data-v="5">Densest</button>' +
       '</div>' +
       '<h3>Direction</h3><div class="a11y-row" data-group="dir">' +
         '<button class="a11y-opt" data-v="ltr">LTR</button>' +
@@ -94,8 +98,6 @@
         set(g.getAttribute('data-group'), b.getAttribute('data-v'));
       });
     });
-    document.getElementById('a11yPatron').addEventListener('click', function () { set('level', Math.min(5, state.level + 1)); });
-    document.getElementById('a11yFrust').addEventListener('click', function () { set('level', Math.max(1, state.level - 1)); });
     document.getElementById('a11yReset').addEventListener('click', function () {
       state.scheme = 'dark'; state.cvd = 'none'; state.sim = 'off'; state.level = 3; state.dir = 'ltr'; apply();
     });
