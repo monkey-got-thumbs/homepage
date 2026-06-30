@@ -7,11 +7,11 @@
     "Meta-cognition: observing, evaluating, and steering your own reasoning. In augmented intelligence it is the control loop deciding whether AI sharpens you or just accelerates error."
   ],
   "enduring": [
-    "<strong>The one idea to keep:</strong> Meta-cognition is how you steer AI. When you watch your own thinking — and say plainly what you want, what the limits are, and how it should be laid out — you lead the AI. If you don't, the AI leads you.",
-    "<strong>The one idea to keep:</strong> Meta-cognition is the steering wheel for AI — when you watch your own thinking and name what you want, the limits, and the structure, you lead the AI instead of it leading you.",
-    "<strong>The one idea to keep:</strong> Meta-cognition is the control surface for directing AI — when you watch your own thinking (name what you actually want, the constraints, the structure), you lead the AI instead of being led by it.",
-    "<strong>The one idea to keep:</strong> Meta-cognition is the control surface for directing AI — watch your own thinking, name the goal, constraints, and structure, and you lead the AI rather than being led.",
-    "<strong>Keep this:</strong> Meta-cognition is AI's control surface — name your goal, constraints, and structure, and you lead the AI instead of it leading you."
+    "<strong>A question worth carrying:</strong> when you watch your own thinking — and say plainly what you want, what the limits are, and how it should be laid out — does that put you in the lead, or is the AI still doing the steering? Try the demos below and see which way it falls for you.",
+    "<strong>A question to carry:</strong> when you watch your own thinking and name what you want, the limits, and the structure — are you leading the AI, or is it leading you? The demos below let you test it; decide for yourself.",
+    "<strong>A question to carry:</strong> when you watch your own thinking — naming what you actually want, the constraints, the structure — does that put you in the lead, or does the AI still set the direction? The demos below let you test it; decide for yourself.",
+    "<strong>A question to carry:</strong> when you watch your own thinking — naming the goal, constraints, and structure — are you leading the AI or being led? Test it below and decide.",
+    "<strong>A question:</strong> name your goal, constraints, and structure — does that put you in the lead, or the AI? Test it below."
   ],
   "why-outsourcing": [
     "When you use AI without meta-cognition, you hand your thinking over to a system that <a href=\"/learn/foundations/ai-pitfalls.html\">cannot really think</a>. You take what it gives you. You build on its ideas. You follow where it leads — and you never once stop to ask if any of it is actually right.",

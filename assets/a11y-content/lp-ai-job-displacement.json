@@ -7,11 +7,11 @@
     "Offload your busywork to AI"
   ],
   "hero-subtitle": [
-    "You stay in charge of the big decisions. AI does the slow, boring parts for you — looking things up, writing first tries, and the fiddly little admin jobs. The people who get more done aren't smarter. They've just learned how to tell AI what to do, and you can learn that too.",
-    "You keep the judgment; AI takes on the grind — the research, the first drafts, the fiddly admin. The people who get more done are the ones who've learned how to direct it well, and that's a skill anyone can pick up.",
-    "You keep the judgment; AI handles the grind — the research, the first drafts, the fiddly admin. The people who get more done are simply the ones who've learned to direct it well, and that's a skill anyone can pick up.",
-    "You keep the judgment; AI handles the grind — research, first drafts, fiddly admin. The people who get more done have simply learned to direct it well, a skill anyone can pick up.",
-    "Keep the judgment; delegate the grind — research, drafts, admin. The edge is direction, a learnable skill."
+    "AI can do the slow, boring parts for you — looking things up, writing first tries, and the fiddly little admin jobs — and leave the big decisions to you. The people who get more done aren't smarter. They've just learned how to tell AI what to do, and you can learn that too.",
+    "AI can take on the grind — the research, the first drafts, the fiddly admin — and leave the judgment to you. The people who get more done are the ones who've learned how to direct it well, and that's a skill anyone can pick up.",
+    "AI can handle the grind — the research, the first drafts, the fiddly admin — and leave the judgment calls to you. The people who get more done are simply the ones who've learned to direct it well, and that's a skill anyone can pick up.",
+    "AI handles the grind — research, first drafts, fiddly admin — and leaves the judgment to you. The people who get more done have simply learned to direct it well, a skill anyone can pick up.",
+    "Delegate the grind — research, drafts, admin; keep the judgment. The edge is direction, a learnable skill."
   ],
   "stat-quality": [
     "Better work when you guide AI the right way (Harvard/BCG study, 2023)",
@@ -63,10 +63,10 @@
     "Augmented intelligence"
   ],
   "path-p1": [
-    "\n                    Augmented intelligence just means people and AI working as a team. You stay in control. AI does the mechanical work — looking things up, writing drafts, sorting data. You do the thinking — making plans, using judgment, and caring for the people around you.\n                ",
-    "\n                    Augmented intelligence is the practice of pairing human judgment with machine capability. You stay in control. AI handles the mechanical work — research, drafting, data processing. You handle the thinking — strategy, judgment, relationships.\n                ",
-    "\n                    Augmented intelligence is the practice of pairing human judgment with machine capability. You stay in control. AI handles the mechanical work — research, drafting, data processing. You handle the thinking — strategy, judgment, relationships.\n                ",
-    "\n                    Augmented intelligence pairs human judgment with machine capability. You stay in control: AI handles the mechanical work — research, drafting, data processing — while you handle strategy, judgment, and relationships.\n                ",
+    "\n                    Augmented intelligence just means people and AI working as a team. AI does the mechanical work — looking things up, writing drafts, sorting data — and you stay with the thinking: making plans, using judgment, and caring for the people around you.\n                ",
+    "\n                    Augmented intelligence is the practice of pairing human judgment with machine capability. AI handles the mechanical work — research, drafting, data processing — and you stay with the thinking: strategy, judgment, relationships.\n                ",
+    "\n                    Augmented intelligence is the practice of pairing human judgment with machine capability. AI handles the mechanical work — research, drafting, data processing — and you stay with the thinking: strategy, judgment, relationships.\n                ",
+    "\n                    Augmented intelligence pairs human judgment with machine capability: AI handles the mechanical work — research, drafting, data processing — while you stay with strategy, judgment, and relationships.\n                ",
     "\n                    Augmented intelligence pairs human judgment with machine capability: AI does the mechanical work, you own strategy, judgment, and relationships.\n                "
   ],
   "path-p2": [

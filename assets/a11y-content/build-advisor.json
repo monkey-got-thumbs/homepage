@@ -7,11 +7,11 @@
 "Agents, plainly."
 ],
 "hero-lede": [
-"You keep hearing the word <em>agent</em> everywhere, and it sounds technical and a little scary. Here is the good news: it really isn't. By the time you reach the end of this page, you'll have <strong>built one all by yourself</strong> — with no code and no jargon — simply by playing with the pieces and seeing what each one does. Just drag, tap, and watch it come together.",
-"You keep hearing the word <em>agent</em>, and it sounds technical and a bit scary. It isn't. By the end of this page you'll have <strong>built one yourself</strong> — no code, no jargon — just by playing with the pieces. So drag, tap, and watch.",
-"You keep hearing the word <em>agent</em>. It sounds technical and a bit intimidating. It isn't. By the end of this page you'll have <strong>built one yourself</strong> — no code, no jargon — just by playing with the pieces. Drag, tap, and watch.",
-"You keep hearing <em>agent</em> — technical, intimidating. It isn't. By the end of this page you'll have <strong>built one yourself</strong>, no code or jargon, just by playing with the pieces. Drag, tap, watch.",
-"<em>Agent</em> sounds technical; it isn't. By page's end you'll have <strong>built one</strong> — no code, no jargon. Drag, tap, watch."
+"You keep hearing the word <em>agent</em> everywhere, and it sounds technical and a little scary. It isn't. On this page you don't read about agents — you <strong>assemble one</strong>, piece by piece, with no code and no jargon, and see what each piece changes. Drag, tap, and see for yourself.",
+"You keep hearing the word <em>agent</em>, and it sounds technical. It isn't. Here you don't read about agents — you <strong>assemble one</strong>, piece by piece, no code or jargon, and see what each piece changes. Drag, tap, and see for yourself.",
+"You keep hearing the word <em>agent</em>. It sounds technical. It isn't. Here you don't read about one — you <strong>assemble one</strong>, piece by piece, and see what each piece changes. Drag, tap, and see for yourself.",
+"You keep hearing <em>agent</em> — technical-sounding; it isn't. Here you <strong>assemble one</strong>, piece by piece, and see what each piece changes. Drag, tap, see.",
+"<em>Agent</em> sounds technical; it isn't. Assemble one here, piece by piece, and see what each piece changes."
 ],
 "s1-h": [
 "So… what <em>is</em> an agent, really?",
@@ -21,32 +21,32 @@
 "What <em>is</em> an agent?"
 ],
 "s1-p1": [
-"An agent is simply an AI that you've handed some <strong>standing instructions</strong> to. You write down, just once, who it should be and how it ought to help — and from that moment on it behaves that way every single time, for anyone who comes along to talk to it. That really is the whole idea: <strong>a little worker that you describe using nothing but words.</strong>",
-"An agent is just an AI you've given <strong>standing instructions</strong> to. You write down, once, who it should be and how it should help — and from then on it behaves that way every time, for anyone who talks to it. That's really the whole idea: <strong>a little worker you describe in words.</strong>",
-"An agent is just an AI you've given <strong>standing instructions</strong> to. You write down, once, who it should be and how it should help — and from then on it behaves that way every time, for anyone who talks to it. That's the whole idea: <strong>a little worker you describe in words.</strong>",
-"An agent is an AI you've given <strong>standing instructions</strong>: write down once who it is and how it helps, and it behaves that way every time, for anyone. That's it — <strong>a little worker you describe in words.</strong>",
+"An agent is simply an AI you've handed some <strong>standing instructions</strong> to. You write down, just once, who it should be and how it ought to help — and from then on it behaves that way every time, for anyone who comes to talk to it. <strong>A little worker you describe using nothing but words.</strong>",
+"An agent is just an AI you've given <strong>standing instructions</strong> to. You write down, once, who it should be and how it should help — and from then on it behaves that way every time, for anyone who talks to it. <strong>A little worker you describe in words.</strong>",
+"An agent is an AI you've given <strong>standing instructions</strong> to. You write down, once, who it should be and how it should help — and from then on it behaves that way every time, for anyone who talks to it. <strong>A little worker you describe in words.</strong>",
+"An agent is an AI you've given <strong>standing instructions</strong>: write down once who it is and how it helps, and it behaves that way every time, for anyone. <strong>A little worker you describe in words.</strong>",
 "An agent: an AI with <strong>standing instructions</strong> — written once, applied every time, for anyone. <strong>A worker you describe in words.</strong>"
 ],
 "s1-p2": [
-"It isn't a robot, it isn't a piece of code, and it isn't magic of any kind. If you're able to describe a job to a brand-new colleague using plain everyday English, then you can write an agent. The only real skill is learning <em>which</em> of your words actually carry the weight — so let's start by getting a feel for that.",
-"It isn't a robot, it isn't code, and it isn't magic. If you can describe a job to a new colleague in plain English, you can write an agent. The only skill is learning <em>which</em> words actually matter — so let's feel that first.",
-"It isn't a robot, it isn't code, and it isn't magic. If you can describe a job to a new colleague in plain English, you can write an agent. The only skill is learning <em>which</em> words actually matter — so let's feel that first.",
-"Not a robot, not code, not magic. If you can describe a job to a new colleague in plain English, you can write an agent. The only skill is learning <em>which</em> words matter — let's feel that first.",
-"Not a robot, code, or magic. Describe a job in plain English and you've written an agent. The skill: knowing <em>which</em> words matter — feel it first."
+"If you can describe a job to a brand-new colleague in plain everyday English, you can write one. Below, you'll assemble the actual instructions, line by line, and see what each one changes. Here's a question worth holding onto as you go: when a reply comes back bad, is that the AI's fault — or the instructions'?",
+"If you can describe a job to a new colleague in plain English, you can write one. Below, you'll assemble the actual instructions, line by line, and see what each one changes. The question to hold onto: when a reply is bad, is that the AI's fault — or the instructions'?",
+"If you can describe a job to a new colleague in plain English, you can write one. Below, you assemble the actual instructions, line by line, and see what each changes. The question to hold onto: when a reply is bad, whose fault is it — the AI's, or the instructions'?",
+"Describe a job to a new colleague in plain English and you can write one. Below, you assemble the real instructions and see what each changes. Hold onto the question: bad reply — the AI's fault, or the instructions'?",
+"Describe a job in plain English and you can write one. You assemble the real instructions below. The question: bad reply — AI's fault, or the instructions'?"
 ],
 "s2-h": [
-"The one thing that decides everything: the ask",
-"The thing that decides everything: the ask",
-"The one thing that decides everything: the ask",
-"What decides everything: the ask",
-"What decides everything: the ask"
+"Whose fault is a bad answer — the AI's, or the way you asked?",
+"Whose fault is a bad answer — the AI's, or the ask?",
+"Whose fault is a bad answer — the AI, or the ask?",
+"Bad answer: the AI's fault, or the ask's?",
+"Bad answer: AI, or ask?"
 ],
 "s2-p1": [
-"Here's the secret that nobody bothers to tell beginners: the AI is the exact <em>same</em> one for everybody. The reason one person gets back something brilliant while another gets back mush comes down to one simple thing — <strong>what they actually told it</strong>. Watch this: we'll take a vague request and add one piece at a time:",
-"Here's the secret nobody tells beginners: the AI is the <em>same</em> for everyone. The reason one person gets gold and another gets mush is simply <strong>what they tell it</strong>. Watch — take this vague request and add a piece at a time:",
-"Here's the secret nobody tells beginners: the AI is the <em>same</em> for everyone. The reason one person gets gold and another gets mush is simply <strong>what they tell it</strong>. Watch — take this vague request and add a piece at a time:",
-"The secret beginners aren't told: the AI is the <em>same</em> for everyone. One person gets gold, another mush, purely from <strong>what they tell it</strong>. Watch — take this vague request and add a piece at a time:",
-"The AI is the <em>same</em> for everyone; gold versus mush is <strong>what you tell it</strong>. Take a vague request, add a piece at a time:"
+"The AI below is the very same one every time — nothing about it changes. The only thing that changes is what you tell it. Start vague, then add one piece at a time, and read what comes back. As you do, see whether the ask really explains the difference — or whether something else is going on:",
+"The AI below is the same one every time; only what you tell it changes. Start vague, then add a piece at a time, and read what comes back — and judge for yourself whether the ask explains the difference:",
+"The AI below is the same every time; only what you tell it changes. Start vague, add a piece at a time, and read what comes back. Does the ask explain the difference — or not?",
+"Same AI every time; only the ask changes. Start vague, add a piece at a time, read the replies. Does the ask explain the difference?",
+"Same AI; only the ask changes. Start vague, add pieces, read the replies. Does the ask explain it?"
 ],
 "s3-h": [
 "From a one-off ask to a reusable agent",
@@ -70,25 +70,25 @@
 "Build one, piece by piece"
 ],
 "s4-p1": [
-"Say hello to a shoe shop that wants an agent to handle all its refund questions. Down below, it starts with <strong>no instructions at all</strong> — so when a real customer writes in, watch closely what it does. Then add each instruction, one by one, and watch it grow up before your eyes.",
-"Meet a shoe shop that wants an agent to handle its refund questions. Below, it has <strong>no instructions at all</strong> — so when a real customer writes in, watch what it does. Then add each instruction and see it grow up.",
-"Meet a shoe shop that wants an agent to handle refund questions. Below, it has <strong>no instructions at all</strong> — so when a real customer writes in, watch what it does. Then add each instruction and see it grow up.",
-"Meet a shoe shop wanting an agent for refund questions. It starts with <strong>no instructions at all</strong> — so when a real customer writes in, watch what it does. Then add each instruction and see it grow up.",
-"A shoe shop wants a refunds agent. With <strong>no instructions</strong>, watch a real customer's result. Add each instruction; watch it grow up."
+"Say hello to a shoe shop that wants an agent to handle all its refund questions. Down below, it starts with <strong>no instructions at all</strong> — so when a real customer writes in, watch closely what it does. Then add each instruction, one by one, and watch what each one changes.",
+"Meet a shoe shop that wants an agent to handle its refund questions. Below, it has <strong>no instructions at all</strong> — so when a real customer writes in, watch what it does. Then add each instruction and watch what each one changes.",
+"Meet a shoe shop that wants an agent to handle refund questions. Below, it has <strong>no instructions at all</strong> — so when a real customer writes in, watch what it does. Then add each instruction and watch what each one changes.",
+"Meet a shoe shop wanting an agent for refund questions. It starts with <strong>no instructions at all</strong> — so when a real customer writes in, watch what it does. Then add each instruction and watch what each changes.",
+"A shoe shop wants a refunds agent. With <strong>no instructions</strong>, watch a real customer's result. Add each instruction; watch what each changes."
 ],
 "s5-h": [
-"And that's it — you just built an agent.",
-"You just built an agent.",
-"You just built an agent.",
-"You just built an agent.",
-"You just built an agent."
+"So — which pieces actually changed the answer?",
+"Which pieces actually changed the answer?",
+"Which pieces actually changed the answer?",
+"Which pieces changed the answer?",
+"Which pieces mattered?"
 ],
 "s5-p1": [
-"And that really is all there is to it. Every single agent — whether it's a support assistant, a writing buddy, or a study helper — is built from these same seven plain-English pieces, just pointed at a different job each time:",
-"That's genuinely it. Every agent — a support assistant, a writing buddy, a study helper — is the same seven plain-English pieces, just aimed at a different job:",
-"That's genuinely it. Every agent — a support assistant, a writing buddy, a study helper — is the same seven plain-English pieces, aimed at a different job:",
-"That's it. Every agent — support assistant, writing buddy, study helper — is the same seven plain-English pieces, aimed at a different job:",
-"That's it. Every agent is the same seven plain-English pieces, aimed at a different job:"
+"Whatever you found, here's a pattern worth noticing: most agents you'll meet — a support assistant, a writing buddy, a study helper — are some mix of these same seven plain-English pieces, each pointed at a different job:",
+"Here's a pattern worth noticing: most agents — a support assistant, a writing buddy, a study helper — are some mix of these seven plain-English pieces, aimed at a different job:",
+"A pattern worth noticing: most agents — support assistant, writing buddy, study helper — are some mix of these seven plain-English pieces, aimed at a different job:",
+"A pattern worth noticing: most agents are some mix of these seven plain-English pieces, aimed at a different job:",
+"A pattern: most agents are some mix of these seven pieces, aimed at a different job:"
 ],
 "s5-recap": [
 "<li><strong>Who it is</strong> — the role you give it to play.</li>\n                    <li><strong>Its job</strong> — what it helps people with (and what it should leave well alone).</li>\n                    <li><strong>The facts</strong> it has to follow — your policy, your prices, your truth.</li>\n                    <li><strong>Its limits</strong> — the things it must never promise or do.</li>\n                    <li><strong>When it isn't sure</strong> — say so plainly, and pass it to a person.</li>\n                    <li><strong>Its tone</strong> — warm, plain, and brief.</li>\n                    <li><strong>The answer shape</strong> — what the reply should look like.</li>",
@@ -98,11 +98,11 @@
 "<li><strong>Who it is</strong> — role.</li>\n                    <li><strong>Its job</strong> — scope and limits.</li>\n                    <li><strong>The facts</strong> — policy, prices, truth.</li>\n                    <li><strong>Its limits</strong> — never promise these.</li>\n                    <li><strong>When unsure</strong> — say so; hand off.</li>\n                    <li><strong>Its tone</strong> — warm, plain, brief.</li>\n                    <li><strong>Answer shape</strong> — the reply's form.</li>"
 ],
 "s5-honest": [
-"An honest note: every reply you saw above is a <em>representative example</em> rather than a live call to an AI — we show you what good (and bad) instructions actually tend to produce, so you can learn the move itself without all the noise getting in the way.",
-"Honest note: every reply above is a <em>representative example</em>, not a live AI call — we show what good (and bad) instructions actually produce, so you can learn the move without the noise.",
-"Honest note: every reply above is a <em>representative example</em>, not a live AI call — we show what good (and bad) instructions actually produce, so you can learn the move without the noise.",
-"Honest note: every reply above is a <em>representative example</em>, not a live AI call — showing what good and bad instructions produce, so you learn the move without the noise.",
-"Honest note: replies above are <em>representative examples</em>, not live AI calls — the move, minus the noise."
+"An honest note: every reply above is a <em>representative example</em> rather than a live call to a model — so you can learn the move without all the noise getting in the way. Want the real thing, surprises and all? Take any version into <a href=\"/chatty/\">chatty</a> and run it on a live model.",
+"Honest note: every reply above is a <em>representative example</em>, not a live AI call — so you can learn the move without the noise. Want the real thing, surprises and all? Run any version on a live model in <a href=\"/chatty/\">chatty</a>.",
+"Honest note: the replies above are <em>representative examples</em>, not live AI calls — the move without the noise. Want the real thing, surprises and all? Run any version on a live model in <a href=\"/chatty/\">chatty</a>.",
+"Honest note: replies above are <em>representative examples</em>, not live calls. For the real thing, surprises and all, run a version in <a href=\"/chatty/\">chatty</a>.",
+"Replies above are <em>representative examples</em>, not live calls. For the real thing, run it in <a href=\"/chatty/\">chatty</a>."
 ],
 "s6-h": [
 "Now go and make it yours.",
@@ -112,10 +112,10 @@
 "Make it yours."
 ],
 "s6-p1": [
-"You've already got the skill now. Here's where you can take it next.",
-"You've got the skill. Here's where it goes next.",
-"You've got the skill. Here's where it goes next.",
-"You've got the skill. Here's where it goes next.",
-"You've got the skill. Next steps:"
+"If you want to take this further, here are two ways to go — one to run it for real, one to dig into why it behaves the way it does.",
+"Two ways to take it further — run it for real, or dig into why it behaves as it does.",
+"Two ways to take it further — run it for real, or dig into how it works.",
+"Two ways further: run it for real, or dig into how it works.",
+"Two ways further: run it, or see how it works."
 ]
 }

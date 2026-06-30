@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, viewport-fit=cover" />
+    <title>What AI's great at — and where it trips up — Monkey Got Thumbs</title>
+    <link rel="canonical" href="https://monkey-got-thumbs.com/infographics/good-at.html">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#0E0B1A" />
+    <meta name="color-scheme" content="dark">
+    <link rel="stylesheet" href="/assets/css/tokens.css">
+    <link rel="stylesheet" href="/assets/css/base.css">
+    <link rel="stylesheet" href="/assets/css/layout.css">
+    <meta name="description" content="An infographic you can poke: what AI is great at, where it trips up — at a glance — plus a live 'rate your task' meter that shows how much you can lean on it and where you keep a hand on the wheel." />
+    <meta name="author" content="Monkey Got Thumbs" />
+    <meta property="og:title" content="What AI's great at — and where it trips up">
+    <meta property="og:description" content="The strengths and the slips at a glance, plus a live meter to rate your own task.">
+    <meta property="og:url" content="https://monkey-got-thumbs.com/infographics/good-at.html">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://monkey-got-thumbs.com/social-card.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Monkey Got Thumbs">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "LearningResource", "name": "What AI's great at — and where it trips up",
+      "url": "https://monkey-got-thumbs.com/infographics/good-at.html",
+      "learningResourceType": "infographic",
+      "breadcrumb": { "@type": "BreadcrumbList", "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://monkey-got-thumbs.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Infographics", "item": "https://monkey-got-thumbs.com/infographics/" },
+        { "@type": "ListItem", "position": 3, "name": "What AI's great at — and where it trips up" }
+      ]}}
+    </script>
+    <style>
+        .ig { max-width: 56rem; margin-inline: auto; }
+        .ig-hero { text-align: center; max-width: 44rem; margin: 0 auto var(--space-2xl); }
+        .ig-hero .eyebrow { color: var(--color-accent); }
+        .ig-hero h1 { margin: var(--space-sm) 0; }
+        .ig-hero .lede { color: var(--color-fg-secondary); font-size: var(--font-size-lg); line-height: 1.7; }
+
+        /* at-a-glance two zones */
+        .zones { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1rem, 3vw, 1.5rem); margin: var(--space-xl) 0; }
+        @media (max-width: 46rem) { .zones { grid-template-columns: 1fr; } }
+        .zone { border-radius: 18px; padding: clamp(1.1rem, 3vw, 1.5rem); border: 1px solid var(--color-border); }
+        .zone--good { background: radial-gradient(130% 120% at 0% 0%, color-mix(in srgb, var(--color-accent) 16%, transparent), transparent 62%), var(--color-bg-secondary); border-color: color-mix(in srgb, var(--color-accent) 35%, var(--color-border)); }
+        .zone--care { background: radial-gradient(130% 120% at 100% 0%, color-mix(in srgb, var(--color-warning) 14%, transparent), transparent 62%), var(--color-bg-secondary); border-color: color-mix(in srgb, var(--color-warning) 30%, var(--color-border)); }
+        .zone__h { display: flex; align-items: center; gap: 0.6rem; margin: 0 0 0.85rem; font-size: var(--font-size-lg); }
+        .zone__h .ico { font-size: 1.5rem; line-height: 1; }
+        .zone--good .zone__h { color: var(--color-accent); }
+        .zone--care .zone__h { color: var(--color-warning); }
+        .chips { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.55rem; }
+        .chips li { display: flex; align-items: baseline; gap: 0.55rem; line-height: 1.5; color: var(--color-fg); }
+        .chips li .e { font-size: 1.05rem; }
+        .chips li small { display: block; color: var(--color-muted); font-size: var(--font-size-sm); }
+
+        /* the punchy number band */
+        .band { display: flex; flex-wrap: wrap; gap: 1rem 2rem; justify-content: center; text-align: center; background: var(--color-bg-secondary); border: 1px solid var(--color-border); border-radius: 16px; padding: 1.25rem; margin: var(--space-xl) 0; }
+        .band .stat { min-width: 9rem; }
+        .band .stat b { display: block; font-family: var(--font-display); font-size: clamp(1.8rem, 6vw, 2.6rem); color: var(--color-accent); line-height: 1; }
+        .band .stat span { color: var(--color-fg-secondary); font-size: var(--font-size-sm); }
+
+        /* the live explorable: rate your task */
+        .rate { border: 1px solid var(--color-border); border-radius: 18px; background: var(--color-bg-secondary); padding: clamp(1.1rem, 3vw, 1.6rem); margin: var(--space-2xl) 0 var(--space-md); }
+        .rate__kicker { font: 700 var(--font-size-xs)/1 var(--font-mono); text-transform: uppercase; letter-spacing: .08em; color: var(--color-accent); }
+        .rate h2 { margin: 0.4rem 0 0.2rem; }
+        .rate__sub { color: var(--color-fg-secondary); margin: 0 0 var(--space-md); }
+        .rate__qs { list-style: none; margin: 0 0 var(--space-lg); padding: 0; display: grid; gap: 0.5rem; }
+        .rate__q { display: flex; gap: 0.7rem; align-items: flex-start; padding: 0.7rem 0.85rem; border: 1px solid var(--color-border); border-radius: 12px; cursor: pointer; }
+        .rate__q:hover { border-color: color-mix(in srgb, var(--color-accent) 45%, var(--color-border)); }
+        .rate__q input { margin-top: 0.2rem; width: 1.15rem; height: 1.15rem; accent-color: var(--color-accent); flex: none; }
+        .rate__q span { line-height: 1.45; }
+        .meter { margin-top: var(--space-md); }
+        .meter__track { height: 14px; border-radius: 999px; background: color-mix(in srgb, var(--color-fg) 12%, transparent); overflow: hidden; }
+        .meter__fill { display: block; height: 100%; width: 55%; border-radius: 999px; background: var(--color-accent); transition: width .3s cubic-bezier(.2,.7,.2,1), background .3s ease; }
+        .meter__scale { display: flex; justify-content: space-between; font-size: var(--font-size-xs); color: var(--color-muted); margin-top: 0.35rem; }
+        .verdict { margin: var(--space-md) 0 0; padding: 0.9rem 1.1rem; border-radius: 12px; line-height: 1.55; border-inline-start: 3px solid var(--color-accent); background: color-mix(in srgb, var(--color-accent) 10%, transparent); color: var(--color-fg); }
+        .verdict strong { color: var(--color-accent); }
+
+        .fig-note { margin: var(--space-md) 0 0; color: var(--color-muted); font-size: var(--font-size-sm); line-height: 1.6; }
+        .ig-next { margin-top: var(--space-2xl); padding-top: var(--space-xl); border-top: 1px solid var(--color-border); }
+    </style>
+    <link rel="stylesheet" href="/assets/css/accessibility.css">
+    <script src="/assets/js/a11y-init.js"></script>
+    <script src="/assets/js/accessibility.js" defer></script>
+    <link rel="stylesheet" href="/assets/css/journey.css">
+    <script src="/assets/js/journey.js" defer></script>
+    <script src="/assets/js/ig-fit.js" defer></script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <mgt-header></mgt-header>
+    <main id="main-content">
+        <article class="ig section-pad">
+            <nav aria-label="Breadcrumb">
+                <ul class="breadcrumbs">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/infographics/">Infographics</a></li>
+                    <li><span aria-current="page">What AI's great at</span></li>
+                </ul>
+            </nav>
+
+            <header class="ig-hero">
+                <span class="eyebrow">infographic · calibration</span>
+                <h1 data-a11y="hero-title">What AI's great at — and where it trips up</h1>
+                <p class="lede" data-a11y="hero-lede">The single most useful thing to carry around isn't a list of tricks — it's a feel for <em>when to lean in and when to keep a hand on the wheel</em>. Here it is at a glance. Then rate your own task at the bottom.</p>
+            </header>
+
+            <div class="zones">
+                <section class="zone zone--good" aria-labelledby="good-h">
+                    <h2 class="zone__h" id="good-h"><span class="ico" aria-hidden="true">💪</span> Lean in</h2>
+                    <ul class="chips">
+                        <li><span class="e" aria-hidden="true">✍️</span> <span><strong>First drafts</strong> <small>emails, posts, outlines — beating the blank page</small></span></li>
+                        <li><span class="e" aria-hidden="true">🪄</span> <span><strong>Rewriting &amp; tone</strong> <small>shorter, clearer, warmer, simpler</small></span></li>
+                        <li><span class="e" aria-hidden="true">🧩</span> <span><strong>Explaining things</strong> <small>at the level you ask for</small></span></li>
+                        <li><span class="e" aria-hidden="true">💡</span> <span><strong>Brainstorming</strong> <small>angles, names, what-ifs to react to</small></span></li>
+                        <li><span class="e" aria-hidden="true">🗂️</span> <span><strong>Summarising &amp; sorting</strong> <small>boiling a pile down to its shape</small></span></li>
+                        <li><span class="e" aria-hidden="true">🌍</span> <span><strong>Translating &amp; rephrasing</strong> <small>plain language, other languages</small></span></li>
+                    </ul>
+                </section>
+
+                <section class="zone zone--care" aria-labelledby="care-h">
+                    <h2 class="zone__h" id="care-h"><span class="ico" aria-hidden="true">🖐️</span> Keep a hand on the wheel</h2>
+                    <ul class="chips">
+                        <li><span class="e" aria-hidden="true">📌</span> <span><strong>Hard facts &amp; citations</strong> <small>it can invent sources, confidently</small></span></li>
+                        <li><span class="e" aria-hidden="true">🔢</span> <span><strong>Maths &amp; careful counting</strong> <small>plausible-looking, sometimes wrong</small></span></li>
+                        <li><span class="e" aria-hidden="true">🗞️</span> <span><strong>Very recent events</strong> <small>its knowledge has an edge</small></span></li>
+                        <li><span class="e" aria-hidden="true">🔒</span> <span><strong>Your private context</strong> <small>it only knows what you tell it</small></span></li>
+                        <li><span class="e" aria-hidden="true">⚖️</span> <span><strong>High-stakes calls</strong> <small>legal, medical, money — verify, decide yourself</small></span></li>
+                        <li><span class="e" aria-hidden="true">🪞</span> <span><strong>Knowing when it's wrong</strong> <small>it sounds just as sure either way</small></span></li>
+                    </ul>
+                </section>
+            </div>
+
+            <div class="band" role="group" aria-label="A few rules of thumb">
+                <div class="stat"><b>seconds</b><span>to a usable first draft</span></div>
+                <div class="stat"><b>always</b><span>worth checking what it claims as fact</span></div>
+                <div class="stat"><b>100%</b><span>of the final call stays yours</span></div>
+            </div>
+
+            <section class="rate" aria-labelledby="rate-h">
+                <span class="rate__kicker">Live · rate your task</span>
+                <h2 id="rate-h" data-a11y="rate-h">How much can you lean on it for <em>your</em> thing?</h2>
+                <p class="rate__sub" data-a11y="rate-sub">Tick whatever's true about the task in front of you. The meter's a rule of thumb, not a ruling — you always make the call.</p>
+                <ul class="rate__qs" id="rateQs">
+                    <li><label class="rate__q"><input type="checkbox" data-w="25"><span>It's open-ended — drafting, explaining, brainstorming, rephrasing.</span></label></li>
+                    <li><label class="rate__q"><input type="checkbox" data-w="15"><span>It's repetitive or high-volume — the same kind of thing, lots of times.</span></label></li>
+                    <li><label class="rate__q"><input type="checkbox" data-w="-30"><span>Getting it exactly right matters — facts, numbers, legal, medical, money.</span></label></li>
+                    <li><label class="rate__q"><input type="checkbox" data-w="-15"><span>It needs my own private context to be any good.</span></label></li>
+                    <li><label class="rate__q"><input type="checkbox" data-w="-15"><span>It hinges on very recent events (this week's news).</span></label></li>
+                </ul>
+                <div class="meter">
+                    <div class="meter__track"><span class="meter__fill" id="meterFill" style="width:55%"></span></div>
+                    <div class="meter__scale"><span>verify everything</span><span>hand on the wheel</span><span>lean right in</span></div>
+                </div>
+                <p class="verdict" id="verdict" role="status" aria-live="polite"><strong>A great start.</strong> Use it to draft and think — then keep a hand on the wheel and make the call yourself.</p>
+            </section>
+
+            <p class="fig-note" data-a11y="fig-note">Those figures and the meter are rules of thumb, not measurements — a feel for the shape, not a promise. The real answer also depends on the exact task, how well you steer the tool, and whether it knows when to back off. You're the one who decides; the meter just nudges.</p>
+
+            <section class="ig-next" aria-labelledby="next-h">
+                <h2 id="next-h" data-a11y="next-h">Carry it on</h2>
+                <p data-a11y="next-p" style="color:var(--color-fg-secondary);line-height:1.8;">The whole knack is calibration — knowing how far to trust it on <em>this</em> one. That's a human skill worth sharpening.</p>
+                <p><a class="card-link" href="/learn/human-factors/trust-protocols.html">How much to trust it →</a> &nbsp;·&nbsp; <a class="card-link" href="/infographics/">← More infographics</a></p>
+            </section>
+        </article>
+    </main>
+    <mgt-footer></mgt-footer>
+    <script src="/assets/js/tracking.js" defer></script>
+    <script type="module" src="/assets/js/app.js"></script>
+    <script type="module" src="/components/core/mgt-header.js"></script>
+    <script type="module" src="/components/core/mgt-footer.js"></script>
+</body>
+</html>

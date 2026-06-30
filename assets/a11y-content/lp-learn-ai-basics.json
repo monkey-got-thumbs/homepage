@@ -14,18 +14,18 @@
     "AI is everywhere. Explanations are too technical or too breathless. Here's what matters."
   ],
   "what-does-1": [
-    "AI here means large language models, like ChatGPT and Claude. What they really do is guess the next word that should come next, again and again. So they are very good at spotting patterns, but they do not truly think — and that is exactly why your own judgement still matters so much. Behind the scenes, they are very clever systems that have read a huge amount of text.",
-    "AI here means large language models like ChatGPT and Claude, and they work by predicting the next most likely word in a sequence. That makes them very good pattern-matchers rather than real thinkers — which is exactly why your judgement matters. Under the hood, each one is a very sophisticated system trained on a vast amount of text.",
-    "AI — specifically large language models like ChatGPT and Claude — predicts the next most likely word in a sequence. It's a very good pattern-matcher rather than a thinker — which is exactly why your judgement matters. Under the hood it's an extraordinarily sophisticated system trained on vast amounts of text.",
-    "AI — large language models like ChatGPT and Claude — predicts the next likely word in a sequence. It's a strong pattern-matcher, not a thinker, which is why your judgement matters. Under the hood: a sophisticated system trained on vast text.",
-    "LLMs (ChatGPT, Claude) predict the next likely word. Pattern-matchers, not thinkers — so your judgement matters. Sophisticated systems trained on vast text."
+    "AI here means large language models, like ChatGPT and Claude. What they really do is guess the next word that should come next, again and again. So they are very good at spotting patterns, but they do not truly think — a difference worth keeping in mind as you weigh what they give you. Behind the scenes, they are very clever systems that have read a huge amount of text.",
+    "AI here means large language models like ChatGPT and Claude, and they work by predicting the next most likely word in a sequence. That makes them very good pattern-matchers rather than real thinkers — a difference worth weighing as you read what they give you. Under the hood, each one is a very sophisticated system trained on a vast amount of text.",
+    "AI — specifically large language models like ChatGPT and Claude — predicts the next most likely word in a sequence. It's a very good pattern-matcher rather than a thinker — a difference worth keeping in mind as you weigh what it gives you. Under the hood it's an extraordinarily sophisticated system trained on vast amounts of text.",
+    "AI — large language models like ChatGPT and Claude — predicts the next likely word in a sequence. It's a strong pattern-matcher, not a thinker — a difference worth weighing as you read its output. Under the hood: a sophisticated system trained on vast text.",
+    "LLMs (ChatGPT, Claude) predict the next likely word. Pattern-matchers, not thinkers — worth weighing as you read. Sophisticated systems trained on vast text."
   ],
   "what-does-2": [
-    "This makes AI genuinely useful for lots of everyday work: writing first drafts, shortening long documents, writing code, and sorting through data. It also has a few honest limits worth knowing about. Once you know them, you will get far more good out of it.",
-    "This makes it genuinely useful for many kinds of work: drafting text, summarising documents, generating code, and processing data. It also has a few honest limitations worth knowing — and once you do, you get far more out of it.",
-    "This makes it genuinely useful for all sorts of work: drafting text, summarising documents, generating code, processing data. It also has a few honest limitations worth knowing — once you do, you get far more out of it.",
-    "This makes it genuinely useful for plenty of work: drafting text, summarising documents, generating code, processing data. It also has honest limitations worth knowing — once you do, you get far more out of it.",
-    "Useful for drafting, summarising, coding, and processing data. Knowing its limits gets you far more out of it."
+    "This makes AI genuinely useful for lots of everyday work: writing first drafts, shortening long documents, writing code, and sorting through data. It also has a few honest limits worth knowing about, and they are easy to allow for once you can spot them.",
+    "This makes it genuinely useful for many kinds of work: drafting text, summarising documents, generating code, and processing data. It also has a few honest limitations worth knowing — and they're easy to work around once you can spot them.",
+    "This makes it genuinely useful for all sorts of work: drafting text, summarising documents, generating code, processing data. It also has a few honest limitations worth knowing — and they're easy to allow for once you can spot them.",
+    "This makes it genuinely useful for plenty of work: drafting text, summarising documents, generating code, processing data. It also has honest limitations worth knowing — easy to allow for once you can spot them.",
+    "Useful for drafting, summarising, coding, and processing data. Its limits are easy to allow for once you know them."
   ],
   "card-wrong-title": [
     "It Can Be Wrong — and Still Sound Sure",
@@ -49,10 +49,10 @@
     "No Real Self-Explanation"
   ],
   "card-explain-body": [
-    "When AI \"explains\" how it got an answer, that explanation is just more text it made up — not a real look inside how it works. Treat it as a helpful draft, not the last word.",
-    "When AI \"explains\" its reasoning, that's just more generated text — not a real window into actual logic. Treat it as a helpful draft, not the final word.",
-    "When AI \"explains\" its reasoning, that's more generated text — not a window into actual logic. Treat it as a helpful draft, not the final word.",
-    "When AI \"explains\" its reasoning, that's more generated text — not a window into real logic. Treat it as a draft, not the final word.",
+    "When AI \"explains\" how it got an answer, that explanation is just more text it made up — not a real look inside how it works. It reads more like a helpful draft than the last word.",
+    "When AI \"explains\" its reasoning, that's just more generated text — not a real window into actual logic. It reads more like a helpful draft than the final word.",
+    "When AI \"explains\" its reasoning, that's more generated text — not a window into actual logic. It reads more like a helpful draft than the final word.",
+    "When AI \"explains\" its reasoning, that's more generated text — not a window into real logic. More a draft than the final word.",
     "AI \"reasoning\" is generated text, not real logic. A draft, not the final word."
   ],
   "card-early-title": [
@@ -63,11 +63,11 @@
     "Early Days"
   ],
   "card-early-body": [
-    "These tools are getting better quickly, and things keep changing. That is actually good news: getting comfortable with AI now puts you ahead of most people.",
-    "The tools are improving fast and the ground keeps shifting. That's good news — getting comfortable now puts you ahead of the curve.",
-    "The tools are improving fast and the ground keeps shifting. That's good news — getting comfortable now puts you ahead of the curve.",
-    "The tools improve fast and the ground keeps shifting. Good news — getting comfortable now puts you ahead of the curve.",
-    "Tools improve fast; the ground shifts. Get comfortable now to stay ahead."
+    "These tools are getting better quickly, and things keep changing. There's an upside to that: no one has it all figured out yet, so now is an easy time to get comfortable with AI.",
+    "The tools are improving fast and the ground keeps shifting. There's an upside there — no settled expertise to be behind on yet, so now is an easy time to get comfortable.",
+    "The tools are improving fast and the ground keeps shifting. There's an upside there — no settled expertise to be behind on yet, so now is an easy time to get comfortable.",
+    "The tools improve fast and the ground keeps shifting. The upside: no settled expertise yet, so now is an easy time to get comfortable.",
+    "Tools improve fast; the ground shifts. No settled expertise yet — an easy time to start."
   ],
   "card-withyou-title": [
     "It Works Best Together With You",
@@ -77,16 +77,16 @@
     "Best Paired With You"
   ],
   "card-withyou-body": [
-    "Used the right way, AI makes your work better — and you are the most important part. Your direction and your good judgement are what make it really shine.",
-    "Used well, AI lifts the quality of your work — and you're the key variable. Your direction and judgement are what make it shine.",
-    "Used well, AI lifts the quality of your work — and you're the key variable. Your direction and judgement are what make it shine.",
-    "Used well, AI lifts your work — and you're the key variable. Your direction and judgement make it shine.",
-    "Used well, AI lifts your work. You're the key variable; your direction and judgement make it shine."
+    "Used the right way, AI can make your work better — and how much it helps tends to track what you bring: your direction and your good judgement.",
+    "Used well, AI can lift the quality of your work — and how much it helps tends to track what you bring: your direction and judgement.",
+    "Used well, AI can lift the quality of your work — and how much it helps tends to track what you bring: your direction and judgement.",
+    "Used well, AI can lift your work — and how much it helps tends to track what you bring: your direction and judgement.",
+    "Used well, AI can lift your work. How much it helps tends to track what you bring: your direction and judgement."
   ],
   "approach-title": [
     "A Better Way to Think About It: Augmented Intelligence",
-    "The Better Approach: Augmented Intelligence",
-    "The Better Approach: Augmented Intelligence",
+    "A Better Approach: Augmented Intelligence",
+    "A Better Approach: Augmented Intelligence",
     "A Better Approach: Augmented Intelligence",
     "Augmented Intelligence"
   ],
@@ -98,10 +98,10 @@
     "Augmented intelligence amplifies thinking, not replaces it. You direct; AI assists. You verify; AI generates. You decide; AI processes."
   ],
   "approach-2": [
-    "Over time, this adds up to a big advantage: you get time back, your work gets better, and your skills become more valuable each year, not less.",
-    "The result is a compounding advantage: time reclaimed, higher quality output, and skills that grow more valuable every year — not less.",
-    "The result is a compounding advantage: reclaimed time, higher quality output, and skills that get more valuable every year — not less.",
-    "The result compounds: reclaimed time, higher quality output, and skills more valuable every year — not less.",
-    "It compounds: time back, better output, skills more valuable each year."
+    "The argument for it: time you get back, work that improves, and skills that may grow more valuable each year rather than less.",
+    "The argument for it: time reclaimed, higher-quality output, and skills that may grow more valuable every year rather than less.",
+    "The case for it: reclaimed time, higher-quality output, and skills that may grow more valuable every year rather than less.",
+    "The case for it: reclaimed time, better output, and skills that may grow more valuable every year — not less.",
+    "The case: time back, better output, skills that may grow more valuable each year."
   ]
 }

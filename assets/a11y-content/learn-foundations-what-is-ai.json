@@ -1,4 +1,11 @@
 {
+  "illustrative-note": [
+    "Maria and her 400 comments are just an example, not a promise. Where the line really falls — how much you can safely hand over — changes with the kind of work, how well you steer the tool, and how well it works with you. Treat it as a feel for the idea.",
+    "Maria's a stand-in, not a promise. Where the line really falls depends on the kind of work, how well you steer the tool, and how well it works with you — the example shows the shape of the idea, not your exact answer.",
+    "Maria's a stand-in, not a promise. Where the line really falls depends on the work itself, how well you steer the tool — and how well it knows when to back off and hand you the wheel.",
+    "Read it as illustrative. Where the line falls swings with the work (rote vs. genuinely novel), how well you drive the tool — and how well it drives you back, including whether it backs off when it is out of its depth.",
+    "Illustrative, not literal. Where the line falls is a product of the task's nature, how well you drive the harness, how well the harness drives you, and — the part most tools get wrong — whether it backs off when out of its depth instead of shipping confident error."
+  ],
   "hero-title": [
     "What Does \"AI Helping You\" Mean?",
     "What is Augmented Intelligence (AI That Helps You)?",
@@ -7,32 +14,32 @@
     "Augmented Intelligence, Defined"
   ],
   "lead": [
-    "Augmented intelligence just means you and the machine work together. The machine is fast. You make the smart choices, so you stay in charge. The cool part isn't the AI itself. The cool part is the extra time you get, and what you choose to do with it.",
-    "Augmented intelligence pairs your judgment with the machine's speed, and it keeps you in charge the whole time. The point isn't really the AI. It's the time it hands back to you, and what you do with that time.",
-    "Augmented intelligence pairs your judgment with the machine's speed — and keeps you in charge. The point isn't the AI. It's what you do with the time it gives back.",
-    "Augmented intelligence pairs your judgment with the machine's speed, and keeps you in charge. The point isn't the AI; it's what you do with the reclaimed time.",
-    "Augmented intelligence: your judgment plus machine speed, you in charge. The point is the time reclaimed, not the AI."
+    "Augmented intelligence just means you and the machine work together. The machine is fast. You make the choices — but does that really leave you in charge, or quietly push you aside? That's worth deciding for yourself. And the best part might not be the AI itself; it could be the extra time you get, and what you choose to do with it.",
+    "Augmented intelligence pairs your judgment with the machine's speed. Does that keep you in charge the whole time, or not? You can test it for yourself. The point isn't really the AI — it's the time it hands back to you, and what you do with that time.",
+    "Augmented intelligence pairs your judgment with the machine's speed. Does that keep you in charge, or quietly sideline you? Try it below. The point isn't the AI — it's what you do with the time it gives back.",
+    "Augmented intelligence pairs your judgment with the machine's speed. In charge, or sidelined? You decide. The point isn't the AI; it's what you do with the reclaimed time.",
+    "Augmented intelligence: your judgment plus machine speed. In charge, or sidelined? You decide. The point is the time reclaimed, not the AI."
   ],
   "enduring-idea": [
-    "<strong>The one big thing to remember:</strong> AI is a tool, and you are the one who <em>tells it what to do</em>. Give it the boring, bulky work. Keep the thinking for yourself. You stay in charge of every choice that really matters.",
-    "<strong>The one idea to keep:</strong> AI is a tool that you <em>direct</em>. Hand it the heavy volume of work, and keep the judgment for yourself. Stay in charge of every decision that matters.",
-    "<strong>The one idea to keep:</strong> AI is a tool you <em>direct</em>. Hand it the volume; keep the judgment. Stay in charge of every decision that matters.",
-    "<strong>The one idea to keep:</strong> AI is a tool you <em>direct</em>. Hand off the volume, keep the judgment, and own every decision that matters.",
-    "<strong>Keep this:</strong> AI is a tool you <em>direct</em>. Offload volume, retain judgment, own the decisions."
+    "<strong>One to test below:</strong> AI is a tool, and you are the one who <em>tells it what to do</em> — so what would you give it, and what would you keep? Try handing it the boring, bulky work and holding onto the thinking, then see for yourself which choices you'd actually want to keep.",
+    "<strong>A question to carry in:</strong> if AI is a tool you <em>direct</em>, what should you hand off and what should you keep? Slide the work below — give it the heavy volume, hold onto the judgment — and decide where every decision that matters belongs.",
+    "<strong>A question to carry in:</strong> if AI is a tool you <em>direct</em>, what should you hand off and what should you keep? Hand it the volume, keep the judgment — and decide where every decision that matters belongs.",
+    "<strong>Worth testing:</strong> AI is a tool you <em>direct</em>. Hand off the volume, keep the judgment — but where does each decision that matters belong? You decide below.",
+    "<strong>Test it:</strong> AI is a tool you <em>direct</em>. Offload volume, keep judgment — but which decisions are yours? You decide."
   ],
   "example-intro": [
-    "Here's the whole idea, shown with one real job. Meet Maria. She runs a busy clinic, and she has to give the board a report on 400 patient comments by Friday. That's a lot. Below, you can try each way of getting the job done and see what happens.",
-    "Here's the whole idea in one job. Maria runs a busy clinic, and she owes the board a report on 400 patient comments by Friday. Try each different way of getting it done:",
-    "Here's the whole idea in one job. Maria runs a busy clinic and owes the board a report on 400 patient comments by Friday. Try each way of getting it done:",
-    "The whole idea, in one job: Maria runs a busy clinic and owes the board a report on 400 patient comments by Friday. Try each approach:",
+    "Here's one real job to test it on. Meet Maria. She runs a busy clinic, and she has to give the board a report on 400 patient comments by Friday. That's a lot. Below, you can try each way of getting the job done and see what happens.",
+    "Here it is in one real job. Maria runs a busy clinic, and she owes the board a report on 400 patient comments by Friday. Try each different way of getting it done:",
+    "Here it is in one real job. Maria runs a busy clinic and owes the board a report on 400 patient comments by Friday. Try each way of getting it done:",
+    "One job to test it on: Maria runs a busy clinic and owes the board a report on 400 patient comments by Friday. Try each approach:",
     "One job: Maria owes the board a report on 400 patient comments by Friday. Try each approach:"
   ],
   "explorable-takeaway": [
-    "Notice that only the last button fills up both bars. That's the whole idea in one picture: <strong>the machine handles the big pile of work, and you keep the thinking</strong> — like what matters most, the mistakes only a person would spot, and the final say. The middle button is \"AI that replaces you.\" It's fast, but nobody is checking it, so its confident mistakes slip right through.",
-    "Only the last button fills both bars, and that's the whole idea in one picture: <strong>the machine handles the volume, and you keep the judgment</strong> (the priorities, the mistakes only a person would catch, the final call). \"AI that replaces you\" is the middle button: fast, but with no one watching, its confident errors sail straight through.",
-    "Only the last button fills both bars — and that's the whole idea in one picture: <strong>the machine handles the volume, you keep the judgment</strong> (the priorities, the mistakes only a person would catch, the final call). \"AI that replaces you\" is the middle button: fast, but with no one in the loop, its confident errors sail straight through.",
-    "Only the last button fills both bars — the whole idea in one picture: <strong>the machine handles volume, you keep judgment</strong> (priorities, the mistakes only a person catches, the final call). The middle button is \"AI that replaces you\": fast, but with no one in the loop, its confident errors sail through.",
-    "Only the last button fills both bars: <strong>machine handles volume, you keep judgment</strong> (priorities, human-only catches, final call). The middle button — \"AI replaces you\" — is fast but unsupervised, so confident errors pass through."
+    "Did any single setting fill up both bars? Have a look. The one that does is where <strong>the machine handles the big pile of work and you keep the thinking</strong> — like what matters most, the mistakes only a person would spot, and the final say. The middle button is \"AI that replaces you\": it's fast, but nobody is checking it, so its confident mistakes slip right through. If you'd draw the line somewhere else, slide it again and see.",
+    "Did any setting fill both bars? The one that does is where <strong>the machine handles the volume and you keep the judgment</strong> (the priorities, the mistakes only a person would catch, the final call). \"AI that replaces you\" is the middle button: fast, but with no one watching, its confident errors sail straight through. Slide it again if you'd put the line elsewhere.",
+    "Did any setting fill both bars? The one that does is where <strong>the machine handles the volume and you keep the judgment</strong> (the priorities, the mistakes only a person would catch, the final call). \"AI that replaces you\" is the middle button: fast, but with no one in the loop, its confident errors sail straight through. Slide it again if you'd draw the line elsewhere.",
+    "Did any setting fill both bars? The one that does: <strong>the machine handles volume, you keep judgment</strong> (priorities, the mistakes only a person catches, the final call). The middle button — \"AI that replaces you\" — is fast, but with no one in the loop, its confident errors sail through. Disagree? Slide it again. This is what Engelbart meant in 1962 by <em>augmenting human intellect</em> — raising “the capability of a man to approach a complex problem situation… and to derive solutions to problems”, with the human keeping the goal (<a href=\"/learn/influences.html\">Engelbart, 1962</a>).",
+    "Which settings fill both bars? Where <strong>machine handles volume, you keep judgment</strong> (priorities, human-only catches, final call). The middle button — \"AI replaces you\" — is fast but unsupervised, so confident errors pass through. Judge for yourself. The frame is Engelbart's, 1962 — <em>augmenting human intellect</em>: “increasing the capability of a man to approach a complex problem situation… and to derive solutions to problems.” The machine extends the human; it never supplies the judgment (<a href=\"/learn/influences.html\">Engelbart, 1962</a>)."
   ],
   "recall-question": [
     "When you give a job to AI, which part do you keep, and which part do you let go of?",
@@ -84,11 +91,11 @@
     "Decide which volume to delegate to AI, and the exact checkpoint where you verify — as Maria did."
   ],
   "tryit-closer": [
-    "That split <em>is</em> the skill — there isn't a secret extra step. Do it five times this week, and soon it stops feeling like an exercise. It just becomes a habit you reach for without thinking.",
-    "That split <em>is</em> the skill. Do it five times this week, and it stops being an exercise and becomes a habit.",
-    "That split <em>is</em> the skill. Do it five times this week and it stops being an exercise and becomes a habit.",
-    "That split <em>is</em> the skill. Do it five times this week and it shifts from exercise to habit.",
-    "The split <em>is</em> the skill. Five reps this week turns exercise into habit."
+    "That split <em>is</em> the move to practise — there's no secret extra step waiting. Try it five times this week and see whether it stops feeling like an exercise and starts to feel like something you reach for without thinking.",
+    "That split <em>is</em> the move to practise. Do it five times this week and see whether it shifts from an exercise into a habit.",
+    "That split <em>is</em> the move to practise. Do it five times this week and see whether it stops being an exercise and becomes a habit.",
+    "That split <em>is</em> the move. Do it five times this week and notice whether it shifts from exercise to habit.",
+    "The split <em>is</em> the move. Five reps this week — see if exercise turns to habit."
   ],
   "continue-title": [
     "Keep Going",
@@ -98,10 +105,10 @@
     "Next"
   ],
   "continue-intro": [
-    "That's the whole idea, really. Where to next? You could read about why this is worth your time, or you could look at the <a href=\"/learn/foundations/three-pillars.html\">three pillars</a> that the whole idea rests on.",
-    "That's the whole idea. Next up: why it's worth your time — or the <a href=\"/learn/foundations/three-pillars.html\">three pillars</a> it rests on.",
-    "That's the whole idea. Next: why it's worth your time — or the <a href=\"/learn/foundations/three-pillars.html\">three pillars</a> it rests on.",
-    "That's the whole idea. Next: why it's worth your time, or the <a href=\"/learn/foundations/three-pillars.html\">three pillars</a> it rests on.",
-    "The whole idea. Next: why it's worth it, or the <a href=\"/learn/foundations/three-pillars.html\">three pillars</a> beneath it."
+    "That's one way to see it — decide for yourself whether it holds. Where to next? You could read about why this might be worth your time, or you could look at the <a href=\"/learn/foundations/three-pillars.html\">three pillars</a> it rests on.",
+    "That's one way to see it. Next up: why it might be worth your time — or the <a href=\"/learn/foundations/three-pillars.html\">three pillars</a> it rests on.",
+    "That's one way to see it. Next: why it might be worth your time — or the <a href=\"/learn/foundations/three-pillars.html\">three pillars</a> it rests on.",
+    "One way to see it. Next: why it might be worth your time, or the <a href=\"/learn/foundations/three-pillars.html\">three pillars</a> it rests on.",
+    "One way to see it. Next: is it worth it? — or the <a href=\"/learn/foundations/three-pillars.html\">three pillars</a> beneath it."
   ]
 }

@@ -4,7 +4,7 @@
    The blurb adapts to the reading-level setter (data-level on <html>). */
 (function () {
   "use strict";
-  if (document.querySelector(".journey-next")) return;
+  if (document.querySelector(".journey-next") || document.querySelector(".path-next")) return;
   var p = location.pathname.replace(/index\.html$/, "");
   if (/\/(advisor|chatty|metron|writers-digest)(\/|$)/.test(p)) return;
 

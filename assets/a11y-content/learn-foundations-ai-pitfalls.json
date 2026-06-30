@@ -7,18 +7,18 @@
     "The failure mode"
   ],
   "hero-lead": [
-    "Here is the big thing to watch with AI: it can be <em>sure of itself</em> and still be wrong. When it makes something up, it says it in the very same calm, steady voice it uses for true things. The words don't sound any different. So the one safe thing you can do is check the parts that really matter to you.",
-    "The big thing to watch with AI: it can be <em>confidently</em> wrong. It says made-up things in the same calm, certain voice it uses for true ones — the tone never changes. So the safe move is to check what matters.",
-    "AI's big catch: it can be <em>confidently</em> wrong. It states made-up things in the exact same calm, certain voice it uses for true ones — so the only safe move is to check what matters.",
-    "AI's main catch: it can be <em>confidently</em> wrong, voicing fabrications in the same calm, certain tone as facts. The only safe move is to check what matters.",
-    "AI can be <em>confidently</em> wrong: fabrications carry the same certain tone as facts. Check what matters."
+    "Here is the big thing to watch with AI: it can be <em>sure of itself</em> and still be wrong. When it makes something up, it says it in the very same calm, steady voice it uses for true things. The words don't sound any different — so how would you ever tell the made-up one from the real one?",
+    "The big thing to watch with AI: it can be <em>confidently</em> wrong. It says made-up things in the same calm, certain voice it uses for true ones — the tone never changes. So how do you tell which is which?",
+    "AI's big catch: it can be <em>confidently</em> wrong. It states made-up things in the exact same calm, certain voice it uses for true ones — so how do you tell which is which?",
+    "AI's main catch: it can be <em>confidently</em> wrong, voicing fabrications in the same calm, certain tone as facts. So how do you tell which is which?",
+    "AI can be <em>confidently</em> wrong: fabrications carry the same certain tone as facts. So which can you trust?"
   ],
   "enduring-idea": [
-    "<strong>The one idea to keep:</strong> AI puts together words that sound likely, not facts it has checked. It sounds sure whether it's right or wrong. So your job is to check things for yourself — don't go by how confident it sounds.",
-    "<strong>The one idea to keep:</strong> AI predicts likely words, not checked facts. It sounds sure either way — so your job is to check, not to trust the tone.",
-    "<strong>The one idea to keep:</strong> AI predicts plausible words, not verified facts. It sounds sure either way — so your job is to check, not to trust the tone.",
-    "<strong>The one idea to keep:</strong> AI predicts plausible words, not verified facts — and sounds equally sure either way. Check; don't trust the tone.",
-    "<strong>Keep this:</strong> AI predicts plausible words, not verified facts, sounding sure either way. Verify; ignore tone."
+    "<strong>A question worth testing for yourself:</strong> AI puts together words that sound likely, not facts it has checked, and it sounds just as sure whether it's right or wrong. So can how confident it sounds ever tell you whether it's actually right?",
+    "<strong>A question worth testing:</strong> AI predicts likely words, not checked facts. It sounds sure either way — so can its confidence tell you whether it's right?",
+    "<strong>A question worth testing:</strong> AI predicts plausible words, not verified facts. It sounds sure either way — so can its confidence tell you whether it's right?",
+    "<strong>Worth testing:</strong> AI predicts plausible words, not verified facts — and sounds equally sure either way. Can its confidence tell you it's right?",
+    "<strong>Test it:</strong> AI predicts plausible words, not verified facts, sounding sure either way. Does its confidence signal truth?"
   ],
   "explorable-intro": [
     "Let's try it together. Imagine you asked AI for three quick facts. Read them, and pick the one you think it just made up:",
@@ -35,11 +35,11 @@
     "Three confident \"honey facts.\" <strong>One is invented.</strong> Which?"
   ],
   "pitfall-summary": [
-    "And that's the whole problem, right there. AI is good with words, but it isn't responsible for them. It has no real sense of what is true and what is false — it only knows which words usually come next. The answer isn't to stop using it. The answer is to keep a <strong>human check</strong> on anything that matters to you. That check is the heart of <a href=\"/learn/foundations/what-is-ai.html\">augmented intelligence</a>: you let AI do the work, and you stay the person who checks it and makes the call.",
-    "That's the whole pitfall, in one go. AI is fluent, but not accountable — it has no inner sense of true versus false, only of which words usually come next. The fix isn't to distrust it; it's to keep a <strong>human check</strong> on anything that matters. That check is the heart of <a href=\"/learn/foundations/what-is-ai.html\">augmented intelligence</a>: you let AI do the work, and you stay the one who verifies and decides.",
-    "That's the whole pitfall in one go. AI is fluent, not accountable — it has no internal sense of true versus false, only of what words usually come next. The fix isn't to distrust it; it's to keep a <strong>human check</strong> on anything that matters. That check is the heart of <a href=\"/learn/foundations/what-is-ai.html\">augmented intelligence</a>: you let AI do the work, and you stay the one who verifies and decides.",
-    "That's the whole pitfall. AI is fluent, not accountable — no internal sense of true versus false, only of what words come next. The fix isn't distrust; it's a <strong>human check</strong> on anything that matters. That check is the core of <a href=\"/learn/foundations/what-is-ai.html\">augmented intelligence</a>: AI does the work, you verify and decide.",
-    "The whole pitfall: AI is fluent, not accountable — it models likely words, not truth. The fix is a <strong>human check</strong> on what matters — the core of <a href=\"/learn/foundations/what-is-ai.html\">augmented intelligence</a>: AI works, you verify and decide."
+    "So where does that leave you? AI is good with words, but it isn't responsible for them. It has no real sense of what is true and what is false — it only knows which words usually come next. One response that holds up: don't stop using it, but keep a <strong>human check</strong> on anything that matters to you. That's the bet behind <a href=\"/learn/foundations/what-is-ai.html\">augmented intelligence</a> — you let AI do the work, and a person checks it and makes the call — and you can decide for yourself whether that's the right way round.",
+    "So where does that leave you? AI is fluent, but not accountable — it has no inner sense of true versus false, only of which words usually come next. One answer that holds up: keep a <strong>human check</strong> on anything that matters. That's the bet behind <a href=\"/learn/foundations/what-is-ai.html\">augmented intelligence</a> — AI does the work, a person verifies and decides — and you can weigh whether it's the right one.",
+    "So where does that leave you? AI is fluent, not accountable — it has no internal sense of true versus false, only of what words usually come next. One answer that holds up: keep a <strong>human check</strong> on anything that matters. That's the bet behind <a href=\"/learn/foundations/what-is-ai.html\">augmented intelligence</a> — AI does the work, a person verifies and decides — and you can weigh whether it's the right one.",
+    "So where does that leave you? AI is fluent, not accountable — no internal sense of true versus false, only of what words come next. One answer that holds up: a <strong>human check</strong> on anything that matters. That's the bet behind <a href=\"/learn/foundations/what-is-ai.html\">augmented intelligence</a> — AI works, a person verifies and decides. Yours to weigh.",
+    "Where does that leave you? AI is fluent, not accountable — it models likely words, not truth. One answer: a <strong>human check</strong> on what matters — the bet behind <a href=\"/learn/foundations/what-is-ai.html\">augmented intelligence</a>: AI works, a person verifies and decides. Yours to weigh."
   ],
   "recall-q": [
     "Why can't you just trust an AI answer because it sounds sure of itself?",

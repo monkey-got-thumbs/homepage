@@ -70,11 +70,11 @@
     "<strong>It can be wrong, confidently.</strong> Great for drafts; verify what matters."
   ],
   "truth-agent": [
-    "<strong>It's an agent, not a boss.</strong> It never decides anything for you, not once. You ask it a question, it makes a suggestion, and then you choose what to do with that. You stay in charge the whole way through.",
-    "<strong>It's an agent, not a boss.</strong> It never decides anything for you. You ask, it suggests, and you choose what to do with it. You stay in charge the whole time.",
-    "<strong>It's an agent, not a boss.</strong> It never decides anything for you. You ask, it suggests, and you choose what to do with it. You stay in charge the whole time.",
-    "<strong>It's an agent, not a boss.</strong> It never decides for you — you ask, it suggests, you choose. You stay in charge.",
-    "<strong>An agent, not a boss.</strong> It suggests; you decide. You stay in charge."
+    "<strong>It's an agent, not a boss.</strong> It never decides anything for you, not once. You ask it a question, it makes a suggestion, and then you choose what to do with that — so notice, as you go, whose hand is actually on the wheel.",
+    "<strong>It's an agent, not a boss.</strong> It never decides anything for you. You ask, it suggests, and you choose what to do with it — notice, as you go, who's actually making the call.",
+    "<strong>It's an agent, not a boss.</strong> It never decides anything for you. You ask, it suggests, and you choose what to do with it — notice, as you go, who's actually making the call.",
+    "<strong>It's an agent, not a boss.</strong> It never decides for you — you ask, it suggests, you choose. Notice who's making the call.",
+    "<strong>An agent, not a boss.</strong> It suggests; you choose. Notice who decides."
   ],
   "truth-more": [
     "<strong>The more you say, the better it helps.</strong> Just a few extra words about what you actually want can make a world of difference. And please don't worry about getting this “right” just yet — it is a gentle habit, and we will grow it together, bit by bit.",

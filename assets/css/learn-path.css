@@ -1,0 +1,89 @@
+/* The straight line: a calm "where am I" strip (top of each lesson) and one
+   clear "next step" (above the footer). Tokens only, so it adapts to every
+   colour scheme and reading level, and mirrors the journey-next card idiom. */
+
+/* --- top-of-lesson progress strip (prepended into the lesson <header>) --- */
+.path-progress {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem 1rem;
+  flex-wrap: wrap;
+  margin-block-end: 1.4rem;
+  font: 600 var(--font-size-xs, 0.75rem) / 1 var(--font-mono);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.path-progress__where { color: var(--color-accent); white-space: nowrap; }
+.path-progress__done { color: var(--color-muted); white-space: nowrap; margin-inline-start: auto; }
+.path-progress__track {
+  flex: 1 1 8rem;
+  min-width: 6rem;
+  height: 4px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--color-fg) 12%, transparent);
+  overflow: hidden;
+}
+.path-progress__fill {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background: var(--color-accent);
+}
+
+/* --- foot-of-lesson next step (injected above the footer) --- */
+.path-next {
+  max-width: var(--content-col, 68rem);
+  margin: var(--space-3xl, 4rem) auto var(--space-2xl, 3rem);
+  padding-inline: 24px;
+}
+.path-next__inner {
+  border: 1px solid var(--color-border);
+  border-radius: 18px;
+  padding: clamp(1.25rem, 3.5vw, 2.25rem);
+  background:
+    radial-gradient(120% 140% at 0% 0%, color-mix(in srgb, var(--color-accent) 12%, transparent), transparent 60%),
+    var(--color-bg-secondary);
+}
+.path-next__kicker {
+  font: 700 var(--font-size-xs, 0.75rem) / 1 var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--color-accent);
+}
+.path-next__go {
+  display: block;
+  margin-block-start: 0.55rem;
+  text-decoration: none;
+  color: var(--color-fg);
+}
+.path-next__go strong {
+  display: block;
+  font-family: var(--font-display, var(--font-sans));
+  font-weight: 400;
+  font-size: clamp(1.5rem, 4.5vw, 2.25rem);
+  line-height: 1.05;
+  letter-spacing: 0.01em;
+  color: var(--color-fg);
+}
+.path-next__go:hover strong,
+.path-next__go:focus-visible strong { color: var(--color-accent); }
+.path-next__sub {
+  display: block;
+  margin-block-start: 0.45rem;
+  color: var(--color-muted);
+  max-width: 46rem;
+}
+.path-next__aside {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1.5rem;
+  margin-block-start: 1.4rem;
+  padding-block-start: 1rem;
+  border-block-start: 1px solid var(--color-border);
+  font-size: var(--font-size-sm);
+}
+.path-next__prev { color: var(--color-fg-secondary); text-decoration: none; }
+.path-next__map { color: var(--color-muted); text-decoration: none; margin-inline-start: auto; }
+.path-next__prev:hover,
+.path-next__map:hover { color: var(--color-accent); }

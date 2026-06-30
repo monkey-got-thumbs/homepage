@@ -7,11 +7,11 @@
 "Get comfortable with AI."
 ],
 "hero-lede": [
-"Are you curious about AI but not sure where to begin? That's okay. You're in exactly the right place. We will go nice and slow. We won't use any confusing words. And we'll stay right beside you the whole way — from “wait, what <em>is</em> this thing?” all the way to feeling truly sure of yourself. You set the speed.",
-"Curious about AI but not sure where to start? You're in the right place. We'll go slow, skip the confusing words, and stay with you from “what even <em>is</em> this?” to genuinely confident — at whatever pace feels right for you.",
-"Curious but not sure where to start? You're in exactly the right place. We'll take it slow, skip the jargon, and walk with you from “what even <em>is</em> this?” to genuinely confident — at your own pace.",
-"Curious but unsure where to start? You're in the right place. We skip the jargon and take you from “what <em>is</em> this?” to confident, at your pace.",
-"From “what <em>is</em> this?” to confident. No jargon. Your pace."
+"Are you curious about AI but not sure where to begin? That's okay. You're in exactly the right place. We will go nice and slow. We won't use any confusing words. And we'll stay right beside you the whole way — starting from “wait, what <em>is</em> this thing?” You set the speed, and you decide how far you want to go.",
+"Curious about AI but not sure where to start? You're in the right place. We'll go slow, skip the confusing words, and stay with you from “what even <em>is</em> this?” onward — at whatever pace feels right, and as far as you'd like to take it.",
+"Curious but not sure where to start? You're in exactly the right place. We'll take it slow, skip the jargon, and walk with you from “what even <em>is</em> this?” onward — at your own pace, as far as you want to take it.",
+"Curious but unsure where to start? You're in the right place. We skip the jargon and walk with you from “what <em>is</em> this?” onward, at your pace — as far as you like.",
+"From “what <em>is</em> this?” — onward, at your pace, as far as you like. No jargon."
 ],
 "reassure": [
 "You don't need to know anything about tech. And you don't have to understand it all at once — nobody does. <strong>This is a calm, gentle path that takes you from curious to confident</strong>, one small step at a time. Best of all, other people are walking the very same path right next to you.",
@@ -49,11 +49,11 @@
 "Basics in plain words. “Chatty” becomes a tool you get."
 ],
 "step2-title": [
-"Get good — and start making things of your own",
-"Get good — and make things",
-"Get good — and make things",
-"Get good — and make things",
-"Get good; make things"
+"Get hands-on — and start making things of your own",
+"Get hands-on — and make things",
+"Get hands-on — and make things",
+"Get hands-on — and make things",
+"Get hands-on; make things"
 ],
 "step2-desc": [
 "The lessons are short and playful, and they really stick. You can poke at little picture-explainers, try real examples, and — when you feel ready — make a little agent of your own to use.",
@@ -105,11 +105,11 @@
 "We show the moving parts, side by side."
 ],
 "demo-closer": [
-"That one tiny change — just telling it what you really have in mind — is the whole secret. And don't worry: we'll help you practise until it feels completely natural.",
-"That tiny shift — telling it what you really mean — is the whole secret. And we'll help you make it second nature.",
-"That tiny shift — telling it what you really mean — is the whole game. We'll make it second nature.",
-"That tiny shift — saying what you really mean — is the whole game. We'll make it second nature.",
-"Saying what you mean is the whole game. We make it second nature."
+"See the difference that one tiny change makes — just telling it what you really have in mind? Try it both ways and judge for yourself. And don't worry: we'll help you practise until it feels completely natural.",
+"Notice what one tiny shift did — telling it what you really mean — to the answer above? Have a look both ways. And we'll help you make it second nature.",
+"That tiny shift — telling it what you really mean — is what changed the answer above. Compare them yourself. We'll help you make it second nature.",
+"That tiny shift — saying what you really mean — changed the answer above. Compare them yourself. We'll help you make it second nature.",
+"Saying what you mean changes the answer above — compare them. We'll help you make it second nature."
 ],
 "belong-title": [
 "Find your kind of people",

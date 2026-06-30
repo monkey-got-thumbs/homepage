@@ -7,11 +7,11 @@
 "Why is AI so vague and useless?"
 ],
 "hero-lede": [
-"Most of the time the AI isn't really the problem — the way you ask is. An “agent” is simply a clear way of asking that you can save and use again and again. Right here, you can build one bit by bit, and you'll watch the answer get better as you go. And the lovely part is, <strong>you never have to touch the AI itself.</strong>",
-"Usually it isn't the AI — it's how you <em>ask</em>. An “agent” is just a clear ask you can reuse. Build one here, piece by piece, and watch the answer improve. <strong>You won't touch the AI once.</strong>",
-"Almost always, it isn't the AI — it's the <em>ask</em>. An “agent” is just a clear ask you can reuse. Build one here, a piece at a time, and watch the answer change in front of you. <strong>You won't touch the AI once.</strong>",
-"Almost always it's the <em>ask</em>, not the AI. An agent is a reusable, clear ask. Build one here, piece by piece, and watch the answer change. <strong>You won't touch the AI once.</strong>",
-"It's the <em>ask</em>, not the AI. An agent is a reusable ask. Build one; watch it change. <strong>No AI required.</strong>"
+"Here's a question worth testing for yourself: when the answer's poor, is that the AI — or the way you asked? An “agent” is simply a clear way of asking that you can save and reuse. Build one here, bit by bit, and watch what changes. You'll only ever change the ask, never the AI itself — so you can see for yourself what the ask is really doing.",
+"When the answer's poor, is that the AI — or how you <em>ask</em>? An “agent” is just a clear ask you can reuse. Build one here, piece by piece, and watch what changes. You'll only ever change the ask — so you can see for yourself what it's doing.",
+"When the answer's poor, is that the AI — or the <em>ask</em>? An “agent” is just a clear ask you can reuse. Build one here, a piece at a time, changing only the ask, never the AI — and watch what changes, so you can judge what the ask is really doing.",
+"Poor answer — the AI, or the <em>ask</em>? An agent is a reusable, clear ask. Build one here, piece by piece, changing only the ask, and watch what changes.",
+"Poor answer — the AI, or the <em>ask</em>? An agent is a reusable ask. Build one; change only the ask; watch what changes."
 ],
 "ask-hint": [
 "Go ahead and tap any piece below to add it to your ask. Each piece you add gives the AI a useful detail that it would otherwise just have to guess at.",
@@ -28,11 +28,11 @@
 "Make it yours."
 ],
 "how-sub": [
-"You've just learned the one move that matters most. Here's where that move can take you next.",
-"You just learned the key move. Here's where it can take you next.",
-"You just learned the move. Here's where it takes you.",
-"You've learned the move. Here's where it leads.",
-"You learned the move. Here's where it leads."
+"Where that move can take you next.",
+"Where it can take you next.",
+"Where it goes next.",
+"Where it leads next.",
+"Where it leads."
 ],
 "step1-title": [
 "Give it a go with something from your own life",
@@ -63,11 +63,11 @@
 "chatyman saves a working ask as a no-code, reusable agent."
 ],
 "step3-title": [
-"Get to understand why all of this actually works",
-"Understand why it really works",
-"Understand why it works",
-"Understand why it works",
-"Understand the why"
+"Dig into how all of this actually works",
+"Dig into how it really works",
+"Dig into how it works",
+"Dig into how it works",
+"How it works"
 ],
 "step3-body": [
 "Would you like those satisfying “aha” moments? A handful of short, plain-spoken lessons explain what's really going on behind the scenes — and they quietly make everything you make turn out that little bit better.",

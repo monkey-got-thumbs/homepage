@@ -56,11 +56,11 @@
     "Write normally; press Enter and agents check wording, hold voice and genre, and flag out-of-character moments. Nothing changes without a click."
   ],
   "see-title": [
-    "A tiny change, a much better answer",
-    "A tiny tweak, a much better answer",
-    "A tiny tweak, a much better answer",
-    "A tiny tweak, a far better answer",
-    "Small tweak, better answer"
+    "A tiny change — does it really make a better answer?",
+    "A tiny tweak — does it make a better answer?",
+    "A tiny tweak — does it make a better answer?",
+    "A tiny tweak — a better answer, or not?",
+    "Small tweak — better answer?"
   ],
   "see-intro": [
     "This is just the kind of thing the Advisor helps you notice — the same job, asked in two different ways.",
@@ -91,11 +91,11 @@
     "The same ideas we <a href=\"/learn/foundations/what-is-ai.html\">teach about</a>."
   ],
   "promise-charge": [
-    "<strong>You stay in charge.</strong> AI helps you; you decide what to keep, what to change, and what to ignore. It never takes the wheel.",
-    "<strong>You stay in charge.</strong> AI helps; you decide what to keep, what to change, and what to ignore. It never takes the wheel.",
-    "<strong>You stay in charge.</strong> AI helps; you decide what to keep, what to change, and what to ignore. It never takes the wheel.",
-    "<strong>You stay in charge.</strong> AI assists; you decide what to keep, change, or ignore. It never takes the wheel.",
-    "<strong>You stay in charge.</strong> You decide what to keep, change, or ignore."
+    "<strong>You make the decisions, not the AI.</strong> We build everything here so the AI only suggests — you choose what to keep, what to change, and what to ignore, and nothing happens until you click. Don't take our word for it; watch where the control actually sits, and tell us if it ever slips.",
+    "<strong>You make the decisions, not the AI.</strong> We build these so the AI suggests and you choose what to keep, change, or ignore — nothing happens without your click. Don't take our word for it; watch where the control sits, and tell us if it slips.",
+    "<strong>You make the decisions, not the AI.</strong> We build these so the AI suggests; you choose what to keep, change, or ignore, and nothing happens without your click. See for yourself whether the control stays with you.",
+    "<strong>You make the decisions.</strong> The AI suggests; you keep, change, or ignore — nothing happens without your click. Check whether it holds.",
+    "<strong>You make the decisions.</strong> AI suggests; you choose; nothing happens without your click."
   ],
   "promise-privacy": [
     "<strong>Your information stays yours.</strong> We keep things on your own device wherever we can, and we would never quietly pass your details around.",

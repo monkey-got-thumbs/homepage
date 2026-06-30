@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, viewport-fit=cover" />
+    <title>Be my sounding board — Monkey Got Thumbs</title>
+    <link rel="canonical" href="https://monkey-got-thumbs.com/learn/use-cases/sounding-board.html">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#0E0B1A" />
+    <meta name="color-scheme" content="dark">
+    <link rel="stylesheet" href="/assets/css/tokens.css">
+    <link rel="stylesheet" href="/assets/css/base.css">
+    <link rel="stylesheet" href="/assets/css/layout.css">
+    <meta name="description" content="Use AI as a sounding board: think out loud and get good questions back, not just answers. Try a real exchange here — you keep the taste and the call." />
+    <meta name="author" content="Monkey Got Thumbs" />
+    <meta property="og:title" content="Be my sounding board — Monkey Got Thumbs">
+    <meta property="og:description" content="Think out loud and get questions back, not just answers. Try a real exchange — you keep the taste.">
+    <meta property="og:url" content="https://monkey-got-thumbs.com/learn/use-cases/sounding-board.html">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://monkey-got-thumbs.com/social-card.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Monkey Got Thumbs">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "LearningResource", "name": "Be my sounding board",
+      "url": "https://monkey-got-thumbs.com/learn/use-cases/sounding-board.html",
+      "learningResourceType": "interactive",
+      "breadcrumb": { "@type": "BreadcrumbList", "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://monkey-got-thumbs.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Learn", "item": "https://monkey-got-thumbs.com/learn/" },
+        { "@type": "ListItem", "position": 3, "name": "What can you use it for?", "item": "https://monkey-got-thumbs.com/learn/use-cases/" },
+        { "@type": "ListItem", "position": 4, "name": "Be my sounding board" }
+      ]}}
+    </script>
+    <style>
+        .sb-page { max-width: 50rem; margin-inline: auto; }
+        .sb-head { max-width: 46rem; margin: 0 0 var(--space-xl); }
+        .sb-head h1 { margin: var(--space-sm) 0; }
+        .sb-head .lede { color: var(--color-fg-secondary); font-size: var(--font-size-lg); line-height: 1.7; }
+        .sb-page > section p { line-height: 1.8; color: var(--color-fg-secondary); }
+
+        /* the live exchange */
+        .sb { margin: var(--space-xl) 0 0; border: 1px solid var(--color-border); border-radius: 16px; background: var(--color-bg-secondary); padding: clamp(1rem, 3vw, 1.5rem); }
+        .sb-kicker { font: 700 var(--font-size-xs)/1 var(--font-mono); text-transform: uppercase; letter-spacing: .08em; color: var(--color-accent); }
+        .sb-log { display: flex; flex-direction: column; gap: 0.75rem; margin: var(--space-md) 0; min-height: 2rem; }
+        .sb-msg { max-width: 85%; padding: 0.7rem 0.95rem; border-radius: 14px; line-height: 1.6; white-space: pre-wrap; }
+        .sb-msg.you { align-self: flex-end; background: color-mix(in srgb, var(--color-accent) 18%, var(--color-bg)); border: 1px solid color-mix(in srgb, var(--color-accent) 30%, transparent); }
+        .sb-msg.it { align-self: flex-start; background: var(--color-bg); border: 1px solid var(--color-border); color: var(--color-fg); }
+        .sb-msg .who { display: block; font: 700 var(--font-size-xs)/1 var(--font-mono); text-transform: uppercase; letter-spacing: .05em; color: var(--color-muted); margin-bottom: 0.3rem; }
+        .sb-empty { color: var(--color-muted); font-size: var(--font-size-sm); }
+        .sb-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: var(--space-md); }
+        .sb-chip { font: inherit; font-size: var(--font-size-sm); cursor: pointer; border: 1px solid var(--color-border); background: transparent; color: var(--color-fg); border-radius: 20px; padding: 6px 12px; }
+        .sb-chip:hover { border-color: var(--color-accent); }
+        .sb-form { display: flex; gap: 0.6rem; align-items: flex-end; }
+        .sb-form textarea { flex: 1; min-height: 2.8rem; resize: vertical; font: inherit; color: var(--color-fg); background: var(--color-bg); border: 1px solid var(--color-border); border-radius: 12px; padding: 0.7rem 0.9rem; }
+        .sb-form textarea:focus-visible { outline: var(--focus-outline); outline-offset: 2px; }
+        .sb-send { font: inherit; font-weight: var(--font-weight-semibold); cursor: pointer; background: var(--color-accent); color: #11210a; border: none; border-radius: 12px; padding: 0.7rem 1.1rem; white-space: nowrap; }
+        .sb-send[disabled] { opacity: 0.55; cursor: default; }
+        .sb-status { font-size: var(--font-size-sm); color: var(--color-muted); margin: var(--space-sm) 0 0; min-height: 1.2em; }
+        .sb-status.err { color: var(--color-warning); }
+        .sb-note { font-size: var(--font-size-sm); color: var(--color-muted); border-inline-start: 3px solid var(--color-border); padding-inline-start: var(--space-md); margin-top: var(--space-lg); }
+        .sb-reset { background: none; border: none; color: var(--color-link); text-decoration: underline; cursor: pointer; font: inherit; font-size: var(--font-size-sm); padding: 0; margin-top: var(--space-sm); }
+    </style>
+    <link rel="stylesheet" href="/assets/css/accessibility.css">
+    <script src="/assets/js/a11y-init.js"></script>
+    <script src="/assets/js/accessibility.js" defer></script>
+    <link rel="stylesheet" href="/assets/css/journey.css">
+    <script src="/assets/js/journey.js" defer></script>
+    <script src="/assets/js/sounding-board.js" defer></script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <mgt-header></mgt-header>
+    <main id="main-content">
+        <article class="sb-page section-pad">
+            <nav aria-label="Breadcrumb">
+                <ul class="breadcrumbs">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/learn/">Learn</a></li>
+                    <li><a href="/learn/use-cases/">What can you use it for?</a></li>
+                    <li><span aria-current="page">Be my sounding board</span></li>
+                </ul>
+            </nav>
+
+            <header class="sb-head">
+                <span class="eyebrow">think out loud</span>
+                <h1 data-a11y="hero-title">Be my sounding board</h1>
+                <p class="lede" data-a11y="hero-lede">The most underrated way to use AI isn't to ask it for answers — it's to think <em>with</em> it. Say a half-formed idea out loud and get good questions back; react to a draft and find the bit that's really bothering you. It helps you reach your own next move. The taste, and the call, stay yours.</p>
+            </header>
+
+            <section aria-labelledby="how-title">
+                <h2 id="how-title" data-a11y="how-title">What makes it a sounding board, not an oracle</h2>
+                <p data-a11y="how-p">An oracle hands you an answer and you take it or leave it. A sounding board reflects what you said, asks what would sharpen it, and offers an angle you hadn't tried — then leaves the decision with you. The difference is mostly in how you ask: invite questions, not verdicts. Try it below.</p>
+            </section>
+
+            <section class="sb" aria-label="Live sounding board">
+                <span class="sb-kicker">A real exchange · live</span>
+                <div class="sb-chips" id="sbChips" aria-label="Starting points">
+                    <button type="button" class="sb-chip" data-seed="I'm trying to name a thing and I'm stuck. It's a weekly email that shares one small, practical AI tip for nervous beginners. Help me think it through.">Name a thing</button>
+                    <button type="button" class="sb-chip" data-seed="Here's a rough plan I'm unsure about: I want to learn AI by building one small project a week for a month. Poke holes in it.">React to a plan</button>
+                    <button type="button" class="sb-chip" data-seed="I'm stuck on a decision: should I write my notes by hand or type them? Help me think about what actually matters here, don't just pick for me.">Talk out a decision</button>
+                </div>
+                <div class="sb-log" id="sbLog" aria-live="polite">
+                    <p class="sb-empty" id="sbEmpty">Start with a starting-point above, or just type whatever's on your mind.</p>
+                </div>
+                <form class="sb-form" id="sbForm">
+                    <label class="sr-only" for="sbInput">What's on your mind?</label>
+                    <textarea id="sbInput" rows="2" placeholder="What's on your mind? An idea, a plan, a draft, a decision…"></textarea>
+                    <button type="submit" class="sb-send" id="sbSend">Send →</button>
+                </form>
+                <p class="sb-status" id="sbStatus" role="status"></p>
+                <button type="button" class="sb-reset" id="sbReset" hidden>Start fresh</button>
+                <noscript><p class="sb-empty">The live sounding board needs JavaScript. The idea still holds: ask AI for questions, not just answers — and keep the call yourself.</p></noscript>
+            </section>
+
+            <p class="sb-note" data-a11y="sb-note">A real model (Amazon Nova 2 Lite) answers here, so it can be wrong, and it's a partner — not an authority. Treat its questions as prompts for your own thinking, not instructions. Nothing you type is saved.</p>
+
+            <section aria-labelledby="next-title" style="margin-top: var(--space-2xl); padding-top: var(--space-xl); border-top: 1px solid var(--color-border);">
+                <h2 id="next-title" data-a11y="next-title">Where to take it next</h2>
+                <p data-a11y="next-p">Found the move useful? The same "ask for questions, keep the judgment" habit runs through everything here. Wander back to the other things you can do with it, or carry the idea into building a little helper of your own.</p>
+                <p><a class="card-link" href="/learn/use-cases/">← Back to what you can use it for</a></p>
+            </section>
+        </article>
+    </main>
+    <mgt-footer></mgt-footer>
+    <script src="/assets/js/tracking.js" defer></script>
+    <script type="module" src="/assets/js/app.js"></script>
+    <script type="module" src="/components/core/mgt-header.js"></script>
+    <script type="module" src="/components/core/mgt-footer.js"></script>
+</body>
+</html>

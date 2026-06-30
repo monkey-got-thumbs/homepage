@@ -1,4 +1,11 @@
 {
+  "illustrative-note": [
+    "These hours are an example, not a promise. What you'd really hand back changes a lot from job to job — and on how well you and the tool work together. Treat the numbers as a feel for the idea, nothing more.",
+    "Treat these hours as an example, not a promise. How much you'd really reclaim depends on the kind of work, how well you steer the tool, and how well it works with you — they show the shape, not your exact week.",
+    "These hours are a feel, not a promise. What you'd actually reclaim depends on the work itself, how well you steer the tool — and how well it knows when to back off and hand you the wheel.",
+    "Read the hours as illustrative. Real return swings with the work (rote vs. genuinely novel), how well you drive the tool — and how well it drives you back, including whether it backs off when out of its depth.",
+    "Illustrative, not literal. Actual hours reclaimed are a product of the task's nature, how well you drive the harness, how well the harness drives you, and — the part most tools get wrong — whether it backs off when out of its depth instead of shipping confident error."
+  ],
   "hero-title": [
     "Why this is worth your time",
     "Why it's worth your time",
@@ -14,11 +21,11 @@
     "AI already does much of the work. The win: shed busywork, keep what needs a person."
   ],
   "enduring-idea": [
-    "<strong>The one idea to keep:</strong> you don't have to race against AI. You just give it the dull, repeating jobs, and you keep the thinking and the deciding. Working well with AI is something anyone can learn, and even a little practice helps a lot.",
-    "<strong>The one idea to keep:</strong> you don't compete with AI. You hand it the busywork and keep the judgment. Working with it is a skill you can learn, and a little goes a long way.",
-    "<strong>The one idea to keep:</strong> you don't compete with AI — you hand it the busywork and keep the judgment. Working with it is a learnable skill, and a little goes a long way.",
-    "<strong>The one idea to keep:</strong> don't compete with AI — delegate the busywork, keep the judgment. It's a learnable skill, and a little goes far.",
-    "<strong>Keep this:</strong> don't compete with AI — delegate busywork, keep judgment. Learnable; a little goes far."
+    "<strong>A question to carry into the week below:</strong> if you stop racing against AI and hand it the dull, repeating jobs instead, what's left for you — is it the thinking and the deciding? Try it and see. Working well with AI is something anyone can learn, and even a little practice helps a lot.",
+    "<strong>A question to test below:</strong> hand AI the busywork and keep the rest — what is the rest? See whether it's the judgment. Working with it is a skill you can learn, and a little goes a long way.",
+    "<strong>A question to test below:</strong> hand AI the busywork — what's left, and is it the judgment? Working with it is a learnable skill, and a little goes a long way.",
+    "<strong>A question for below:</strong> give AI the busywork — what's left? It's a learnable skill, and a little goes far.",
+    "<strong>Ask below:</strong> give AI the busywork — what's left? Learnable; a little goes far."
   ],
   "week-intro": [
     "Here is what a normal week can look like, drawn as blocks of time. Hand the jobs that repeat a lot to AI — the ones you would be glad to give away:",
@@ -42,11 +49,11 @@
     "Hand the <span class=\"yw-key yw-key--busy\">busywork</span> to AI (click/drag). <span class=\"yw-key yw-key--human\">Outlined</span> blocks stay yours."
   ],
   "the-reason": [
-    "That is the whole reason it's worth your time. AI takes on the jobs that repeat. You keep the things only a person can do: reading the mood in a room, weighing what is fair, holding the background story that never shows up in the numbers, and knowing when the \"right\" answer is actually the wrong one. The edge isn't <em>having</em> AI — everyone has that now. The edge is being good at telling it what to do. And that is exactly what you can learn here.",
-    "That's the whole reason it's worth your time. AI takes the repetitive load; you keep what only a person can do — reading a room, weighing what's fair, carrying the context that never makes it into the numbers, and knowing when the \"right\" answer is the wrong one. The edge isn't <em>access</em> to AI; everyone has that. It's the skill of directing it — and that's exactly what you can learn here.",
-    "That's the whole reason it's worth your time. AI takes the repetitive load; you keep what only a person can do — reading a room, weighing what's fair, carrying the context that never makes it into a dataset, and deciding when the \"correct\" answer is the wrong one. The edge isn't <em>access</em> to AI (everyone has that). It's the skill of directing it — and that's exactly what you can learn here.",
-    "That's the whole reason it's worth your time. AI carries the repetitive load; you keep what only a person can — reading a room, weighing fairness, holding context no dataset captures, and judging when the \"correct\" answer is wrong. The edge isn't <em>access</em> (everyone has that); it's directing it — exactly what you'll learn here.",
-    "The whole reason: AI carries repetition; you keep the human-only work — reading a room, weighing fairness, holding off-dataset context, overriding the \"correct\" answer. Edge isn't <em>access</em> (universal); it's direction — learnable here."
+    "So look at what that leaves you. AI takes on the jobs that repeat. You keep the things only a person can do: reading the mood in a room, weighing what is fair, holding the background story that never shows up in the numbers, and knowing when the \"right\" answer is actually the wrong one. Whether that makes it worth your time is yours to call. But notice the edge isn't <em>having</em> AI — everyone has that now. The edge is being good at telling it what to do. And that is exactly what you can learn here.",
+    "So look at what that leaves you. AI takes the repetitive load; you keep what only a person can do — reading a room, weighing what's fair, carrying the context that never makes it into the numbers, and knowing when the \"right\" answer is the wrong one. Whether that's worth your time is yours to judge. The edge isn't <em>access</em> to AI; everyone has that. It's the skill of directing it — and that's exactly what you can learn here.",
+    "So look at what that leaves you. AI takes the repetitive load; you keep what only a person can do — reading a room, weighing what's fair, carrying the context that never makes it into a dataset, and deciding when the \"correct\" answer is the wrong one. Whether that's worth your time is yours to judge. The edge isn't <em>access</em> to AI (everyone has that). It's the skill of directing it — and that's exactly what you can learn here.",
+    "Look at what that leaves you. AI carries the repetitive load; you keep what only a person can — reading a room, weighing fairness, holding context no dataset captures, and judging when the \"correct\" answer is wrong. Worth your time? Yours to judge. The edge isn't <em>access</em> (everyone has that); it's directing it — exactly what you'll learn here.",
+    "What AI's repetition-taking leaves: the human-only work — reading a room, weighing fairness, holding off-dataset context, overriding the \"correct\" answer. Worth it? Your call. Edge isn't <em>access</em> (universal); it's direction — learnable here."
   ],
   "the-history-1": [
     "And this is the old human bargain — hand off the busywork, keep the judgment. What's new is that for about twenty years the busywork fought back: every new tool brought its own complexity, until just keeping up was a slow death by a thousand cuts.",
@@ -98,11 +105,11 @@
     "Pick one mechanical job: drafting, formatting, summarising, lookups."
   ],
   "tryit-payoff": [
-    "Do that just once, and \"why it's worth it\" stops being something you're told. It becomes something you can plainly see for yourself.",
-    "Do that once and \"why it's worth it\" stops being a claim — it becomes obvious.",
-    "Do that once and \"why it's worth it\" stops being a claim and becomes obvious.",
-    "Do it once and \"why it's worth it\" stops being a claim and becomes obvious.",
-    "Do it once; the payoff becomes obvious."
+    "Do that just once, and \"is it worth it?\" stops being a claim you're handed. It becomes something you can weigh for yourself — and answer either way.",
+    "Do that once and \"is it worth it?\" stops being a claim and becomes something you can judge for yourself.",
+    "Do that once and \"is it worth it?\" stops being a claim and becomes yours to judge.",
+    "Do it once and \"is it worth it?\" becomes yours to judge, not ours to claim.",
+    "Do it once; then judge for yourself."
   ],
   "continue-title": [
     "Keep learning",

@@ -1,17 +1,17 @@
 {
   "hero-title": [
-    "You are the one in charge",
-    "You're still the one in charge here",
-    "You're still the one in charge",
-    "You stay in charge",
-    "You're in charge"
+    "So who's really in charge — you, or the AI?",
+    "Who's in charge here — you, or the AI?",
+    "Who's in charge — you, or the AI?",
+    "In charge: you, or the AI?",
+    "Who's in charge?"
   ],
   "hero-lede": [
-    "AI is just a tool. You are the person using it. These are short, easy reads about the human parts that most guides leave out: how much to trust AI, how to make good choices, how to look after your energy, and how to stay in control. Pick whichever one feels right for you today.",
-    "AI is the tool — you're the person using it. These short reads cover the human bits most guides skip: how much to trust it, how to make good calls, how to protect your energy, and how to stay in control. Read whichever one feels right for you today.",
-    "AI is the tool — you're the person. These short reads are about the human bits most guides skip: how much to trust it, how to make good calls, how to protect your energy, and how to stay firmly in the driver's seat. Read whichever feels right for you today.",
-    "AI is the tool; you're the person. Short reads on the human bits most guides skip: how far to trust it, how to decide well, how to guard your energy, how to stay in control. Read whichever fits today.",
-    "AI is the tool; you're the person. Short reads on the human bits guides skip: trust, judgment, energy, control. Read what fits."
+    "AI is a tool; you're the person using it. These are short, easy reads about the human parts that most guides leave out: how much to trust AI, how to make good choices, how to look after your energy, and how much of the driving to keep for yourself. Pick whichever one feels right for you today.",
+    "AI is a tool; you're the person using it. These short reads cover the human bits most guides skip: how much to trust it, how to make good calls, how to protect your energy, and how much of the driving to keep. Read whichever one feels right for you today.",
+    "AI is a tool; you're the person using it. These short reads are about the human bits most guides skip: how much to trust it, how to make good calls, how to protect your energy, and how much of the driving to keep for yourself. Read whichever feels right for you today.",
+    "AI is a tool; you're the person using it. Short reads on the human bits most guides skip: how far to trust it, how to decide well, how to guard your energy, how much of the driving to keep. Read whichever fits today.",
+    "AI is a tool; you use it. Short reads on the human bits guides skip: trust, judgment, energy, who steers. Read what fits."
   ],
   "card-trust-title": [
     "<a href=\"/learn/human-factors/trust-protocols.html\">How much should you trust it?</a>",

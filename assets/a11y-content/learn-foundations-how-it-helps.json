@@ -1,4 +1,11 @@
 {
+  "illustrative-note": [
+    "These numbers are just an example, not a promise. What you really save changes from job to job — and on how well you and the tool work together. Treat them as a feel for the idea, nothing more.",
+    "Treat these numbers as an example, not a promise. How much you actually save depends on the kind of work, how well you steer the tool, and how well it works with you — they show the shape of the idea, not your exact result.",
+    "These figures are a feel, not a promise. What you actually get back depends on the work itself, how well you steer the tool — and how well it knows when to back off and hand you the wheel.",
+    "Read the figures as illustrative. Real return swings with the work (boilerplate vs. genuinely novel thinking), how well you drive the tool — and how well it drives you back, including whether it backs off when it is out of its depth.",
+    "The numbers are illustrative, not literal. Actual leverage is a product of four things: the nature of the task (rote vs. genuinely novel work), how well you drive the harness, how well the harness drives you (surfacing angles you would have missed), and — the part most tools get wrong — whether it backs off when it is out of its depth instead of shipping confident error. Change any one and the split moves."
+  ],
   "hero-title": [
     "How AI helps you",
     "How AI helps you",
@@ -7,18 +14,18 @@
     "How it helps"
   ],
   "lead": [
-    "AI helps in three plain, everyday ways. First, it makes your work go faster. Second, it does the dull, repeat jobs for you. Third, it helps you think a problem all the way through. And here is the best part: in every one of these, you are still the boss. You decide what happens.",
-    "AI helps in three down-to-earth ways: it speeds your work up, it takes the boring jobs off your plate, and it helps you think things through. In every one, you stay in charge.",
-    "It comes down to three down-to-earth things: it speeds work up, takes the boring jobs, and helps you think things through. You stay in charge of all three.",
-    "Three down-to-earth ways: it speeds work up, takes the boring jobs, and helps you think things through — and you stay in charge of all three.",
-    "Three ways: faster work, boring jobs gone, clearer thinking. You stay in charge."
+    "AI helps in three plain, everyday ways. First, it makes your work go faster. Second, it does the dull, repeat jobs for you. Third, it helps you think a problem all the way through. And in each one, watch what the AI takes on — and see what's left for you to do.",
+    "AI helps in three down-to-earth ways: it speeds your work up, it takes the boring jobs off your plate, and it helps you think things through. In each, see what the AI takes on — and what's left for you.",
+    "It comes down to three down-to-earth things: it speeds work up, takes the boring jobs, and helps you think things through. In each, watch what the AI takes on — and what's left for you.",
+    "Three down-to-earth ways: it speeds work up, takes the boring jobs, and helps you think things through — in each, watch what the AI takes on and what's left for you.",
+    "Three ways: faster work, boring jobs gone, clearer thinking. See what's left for you."
   ],
   "enduring-idea": [
-    "<strong>The one idea to keep:</strong> AI does the hard work, but you still make the choice. It works the same way in all three.",
-    "<strong>The one idea to keep:</strong> AI takes the effort, and you keep the decision. That's the deal in all three.",
-    "<strong>The one idea to keep:</strong> AI takes the effort; you keep the call. That's the same deal in all three.",
-    "<strong>The one idea to keep:</strong> AI takes the effort; you keep the call — the same deal across all three.",
-    "<strong>Keep this:</strong> AI takes the effort; you keep the call. All three."
+    "<strong>The question to sit with:</strong> when AI does the hard work, what's left for you to do — and is it the same in all three?",
+    "<strong>The question to sit with:</strong> when AI takes the effort, what's left for you — and is it the same across all three?",
+    "<strong>The question to sit with:</strong> when AI takes the effort, what's left for you — and is it the same in all three?",
+    "<strong>A question to sit with:</strong> AI takes the effort — what's left for you, and is it the same across all three?",
+    "<strong>Ask yourself:</strong> AI takes the effort — what's left for you?"
   ],
   "explorable-intro": [
     "Tap each one below. Watch the hard part get smaller — and see the bit that is still yours to do.",
@@ -28,11 +35,11 @@
     "Tap each: slog shrinks, your part remains."
   ],
   "notice-shape": [
-    "Look at the shape of it. The \"With AI\" bar is always shorter, but it never goes all the way down to nothing — and the bit that is left is always the part that is yours. AI carries the heavy work, and you keep the judgment about what is right. That is how AI helps you without taking over.",
-    "Notice the shape: the \"With AI\" bar is always shorter, but it never empties — and the part left over is always yours. AI carries the effort, and you keep the judgment. That's how it helps without taking over.",
-    "Notice the shape: the \"With AI\" bar is always shorter, but it's never empty — and the part that's left is always yours. AI carries the effort; you keep the judgment. That's how it helps without taking over.",
-    "Notice the shape: the \"With AI\" bar is always shorter, yet never empty — the remainder is always yours. AI carries the effort; you keep the judgment. Help, not takeover.",
-    "The \"With AI\" bar shrinks but never empties; the remainder is yours. Effort to AI, judgment to you — help, not takeover."
+    "Look at the shape of it. The \"With AI\" bar is always shorter, but it never goes all the way down to nothing — and the bit that is left is always the part that is yours. Does that look like help, or like taking over? Drag it all the way down and decide for yourself.",
+    "Notice the shape: the \"With AI\" bar is always shorter, but it never empties — and the part left over is always yours. Does that read as help, or as taking over? Drag it to the floor and decide.",
+    "Notice the shape: the \"With AI\" bar is always shorter, but it's never empty — and the part that's left is always yours. Does that look like help, or like taking over? Drag it to the floor and decide.",
+    "Notice the shape: the \"With AI\" bar is always shorter, yet never empty — the remainder is always yours. Help, or takeover? Drag it down and decide.",
+    "The \"With AI\" bar shrinks but never empties; the remainder is yours. Help, or takeover? You decide."
   ],
   "recall-question": [
     "What are the three simple ways AI helps?",
@@ -42,11 +49,11 @@
     "Three ways AI helps?"
   ],
   "recall-answer": [
-    "It makes work faster, it does the boring jobs you have to repeat, and it helps you think things through. In all three, you are the one who still makes the choice.",
-    "It speeds work up, it takes the boring repeat jobs, and it helps you think things through — and in all three, you stay in charge of the call.",
-    "It speeds work up, it takes the boring repetitive jobs, and it helps you think things through — and in all three, you stay in charge of the call.",
-    "It speeds work up, takes the boring repetitive jobs, and helps you think things through — and in all three, you keep the call.",
-    "Speed, boring jobs, thinking — you keep the call in all three."
+    "It makes work faster, it does the boring jobs you have to repeat, and it helps you think things through. In all three, the last call is left to you.",
+    "It speeds work up, it takes the boring repeat jobs, and it helps you think things through — and in all three, the last call is left to you.",
+    "It speeds work up, it takes the boring repetitive jobs, and it helps you think things through — and in all three, the last call is left to you.",
+    "It speeds work up, takes the boring repetitive jobs, and helps you think things through — and in all three, the last call is left to you.",
+    "Speed, boring jobs, thinking — and the last call is left to you."
   ],
   "tryit-title": [
     "Try it on your own work",
@@ -77,11 +84,11 @@
     "Find the bit that needed <em>you</em>; do it yourself."
   ],
   "tryit-close": [
-    "That is the whole thing. The hard work gets smaller, and the choice stays yours.",
-    "That's the whole move. The effort shrinks, and the call stays yours.",
-    "That's the whole move. The effort shrinks; the call stays yours.",
-    "That's the whole move: effort shrinks, the call stays yours.",
-    "That's it: effort shrinks, call stays yours."
+    "Now check it for yourself: did the hard work get smaller, and did the choice stay yours?",
+    "Try it and see: did the effort shrink, and did the call stay yours?",
+    "Try it and see: did the effort shrink, and did the call stay yours?",
+    "Try it: did the effort shrink, the call stay yours?",
+    "Did the effort shrink? Did the call stay yours?"
   ],
   "continue-title": [
     "Keep Learning",
