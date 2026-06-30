@@ -32,6 +32,7 @@ class MGTFooter extends HTMLElement {
           margin-top: 3rem;
           padding-block: 3rem;
           background: #0a0814;
+          border-top: 1px solid var(--border);
           color: var(--muted);
           font-size: 0.875rem;
           text-align: start;

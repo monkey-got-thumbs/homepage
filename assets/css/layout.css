@@ -370,7 +370,7 @@ main .build-hero, main .advisor-hero, main .cm-hero, main .lp-hero { max-width: 
 .content > header::after,
 .hub-head::after, .products-head::after, .learn-head::after, .start-head::after,
 .community-head::after, .res-head::after, .say-head::after,
-.build-hero::after, .advisor-hero::after, .cm-hero::after, .lp-hero::after, .home-section.hero::after {
+.build-hero::after, .advisor-hero::after, .cm-hero::after, .lp-hero::after {
   content: "";
   position: absolute;
   bottom: 0;
