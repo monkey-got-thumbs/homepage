@@ -1,0 +1,37 @@
+{
+  "hero-title": [
+    "Think with it, with your own hands — not just look at it",
+    "Think with it, not at it",
+    "Think with it, not at it",
+    "Think with it, not at it",
+    "Think with it"
+  ],
+  "hero-lede": [
+    "An explorable is a little model you get to work yourself. Every number — the ones on the chart and even the ones in the sentences — is a handle you can take hold of. Drag a handle, and the whole thing thinks itself through again, right in front of you. The understanding isn't something you read off the page; it's something you reach by playing with it.",
+    "An explorable is a model you operate. Every number — on the chart and in the sentence — is a handle: drag it and the whole thing re-reasons in front of you. You reach the understanding by playing with it, not by reading.",
+    "An explorable is a model you operate. Every number — on the chart and in the sentence — is a handle: drag it and the whole thing re-reasons in front of you. You reach the understanding by playing, not by reading.",
+    "An explorable is a model you operate. Every number is a handle: drag it and the whole thing re-reasons. You reach understanding by playing, not reading.",
+    "A model you operate. Every number's a handle; drag it and it re-reasons. Understanding by playing."
+  ],
+  "what-note": [
+    "It's where a <a href=\"/discover/\">discoverable</a> sets you down once one of its doors has caught your eye — the very same territory, but now at ground level, in full detail and ready to be poked. Poke it, try your best to break it, and the way it really works slowly comes into focus.",
+    "It's where a <a href=\"/discover/\">discoverable</a> drops you once a door catches your eye — the same territory at ground level, detailed and pokeable. Poke it, try to break it, and how it really works comes into focus.",
+    "It's where a <a href=\"/discover/\">discoverable</a> drops you once a door has caught your eye — the same territory at ground level, detailed and pokeable. Poke it, try to break it, and how it really works comes into focus.",
+    "It's where a <a href=\"/discover/\">discoverable</a> drops you once a door catches your eye — the same territory at ground level. Poke it, try to break it, and how it works comes into focus.",
+    "Where a <a href=\"/discover/\">discoverable</a> drops you — the same ground, up close. Poke it, break it, and it comes into focus."
+  ],
+  "cta-note": [
+    "Interactive models you get to drive yourself — small components, bigger dashboards, and essays that react as you read them.",
+    "Interactive models you can drive — components, dashboards, and reactive essays.",
+    "Interactive models you can drive — components, dashboards, and reactive essays.",
+    "Models you can drive: components, dashboards, reactive essays.",
+    "Models you drive: components, dashboards, essays."
+  ],
+  "soon-note": [
+    "We're still building this part of the site out properly. For right now, the explorables just above are where Explore lives.",
+    "This section is still being built out. For now, the explorables above are where Explore lives.",
+    "This section is still being built out. For now, the explorables above are where Explore lives.",
+    "Still being built out. For now, Explore lives in the explorables above.",
+    "Still being built. For now, see the explorables above."
+  ]
+}

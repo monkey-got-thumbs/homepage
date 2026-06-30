@@ -138,14 +138,23 @@ class MGTFooter extends HTMLElement {
               </p>
             </section>
 
-            <section aria-labelledby="footer-learn">
-              <h2 id="footer-learn">Learn</h2>
+            <section aria-labelledby="footer-basics">
+              <h2 id="footer-basics">Basics</h2>
               <ul>
-                <li><a href="/learn/foundations/">Basics</a></li>
+                <li><a href="/basics/">Start here</a></li>
+                <li><a href="/basics/memory/">Memory</a></li>
+                <li><a href="/learn/foundations/">Foundations</a></li>
                 <li><a href="/learn/frameworks/">Key ideas</a></li>
                 <li><a href="/learn/human-factors/">The human side</a></li>
                 <li><a href="/learn/learning-paths/">Paths</a></li>
-                <li><a href="/explorables/">Explorables</a></li>
+              </ul>
+            </section>
+
+            <section aria-labelledby="footer-explore">
+              <h2 id="footer-explore">Discover &amp; Explore</h2>
+              <ul>
+                <li><a href="/discover/">Discover</a></li>
+                <li><a href="/explore/">Explore</a></li>
                 <li><a href="/notes/">Notes</a></li>
                 <li><a href="/resources/">Resources</a></li>
               </ul>
@@ -155,6 +164,7 @@ class MGTFooter extends HTMLElement {
               <h2 id="footer-build">Build</h2>
               <ul>
                 <li><a href="/build/">Make your own</a></li>
+                <li><a href="/build/advisor/">Agents, in plain English</a></li>
               </ul>
             </section>
 
@@ -162,7 +172,6 @@ class MGTFooter extends HTMLElement {
               <h2 id="footer-products">Products</h2>
               <ul>
                 <li><a href="/chatty/">chatyman</a></li>
-                <li><a href="/build/advisor/">Agents, in plain English</a></li>
                 <li><a href="/writers-digest/">Writers Digest</a></li>
                 <li><a href="/products/">All products</a></li>
               </ul>

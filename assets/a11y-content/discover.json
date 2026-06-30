@@ -1,0 +1,37 @@
+{
+  "hero-title": [
+    "See a whole field, all at once, in one picture",
+    "See a whole field at a glance",
+    "See a whole field at a glance",
+    "A whole field at a glance",
+    "A field, at a glance"
+  ],
+  "hero-lede": [
+    "A discoverable is just an explorable that's been zoomed all the way out — a whole subject shown as one picture you can still poke at. The edges of the picture, and the little hints it gives off, gently point you toward a way in. You get to pick the way in that feels like yours, and then you walk through it into the real detail.",
+    "A discoverable is an explorable zoomed out — a whole domain in one pokeable view. Its edges and hints point you toward a way in; you pick the one that fits you and walk through into the detail.",
+    "A discoverable is an explorable zoomed out — a whole domain in one pokeable view. Its boundaries and connotations show you the doors; you pick the one that fits your world and walk through into the detail.",
+    "A discoverable is an explorable zoomed out: a domain in one pokeable view. Its boundaries and connotations show the doors; you pick yours and walk through.",
+    "An explorable zoomed out — a domain in one view. The doors are shown; you pick yours."
+  ],
+  "what-note": [
+    "It's the very same kind of thing as an <a href=\"/explore/\">explorable</a>, only seen from much higher up: just enough to make you notice that there's something here worth knowing, and to point at where you might go in. It never decides for you which door is the right one — that part is always yours.",
+    "It's the same species as an <a href=\"/explore/\">explorable</a>, just higher up: enough to make you notice there's something here worth knowing, and to point at where to go in. It never decides which door is yours.",
+    "It's the same species as an <a href=\"/explore/\">explorable</a>, just at a higher altitude: enough to make you notice there's something here worth knowing, and to point at where to go in. It never decides for you which door is yours.",
+    "Same species as an <a href=\"/explore/\">explorable</a>, higher up: enough to notice there's something here, and where to go in. You choose the door.",
+    "Same species as an <a href=\"/explore/\">explorable</a>, higher up. It points; you choose the door."
+  ],
+  "cta-note": [
+    "The very first discoverables live here — pictures you can take in at a glance, each with a small live part you're free to poke at.",
+    "The first discoverables live here — at-a-glance pictures, each with a live bit you can poke.",
+    "The first discoverables live here — at-a-glance pictures with a live bit you can poke.",
+    "The first discoverables: at-a-glance pictures with a live bit to poke.",
+    "At-a-glance pictures with a live bit to poke."
+  ],
+  "soon-note": [
+    "We're still building this part of the site out properly. For right now, the infographics just above are where Discover lives.",
+    "This section is still being built out. For now, the infographics above are where Discover lives.",
+    "This section is still being built out. For now, the infographics above are where Discover lives.",
+    "Still being built out. For now, Discover lives in the infographics above.",
+    "Still being built. For now, see the infographics above."
+  ]
+}

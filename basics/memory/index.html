@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, viewport-fit=cover" />
+    <title>Your memory, and the machine's — Monkey Got Thumbs</title>
+    <link rel="canonical" href="https://monkey-got-thumbs.com/basics/memory/">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#0E0B1A" />
+    <meta name="color-scheme" content="dark">
+    <link rel="stylesheet" href="/assets/css/tokens.css">
+    <link rel="stylesheet" href="/assets/css/base.css">
+    <link rel="stylesheet" href="/assets/css/layout.css">
+    <meta name="description" content="A live look at your own memory — your forgetting curve and your spaced-repetition ladder, drawn from your own recall data — set beside how an LLM 'remembers', so you can see where the two are alike and where they part ways." />
+    <meta name="author" content="Monkey Got Thumbs" />
+    <meta property="og:title" content="Your memory, and the machine's">
+    <meta property="og:description" content="Your own recall data, drawn live — and how it compares to an LLM's memory.">
+    <meta property="og:url" content="https://monkey-got-thumbs.com/basics/memory/">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://monkey-got-thumbs.com/social-card.png">
+    <meta property="og:site_name" content="Monkey Got Thumbs">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "LearningResource", "name": "Your memory, and the machine's",
+      "url": "https://monkey-got-thumbs.com/basics/memory/", "learningResourceType": "explorable",
+      "breadcrumb": { "@type": "BreadcrumbList", "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://monkey-got-thumbs.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Basics", "item": "https://monkey-got-thumbs.com/basics/" },
+        { "@type": "ListItem", "position": 3, "name": "Memory" }
+      ]}}
+    </script>
+    <style>
+        .mx { max-width: 46rem; margin-inline: auto; }
+        .mx-hero { margin: 0 0 var(--space-xl); }
+        .mx-hero .eyebrow { font: 700 var(--font-size-xs)/1 var(--font-mono); text-transform: uppercase; letter-spacing: .08em; color: var(--color-accent); }
+        .mx-hero h1 { margin: var(--space-sm) 0; }
+        .mx-hero .lede { color: var(--color-fg-secondary); font-size: var(--font-size-lg); line-height: 1.75; }
+        .mx p { line-height: 1.8; }
+
+        /* the explorable */
+        .mem { border: 1px solid var(--color-border); border-radius: 18px; background: var(--color-bg-secondary); padding: clamp(1.1rem, 3vw, 1.6rem); margin: var(--space-xl) 0; }
+        .mem-demo-flag { margin: 0 0 var(--space-md); padding: 0.6rem 0.9rem; border-radius: 10px; font-size: var(--font-size-sm); color: var(--color-fg); background: color-mix(in srgb, var(--color-warning) 14%, transparent); border-inline-start: 3px solid var(--color-warning); }
+        .mem-stats { display: flex; flex-wrap: wrap; gap: 1rem 1.6rem; margin-bottom: var(--space-lg); }
+        .mem-stat b { display: block; font-family: var(--font-display); font-size: clamp(1.6rem, 5vw, 2.2rem); color: var(--color-accent); line-height: 1; }
+        .mem-stat span { color: var(--color-fg-secondary); font-size: var(--font-size-sm); }
+
+        .mem-toolbar { display: inline-flex; gap: 0; border: 1px solid var(--color-border); border-radius: 999px; padding: 0.2rem; margin-bottom: var(--space-md); }
+        .mem-mode-btn { appearance: none; border: 0; cursor: pointer; font: 600 var(--font-size-sm)/1 var(--font-sans); color: var(--color-fg-secondary); background: transparent; padding: 0.5rem 1rem; border-radius: 999px; }
+        .mem-mode-btn[aria-pressed="true"] { background: var(--color-accent); color: #11210a; }
+        .mem-mode-btn:focus-visible { outline: var(--focus-outline, 3px solid var(--color-accent)); outline-offset: 2px; }
+
+        .mem-ladder { display: flex; flex-direction: column; gap: 0.4rem; margin-top: var(--space-sm); }
+        .mem-rung { display: grid; grid-template-columns: minmax(7rem, auto) 1fr minmax(4rem, auto); align-items: center; gap: 0.7rem; }
+        .mem-rung.is-empty { opacity: 0.4; }
+        .mem-rung-label { font-size: var(--font-size-sm); color: var(--color-fg-secondary); }
+        .mem-rung-track { block-size: 14px; border-radius: 999px; background: color-mix(in srgb, var(--color-fg) 10%, transparent); overflow: hidden; }
+        .mem-rung-fill { display: block; block-size: 100%; inline-size: 0; border-radius: 999px; background: var(--color-accent); transition: inline-size .35s cubic-bezier(.2,.7,.2,1); }
+        .mem-rung-count { font-size: var(--font-size-sm); color: var(--color-muted); text-align: end; }
+
+        .mem-store { display: flex; flex-direction: column; gap: 0.35rem; margin-top: var(--space-sm); }
+        .mem-store-row { display: flex; justify-content: space-between; gap: 0.7rem; padding: 0.45rem 0.7rem; border: 1px solid var(--color-border); border-radius: 8px; font-size: var(--font-size-sm); }
+        .mem-store-key { font-family: var(--font-mono); color: var(--color-fg-secondary); }
+        .mem-store-val { color: var(--color-muted); }
+        .mem-flatnote { margin: var(--space-sm) 0 0; color: var(--color-muted); font-size: var(--font-size-sm); }
+
+        .mem-explain { margin: var(--space-md) 0 0; padding: 0.9rem 1.1rem; border-radius: 12px; line-height: 1.7; border-inline-start: 3px solid var(--color-accent); background: color-mix(in srgb, var(--color-accent) 9%, transparent); }
+        .mem-explain[data-mode="llm"] { border-inline-start-color: var(--color-brand-light); background: color-mix(in srgb, var(--color-brand-light) 12%, transparent); }
+
+        .mx-make { border: 1px dashed var(--color-border); border-radius: 16px; padding: clamp(1rem,3vw,1.4rem); margin: var(--space-xl) 0; }
+        .mx-make h2 { margin: 0 0 0.4rem; font-size: var(--font-size-lg); }
+        mgt-recall { display: block; margin: var(--space-md) 0; }
+
+        .mx-step { margin: var(--space-2xl) 0; }
+        .mx-step h2 { font-size: var(--font-size-xl); margin: 0 0 0.5rem; }
+        .mx-next { margin-top: var(--space-2xl); padding-top: var(--space-xl); border-top: 1px solid var(--color-border); }
+        .mx-next a { color: var(--color-accent); }
+    </style>
+    <link rel="stylesheet" href="/assets/css/accessibility.css">
+    <script src="/assets/js/a11y-init.js"></script>
+    <script src="/assets/js/accessibility.js" defer></script>
+    <link rel="stylesheet" href="/assets/css/journey.css">
+    <script src="/assets/js/journey.js" defer></script>
+    <script type="module" src="/assets/js/memory-explorable.js"></script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <mgt-header></mgt-header>
+    <main id="main-content">
+        <article class="mx section-pad">
+            <nav aria-label="Breadcrumb">
+                <ul class="breadcrumbs">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/basics/">Basics</a></li>
+                    <li><span aria-current="page">Memory</span></li>
+                </ul>
+            </nav>
+
+            <header class="mx-hero">
+                <span class="eyebrow">basics · memory, made visible</span>
+                <h1 data-a11y="hero-title">Your memory, and the machine's</h1>
+                <p class="lede" data-a11y="hero-lede">The recall cards on this site quietly keep a little data — what you remembered, what slipped, when each idea is due again. None of it leaves your browser. Here it is, drawn as a picture: your own forgetting curve and the ladder your cards climb. Then flip the switch and watch how differently a machine "remembers" the same thing.</p>
+            </header>
+
+            <section class="mem" aria-labelledby="mem-h">
+                <h2 id="mem-h" class="sr-only">Your memory ladder</h2>
+                <p class="mem-demo-flag" id="mem-demo-flag" hidden>Example data — answer a card below and this becomes yours.</p>
+
+                <div class="mem-stats" id="mem-stats" aria-live="polite"></div>
+
+                <div class="mem-toolbar" role="group" aria-label="Whose memory to show">
+                    <button class="mem-mode-btn" type="button" data-mode="you" aria-pressed="true">You</button>
+                    <button class="mem-mode-btn" type="button" data-mode="llm" aria-pressed="false">An LLM</button>
+                </div>
+
+                <div class="mem-ladder" id="mem-ladder" aria-live="polite"></div>
+
+                <div class="mem-explain" data-mode="you" data-a11y="explain-you">Each time you recall a card, it climbs a rung — and the gap before its next visit widens: a day, three, a week, then months. Forget one and it drops back to the bottom. That widening ladder <em>is</em> your memory getting stronger; the drops are forgetting, made visible.</div>
+                <div class="mem-explain" data-mode="llm" data-a11y="explain-llm" hidden>A model has no ladder. The same items sit in a flat store, looked up the instant they're needed and otherwise untouched. Asking doesn't strengthen them; time doesn't fade them. It isn't remembering — it's retrieval.</div>
+            </section>
+
+            <section class="mx-make" aria-labelledby="make-h">
+                <h2 id="make-h">Make it yours</h2>
+                <p data-a11y="make-note">No data yet, or want to watch it move? Answer a card — honestly — and the picture above updates on the spot. Two about memory itself, so the act of answering is also the lesson.</p>
+                <mgt-recall id="memory-spacing">
+                    <details>
+                        <summary>What does recalling something just before you'd forget do to your memory of it?</summary>
+                        <p>It resets the forgetting curve. Each well-timed recall strengthens the trace and buys a longer gap before the next one — which is why the rungs widen.</p>
+                    </details>
+                </mgt-recall>
+                <mgt-recall id="memory-llm-retrieve">
+                    <details>
+                        <summary>When an LLM "remembers" something from a past chat, what's actually happening?</summary>
+                        <p>Not recall — retrieval. It looks the item up in an external store (embeddings / RAG) at answer-time. No strengthening, no forgetting curve; what's worth storing was a human's call.</p>
+                    </details>
+                </mgt-recall>
+            </section>
+
+            <section class="mx-step" aria-labelledby="b-working">
+                <h2 id="b-working">Working memory ≈ the context window</h2>
+                <p data-a11y="bridge-working">Hold a phone number in your head while you dial: that's working memory — a handful of things at once, gone in a blink. A model has its own version, the <em>context window</em>: everything in the current conversation, held all at once, and just as gone when the chat ends. Both are small and both evaporate — which is why <a href="/learn/human-factors/bounded-rationality.html">we lean on outside scaffolding</a> to hold what won't fit.</p>
+            </section>
+
+            <section class="mx-step" aria-labelledby="b-long">
+                <h2 id="b-long">Where the two part ways</h2>
+                <p data-a11y="bridge-consolidate">Past the blink, the paths split. You move things into long-term memory by <em>consolidating</em> — each retrieval rebuilds the idea and lays the trace down deeper, which is also why a real memory is hard to vary. A model doesn't consolidate anything from talking to you; between sessions it keeps nothing. To carry knowledge forward it <a href="/learn/frameworks/memory-systems.html">retrieves from an external store</a> someone built. The lookup is fast and tireless — but the judgment of what was worth keeping stayed human.</p>
+            </section>
+
+            <section class="mx-next" aria-labelledby="next-h">
+                <h2 id="next-h">Carry it on</h2>
+                <p data-a11y="next-note">Two short notes go deeper on the human half: <a href="/notes/retrieval-beats-rereading.html">retrieval beats re-reading</a> and <a href="/notes/spacing-fights-forgetting.html">spacing fights forgetting</a>. Come back to this page whenever — the more cards you answer across the site, the more it's a picture of <em>your</em> memory, not an example.</p>
+            </section>
+        </article>
+    </main>
+    <mgt-footer></mgt-footer>
+    <script src="/assets/js/tracking.js" defer></script>
+    <script type="module" src="/assets/js/app.js"></script>
+    <script type="module" src="/components/core/mgt-header.js"></script>
+    <script type="module" src="/components/core/mgt-footer.js"></script>
+    <script type="module" src="/components/core/mgt-recall.js"></script>
+</body>
+</html>

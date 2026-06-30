@@ -14,7 +14,8 @@ import { readdirSync, readFileSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-const LEARN = fileURLToPath(new URL('../learn', import.meta.url));
+const ROOT = fileURLToPath(new URL('../', import.meta.url));
+const DIRS = ['learn', 'basics'].map((d) => join(ROOT, d)); // sections that carry recall cards
 const MAX_ANSWER = 280;   // chars; longer ⇒ probably not atomic
 const MAX_QUESTION = 160;
 
@@ -29,14 +30,14 @@ function walk(dir) {
 }
 const strip = h => h.replace(/<[^>]+>/g, ' ').replace(/&[a-z]+;/g, ' ').replace(/\s+/g, ' ').trim();
 
-const files = walk(LEARN);
+const files = DIRS.flatMap((d) => walk(d));
 const ids = new Map();           // id -> file
 const errors = [], warnings = [];
 let total = 0;
 
 for (const file of files) {
     const html = readFileSync(file, 'utf8');
-    const rel = file.slice(LEARN.length - 5);
+    const rel = file.slice(ROOT.length);
     const re = /<mgt-recall\b([^>]*)>([\s\S]*?)<\/mgt-recall>/g;
     let m, perFile = 0;
     while ((m = re.exec(html))) {

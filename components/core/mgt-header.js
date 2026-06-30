@@ -221,11 +221,11 @@ class MGTHeader extends HTMLElement {
           </button>
 
           <nav id="main-nav" role="navigation" aria-label="Primary">
-            <a href="/learn/start/new.html">Start here</a>
-            <a href="/learn/">Learn</a>
+            <a href="/">Home</a>
+            <a href="/basics/">Basics</a>
+            <a href="/discover/">Discover</a>
+            <a href="/explore/">Explore</a>
             <a href="/build/">Build</a>
-            <a href="/products/">Products</a>
-            <a href="/community/">Community</a>
           </nav>
         </div>
       </header>
@@ -332,11 +332,12 @@ class MGTHeader extends HTMLElement {
 
     links.forEach((link) => {
       const href = link.getAttribute('href');
-      // Section-prefix match so deep pages (e.g. /learn/foundations/x.html) light their nav item.
-      // chatyman is nested under Products, so the /chatty/ pages light the Products item.
+      // Section-prefix match so deep pages (e.g. /basics/memory/) light their nav item.
+      // Discover/Explore are section roots that front /infographics/ and /explorables/.
       const isCurrentPage = href === currentPath ||
                            (href !== '/' && currentPath.startsWith(href)) ||
-                           (href === '/products/' && currentPath.startsWith('/chatty'));
+                           (href === '/discover/' && currentPath.startsWith('/infographics')) ||
+                           (href === '/explore/' && currentPath.startsWith('/explorables'));
 
       if (isCurrentPage) {
         link.setAttribute('aria-current', 'page');
