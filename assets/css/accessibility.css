@@ -103,12 +103,13 @@ html[data-sim="deutan"]  body { filter: url(#a11y-sim-deutan); }
 html[data-sim="tritan"]  body { filter: url(#a11y-sim-tritan); }
 html[data-sim="achroma"] body { filter: url(#a11y-sim-achroma); }
 
-/* ---- Reading level (cognitive load): density via root font-size + prose measure/flow ---- */
-html[data-level="1"] { font-size: 108%; --a11y-measure: 34rem; --a11y-flow: 1.6em; }
-html[data-level="2"] { font-size: 104%; --a11y-measure: 38rem; --a11y-flow: 1.3em; }
-html[data-level="3"] { font-size: 100%; --a11y-measure: 42rem; --a11y-flow: 1.05em; }
-html[data-level="4"] { font-size: 98%;  --a11y-measure: 46rem; --a11y-flow: 0.9em; }
-html[data-level="5"] { font-size: 96%;  --a11y-measure: 52rem; --a11y-flow: 0.78em; }
+/* ---- Reading level (cognitive load): changes the prose VARIANT (via JS content
+   swap) + line measure/flow ONLY. It must NOT change font-size. ---- */
+html[data-level="1"] { --a11y-measure: 34rem; --a11y-flow: 1.6em; }
+html[data-level="2"] { --a11y-measure: 38rem; --a11y-flow: 1.3em; }
+html[data-level="3"] { --a11y-measure: 42rem; --a11y-flow: 1.05em; }
+html[data-level="4"] { --a11y-measure: 46rem; --a11y-flow: 0.9em; }
+html[data-level="5"] { --a11y-measure: 52rem; --a11y-flow: 0.78em; }
 /* apply measure + flow to prose only (never grids) */
 main p, main li, .prose p, .prose li { max-width: var(--a11y-measure, none); }
 main p + p, .prose p + p { margin-block-start: var(--a11y-flow, 1em); }

@@ -30,36 +30,52 @@ class MGTHeader extends HTMLElement {
     if (header) document.body.style.paddingBlockStart = header.offsetHeight + 'px';
   }
 
-  // Reading-level slider — drives the shared accessibility engine (window.__A11Y),
-  // ramps the monkey-handle inversion from 0 (level 1) to 1 (level 5), and stays
-  // in sync if the level is changed elsewhere (e.g. the panel or Reset).
+  // Reading-level slider — CONTINUOUS 0–100% (the stored setting). The percentage
+  // ramps the monkey-handle inversion smoothly; the discrete reading level (1–5,
+  // all the content system has) is derived from it and drives the shared engine
+  // (window.__A11Y). Stays in sync if the level changes elsewhere (panel/Reset).
   setupCogSlider() {
     const s = this.shadowRoot && this.shadowRoot.getElementById('cogSlider');
     if (!s) return;
+    const clamp = (n, a, b) => Math.max(a, Math.min(b, n));
+    const PCTKEY = 'a11y.levelpct';
+    const pctToLevel = (pct) => clamp(Math.round(1 + (pct / 100) * 4), 1, 5);   // 0%→1 … 100%→5
+    const levelToPct = (lvl) => ((lvl - 1) / 4) * 100;
     const curLevel = () => {
       const v = parseInt(document.documentElement.getAttribute('data-level') || '3', 10);
       return v >= 1 && v <= 5 ? v : 3;
     };
-    const setInvert = (v) => s.style.setProperty('--mk-invert', ((v - 1) / 4).toFixed(3));
-    const reflect = () => {
-      const v = curLevel();
-      if (s.value !== String(v)) s.value = String(v);
-      setInvert(v);
-      s.setAttribute('aria-valuetext', 'Reading level ' + v + ' of 5');
+    const setInvert = (pct) => s.style.setProperty('--mk-invert', (pct / 100).toFixed(4));
+    const place = (pct) => {
+      s.value = String(pct);
+      setInvert(pct);
+      s.setAttribute('aria-valuetext', 'Reading level ' + pctToLevel(pct) + ' of 5 (' + Math.round(pct) + '%)');
     };
-    reflect();
+
+    // Initial position: prefer the stored % if it still maps to the active level
+    // (so the exact continuous position is preserved across reloads); else derive
+    // it from the level (which a11y-init set pre-paint, and which Reset can change).
+    const lvl0 = curLevel();
+    const storedPct = parseFloat(localStorage.getItem(PCTKEY));
+    place(Number.isFinite(storedPct) && pctToLevel(storedPct) === lvl0 ? storedPct : levelToPct(lvl0));
+
     s.addEventListener('input', () => {
-      const v = parseInt(s.value, 10) || 3;
-      setInvert(v);
-      if (window.__A11Y && typeof window.__A11Y.set === 'function') {
-        window.__A11Y.set('level', String(v)); // string keeps it consistent with the panel buttons
-      } else {
-        document.documentElement.setAttribute('data-level', String(v));
-        try { localStorage.setItem('a11y.level', String(v)); } catch (e) {}
-      }
+      const pct = clamp(parseFloat(s.value) || 0, 0, 100);
+      setInvert(pct);
+      try { localStorage.setItem(PCTKEY, String(pct)); } catch (e) {}
+      const lvl = pctToLevel(pct);
+      if (window.__A11Y && typeof window.__A11Y.set === 'function') window.__A11Y.set('level', String(lvl));
+      else document.documentElement.setAttribute('data-level', String(lvl));
     });
+
+    // External level change (panel buttons / Reset): only re-place the handle if
+    // the slider's current % maps to a DIFFERENT level — otherwise keep the exact
+    // continuous position the user dragged to.
     if (window.MutationObserver) {
-      new MutationObserver(reflect).observe(document.documentElement, { attributes: true, attributeFilter: ['data-level'] });
+      new MutationObserver(() => {
+        const lvl = curLevel();
+        if (pctToLevel(parseFloat(s.value) || 0) !== lvl) place(levelToPct(lvl));
+      }).observe(document.documentElement, { attributes: true, attributeFilter: ['data-level'] });
     }
   }
 
@@ -318,7 +334,7 @@ class MGTHeader extends HTMLElement {
             <a href="/build/">Build</a>
           </nav>
         </div>
-        <input type="range" class="cog-slider" id="cogSlider" min="1" max="5" step="1" value="3"
+        <input type="range" class="cog-slider" id="cogSlider" min="0" max="100" step="any" value="50"
           aria-label="Reading level — slide left for the simplest version, right for the densest"
           title="Reading level — left: simplest · right: densest" />
       </header>
