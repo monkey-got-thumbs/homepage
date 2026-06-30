@@ -1,10 +1,11 @@
 name: Deploy site
 
-# Deploys the whole site to mgt.codeology.co.nz on every push to main.
-# Target: codeology Org account 704225641352 — s3://codeology-mgt-site-704225641352
-# behind CloudFront E1HGY9I3DL1PFX. Auth is GitHub OIDC (no long-lived keys):
-# the workflow assumes IAM role `github-deploy`, whose trust is scoped to
-# repo:monkey-got-thumbs/homepage on refs/heads/main.
+# Deploys the whole site to monkey-got-thumbs.com on every push to main.
+# Target: mgt account 824604027328 — s3://mgt-prod-site behind CloudFront
+# E2SM2CL28GMTT0 (terraform-managed: OAC + bucket policy granting GetObject on /*).
+# Auth is GitHub OIDC (no long-lived keys): the workflow assumes IAM role
+# `github-deploy` (terraform/environments/mgt/github-deploy.tf), whose trust is
+# scoped to repo:monkey-got-thumbs/homepage on refs/heads/main.
 #
 # The sync is ADDITIVE for the main site (no --delete) and writers-digest is built
 # separately with its LLM endpoint pointed at the same-origin /api/wd Lambda.
@@ -23,10 +24,10 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  AWS_REGION: ap-southeast-2
-  BUCKET: codeology-mgt-site-704225641352
-  DISTRIBUTION_ID: E1HGY9I3DL1PFX
-  DEPLOY_ROLE: arn:aws:iam::704225641352:role/github-deploy
+  AWS_REGION: us-east-1
+  BUCKET: mgt-prod-site
+  DISTRIBUTION_ID: E2SM2CL28GMTT0
+  DEPLOY_ROLE: arn:aws:iam::824604027328:role/github-deploy
 
 jobs:
   deploy:
@@ -79,4 +80,4 @@ jobs:
             --paths "/*"
 
       - name: Done
-        run: echo "✓ deployed https://mgt.codeology.co.nz/"
+        run: echo "✓ deployed https://monkey-got-thumbs.com/"
