@@ -55,8 +55,7 @@
         .hero { text-align: center; padding-top: clamp(1rem, 4vw, 3rem); }
         /* width comes from the shared `section.hero img` rule in layout.css (min(400px, 70vw)) */
         .hero img { height: auto; margin-inline: auto; display: block; animation: floatIn 800ms ease-out both; }
-        .hero .eyebrow { display: block; margin-top: var(--space-md); }
-        .hero h1 { margin: var(--space-sm) 0 var(--space-sm); }
+        .hero h1 { margin: var(--space-lg) 0 var(--space-sm); }
         .hero .home-lede { font-size: clamp(1.05rem, 1.6vw, 1.3rem); }
         .hero-cta { margin-top: var(--space-xl); display: flex; flex-direction: column; align-items: center; gap: var(--space-sm); }
         .hero-cta .btn { font-size: var(--font-size-lg); padding-inline: 1.6rem; }
@@ -107,7 +106,6 @@
                 <source type="image/webp" srcset="/hero-400.webp 400w, /hero.webp 800w" sizes="(max-width: 571px) 70vw, 400px">
                 <img src="/hero.png" srcset="/hero-400.png 400w, /hero.png 800w" sizes="(max-width: 571px) 70vw, 400px" alt="Monkey Got Thumbs — a friendly monkey, thumbs up, on a dark background" width="800" height="1200" loading="eager" decoding="async" fetchpriority="high">
             </picture>
-            <span class="eyebrow">what this is</span>
             <h1 id="hero-title" data-a11y="hero-title">Get comfortable with AI — and make it yours.</h1>
             <p class="home-lede" data-a11y="hero-lede">Monkey Got Thumbs helps everyday people get comfortable with AI and make little agents of their own — no coding, no jargon, at your own pace, with a friendly community alongside you.</p>
             <div class="hero-cta">
