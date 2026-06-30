@@ -1,0 +1,37 @@
+{
+  "hero-title": [
+    "What's the thing behind chatbots?",
+    "What's an LLM — what's behind the chatbots?",
+    "What's an LLM?",
+    "What's a large language model?",
+    "Large language models, plainly"
+  ],
+  "hero-lede": [
+    "You type something to a chatbot, and it writes back. Underneath is an <strong>LLM</strong> — a large language model. Here is the simple idea of what it's doing, and where you might take it with a pinch of salt.",
+    "Chatbots run on an <strong>LLM</strong> — a large language model. One simple idea explains why it writes so well, and why it can be sure of itself and wrong at the same time.",
+    "Chatbots run on an <strong>LLM</strong> — a large language model. A single idea explains both why it writes so fluently and why it can be confidently wrong.",
+    "An <strong>LLM</strong> — large language model — drives the chatbots. One mechanism accounts for both its fluency and its confident mistakes.",
+    "An <strong>LLM</strong> — large language model — drives the chatbots; one mechanism explains its fluency and its confident errors alike."
+  ],
+  "the-one-trick": [
+    "An LLM learned by reading a huge amount of writing — books, websites, conversations, and more. From all of it, it picked up one skill: given some words, guess the words that probably come next. Think of the autocomplete on a phone keyboard, but one that has read far, far more. You give it a start, and it keeps going, one likely chunk at a time.",
+    "An LLM read an enormous amount of writing and learned a single skill from it: given the words so far, predict the chunk most likely to come next. It works a bit like phone autocomplete, only it has read vastly more. You give it a start, and it carries on, a likely piece at a time.",
+    "An LLM is trained on a vast amount of writing to do one thing: given everything written so far, predict the next chunk of text. A fair picture is <em>autocomplete that has read a vast amount of writing</em>. Everything a chatbot says is built this way — one likely piece after another.",
+    "Trained over a vast amount of text, an LLM does one thing: predict the next chunk, given all the text before it. Picture autocomplete that has read enormously. Each reply is assembled that way — one probable piece after the next.",
+    "An LLM is trained on vast text to predict the next chunk from everything prior — autocomplete that has read enormously. Every reply is built piece by likely piece."
+  ],
+  "likely-not-true": [
+    "Because it learned from so much writing, what it says usually sounds smooth and sure of itself. Here is the catch, though: it is guessing the words that are <em>likely</em> to come next, not checking whether they are <em>true</em>. So it can be wrong and still sound completely confident. A made-up name or date can read just as smoothly as a real one. The very thing that makes it fluent is the thing that lets it be confidently wrong.",
+    "Because it learned from so much writing, its replies tend to sound smooth and confident. But it is predicting <em>likely</em> words, not checking whether they are <em>true</em> — so it can be wrong and still sound sure. A made-up fact can read as smoothly as a real one. Fluency and confident error come from the same trick.",
+    "The same trick cuts both ways. Predicting <em>likely</em> words is what makes it fluent — and it means the model never checks whether those words are <em>true</em>. So it can be wrong while sounding perfectly sure; an invented fact reads as smoothly as a real one. Fluency and confident error share one source.",
+    "One mechanism, two edges. Predicting likely words yields the fluency — and skips any test of truth. So a wrong answer can sound exactly as assured as a right one; the smoothness tells you nothing about whether it's accurate.",
+    "One mechanism, two edges: predicting likely text produces fluency but applies no test of truth. Confident-and-wrong can read identically to confident-and-right; smoothness signals nothing about accuracy."
+  ],
+  "treat-facts-as-guesses": [
+    "What it learned stops at a certain point in time, so it may not know about recent events. And it doesn't look anything up on its own — it only does that if it has been given tools to. This is why it can be wonderful for wording, explaining, drafting, and sparking ideas, where there isn't one single right answer. For a fact, name, number, or quote, you can treat what it says as a <em>guess to check</em> — and you stay the judge. You might like <a href=\"/infographics/good-at.html\">what it's good at</a>.",
+    "Its knowledge stops around the time its training did, so it won't automatically know recent events, and it doesn't look things up unless it's given tools to. That makes it strong for wording, explaining, drafting, and ideas, and weaker on exact details. One workable habit: treat any fact, name, number, or quote as a guess to check. You stay the judge. See <a href=\"/infographics/good-at.html\">what it's good at</a>.",
+    "Its knowledge has an edge — it stops around when its training did, so it won't automatically know recent events, and it doesn't look things up unless given tools to. That makes it strong for wording, explaining, drafting, and ideas, and shakier on specifics. A workable habit: treat any fact, name, number, or quote as a guess to check. You remain the judge. See <a href=\"/infographics/good-at.html\">what it's good at</a>.",
+    "Its knowledge has a cut-off, and no built-in lookup unless it's given tools — so recent or specific facts may be off. That leaves it excellent for wording, explaining, drafting, and ideas, and less reliable on detail. Treating any fact, name, number, or quote as a guess to check keeps the judgement yours.",
+    "Knowledge with a cut-off, no native lookup unless tooled: recent or specific facts may be off. Excellent for wording, explaining, drafting, ideas; for any fact, name, number, or quote, verification stays yours."
+  ]
+}

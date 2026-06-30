@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, viewport-fit=cover" />
+    <title>What's an LLM? — Monkey Got Thumbs</title>
+    <link rel="canonical" href="https://monkey-got-thumbs.com/basics/llms/">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#0E0B1A" />
+    <meta name="color-scheme" content="dark">
+    <link rel="stylesheet" href="/assets/css/tokens.css">
+    <link rel="stylesheet" href="/assets/css/base.css">
+    <link rel="stylesheet" href="/assets/css/layout.css">
+    <meta name="description" content="Chatbots run on an LLM — a large language model. A single idea explains both why it writes so fluently and why it can be confidently wrong." />
+    <meta name="author" content="Monkey Got Thumbs" />
+    <meta property="og:title" content="What's an LLM? — Monkey Got Thumbs">
+    <meta property="og:description" content="Chatbots run on an LLM — a large language model. A single idea explains both why it writes so fluently and why it can be confidently wrong.">
+    <meta property="og:url" content="https://monkey-got-thumbs.com/basics/llms/">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://monkey-got-thumbs.com/social-card.png">
+    <meta property="og:site_name" content="Monkey Got Thumbs">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "LearningResource", "name": "What's an LLM?",
+      "url": "https://monkey-got-thumbs.com/basics/llms/", "learningResourceType": "concept explainer",
+      "breadcrumb": { "@type": "BreadcrumbList", "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://monkey-got-thumbs.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Basics", "item": "https://monkey-got-thumbs.com/basics/" },
+        { "@type": "ListItem", "position": 3, "name": "What's an LLM?" }
+      ]}}
+    </script>
+    <style>
+        .cx { max-width: 44rem; margin-inline: auto; }
+        .cx-hero { margin: 0 0 var(--space-2xl); }
+        .cx-hero .eyebrow { font: 700 var(--font-size-xs)/1 var(--font-mono); text-transform: uppercase; letter-spacing: .08em; color: var(--color-accent); }
+        .cx-hero h1 { margin: var(--space-sm) 0; }
+        .cx-hero .lede { color: var(--color-fg-secondary); font-size: var(--font-size-lg); line-height: 1.75; }
+        .cx-step { margin: var(--space-2xl) 0; }
+        .cx-step > h2 { display: flex; align-items: baseline; gap: 0.7rem; font-size: var(--font-size-2xl); margin: 0 0 0.6rem; }
+        .cx-step > h2 .n { font: 700 var(--font-size-sm)/1 var(--font-mono); color: var(--color-accent); flex: none; }
+        .cx-step p { line-height: 1.8; color: var(--color-fg); }
+        mgt-recall { display: block; margin: var(--space-xl) 0; }
+        .cx-back { margin-top: var(--space-2xl); padding-top: var(--space-lg); border-top: 1px solid var(--color-border); }
+        .cx-back a { color: var(--color-accent); }
+    </style>
+    <link rel="stylesheet" href="/assets/css/accessibility.css">
+    <script src="/assets/js/a11y-init.js"></script>
+    <script src="/assets/js/accessibility.js" defer></script>
+    <link rel="stylesheet" href="/assets/css/journey.css">
+    <script src="/assets/js/journey.js" defer></script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <mgt-header></mgt-header>
+    <main id="main-content">
+        <article class="cx section-pad">
+            <nav aria-label="Breadcrumb">
+                <ul class="breadcrumbs">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/basics/">Basics</a></li>
+                    <li><span aria-current="page">What's an LLM?</span></li>
+                </ul>
+            </nav>
+            <header class="cx-hero">
+                <span class="eyebrow">basics · the basics</span>
+                <h1 data-a11y="hero-title">What's an LLM?</h1>
+                <p class="lede" data-a11y="hero-lede">Chatbots run on an <strong>LLM</strong> — a large language model. A single idea explains both why it writes so fluently and why it can be confidently wrong.</p>
+            </header>
+
+            <section class="cx-step" aria-labelledby="s-the-one-trick">
+                <h2 id="s-the-one-trick"><span class="n" aria-hidden="true">01</span> What it actually does</h2>
+                <p data-a11y="the-one-trick">An LLM is trained on a vast amount of writing to do one thing: given everything written so far, predict the next chunk of text. A fair picture is <em>autocomplete that has read a vast amount of writing</em>. Everything a chatbot says is built this way — one likely piece after another.</p>
+            </section>
+            <section class="cx-step" aria-labelledby="s-likely-not-true">
+                <h2 id="s-likely-not-true"><span class="n" aria-hidden="true">02</span> Likely, not true</h2>
+                <p data-a11y="likely-not-true">The same trick cuts both ways. Predicting <em>likely</em> words is what makes it fluent — and it means the model never checks whether those words are <em>true</em>. So it can be wrong while sounding perfectly sure; an invented fact reads as smoothly as a real one. Fluency and confident error share one source.</p>
+            </section>
+            <section class="cx-step" aria-labelledby="s-treat-facts-as-guesses">
+                <h2 id="s-treat-facts-as-guesses"><span class="n" aria-hidden="true">03</span> What to check</h2>
+                <p data-a11y="treat-facts-as-guesses">Its knowledge has an edge — it stops around when its training did, so it won't automatically know recent events, and it doesn't look things up unless given tools to. That makes it strong for wording, explaining, drafting, and ideas, and shakier on specifics. A workable habit: treat any fact, name, number, or quote as a guess to check. You remain the judge. See <a href="/infographics/good-at.html">what it's good at</a>.</p>
+            </section>
+            <mgt-recall id="basics-llms-likely-not-true">
+                <details>
+                    <summary>If an LLM predicts what's likely rather than what's true, what does that mean for the facts it gives you?</summary>
+                    <p>Its fluent, confident tone is no guarantee of accuracy — it's predicting probable wording, not verifying it. Any fact, name, number, or quote is worth treating as a guess to check.</p>
+                </details>
+            </mgt-recall>
+            <p class="cx-back"><a href="/basics/">← Back to the basics</a></p>
+        </article>
+    </main>
+    <mgt-footer></mgt-footer>
+    <script src="/assets/js/tracking.js" defer></script>
+    <script type="module" src="/assets/js/app.js"></script>
+    <script type="module" src="/components/core/mgt-header.js"></script>
+    <script type="module" src="/components/core/mgt-footer.js"></script>
+    <script type="module" src="/components/core/mgt-recall.js"></script>
+</body>
+</html>

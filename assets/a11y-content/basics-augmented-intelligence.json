@@ -1,0 +1,37 @@
+{
+  "hero-title": [
+    "What does <em>augmented intelligence</em> actually mean?",
+    "What is augmented intelligence?",
+    "What's augmented intelligence?",
+    "Augmented intelligence, explained",
+    "Augmented intelligence"
+  ],
+  "hero-lede": [
+    "There's an old idea that a tool is meant to make a person better at something — not to do the thing in their place. A hammer doesn't build the house for you; it lets your arm do more. <em>Augmented intelligence</em> asks the same question of a computer: could it help you think further, while you stay the one who decides? Here's where the idea came from, and what it might mean for you.",
+    "There's an old idea that a tool should make a person <em>more</em> able, not stand in for them. <em>Augmented intelligence</em> asks that of AI: can it help you think further while you keep deciding? Here's where it comes from, and why it might matter to you.",
+    "This whole site rests on one old idea: a tool should <em>raise</em> what a person can do, not replace them. <em>Augmented intelligence</em> applies that to AI — a thinking partner that extends your reach while you keep the final call. Here's where it comes from, and why it might matter to you.",
+    "One old idea runs under this whole site: tools should <em>raise</em> human ability, not replace it. <em>Augmented intelligence</em> is that idea applied to AI — extend your reach, keep your judgement. Here's its origin and its stakes.",
+    "<em>Augmented intelligence</em>: AI that amplifies human judgement rather than replacing it — the idea this site is built on. Its origin, and what's at stake for you."
+  ],
+  "where-it-comes-from": [
+    "Back in 1962, a thinker named Douglas Engelbart wrote down a plain hope: that machines might help people think better — help us work through hard problems we couldn't crack on our own. He wasn't dreaming of machines that took our place. He was dreaming of machines that <em>lifted</em> what a person could manage, the way a ladder helps you reach a high shelf. He called this <em>augmenting human intellect</em>. The idea is much older than today's AI, and it still shapes how some people choose to use it.",
+    "In 1962, Douglas Engelbart wrote a paper with a plain hope behind it: that machines could help people think better, and work through problems too hard to crack alone. He didn't want machines that replaced people — he wanted machines that <em>lifted</em> what a person could do. He called it <em>augmenting human intellect</em>. The idea is older than today's AI, and still guides how many people use it.",
+    "The phrase traces back to Douglas Engelbart, who in 1962 wrote a paper titled <em>Augmenting Human Intellect</em>. His aim wasn't machines that replace people, but machines that <em>raise</em> what a person can do — tools to help us tackle problems too tangled to manage alone. It's an old idea, and it still guides how many people approach AI today.",
+    "The phrase goes back to Douglas Engelbart's 1962 paper <em>Augmenting Human Intellect</em>: not machines that replace people, but machines that <em>raise</em> what a person can do against problems too tangled to manage alone. Older than today's AI — and still a live way to frame it.",
+    "The phrase is Douglas Engelbart's, from his 1962 paper <em>Augmenting Human Intellect</em>: machines built to <em>raise</em> human capability, not stand in for it. Decades older than current AI, still a live framing."
+  ],
+  "augmentation-vs-automation": [
+    "There are two different things a machine can try to do, and they're worth keeping apart. One is <em>automation</em>: the machine does the whole task instead of you, so you can step back and leave it to run. The other is <em>augmentation</em>: the machine makes <em>you</em> more able — it carries some of the load, but you stay in the middle, looking and choosing. Picture a calculator you punch numbers into and check, versus a vending machine that just hands you a snack. Both can be handy. They simply aren't the same, and which one a tool is built for changes who's really in charge.",
+    "A machine can try two different things. <em>Automation</em> means it does the task <em>instead</em> of you, so you step back. <em>Augmentation</em> means it makes <em>you</em> more able — it shares the load, but you stay in the middle, looking and choosing. Both can be useful. The difference is where you end up: out of the loop, or still holding the wheel.",
+    "Two paths sit side by side. <em>Automation</em> aims to do the task <em>instead</em> of you, so you can step away. <em>Augmentation</em> aims to make <em>you</em> more capable — it shares the load, but you stay central, watching and deciding. Both have their place. The difference is simply where you land: out of the loop, or still holding the wheel.",
+    "Two aims sit side by side. <em>Automation</em>: the task done <em>instead</em> of you, so you step away. <em>Augmentation</em>: <em>you</em> made more capable, central, still deciding. Both have uses — the split is where you land, out of the loop or holding the wheel.",
+    "Automation does the task in your place; augmentation makes you more capable while you stay central and deciding. Both have uses — the split is whether you leave the loop or keep the wheel."
+  ],
+  "why-it-matters": [
+    "You've probably heard the worry: <em>AI will replace you</em>. Augmentation offers a quieter way to look at it. If you treat AI as a thinking partner, you can get more reach and move faster — but the weighing, the deciding, the final call all stay with you. You don't hand those over. A tool can only help while you keep paying attention, though; lean on it without looking and it stops augmenting and starts deciding for you. Knowing <a href=\"/infographics/good-at.html\">what it's actually good at</a> can help you keep that line clear. Whether the trade feels right is yours to weigh.",
+    "You've probably heard that <em>AI will replace you</em>. Augmentation is a calmer answer. As a thinking partner, AI can give you more reach and speed — but the judgement and the final call stay yours. You don't hand those over. That holds only while you stay attentive: lean on it blindly and it slips from helping into deciding for you. Whether the trade is worth it is yours to weigh.",
+    "You've likely heard that <em>AI will replace you</em>. Augmentation is a gentler, more honest answer. Used as a thinking partner, AI can give you more reach and speed — but the judgement, and the final call, stay yours. You never hand those over. That only holds while you stay attentive, though: lean on it blindly and it quietly slips from helping into deciding. Whether the trade is worth it is yours to weigh.",
+    "Against <em>AI will replace you</em>, augmentation is a steadier answer: more reach and speed, judgement still yours, the final call never handed over. But it holds only while you stay attentive — lean blindly and it slips from helping into deciding. Whether that trade suits you is yours to weigh.",
+    "Against <em>AI will replace you</em>, augmentation offers a calmer reading: more reach and speed, judgement still yours. Yet it holds only while you stay attentive — unwatched, a partner slides into a replacement. Whether that trade suits you is yours to judge."
+  ]
+}

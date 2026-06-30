@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, viewport-fit=cover" />
-    <title>Basics — why learn it by playing with it — Monkey Got Thumbs</title>
+    <title>Basics — AI from nothing — Monkey Got Thumbs</title>
     <link rel="canonical" href="https://monkey-got-thumbs.com/basics/">
     <meta name="robots" content="index, follow, max-image-preview:large">
     <meta name="theme-color" content="#0E0B1A" />
@@ -11,47 +11,38 @@
     <link rel="stylesheet" href="/assets/css/tokens.css">
     <link rel="stylesheet" href="/assets/css/base.css">
     <link rel="stylesheet" href="/assets/css/layout.css">
-    <meta name="description" content="The case, from the ground up, for how this site teaches AI: augment don't replace (Engelbart), understand by manipulating (Victor, Nielsen), make the invisible visible (Fan), trust what's hard to vary (Deutsch), and make it stick (retrieval + spacing)." />
+    <meta name="description" content="The basics of AI, from nothing — short, plain-words reads on what AI is, what's behind the chatbots (LLMs), what an 'agent' really is, augmented intelligence, and augmented reality." />
     <meta name="author" content="Monkey Got Thumbs" />
-    <meta property="og:title" content="Basics — why learn it by playing with it">
-    <meta property="og:description" content="The argument, from the ground up, for learning AI by playing with it — and you're free to disagree.">
+    <meta property="og:title" content="Basics — AI from nothing">
+    <meta property="og:description" content="Short, plain-words reads that take you from zero: what AI is, LLMs, agents, augmented intelligence, AR.">
     <meta property="og:url" content="https://monkey-got-thumbs.com/basics/">
-    <meta property="og:type" content="article">
+    <meta property="og:type" content="website">
     <meta property="og:image" content="https://monkey-got-thumbs.com/social-card.png">
     <meta property="og:site_name" content="Monkey Got Thumbs">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
     <script type="application/ld+json">
-    { "@context": "https://schema.org", "@type": "LearningResource", "name": "Basics — why learn it by playing with it",
-      "url": "https://monkey-got-thumbs.com/basics/", "learningResourceType": "justification essay",
+    { "@context": "https://schema.org", "@type": "CollectionPage", "name": "Basics", "url": "https://monkey-got-thumbs.com/basics/",
       "breadcrumb": { "@type": "BreadcrumbList", "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://monkey-got-thumbs.com/" },
         { "@type": "ListItem", "position": 2, "name": "Basics" }
       ]}}
     </script>
     <style>
-        .bx { max-width: 44rem; margin-inline: auto; }
-        .bx-hero { margin: 0 0 var(--space-2xl); }
+        .bx { max-width: 52rem; margin-inline: auto; }
+        .bx-hero { max-width: 44rem; margin: 0 0 var(--space-2xl); }
         .bx-hero .eyebrow { font: 700 var(--font-size-xs)/1 var(--font-mono); text-transform: uppercase; letter-spacing: .08em; color: var(--color-accent); }
         .bx-hero h1 { margin: var(--space-sm) 0; }
         .bx-hero .lede { color: var(--color-fg-secondary); font-size: var(--font-size-lg); line-height: 1.75; }
-        .bx-step { margin: var(--space-2xl) 0; }
-        .bx-step > h2 { display: flex; align-items: baseline; gap: 0.7rem; font-size: var(--font-size-2xl); margin: 0 0 0.6rem; }
-        .bx-step > h2 .n { font: 700 var(--font-size-sm)/1 var(--font-mono); color: var(--color-accent); flex: none; }
-        .bx-step p { line-height: 1.8; color: var(--color-fg); }
-        mgt-recall { display: block; margin: var(--space-lg) 0; }
-        .bx-cta { display: block; text-decoration: none; color: inherit; border: 1px solid color-mix(in srgb, var(--color-accent) 35%, var(--color-border)); border-radius: 18px; padding: clamp(1.1rem,3vw,1.5rem); margin: var(--space-2xl) 0; background: radial-gradient(130% 130% at 0% 0%, color-mix(in srgb, var(--color-accent) 14%, transparent), transparent 62%), var(--color-bg-secondary); transition: border-color .15s ease, transform .15s ease; }
-        .bx-cta:hover { border-color: var(--color-accent); transform: translateY(-2px); }
-        .bx-cta .kick { font: 700 var(--font-size-xs)/1 var(--font-mono); text-transform: uppercase; letter-spacing: .07em; color: var(--color-accent); }
-        .bx-cta h2 { margin: 0.45rem 0 0.3rem; font-size: var(--font-size-xl); }
-        .bx-cta p { margin: 0; color: var(--color-fg-secondary); line-height: 1.6; }
-        .bx-found { margin-top: var(--space-2xl); padding-top: var(--space-xl); border-top: 1px solid var(--color-border); }
-        .bx-grid { display: grid; gap: 0.8rem; grid-template-columns: repeat(auto-fill, minmax(min(100%, 15rem), 1fr)); margin-top: var(--space-md); }
-        .bx-grid a { display: block; border: 1px solid var(--color-border); border-radius: 12px; padding: 0.85rem 1rem; text-decoration: none; color: var(--color-fg); background: var(--color-bg-secondary); transition: border-color .15s ease; }
-        .bx-grid a:hover { border-color: var(--color-accent); }
-        .bx-grid a b { display: block; }
-        .bx-grid a span { color: var(--color-muted); font-size: var(--font-size-sm); }
-        .bx-note { color: var(--color-muted); font-size: var(--font-size-sm); line-height: 1.6; margin-top: var(--space-md); }
+        .bx-grid { display: grid; gap: clamp(0.9rem, 2vw, 1.25rem); grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr)); margin: var(--space-xl) 0; }
+        .bx-card { display: flex; flex-direction: column; gap: 0.4rem; text-decoration: none; color: inherit; border: 1px solid var(--color-border); border-radius: 16px; padding: 1.25rem 1.35rem; background: radial-gradient(120% 130% at 0% 0%, color-mix(in srgb, var(--color-accent) 11%, transparent), transparent 60%), var(--color-bg-secondary); transition: border-color .15s ease, transform .15s ease; }
+        .bx-card:hover { border-color: var(--color-accent); transform: translateY(-2px); }
+        .bx-card .n { font: 700 var(--font-size-xs)/1 var(--font-mono); color: var(--color-accent); letter-spacing: .06em; }
+        .bx-card b { font-size: var(--font-size-lg); line-height: 1.25; }
+        .bx-card span { color: var(--color-fg-secondary); line-height: 1.55; font-size: var(--font-size-sm); }
+        .bx-card .go { margin-top: auto; padding-top: 0.4rem; color: var(--color-accent); font-size: var(--font-size-sm); }
+        .bx-why { margin-top: var(--space-xl); padding-top: var(--space-lg); border-top: 1px solid var(--color-border); color: var(--color-muted); font-size: var(--font-size-sm); line-height: 1.7; }
+        .bx-why a { color: var(--color-accent); }
     </style>
     <link rel="stylesheet" href="/assets/css/accessibility.css">
     <script src="/assets/js/a11y-init.js"></script>
@@ -63,7 +54,7 @@
     <a href="#main-content" class="skip-link">Skip to main content</a>
     <mgt-header></mgt-header>
     <main id="main-content">
-        <article class="bx section-pad">
+        <div class="bx section-pad">
             <nav aria-label="Breadcrumb">
                 <ul class="breadcrumbs">
                     <li><a href="/">Home</a></li>
@@ -72,87 +63,51 @@
             </nav>
 
             <header class="bx-hero">
-                <span class="eyebrow">basics · why this works</span>
-                <h1 data-a11y="hero-title">Why learn it by playing with it?</h1>
-                <p class="lede" data-a11y="hero-lede">AI hands you fluent, confident answers with none of the working shown — so the first real skill is telling a genuine understanding from a plausible guess, in yourself and in the machine. Everything here is built to grow that skill, not to hand you conclusions. Here's the argument, from the ground up — and you're free to disagree with any of it.</p>
+                <span class="eyebrow">basics · from nothing</span>
+                <h1 data-a11y="hero-title">New to all this? Start right here.</h1>
+                <p class="lede" data-a11y="hero-lede">No background needed, and nothing to catch up on. Each short read below takes one idea — what AI even is, what's behind the chatbots, what an “agent” really is, and how it can amplify you instead of replacing you — and explains it in plain words. Read them in any order; come out ready to look around.</p>
             </header>
 
-            <section class="bx-step" aria-labelledby="s-augment">
-                <h2 id="s-augment"><span class="n" aria-hidden="true">01</span> Augment, don't replace</h2>
-                <p data-a11y="augment">The phrase <em>augmented intelligence</em> comes from Douglas Engelbart, who argued back in 1962 that tools should raise what a human can do, not stand in for the human. That's the whole frame here. If a page simply told you what to think about AI, it would be doing the opposite of what it preaches — automating your conclusions. So the aim is to amplify your judgment and leave the deciding to you.</p>
-            </section>
+            <div class="bx-grid">
+                <a class="bx-card" href="/basics/what-is-ai/">
+                    <span class="n" aria-hidden="true">01</span>
+                    <b>What even is AI?</b>
+                    <span>Not magic, not a mind — very good pattern-matching. Where it shines, and where it slips.</span>
+                    <span class="go">Read it →</span>
+                </a>
+                <a class="bx-card" href="/basics/llms/">
+                    <span class="n" aria-hidden="true">02</span>
+                    <b>What's an LLM?</b>
+                    <span>The thing behind the chatbots — why it's so fluent, and why it can be confidently wrong.</span>
+                    <span class="go">Read it →</span>
+                </a>
+                <a class="bx-card" href="/basics/agents/">
+                    <span class="n" aria-hidden="true">03</span>
+                    <b>What's an agent?</b>
+                    <span>Really just a clear, reusable ask — one that can take steps and actually do things.</span>
+                    <span class="go">Read it →</span>
+                </a>
+                <a class="bx-card" href="/basics/augmented-intelligence/">
+                    <span class="n" aria-hidden="true">04</span>
+                    <b>Augmented intelligence</b>
+                    <span>AI that amplifies your judgment instead of replacing you. You keep the wheel.</span>
+                    <span class="go">Read it →</span>
+                </a>
+                <a class="bx-card" href="/basics/augmented-reality/">
+                    <span class="n" aria-hidden="true">05</span>
+                    <b>Augmented reality</b>
+                    <span>Useful information laid over the real world — through a phone or a pair of glasses.</span>
+                    <span class="go">Read it →</span>
+                </a>
+            </div>
 
-            <section class="bx-step" aria-labelledby="s-manip">
-                <h2 id="s-manip"><span class="n" aria-hidden="true">02</span> You understand what you can change</h2>
-                <p data-a11y="manip">Prose can describe a moving system, but it can't move. Bret Victor spent a career on the alternative: show the data, give feedback the instant you act, and let people work the system with their own hands. Michael Nielsen's <em>Reinventing Explanation</em> makes the matching case — that interactive, visual media can explain things plain prose simply can't reach. You tend to keep what you touched, not what you were told.</p>
-            </section>
-
-            <section class="bx-step" aria-labelledby="s-visible">
-                <h2 id="s-visible"><span class="n" aria-hidden="true">03</span> Make the invisible visible</h2>
-                <p data-a11y="visible">The cognitive scientist Judy Fan calls these things <em>cognitive tools</em> — number lines, diagrams, graphs, even augmented-reality overlays — human inventions that make the invisible visible, so each generation can build on the last. Her larger point is a loop: we discover useful abstractions about the world, then engineer with them to build new things — and the building makes something new visible to discover. That loop is the shape of this whole site: discover → explore → build → and round again.</p>
-            </section>
-
-            <mgt-recall id="basics-augmented-intelligence">
-                <details>
-                    <summary>Where does "augmented intelligence" come from, and what does it claim?</summary>
-                    <p>Douglas Engelbart (1962): tools should raise what a human can do, not replace the human. Amplify judgment; leave the deciding to you.</p>
-                </details>
-            </mgt-recall>
-
-            <section class="bx-step" aria-labelledby="s-craft">
-                <h2 id="s-craft"><span class="n" aria-hidden="true">04</span> The craft is real, and written down</h2>
-                <p data-a11y="craft">This isn't a hunch. A whole lineage made the interactive explanation a genuine craft — Nicky Case, Amit Patel's Red Blob Games, Dan Shiffman, Jack Schaedler, Vi Hart, William Ngan — and Case even codified the patterns (Puzzle It Out, Place Your Bets, Role Play, Sandbox Mode). It's only honest to add that the field is small and its makers are human: Case has written openly about burnout, and some catalogues haven't grown in years. We're standing on what they built, not pretending we invented it.</p>
-            </section>
-
-            <section class="bx-step" aria-labelledby="s-vary">
-                <h2 id="s-vary"><span class="n" aria-hidden="true">05</span> How to tell a real explanation</h2>
-                <p data-a11y="vary">David Deutsch gives the test. A genuine explanation is <em>hard to vary</em> — change one part and it breaks. A weak one is easy to vary: it would have "explained" the opposite just as smoothly. When AI hands you an explanation, ask whether you could remove or swap a piece and still reach the same conclusion. If you could, don't trust it yet. That test is yours to apply — here, and everywhere else.</p>
-            </section>
-
-            <mgt-recall id="basics-hard-to-vary">
-                <details>
-                    <summary>In Deutsch's test, what makes an explanation trustworthy?</summary>
-                    <p>It's <strong>hard to vary</strong> — change one part and it breaks. An easy-to-vary explanation would have "explained" the opposite just as smoothly, so it earns no trust.</p>
-                </details>
-            </mgt-recall>
-
-            <section class="bx-step" aria-labelledby="s-stick">
-                <h2 id="s-stick"><span class="n" aria-hidden="true">06</span> And it has to stick</h2>
-                <p data-a11y="stick">Understanding that has evaporated by next week isn't much use. Recalling something strengthens it far more than re-reading it (the testing effect); spacing that recall to land just before you'd forget resets the forgetting curve. That's why small recall prompts are woven through these pages — and why there's a page that turns your <em>own</em> recall data into a way of seeing how memory works, both yours and the machine's.</p>
-            </section>
-
-            <mgt-recall id="basics-testing-effect">
-                <details>
-                    <summary>Why recall instead of re-read?</summary>
-                    <p>Pulling an idea back out of your head strengthens the memory more than reading it again (the testing effect). Spacing the recall fights forgetting.</p>
-                </details>
-            </mgt-recall>
-
-            <a class="bx-cta" href="/basics/memory/">
-                <span class="kick">the flagship explorable</span>
-                <h2>See memory work — yours, and the machine's →</h2>
-                <p data-a11y="memory-cta">The cards you just answered became data. This page draws that data — your forgetting curve and your ladder — and sets it beside how an LLM "remembers", so you can see where the two are alike and where they part ways.</p>
-            </a>
-
-            <section class="bx-found" aria-labelledby="s-found">
-                <h2 id="s-found">Now the foundations</h2>
-                <p class="bx-note" data-a11y="found-note">The argument above is why we teach this way. These short reads are the what — AI from nothing, in plain words. There's no required order.</p>
-                <div class="bx-grid">
-                    <a href="/learn/foundations/what-is-ai.html"><b>What AI actually is</b><span>plain-words foundation</span></a>
-                    <a href="/learn/foundations/why-we-need-it.html"><b>Why it's worth your time</b><span>the case for learning it</span></a>
-                    <a href="/learn/foundations/how-it-helps.html"><b>Where it helps</b><span>what it's good at</span></a>
-                    <a href="/learn/foundations/ai-pitfalls.html"><b>Where it slips up</b><span>honest limits</span></a>
-                    <a href="/learn/foundations/three-pillars.html"><b>What earns trust</b><span>how to calibrate</span></a>
-                    <a href="/learn/frameworks/explanation.html"><b>Real explanation vs. text</b><span>Deutsch's test, applied</span></a>
-                </div>
-            </section>
-        </article>
+            <p class="bx-why" data-a11y="why-note">Curious <em>why</em> we teach by letting you poke at things rather than lecturing? That's not ours to claim — it comes from a handful of people we name on the <a href="/learn/influences.html">influences page</a>.</p>
+        </div>
     </main>
     <mgt-footer></mgt-footer>
     <script src="/assets/js/tracking.js" defer></script>
     <script type="module" src="/assets/js/app.js"></script>
     <script type="module" src="/components/core/mgt-header.js"></script>
     <script type="module" src="/components/core/mgt-footer.js"></script>
-    <script type="module" src="/components/core/mgt-recall.js"></script>
 </body>
 </html>

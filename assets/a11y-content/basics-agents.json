@@ -1,0 +1,37 @@
+{
+  "hero-title": [
+    "What is an AI agent, in plain words?",
+    "What's an AI agent?",
+    "What's an agent?",
+    "What's an agent?",
+    "Agents, defined"
+  ],
+  "hero-lede": [
+    "You've probably chatted with an AI before — you type something, it types back, and then it waits for you. An <strong>agent</strong> is that same kind of AI, but set up to actually <em>do</em> a job rather than just talk about it. You tell it once what you want, hand it a few tools, and it works through the steps on its own. What it's allowed to touch stays your call, start to finish.",
+    "A chatbot talks back. An <strong>agent</strong> is the same kind of AI, given a goal, a few tools, and the room to take steps and <em>do</em> the task — draft the update, sort the inbox. You set it up once; what it's allowed to do stays yours to decide.",
+    "A chatbot talks back. An <strong>agent</strong> is the same kind of AI given a goal, a few tools, and room to take steps and <em>do</em> the task — draft the weekly update, sort the inbox by what needs a reply. You set it up once; what it's allowed to do stays yours.",
+    "Chatbot: replies. <strong>Agent</strong>: same AI, given a goal, tools, and steps to <em>do</em> the task — draft the update, sort the inbox. Defined once; its permissions stay yours.",
+    "An agent is an LLM handed a goal, tools, and the ability to act in steps — not just reply. A clear, reusable ask you define once. The permissions stay yours."
+  ],
+  "chat-vs-do": [
+    "When you chat with an AI, it answers your question and then waits for you to say something next. An agent doesn't just answer — it takes the next step itself. Ask it to tidy your inbox and it can look through your messages, work out which ones are really asking you something, and gather those in one place, then come back and show you. It's the same AI underneath; the difference is that it's been pointed at a <em>goal</em> and allowed to act on it.",
+    "A chatbot replies, then waits. An agent is given a goal and allowed to take the next step on its own — read through your inbox, pick out the messages that actually need a reply, gather them for you. Same kind of AI; it's simply been pointed at a task and let loose on it, within limits you set.",
+    "A chatbot answers and stops. An agent is the same kind of AI, given a <em>goal</em> and the freedom to take steps toward it — read your inbox, find the messages that need a reply, set them aside. It acts, where a chatbot only talks.",
+    "Chatbot: answers, stops. Agent: same model, given a goal and allowed to act on it in steps — read the inbox, surface what needs a reply. Doing, not just describing.",
+    "A chatbot responds; an agent is the same model handed a goal and licence to act in steps toward it — read, decide, set aside. Action, not just answer."
+  ],
+  "reusable-ask": [
+    "Setting up an agent is mostly writing down a clear request, once. You say what you want done, roughly how, and which tools it may use — a tool might be searching the web, fetching a file, or sending a message. From there it works in a loop: do a step, look at what came back, decide the next step, and check whether it's actually done what you asked. Because you wrote it down, you can run the same agent again next week without starting over. An agent that drafts your weekly update is just that ask, saved.",
+    "An agent is really a clear request you write once: what you want, roughly how, and which tools it may use — searching, fetching a file, sending a message. Then it works in a loop — take a step, read the result, take the next, check its own work — until the task is done. Saved, it runs again next week without you redoing the setup. A weekly-update draft is just that ask, on repeat.",
+    "An agent is really just a <strong>clear, reusable ask</strong>. You set it up once — what you want, how, and with which tools (searching, fetching, sending) — and it works in a loop: take a step, check the result, take the next, until it's done. Save it, and the same ask runs again next week. The weekly-update draft comes out the same way each time.",
+    "An agent is a clear, reusable ask: define it once — goal, method, tools (search, fetch, send) — and it loops: act, read the result, act again, check its work, until done. Saved, it re-runs on demand. Your weekly update, same recipe each week.",
+    "An agent is a clear, reusable ask — goal, method, tools (search/fetch/send) set once. It loops: act, evaluate, repeat, self-check, until done; then re-runs unchanged. The weekly draft, same recipe each time."
+  ],
+  "you-stay-in-control": [
+    "An agent doesn't want anything. It has no plans of its own — it only ever works on the goal you gave it, with the tools you allowed, and nothing else. If you don't hand it the key to your email, it can't send email; if you only let it read, it can't change a thing. So 'how much can it do' is a setting, and that setting is yours. The plainest way to feel where the line sits is to <a href=\"/build/\">build one yourself</a> and watch what it can and can't reach.",
+    "An agent has no will of its own. It works on the goal you set, with the tools you allow — give it none and it can do nothing; give it read-only and it can't change anything. How far it can reach is a setting, and you hold it. The clearest way to see where that line sits is to <a href=\"/build/\">build one yourself</a> and watch what it touches.",
+    "An agent has no will of its own — it works on the goal you gave it, with the tools you allowed, and nothing more. Don't hand it the keys to your email and it can't send any. What it's allowed to do is a setting you hold, not something it decides. You can see exactly where that line sits when you <a href=\"/build/\">build one yourself</a>.",
+    "No will of its own: an agent pursues only the goal you set, through only the tools you grant — no key, no access. Its reach is a permission you hold, not a choice it makes. Set that line yourself when you <a href=\"/build/\">build one</a>.",
+    "An agent has no will of its own — only your goal, only the tools you grant; no access, no action. Its reach is your setting, not its decision. See the line when you <a href=\"/build/\">build one</a>."
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "hero-title": [
+    "What's augmented reality?",
+    "What's augmented reality?",
+    "What's augmented reality?",
+    "What is augmented reality (AR)?",
+    "Augmented reality (AR)"
+  ],
+  "hero-lede": [
+    "Hold up your phone, and it can draw helpful things on top of what the camera sees — like an arrow showing which way to walk. That's augmented reality. Here's the plain idea.",
+    "Augmented reality, or AR, adds useful digital things on top of the real world you can already see. Let's look at what that means.",
+    "Augmented reality (AR) lays digital information over the real world you can see — through a phone or a pair of glasses.",
+    "Augmented reality (AR) overlays digital information onto your live view of the real world, through a phone camera or glasses.",
+    "AR overlays digital information onto your live view of the world."
+  ],
+  "what-it-does": [
+    "Your phone camera already shows you the real world on the screen. <strong>Augmented reality</strong> means the phone can add helpful things on top of that picture, in the right spot. Point it down a street, and an arrow can sit on the road to show your turn. Point it at a sign in another language, and the words can turn into yours. Point it at a plant, and a small label can name it. None of this changes the real street or sign — it just adds a layer you can see on the screen.",
+    "AR puts digital things on top of your real view, lined up with what's actually there. Through a phone, arrows can lie along the street to show your way, words on a sign can appear already translated, and a label can name the thing you're pointing at. The real world stays the same; the screen just adds a helpful layer over it.",
+    "AR shows you the real world — usually through a phone camera, sometimes through glasses — and adds digital things on top, placed where they belong. Direction arrows lie along the actual street. A translation appears on the sign you point at. A label names the thing in front of you. You could even preview a sofa in your own room before buying it.",
+    "Through a phone camera or glasses, AR fixes digital content to your live view: arrows tracked to the street, a translation pinned to a sign, a label on the object you face, a sofa placed to scale in your room. The scene is real; the overlay is added and positioned to match it.",
+    "Phone or glasses; digital content fixed to your live view — street arrows, sign translations, object labels, a to-scale sofa in your room. Real scene, added overlay, matched to position."
+  ],
+  "where-it-fits": [
+    "Think about the other tools on this site. A lot of them take information that's useful but hidden, and make it easy to see right where you need it. AR does that in a very direct way: the helpful note appears on the thing itself. You're still the one looking, deciding, and choosing what to do. AR is still young, and it doesn't always get things right, so it's fair to be curious and unsure. Does seeing the note <em>on</em> the thing help you, or would you rather just look it up? That's yours to weigh.",
+    "Like the other tools here, AR takes information that's useful but invisible and makes it visible — right on the thing you're looking at. You stay the one looking and deciding; it just adds a note. It's an emerging technology, so it's rough in places and not always accurate. You might find that helpful, or you might not — worth trying for yourself.",
+    "AR belongs to the same family as the other tools on this site: it makes useful but invisible information visible, right where you need it. The difference is how directly it does it — the information sits on the world itself. You stay the one looking and acting; AR adds a layer, not a decision. It's still emerging and far from perfect, so whether it helps is fair to test rather than assume. You can see what these tools are <a href=\"/infographics/good-at.html\">good and not good at</a>.",
+    "AR is the same family as the rest of these tools — surfacing useful but invisible information where it's needed — but it places that information directly on the world. You remain the one looking and acting; AR supplies a layer, not a judgement. It's emerging and imperfect, so its usefulness is something to test, not assume.",
+    "Same family as these <a href=\"/basics/\">tools</a>: invisible-but-useful information made visible — here, placed on the world itself. You stay the one looking and acting; AR adds a layer, not a judgement. Emerging and imperfect; test whether it helps."
+  ]
+}
