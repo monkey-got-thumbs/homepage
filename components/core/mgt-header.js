@@ -15,6 +15,18 @@ class MGTHeader extends HTMLElement {
     this.render();
     this.setupAccessibility();
     this.attachEventListeners();
+    // Header is position:fixed, so reserve its height on the page so content
+    // doesn't slide underneath it. Re-measure after the logo/fonts settle.
+    this.syncHeight();
+    requestAnimationFrame(() => this.syncHeight());
+    const logo = this.shadowRoot.querySelector('.brand-logo');
+    if (logo) logo.addEventListener('load', () => this.syncHeight());
+    window.addEventListener('load', () => this.syncHeight());
+  }
+
+  syncHeight() {
+    const header = this.shadowRoot && this.shadowRoot.querySelector('header');
+    if (header) document.body.style.paddingBlockStart = header.offsetHeight + 'px';
   }
 
   render() {
@@ -28,13 +40,14 @@ class MGTHeader extends HTMLElement {
         }
 
         header {
-          position: sticky;
+          position: fixed;
           top: 0;
+          inset-inline: 0;
           z-index: 101;
           backdrop-filter: saturate(120%) blur(6px);
           background: var(--header-bg);
           border-bottom: 1px solid var(--header-border);
-          transition: all 250ms ease;
+          transition: background 250ms ease, border-color 250ms ease;
         }
 
         .header-container {
@@ -281,6 +294,7 @@ class MGTHeader extends HTMLElement {
       if (window.innerWidth >= 768) {
         this.closeMenu();
       }
+      this.syncHeight();
     };
 
     window.addEventListener('resize', resizeHandler);
