@@ -128,16 +128,6 @@ class MGTFooter extends HTMLElement {
       <footer role="contentinfo">
         <div class="footer-container">
           <div class="footer-content">
-            <section aria-labelledby="footer-about">
-              <h2 id="footer-about">About</h2>
-              <p>
-                <strong>Monkey Got Thumbs</strong> helps everyday people get
-                comfortable with AI and make little agents of their own — no
-                coding, no jargon, at your own pace, with a friendly community
-                alongside you.
-              </p>
-            </section>
-
             <section aria-labelledby="footer-basics">
               <h2 id="footer-basics">Basics</h2>
               <ul>

@@ -192,22 +192,6 @@ function ensureViewportMeta() {
 }
 
 /**
- * Inject the chatyman support widget site-wide.
- * chatyman is our own in-browser chatbot product (see /chatty/). It self-mounts
- * a floating launcher and reads /chatyman.json; the model only loads once a user
- * opens the chat, so this is free until engaged. Pages that embed their own
- * chatyman instance (e.g. the /chatty live demo) are left alone.
- */
-function loadChatyman() {
-  if (window.__chatymanLoaded) return;
-  if (document.querySelector('script[src*="chatyman.js"]')) return;
-  const s = document.createElement('script');
-  s.src = '/chatyman.js';
-  s.defer = true;
-  document.body.appendChild(s);
-}
-
-/**
  * Check if browser supports required features
  */
 function checkBrowserSupport() {
@@ -267,9 +251,6 @@ async function init() {
 
     // Step 6: Initialize analytics
     initializeAnalytics();
-
-    // Step 8: Inject the site-wide chatyman support widget
-    loadChatyman();
 
     // Step 8: Dispatch initialization complete event
     const initEvent = new CustomEvent('app-initialized', {
