@@ -63,18 +63,6 @@
         /* transform-only — never opacity:0 on the LCP hero image, so it paints immediately */
         @keyframes floatIn { from { transform: translateY(18px); } to { transform: translateY(0); } }
 
-        /* ===== Delight: a card framed by a soft gradient border ===== */
-        .delight {
-            max-width: 44rem; margin-inline: auto;
-            border-radius: var(--radius-lg); padding: 1px;
-            background: linear-gradient(135deg, color-mix(in srgb, var(--color-accent) 55%, transparent), color-mix(in srgb, var(--color-brand-light) 55%, transparent));
-        }
-        .delight__inner { background: var(--color-bg-secondary); border-radius: calc(var(--radius-lg) - 1px); padding: clamp(1.5rem, 4vw, 2.5rem); }
-        .delight h2 { margin-top: 0; }
-        .delight p { color: var(--color-fg-secondary); line-height: 1.8; }
-        .delight mgt-recall { display: block; margin-top: var(--space-lg); }
-        .delight .card-link { display: inline-block; margin-top: var(--space-lg); }
-
         /* ===== Gentle scroll reveal — transform only, never hides content ===== */
         @media (prefers-reduced-motion: no-preference) {
             @supports (animation-timeline: view()) {
@@ -108,30 +96,11 @@
             </div>
         </section>
 
-        <!-- DELIGHT: lessons that stick (live recall card) -->
-        <section class="home-section reveal" aria-labelledby="stick-title">
-            <div class="delight">
-                <div class="delight__inner">
-                    <span class="eyebrow">what's in it for you</span>
-                    <h2 id="stick-title" data-a11y="stick-title">Learn it once — and actually keep it</h2>
-                    <p data-a11y="stick-desc">Here's what's in it for you: read something once and most of it's gone by next week — so the effort's wasted. Here it's different. A quick recall prompt brings each idea back just before it'd slip, so what you learn actually stays, and adds up into understanding you can use. Have a go (it saves only in your browser):</p>
-                    <mgt-recall id="home-taste">
-                        <details>
-                            <summary>What does it really mean to be “comfortable” with AI?</summary>
-                            <p>It's not about coding or jargon. It's knowing what AI is good at, where it gets things wrong, and how to ask for what you actually want — so it helps with what you really meant. How much you lean on it is up to you.</p>
-                        </details>
-                    </mgt-recall>
-                    <a class="card-link" href="/basics/memory/">See how memory works — yours and the machine's →</a>
-                </div>
-            </div>
-        </section>
-
     </main>
     <mgt-footer></mgt-footer>
     <script src="/assets/js/tracking.js" defer></script>
     <script type="module" src="/assets/js/app.js"></script>
     <script type="module" src="/components/core/mgt-header.js"></script>
     <script type="module" src="/components/core/mgt-footer.js"></script>
-    <script type="module" src="/components/core/mgt-recall.js"></script>
 </body>
 </html>
