@@ -92,6 +92,15 @@
         .step h3 { margin: 0; font-size: var(--font-size-xl); }
         .step p { margin: 0; color: var(--color-fg-secondary); line-height: 1.7; flex: 1; }
         .step a.card-link { margin-top: var(--space-sm); }
+        /* the loop closes — what you build makes the next thing visible */
+        .path-loop {
+            margin: var(--space-xl) auto 0; max-width: var(--measure); text-align: center;
+            color: var(--color-fg-secondary); line-height: 1.7; font-style: italic;
+        }
+        .path-loop::before {
+            content: "↻"; display: block; font-size: 2rem; font-style: normal;
+            color: var(--color-accent); opacity: 0.85; margin-bottom: 0.4rem;
+        }
 
         /* ===== Delight: a card framed by a soft gradient border (css-tip style) ===== */
         .delight {
@@ -152,33 +161,34 @@
             <p class="reassure" data-a11y="reassure">You don't need a tech background. You don't need to “get” everything at once. <strong>This is a calm, gentle path from curious to confident</strong> — with people walking it alongside you.</p>
         </section>
 
-        <!-- THE JOURNEY: a path, not a menu of choices -->
+        <!-- THE LOOP: see it → get it → build it → and back again -->
         <section class="home-section reveal" id="path" aria-labelledby="path-title">
             <div class="section-head">
-                <span class="eyebrow">the journey</span>
-                <h2 id="path-title" data-a11y="path-title">Three gentle steps. Go at your speed.</h2>
-                <p class="muted" data-a11y="path-sub">No need to choose — just start at the top. Each step quietly opens the next.</p>
+                <span class="eyebrow">the loop</span>
+                <h2 id="path-title" data-a11y="path-title">See it. Understand it. Build it. Then around again.</h2>
+                <p class="muted" data-a11y="path-sub">It's the oldest loop there is — how every tool we've ever made came to be. The hidden gets made visible, you come to understand it, then you build with it. No need to choose — just start at the top.</p>
             </div>
             <ol class="path" role="list">
                 <li class="step">
                     <span class="step__num" aria-hidden="true">1</span>
-                    <h3 data-a11y="step1-title">Get comfortable</h3>
-                    <p data-a11y="step1-desc">Start with the basics, explained like a good friend would — plain words, no rush. Pretty soon “chatty” stops feeling like a mystery and starts feeling like a tool you actually get.</p>
-                    <a class="card-link" href="/learn/start/new.html">Take the first step →</a>
+                    <h3 data-a11y="step1-title">See what's hidden</h3>
+                    <p data-a11y="step1-desc">Start with a teachable — a picture that makes one idea click at a glance. The whole job of this step is to take something invisible and make it visible. That's the hook.</p>
+                    <a class="card-link" href="/infographics/">Poke an infographic →</a>
                 </li>
                 <li class="step">
                     <span class="step__num" aria-hidden="true">2</span>
-                    <h3 data-a11y="step2-title">Get hands-on — and make things</h3>
-                    <p data-a11y="step2-desc">Short, playful lessons that genuinely stick — then put them to work: poke at little explainers, try real examples, and make an agent of your own.</p>
-                    <a class="card-link" href="/learn/">See how we teach →</a>
+                    <h3 data-a11y="step2-title">Get how it works</h3>
+                    <p data-a11y="step2-desc">Next, open an explorable and poke it. Change things, watch what happens, and the shape of how it really works comes into focus. This is where you learn a domain for real.</p>
+                    <a class="card-link" href="/explorables/">Open an explorable →</a>
                 </li>
                 <li class="step">
                     <span class="step__num" aria-hidden="true">3</span>
-                    <h3 data-a11y="step3-title">Find your people</h3>
-                    <p data-a11y="step3-desc">It all sticks better with company. Join people who started exactly where you are — swapping what works, cheering each other on, figuring it out together.</p>
-                    <a class="card-link" href="/community/">Meet the community →</a>
+                    <h3 data-a11y="step3-title">Build the real thing</h3>
+                    <p data-a11y="step3-desc">Now turn understanding into something that's yours. Buildables are real tools — an agent you shape, a workshop that works the way you do — for making and shipping the real thing, not toys.</p>
+                    <a class="card-link" href="/build/">Build something →</a>
                 </li>
             </ol>
+            <p class="path-loop" data-a11y="path-loop">…and the thing you build makes something new visible — for you, and for whoever comes next. That's where the loop begins again.</p>
         </section>
 
         <!-- DELIGHT: lessons that stick (live recall card) -->
