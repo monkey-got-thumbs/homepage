@@ -136,14 +136,20 @@ bash scripts/build-vendor.sh     # rebuild the in-browser ML stack under vendor/
 `.github/workflows/deploy.yml` deploys on **push to `main`** (or manual dispatch). It is **not** GitHub
 Pages — it's **S3 + CloudFront via GitHub OIDC** (no long-lived keys):
 
-1. Assume `arn:aws:iam::704225641352:role/github-deploy` (region `ap-southeast-2`).
-2. `aws s3 sync` the site to `s3://codeology-mgt-site-704225641352/` — **additive (no `--delete`)**. Excludes `.git`, `.github`, `.claude`, `.playwright-mcp`, `scripts/`, `content/`, `vendor/`, `writers-digest/`, `*.md`, `CNAME`, `.DS_Store`; `notes/*` is excluded **except** `notes/*.html`.
+1. Assume `arn:aws:iam::824604027328:role/github-deploy` (region `us-east-1`).
+2. `aws s3 sync` the site to `s3://mgt-prod-site/` — **additive (no `--delete`)**. Excludes `.git`, `.github`, `.claude`, `.playwright-mcp`, `scripts/`, `content/`, `vendor/`, `writers-digest/`, `*.md`, `CNAME`, `.DS_Store`; `notes/*` is excluded **except** `notes/*.html`.
 3. Build Writers Digest separately into `out/` (generates `app/config.js` with `WD_LLM_ENDPOINT='/api/wd'`) and sync to `/writers-digest/` **with `--delete`**.
-4. Invalidate CloudFront `E1HGY9I3DL1PFX`.
+4. Invalidate CloudFront `E2SM2CL28GMTT0`.
 
-Served at **mgt.codeology.co.nz** (CloudFront). The `CNAME` file and all canonical/OG/sitemap URLs use
-**monkey-got-thumbs.com** (the public production domain). `*.md` files (including this one) are excluded
-from the sync, so docs never ship.
+Served at **monkey-got-thumbs.com** (+ www) via CloudFront `E2SM2CL28GMTT0` in account `824604027328` —
+the terraform-managed, canonical site (bucket `mgt-prod-site`, OAC + bucket policy granting `s3:GetObject`
+on `/*`). The deploy role lives in `../terraform/environments/mgt/github-deploy.tf`. `*.md` files (including
+this one) are excluded from the sync, so docs never ship.
+
+> An older, now-secondary stack — bucket `codeology-mgt-site-704225641352` / CloudFront `E1HGY9I3DL1PFX` /
+> `mgt.codeology.co.nz`, account `704225641352` — is **no longer the deploy target** (its bucket policy
+> didn't grant reads on newly-created keys, which 403'd new pages). It still serves stale content until
+> retired.
 
 **Not in this repo, not deployed by this CI:** the `/api/*` Lambda backends, the S3/CloudFront/IAM infra,
 and all Terraform. There are zero `*.tf` files here. Sibling directories like `../terraform/` and

@@ -29,6 +29,6 @@ short version, kept in sync.
 - `npx htmlhint <file>` for markup; `npx lighthouse http://localhost:8000 --view` (target ≥90 Performance & Accessibility) for notable UI changes.
 
 ## Deploy, commits & PRs
-- Push to `main` → GitHub Actions (`.github/workflows/deploy.yml`) syncs to S3 + invalidates CloudFront (serves mgt.codeology.co.nz). `*.md`, `scripts/`, `content/`, `vendor/` don't ship. Terraform and the `/api/*` backends are **not** in this repo.
+- Push to `main` → GitHub Actions (`.github/workflows/deploy.yml`) syncs to `s3://mgt-prod-site` + invalidates CloudFront `E2SM2CL28GMTT0` (account `824604027328`, serves the canonical **monkey-got-thumbs.com**) via the `github-deploy` OIDC role. `*.md`, `scripts/`, `content/`, `vendor/` don't ship. Terraform and the `/api/*` backends are **not** in this repo.
 - Short, imperative commit subjects; keep visual, content, and infra changes in separate commits.
 - PRs: describe the change, list manual checks, attach before/after screenshots for UI tweaks.
