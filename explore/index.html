@@ -38,6 +38,10 @@
         .ph-card b { display: block; font-size: var(--font-size-lg); }
         .ph-card span { color: var(--color-fg-secondary); }
         .ph-soon { margin-top: var(--space-2xl); color: var(--color-muted); font-size: var(--font-size-sm); border-block-start: 1px solid var(--color-border); padding-block-start: var(--space-lg); }
+        .ph-grid { display: grid; gap: clamp(0.9rem, 2vw, 1.25rem); grid-template-columns: 1fr; }
+        @media (min-width: 640px) { .ph-grid { grid-template-columns: repeat(2, 1fr); } }
+        .ph-grid .ph-card { margin: 0; }
+        .ph-all { border-style: dashed; }
     </style>
     <link rel="stylesheet" href="/assets/css/accessibility.css">
     <script src="/assets/js/a11y-init.js"></script>
@@ -61,12 +65,28 @@
                 <h1 data-a11y="hero-title">Think with it, not at it</h1>
                 <p class="lede" data-a11y="hero-lede">An explorable is a model you operate. Every number — on the chart and in the sentence — is a handle: drag it and the whole thing re-reasons in front of you. You reach the understanding by playing, not by reading.</p>
             </header>
-            <p data-a11y="what-note">It's where a <a href="/discover/">discoverable</a> drops you once a door has caught your eye — the same territory at ground level, detailed and pokeable. Poke it, try to break it, and how it really works comes into focus.</p>
-            <a class="ph-card" href="/explorables/">
-                <b>Open the explorables →</b>
-                <span data-a11y="cta-note">Interactive models you can drive — components, dashboards, and reactive essays.</span>
+            <div class="ph-grid">
+                <a class="ph-card" href="/explorables/guided-money-printing.html">
+                    <b>Can the government just print money? →</b>
+                    <span>Follow the question through a model you drive yourself — and watch what actually gives.</span>
+                </a>
+                <a class="ph-card" href="/explorables/guided-tradeoff.html">
+                    <b>Low inflation AND low unemployment? →</b>
+                    <span>Why you can't have both at once — drag the dials and feel the trade-off push back.</span>
+                </a>
+                <a class="ph-card" href="/explorables/nz-economy-dashboard.html">
+                    <b>The NZ economy, in your hands →</b>
+                    <span>A live dashboard of real RBNZ numbers — every figure a handle you can drag.</span>
+                </a>
+                <a class="ph-card" href="/explorables/uncertainty.html">
+                    <b>How long, really? →</b>
+                    <span>Why estimates lie, and what a range tells you that a date never can.</span>
+                </a>
+            </div>
+            <a class="ph-card ph-all" href="/explorables/">
+                <b>All explorables →</b>
+                <span>The full shelf — guided questions, dashboards, reactive essays, and the component catalogue.</span>
             </a>
-            <p class="ph-soon" data-a11y="soon-note">This section is still being built out. For now, the explorables above are where Explore lives.</p>
         </div>
     </main>
     <mgt-footer></mgt-footer>

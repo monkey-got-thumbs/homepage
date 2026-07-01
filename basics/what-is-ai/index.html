@@ -41,8 +41,11 @@
         .cx-step > h2 .n { font: 700 var(--font-size-sm)/1 var(--font-mono); color: var(--color-accent); flex: none; }
         .cx-step p { line-height: 1.8; color: var(--color-fg); }
         mgt-recall { display: block; margin: var(--space-xl) 0; }
-        .cx-back { margin-top: var(--space-2xl); padding-top: var(--space-lg); border-top: 1px solid var(--color-border); }
-        .cx-back a { color: var(--color-accent); }
+        .cx-tune { display: block; max-width: 24rem; margin: var(--space-lg) 0 0; }
+        .cx-nav { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--space-sm) var(--space-lg); margin-top: var(--space-2xl); padding-top: var(--space-lg); border-top: 1px solid var(--color-border); }
+        .cx-nav a { color: var(--color-accent); text-decoration: none; }
+        .cx-nav a:hover { text-decoration: underline; }
+        .cx-nav .next { margin-inline-start: auto; font-weight: 700; }
     </style>
     <link rel="stylesheet" href="/assets/css/accessibility.css">
     <script src="/assets/js/a11y-init.js"></script>
@@ -62,6 +65,7 @@
                     <li><span aria-current="page">What even is AI?</span></li>
                 </ul>
             </nav>
+            <mgt-reading-slider class="cx-tune"></mgt-reading-slider>
             <header class="cx-hero">
                 <span class="eyebrow">basics · the basics</span>
                 <h1 data-a11y="hero-title">What even is AI?</h1>
@@ -86,7 +90,10 @@
                     <p>It's using patterns learned from a huge number of examples to guess what fits, one piece at a time — words, pixels, an answer. It isn't a conscious mind that knows things, which is why it can sound fluent and sure yet still be wrong.</p>
                 </details>
             </mgt-recall>
-            <p class="cx-back"><a href="/basics/">← Back to the basics</a></p>
+            <nav class="cx-nav" aria-label="Reading order">
+                <a rel="prev" href="/basics/">← All the basics</a>
+                <a rel="next" class="next" href="/basics/llms/">Next: What's an LLM? →</a>
+            </nav>
         </article>
     </main>
     <mgt-footer></mgt-footer>
@@ -95,5 +102,6 @@
     <script type="module" src="/components/core/mgt-header.js"></script>
     <script type="module" src="/components/core/mgt-footer.js"></script>
     <script type="module" src="/components/core/mgt-recall.js"></script>
+    <script type="module" src="/components/core/mgt-reading-slider.js"></script>
 </body>
 </html>
