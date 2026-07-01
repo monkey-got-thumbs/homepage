@@ -35,8 +35,13 @@
         .bx-hero h1 { margin: var(--space-sm) 0; }
         .bx-hero .lede { color: var(--color-fg-secondary); font-size: var(--font-size-lg); line-height: 1.75; }
         .bx-grid { display: grid; gap: clamp(0.9rem, 2vw, 1.25rem); grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr)); margin: var(--space-xl) 0; }
-        .bx-card { display: flex; flex-direction: column; gap: 0.4rem; text-decoration: none; color: inherit; border: 1px solid var(--color-border); border-radius: 16px; padding: 1.25rem 1.35rem; background: radial-gradient(120% 130% at 0% 0%, color-mix(in srgb, var(--color-accent) 11%, transparent), transparent 60%), var(--color-bg-secondary); transition: border-color .15s ease, transform .15s ease; }
+        .bx-card { position: relative; display: flex; flex-direction: column; gap: 0.4rem; text-decoration: none; color: inherit; border: 1px solid var(--color-border); border-radius: 16px; padding: 1.25rem 1.35rem; background: radial-gradient(120% 130% at 0% 0%, color-mix(in srgb, var(--color-accent) 11%, transparent), transparent 60%), var(--color-bg-secondary); transition: border-color .15s ease, transform .15s ease, opacity .2s ease; }
         .bx-card:hover { border-color: var(--color-accent); transform: translateY(-2px); }
+        /* guided order: greyed until the previous read's recall is answered — still clickable */
+        .bx-card .lock { display: none; position: absolute; top: 0.85rem; inset-inline-end: 1rem; font-size: 1rem; line-height: 1; }
+        .bx-card.is-locked { opacity: 0.42; }
+        .bx-card.is-locked:hover { opacity: 0.66; }
+        .bx-card.is-locked .lock { display: block; }
         .bx-card .n { font: 700 var(--font-size-xs)/1 var(--font-mono); color: var(--color-accent); letter-spacing: .06em; }
         .bx-card b { font-size: var(--font-size-lg); line-height: 1.25; }
         .bx-card span { color: var(--color-fg-secondary); line-height: 1.55; font-size: var(--font-size-sm); }
@@ -75,26 +80,30 @@
                     <span>Not magic, not a mind — very good pattern-matching. Where it shines, and where it slips.</span>
                     <span class="go">Read it →</span>
                 </a>
-                <a class="bx-card" href="/basics/llms/">
+                <a class="bx-card" href="/basics/llms/" data-requires="basics-what-is-ai-pattern-matching">
                     <span class="n" aria-hidden="true">02</span>
+                    <span class="lock" aria-hidden="true" title="Do the quick recall on “What even is AI?” to unlock">🔒</span>
                     <b>What's an LLM?</b>
                     <span>The thing behind the chatbots — why it's so fluent, and why it can be confidently wrong.</span>
                     <span class="go">Read it →</span>
                 </a>
-                <a class="bx-card" href="/basics/agents/">
+                <a class="bx-card" href="/basics/agents/" data-requires="basics-llms-likely-not-true">
                     <span class="n" aria-hidden="true">03</span>
+                    <span class="lock" aria-hidden="true" title="Do the quick recall on “What's an LLM?” to unlock">🔒</span>
                     <b>What's an agent?</b>
                     <span>Really just a clear, reusable ask — one that can take steps and actually do things.</span>
                     <span class="go">Read it →</span>
                 </a>
-                <a class="bx-card" href="/basics/augmented-intelligence/">
+                <a class="bx-card" href="/basics/augmented-intelligence/" data-requires="basics-agents-vs-chatbot">
                     <span class="n" aria-hidden="true">04</span>
+                    <span class="lock" aria-hidden="true" title="Do the quick recall on “What's an agent?” to unlock">🔒</span>
                     <b>Augmented intelligence</b>
                     <span>AI that amplifies your judgment instead of replacing you. You keep the wheel.</span>
                     <span class="go">Read it →</span>
                 </a>
-                <a class="bx-card" href="/basics/augmented-reality/">
+                <a class="bx-card" href="/basics/augmented-reality/" data-requires="basics-augmented-intelligence-aug-vs-auto">
                     <span class="n" aria-hidden="true">05</span>
+                    <span class="lock" aria-hidden="true" title="Do the quick recall on “Augmented intelligence” to unlock">🔒</span>
                     <b>Augmented reality</b>
                     <span>Useful information laid over the real world — through a phone or a pair of glasses.</span>
                     <span class="go">Read it →</span>
@@ -109,5 +118,6 @@
     <script type="module" src="/assets/js/app.js"></script>
     <script type="module" src="/components/core/mgt-header.js"></script>
     <script type="module" src="/components/core/mgt-footer.js"></script>
+    <script type="module" src="/assets/js/basics-lock.js"></script>
 </body>
 </html>
