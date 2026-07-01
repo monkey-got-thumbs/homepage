@@ -261,22 +261,59 @@ class MGTHeader extends HTMLElement {
         /* ===== Reading-level (cognitive-load) slider — the monkey-face handle
            rides the header's bottom line. Left = simplest (level 1, lowest load),
            right = densest (level 5, highest load); the monkey inverts across. ===== */
-        .cog-slider {
+        /* the reading-level control rides the header's bottom line: end labels
+           (simpler ⟷ denser) key the measure bar the monkey handle slides along. */
+        .cog {
           position: absolute;
-          inset-inline: clamp(1rem, 6vw, 5rem);
+          inset-inline: clamp(0.75rem, 3vw, 2.5rem);
           bottom: 0;
           transform: translateY(50%);
+          z-index: 102;
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          pointer-events: none;   /* only the slider itself is interactive */
+        }
+        .cog-end {
+          flex: none;
+          pointer-events: none;
+          font: 700 0.6rem/1 var(--font-mono);
+          text-transform: uppercase;
+          letter-spacing: 0.07em;
+          color: color-mix(in srgb, var(--accent) 82%, #fff 18%);
+          background: var(--header-bg);
+          padding: 0.2rem 0.4rem;
+          border-radius: 6px;
+          white-space: nowrap;
+        }
+        .cog-slider {
+          flex: 1 1 auto;
+          min-inline-size: 0;
           block-size: 28px;
           margin: 0;
           -webkit-appearance: none;
           appearance: none;
           background: transparent;
           cursor: pointer;
-          z-index: 102;
+          pointer-events: auto;
           --mk-invert: 0.5;
+          /* the "measure bar" key: a faint→bright ruled line, ticked at the five
+             reading-level stops, that the monkey handle slides along. */
+          --cog-line: linear-gradient(90deg, color-mix(in srgb, var(--accent) 12%, transparent), color-mix(in srgb, var(--accent) 80%, transparent));
+          --cog-tick: color-mix(in srgb, var(--accent) 55%, transparent);
         }
-        .cog-slider::-webkit-slider-runnable-track { block-size: 2px; background: transparent; }
-        .cog-slider::-moz-range-track { block-size: 2px; background: transparent; }
+        .cog-slider::-webkit-slider-runnable-track {
+          block-size: 100%;
+          background:
+            var(--cog-line) 0 50% / 100% 2px no-repeat,
+            repeating-linear-gradient(90deg, var(--cog-tick) 0 2px, transparent 2px 25%) 0 50% / 100% 12px no-repeat;
+        }
+        .cog-slider::-moz-range-track {
+          block-size: 100%;
+          background:
+            var(--cog-line) 0 50% / 100% 2px no-repeat,
+            repeating-linear-gradient(90deg, var(--cog-tick) 0 2px, transparent 2px 25%) 0 50% / 100% 12px no-repeat;
+        }
         .cog-slider::-webkit-slider-thumb {
           -webkit-appearance: none;
           appearance: none;
@@ -286,7 +323,7 @@ class MGTHeader extends HTMLElement {
           border: 2px solid var(--accent);
           box-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
           filter: invert(var(--mk-invert));
-          margin-top: -13px;
+          margin-top: 0;
         }
         .cog-slider::-moz-range-thumb {
           inline-size: 28px; block-size: 28px; border-radius: 50%;
@@ -299,7 +336,7 @@ class MGTHeader extends HTMLElement {
         .cog-slider:focus-visible { outline: none; }
         .cog-slider:focus-visible::-webkit-slider-thumb { box-shadow: 0 0 0 3px var(--accent); }
         .cog-slider:focus-visible::-moz-range-thumb { box-shadow: 0 0 0 3px var(--accent); }
-        @media (max-width: 767px) { .cog-slider { inset-inline: 1rem 4rem; } }
+        @media (max-width: 767px) { .cog { inset-inline: 0.75rem 3.5rem; gap: 0.35rem; } .cog-end { font-size: 0.55rem; padding: 0.2rem 0.3rem; } }
       </style>
 
       <header role="banner">
@@ -334,9 +371,13 @@ class MGTHeader extends HTMLElement {
             <a href="/build/">Build</a>
           </nav>
         </div>
-        <input type="range" class="cog-slider" id="cogSlider" min="0" max="100" step="any" value="50"
-          aria-label="Reading level — slide left for the simplest version, right for the densest"
-          title="Reading level — left: simplest · right: densest" />
+        <div class="cog">
+          <span class="cog-end" aria-hidden="true">simpler</span>
+          <input type="range" class="cog-slider" id="cogSlider" min="0" max="100" step="any" value="50"
+            aria-label="Reading level — slide left for the simplest version, right for the densest"
+            title="Reading level — left: simplest · right: densest" />
+          <span class="cog-end" aria-hidden="true">denser</span>
+        </div>
       </header>
     `;
   }
