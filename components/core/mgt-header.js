@@ -15,7 +15,6 @@ class MGTHeader extends HTMLElement {
     this.render();
     this.setupAccessibility();
     this.attachEventListeners();
-    this.setupCogSlider();
     // Header is position:fixed, so reserve its height on the page so content
     // doesn't slide underneath it. Re-measure after the logo/fonts settle.
     this.syncHeight();
@@ -28,55 +27,6 @@ class MGTHeader extends HTMLElement {
   syncHeight() {
     const header = this.shadowRoot && this.shadowRoot.querySelector('header');
     if (header) document.body.style.paddingBlockStart = header.offsetHeight + 'px';
-  }
-
-  // Reading-level slider — CONTINUOUS 0–100% (the stored setting). The percentage
-  // ramps the monkey-handle inversion smoothly; the discrete reading level (1–5,
-  // all the content system has) is derived from it and drives the shared engine
-  // (window.__A11Y). Stays in sync if the level changes elsewhere (panel/Reset).
-  setupCogSlider() {
-    const s = this.shadowRoot && this.shadowRoot.getElementById('cogSlider');
-    if (!s) return;
-    const clamp = (n, a, b) => Math.max(a, Math.min(b, n));
-    const PCTKEY = 'a11y.levelpct';
-    const pctToLevel = (pct) => clamp(Math.round(1 + (pct / 100) * 4), 1, 5);   // 0%→1 … 100%→5
-    const levelToPct = (lvl) => ((lvl - 1) / 4) * 100;
-    const curLevel = () => {
-      const v = parseInt(document.documentElement.getAttribute('data-level') || '3', 10);
-      return v >= 1 && v <= 5 ? v : 3;
-    };
-    const setInvert = (pct) => s.style.setProperty('--mk-invert', (pct / 100).toFixed(4));
-    const place = (pct) => {
-      s.value = String(pct);
-      setInvert(pct);
-      s.setAttribute('aria-valuetext', 'Reading level ' + pctToLevel(pct) + ' of 5 (' + Math.round(pct) + '%)');
-    };
-
-    // Initial position: prefer the stored % if it still maps to the active level
-    // (so the exact continuous position is preserved across reloads); else derive
-    // it from the level (which a11y-init set pre-paint, and which Reset can change).
-    const lvl0 = curLevel();
-    const storedPct = parseFloat(localStorage.getItem(PCTKEY));
-    place(Number.isFinite(storedPct) && pctToLevel(storedPct) === lvl0 ? storedPct : levelToPct(lvl0));
-
-    s.addEventListener('input', () => {
-      const pct = clamp(parseFloat(s.value) || 0, 0, 100);
-      setInvert(pct);
-      try { localStorage.setItem(PCTKEY, String(pct)); } catch (e) {}
-      const lvl = pctToLevel(pct);
-      if (window.__A11Y && typeof window.__A11Y.set === 'function') window.__A11Y.set('level', String(lvl));
-      else document.documentElement.setAttribute('data-level', String(lvl));
-    });
-
-    // External level change (panel buttons / Reset): only re-place the handle if
-    // the slider's current % maps to a DIFFERENT level — otherwise keep the exact
-    // continuous position the user dragged to.
-    if (window.MutationObserver) {
-      new MutationObserver(() => {
-        const lvl = curLevel();
-        if (pctToLevel(parseFloat(s.value) || 0) !== lvl) place(levelToPct(lvl));
-      }).observe(document.documentElement, { attributes: true, attributeFilter: ['data-level'] });
-    }
   }
 
   render() {
@@ -261,82 +211,6 @@ class MGTHeader extends HTMLElement {
         /* ===== Reading-level (cognitive-load) slider — the monkey-face handle
            rides the header's bottom line. Left = simplest (level 1, lowest load),
            right = densest (level 5, highest load); the monkey inverts across. ===== */
-        /* the reading-level control rides the header's bottom line: end labels
-           (simpler ⟷ denser) key the measure bar the monkey handle slides along. */
-        .cog {
-          position: absolute;
-          inset-inline: clamp(0.75rem, 3vw, 2.5rem);
-          bottom: 0;
-          transform: translateY(50%);
-          z-index: 102;
-          display: flex;
-          align-items: center;
-          gap: 0.5rem;
-          pointer-events: none;   /* only the slider itself is interactive */
-        }
-        .cog-end {
-          flex: none;
-          pointer-events: none;
-          font: 700 0.6rem/1 var(--font-mono);
-          text-transform: uppercase;
-          letter-spacing: 0.07em;
-          color: color-mix(in srgb, var(--accent) 82%, #fff 18%);
-          background: var(--header-bg);
-          padding: 0.2rem 0.4rem;
-          border-radius: 6px;
-          white-space: nowrap;
-        }
-        .cog-slider {
-          flex: 1 1 auto;
-          min-inline-size: 0;
-          block-size: 28px;
-          margin: 0;
-          -webkit-appearance: none;
-          appearance: none;
-          background: transparent;
-          cursor: pointer;
-          pointer-events: auto;
-          --mk-invert: 0.5;
-          /* the "measure bar" key: a faint→bright ruled line, ticked at the five
-             reading-level stops, that the monkey handle slides along. */
-          --cog-line: linear-gradient(90deg, color-mix(in srgb, var(--accent) 12%, transparent), color-mix(in srgb, var(--accent) 80%, transparent));
-          --cog-tick: color-mix(in srgb, var(--accent) 55%, transparent);
-        }
-        .cog-slider::-webkit-slider-runnable-track {
-          block-size: 100%;
-          background:
-            var(--cog-line) 0 50% / 100% 2px no-repeat,
-            repeating-linear-gradient(90deg, var(--cog-tick) 0 2px, transparent 2px 25%) 0 50% / 100% 12px no-repeat;
-        }
-        .cog-slider::-moz-range-track {
-          block-size: 100%;
-          background:
-            var(--cog-line) 0 50% / 100% 2px no-repeat,
-            repeating-linear-gradient(90deg, var(--cog-tick) 0 2px, transparent 2px 25%) 0 50% / 100% 12px no-repeat;
-        }
-        .cog-slider::-webkit-slider-thumb {
-          -webkit-appearance: none;
-          appearance: none;
-          inline-size: 28px; block-size: 28px; border-radius: 50%;
-          box-sizing: border-box;
-          background: var(--header-bg) url("/favicon.png") center/cover no-repeat;
-          border: 2px solid var(--accent);
-          box-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
-          filter: invert(var(--mk-invert));
-          margin-top: 0;
-        }
-        .cog-slider::-moz-range-thumb {
-          inline-size: 28px; block-size: 28px; border-radius: 50%;
-          box-sizing: border-box;
-          background: var(--header-bg) url("/favicon.png") center/cover no-repeat;
-          border: 2px solid var(--accent);
-          box-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
-          filter: invert(var(--mk-invert));
-        }
-        .cog-slider:focus-visible { outline: none; }
-        .cog-slider:focus-visible::-webkit-slider-thumb { box-shadow: 0 0 0 3px var(--accent); }
-        .cog-slider:focus-visible::-moz-range-thumb { box-shadow: 0 0 0 3px var(--accent); }
-        @media (max-width: 767px) { .cog { inset-inline: 0.75rem 3.5rem; gap: 0.35rem; } .cog-end { font-size: 0.55rem; padding: 0.2rem 0.3rem; } }
       </style>
 
       <header role="banner">
@@ -370,13 +244,6 @@ class MGTHeader extends HTMLElement {
             <a href="/explore/">Explore</a>
             <a href="/build/">Build</a>
           </nav>
-        </div>
-        <div class="cog">
-          <span class="cog-end" aria-hidden="true">simpler</span>
-          <input type="range" class="cog-slider" id="cogSlider" min="0" max="100" step="any" value="50"
-            aria-label="Reading level — slide left for the simplest version, right for the densest"
-            title="Reading level — left: simplest · right: densest" />
-          <span class="cog-end" aria-hidden="true">denser</span>
         </div>
       </header>
     `;

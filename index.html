@@ -53,6 +53,9 @@
 
         /* ===== Hero — states the purpose, nothing to decide ===== */
         .hero { text-align: center; padding-top: clamp(1rem, 4vw, 3rem); }
+        /* the reading-level control sits above the monkey, in normal flow */
+        .hero-tune { max-width: 30rem; margin-inline: auto; margin-block-end: clamp(1.25rem, 3vw, 2rem); padding-inline: var(--gutter, 1rem); }
+        .tune-hint { margin: 0.4rem 0 0; color: var(--color-muted); font-size: var(--font-size-xs); text-align: center; }
         /* width comes from the shared `section.hero img` rule in layout.css (min(400px, 70vw)) */
         .hero img { height: auto; margin-inline: auto; display: block; animation: floatIn 800ms ease-out both; }
         .hero h1 { margin: var(--space-lg) 0 var(--space-sm); }
@@ -62,6 +65,19 @@
         .hero-cta small { color: var(--color-muted); font-size: var(--font-size-sm); }
         /* transform-only — never opacity:0 on the LCP hero image, so it paints immediately */
         @keyframes floatIn { from { transform: translateY(18px); } to { transform: translateY(0); } }
+
+        /* ===== The four doors — where everything lives ===== */
+        .paths { padding-inline: var(--gutter, 1rem); }
+        .paths h2 { text-align: center; margin: 0 0 var(--space-xl); }
+        /* explicit steps (1 → 2×2 → 4-across) so no card ever orphans on its own row */
+        .paths-grid { display: grid; gap: clamp(0.9rem, 2vw, 1.25rem); grid-template-columns: 1fr; }
+        @media (min-width: 640px) { .paths-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (min-width: 1024px) { .paths-grid { grid-template-columns: repeat(4, 1fr); } }
+        .path-card { display: flex; flex-direction: column; gap: 0.45rem; text-decoration: none; color: inherit; border: 1px solid var(--color-border); border-radius: 16px; padding: 1.25rem 1.35rem; background: radial-gradient(120% 130% at 0% 0%, color-mix(in srgb, var(--color-accent) 11%, transparent), transparent 60%), var(--color-bg-secondary); transition: border-color .15s ease, transform .15s ease; }
+        .path-card:hover { border-color: var(--color-accent); transform: translateY(-2px); }
+        .path-card .verb { font: 700 var(--font-size-xs)/1 var(--font-mono); text-transform: uppercase; letter-spacing: .07em; color: var(--color-accent); }
+        .path-card b { font-size: var(--font-size-lg); line-height: 1.25; }
+        .path-card span:not(.verb) { color: var(--color-fg-secondary); line-height: 1.55; font-size: var(--font-size-sm); }
 
         /* ===== Gentle scroll reveal — transform only, never hides content ===== */
         @media (prefers-reduced-motion: no-preference) {
@@ -84,6 +100,10 @@
 
         <!-- HERO: state the purpose -->
         <section class="home-section hero" aria-labelledby="hero-title">
+            <div class="hero-tune">
+                <mgt-reading-slider></mgt-reading-slider>
+                <p class="tune-hint" data-a11y="tune-hint">Slide the monkey — every page rewrites to match, plainest on the left, densest on the right.</p>
+            </div>
             <picture>
                 <source type="image/webp" srcset="/hero-400.webp 400w, /hero.webp 800w" sizes="(max-width: 571px) 70vw, 400px">
                 <img src="/hero.png" srcset="/hero-400.png 400w, /hero.png 800w" sizes="(max-width: 571px) 70vw, 400px" alt="Monkey Got Thumbs — a friendly monkey, thumbs up, on a dark background" width="800" height="1200" loading="eager" decoding="async" fetchpriority="high">
@@ -96,11 +116,39 @@
             </div>
         </section>
 
+        <!-- THE FOUR DOORS: where everything lives -->
+        <section class="home-section paths reveal" aria-labelledby="paths-title">
+            <h2 id="paths-title" data-a11y="paths-title">Where would you like to begin?</h2>
+            <div class="paths-grid">
+                <a class="path-card" href="/basics/">
+                    <span class="verb" aria-hidden="true">learn</span>
+                    <b>Basics</b>
+                    <span data-a11y="path-basics">Five short reads from zero — what AI is, what's behind the chatbots, what an “agent” really is.</span>
+                </a>
+                <a class="path-card" href="/discover/">
+                    <span class="verb" aria-hidden="true">discover</span>
+                    <b>Discover</b>
+                    <span data-a11y="path-discover">See a whole field at a glance — infographics with live bits you can poke.</span>
+                </a>
+                <a class="path-card" href="/explore/">
+                    <span class="verb" aria-hidden="true">explore</span>
+                    <b>Explore</b>
+                    <span data-a11y="path-explore">Interactive explanations you can fiddle with until an idea clicks.</span>
+                </a>
+                <a class="path-card" href="/build/">
+                    <span class="verb" aria-hidden="true">build</span>
+                    <b>Build</b>
+                    <span data-a11y="path-build">Make a little agent of your own — in plain English, no code.</span>
+                </a>
+            </div>
+        </section>
+
     </main>
     <mgt-footer></mgt-footer>
     <script src="/assets/js/tracking.js" defer></script>
     <script type="module" src="/assets/js/app.js"></script>
     <script type="module" src="/components/core/mgt-header.js"></script>
     <script type="module" src="/components/core/mgt-footer.js"></script>
+    <script type="module" src="/components/core/mgt-reading-slider.js"></script>
 </body>
 </html>

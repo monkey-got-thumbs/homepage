@@ -13,116 +13,46 @@
     "Monkey Got Thumbs helps everyday people get comfortable with AI and make little agents of their own — no coding, no jargon, at your own pace, with a community alongside you.",
     "Get comfortable with AI and make little agents of your own — no coding, no jargon, at your own pace, with a community alongside you."
   ],
-  "path-title": [
-    "See it, understand it, build it — then find your way right back around.",
-    "See it, understand it, build it — then around again.",
-    "See it. Understand it. Build it. Then around again.",
-    "See it, understand it, build it — then again.",
-    "See it. Get it. Build it. Again."
+  "tune-hint": [
+    "Try sliding the monkey along the line. Every page on this site rewrites itself to match where you put it — the plainest words are on the left, and the densest are on the right.",
+    "Try sliding the monkey — every page on this site rewrites to match, with the plainest words on the left and the densest on the right.",
+    "Slide the monkey — every page rewrites to match, plainest on the left, densest on the right.",
+    "Slide the monkey — every page rewrites to match: plainest left, densest right.",
+    "Slide the monkey; every page rewrites to match — plainest left, densest right."
   ],
-  "path-sub": [
-    "This is the oldest loop there is — the way every tool people have ever made came to be. First something hidden is made plain to see, then you come to understand it, then you use that understanding to build the next thing. You don't have to pick where to begin — just start at the top, and you'll find your way around.",
-    "It's the oldest loop there is — how every tool we've ever made came to be. The hidden gets made visible, you come to understand it, then you build with it. No need to choose where to start — just begin at the top.",
-    "It's the oldest loop there is — how every tool we've ever made came to be. The hidden gets made visible, you come to understand it, then you build with it. No need to choose — just start at the top.",
-    "The oldest loop there is — how every tool we've made came to be. The hidden made visible, understood, then built with. Just start at the top.",
-    "The oldest loop: the hidden made visible, understood, then built with."
+  "paths-title": [
+    "Where would you like to start?",
+    "Where would you like to begin?",
+    "Where would you like to begin?",
+    "Where to begin?",
+    "Where to begin?"
   ],
-  "step1-title": [
-    "See what was hidden",
-    "See what's hidden",
-    "See what's hidden",
-    "See what's hidden",
-    "See it"
+  "path-basics": [
+    "Five short reads that start from nothing at all — what AI actually is, what's behind the chatbots people use, and what an “agent” really means.",
+    "Five short reads from zero — what AI actually is, what's behind the chatbots, what an “agent” really means.",
+    "Five short reads from zero — what AI is, what's behind the chatbots, what an “agent” really is.",
+    "Five short reads from zero — AI, LLMs, agents, in plain words.",
+    "Five reads from zero: AI, LLMs, agents — plain words."
   ],
-  "step1-desc": [
-    "Start with a teachable — a simple picture that makes one idea click the moment you look at it. The whole job of this first step is to take something invisible and make it easy to see. That's the hook that pulls you in.",
-    "Start with a teachable — a picture that makes one idea click at a glance. This step's whole job is to take something invisible and make it visible. That's the hook.",
-    "Start with a teachable — a picture that makes one idea click at a glance. The whole job of this step is to take something invisible and make it visible. That's the hook.",
-    "Start with a teachable — a picture that makes one idea click at a glance. Its job: make the invisible visible. That's the hook.",
-    "A teachable: one picture, one idea, the invisible made visible."
+  "path-discover": [
+    "See a whole field laid out at a glance — friendly infographics with little live pieces you can actually poke at.",
+    "See a whole field at a glance — friendly infographics with live bits you can poke.",
+    "See a whole field at a glance — infographics with live bits you can poke.",
+    "A whole field at a glance — infographics with pokeable live bits.",
+    "Whole fields at a glance — pokeable infographics."
   ],
-  "step2-title": [
-    "Get how it really works",
-    "Get how it works",
-    "Get how it works",
-    "Get how it works",
-    "Get it"
+  "path-explore": [
+    "Interactive explanations you can play with, change, and fiddle with for as long as you like — until the idea suddenly clicks.",
+    "Interactive explanations you can play with and fiddle with until an idea clicks.",
+    "Interactive explanations you can fiddle with until an idea clicks.",
+    "Interactive explanations to fiddle with until the idea clicks.",
+    "Interactive explanations — fiddle until it clicks."
   ],
-  "step2-desc": [
-    "Next, open an explorable and start poking at it. Change a few things, watch what happens, and slowly the real shape of how it works comes into focus. This is the step where you truly learn a subject — by playing with it, not just reading about it.",
-    "Next, open an explorable and poke it. Change things, watch what happens, and the shape of how it really works comes into focus. This is where you learn the subject for real.",
-    "Next, open an explorable and poke it. Change things, watch what happens, and the shape of how it really works comes into focus. This is where you learn a domain for real.",
-    "Open an explorable and poke it. Change things, watch what happens, and how it works comes into focus. This is where the domain clicks.",
-    "An explorable: poke it, watch, and the domain clicks."
-  ],
-  "step3-title": [
-    "Build the real thing — something that's yours",
-    "Build the real thing",
-    "Build the real thing",
-    "Build the real thing",
-    "Build it"
-  ],
-  "step3-desc": [
-    "Now turn what you understand into something that's actually yours. Buildables are real tools — an agent you shape yourself, a workshop set up to work the way you do — for making and shipping real work, not toys. This is where understanding becomes a thing you can hold.",
-    "Now turn understanding into something that's yours. Buildables are real tools — an agent you shape, a workshop that works the way you do — for making and shipping real work, not toys.",
-    "Now turn understanding into something that's yours. Buildables are real tools — an agent you shape, a workshop that works the way you do — for making and shipping the real thing, not toys.",
-    "Turn understanding into something yours. Buildables are real tools — an agent you shape — for shipping real work, not toys.",
-    "A buildable: a real tool you shape to ship real work."
-  ],
-  "path-loop": [
-    "…and here's the lovely part: the thing you build makes something new visible — for you, and for whoever comes along next. And that's exactly where the whole loop quietly begins again.",
-    "…and the thing you build makes something new visible — for you, and for whoever comes next. That's where the loop begins again.",
-    "…and the thing you build makes something new visible — for you, and for whoever comes next. That's where the loop begins again.",
-    "…and what you build makes something new visible — for you and whoever's next. The loop begins again.",
-    "…and what you build reveals the next thing. The loop begins again."
-  ],
-  "stick-title": [
-    "Learn something here, and you actually get to keep it",
-    "Learn it here, and you actually keep it",
-    "Learn it once — and actually keep it",
-    "Learn it once, and keep it",
-    "Learn it once, keep it"
-  ],
-  "stick-desc": [
-    "Here's what's in it for you: normally, when you read something just once, most of it has slipped away again by next week — so all that effort quietly goes to waste. Here it works differently. A quick little recall prompt brings each idea back to you right before it would slip away, so the things you learn actually stay with you, and slowly add up into real understanding you can use. Have a go below (don't worry — it only ever saves in your own browser):",
-    "Here's what's in it for you: read something once and most of it's gone by next week — so the effort's wasted. Here it's different. A quick recall prompt brings each idea back just before it'd slip, so what you learn actually stays, and adds up into understanding you can use. Have a go (it saves only in your browser):",
-    "Here's what's in it for you: read something once and most of it's gone by next week — so the effort's wasted. Here it's different. A quick recall prompt brings each idea back just before it'd slip, so what you learn actually stays, and adds up into understanding you can use. Have a go (it saves only in your browser):",
-    "What's in it for you: read something once and most of it's gone by next week — effort wasted. Here a quick recall prompt returns each idea just before it'd slip, so what you learn stays and adds up into usable understanding. Have a go (saves only in your browser):",
-    "What's in it for you: most reading's gone in a week — wasted. Here a recall prompt returns each idea just before it'd slip, so it stays and compounds into usable understanding. Try one (saves only in your browser):"
-  ],
-  "see-title": [
-    "We show you exactly what's going on",
-    "We show you what's really happening",
-    "We show you what's actually happening",
-    "We show you what's actually happening",
-    "See what's happening"
-  ],
-  "see-sub": [
-    "AI can feel like pure magic — right up until you get to see the parts that make it work. So that's exactly what we do: we lay those parts out for you, side by side, where you can see them clearly.",
-    "AI feels like magic until you see the moving parts. So we lay them out for you — side by side, in plain view.",
-    "AI feels like magic until you see the moving parts. So we show them — side by side, in plain view.",
-    "AI feels like magic until you see the moving parts. We show them, side by side.",
-    "We show the moving parts, side by side."
-  ],
-  "demo-closer": [
-    "See the difference that one tiny change makes — just telling it what you really have in mind? Try it both ways and judge for yourself. And don't worry: we'll help you practise until it feels completely natural.",
-    "Notice what one tiny shift did — telling it what you really mean — to the answer above? Have a look both ways. And we'll help you make it second nature.",
-    "That tiny shift — telling it what you really mean — is what changed the answer above. Compare them yourself. We'll help you make it second nature.",
-    "That tiny shift — saying what you really mean — changed the answer above. Compare them yourself. We'll help you make it second nature.",
-    "Saying what you mean changes the answer above — compare them. We'll help you make it second nature."
-  ],
-  "belong-title": [
-    "Find your kind of people",
-    "Find your people",
-    "Find your people",
-    "Find your people",
-    "Find your people"
-  ],
-  "belong-desc": [
-    "Everyone here felt a bit unsure when they began — that's completely normal. You'll get gentle, hype-free notes dropped into your inbox, and you can join a friendly community of like-minded people who are all getting comfortable with AI, together.",
-    "Everyone here started out a little unsure. Get gentle, no-hype notes in your inbox, and join a community of like minds getting comfortable with AI — together.",
-    "Everyone here started out a little unsure. Get gentle, no-hype notes in your inbox, and join a community of like minds who are getting comfortable with AI — together.",
-    "Everyone here started out unsure. Get gentle, no-hype notes, and join a community getting comfortable with AI together.",
-    "We all started unsure. Get no-hype notes; join the community."
+  "path-build": [
+    "Make a little agent of your very own, described in plain English — no code needed anywhere along the way.",
+    "Make a little agent of your own, in plain English — no code needed.",
+    "Make a little agent of your own — in plain English, no code.",
+    "Make your own little agent — plain English, no code.",
+    "Your own agent — plain English, no code."
   ]
 }
