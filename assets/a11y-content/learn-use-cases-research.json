@@ -1,0 +1,93 @@
+{
+  "hero-title": [
+    "Use AI to look into a question",
+    "Look into a question",
+    "Research a question",
+    "Directed research",
+    "Research"
+  ],
+  "hero-lede": [
+    "AI can help you look into a question. Used well, it gives you a quick first picture: what people know, what they argue about, and what to read next. Used without care, it can hand you wrong answers that sound very sure of themselves. The trick is in how you treat it. Treat it as a <em>helper</em> you guide and check — not as a wise voice that is always right. This page shows you the helper way.",
+    "Used well, AI gives you a fast first picture of a question — what’s known, what’s argued over, what to read next. Used carelessly, it hands you confident nonsense. The difference is whether you treat it as an <em>assistant</em> you direct and check, or an oracle you simply trust. Here’s the assistant version.",
+    "Used well, AI turns a vague question into a fast first map of the territory — what's known, what's argued, what to read next. Used carelessly, it hands you confident nonsense. The difference is whether you treat it as a research <em>assistant</em> you direct and check, or an oracle you trust. Here's the assistant version.",
+    "Used well, AI turns a vague question into a fast first map — what’s known, what’s contested, what to read next. Used carelessly, it hands you confident nonsense. The difference: an <em>assistant</em> you direct and check, or an oracle you trust. Here’s the assistant version.",
+    "AI can map a question fast — or hand you confident nonsense. The difference: an <em>assistant</em> you direct and check, versus an oracle you trust. Here’s the assistant version."
+  ],
+  "move-title": [
+    "How to do it, in four steps",
+    "The move, step by step",
+    "The move, in four steps",
+    "The four steps",
+    "Four steps"
+  ],
+  "move-1": [
+    "<strong>Say what you’re really asking.</strong> Tell it the question, why you want to know, and what a good answer would help you do. The clearer you ask, the clearer the picture you get back.",
+    "<strong>Frame it out loud.</strong> Tell it the question, why you’re asking, and what a good answer would let you do. A clearer ask gets a clearer map.",
+    "<strong>Frame it out loud.</strong> Tell it the question, why you're asking, and what a useful answer would let you do. A sharper ask gets a sharper map.",
+    "<strong>Frame it out loud.</strong> State the question, why you’re asking, and what a useful answer enables. Sharper ask, sharper map.",
+    "<strong>Frame it.</strong> Question, motive, and what a useful answer enables — sharper ask, sharper map."
+  ],
+  "move-2": [
+    "<strong>Ask for the whole picture, not just one answer.</strong> Try “what are the main views on this, and who holds them?” instead of “what’s the answer?” That way you get things to compare, not just one thing to believe.",
+    "<strong>Ask for the shape, not just the answer.</strong> “What are the main positions here, and who holds them?” beats “what’s the answer?” — you get things to compare instead of one thing to swallow.",
+    "<strong>Ask for the shape, not just the answer.</strong> \"What are the main positions on this, and who holds them?\" beats \"what's the answer?\" — it gives you something to compare rather than swallow.",
+    "<strong>Ask for the shape, not just the answer.</strong> “Main positions, and who holds them?” beats “what’s the answer?” — something to compare, not swallow.",
+    "<strong>Ask for the shape.</strong> Positions and who holds them beat a single answer — compare, don’t swallow."
+  ],
+  "move-3": [
+    "<strong>Push back on it.</strong> Ask “what’s the strongest case against that?” and “what would change your mind?” The places where people disagree are where the real understanding is.",
+    "<strong>Pressure-test it.</strong> Ask “what’s the strongest case against that?” and “what would change your mind?” The disagreements are where real understanding lives.",
+    "<strong>Pressure-test it.</strong> Ask \"what's the strongest case against that?\" and \"what would change your mind?\" The disagreements are where the real understanding lives.",
+    "<strong>Pressure-test it.</strong> “Strongest case against?” and “what would change your mind?” — the disagreements hold the real understanding.",
+    "<strong>Pressure-test.</strong> Ask for the strongest counter-case; the disagreements hold the understanding."
+  ],
+  "move-4": [
+    "<strong>Check before you trust.</strong> Take the exact claims — names, numbers, quotes, sources — and check each one against the real source. This step matters every single time.",
+    "<strong>Verify before you rely.</strong> Take the specific claims — names, numbers, quotes, sources — and check them against the real source. This step is not optional.",
+    "<strong>Verify before you rely.</strong> Take the specific claims — names, numbers, quotes, sources — and check them against the actual source. This step is not optional.",
+    "<strong>Verify before you rely.</strong> Check every name, number, quote and source against the original. Not optional.",
+    "<strong>Verify.</strong> Names, numbers, quotes, sources — checked against the original, every time."
+  ],
+  "watch": [
+    "<strong>Where it can trip you up:</strong> it can make up sources that don’t exist, get real quotes wrong, and say all of it as if it were certain. So it’s great for finding threads to pull and questions to ask — but you can’t use it as your final proof. You stay the fact-checker; that part of the job is yours.",
+    "<strong>Where it bites:</strong> it can invent sources that don’t exist, misquote real ones, and say it all with total confidence. So it’s great for finding threads to pull and questions to ask — and not to be trusted as a final citation. You stay the fact-checker; that part of the job is yours.",
+    "\n                <strong>Where it bites:</strong> it can invent sources that don't exist, misquote real ones, and state all of it with total confidence. So it's brilliant for finding threads to pull and questions to ask — and untrustworthy as a final citation. You stay the fact-checker; that's the part of the job that's yours.\n            ",
+    "<strong>Where it bites:</strong> invented sources, misquoted real ones, all stated with total confidence. Brilliant for threads to pull; untrustworthy as a final citation. You stay the fact-checker.",
+    "<strong>Where it bites:</strong> confident fabrication. Good for leads, never as the citation — the fact-checking stays yours."
+  ],
+  "ex-title": [
+    "A fuzzy ask next to a clear one",
+    "A vague ask vs. a directed one",
+    "Vague vs. directed",
+    "One question, two asks",
+    "Two asks, two maps"
+  ],
+  "ex-vague": [
+    "",
+    "",
+    "",
+    "",
+    ""
+  ],
+  "ex-directed": [
+    "",
+    "",
+    "",
+    "",
+    ""
+  ],
+  "next-title": [
+    "Take this with you",
+    "Keep it going",
+    "Carry it on",
+    "Carry it forward",
+    "Onward"
+  ],
+  "next-p": [
+    "See the pattern running through all of this: you ask for the whole picture and the places where people disagree, and you keep the final say on what’s true. That same habit helps with every other way you might use AI.",
+    "Notice the through-line: you ask for the territory and the disagreements, and you keep the final say on what’s true. The same habit powers the other moves.",
+    "Notice the through-line: you ask for the territory and the disagreements, then keep the judgment about what's true. The same habit powers the other moves.",
+    "The through-line: ask for the territory and the disagreements; keep the judgment about what’s true. The same habit powers the other moves.",
+    "Ask for the territory and the disagreements; keep the judgment. The habit transfers."
+  ]
+}

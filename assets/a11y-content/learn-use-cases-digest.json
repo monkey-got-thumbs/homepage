@@ -1,0 +1,72 @@
+{
+  "hero-title": [
+    "Make sense of a big pile of words",
+    "Make sense of a lot of reading",
+    "Make sense of a lot",
+    "Make sense of volume",
+    "Digest the pile"
+  ],
+  "hero-lede": [
+    "Think of a long chat thread, a heavy report, or notes from a meeting you missed — far more words than you have time to read. AI is genuinely good at shrinking all that down so you can see what it's about. The trick isn't asking for \"a summary\". The trick is telling it what <em>you</em> need from the pile — and then checking it kept the one bit that matters to you.",
+    "A long thread, a heavy report, an hour of meeting notes — more than you can read properly. AI is genuinely good at boiling that down to its shape. The skill isn't asking for \"a summary\"; it's telling it what <em>you</em> need from the pile, then checking it kept the bit that matters.",
+    "A long thread, a dense report, an hour of meeting notes — more than you've time to read closely. AI is genuinely good at boiling that down to its shape. The skill isn't asking for \"a summary\"; it's telling it what <em>you</em> need from the pile, and then checking it kept the bit that matters.",
+    "Threads, reports, meeting notes — more than you've time to read closely. AI compresses volume to shape well. The skill isn't requesting \"a summary\"; it's specifying what <em>you</em> need from the pile, then verifying the part that matters survived.",
+    "AI compresses volume to shape well. Don't ask for \"a summary\"; state what <em>you</em> need from the pile, then verify the line that matters survived."
+  ],
+  "move-title": [
+    "How you do it",
+    "How to do it",
+    "The move",
+    "The move",
+    "The move"
+  ],
+  "move-1": [
+    "<strong>Give it the pile, and say why you need it.</strong> Paste the text in, then tell it why you're reading: \"I need to write a reply,\" \"I missed the meeting,\" \"I'm trying to decide something.\" When it knows your reason, the summary comes out useful. Plain \"summarise this\" comes out shapeless.",
+    "<strong>Give it the pile and your purpose.</strong> Paste the text and say why you're reading it — \"I need to reply,\" \"I missed the meeting,\" \"I'm deciding X.\" Your reason shapes a useful summary; plain \"summarise this\" gets a shapeless one.",
+    "<strong>Give it the pile and your purpose.</strong> Paste the text and say why you're reading it: \"I need to reply,\" \"I missed the meeting,\" \"I'm deciding X.\" The purpose shapes a useful summary; \"summarise this\" gets a shapeless one.",
+    "<strong>Give it the pile and your purpose.</strong> Paste the text with the reason you're reading — \"I need to reply,\" \"I missed the meeting,\" \"I'm deciding X.\" Purpose shapes a useful summary; \"summarise this\" yields a shapeless one.",
+    "<strong>Pile plus purpose.</strong> Paste the text and state why you're reading it; purpose shapes the summary, \"summarise this\" yields a shapeless one."
+  ],
+  "move-2": [
+    "<strong>Ask for a shape, not a blob.</strong> Try \"give me the three decisions made, who owns what, and any open question.\" That beats one long paragraph, because a list is easier to scan — and easier to check.",
+    "<strong>Ask for structure, not a blob.</strong> \"Give me the three decisions made, who owns what, and any open question\" beats one long paragraph. Structure is easier to scan and easier to check.",
+    "<strong>Ask for structure, not a blob.</strong> \"Give me the three decisions made, who owns what, and any open question\" beats a paragraph. Structure is easier to scan and easier to check.",
+    "<strong>Ask for structure, not a blob.</strong> \"The three decisions made, who owns what, any open question\" beats a paragraph — structure scans faster and checks faster.",
+    "<strong>Ask for structure.</strong> \"Three decisions, owners, open questions\" beats a paragraph; structure scans and checks faster."
+  ],
+  "move-3": [
+    "<strong>Pull on the thread you care about.</strong> Once you can see the shape, ask a follow-up question: \"what did Sam actually agree to?\" A digest is a starting point for your attention — it isn't a replacement for it.",
+    "<strong>Pull the thread you care about.</strong> Once you see the shape, go back in with a follow-up: \"what did Sam actually agree to?\" A digest is a starting point for your attention, not a replacement for it.",
+    "<strong>Pull the thread you care about.</strong> Once you see the shape, go back in: \"what did Sam actually agree to?\" A digest is a starting point for your attention, not a replacement for it.",
+    "<strong>Pull the thread you care about.</strong> Shape in view, drill back in — \"what did Sam actually agree to?\" A digest starts your attention; it doesn't replace it.",
+    "<strong>Pull the thread that matters.</strong> Drill back in — \"what did Sam actually agree to?\" A digest starts attention, not replaces it."
+  ],
+  "move-4": [
+    "<strong>Check the important bits against the original.</strong> Before you act on anything in the summary, glance back at the source text. It's cheap insurance: a summary can sound confident and still have quietly dropped the one line that counts.",
+    "<strong>Spot-check against the source.</strong> Glance back at the original for anything you plan to act on. It's cheap insurance against a confident summary that quietly dropped the one line that counts.",
+    "<strong>Spot-check against the source.</strong> Glance back at the original for anything you'll act on. It's the cheapest insurance against a confident summary that quietly dropped the one line that counts.",
+    "<strong>Spot-check against the source.</strong> Re-read the original for anything you'll act on — cheap insurance against a confident summary that quietly dropped the line that counts.",
+    "<strong>Spot-check the source.</strong> Re-read whatever you'll act on; confident summaries quietly drop the line that counts."
+  ],
+  "watch": [
+    "\n                <strong>Where it bites:</strong> every summary leaves things out — that's what makes it a summary. But the AI doesn't know which bits matter most to you. It can smooth over the warning, the disagreement, or the deadline that was the whole point. So you stay the judge of what counts, and you keep the original close by.\n            ",
+    "\n                <strong>Where it bites:</strong> a summary is a set of choices about what to leave out — and the model doesn't know what's at stake for you. It can smooth over the caveat, the disagreement, or the deadline that was the whole point. So you decide what counts, and keep the original within reach.\n            ",
+    "\n                <strong>Where it bites:</strong> a summary is a set of choices about what to leave out — and the model doesn't know your stakes. It can smooth over the caveat, the dissent, or the deadline that was the whole point. So you decide what counts, and you keep the original within reach.\n            ",
+    "\n                <strong>Where it bites:</strong> a summary is a series of omission choices, made without knowing your stakes. The caveat, the dissent, the deadline that was the whole point — all smoothable. You decide what counts; keep the original in reach.\n            ",
+    "\n                <strong>Where it bites:</strong> summaries are omission choices made blind to your stakes — caveat, dissent or deadline can vanish. You decide what counts; keep the original close.\n            "
+  ],
+  "next-title": [
+    "What to do next",
+    "Keep going",
+    "Carry it on",
+    "Carry it on",
+    "Carry on"
+  ],
+  "next-p": [
+    "This has the same shape as the other pages here: the AI does the heavy reading and shrinking, and you keep the judgment about what actually matters. When you're ready, have a look at the other moves.",
+    "Same shape as the rest: it does the volume — the reading and condensing — and you keep the judgment about what actually matters. Have a look at the other moves whenever you like.",
+    "Same shape as the rest: it does the volume — reading and condensing — and you keep the judgment about what actually matters. Have a look at the other moves whenever you like.",
+    "Same shape as the rest: it handles volume — reading, condensing — while the judgment about what matters stays with you. The other moves are there when you want them.",
+    "Same shape throughout: it handles volume; the judgment stays yours. The other moves are there when you want them."
+  ]
+}

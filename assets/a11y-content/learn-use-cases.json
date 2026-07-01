@@ -1,0 +1,65 @@
+{
+    "hero-title": [
+        "What can AI help you do?",
+        "What can you actually use it for?",
+        "What can you use it for?",
+        "What's it for?",
+        "What it's for"
+    ],
+    "hero-lede": [
+        "AI isn't one big thing that you \"use\" — it's more like a small set of everyday moves: explaining, writing, planning, and a few more. Below are the ones worth knowing, and each comes with a place where you can try it for real. Pick whichever one fits what you're doing today. There's no order to follow, and in every single one, you're the one who decides.",
+        "AI isn't one big thing you \"use\" — it's a handful of everyday moves. These are the ones worth knowing, each with a place where you can actually try it. Pick whatever fits what you're doing today; there's no order, and in every one you stay the person deciding.",
+        "AI isn't one big thing you \"use\" — it's a handful of everyday moves. Here are the ones worth knowing, each with a place to actually try it. Pick whatever fits what you're doing today; there's no order to follow, and in every one of them you stay the one deciding.",
+        "Not one big thing — a handful of everyday moves, each with somewhere to try it. Pick what fits today; no set order, and you stay the one deciding.",
+        "AI is a handful of everyday moves, each with somewhere to try it. Any order; you decide throughout."
+    ],
+    "use-explain": [
+        "Have an idea explained in words that suit you — and then play with it, not just read about it. In an explorable, you can drag the numbers yourself and watch the whole idea work itself out again in front of you.",
+        "Get an idea explained at your level — then play with it, not just read it. In an explorable you can drag the numbers and watch the whole thing think itself through again in front of you.",
+        "Get an idea pitched at your level — then play with it, not just read it. Drag the numbers in an explorable and watch the whole thing re-reason in front of you.",
+        "An idea pitched at your level, then made playable: drag the numbers in an explorable and watch it re-reason live.",
+        "Ideas pitched at your level, made playable — drag the numbers, watch them re-reason."
+    ],
+    "use-research": [
+        "Gather facts, compare them, and test how well they hold up — much faster than doing it alone. One catch to remember: AI can sound sure of itself and still be wrong, so the fact-checking stays your job.",
+        "Gather, compare, and test what you find — fast. The one catch to keep in mind: it can sound sure and still be wrong, so the fact-checking stays with you.",
+        "Gather, compare, and pressure-test what you find — fast. The catch worth holding onto: it can be confidently wrong, so you stay the fact-checker.",
+        "Gather, compare, pressure-test — fast. One catch: it can be confidently wrong, so fact-checking stays yours.",
+        "Fast gathering and pressure-testing — but it can be confidently wrong; you fact-check."
+    ],
+    "use-sounding": [
+        "Talk your thinking through and get good questions back, not just answers — like a partner who helps you find your own next step. What feels right stays your call.",
+        "Think out loud and get questions back, not only answers — a partner that helps you find your own next step. Your taste stays yours.",
+        "Think out loud and get questions back, not just answers — a partner that helps you find your own next move. You keep the taste.",
+        "Think out loud; get questions back, not just answers. It helps you find your own next move — the taste stays yours.",
+        "Questions back, not just answers — you find your own move; the taste stays yours."
+    ],
+    "use-draft": [
+        "Get a first draft, a sharper rewrite, or the right tone — without staring at an empty page. The voice stays yours; it simply gets you started.",
+        "First drafts, sharper rewrites, the right tone — no more blank page. You keep the voice; it just gets you started.",
+        "First drafts, sharper rewrites, the right tone — without the blank page. You keep the voice; it just gets you moving.",
+        "Drafts, rewrites, tone — minus the blank page. The voice stays yours; it just gets you moving.",
+        "Drafts and rewrites without the blank page — the voice stays yours."
+    ],
+    "use-digest": [
+        "Boil long, messy things down — email threads, documents, meetings — without losing the parts that really matter. You're the one who decides what matters.",
+        "Condense long, messy things — threads, documents, meetings — without losing the parts that matter. You decide what counts.",
+        "Condense long, messy things — threads, documents, meetings — without losing what actually matters. You decide what counts.",
+        "Condense threads, documents, meetings without losing what matters. What counts is your call.",
+        "Long, messy things condensed; you decide what counts."
+    ],
+    "use-plan": [
+        "Break a big job into small steps and lay your options out side by side. It can show you things you might have missed — but the decision stays yours.",
+        "Break a big thing into steps and lay the options side by side. It shows you what you might've missed; the decision is yours.",
+        "Break a big thing into steps and lay the options side by side. It surfaces what you might've missed; you make the call.",
+        "Steps out of a big thing, options side by side. It surfaces what you missed; you make the call.",
+        "Options laid side by side, blind spots surfaced — you make the call."
+    ],
+    "use-build": [
+        "Take an ask that works well and turn it into a little helper — an agent — that does the same job every time. No code needed: you write it in plain English and point it at the work.",
+        "Turn a good ask into a reusable agent that does the job every time — no code needed. You write it in plain English and point it at the work.",
+        "Turn a good ask into a reusable agent that does the job every time — no code. You write it in plain English and point it at the work.",
+        "A good ask, made reusable: an agent that does the job every time. Plain English, no code.",
+        "Good asks become reusable agents — plain English, no code."
+    ]
+}

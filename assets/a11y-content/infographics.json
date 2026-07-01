@@ -1,0 +1,23 @@
+{
+  "hero-title": [
+    "Pictures you can poke",
+    "Infographics you can poke",
+    "Infographics",
+    "Infographics",
+    "Infographics"
+  ],
+  "hero-lede": [
+    "A good infographic is a big, clear picture — bold sections, little icons, a few honest numbers. You can take the whole thing in at one look. Ours have one extra thing: each has a <strong>live bit you can poke</strong>. First read it like a poster on a wall. Then change something, and watch the picture answer you back.",
+    "All the at-a-glance clarity of a good infographic — bold sections, icons, a few honest numbers — plus one extra thing: each has a <strong>live bit you can poke</strong>. Read it like a poster first, then change something and watch it respond.",
+    "The at-a-glance clarity of a good infographic — bold sections, icons, a few honest numbers — with one difference: each has a <strong>live bit you can poke</strong>. Read it like a poster, then change something and watch it respond.",
+    "A good infographic’s at-a-glance clarity — bold sections, icons, a few honest numbers — with one difference: each carries a <strong>live bit you can poke</strong>. Read it as a poster, then change something and watch it respond.",
+    "Infographic clarity — bold sections, icons, honest numbers — plus a <strong>live bit you can poke</strong>. Read as a poster; change something; watch it respond."
+  ],
+  "ig-vs": [
+    "These aren’t the same as an <a href=\"/explorables/\">explorable</a>. An explorable is a whole working model that you drive yourself, end to end. An infographic here is mostly a picture someone has designed for you — with one part you can play with. First you’re shown; then you have a poke.",
+    "Not the same thing as an <a href=\"/explorables/\">explorable</a>: an explorable is a whole model you drive end to end. An infographic here is mostly a designed picture — with one part you can play with. Be shown first, then have a poke.",
+    "Not the same as an <a href=\"/explorables/\">explorable</a>: an explorable is a model you drive end to end. An infographic here is mostly a designed picture — with one part you can play with. Be shown, and then have a poke.",
+    "Distinct from an <a href=\"/explorables/\">explorable</a>, which is a model you drive end to end: an infographic is mostly a designed picture, with one part you can play with. Be shown, then poke.",
+    "An <a href=\"/explorables/\">explorable</a> is a model you drive end to end; an infographic is a designed picture with one live part. Be shown, then poke."
+  ]
+}

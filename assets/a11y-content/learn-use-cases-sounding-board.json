@@ -1,0 +1,51 @@
+{
+  "hero-title": [
+    "Help me think out loud",
+    "Be my sounding board — help me think it through",
+    "Be my sounding board",
+    "Be my sounding board",
+    "Sounding board"
+  ],
+  "hero-lede": [
+    "You don't have to use AI just to get answers. You can think <em>with</em> it instead. Say an idea out loud, even a half-formed one, and get good questions back. Show it a rough draft and find the bit that's bugging you. It helps you find your own next step. What's good — and what to do — stays up to you.",
+    "The best way to use AI might not be asking for answers — it's thinking <em>with</em> it. Say a half-formed idea and get good questions back; talk over a draft and find the bit that's really bothering you. It helps you get to your own next move. The taste, and the call, stay yours.",
+    "The most underrated way to use AI isn't to ask it for answers — it's to think <em>with</em> it. Say a half-formed idea out loud and get good questions back; react to a draft and find the bit that's really bothering you. It helps you reach your own next move. The taste, and the call, stay yours.",
+    "The underrated move isn't asking AI for answers — it's thinking <em>with</em> it. Voice a half-formed idea, get sharp questions back; react to a draft, find what's actually bothering you. It gets you to your own next move. Taste and call stay yours.",
+    "Don't ask for answers — think <em>with</em> it. Half-formed idea in, good questions back; react to a draft, surface the real snag. You reach your own next move. Taste and call: yours."
+  ],
+  "how-title": [
+    "How is this different from just asking for answers?",
+    "A sounding board is not an oracle — here's the difference",
+    "What makes it a sounding board, not an oracle",
+    "Sounding board versus oracle",
+    "Board, not oracle"
+  ],
+  "how-p": [
+    "An oracle is something that just gives you an answer, and you take it or leave it. A sounding board is different. It says back what it heard from you, asks questions that make your idea sharper, and offers a way of looking at it you hadn't tried. Then it leaves the choice with you. Most of the difference is in how you ask: ask it for questions, not for a final answer. You can try it right below.",
+    "An oracle gives you an answer; you take it or leave it. A sounding board plays your idea back to you, asks the questions that sharpen it, and offers an angle you hadn't tried — then the decision stays with you. The difference mostly comes down to how you ask: invite questions, not verdicts. Try it below.",
+    "An oracle hands you an answer and you take it or leave it. A sounding board reflects what you said, asks what would sharpen it, and offers an angle you hadn't tried — then leaves the decision with you. The difference is mostly in how you ask: invite questions, not verdicts. Try it below.",
+    "An oracle issues an answer; take it or leave it. A sounding board reflects, probes, and reframes — then hands the decision back. The difference is mostly in the ask: invite questions, not verdicts. Try it below.",
+    "Oracle: answer out, take it or leave it. Sounding board: reflect, probe, reframe — decision stays yours. The lever is the ask: questions, not verdicts. Try it below."
+  ],
+  "sb-note": [
+    "A real AI model (Amazon Nova 2 Lite) is answering here. That means it can get things wrong. It's a partner to think with, not an expert to obey. Use its questions to spark your own thinking — you don't have to do what it says. Nothing you type here is saved.",
+    "A real model (Amazon Nova 2 Lite) is answering here, so it can be wrong — treat it as a partner, not an authority. Its questions are there to spark your own thinking, not to tell you what to do. Nothing you type is saved.",
+    "A real model (Amazon Nova 2 Lite) answers here, so it can be wrong, and it's a partner — not an authority. Treat its questions as prompts for your own thinking, not instructions. Nothing you type is saved.",
+    "A real model (Amazon Nova 2 Lite) answers here; it can be wrong. Partner, not authority — its questions are prompts for your thinking, not instructions. Nothing you type is saved.",
+    "Live model (Amazon Nova 2 Lite); fallible. Partner, not authority — questions are prompts, not instructions. Nothing you type is saved."
+  ],
+  "next-title": [
+    "What to try next",
+    "Where you could take it next",
+    "Where to take it next",
+    "Take it further",
+    "Next moves"
+  ],
+  "next-p": [
+    "Did that feel useful? The same habit — ask for questions, keep the final say for yourself — works in everything on this site. You can go back and see the other things you can use AI for, or take the idea further and build a small helper of your own.",
+    "If the move felt useful, the same habit — ask for questions, keep the judgment — runs through everything here. Head back to the other things you can use it for, or carry the idea into building a small helper of your own.",
+    "Found the move useful? The same \"ask for questions, keep the judgment\" habit runs through everything here. Wander back to the other things you can do with it, or carry the idea into building a little helper of your own.",
+    "If the move earned its keep, the same habit — ask for questions, keep the judgment — runs through everything here. Head back to the other use cases, or carry it into building a small helper of your own.",
+    "Same habit everywhere here: ask for questions, keep the judgment. Back to the use cases, or on to building a helper of your own."
+  ]
+}

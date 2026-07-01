@@ -1,0 +1,51 @@
+{
+  "hero-title": [
+    "What AI is really good at — and where it slips up",
+    "What AI's good at — and where it slips up",
+    "What AI's great at — and where it trips up",
+    "What AI's good at — and where it slips",
+    "AI's strengths — and its slips"
+  ],
+  "hero-lede": [
+    "The most useful thing to know is not a list of tricks. It is a feel for <em>when you can let the AI do a lot, and when you should stay in charge</em>. This page shows that feel in one picture. Then, at the bottom, you can try it on a task of your own.",
+    "The most useful thing to carry isn't a list of tricks — it's a feel for <em>when to lean on the AI and when to keep a hand on the wheel</em>. Here's that feel at a glance. Then try rating your own task at the bottom.",
+    "The single most useful thing to carry around isn't a list of tricks — it's a feel for <em>when to lean in and when to keep a hand on the wheel</em>. Here it is at a glance. Then rate your own task at the bottom.",
+    "The useful thing isn't a trick list — it's a feel for <em>when to lean in and when to keep a hand on the wheel</em>. Here it is at a glance; rate your own task below.",
+    "Not tricks — a feel for <em>when to lean in and when to steer</em>. At a glance, then rate your own task."
+  ],
+  "rate-h": [
+    "How much can the AI help with <em>your</em> task?",
+    "How much can you lean on it for <em>your</em> task?",
+    "How much can you lean on it for <em>your</em> thing?",
+    "How far can you lean on it for <em>yours</em>?",
+    "How far, on <em>yours</em>?"
+  ],
+  "rate-sub": [
+    "Tick each line that is true for the task you have right now. The meter gives a rough guide, not an order — the final choice is always yours.",
+    "Tick whatever's true of the task in front of you. The meter is a rule of thumb, not a ruling — the call is always yours.",
+    "Tick whatever's true about the task in front of you. The meter's a rule of thumb, not a ruling — you always make the call.",
+    "Tick what's true of your task. The meter's a rule of thumb, not a ruling — the call stays yours.",
+    "Tick what's true. Rule of thumb, not ruling — your call."
+  ],
+  "fig-note": [
+    "The numbers above and the meter are rough guides, not exact measurements — they give you a feel for the shape of things, not a promise. The true answer also depends on your exact task, how well you steer the tool, and whether it knows when to step back. You are the one who decides; the meter only gives a nudge.",
+    "Those figures and the meter are rough guides, not measurements — a feel for the shape, not a promise. The real answer also depends on the exact task, how well you steer, and whether the tool knows when to back off. You decide; the meter just nudges.",
+    "Those figures and the meter are rules of thumb, not measurements — a feel for the shape, not a promise. The real answer also depends on the exact task, how well you steer the tool, and whether it knows when to back off. You're the one who decides; the meter just nudges.",
+    "Figures and meter are rules of thumb, not measurements — shape, not promise. The real answer depends on the task, your steering, and whether the tool knows when to back off. You decide; the meter nudges.",
+    "Rules of thumb, not measurements. The answer depends on the task, your steering, and the tool's restraint. You decide."
+  ],
+  "next-h": [
+    "Where to go next",
+    "Keep going",
+    "Carry it on",
+    "Carry on",
+    "Next"
+  ],
+  "next-p": [
+    "The real skill here is called calibration — working out how far to trust the tool on <em>this</em> task, the one in front of you. That is a human skill, and it gets better with practice.",
+    "The whole knack is calibration — working out how far to trust it on <em>this</em> task. That's a human skill, and it sharpens with practice.",
+    "The whole knack is calibration — knowing how far to trust it on <em>this</em> one. That's a human skill worth sharpening.",
+    "The knack is calibration — how far to trust it on <em>this</em> one. A human skill worth sharpening.",
+    "Calibration: how far to trust it on <em>this</em> one. A skill worth sharpening."
+  ]
+}
