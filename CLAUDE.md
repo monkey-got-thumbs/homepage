@@ -97,7 +97,7 @@ Two loading conventions, and they don't mix:
 Don't add `import`/`export` to an IIFE file or expect a module to set globals before the defer scripts run.
 
 - `a11y-init.js` — tiny IIFE loaded **synchronously in `<head>` (no defer)** so it sets `<html>` data-* before first paint. Don't add defer/async or a flash returns.
-- `app.js` — bootstrap (focus-visible, skip link, reduced-motion, injects `/chatyman.js`); exposes `window.MGT`.
+- `app.js` — bootstrap (focus-visible, skip link, reduced-motion); exposes `window.MGT`.
 - `srs.js` — local-first Leitner spaced-repetition engine (localStorage `mgt:srs:v1`). Imported by `review.js`, `learn-nudge.js`, and `<mgt-recall>`. Its localStorage schema is a shared contract.
 - `components/core/*.js` — custom elements in open shadow DOM, self-registering on module load. `mgt-recall`/`mgt-credit` keep light-DOM fallback content so the page degrades with JS off — keep it.
 

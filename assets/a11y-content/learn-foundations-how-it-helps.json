@@ -28,11 +28,11 @@
     "<strong>Ask yourself:</strong> AI takes the effort — what's left for you?"
   ],
   "explorable-intro": [
-    "Tap each one below. Watch the hard part get smaller — and see the bit that is still yours to do.",
-    "Tap each one to watch the slog get smaller — and see what stays yours:",
-    "Tap each one to see the slog shrink — and what stays yours:",
-    "Tap each to see the slog shrink — and what stays yours:",
-    "Tap each: slog shrinks, your part remains."
+    "Pick a way of working below, then pick a kind of work. Now drag the slider to change how much you lean on AI — and watch the hard part get smaller, while the bit that is still yours to do stays in view.",
+    "Pick a way and a kind of work, then drag how much you lean on AI — watch the slog get smaller, and see what stays yours.",
+    "Pick a way, pick a kind of work, then drag how much you lean on AI — and watch the slog shrink while the part that stays yours holds its ground:",
+    "Pick a way and a kind of work, then drag the AI slider — the slog shrinks; what stays yours is marked.",
+    "Pick, then drag the AI slider: slog shrinks, your part remains."
   ],
   "notice-shape": [
     "Look at the shape of it. The \"With AI\" bar is always shorter, but it never goes all the way down to nothing — and the bit that is left is always the part that is yours. Does that look like help, or like taking over? Drag it all the way down and decide for yourself.",
@@ -89,19 +89,5 @@
     "Try it and see: did the effort shrink, and did the call stay yours?",
     "Try it: did the effort shrink, the call stay yours?",
     "Did the effort shrink? Did the call stay yours?"
-  ],
-  "continue-title": [
-    "Keep Learning",
-    "Continue Learning",
-    "Continue Learning",
-    "Continue Learning",
-    "Continue Learning"
-  ],
-  "continue-blurb": [
-    "Next is the honest part: the places where AI gets things wrong, and how you can spot them and stay ahead.",
-    "Next, the honest bit: where AI slips up, and how to stay ahead of it.",
-    "Next: the honest bit — where AI slips up, and how to stay ahead of it.",
-    "Next: the honest bit — where AI slips up, and how to stay ahead.",
-    "Next: where AI slips up, and how to stay ahead."
   ]
 }

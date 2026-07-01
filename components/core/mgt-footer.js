@@ -133,6 +133,7 @@ class MGTFooter extends HTMLElement {
               <ul>
                 <li><a href="/basics/">Start here</a></li>
                 <li><a href="/basics/memory/">Memory</a></li>
+                <li><a href="/learn/review/">Review your cards</a></li>
                 <li><a href="/learn/foundations/">Foundations</a></li>
                 <li><a href="/learn/frameworks/">Key ideas</a></li>
                 <li><a href="/learn/human-factors/">The human side</a></li>

@@ -1,5 +1,5 @@
 /* Journey continuity — a gentle "next step" handoff at the foot of each stage,
-   so the nav's Start → Learn → Build → Products → Community is felt, not just
+   so the IA's Basics → Discover → Explore → Build loop is felt, not just
    labelled. CSP-safe (external). Injected above <mgt-footer>; no-ops elsewhere.
    The blurb adapts to the reading-level setter (data-level on <html>). */
 (function () {
@@ -12,7 +12,9 @@
   // The arc follows the new IA — basics → discover → explore → build — and then
   // closes Fan's loop (build → discover again, one rung higher). Legacy pages kept.
   var MAP = [
-    [/^\/basics/, { href: "/discover/", t: "Discover the territory",
+    // Hub + memory only — the five concept reads carry their own prev/next
+    // reading-order nav, so a second "next step" card there would conflict.
+    [/^\/basics\/(memory\/)?$/, { href: "/discover/", t: "Discover the territory",
       s: ["Once you've found your footing here, the next move is to step back and take in a whole field at a glance — then pick one and we'll go in together.",
           "Got your footing? Step back and see a whole field at a glance, then pick one.",
           "Next: discover a field at a glance."] }],

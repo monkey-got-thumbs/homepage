@@ -13,6 +13,13 @@
     "No background needed. Each short read below takes one idea — what AI is, what's behind the chatbots, what an “agent” really is, how it amplifies you rather than replaces you — in plain words. Each memory check unlocks the next read; jumping ahead is allowed.",
     "No background needed. Each short read takes one idea — what AI is, LLMs, agents, augmented intelligence — in plain words. Each check unlocks the next; jump ahead if you like."
   ],
+  "memory-card": [
+    "Every one of the quick checks you answer above quietly feeds a live picture of your very own memory — showing what's still fresh, what's slowly fading, and what's just about due to slip away — side by side with how an LLM's memory works. It's your data, kept in your own browser, and it never gets sent anywhere at all.",
+    "Every quick check you answer above feeds a live picture of your own memory — what's fresh, what's fading, what's about due to slip — alongside how an LLM's memory works. Your data stays in your browser; nothing is sent anywhere.",
+    "Every quick check you answer above feeds a live picture of your memory — what's fresh, what's fading, what's about due to slip — next to how an LLM's memory works. Your data, your browser, nothing sent anywhere.",
+    "The quick checks above feed a live picture of your memory — fresh, fading, about to slip — beside how an LLM's works. Your data stays in your browser.",
+    "The checks above feed a live picture of your memory — fresh, fading, slipping — beside an LLM's. Local only."
+  ],
   "why-note": [
     "Wondering <em>why</em> we teach by letting you play with things and poke at them, instead of just lecturing at you? That idea isn't ours to take credit for — it comes from a handful of thoughtful people, and we name every one of them on the <a href=\"/learn/influences.html\">influences page</a>.",
     "Curious <em>why</em> we teach by letting you poke at things rather than lecturing? It isn't ours to claim — it comes from a handful of people we name on the <a href=\"/learn/influences.html\">influences page</a>.",
