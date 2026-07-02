@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, viewport-fit=cover" />
-    <title>Basics — AI from nothing — Monkey Got Thumbs</title>
+    <title>What comes next? — a field guide from 2050 — Monkey Got Thumbs</title>
     <link rel="canonical" href="https://monkey-got-thumbs.com/basics/">
     <meta name="robots" content="index, follow, max-image-preview:large">
     <meta name="theme-color" content="#0E0B1A" />
@@ -11,123 +11,492 @@
     <link rel="stylesheet" href="/assets/css/tokens.css">
     <link rel="stylesheet" href="/assets/css/base.css">
     <link rel="stylesheet" href="/assets/css/layout.css">
-    <meta name="description" content="The basics of AI, from nothing — short, plain-words reads on what AI is, what's behind the chatbots (LLMs), what an 'agent' really is, augmented intelligence, and augmented reality." />
+    <meta name="description" content="An explorable essay on AI, augmented intelligence and augmented reality — a field guide from 2050 you can poke: guess with it, drag its numbers, build a tiny agent, and judge for yourself." />
     <meta name="author" content="Monkey Got Thumbs" />
-    <meta property="og:title" content="Basics — AI from nothing">
-    <meta property="og:description" content="Short, plain-words reads that take you from zero: what AI is, LLMs, agents, augmented intelligence, AR.">
+    <meta property="og:title" content="What comes next? — a field guide from 2050">
+    <meta property="og:description" content="An explorable essay on AI, augmented intelligence and augmented reality — guess with it, drag its numbers, build a tiny agent, and judge for yourself.">
     <meta property="og:url" content="https://monkey-got-thumbs.com/basics/">
-    <meta property="og:type" content="website">
+    <meta property="og:type" content="article">
     <meta property="og:image" content="https://monkey-got-thumbs.com/social-card.png">
     <meta property="og:site_name" content="Monkey Got Thumbs">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
     <script type="application/ld+json">
-    { "@context": "https://schema.org", "@type": "CollectionPage", "name": "Basics", "url": "https://monkey-got-thumbs.com/basics/",
+    { "@context": "https://schema.org", "@type": "LearningResource", "name": "What comes next? — a field guide from 2050",
+      "url": "https://monkey-got-thumbs.com/basics/", "learningResourceType": "explorable explanation",
+      "about": ["artificial intelligence", "large language models", "AI agents", "augmented intelligence", "augmented reality"],
       "breadcrumb": { "@type": "BreadcrumbList", "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://monkey-got-thumbs.com/" },
         { "@type": "ListItem", "position": 2, "name": "Basics" }
       ]}}
     </script>
     <style>
-        .bx { max-width: 52rem; margin-inline: auto; }
-        .bx-hero { max-width: 44rem; margin: 0 0 var(--space-2xl); }
-        .bx-hero .eyebrow { font: 700 var(--font-size-xs)/1 var(--font-mono); text-transform: uppercase; letter-spacing: .08em; color: var(--color-accent); }
-        .bx-hero h1 { margin: var(--space-sm) 0; }
-        .bx-hero .lede { color: var(--color-fg-secondary); font-size: var(--font-size-lg); line-height: 1.75; }
-        .bx-grid { display: grid; gap: clamp(0.9rem, 2vw, 1.25rem); grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr)); margin: var(--space-xl) 0; }
-        .bx-card { position: relative; display: flex; flex-direction: column; gap: 0.4rem; text-decoration: none; color: inherit; border: 1px solid var(--color-border); border-radius: 16px; padding: 1.25rem 1.35rem; background: radial-gradient(120% 130% at 0% 0%, color-mix(in srgb, var(--color-accent) 11%, transparent), transparent 60%), var(--color-bg-secondary); transition: border-color .15s ease, transform .15s ease, opacity .2s ease; }
-        .bx-card:hover { border-color: var(--color-accent); transform: translateY(-2px); }
-        /* guided order: greyed until the previous read's recall is answered — still clickable */
-        .bx-card .lock { display: none; position: absolute; top: 0.85rem; inset-inline-end: 1rem; font-size: 1rem; line-height: 1; }
-        .bx-card.is-locked { opacity: 0.42; }
-        .bx-card.is-locked:hover { opacity: 0.66; }
-        .bx-card.is-locked .lock { display: block; }
-        .bx-card .n { font: 700 var(--font-size-xs)/1 var(--font-mono); color: var(--color-accent); letter-spacing: .06em; }
-        .bx-card b { font-size: var(--font-size-lg); line-height: 1.25; }
-        .bx-card span { color: var(--color-fg-secondary); line-height: 1.55; font-size: var(--font-size-sm); }
-        .bx-card .go { margin-top: auto; padding-top: 0.4rem; color: var(--color-accent); font-size: var(--font-size-sm); }
-        .bx-memory { margin-block-start: clamp(0.9rem, 2vw, 1.25rem); border-style: dashed; }
-        .bx-why { margin-top: var(--space-xl); padding-top: var(--space-lg); border-top: 1px solid var(--color-border); color: var(--color-muted); font-size: var(--font-size-sm); line-height: 1.7; }
-        .bx-why a { color: var(--color-accent); }
+        /* ===== the artifact ===== */
+        .fx { max-width: 44rem; margin-inline: auto; }
+        .fx-hero { margin: 0 0 var(--space-xl); }
+        .fx-hero .eyebrow { font: 700 var(--font-size-xs)/1 var(--font-mono); text-transform: uppercase; letter-spacing: .08em; color: var(--color-accent); }
+        .fx-hero h1 { margin: var(--space-sm) 0; }
+        .fx p { line-height: 1.85; }
+        .fx .lede { color: var(--color-fg-secondary); font-size: var(--font-size-lg); line-height: 1.8; }
+        .fx section { margin-block: var(--space-3xl); }
+        .fx h2 { display: flex; align-items: baseline; gap: 0.7rem; font-size: var(--font-size-2xl); margin: 0 0 var(--space-md); }
+        .fx h2 .n { font: 700 var(--font-size-sm)/1 var(--font-mono); color: var(--color-accent); flex: none; }
+        .cx-tune { display: block; max-width: 24rem; margin: var(--space-lg) 0 0; }
+
+        /* transmission stamp — the conceit, worn lightly */
+        .stamp { display: inline-flex; gap: 0.6rem; align-items: baseline; font: 600 var(--font-size-xs)/1.4 var(--font-mono); color: var(--color-muted); border: 1px dashed var(--color-border); border-radius: 8px; padding: 0.45rem 0.7rem; margin-block: var(--space-md) 0; }
+        .stamp b { color: var(--color-accent); font-weight: 700; }
+
+        /* ===== interactive vocabulary (document.js heritage) ===== */
+        .fig { border: 1px solid var(--color-border); border-radius: 16px; padding: 1.1rem 1.25rem 1.25rem; margin-block: var(--space-lg); background: var(--color-bg-secondary); }
+        .fig .fig-h { font: 700 var(--font-size-xs)/1 var(--font-mono); text-transform: uppercase; letter-spacing: .07em; color: var(--color-accent); margin: 0 0 0.7rem; }
+        .fig .cap { color: var(--color-fg-secondary); font-size: var(--font-size-sm); line-height: 1.6; margin: 0.8rem 0 0; min-block-size: 2.6em; }
+        .fig .hint { color: var(--color-muted); font-size: var(--font-size-xs); margin: 0.5rem 0 0; }
+        .fig noscript p { color: var(--color-muted); font-style: italic; }
+
+        .scrub { cursor: ew-resize; border-block-end: 2px dotted var(--color-accent); font-family: var(--font-mono); font-variant-numeric: tabular-nums; color: var(--color-accent); font-weight: 700; touch-action: none; user-select: none; white-space: nowrap; }
+        .scrub.drag { background: color-mix(in srgb, var(--color-accent) 18%, transparent); border-radius: 4px; }
+        .out { font-family: var(--font-mono); font-variant-numeric: tabular-nums; font-weight: 700; }
+        .rx { transition: opacity .2s ease; }
+
+        .btn-sm { appearance: none; border: 1px solid var(--color-border); background: var(--color-bg); color: var(--color-fg); border-radius: 8px; padding: 0.35rem 0.7rem; font: 600 var(--font-size-sm)/1.2 var(--font-sans); cursor: pointer; }
+        .btn-sm:hover { border-color: var(--color-accent); }
+        .btn-sm.primary { background: linear-gradient(180deg, var(--color-brand-light), var(--color-brand)); color: #fff; border-color: transparent; }
+        .btn-sm:disabled { opacity: .45; cursor: default; }
+
+        .chip { display: inline-block; border: 1px solid var(--color-border); border-radius: 999px; padding: 0.15rem 0.6rem; font-size: var(--font-size-xs); color: var(--color-fg-secondary); margin: 0.15rem; cursor: pointer; user-select: none; }
+        .chip.on { border-color: var(--color-accent); color: var(--color-accent); }
+
+        /* edge-of-analogy chip */
+        .edge { margin: 0.7rem 0 0; font-size: var(--font-size-xs); }
+        .edge summary { cursor: pointer; color: var(--color-warning, #E8B24D); font-weight: 700; list-style: none; }
+        .edge summary::before { content: "▸ "; }
+        .edge[open] summary::before { content: "▾ "; }
+        .edge p { color: var(--color-fg-secondary); margin: 0.35rem 0 0; line-height: 1.55; }
+
+        /* the corpus — the artifact's own page */
+        .corpus { font-family: var(--font-mono); font-size: 0.82rem; line-height: 1.9; color: var(--color-fg-secondary); background: var(--color-bg); border: 1px solid var(--color-border); border-radius: 12px; padding: 1rem 1.1rem; max-block-size: 16rem; overflow-y: auto; }
+        .corpus .tk { border-radius: 3px; padding-inline: 1px; }
+        .corpus .tk.hl { background: color-mix(in srgb, var(--color-accent) 30%, transparent); color: var(--color-fg); }
+        .corpus .tk.hl-ctx { background: color-mix(in srgb, var(--color-brand-light, #7d6ac9) 40%, transparent); color: var(--color-fg); }
+
+        /* probability bars */
+        .bars { display: flex; flex-direction: column; gap: 5px; margin-block: 0.8rem; }
+        .bar { display: grid; grid-template-columns: 6.5rem 1fr 3.2rem; gap: 0.6rem; align-items: center; cursor: pointer; border: 0; background: none; padding: 2px; text-align: start; }
+        .bar .w { font-family: var(--font-mono); font-size: 0.85rem; color: var(--color-fg); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .bar .tr { block-size: 14px; border-radius: 4px; background: color-mix(in srgb, var(--color-accent) 20%, transparent); position: relative; overflow: hidden; }
+        .bar .fl { position: absolute; inset-block: 0; inset-inline-start: 0; background: var(--color-accent); border-radius: 4px; transition: inline-size .25s ease; }
+        .bar .p { font-family: var(--font-mono); font-size: 0.78rem; color: var(--color-fg-secondary); text-align: end; }
+        .bar.sel .tr { outline: 2px solid var(--color-accent); }
+        .bar.guess .w::after { content: " ← you"; color: var(--color-accent); font-weight: 700; }
+
+        /* generated text */
+        .gen { font-family: var(--font-mono); font-size: 0.9rem; line-height: 1.8; background: var(--color-bg); border: 1px solid var(--color-border); border-radius: 12px; padding: 0.9rem 1rem; min-block-size: 3.4em; }
+        .gen .new { color: var(--color-accent); }
+
+        /* slider rows */
+        .lever { display: grid; grid-template-columns: 8.5rem 1fr 4.5rem; gap: 0.7rem; align-items: center; margin-block: 0.5rem; }
+        .lever label { font-size: var(--font-size-sm); color: var(--color-fg-secondary); }
+        .lever input[type=range] { inline-size: 100%; accent-color: var(--color-accent); }
+        .lever .val { font-family: var(--font-mono); font-size: 0.85rem; text-align: end; color: var(--color-accent); font-weight: 700; }
+
+        /* word-tile guess row + text input */
+        .tiles { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-block: 0.7rem; }
+        .gate-in { display: flex; gap: 0.5rem; margin-block: 0.6rem; flex-wrap: wrap; }
+        .gate-in input { flex: 1 1 12rem; border: 1px solid var(--color-border); background: var(--color-bg); color: var(--color-fg); border-radius: 8px; padding: 0.45rem 0.7rem; font: inherit; }
+
+        /* flip cards (swiss cheese) */
+        .pairs { display: grid; gap: 0.8rem; grid-template-columns: 1fr; margin-block: 0.8rem; }
+        @media (min-width: 640px) { .pairs { grid-template-columns: repeat(2, 1fr); } }
+        .pair { border: 1px solid var(--color-border); border-radius: 12px; padding: 0.9rem 1rem; }
+        .pair .q { font-size: var(--font-size-sm); line-height: 1.55; }
+        .pair .a { display: none; margin-top: 0.6rem; font-size: var(--font-size-sm); color: var(--color-fg-secondary); border-top: 1px dashed var(--color-border); padding-top: 0.6rem; }
+        .pair.flip .a { display: block; }
+
+        /* the dreaming dial + spectrum: droppable rails */
+        .rail { position: relative; block-size: 74px; border-block-end: 2px solid var(--color-border); margin: 2.4rem 0 0.4rem; }
+        .rail .tick { position: absolute; inset-block-end: -2px; block-size: 10px; border-inline-start: 2px solid var(--color-border); }
+        .rail .lab { position: absolute; inset-block-end: -1.6rem; font-size: var(--font-size-xs); color: var(--color-muted); transform: translateX(-50%); white-space: nowrap; }
+        .rail .drag-chip { position: absolute; inset-block-end: 10px; transform: translateX(-50%); cursor: grab; touch-action: none; }
+        .rail .drag-chip.drag { cursor: grabbing; border-color: var(--color-accent); color: var(--color-accent); }
+        .rail-note { font-size: var(--font-size-xs); color: var(--color-muted); margin-top: 2rem; }
+
+        /* rubric game */
+        .rub-t { inline-size: 100%; border-collapse: collapse; font-size: var(--font-size-sm); margin-block: 0.7rem; }
+        .rub-t th, .rub-t td { text-align: start; padding: 0.4rem 0.5rem; border-block-end: 1px solid var(--color-border); }
+        .rub-t .sc { font-family: var(--font-mono); text-align: end; }
+
+        /* agent trace */
+        .trace { font-family: var(--font-mono); font-size: 0.8rem; line-height: 1.75; background: var(--color-bg); border: 1px solid var(--color-border); border-radius: 12px; padding: 0.9rem 1rem; min-block-size: 5em; }
+        .trace .t-th { color: var(--color-fg-secondary); }
+        .trace .t-tool { color: var(--color-info, #6BA8E5); }
+        .trace .t-ok { color: var(--color-accent); }
+        .trace .t-x { color: var(--color-error, #F0705A); }
+
+        /* brick-pencil canvas */
+        .scrawl { inline-size: 100%; block-size: 180px; border: 1px solid var(--color-border); border-radius: 12px; background: var(--color-bg); touch-action: none; cursor: crosshair; display: block; }
+
+        /* ledger sort */
+        .ledger { display: grid; gap: 0.7rem; grid-template-columns: 1fr; margin-block: 0.8rem; }
+        @media (min-width: 640px) { .ledger { grid-template-columns: repeat(2, 1fr); } }
+        .led-col { border: 1px dashed var(--color-border); border-radius: 12px; padding: 0.7rem; min-block-size: 7rem; }
+        .led-col h4 { margin: 0 0 0.5rem; font-size: var(--font-size-xs); text-transform: uppercase; letter-spacing: .06em; color: var(--color-fg-secondary); }
+        .led-pool { margin-block: 0.6rem; }
+        .led-chip { display: block; inline-size: 100%; text-align: start; margin-block: 0.25rem; cursor: pointer; }
+        .led-chip.right { border-color: var(--color-accent); }
+        .led-chip.wrong { border-color: var(--color-warning, #E8B24D); }
+
+        /* you-draw-it ramp */
+        .ydi svg { inline-size: 100%; block-size: auto; touch-action: none; user-select: none; display: block; }
+
+        /* trail replay */
+        .trail { display: grid; gap: 0.8rem; grid-template-columns: 1fr; margin-block: 0.8rem; }
+        @media (min-width: 720px) { .trail { grid-template-columns: repeat(3, 1fr); } }
+        .trail .t-col { border: 1px solid var(--color-border); border-radius: 12px; padding: 0.8rem 0.9rem; }
+        .trail .t-col h4 { margin: 0 0 0.4rem; font-size: var(--font-size-sm); color: var(--color-accent); }
+        .trail .t-col ul { margin: 0; padding-inline-start: 1.1rem; font-size: var(--font-size-xs); color: var(--color-fg-secondary); line-height: 1.6; }
+
+        /* sandbox */
+        .sand textarea, .sand input[type=text] { inline-size: 100%; border: 1px solid var(--color-border); background: var(--color-bg); color: var(--color-fg); border-radius: 8px; padding: 0.5rem 0.7rem; font: inherit; box-sizing: border-box; }
+        .sand textarea { font-family: var(--font-mono); font-size: 0.8rem; line-height: 1.7; min-block-size: 6rem; }
+
+        /* sequences montage */
+        .seqs { display: grid; gap: 0.8rem; grid-template-columns: repeat(2, 1fr); margin-block: 0.8rem; }
+        @media (min-width: 720px) { .seqs { grid-template-columns: repeat(4, 1fr); } }
+        .seq { border: 1px solid var(--color-border); border-radius: 12px; padding: 0.7rem; text-align: center; font-family: var(--font-mono); font-size: 0.85rem; }
+        .seq .s-lab { display: block; font-size: var(--font-size-xs); color: var(--color-muted); margin-block-end: 0.4rem; font-family: var(--font-sans); }
+        .seq .nxt { color: var(--color-accent); opacity: 0; transition: opacity .3s ease; }
+        .seq.rev .nxt { opacity: 1; }
+
+        /* blank last page */
+        .blank-page { border: 1px dashed var(--color-border); border-radius: 12px; padding: 1rem 1.1rem; margin-block: var(--space-lg); }
+        .blank-page textarea { inline-size: 100%; box-sizing: border-box; border: 0; background: transparent; color: var(--color-fg); font: inherit; line-height: 1.8; min-block-size: 5rem; resize: vertical; }
+        .blank-page .keep { font-size: var(--font-size-xs); color: var(--color-muted); margin: 0.4rem 0 0; }
+
+        /* doors + deeper reads */
+        .doors { display: grid; gap: 0.9rem; grid-template-columns: 1fr; margin-block: var(--space-lg); }
+        @media (min-width: 720px) { .doors { grid-template-columns: repeat(3, 1fr); } }
+        .door { display: flex; flex-direction: column; gap: 0.35rem; text-decoration: none; color: inherit; border: 1px solid var(--color-border); border-radius: 14px; padding: 1rem 1.1rem; background: radial-gradient(120% 130% at 0% 0%, color-mix(in srgb, var(--color-accent) 11%, transparent), transparent 60%), var(--color-bg-secondary); transition: border-color .15s ease, transform .15s ease; }
+        .door:hover { border-color: var(--color-accent); transform: translateY(-2px); }
+        .door .verb { font: 700 var(--font-size-xs)/1 var(--font-mono); text-transform: uppercase; letter-spacing: .07em; color: var(--color-accent); }
+        .door b { font-size: var(--font-size-base); }
+        .door span { font-size: var(--font-size-xs); color: var(--color-fg-secondary); line-height: 1.5; }
+        .deeper { font-size: var(--font-size-sm); color: var(--color-fg-secondary); line-height: 1.9; }
+        .deeper a { color: var(--color-accent); }
+
+        mgt-recall { display: block; margin-block: var(--space-lg); }
+
+        /* per-scheme sanity for accent-tinted pieces is inherited from tokens; charts stay token-driven */
+        @media (prefers-reduced-motion: reduce) { .bar .fl, .seq .nxt, .rx { transition: none; } }
     </style>
     <link rel="stylesheet" href="/assets/css/accessibility.css">
     <script src="/assets/js/a11y-init.js"></script>
     <script src="/assets/js/accessibility.js" defer></script>
     <link rel="stylesheet" href="/assets/css/journey.css">
     <script src="/assets/js/journey.js" defer></script>
+    <script src="/assets/js/basics-essay.js" defer></script>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
     <mgt-header></mgt-header>
     <main id="main-content">
-        <div class="bx section-pad">
+        <article class="fx section-pad">
             <nav aria-label="Breadcrumb">
                 <ul class="breadcrumbs">
                     <li><a href="/">Home</a></li>
                     <li><span aria-current="page">Basics</span></li>
                 </ul>
             </nav>
+            <mgt-reading-slider class="cx-tune"></mgt-reading-slider>
 
-            <header class="bx-hero">
-                <span class="eyebrow">basics · from nothing</span>
-                <h1 data-a11y="hero-title">New to all this? Start right here.</h1>
-                <p class="lede" data-a11y="hero-lede">No background needed, and nothing to catch up on. Each short read below takes one idea — what AI even is, what's behind the chatbots, what an “agent” really is, and how it can amplify you instead of replacing you — and explains it in plain words. They build on each other — each quick memory check unlocks the next — but nothing stops you jumping ahead.</p>
+            <header class="fx-hero">
+                <p class="stamp" aria-label="Document provenance stamp">received <b>2050</b> → <b>2026</b> · a field guide · last chapter blank</p>
+                <span class="eyebrow">basics · a field guide from 2050</span>
+                <h1 data-a11y="hero-title">What comes next?</h1>
+                <p class="lede" data-a11y="hero-lede">Reading this guide takes about <span class="scrub" data-k="mins" tabindex="0" role="slider" aria-label="Reading minutes — drag to adjust">12 minutes</span>; poking everything in it takes closer to <span class="out" data-o="pokemins">40</span>. It was written in a place where these tools are as ordinary as kettles, and it adjusts itself to whoever is holding it — the slider above is yours. It will not tell you what to think about any of this. A guide that tells you the ending stops being a guide.</p>
             </header>
 
-            <div class="bx-grid">
-                <a class="bx-card" href="/basics/what-is-ai/">
-                    <span class="n" aria-hidden="true">01</span>
-                    <b>What even is AI?</b>
-                    <span>Not magic, not a mind — very good pattern-matching. Where it shines, and where it slips.</span>
-                    <span class="go">Read it →</span>
-                </a>
-                <a class="bx-card" href="/basics/llms/" data-requires="basics-what-is-ai-pattern-matching">
-                    <span class="n" aria-hidden="true">02</span>
-                    <span class="lock" aria-hidden="true" title="Do the quick recall on “What even is AI?” to unlock">🔒</span>
-                    <b>What's an LLM?</b>
-                    <span>The thing behind the chatbots — why it's so fluent, and why it can be confidently wrong.</span>
-                    <span class="go">Read it →</span>
-                </a>
-                <a class="bx-card" href="/basics/agents/" data-requires="basics-llms-likely-not-true">
-                    <span class="n" aria-hidden="true">03</span>
-                    <span class="lock" aria-hidden="true" title="Do the quick recall on “What's an LLM?” to unlock">🔒</span>
-                    <b>What's an agent?</b>
-                    <span>Really just a clear, reusable ask — one that can take steps and actually do things.</span>
-                    <span class="go">Read it →</span>
-                </a>
-                <a class="bx-card" href="/basics/augmented-intelligence/" data-requires="basics-agents-vs-chatbot">
-                    <span class="n" aria-hidden="true">04</span>
-                    <span class="lock" aria-hidden="true" title="Do the quick recall on “What's an agent?” to unlock">🔒</span>
-                    <b>Augmented intelligence</b>
-                    <span>AI that amplifies your judgement instead of replacing you. You keep the wheel.</span>
-                    <span class="go">Read it →</span>
-                </a>
-                <a class="bx-card" href="/basics/augmented-reality/" data-requires="basics-augmented-intelligence-aug-vs-auto">
-                    <span class="n" aria-hidden="true">05</span>
-                    <span class="lock" aria-hidden="true" title="Do the quick recall on “Augmented intelligence” to unlock">🔒</span>
-                    <b>Augmented reality</b>
-                    <span>Useful information laid over the real world — through a phone or a pair of glasses.</span>
-                    <span class="go">Read it →</span>
-                </a>
-            </div>
+            <!-- 1 · THE GATE -->
+            <section aria-label="The guessing game">
+                <p data-a11y="gate-lead">Before anything gets a name, play one round of a game. Below are five practice sentences, written into this guide for exactly this moment. Under them, a sixth sentence stops early. What word comes next?</p>
+                <div class="fig" id="fig-gate">
+                    <p class="fig-h">the guessing game</p>
+                    <div class="corpus" id="gate-corpus" role="group" aria-label="Five sentences to read before guessing"></div>
+                    <p class="gen" id="gate-prompt"></p>
+                    <div class="tiles" id="gate-tiles" role="group" aria-label="Word choices"></div>
+                    <div class="gate-in">
+                        <input type="text" id="gate-input" maxlength="20" autocomplete="off" aria-label="Type your guess for the next word" placeholder="or type your guess…">
+                        <button class="btn-sm primary" id="gate-go">place your bet</button>
+                    </div>
+                    <div class="bars" id="gate-bars"></div>
+                    <p class="cap" id="gate-cap" aria-live="polite"></p>
+                    <noscript><p>Low-power mode: the game needs the live page. The answer most readers land on is “tool” — it follows “holds the” in the text above more often than anything else. Count it yourself.</p></noscript>
+                </div>
+                <p data-a11y="gate-after">However you did, notice what you just used: not a dictionary, not grammar — the five sentences themselves. Words repeat, so the past of a text is a decent guide to its next word. Using only the sentences above, you can beat blind luck at this game, and you can check that claim by counting. Hold onto the feeling. It is the seed of everything on this page.</p>
+            </section>
 
-            <a class="bx-card bx-memory" href="/basics/memory/">
-                <span class="n" aria-hidden="true">the explorable</span>
-                <b>Watch your own memory at work</b>
-                <span data-a11y="memory-card">Every quick check you answer above feeds a live picture of your memory — what's fresh, what's fading, what's about due to slip — next to how an LLM's memory works. Your data, your browser, nothing sent anywhere.</span>
-                <span class="go">See it →</span>
-            </a>
+            <!-- 2 · THE BANK TRAP -->
+            <section aria-labelledby="h-bank">
+                <h2 id="h-bank"><span class="n" aria-hidden="true">02</span> <span data-a11y="h-bank-t">But one small word wrecks the trick</span></h2>
+                <p data-a11y="bank-lead">Your counting trick has a weakness, and it is nine letters long: “the bank”. In the guide's text, money sleeps in a bank and a river sleeps against one. Count how often each word follows “the”, and “bank” tells you nothing about which bank you are in. A guesser that counts single words can do no better than a coin-flip here. Watch it flip — then give it one extra word of memory.</p>
+                <div class="fig" id="fig-bank">
+                    <p class="fig-h">the bank trap</p>
+                    <p class="gen" id="bank-line"></p>
+                    <div class="tiles" id="bank-ctl"></div>
+                    <div class="bars" id="bank-bars"></div>
+                    <p class="cap" id="bank-cap" aria-live="polite"></p>
+                    <noscript><p>Low-power mode: with one word of context, “bank” is a coin-flip; peek at the word before and the flip stops. The demo lets you toggle that peek.</p></noscript>
+                </div>
+                <p data-a11y="bank-after">That is the whole discovery, and it is a big one: <em>how much a guesser remembers changes what it can guess</em>. Now crank the guess forward. Predict a word, keep it, predict again from what you now have — around and around. A machine doing exactly that, with a long memory and a very large pile of text, is what people in your decade started calling a chatbot. We will build one — a tiny, honest one — right now.</p>
+            </section>
 
-            <p class="bx-review"><a href="/learn/review/">Answered a few checks? Review your cards →</a></p>
+            <!-- 3 · THE TOY (flagship) -->
+            <section aria-labelledby="h-toy">
+                <h2 id="h-toy"><span class="n" aria-hidden="true">03</span> <span data-a11y="h-toy-t">So build the whole machine yourself</span></h2>
+                <p data-a11y="toy-lead">Here is the guide's first page in full — about 250 words of it. And here is a complete guessing machine that reads nothing else. Every bar it shows you is a count you can verify by eye in the text directly above it: click any bar and count the highlights. No secrets, no cloud, no maths you cannot check on your fingers.</p>
+                <div class="fig" id="fig-toy">
+                    <p class="fig-h">the guessing machine · reads only the page below</p>
+                    <div class="corpus" id="toy-corpus" role="group" aria-label="The corpus — the text the machine reads"></div>
+                    <p class="hint" data-a11y="toy-hint">The machine continues from the words below. Turn the crank, or let it write on its own.</p>
+                    <p class="gen" id="toy-gen"></p>
+                    <div class="tiles" id="toy-ctl"></div>
+                    <div class="bars" id="toy-bars"></div>
+                    <div class="lever"><label for="lv-order">memory (words)</label><input type="range" id="lv-order" min="1" max="3" step="1" value="1"><span class="val" id="lv-order-v">1</span></div>
+                    <div class="lever"><label for="lv-temp">temperature</label><input type="range" id="lv-temp" min="0" max="1.5" step="0.05" value="0"><span class="val" id="lv-temp-v">0.00</span></div>
+                    <p class="cap" id="toy-cap" aria-live="polite"></p>
+                    <details class="edge"><summary data-a11y="toy-edge-s">the edge of this toy</summary><p data-a11y="toy-edge-p">Our machine counts. The real ones cannot: almost every sentence you will ever say has never been written before, so there is nothing to count. A large model instead <em>compresses</em> patterns from its reading — closer to a very lossy zip of a library than a filing cabinet of it — and guesses well on sentences nobody ever wrote. That is also why it cannot quote its sources: the originals are not in there, only the squeeze of them.</p></details>
+                    <noscript><p>Low-power mode: the machine's whole trick is counting which word followed which in the text above, then guessing the commonest continuation — with a dial that sometimes lets rarer words through.</p></noscript>
+                </div>
+                <p data-a11y="toy-turns">Three things are worth catching with your own hands. Set temperature to zero and let it write: it walks into a loop and repeats itself, word for word, forever — pick the safest word every time and you get the flattest possible text. Nudge the temperature up and it takes small risks; nobody ever derived the “right” setting, people just tried numbers and kept what read well. Then push memory to three words and watch closely: the writing turns fluent — because it has started quoting the page outright. You caught it cheating by memorising.</p>
+                <p data-a11y="toy-bridge">Now the honest confession this whole page has been building to. The machines in your pocket work like this toy — predict, pick, repeat — but they cannot get there by counting, because language is too new: with a 40,000-word vocabulary there are more three-word openings than sentences ever written. So instead of a table of counts, a <strong>large language model</strong> — an LLM, the engine behind the chatbots — learns a compressed pattern from more text than you could read in a thousand lifetimes, and uses it to guess well on sentences no one has ever said. Fluent for exactly the reason your toy is fluent. Wrong, when it is wrong, for the same reason too.</p>
+                <mgt-recall id="basics-essay-loop">
+                    <details>
+                        <summary>In one line: what does a language model actually do?</summary>
+                        <p>Predict a likely next chunk of text, keep it, and predict again — around and around. Everything a chatbot says is built that way, one guess at a time.</p>
+                    </details>
+                </mgt-recall>
+                <p class="deeper" data-a11y="toy-deeper">Deeper reads, kept short: <a href="/basics/what-is-ai/">What even is AI?</a> · <a href="/basics/llms/">What's an LLM?</a> — and this card you just met feeds <a href="/basics/memory/">a live picture of your own memory</a>.</p>
+            </section>
 
-            <p class="bx-why" data-a11y="why-note">Curious <em>why</em> we teach by letting you poke at things rather than lecturing? That's not ours to claim — it comes from a handful of people we name on the <a href="/learn/influences.html">influences page</a>.</p>
-        </div>
+            <!-- 4 · SCALE, WITH HOLES -->
+            <section aria-labelledby="h-scale">
+                <h2 id="h-scale"><span class="n" aria-hidden="true">04</span> <span data-a11y="h-scale-t">But the real one has read a thousand lifetimes — and still fumbles</span></h2>
+                <p data-a11y="scale-lead">How much reading are we talking about? One open model from your era — Llama 3, whose maker published the number — trained on about fifteen trillion tokens of text. Make that personal: at <span class="scrub" data-k="wpm" tabindex="0" role="slider" aria-label="Your reading speed in words per minute — drag to adjust">250 words a minute</span>, reading nonstop with no sleep, that pile would take you about <span class="out" data-o="years">86,000</span> years<span class="rx" data-rx="yearsNote"></span>. Drag the number to your own speed; the sentence will keep up.</p>
+                <div class="fig" id="fig-scale">
+                    <p class="fig-h">all the text there is</p>
+                    <svg id="scale-svg" viewBox="0 0 640 190" preserveAspectRatio="xMidYMid meet" role="img" aria-label="A band chart: one model read 15 trillion tokens; all public human text is estimated between 100 and 1000 trillion tokens, best guess 300 trillion."></svg>
+                    <p class="cap" id="scale-cap" aria-live="polite"></p>
+                    <noscript><p>Low-power mode: one model read ~15 trillion tokens. Researchers estimate all public human text at very roughly 300 trillion — the honest answer is a wide stripe from 100 to 1,000 trillion, and models are on course to have read it all between 2026 and 2032.</p></noscript>
+                </div>
+                <p data-a11y="scale-band">The stripe in that chart is doing honest work. Nobody knows exactly how much public text humanity has written, so researchers publish a range — best guess around 300 trillion tokens, could be a third of that, could be three times it. The true number hides somewhere in the stripe. The same researchers project that models will have read essentially all of it sometime between 2026 and 2032 — their projection, not this page’s promise. What happens after that is a question we will leave hanging — deliberately — until the last page.</p>
+                <p data-a11y="cheese-lead">And yet. A thing that has read a thousand lifetimes still fumbles things a child gets. Its skill is not a smooth slope; it is Swiss cheese — real substance, real holes. Before you flip each card below, place your bet: which half fails?</p>
+                <div class="fig" id="fig-cheese">
+                    <p class="fig-h">swiss cheese · bet, then flip</p>
+                    <div class="pairs" id="cheese-pairs"></div>
+                    <p class="cap" id="cheese-cap" aria-live="polite"></p>
+                    <noscript><p>Low-power mode: models have aced olympiad problems while insisting 9.11 is bigger than 9.9, and answered “who is Tom Cruise's mother?” far more reliably than “who is Mary Lee Pfeiffer's son?” — the same fact, reversed.</p></noscript>
+                </div>
+            </section>
+
+            <!-- 5 · DREAMS & MARKING SCHEMES -->
+            <section aria-labelledby="h-dream">
+                <h2 id="h-dream"><span class="n" aria-hidden="true">05</span> <span data-a11y="h-dream-t">And worse — it makes things up with a straight face</span></h2>
+                <p data-a11y="dream-lead">Ask the toy above something factual — seed “the money” and let it write — and out comes “the money sleeps in the bank at night”, fluently, because fluent is all it does. Watch the highlights while it writes: no fact is being looked up. Fragments of the page are being continued. Now scale that up: these are pattern-spotting engines, not search engines. Nothing inside checks “is that true?” before the next word lands.</p>
+                <p data-a11y="dream-lawyer">People in your decade learnt this the expensive way. A New York lawyer filed a brief full of court cases a chatbot had invented for him — names, dates, page numbers, all fluent, none real. “I did not comprehend,” he told the judge, “that ChatGPT could fabricate cases.” Now you comprehend it: fabrication is not a malfunction of the machine you built above. It is the machine you built above, running as designed.</p>
+                <div class="fig" id="fig-dial">
+                    <p class="fig-h">the dreaming dial · place the tools yourself</p>
+                    <div class="rail" id="dial-rail" role="group" aria-label="A dial from 0% dreaming (a search index: finds, never invents) to 100% dreaming (a bare model: invents, never looks up). Drag the tool chips wherever you judge they belong."></div>
+                    <p class="rail-note" data-a11y="dial-note">0% — a search index: finds pages, invents nothing, creates nothing. 100% — a bare model: invents everything, looks up nothing. Real products live between, because their makers bolted lookups, citations and refusals onto a dreamer. Put each chip where you think it belongs. The page will not mark you.</p>
+                    <p class="cap" id="dial-cap" aria-live="polite"></p>
+                    <details class="edge"><summary data-a11y="dial-edge-s">the edge of this dial</summary><p data-a11y="dial-edge-p">One axis is a squeeze: “how much it dreams” really compresses at least three separate levers — how riskily it samples (your temperature slider), whether it is given lookups to ground itself (retrieval), and whether it was trained to say “I don't know” (abstention). Engineers pull them separately. The dial is a good first map, not the territory.</p></details>
+                    <noscript><p>Low-power mode: a search index never invents; a bare model never looks up; every product you have used sits somewhere between, by its maker's choices.</p></noscript>
+                </div>
+                <p data-a11y="rubric-lead">Here is the strangest part, and the most hopeful: some of the making-things-up is not ability at all — it is marking. The machine was graded, during training, the way schools grade a multiple-choice test: right answers score, blanks score nothing. Under those rules, what is the clever move on a question you do not know? Guess confidently. Change the marking and watch the same machine change its behaviour.</p>
+                <div class="fig" id="fig-rubric">
+                    <p class="fig-h">change the marking scheme</p>
+                    <div class="tiles" id="rubric-ctl"></div>
+                    <table class="rub-t" id="rubric-table"></table>
+                    <p class="cap" id="rubric-cap" aria-live="polite"></p>
+                    <noscript><p>Low-power mode: score right answers only, and a guesser's best strategy is to bluff every time; give “I don't know” half a mark, and honesty wins. Same machine, different marking.</p></noscript>
+                </div>
+                <mgt-recall id="basics-essay-pattern">
+                    <details>
+                        <summary>Why can a chatbot state something false so confidently?</summary>
+                        <p>Because it is a pattern-spotting engine, not a search engine — it continues likely text and nothing inside checks truth before the next word. Confidence is its style, not its evidence.</p>
+                    </details>
+                </mgt-recall>
+            </section>
+
+            <!-- 6 · HANDS AND A TO-DO LIST -->
+            <section aria-labelledby="h-agent">
+                <h2 id="h-agent"><span class="n" aria-hidden="true">06</span> <span data-a11y="h-agent-t">So give the guesser hands — and watch every step</span></h2>
+                <p data-a11y="agent-lead">A guesser that can only talk is stuck the moment talk is not enough. Ask one for 47 × 93 in a single breath and it must continue the digits from pattern — and the pages it read rarely continue them correctly. But give the same guesser two tools — a calculator, and a search over its own page — plus a goal and permission to work in steps, and something new appears. An <strong>agent</strong>: a guessing machine that runs tools in a loop until a goal is met. That one sentence is the whole idea.</p>
+                <div class="fig" id="fig-agent">
+                    <p class="fig-h">a tiny agent · two tools · visible exit</p>
+                    <div class="tiles" id="agent-goals" role="group" aria-label="Pick a goal for the agent"></div>
+                    <div class="tiles" id="agent-tools" role="group" aria-label="Toggle which tools the agent may use"></div>
+                    <div class="trace" id="agent-trace" aria-live="polite"></div>
+                    <div class="tiles" id="agent-ctl"></div>
+                    <p class="cap" id="agent-cap" aria-live="polite"></p>
+                    <noscript><p>Low-power mode: the agent thinks a step, calls a tool, reads the result, and repeats — until a visible check says “goal reached” and it exits. Deny it a tool and it stops and says which one it needed.</p></noscript>
+                </div>
+                <p data-a11y="agent-after">Three things you just saw, worth keeping. The loop is not magic: think, use a tool, look at the result, decide again. The loop is not unstoppable: the exit is a visible check, and you tripped it yourself. And the loop is not free-willed: switch a tool off and the agent does not rage — it halts and names what it lacked. What it may touch was your setting all along. Steps matter for a quieter reason too: a guesser spends a fixed sliver of effort per word, so a machine allowed to think out loud in stages genuinely does better than one forced to blurt — you watched that happen with the calculator.</p>
+                <mgt-recall id="basics-essay-agent">
+                    <details>
+                        <summary>What turns a chatbot into an agent?</summary>
+                        <p>A goal, some tools, and permission to loop: think, act, check the result, repeat — with a visible exit when the goal is met, and only the tools you allowed.</p>
+                    </details>
+                </mgt-recall>
+                <p class="deeper" data-a11y="agent-deeper">Deeper read: <a href="/basics/agents/">What's an agent?</a> — and in the <a href="/build/">Build wing</a> of this site you assemble a real one, in plain English.</p>
+            </section>
+
+            <!-- 7 · THE FORK · ENGELBART -->
+            <section aria-labelledby="h-fork">
+                <h2 id="h-fork"><span class="n" aria-hidden="true">07</span> <span data-a11y="h-fork-t">But rewind to 1960 — the other branch made <em>you</em> smarter</span></h2>
+                <p data-a11y="fork-lead">Everything so far sits on one branch of a fork that is now ninety years old where this guide comes from — sixty-six in yours. Around 1960, two ideas split. John McCarthy's camp asked: can we make machines intelligent? Doug Engelbart's asked something slyer: can machines make <em>people</em> more capable? Artificial intelligence, and intelligence augmentation. Both branches shipped. You have been reading about the first. You have been <em>using</em> the second your whole life.</p>
+                <div class="fig" id="fig-fork">
+                    <p class="fig-h">one fork, two living branches</p>
+                    <svg id="fork-svg" viewBox="0 0 640 210" preserveAspectRatio="xMidYMid meet" role="group" aria-label="A timeline forking around 1960: the AI branch through machine intelligence to chatbots; the IA branch through Engelbart to the tools that amplify people. Tap a node for one line about it."></svg>
+                    <p class="cap" id="fork-cap" aria-live="polite"></p>
+                    <noscript><p>Low-power mode: 1956, McCarthy names artificial intelligence. 1960, Licklider sketches human–computer partnership. 1962, Engelbart writes “Augmenting Human Intellect”. Both branches run unbroken to your decade's chatbots and glasses.</p></noscript>
+                </div>
+                <p data-a11y="engel-def">Engelbart wrote the founding paper in 1962 and defined the goal precisely: increasing a person's capability “to approach a complex problem situation, to gain comprehension to suit his particular needs, and to derive solutions to problems.” Not a smarter machine — a more capable you. His sharpest insight was that the smart unit was never the person alone: it is the person <em>plus</em> their language, their tools and their methods, trained together as one system. Upgrade any part and the whole person-system gets smarter.</p>
+                <p data-a11y="engel-brick">He proved the point backwards, with a brick. Strap a brick to a pencil and writing turns slow, wobbly and exhausting — and suddenly you notice how much of “being good at writing” was living in the pencil. Feel it yourself:</p>
+                <div class="fig" id="fig-brick">
+                    <p class="fig-h">de-augmentation · write with the brick</p>
+                    <canvas class="scrawl" id="brick-canvas" aria-label="A drawing area. Write with your pointer while the brick-weight slider adds lag and wobble."></canvas>
+                    <div class="lever"><label for="lv-brick">brick weight</label><input type="range" id="lv-brick" min="0" max="100" step="1" value="0"><span class="val" id="lv-brick-v">0</span></div>
+                    <p class="cap" id="brick-cap" aria-live="polite"></p>
+                    <noscript><p>Low-power mode: Engelbart strapped a brick to a pencil; writing degraded instantly. Augmentation is real because you can feel exactly what its removal costs.</p></noscript>
+                </div>
+                <p data-a11y="lick-lead">Engelbart's ally Licklider timed his own working days in 1957 and found something embarrassing: about 85 per cent of “thinking time” went on getting <em>into a position</em> to think — finding, fetching, formatting, arranging. One man's diary, mind, not a law of nature. Try the number on yourself: what share of your work is getting-ready work? Say <span class="scrub" data-k="prep" tabindex="0" role="slider" aria-label="Your share of preparation work — drag to adjust">60%</span> — <span class="rx" data-rx="prepNote"></span></p>
+                <p data-a11y="spectrum-lead">So where do this decade's tools sit? Licklider drew a line worth keeping: a plain <em>extension</em> does what you steer, stroke by stroke; a true <em>partner</em> contributes something you could not, the way the fig tree and the fig wasp each do what the other cannot; and a <em>replacement</em> does the job while you leave the room. Drag today's tools onto that line wherever you judge they belong. The page will not correct you — there is no answer key, and the people of my time still argue about it at dinner.</p>
+                <div class="fig" id="fig-spectrum">
+                    <p class="fig-h">extension · partner · replacement — you place them</p>
+                    <div class="rail" id="spec-rail" role="group" aria-label="A spectrum from extension through partnership to replacement. Drag each tool chip where you judge it belongs."></div>
+                    <p class="cap" id="spec-cap" aria-live="polite"></p>
+                    <noscript><p>Low-power mode: calculator, spell-check, chatbot, agent — where does each sit between extension, partner and replacement? There is no answer key.</p></noscript>
+                </div>
+                <p data-a11y="whodecided">One last experiment before the fork resolves. Below are three messages; put them in the order you would answer them. Then do it again with the machine's suggestion showing. Both orders are defensible. The question this page cares about is smaller and sharper: the second time — who decided?</p>
+                <div class="fig" id="fig-triage">
+                    <p class="fig-h">triage, twice</p>
+                    <div id="triage-area"></div>
+                    <p class="cap" id="triage-cap" aria-live="polite"></p>
+                    <noscript><p>Low-power mode: order three messages by urgency, then imagine doing it with a suggestion already showing. Who decided, the second time?</p></noscript>
+                </div>
+                <mgt-recall id="basics-essay-engelbart">
+                    <details>
+                        <summary>What did Engelbart mean by augmenting intellect?</summary>
+                        <p>Tools that make a person more capable at hard problems — faster to understand, better to solve — rather than machines that do the understanding instead. The smart unit is the person plus their tools, language and methods.</p>
+                    </details>
+                </mgt-recall>
+                <p class="deeper" data-a11y="fork-deeper">Deeper read: <a href="/basics/augmented-intelligence/">Augmented intelligence</a>.</p>
+            </section>
+
+            <!-- 8 · ONTO YOUR FACE -->
+            <section aria-labelledby="h-ar">
+                <h2 id="h-ar"><span class="n" aria-hidden="true">08</span> <span data-a11y="h-ar-t">And that branch has climbed onto your face</span></h2>
+                <p data-a11y="ar-lead">You probably used the augmentation branch this week without naming it. Pointing a phone camera at a plant, a menu, a foreign sign — that is <strong>augmented reality</strong>: useful information laid over the world you are already looking at. In your era it runs ten-to-twenty billion times a month through one visual search tool alone; the honest figure is a range because even its owner counts it differently year to year.</p>
+                <p data-a11y="ar-glasses">The glasses arrived in your decade too. From September 2025 you could buy a $799 pair with a small display in one lens — and a wristband that steers it by reading the tiny electrical signals your muscles make before your fingers move. Captions for the deaf, translations for the traveller, directions for the lost, floating on the world itself. And the sci-fi pair — wide field of view, the whole movie dream? It exists. It cost about $10,000 a unit to build, and you could not buy it at any price. The frontier of your decade was never capability. It was price, weight and battery.</p>
+                <div class="fig" id="fig-ledger">
+                    <p class="fig-h">live translation · sort the record</p>
+                    <p class="hint" data-a11y="ledger-hint">Six findings from your decade's reviewers. Sort each into the column you believe — then check against the record.</p>
+                    <div class="led-pool" id="ledger-pool"></div>
+                    <div class="ledger">
+                        <div class="led-col" id="led-works"><h4>works today</h4></div>
+                        <div class="led-col" id="led-breaks"><h4>breaks today</h4></div>
+                    </div>
+                    <div class="tiles" id="ledger-ctl"></div>
+                    <p class="cap" id="ledger-cap" aria-live="polite"></p>
+                    <noscript><p>Low-power mode: translation through the glasses genuinely works on slow, simple exchanges and genuinely breaks on fast speech, slang and noise — both halves are on the record.</p></noscript>
+                </div>
+                <p data-a11y="ramp-lead">Are the glasses a fad? Here is every number the record actually holds: about two million pairs sold by early 2025, then about seven million in 2025 alone — while the $3,499 headset of the same era reportedly sold under half a million in its launch year — one holiday quarter was estimated in the tens of thousands. Draw where you think the curve goes next. The reveal will not draw the future for you, because the record stops where records stop.</p>
+                <div class="fig ydi" id="fig-ramp">
+                    <p class="fig-h">you draw 2026–2028</p>
+                    <svg id="ramp-svg" viewBox="0 0 640 220" preserveAspectRatio="xMidYMid meet" role="group" aria-label="A chart with two known points of smart-glasses sales. Drag to sketch your own guess for the next three years."></svg>
+                    <div class="tiles" id="ramp-ctl"></div>
+                    <p class="cap" id="ramp-cap" aria-live="polite"></p>
+                    <noscript><p>Low-power mode: 2M cumulative by Feb 2025, ~7M in 2025. What 2026–2028 look like is your call — the record stops where records stop.</p></noscript>
+                </div>
+                <p class="deeper" data-a11y="ar-deeper">Deeper read: <a href="/basics/augmented-reality/">Augmented reality</a>.</p>
+            </section>
+
+            <!-- 9 · THE TWIST: YOUR TRAIL -->
+            <section aria-labelledby="h-trail">
+                <h2 id="h-trail"><span class="n" aria-hidden="true">09</span> <span data-a11y="h-trail-t">Now look back — you already used this whole site once</span></h2>
+                <p data-a11y="trail-lead">A confession about the ground you are standing on. This page sits inside a site with three wings — <strong>Discover</strong>, <strong>Explore</strong>, <strong>Build</strong> — and rather than describe them, this guide has been quietly walking you through all three. Engelbart would have recognised the floor plan: upgrade a person's <em>language</em> (names and maps for whole fields — that is Discover), upgrade their <em>methods</em> (poking a live model until it makes sense — that is Explore), upgrade their <em>artifacts</em> (tools of your own — that is Build). Here is your own trail, kept on this page, in this browser, sent nowhere:</p>
+                <div class="fig" id="fig-trail">
+                    <p class="fig-h">your lap of the loop</p>
+                    <div class="trail" id="trail-cols"></div>
+                    <p class="cap" id="trail-cap" aria-live="polite"></p>
+                    <noscript><p>Low-power mode: the guessing game showed you a field at a glance (Discover); the machine and its dials were yours to poke (Explore); the sandbox below is yours to assemble (Build).</p></noscript>
+                </div>
+                <p data-a11y="trail-after">Did the mapping hold? You are the only fair judge of that. When you leave this page, the three wings are simply this lap, done again on fields you actually care about — see one at a glance, drop in and poke it, then make a small tool of your own. And what you build tends to make something new worth noticing, so the loop starts over, one rung higher. That is the site's whole purpose, and you have now felt it once from the inside.</p>
+            </section>
+
+            <!-- 10 · THE BLANK CHAPTER -->
+            <section aria-labelledby="h-blank">
+                <h2 id="h-blank"><span class="n" aria-hidden="true">10</span> <span data-a11y="h-blank-t">So build one — the last chapter is blank on purpose</span></h2>
+                <p data-a11y="sand-lead">Every control below is one you have already used on its own — the memory slider, the temperature, the marking scheme, the two tools with their exit door, and the page of text itself, which you may now write into. Nothing here is new except the combination you choose. Assemble your own tiny answerer, and mind the one lesson every section has repeated: it will be exactly as good, and exactly as honest, as what you gave it.</p>
+                <div class="fig sand" id="fig-sand">
+                    <p class="fig-h">your tiny agent · everything returns</p>
+                    <label class="hint" for="sand-corpus" data-a11y="sand-corpuslab">its whole world — the page it reads (add a line of your own):</label>
+                    <textarea id="sand-corpus" spellcheck="false"></textarea>
+                    <div class="lever"><label for="sv-order">memory (words)</label><input type="range" id="sv-order" min="1" max="3" step="1" value="2"><span class="val" id="sv-order-v">2</span></div>
+                    <div class="lever"><label for="sv-temp">temperature</label><input type="range" id="sv-temp" min="0" max="1.5" step="0.05" value="0.4"><span class="val" id="sv-temp-v">0.40</span></div>
+                    <div class="tiles" id="sand-flags"></div>
+                    <div class="gate-in">
+                        <input type="text" id="sand-q" autocomplete="off" aria-label="Ask your agent something" placeholder="ask it something — try: where does the money sleep?">
+                        <button class="btn-sm primary" id="sand-go">run the agent</button>
+                    </div>
+                    <div class="trace" id="sand-trace" aria-live="polite"></div>
+                    <p class="cap" id="sand-cap" aria-live="polite"></p>
+                    <noscript><p>Low-power mode: the sandbox composes every earlier demo — corpus, memory, temperature, marking scheme, tools, exit — into one tiny agent you configure.</p></noscript>
+                </div>
+                <p data-a11y="seq-lead">One widening thought before the blank page. The trick you now understand — guess the next element, keep it, guess again — was never about words in particular. Your decade pointed the very same trick at pictures, music and molecules. Reveal each one:</p>
+                <div class="seqs" id="seqs">
+                    <div class="seq" data-seq="words"><span class="s-lab">words</span><span class="body">the monkey holds the</span> <span class="nxt">tool</span></div>
+                    <div class="seq" data-seq="pixels"><span class="s-lab">pixels</span><span class="body">▛▀▀▌▐▖</span><span class="nxt">▝</span></div>
+                    <div class="seq" data-seq="notes"><span class="s-lab">notes</span><span class="body">C C G G A A</span> <span class="nxt">G</span></div>
+                    <div class="seq" data-seq="dna"><span class="s-lab">DNA</span><span class="body">A C G T A C G</span> <span class="nxt">T</span></div>
+                </div>
+                <div class="tiles"><button class="btn-sm" id="seq-btn">reveal the next element</button></div>
+                <p data-a11y="seq-ask">What else is a sequence? Weather is. Traffic is. Protein folding is. Your calendar is. That question — not any answer to it — is what your decade handed to mine.</p>
+                <p data-a11y="blank-lead">Two questions this guide refuses to answer. The first: researchers in your decade projected that, somewhere between 2026 and 2032, the machines would have read essentially everything public humanity ever wrote — then what? This guide knows how some of that went, and will not say: a guide that tells you the ending stops being a guide. And the second, the one the blank last chapter exists for: <em>what will people use these things for by 2050?</em> Every expert answer your decade produced was fluent, confident and unverifiable — you now know exactly what that combination is worth. So the last page holds your answer, not ours.</p>
+                <div class="blank-page">
+                    <p class="fig-h">the blank last page · yours</p>
+                    <textarea id="blank-bet" aria-label="Your answer: what will people use these tools for by 2050?" placeholder="What will people use these for by 2050? Write your bet…"></textarea>
+                    <p class="keep" data-a11y="blank-keep">Kept in your browser only. Nothing you write here is sent anywhere — check the network tab if you like; this page would encourage exactly that.</p>
+                </div>
+                <p data-a11y="doors-lead">The guide ends; the site begins. Three doors, in the order of the lap you just ran — and the shorter reads, whenever you want one idea at a time.</p>
+                <div class="doors">
+                    <a class="door" href="/discover/">
+                        <span class="verb">discover</span>
+                        <b>See a whole field at a glance</b>
+                        <span>Step back, take in the map, pick the door that fits your world.</span>
+                    </a>
+                    <a class="door" href="/explore/">
+                        <span class="verb">explore</span>
+                        <b>Drop in and poke it</b>
+                        <span>Live models where every number is a handle — including <a href="https://poloclub.github.io/transformer-explainer/" rel="noopener">a real LLM you can open up</a>.</span>
+                    </a>
+                    <a class="door" href="/build/">
+                        <span class="verb">build</span>
+                        <b>Make a little agent of your own</b>
+                        <span>Plain English, no code — and what you build starts your next lap.</span>
+                    </a>
+                </div>
+                <p class="deeper" data-a11y="deeper-all">The shorter reads: <a href="/basics/what-is-ai/">What even is AI?</a> · <a href="/basics/llms/">What's an LLM?</a> · <a href="/basics/agents/">What's an agent?</a> · <a href="/basics/augmented-intelligence/">Augmented intelligence</a> · <a href="/basics/augmented-reality/">Augmented reality</a> · <a href="/basics/memory/">Your memory, drawn live</a> · <a href="/learn/review/">Review your cards</a></p>
+                <p class="bx-why deeper" data-a11y="why-note">Curious <em>why</em> this page teaches by letting you poke at things rather than lecturing? That's not ours to claim — it comes from a handful of people we name on the <a href="/learn/influences.html">influences page</a>.</p>
+            </section>
+        </article>
     </main>
     <mgt-footer></mgt-footer>
     <script src="/assets/js/tracking.js" defer></script>
     <script type="module" src="/assets/js/app.js"></script>
     <script type="module" src="/components/core/mgt-header.js"></script>
     <script type="module" src="/components/core/mgt-footer.js"></script>
-    <script type="module" src="/assets/js/basics-lock.js"></script>
+    <script type="module" src="/components/core/mgt-recall.js"></script>
+    <script type="module" src="/components/core/mgt-reading-slider.js"></script>
 </body>
 </html>
