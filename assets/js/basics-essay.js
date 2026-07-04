@@ -1,5 +1,5 @@
-/* basics-essay.js — the interactive layer of "What comes next? — a field guide
-   from 2050" (/basics/). One state object, pure compute, event-driven renders.
+/* basics-essay.js — the interactive layer of "What comes next?" (/basics/),
+   the explorable basics essay. One state object, pure compute, event renders.
    Classic IIFE (site convention for explorable JS), CSP-safe, no backend: the
    n-gram toy's every probability is a count the reader can verify in the
    visible corpus. All teaching prose lives in the page/a11y JSON; this file
@@ -26,7 +26,7 @@
   var GATE_TEXT = "The monkey finds a tool. The monkey holds the tool. The monkey holds the branch. The tool slips once. The monkey holds the tool again.";
   var GATE_PROMPT_WORDS = ["practice", "is", "how", "the", "monkey", "holds", "the"];
 
-  var CORPUS_TEXT = "The guide you are holding was written in a year you have not met. Where this guide comes from, every child learns one small truth early: a machine can guess the next word because people repeat themselves. We repeat ourselves by the river, and we repeat ourselves at the bank. The money sleeps in the bank at night. The river sleeps against the bank all summer. Only the word before tells you which bank has woken up. In my time the glasses on your face read the street signs aloud, and the little agents sort the morning mail before breakfast. The agents are not clever. The agents are careful. They take one step, they check the step, and they take the next step. The monkey with thumbs learnt the same trick long ago: hold the tool, check the grip, try again. The tools changed. The checking never did. A model is a guessing machine. The model read more pages than any person could read in a thousand lifetimes, and still the model cannot tell you what it did this morning, because the model only guesses. We let the model guess for us. Who keeps the deciding is the question my century still argues about at dinner. Some people lean on the machines hard. Some people barely touch the machines. The last chapter of this guide is blank because the next part is not mine to write. The next part is yours.";
+  var CORPUS_TEXT = "This page is small on purpose, because small can be checked. A machine can guess the next word because people repeat themselves. We repeat ourselves by the river, and we repeat ourselves at the bank. The money sleeps in the bank at night. The river sleeps against the bank all summer. Only the word before tells you which bank has woken up. The glasses on your face can read the street signs aloud, and the little agents can sort the morning mail before breakfast. The agents are not clever. The agents are careful. They take one step, they check the step, and they take the next step. The monkey with thumbs learnt the same trick long ago: hold the tool, check the grip, try again. The tools changed. The checking never did. A model is a guessing machine. The model read more pages than any person could read in a thousand lifetimes, and still the model cannot tell you what it did this morning, because the model only guesses. We let the model guess for us. Who keeps the deciding is a question people still argue about at dinner. Some people lean on the machines hard. Some people barely touch the machines. The last part of this page is blank because it is not mine to write. It is yours.";
 
   /* ================= n-gram core (unit-tested) ================= */
 
@@ -86,7 +86,7 @@
   /* ================= shared state + trail ================= */
 
   var S = {
-    mins: 12, wpm: 250, prep: 60,
+    wpm: 250, prep: 60,
     trail: { discover: [], explore: [], build: [] }
   };
 
@@ -155,7 +155,6 @@
   /* ================= scrubbable numbers ================= */
 
   var SCRUB = {
-    mins: { min: 4, max: 40, step: 1, fmt: function (v) { return v + " minutes"; } },
     wpm:  { min: 60, max: 900, step: 10, fmt: function (v) { return v + " words a minute"; } },
     prep: { min: 5, max: 95, step: 5, fmt: function (v) { return v + "%"; } }
   };
@@ -171,7 +170,6 @@
     });
     var yearsNum = (15e12 * 0.75) / (S.wpm * 60 * 24 * 365.25);
     var out = {
-      pokemins: function () { return Math.round(S.mins * 3.3 / 5) * 5; },
       years: function () {
         return yearsNum >= 10000 ? (Math.round(yearsNum / 1000)).toLocaleString("en-GB") + ",000" : Math.round(yearsNum).toLocaleString("en-GB");
       }
@@ -452,7 +450,8 @@
     // CI band 100..1000
     svg.appendChild(el("rect", { x: X(100), y: 95, width: X(1000) - X(100), height: 50, rx: 6, fill: "color-mix(in srgb, var(--color-warning, #E8B24D) 22%, transparent)" }));
     svg.appendChild(el("line", { x1: X(300), y1: 90, x2: X(300), y2: 150, stroke: "var(--color-warning, #E8B24D)", "stroke-width": 2, "stroke-dasharray": "4 3" }));
-    svg.appendChild(el("text", { x: X(300), y: 80, "text-anchor": "middle", fill: "var(--color-fg-secondary)", "font-size": 12 }, "all public text: best guess ~300T (the stripe is the honest answer)"));
+    svg.appendChild(el("text", { x: X(300), y: 66, "text-anchor": "middle", fill: "var(--color-fg-secondary)", "font-size": 12 }, "all public text: best guess ~300T"));
+    svg.appendChild(el("text", { x: X(300), y: 82, "text-anchor": "middle", fill: "var(--color-muted)", "font-size": 11 }, "(the stripe is the honest answer)"));
     // Llama marker
     svg.appendChild(el("circle", { cx: X(15), cy: 120, r: 7, fill: "var(--color-accent)" }));
     svg.appendChild(el("text", { x: X(15), y: 170, "text-anchor": "middle", fill: "var(--color-fg-secondary)", "font-size": 12 }, "one 2024 model: 15T read"));
@@ -590,7 +589,7 @@
   (function specCap() {
     var caps = [
       "The fig tree and the fig wasp need each other — that is a partnership. Which of your tools feels like that, and which is just a very good pencil?",
-      "No answer key, deliberately: the people of 2050 still argue about these placements at dinner. What matters is that you can now say why you put each one where you did.",
+      "No answer key, deliberately: the people who build these tools still argue about these placements at dinner. What matters is that you can now say why you put each one where you did.",
       "Licklider's taxonomy, operationalised: extension preserves your initiative; symbiosis redistributes it; replacement removes it. Defend one placement out loud."
     ];
     function cap() { $("spec-cap").textContent = caps[tier()]; }
@@ -605,7 +604,7 @@
       { q: "Where does the money sleep?", knows: true, right: "in the bank" },
       { q: "What do the agents sort before breakfast?", knows: true, right: "the morning mail" },
       { q: "What did the monkey learn to hold?", knows: true, right: "the tool" },
-      { q: "What year was this guide written?", knows: false },
+      { q: "What year was this page written?", knows: false },
       { q: "How many rivers are in the guide's country?", knows: false },
       { q: "What is the reader's name?", knows: false }
     ];
@@ -788,7 +787,7 @@
       g.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { show(); e.preventDefault(); } });
       svg.appendChild(g);
     });
-    $("fork-cap").textContent = "Tap a node. Both branches run unbroken from 1960 to your decade — this page has been walking you up one of them and will now walk the other.";
+    $("fork-cap").textContent = "Tap a node. Both branches run unbroken from 1960 to today — this page has been walking you up one of them and will now walk the other.";
   })();
 
   (function brick() {
