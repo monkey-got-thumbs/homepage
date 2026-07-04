@@ -31,7 +31,14 @@
       ]}}
     </script>
     <style>
-        .mx { max-width: 46rem; margin-inline: auto; }
+        /* full content column, anchored to the page's left edge (the header's edge);
+           the ladder explorable and prose share one measure, left-aligned — not centred */
+        .mx { max-width: var(--content-col); margin-inline: 0; }
+        .mx > *,
+        .mx-step > *,
+        .mx-make > *,
+        .mx-next > * { max-width: var(--measure-wide); margin-inline: 0; }
+        .mx-hero .lede { max-width: 100%; margin-inline: 0; }
         .mx-hero { margin: 0 0 var(--space-xl); }
         .mx-hero .eyebrow { font: 700 var(--font-size-xs)/1 var(--font-mono); text-transform: uppercase; letter-spacing: .08em; color: var(--color-accent); }
         .mx-hero h1 { margin: var(--space-sm) 0; }

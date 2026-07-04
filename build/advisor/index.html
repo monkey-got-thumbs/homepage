@@ -42,12 +42,15 @@
             radial-gradient(48rem 36rem at 8% 14%, color-mix(in srgb, var(--color-accent) 8%, transparent), transparent 68%),
             var(--color-bg);
             background-attachment: fixed; }
-        .essay { max-width: 50rem; margin-inline: auto; }
+        /* full content column, anchored to the page's left edge (the header's edge);
+           prose kept at a comfortable measure, the .bx interactives take the full width */
+        .essay { max-width: var(--content-col); margin-inline: 0; }
+        .essay > * { max-width: var(--measure-wide); margin-inline: 0; }
         .essay .eyebrow { color: var(--color-accent); }
         .essay h1 { margin: var(--space-sm) 0; }
         .essay h2 { font-family: var(--font-display); color: var(--color-accent); letter-spacing: .02em; margin: var(--space-3xl) 0 var(--space-sm); }
         .essay p { line-height: 1.78; }
-        .essay .lede { font-size: var(--font-size-lg); color: var(--color-fg-secondary); }
+        .essay .lede { font-size: var(--font-size-lg); color: var(--color-fg-secondary); max-width: 100%; margin-inline: 0; }
         /* interactives */
         .bx { max-width: var(--content-col); margin: var(--space-xl) auto; }
         .bx-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1rem,3vw,2rem); align-items: start; }

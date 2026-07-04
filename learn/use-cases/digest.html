@@ -34,7 +34,11 @@
       ]}}
     </script>
     <style>
-        .use-page { max-width: 46rem; margin-inline: auto; }
+        /* full content column, anchored to the page's left edge (the header's edge);
+           prose kept at a comfortable measure, left-aligned — never a centred strip */
+        .use-page { max-width: var(--content-col); margin-inline: 0; }
+        .use-page > * { max-width: var(--measure-wide); margin-inline: 0; }
+        .use-page .lede { max-width: 100%; margin-inline: 0; }
         .use-page h1 { margin: var(--space-sm) 0; }
         .use-page .lede { color: var(--color-fg-secondary); font-size: var(--font-size-lg); line-height: 1.7; }
         .use-page h2 { margin-top: var(--space-2xl); }

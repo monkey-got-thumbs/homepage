@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, viewport-fit=cover" />
-    <title>What comes next? — a field guide from 2050 — Monkey Got Thumbs</title>
+    <title>What comes next? — the basics of AI, in one explorable essay — Monkey Got Thumbs</title>
     <link rel="canonical" href="https://monkey-got-thumbs.com/basics/">
     <meta name="robots" content="index, follow, max-image-preview:large">
     <meta name="theme-color" content="#0E0B1A" />
@@ -11,10 +11,10 @@
     <link rel="stylesheet" href="/assets/css/tokens.css">
     <link rel="stylesheet" href="/assets/css/base.css">
     <link rel="stylesheet" href="/assets/css/layout.css">
-    <meta name="description" content="An explorable essay on AI, augmented intelligence and augmented reality — a field guide from 2050 you can poke: guess with it, drag its numbers, build a tiny agent, and judge for yourself." />
+    <meta name="description" content="The basics of AI in one explorable essay: guess with it, drag its numbers, catch it making things up, build a tiny agent — and judge for yourself." />
     <meta name="author" content="Monkey Got Thumbs" />
-    <meta property="og:title" content="What comes next? — a field guide from 2050">
-    <meta property="og:description" content="An explorable essay on AI, augmented intelligence and augmented reality — guess with it, drag its numbers, build a tiny agent, and judge for yourself.">
+    <meta property="og:title" content="What comes next? — the basics of AI, in one explorable essay">
+    <meta property="og:description" content="The basics of AI in one explorable essay — guess with it, drag its numbers, build a tiny agent, and judge for yourself.">
     <meta property="og:url" content="https://monkey-got-thumbs.com/basics/">
     <meta property="og:type" content="article">
     <meta property="og:image" content="https://monkey-got-thumbs.com/social-card.png">
@@ -22,7 +22,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
     <script type="application/ld+json">
-    { "@context": "https://schema.org", "@type": "LearningResource", "name": "What comes next? — a field guide from 2050",
+    { "@context": "https://schema.org", "@type": "LearningResource", "name": "What comes next? — the basics of AI, in one explorable essay",
       "url": "https://monkey-got-thumbs.com/basics/", "learningResourceType": "explorable explanation",
       "about": ["artificial intelligence", "large language models", "AI agents", "augmented intelligence", "augmented reality"],
       "breadcrumb": { "@type": "BreadcrumbList", "itemListElement": [
@@ -31,21 +31,27 @@
       ]}}
     </script>
     <style>
-        /* ===== the artifact ===== */
-        .fx { max-width: 44rem; margin-inline: auto; }
+        /* ===== the artifact — the essay fills the full content column and is
+           anchored to the page's left edge (the same edge as the header logo).
+           Prose stays at a comfortable reading measure and shares that one left
+           edge; the live figures, door cards and sequence strip take the extra
+           width, so the page is actually used instead of a narrow centred strip. */
+        .fx { max-width: var(--content-col); margin-inline: 0; }
+        .fx-hero,
+        .fx > nav,
+        .fx section > * { max-width: var(--measure-wide); margin-inline: 0; }
+        .fx .fig,
+        .fx .doors,
+        .fx .seqs { max-width: 100%; }
         .fx-hero { margin: 0 0 var(--space-xl); }
         .fx-hero .eyebrow { font: 700 var(--font-size-xs)/1 var(--font-mono); text-transform: uppercase; letter-spacing: .08em; color: var(--color-accent); }
         .fx-hero h1 { margin: var(--space-sm) 0; }
         .fx p { line-height: 1.85; }
-        .fx .lede { color: var(--color-fg-secondary); font-size: var(--font-size-lg); line-height: 1.8; }
+        .fx .lede { color: var(--color-fg-secondary); font-size: var(--font-size-lg); line-height: 1.8; max-width: 100%; margin-inline: 0; }
         .fx section { margin-block: var(--space-3xl); }
         .fx h2 { display: flex; align-items: baseline; gap: 0.7rem; font-size: var(--font-size-2xl); margin: 0 0 var(--space-md); }
         .fx h2 .n { font: 700 var(--font-size-sm)/1 var(--font-mono); color: var(--color-accent); flex: none; }
         .cx-tune { display: block; max-width: 24rem; margin: var(--space-lg) 0 0; }
-
-        /* transmission stamp — the conceit, worn lightly */
-        .stamp { display: inline-flex; gap: 0.6rem; align-items: baseline; font: 600 var(--font-size-xs)/1.4 var(--font-mono); color: var(--color-muted); border: 1px dashed var(--color-border); border-radius: 8px; padding: 0.45rem 0.7rem; margin-block: var(--space-md) 0; }
-        .stamp b { color: var(--color-accent); font-weight: 700; }
 
         /* ===== interactive vocabulary (document.js heritage) ===== */
         .fig { border: 1px solid var(--color-border); border-radius: 16px; padding: 1.1rem 1.25rem 1.25rem; margin-block: var(--space-lg); background: var(--color-bg-secondary); }
@@ -210,15 +216,14 @@
             <mgt-reading-slider class="cx-tune"></mgt-reading-slider>
 
             <header class="fx-hero">
-                <p class="stamp" aria-label="Document provenance stamp">received <b>2050</b> → <b>2026</b> · a field guide · last chapter blank</p>
-                <span class="eyebrow">basics · a field guide from 2050</span>
+                <span class="eyebrow">basics · one essay, everything live</span>
                 <h1 data-a11y="hero-title">What comes next?</h1>
-                <p class="lede" data-a11y="hero-lede">Reading this guide takes about <span class="scrub" data-k="mins" tabindex="0" role="slider" aria-label="Reading minutes — drag to adjust">12 minutes</span>; poking everything in it takes closer to <span class="out" data-o="pokemins">40</span>. It was written in a place where these tools are as ordinary as kettles, and it adjusts itself to whoever is holding it — the slider above is yours. It will not tell you what to think about any of this. A guide that tells you the ending stops being a guide.</p>
+                <p class="lede" data-a11y="hero-lede">The basics of AI, in one essay you can poke: what the chatbots actually do, what an “agent” really is, how these tools can amplify you rather than replace you, and what augmented reality does today. Nothing here is a metaphor or a video — every demo runs live on this page, and every number in it can be checked by counting. The slider above rewrites the whole page to fit you. The one thing this page will not do is tell you what to think.</p>
             </header>
 
             <!-- 1 · THE GATE -->
             <section aria-label="The guessing game">
-                <p data-a11y="gate-lead">Before anything gets a name, play one round of a game. Below are five practice sentences, written into this guide for exactly this moment. Under them, a sixth sentence stops early. What word comes next?</p>
+                <p data-a11y="gate-lead">Before anything gets a name, play one round of a game. Below are five practice sentences, written for exactly this moment. Under them, a sixth sentence stops early. What word comes next?</p>
                 <div class="fig" id="fig-gate">
                     <p class="fig-h">the guessing game</p>
                     <div class="corpus" id="gate-corpus" role="group" aria-label="Five sentences to read before guessing"></div>
@@ -230,7 +235,7 @@
                     </div>
                     <div class="bars" id="gate-bars"></div>
                     <p class="cap" id="gate-cap" aria-live="polite"></p>
-                    <noscript><p>Low-power mode: the game needs the live page. The answer most readers land on is “tool” — it follows “holds the” in the text above more often than anything else. Count it yourself.</p></noscript>
+                    <noscript><p>Without JavaScript: the game needs the live page. The answer most readers land on is “tool” — it follows “holds the” in the text above more often than anything else. Count it yourself.</p></noscript>
                 </div>
                 <p data-a11y="gate-after">However you did, notice what you just used: not a dictionary, not grammar — the five sentences themselves. Words repeat, so the past of a text is a decent guide to its next word. Using only the sentences above, you can beat blind luck at this game, and you can check that claim by counting. Hold onto the feeling. It is the seed of everything on this page.</p>
             </section>
@@ -245,15 +250,15 @@
                     <div class="tiles" id="bank-ctl"></div>
                     <div class="bars" id="bank-bars"></div>
                     <p class="cap" id="bank-cap" aria-live="polite"></p>
-                    <noscript><p>Low-power mode: with one word of context, “bank” is a coin-flip; peek at the word before and the flip stops. The demo lets you toggle that peek.</p></noscript>
+                    <noscript><p>Without JavaScript: with one word of context, “bank” is a coin-flip; peek at the word before and the flip stops. The demo lets you toggle that peek.</p></noscript>
                 </div>
-                <p data-a11y="bank-after">That is the whole discovery, and it is a big one: <em>how much a guesser remembers changes what it can guess</em>. Now crank the guess forward. Predict a word, keep it, predict again from what you now have — around and around. A machine doing exactly that, with a long memory and a very large pile of text, is what people in your decade started calling a chatbot. We will build one — a tiny, honest one — right now.</p>
+                <p data-a11y="bank-after">That is the whole discovery, and it is a big one: <em>how much a guesser remembers changes what it can guess</em>. Now crank the guess forward. Predict a word, keep it, predict again from what you now have — around and around. A machine doing exactly that, with a long memory and a very large pile of text, is what everyone now calls a chatbot. We will build one — a tiny, honest one — right now.</p>
             </section>
 
             <!-- 3 · THE TOY (flagship) -->
             <section aria-labelledby="h-toy">
                 <h2 id="h-toy"><span class="n" aria-hidden="true">03</span> <span data-a11y="h-toy-t">So build the whole machine yourself</span></h2>
-                <p data-a11y="toy-lead">Here is the guide's first page in full — about 250 words of it. And here is a complete guessing machine that reads nothing else. Every bar it shows you is a count you can verify by eye in the text directly above it: click any bar and count the highlights. No secrets, no cloud, no maths you cannot check on your fingers.</p>
+                <p data-a11y="toy-lead">Here is a small page of text — about 250 words, written to be checkable. And here is a complete guessing machine that reads nothing else. Every bar it shows you is a count you can verify by eye in the text directly above it: click any bar and count the highlights. No secrets, no cloud, no maths you cannot check on your fingers.</p>
                 <div class="fig" id="fig-toy">
                     <p class="fig-h">the guessing machine · reads only the page below</p>
                     <div class="corpus" id="toy-corpus" role="group" aria-label="The corpus — the text the machine reads"></div>
@@ -265,7 +270,7 @@
                     <div class="lever"><label for="lv-temp">temperature</label><input type="range" id="lv-temp" min="0" max="1.5" step="0.05" value="0"><span class="val" id="lv-temp-v">0.00</span></div>
                     <p class="cap" id="toy-cap" aria-live="polite"></p>
                     <details class="edge"><summary data-a11y="toy-edge-s">the edge of this toy</summary><p data-a11y="toy-edge-p">Our machine counts. The real ones cannot: almost every sentence you will ever say has never been written before, so there is nothing to count. A large model instead <em>compresses</em> patterns from its reading — closer to a very lossy zip of a library than a filing cabinet of it — and guesses well on sentences nobody ever wrote. That is also why it cannot quote its sources: the originals are not in there, only the squeeze of them.</p></details>
-                    <noscript><p>Low-power mode: the machine's whole trick is counting which word followed which in the text above, then guessing the commonest continuation — with a dial that sometimes lets rarer words through.</p></noscript>
+                    <noscript><p>Without JavaScript: the machine's whole trick is counting which word followed which in the text above, then guessing the commonest continuation — with a dial that sometimes lets rarer words through.</p></noscript>
                 </div>
                 <p data-a11y="toy-turns">Three things are worth catching with your own hands. Set temperature to zero and let it write: it walks into a loop and repeats itself, word for word, forever — pick the safest word every time and you get the flattest possible text. Nudge the temperature up and it takes small risks; nobody ever derived the “right” setting, people just tried numbers and kept what read well. Then push memory to three words and watch closely: the writing turns fluent — because it has started quoting the page outright. You caught it cheating by memorising.</p>
                 <p data-a11y="toy-bridge">Now the honest confession this whole page has been building to. The machines in your pocket work like this toy — predict, pick, repeat — but they cannot get there by counting, because language is too new: with a 40,000-word vocabulary there are more three-word openings than sentences ever written. So instead of a table of counts, a <strong>large language model</strong> — an LLM, the engine behind the chatbots — learns a compressed pattern from more text than you could read in a thousand lifetimes, and uses it to guess well on sentences no one has ever said. Fluent for exactly the reason your toy is fluent. Wrong, when it is wrong, for the same reason too.</p>
@@ -281,12 +286,12 @@
             <!-- 4 · SCALE, WITH HOLES -->
             <section aria-labelledby="h-scale">
                 <h2 id="h-scale"><span class="n" aria-hidden="true">04</span> <span data-a11y="h-scale-t">But the real one has read a thousand lifetimes — and still fumbles</span></h2>
-                <p data-a11y="scale-lead">How much reading are we talking about? One open model from your era — Llama 3, whose maker published the number — trained on about fifteen trillion tokens of text. Make that personal: at <span class="scrub" data-k="wpm" tabindex="0" role="slider" aria-label="Your reading speed in words per minute — drag to adjust">250 words a minute</span>, reading nonstop with no sleep, that pile would take you about <span class="out" data-o="years">86,000</span> years<span class="rx" data-rx="yearsNote"></span>. Drag the number to your own speed; the sentence will keep up.</p>
+                <p data-a11y="scale-lead">How much reading are we talking about? One open model — Llama 3, whose maker published the number — trained on about fifteen trillion tokens of text. Make that personal: at <span class="scrub" data-k="wpm" tabindex="0" role="slider" aria-label="Your reading speed in words per minute — drag to adjust">250 words a minute</span>, reading nonstop with no sleep, that pile would take you about <span class="out" data-o="years">86,000</span> years<span class="rx" data-rx="yearsNote"></span>. Drag the number to your own speed; the sentence will keep up.</p>
                 <div class="fig" id="fig-scale">
                     <p class="fig-h">all the text there is</p>
                     <svg id="scale-svg" viewBox="0 0 640 190" preserveAspectRatio="xMidYMid meet" role="img" aria-label="A band chart: one model read 15 trillion tokens; all public human text is estimated between 100 and 1000 trillion tokens, best guess 300 trillion."></svg>
                     <p class="cap" id="scale-cap" aria-live="polite"></p>
-                    <noscript><p>Low-power mode: one model read ~15 trillion tokens. Researchers estimate all public human text at very roughly 300 trillion — the honest answer is a wide stripe from 100 to 1,000 trillion, and models are on course to have read it all between 2026 and 2032.</p></noscript>
+                    <noscript><p>Without JavaScript: one model read ~15 trillion tokens. Researchers estimate all public human text at very roughly 300 trillion — the honest answer is a wide stripe from 100 to 1,000 trillion, and models are on course to have read it all between 2026 and 2032.</p></noscript>
                 </div>
                 <p data-a11y="scale-band">The stripe in that chart is doing honest work. Nobody knows exactly how much public text humanity has written, so researchers publish a range — best guess around 300 trillion tokens, could be a third of that, could be three times it. The true number hides somewhere in the stripe. The same researchers project that models will have read essentially all of it sometime between 2026 and 2032 — their projection, not this page’s promise. What happens after that is a question we will leave hanging — deliberately — until the last page.</p>
                 <p data-a11y="cheese-lead">And yet. A thing that has read a thousand lifetimes still fumbles things a child gets. Its skill is not a smooth slope; it is Swiss cheese — real substance, real holes. Before you flip each card below, place your bet: which half fails?</p>
@@ -294,7 +299,7 @@
                     <p class="fig-h">swiss cheese · bet, then flip</p>
                     <div class="pairs" id="cheese-pairs"></div>
                     <p class="cap" id="cheese-cap" aria-live="polite"></p>
-                    <noscript><p>Low-power mode: models have aced olympiad problems while insisting 9.11 is bigger than 9.9, and answered “who is Tom Cruise's mother?” far more reliably than “who is Mary Lee Pfeiffer's son?” — the same fact, reversed.</p></noscript>
+                    <noscript><p>Without JavaScript: models have aced olympiad problems while insisting 9.11 is bigger than 9.9, and answered “who is Tom Cruise's mother?” far more reliably than “who is Mary Lee Pfeiffer's son?” — the same fact, reversed.</p></noscript>
                 </div>
             </section>
 
@@ -302,14 +307,14 @@
             <section aria-labelledby="h-dream">
                 <h2 id="h-dream"><span class="n" aria-hidden="true">05</span> <span data-a11y="h-dream-t">And worse — it makes things up with a straight face</span></h2>
                 <p data-a11y="dream-lead">Ask the toy above something factual — seed “the money” and let it write — and out comes “the money sleeps in the bank at night”, fluently, because fluent is all it does. Watch the highlights while it writes: no fact is being looked up. Fragments of the page are being continued. Now scale that up: these are pattern-spotting engines, not search engines. Nothing inside checks “is that true?” before the next word lands.</p>
-                <p data-a11y="dream-lawyer">People in your decade learnt this the expensive way. A New York lawyer filed a brief full of court cases a chatbot had invented for him — names, dates, page numbers, all fluent, none real. “I did not comprehend,” he told the judge, “that ChatGPT could fabricate cases.” Now you comprehend it: fabrication is not a malfunction of the machine you built above. It is the machine you built above, running as designed.</p>
+                <p data-a11y="dream-lawyer">People have already learnt this the expensive way. A New York lawyer filed a brief full of court cases a chatbot had invented for him — names, dates, page numbers, all fluent, none real. “I did not comprehend,” he told the judge, “that ChatGPT could fabricate cases.” Now you comprehend it: fabrication is not a malfunction of the machine you built above. It is the machine you built above, running as designed.</p>
                 <div class="fig" id="fig-dial">
                     <p class="fig-h">the dreaming dial · place the tools yourself</p>
                     <div class="rail" id="dial-rail" role="group" aria-label="A dial from 0% dreaming (a search index: finds, never invents) to 100% dreaming (a bare model: invents, never looks up). Drag the tool chips wherever you judge they belong."></div>
                     <p class="rail-note" data-a11y="dial-note">0% — a search index: finds pages, invents nothing, creates nothing. 100% — a bare model: invents everything, looks up nothing. Real products live between, because their makers bolted lookups, citations and refusals onto a dreamer. Put each chip where you think it belongs. The page will not mark you.</p>
                     <p class="cap" id="dial-cap" aria-live="polite"></p>
                     <details class="edge"><summary data-a11y="dial-edge-s">the edge of this dial</summary><p data-a11y="dial-edge-p">One axis is a squeeze: “how much it dreams” really compresses at least three separate levers — how riskily it samples (your temperature slider), whether it is given lookups to ground itself (retrieval), and whether it was trained to say “I don't know” (abstention). Engineers pull them separately. The dial is a good first map, not the territory.</p></details>
-                    <noscript><p>Low-power mode: a search index never invents; a bare model never looks up; every product you have used sits somewhere between, by its maker's choices.</p></noscript>
+                    <noscript><p>Without JavaScript: a search index never invents; a bare model never looks up; every product you have used sits somewhere between, by its maker's choices.</p></noscript>
                 </div>
                 <p data-a11y="rubric-lead">Here is the strangest part, and the most hopeful: some of the making-things-up is not ability at all — it is marking. The machine was graded, during training, the way schools grade a multiple-choice test: right answers score, blanks score nothing. Under those rules, what is the clever move on a question you do not know? Guess confidently. Change the marking and watch the same machine change its behaviour.</p>
                 <div class="fig" id="fig-rubric">
@@ -317,7 +322,7 @@
                     <div class="tiles" id="rubric-ctl"></div>
                     <table class="rub-t" id="rubric-table"></table>
                     <p class="cap" id="rubric-cap" aria-live="polite"></p>
-                    <noscript><p>Low-power mode: score right answers only, and a guesser's best strategy is to bluff every time; give “I don't know” half a mark, and honesty wins. Same machine, different marking.</p></noscript>
+                    <noscript><p>Without JavaScript: score right answers only, and a guesser's best strategy is to bluff every time; give “I don't know” half a mark, and honesty wins. Same machine, different marking.</p></noscript>
                 </div>
                 <mgt-recall id="basics-essay-pattern">
                     <details>
@@ -338,7 +343,7 @@
                     <div class="trace" id="agent-trace" aria-live="polite"></div>
                     <div class="tiles" id="agent-ctl"></div>
                     <p class="cap" id="agent-cap" aria-live="polite"></p>
-                    <noscript><p>Low-power mode: the agent thinks a step, calls a tool, reads the result, and repeats — until a visible check says “goal reached” and it exits. Deny it a tool and it stops and says which one it needed.</p></noscript>
+                    <noscript><p>Without JavaScript: the agent thinks a step, calls a tool, reads the result, and repeats — until a visible check says “goal reached” and it exits. Deny it a tool and it stops and says which one it needed.</p></noscript>
                 </div>
                 <p data-a11y="agent-after">Three things you just saw, worth keeping. The loop is not magic: think, use a tool, look at the result, decide again. The loop is not unstoppable: the exit is a visible check, and you tripped it yourself. And the loop is not free-willed: switch a tool off and the agent does not rage — it halts and names what it lacked. What it may touch was your setting all along. Steps matter for a quieter reason too: a guesser spends a fixed sliver of effort per word, so a machine allowed to think out loud in stages genuinely does better than one forced to blurt — you watched that happen with the calculator.</p>
                 <mgt-recall id="basics-essay-agent">
@@ -353,12 +358,12 @@
             <!-- 7 · THE FORK · ENGELBART -->
             <section aria-labelledby="h-fork">
                 <h2 id="h-fork"><span class="n" aria-hidden="true">07</span> <span data-a11y="h-fork-t">But rewind to 1960 — the other branch made <em>you</em> smarter</span></h2>
-                <p data-a11y="fork-lead">Everything so far sits on one branch of a fork that is now ninety years old where this guide comes from — sixty-six in yours. Around 1960, two ideas split. John McCarthy's camp asked: can we make machines intelligent? Doug Engelbart's asked something slyer: can machines make <em>people</em> more capable? Artificial intelligence, and intelligence augmentation. Both branches shipped. You have been reading about the first. You have been <em>using</em> the second your whole life.</p>
+                <p data-a11y="fork-lead">Everything so far sits on one branch of a fork that is now sixty-six years old. Around 1960, two ideas split. John McCarthy's camp asked: can we make machines intelligent? Doug Engelbart's asked something slyer: can machines make <em>people</em> more capable? Artificial intelligence, and intelligence augmentation. Both branches shipped. You have been reading about the first. You have been <em>using</em> the second your whole life.</p>
                 <div class="fig" id="fig-fork">
                     <p class="fig-h">one fork, two living branches</p>
                     <svg id="fork-svg" viewBox="0 0 640 210" preserveAspectRatio="xMidYMid meet" role="group" aria-label="A timeline forking around 1960: the AI branch through machine intelligence to chatbots; the IA branch through Engelbart to the tools that amplify people. Tap a node for one line about it."></svg>
                     <p class="cap" id="fork-cap" aria-live="polite"></p>
-                    <noscript><p>Low-power mode: 1956, McCarthy names artificial intelligence. 1960, Licklider sketches human–computer partnership. 1962, Engelbart writes “Augmenting Human Intellect”. Both branches run unbroken to your decade's chatbots and glasses.</p></noscript>
+                    <noscript><p>Without JavaScript: 1956, McCarthy names artificial intelligence. 1960, Licklider sketches human–computer partnership. 1962, Engelbart writes “Augmenting Human Intellect”. Both branches run unbroken to today's chatbots and glasses.</p></noscript>
                 </div>
                 <p data-a11y="engel-def">Engelbart wrote the founding paper in 1962 and defined the goal precisely: increasing a person's capability “to approach a complex problem situation, to gain comprehension to suit his particular needs, and to derive solutions to problems.” Not a smarter machine — a more capable you. His sharpest insight was that the smart unit was never the person alone: it is the person <em>plus</em> their language, their tools and their methods, trained together as one system. Upgrade any part and the whole person-system gets smarter.</p>
                 <p data-a11y="engel-brick">He proved the point backwards, with a brick. Strap a brick to a pencil and writing turns slow, wobbly and exhausting — and suddenly you notice how much of “being good at writing” was living in the pencil. Feel it yourself:</p>
@@ -367,22 +372,22 @@
                     <canvas class="scrawl" id="brick-canvas" aria-label="A drawing area. Write with your pointer while the brick-weight slider adds lag and wobble."></canvas>
                     <div class="lever"><label for="lv-brick">brick weight</label><input type="range" id="lv-brick" min="0" max="100" step="1" value="0"><span class="val" id="lv-brick-v">0</span></div>
                     <p class="cap" id="brick-cap" aria-live="polite"></p>
-                    <noscript><p>Low-power mode: Engelbart strapped a brick to a pencil; writing degraded instantly. Augmentation is real because you can feel exactly what its removal costs.</p></noscript>
+                    <noscript><p>Without JavaScript: Engelbart strapped a brick to a pencil; writing degraded instantly. Augmentation is real because you can feel exactly what its removal costs.</p></noscript>
                 </div>
                 <p data-a11y="lick-lead">Engelbart's ally Licklider timed his own working days in 1957 and found something embarrassing: about 85 per cent of “thinking time” went on getting <em>into a position</em> to think — finding, fetching, formatting, arranging. One man's diary, mind, not a law of nature. Try the number on yourself: what share of your work is getting-ready work? Say <span class="scrub" data-k="prep" tabindex="0" role="slider" aria-label="Your share of preparation work — drag to adjust">60%</span> — <span class="rx" data-rx="prepNote"></span></p>
-                <p data-a11y="spectrum-lead">So where do this decade's tools sit? Licklider drew a line worth keeping: a plain <em>extension</em> does what you steer, stroke by stroke; a true <em>partner</em> contributes something you could not, the way the fig tree and the fig wasp each do what the other cannot; and a <em>replacement</em> does the job while you leave the room. Drag today's tools onto that line wherever you judge they belong. The page will not correct you — there is no answer key, and the people of my time still argue about it at dinner.</p>
+                <p data-a11y="spectrum-lead">So where do this decade's tools sit? Licklider drew a line worth keeping: a plain <em>extension</em> does what you steer, stroke by stroke; a true <em>partner</em> contributes something you could not, the way the fig tree and the fig wasp each do what the other cannot; and a <em>replacement</em> does the job while you leave the room. Drag today's tools onto that line wherever you judge they belong. The page will not correct you — there is no answer key, and people who build these tools still argue about it at dinner.</p>
                 <div class="fig" id="fig-spectrum">
                     <p class="fig-h">extension · partner · replacement — you place them</p>
                     <div class="rail" id="spec-rail" role="group" aria-label="A spectrum from extension through partnership to replacement. Drag each tool chip where you judge it belongs."></div>
                     <p class="cap" id="spec-cap" aria-live="polite"></p>
-                    <noscript><p>Low-power mode: calculator, spell-check, chatbot, agent — where does each sit between extension, partner and replacement? There is no answer key.</p></noscript>
+                    <noscript><p>Without JavaScript: calculator, spell-check, chatbot, agent — where does each sit between extension, partner and replacement? There is no answer key.</p></noscript>
                 </div>
                 <p data-a11y="whodecided">One last experiment before the fork resolves. Below are three messages; put them in the order you would answer them. Then do it again with the machine's suggestion showing. Both orders are defensible. The question this page cares about is smaller and sharper: the second time — who decided?</p>
                 <div class="fig" id="fig-triage">
                     <p class="fig-h">triage, twice</p>
                     <div id="triage-area"></div>
                     <p class="cap" id="triage-cap" aria-live="polite"></p>
-                    <noscript><p>Low-power mode: order three messages by urgency, then imagine doing it with a suggestion already showing. Who decided, the second time?</p></noscript>
+                    <noscript><p>Without JavaScript: order three messages by urgency, then imagine doing it with a suggestion already showing. Who decided, the second time?</p></noscript>
                 </div>
                 <mgt-recall id="basics-essay-engelbart">
                     <details>
@@ -396,11 +401,11 @@
             <!-- 8 · ONTO YOUR FACE -->
             <section aria-labelledby="h-ar">
                 <h2 id="h-ar"><span class="n" aria-hidden="true">08</span> <span data-a11y="h-ar-t">And that branch has climbed onto your face</span></h2>
-                <p data-a11y="ar-lead">You probably used the augmentation branch this week without naming it. Pointing a phone camera at a plant, a menu, a foreign sign — that is <strong>augmented reality</strong>: useful information laid over the world you are already looking at. In your era it runs ten-to-twenty billion times a month through one visual search tool alone; the honest figure is a range because even its owner counts it differently year to year.</p>
-                <p data-a11y="ar-glasses">The glasses arrived in your decade too. From September 2025 you could buy a $799 pair with a small display in one lens — and a wristband that steers it by reading the tiny electrical signals your muscles make before your fingers move. Captions for the deaf, translations for the traveller, directions for the lost, floating on the world itself. And the sci-fi pair — wide field of view, the whole movie dream? It exists. It cost about $10,000 a unit to build, and you could not buy it at any price. The frontier of your decade was never capability. It was price, weight and battery.</p>
+                <p data-a11y="ar-lead">You probably used the augmentation branch this week without naming it. Pointing a phone camera at a plant, a menu, a foreign sign — that is <strong>augmented reality</strong>: useful information laid over the world you are already looking at. Today it runs ten-to-twenty billion times a month through one visual search tool alone; the honest figure is a range because even its owner counts it differently year to year.</p>
+                <p data-a11y="ar-glasses">The glasses have arrived too. Since September 2025 you can buy a $799 pair with a small display in one lens — and a wristband that steers it by reading the tiny electrical signals your muscles make before your fingers move. Captions for the deaf, translations for the traveller, directions for the lost, floating on the world itself. And the sci-fi pair — wide field of view, the whole movie dream? It exists. It costs about $10,000 a unit to build, and you cannot buy it at any price. The frontier right now is not capability. It is price, weight and battery.</p>
                 <div class="fig" id="fig-ledger">
                     <p class="fig-h">live translation · sort the record</p>
-                    <p class="hint" data-a11y="ledger-hint">Six findings from your decade's reviewers. Sort each into the column you believe — then check against the record.</p>
+                    <p class="hint" data-a11y="ledger-hint">Six findings from real reviewers. Sort each into the column you believe — then check against the record.</p>
                     <div class="led-pool" id="ledger-pool"></div>
                     <div class="ledger">
                         <div class="led-col" id="led-works"><h4>works today</h4></div>
@@ -408,7 +413,7 @@
                     </div>
                     <div class="tiles" id="ledger-ctl"></div>
                     <p class="cap" id="ledger-cap" aria-live="polite"></p>
-                    <noscript><p>Low-power mode: translation through the glasses genuinely works on slow, simple exchanges and genuinely breaks on fast speech, slang and noise — both halves are on the record.</p></noscript>
+                    <noscript><p>Without JavaScript: translation through the glasses genuinely works on slow, simple exchanges and genuinely breaks on fast speech, slang and noise — both halves are on the record.</p></noscript>
                 </div>
                 <p data-a11y="ramp-lead">Are the glasses a fad? Here is every number the record actually holds: about two million pairs sold by early 2025, then about seven million in 2025 alone — while the $3,499 headset of the same era reportedly sold under half a million in its launch year — one holiday quarter was estimated in the tens of thousands. Draw where you think the curve goes next. The reveal will not draw the future for you, because the record stops where records stop.</p>
                 <div class="fig ydi" id="fig-ramp">
@@ -416,7 +421,7 @@
                     <svg id="ramp-svg" viewBox="0 0 640 220" preserveAspectRatio="xMidYMid meet" role="group" aria-label="A chart with two known points of smart-glasses sales. Drag to sketch your own guess for the next three years."></svg>
                     <div class="tiles" id="ramp-ctl"></div>
                     <p class="cap" id="ramp-cap" aria-live="polite"></p>
-                    <noscript><p>Low-power mode: 2M cumulative by Feb 2025, ~7M in 2025. What 2026–2028 look like is your call — the record stops where records stop.</p></noscript>
+                    <noscript><p>Without JavaScript: 2M cumulative by Feb 2025, ~7M in 2025. What 2026–2028 look like is your call — the record stops where records stop.</p></noscript>
                 </div>
                 <p class="deeper" data-a11y="ar-deeper">Deeper read: <a href="/basics/augmented-reality/">Augmented reality</a>.</p>
             </section>
@@ -424,19 +429,19 @@
             <!-- 9 · THE TWIST: YOUR TRAIL -->
             <section aria-labelledby="h-trail">
                 <h2 id="h-trail"><span class="n" aria-hidden="true">09</span> <span data-a11y="h-trail-t">Now look back — you already used this whole site once</span></h2>
-                <p data-a11y="trail-lead">A confession about the ground you are standing on. This page sits inside a site with three wings — <strong>Discover</strong>, <strong>Explore</strong>, <strong>Build</strong> — and rather than describe them, this guide has been quietly walking you through all three. Engelbart would have recognised the floor plan: upgrade a person's <em>language</em> (names and maps for whole fields — that is Discover), upgrade their <em>methods</em> (poking a live model until it makes sense — that is Explore), upgrade their <em>artifacts</em> (tools of your own — that is Build). Here is your own trail, kept on this page, in this browser, sent nowhere:</p>
+                <p data-a11y="trail-lead">A confession about the ground you are standing on. This page sits inside a site with three wings — <strong>Discover</strong>, <strong>Explore</strong>, <strong>Build</strong> — and rather than describe them, this page has been quietly walking you through all three. Engelbart would have recognised the floor plan: upgrade a person's <em>language</em> (names and maps for whole fields — that is Discover), upgrade their <em>methods</em> (poking a live model until it makes sense — that is Explore), upgrade their <em>artifacts</em> (tools of your own — that is Build). Here is your own trail, kept on this page, in this browser, sent nowhere:</p>
                 <div class="fig" id="fig-trail">
                     <p class="fig-h">your lap of the loop</p>
                     <div class="trail" id="trail-cols"></div>
                     <p class="cap" id="trail-cap" aria-live="polite"></p>
-                    <noscript><p>Low-power mode: the guessing game showed you a field at a glance (Discover); the machine and its dials were yours to poke (Explore); the sandbox below is yours to assemble (Build).</p></noscript>
+                    <noscript><p>Without JavaScript: the guessing game showed you a field at a glance (Discover); the machine and its dials were yours to poke (Explore); the sandbox below is yours to assemble (Build).</p></noscript>
                 </div>
                 <p data-a11y="trail-after">Did the mapping hold? You are the only fair judge of that. When you leave this page, the three wings are simply this lap, done again on fields you actually care about — see one at a glance, drop in and poke it, then make a small tool of your own. And what you build tends to make something new worth noticing, so the loop starts over, one rung higher. That is the site's whole purpose, and you have now felt it once from the inside.</p>
             </section>
 
             <!-- 10 · THE BLANK CHAPTER -->
             <section aria-labelledby="h-blank">
-                <h2 id="h-blank"><span class="n" aria-hidden="true">10</span> <span data-a11y="h-blank-t">So build one — the last chapter is blank on purpose</span></h2>
+                <h2 id="h-blank"><span class="n" aria-hidden="true">10</span> <span data-a11y="h-blank-t">So build one — the last word here is yours</span></h2>
                 <p data-a11y="sand-lead">Every control below is one you have already used on its own — the memory slider, the temperature, the marking scheme, the two tools with their exit door, and the page of text itself, which you may now write into. Nothing here is new except the combination you choose. Assemble your own tiny answerer, and mind the one lesson every section has repeated: it will be exactly as good, and exactly as honest, as what you gave it.</p>
                 <div class="fig sand" id="fig-sand">
                     <p class="fig-h">your tiny agent · everything returns</p>
@@ -451,9 +456,9 @@
                     </div>
                     <div class="trace" id="sand-trace" aria-live="polite"></div>
                     <p class="cap" id="sand-cap" aria-live="polite"></p>
-                    <noscript><p>Low-power mode: the sandbox composes every earlier demo — corpus, memory, temperature, marking scheme, tools, exit — into one tiny agent you configure.</p></noscript>
+                    <noscript><p>Without JavaScript: the sandbox composes every earlier demo — corpus, memory, temperature, marking scheme, tools, exit — into one tiny agent you configure.</p></noscript>
                 </div>
-                <p data-a11y="seq-lead">One widening thought before the blank page. The trick you now understand — guess the next element, keep it, guess again — was never about words in particular. Your decade pointed the very same trick at pictures, music and molecules. Reveal each one:</p>
+                <p data-a11y="seq-lead">One widening thought before the blank page. The trick you now understand — guess the next element, keep it, guess again — was never about words in particular. People have pointed the very same trick at pictures, music and molecules. Reveal each one:</p>
                 <div class="seqs" id="seqs">
                     <div class="seq" data-seq="words"><span class="s-lab">words</span><span class="body">the monkey holds the</span> <span class="nxt">tool</span></div>
                     <div class="seq" data-seq="pixels"><span class="s-lab">pixels</span><span class="body">▛▀▀▌▐▖</span><span class="nxt">▝</span></div>
@@ -461,11 +466,11 @@
                     <div class="seq" data-seq="dna"><span class="s-lab">DNA</span><span class="body">A C G T A C G</span> <span class="nxt">T</span></div>
                 </div>
                 <div class="tiles"><button class="btn-sm" id="seq-btn">reveal the next element</button></div>
-                <p data-a11y="seq-ask">What else is a sequence? Weather is. Traffic is. Protein folding is. Your calendar is. That question — not any answer to it — is what your decade handed to mine.</p>
-                <p data-a11y="blank-lead">Two questions this guide refuses to answer. The first: researchers in your decade projected that, somewhere between 2026 and 2032, the machines would have read essentially everything public humanity ever wrote — then what? This guide knows how some of that went, and will not say: a guide that tells you the ending stops being a guide. And the second, the one the blank last chapter exists for: <em>what will people use these things for by 2050?</em> Every expert answer your decade produced was fluent, confident and unverifiable — you now know exactly what that combination is worth. So the last page holds your answer, not ours.</p>
+                <p data-a11y="seq-ask">What else is a sequence? Weather is. Traffic is. Protein folding is. Your calendar is. Whatever you just thought of — someone is probably already pointing this trick at it.</p>
+                <p data-a11y="blank-lead">Two questions this page cannot answer, because nobody can yet. Researchers project that somewhere between 2026 and 2032 the machines will have read essentially everything public humanity ever wrote — then what? And the bigger one: <em>what will people actually use these things for, ten and twenty years from now?</em> Every confident expert answer so far is fluent and unverifiable — and you now know exactly what that combination is worth. So the last word on this page is yours, not ours.</p>
                 <div class="blank-page">
-                    <p class="fig-h">the blank last page · yours</p>
-                    <textarea id="blank-bet" aria-label="Your answer: what will people use these tools for by 2050?" placeholder="What will people use these for by 2050? Write your bet…"></textarea>
+                    <p class="fig-h">the last word · yours</p>
+                    <textarea id="blank-bet" aria-label="Your answer: what will people actually use these tools for, ten and twenty years from now?" placeholder="What will people actually use these for, ten years from now? Write your bet…"></textarea>
                     <p class="keep" data-a11y="blank-keep">Kept in your browser only. Nothing you write here is sent anywhere — check the network tab if you like; this page would encourage exactly that.</p>
                 </div>
                 <p data-a11y="doors-lead">The guide ends; the site begins. Three doors, in the order of the lap you just ran — and the shorter reads, whenever you want one idea at a time.</p>
@@ -478,7 +483,7 @@
                     <a class="door" href="/explore/">
                         <span class="verb">explore</span>
                         <b>Drop in and poke it</b>
-                        <span>Live models where every number is a handle — including <a href="https://poloclub.github.io/transformer-explainer/" rel="noopener">a real LLM you can open up</a>.</span>
+                        <span>Live models where every number is a handle you can drag — including a real LLM you can open right up.</span>
                     </a>
                     <a class="door" href="/build/">
                         <span class="verb">build</span>
@@ -486,6 +491,7 @@
                         <span>Plain English, no code — and what you build starts your next lap.</span>
                     </a>
                 </div>
+                <p class="deeper">Inside Explore: <a href="https://poloclub.github.io/transformer-explainer/" rel="noopener">a real LLM you can open up</a> and watch every layer move as it reads.</p>
                 <p class="deeper" data-a11y="deeper-all">The shorter reads: <a href="/basics/what-is-ai/">What even is AI?</a> · <a href="/basics/llms/">What's an LLM?</a> · <a href="/basics/agents/">What's an agent?</a> · <a href="/basics/augmented-intelligence/">Augmented intelligence</a> · <a href="/basics/augmented-reality/">Augmented reality</a> · <a href="/basics/memory/">Your memory, drawn live</a> · <a href="/learn/review/">Review your cards</a></p>
                 <p class="bx-why deeper" data-a11y="why-note">Curious <em>why</em> this page teaches by letting you poke at things rather than lecturing? That's not ours to claim — it comes from a handful of people we name on the <a href="/learn/influences.html">influences page</a>.</p>
             </section>

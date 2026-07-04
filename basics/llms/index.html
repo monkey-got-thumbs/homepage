@@ -31,7 +31,12 @@
       ]}}
     </script>
     <style>
-        .cx { max-width: 44rem; margin-inline: auto; }
+        /* full content column, anchored to the page's left edge (the header's edge);
+           prose kept at a comfortable measure and left-aligned — never a centred strip */
+        .cx { max-width: var(--content-col); margin-inline: 0; }
+        .cx > *,
+        .cx-step > * { max-width: var(--measure-wide); margin-inline: 0; }
+        .cx-hero .lede { max-width: 100%; margin-inline: 0; }
         .cx-hero { margin: 0 0 var(--space-2xl); }
         .cx-hero .eyebrow { font: 700 var(--font-size-xs)/1 var(--font-mono); text-transform: uppercase; letter-spacing: .08em; color: var(--color-accent); }
         .cx-hero h1 { margin: var(--space-sm) 0; }

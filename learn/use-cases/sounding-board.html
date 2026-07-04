@@ -35,7 +35,11 @@
       ]}}
     </script>
     <style>
-        .sb-page { max-width: 50rem; margin-inline: auto; }
+        /* full content column, anchored to the page's left edge (the header's edge);
+           head + prose + live exchange share one measure, left-aligned — not centred */
+        .sb-page { max-width: var(--content-col); margin-inline: 0; }
+        .sb-page > * { max-width: var(--measure-wide); margin-inline: 0; }
+        .sb-head .lede { max-width: 100%; margin-inline: 0; }
         .sb-head { max-width: 46rem; margin: 0 0 var(--space-xl); }
         .sb-head h1 { margin: var(--space-sm) 0; }
         .sb-head .lede { color: var(--color-fg-secondary); font-size: var(--font-size-lg); line-height: 1.7; }

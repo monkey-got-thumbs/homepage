@@ -27,7 +27,12 @@
       ]}}
     </script>
     <style>
-        .ph { max-width: 48rem; margin-inline: auto; }
+        /* full content column, anchored to the page's left edge (the header's edge);
+           head, cards and note share one measure, left-aligned — never a centred strip */
+        .ph { max-width: var(--content-col); margin-inline: 0; }
+        .ph > *,
+        .ph-head > * { max-width: var(--measure-wide); margin-inline: 0; }
+        .ph .lede { max-width: 100%; margin-inline: 0; }
         .ph-head { margin: 0 0 var(--space-2xl); }
         .ph .eyebrow { font: 700 var(--font-size-xs)/1 var(--font-mono); text-transform: uppercase; letter-spacing: .08em; color: var(--color-accent); }
         .ph h1 { margin: var(--space-sm) 0; }
