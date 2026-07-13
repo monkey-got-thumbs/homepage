@@ -25,7 +25,7 @@
 
   /* ---- panel markup ---- */
   var panel =
-    '<button class="a11y-fab" id="a11yFab" aria-label="Accessibility settings" aria-expanded="false" aria-controls="a11yPanel">&#9784;</button>' +
+    '<button class="a11y-fab" id="a11yFab" aria-label="Settings" aria-expanded="false" aria-controls="a11yPanel"><img class="a11y-fab-face" src="/favicon.png" alt="" width="30" height="30" decoding="async"></button>' +
     '<div class="a11y-panel" id="a11yPanel" role="dialog" aria-label="Accessibility settings">' +
       '<h3>Colour scheme</h3><div class="a11y-row" data-group="scheme">' +
         '<button class="a11y-opt" data-v="dark"><span class="dot" style="background:#0E0B1A"></span>Dark</button>' +
@@ -44,7 +44,8 @@
         '<button class="a11y-opt" data-v="tritan">Tritanopia</button>' +
         '<button class="a11y-opt" data-v="achroma">No colour</button>' +
       '</div>' +
-      '<h3>Reading level <span class="small">(use the slider in the top bar)</span></h3>' +
+      '<h3>Reading level <span class="small">(slide the monkey, or pick a level)</span></h3>' +
+      '<div class="a11y-slider"><mgt-reading-slider></mgt-reading-slider></div>' +
       '<div class="a11y-row" data-group="level">' +
         '<button class="a11y-opt" data-v="1">Simplest</button>' +
         '<button class="a11y-opt" data-v="2">Simpler</button>' +
@@ -59,10 +60,26 @@
       '<div class="a11y-foot"><button id="a11yReset">Reset</button></div>' +
     '</div>';
 
+  /* ---- "punch it" nudge — a chunky title-font arrow pointing at the settings button ---- */
+  var nudge =
+    '<div class="a11y-nudge" id="a11yNudge" aria-hidden="true">' +
+      '<svg viewBox="0 0 160 285" width="82" height="146" role="presentation">' +
+        '<path id="mgtPunchSpine" style="fill:none" d="M 79,184 L 83,48"/>' +
+        '<path d="M 46,28 C 58,14 106,12 120,26 C 108,92 96,150 96,198 L 132,194 L 76,278 L 20,194 L 60,198 C 48,150 36,92 46,28 Z" ' +
+          'style="fill:var(--color-accent);stroke:var(--color-bg);stroke-width:8;stroke-linejoin:round;stroke-linecap:round"/>' +
+        '<text style="fill:var(--color-bg);font-family:var(--font-display,sans-serif);font-size:39px;letter-spacing:0.5px;paint-order:stroke;stroke:var(--color-bg);stroke-width:1.6px;stroke-linejoin:round">' +
+          '<textPath href="#mgtPunchSpine" startOffset="50%" text-anchor="middle">PUNCH</textPath>' +
+        '</text>' +
+      '</svg>' +
+    '</div>';
+
   function mount() {
     var holder = document.createElement('div');
-    holder.innerHTML = svg + panel;
+    holder.innerHTML = svg + panel + nudge;
     while (holder.firstChild) document.body.appendChild(holder.firstChild);
+    // The reading-level slider now lives in this panel; pull in its module so the
+    // custom element upgrades (it self-registers on load). Harmless if already loaded.
+    import('/components/core/mgt-reading-slider.js').catch(function () {});
     wire();
     apply();
   }
@@ -88,8 +105,12 @@
 
   function wire() {
     var fab = document.getElementById('a11yFab'), pan = document.getElementById('a11yPanel');
+    var nudgeEl = document.getElementById('a11yNudge');
+    try { if (nudgeEl && localStorage.getItem('a11y.nudged')) nudgeEl.classList.add('gone'); } catch (e) {}
     fab.addEventListener('click', function () {
       var open = pan.classList.toggle('open'); fab.setAttribute('aria-expanded', String(open));
+      if (nudgeEl) nudgeEl.classList.add('gone');   // they found it — retire the nudge
+      try { localStorage.setItem('a11y.nudged', '1'); } catch (e) {}
     });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { pan.classList.remove('open'); fab.setAttribute('aria-expanded', 'false'); } });
     document.querySelectorAll('.a11y-panel [data-group]').forEach(function (g) {

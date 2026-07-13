@@ -131,14 +131,35 @@ html[data-scheme="contrast"] { --logo-filter: contrast(1.2); }
    The accessibility panel
    =========================================================================== */
 .a11y-fab {
-  position: fixed; inset-block-end: 18px; left: 18px; z-index: 2147483000;   /* bottom-left: clears the "Need help?" widget */
-  width: 52px; height: 52px; border-radius: 50%; border: 2px solid var(--color-bg);
-  background: var(--color-accent); color: #0E0B1A; cursor: pointer; font-size: 26px;
+  position: fixed; inset-block-end: 18px; left: 20px; z-index: 2147483000;   /* left:20px lines the monkey face up under the header logo mark */
+  width: 52px; height: 52px; border-radius: 50%; border: 2px solid var(--color-accent);
+  background: var(--color-bg-secondary); cursor: pointer; padding: 0; overflow: hidden;
   display: grid; place-items: center; box-shadow: 0 4px 16px rgba(0,0,0,.45);
 }
-html[data-scheme="contrast"] .a11y-fab { color: #000; }
+.a11y-fab:hover { filter: brightness(1.08); }
+.a11y-fab:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 2px; }
+.a11y-fab-face { width: 34px; height: 34px; border-radius: 50%; object-fit: cover; display: block; }
+.a11y-slider { margin: 4px 0 10px; }
+
+/* "PUNCH" nudge — a chunky title-font arrow pointing down at the settings button */
+.a11y-nudge {
+  position: fixed; left: 34px; inset-block-end: 53px; z-index: 2147482990;
+  width: 82px; height: 146px; pointer-events: none;
+  /* rotate about the arrowhead tip so it stays on the button while the shaft
+     swings up-right to near-horizontal */
+  transform: rotate(65deg); transform-origin: 47.6% 97.5%;
+  filter: drop-shadow(0 3px 5px rgba(0,0,0,.5));
+  animation: a11yNudgeBob 1.5s ease-in-out infinite;
+}
+.a11y-nudge svg { display: block; width: 100%; height: 100%; overflow: visible; }
+.a11y-nudge.gone { display: none; }
+@keyframes a11yNudgeBob {
+  0%, 100% { transform: rotate(65deg) translate(0, 0); }
+  50%      { transform: rotate(65deg) translate(0, -7px); }
+}
+@media (prefers-reduced-motion: reduce) { .a11y-nudge { animation: none; } }
 .a11y-panel {
-  position: fixed; inset-block-end: 82px; left: 18px; z-index: 2147483000;
+  position: fixed; inset-block-end: 82px; left: 20px; z-index: 2147483000;
   width: 330px; max-width: calc(100vw - 36px); max-height: calc(100vh - 120px); overflow:auto;
   background: var(--color-bg-secondary); color: var(--color-fg);
   border: 1px solid var(--color-border); border-radius: 16px;

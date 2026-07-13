@@ -54,9 +54,8 @@ class MGTHeader extends HTMLElement {
           display: flex;
           align-items: center;
           justify-content: space-between;
-          max-width: var(--container-wide, 90rem);
-          margin: 0 auto;
-          padding: 0.75rem var(--gutter, 1rem);
+          width: 100%;
+          padding: 14px 20px;       /* logo hard-left with 20px sides; nav hard-right */
           box-sizing: border-box;   /* shadow DOM doesn't inherit the page's border-box */
         }
 
@@ -84,6 +83,7 @@ class MGTHeader extends HTMLElement {
           width: 80px;
           height: 80px;
           object-fit: contain;   /* logo is 200x300 — contain prevents squashing into the square box */
+          object-position: left center;   /* hug the left gutter — no centred gap from the portrait aspect */
           border-radius: 8px;
           flex-shrink: 0;
           filter: var(--logo-filter, none);   /* per-scheme adaptation (custom props pierce shadow DOM) */

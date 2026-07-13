@@ -1,24 +1,31 @@
 {
   "hero-title": [
-    "Get comfortable with AI — and make it your own.",
-    "Get comfortable with AI — and make it yours.",
-    "Get comfortable with AI — and make it yours.",
-    "Get comfortable with AI — make it yours.",
-    "Get comfortable with AI. Make it yours."
+    "Why are you here?",
+    "Why are you here?",
+    "Why are you here?",
+    "Why are you here?",
+    "Why are you here?"
   ],
   "hero-lede": [
-    "Monkey Got Thumbs is here to help everyday people get comfortable with AI — and even make little helpers, or “agents”, of their very own. There's no coding and no jargon at all. You go at your own pace, as slowly as you like, with a friendly community right there beside you the whole way.",
-    "Monkey Got Thumbs helps everyday people get comfortable with AI and make little agents of their own — no coding, no jargon, at your own pace, with a friendly community alongside you.",
-    "Monkey Got Thumbs helps everyday people get comfortable with AI and make little agents of their own — no coding, no jargon, at your own pace, with a friendly community alongside you.",
-    "Monkey Got Thumbs helps everyday people get comfortable with AI and make little agents of their own — no coding, no jargon, at your own pace, with a community alongside you.",
-    "Get comfortable with AI and make little agents of your own — no coding, no jargon, at your own pace, with a community alongside you."
+    "You're here because AI is everywhere now. Everyone is talking about it. It changes fast, and it's hard to keep up.",
+    "You're here because AI is here. Everyone's talking about it, it moves fast, and it's hard to keep up.",
+    "You're here because AI is here. Everybody's talking about it, it moves so fast, and it's hard to keep up.",
+    "You're here because AI is here — everyone talking, moving fast, hard to keep up with.",
+    "AI is here; everyone's talking, it moves fast, and keeping up is hard."
   ],
-  "tune-hint": [
-    "Try sliding the monkey along the line. Every page on this site rewrites itself to match where you put it — the plainest words are on the left, and the densest are on the right.",
-    "Try sliding the monkey — every page on this site rewrites to match, with the plainest words on the left and the densest on the right.",
-    "Slide the monkey — every page rewrites to match, plainest on the left, densest on the right.",
-    "Slide the monkey — every page rewrites to match: plainest left, densest right.",
-    "Slide the monkey; every page rewrites to match — plainest left, densest right."
+  "hero-title2": [
+    "What's in it for you?",
+    "What's in it for you?",
+    "What's in it for you?",
+    "What's in it for you?",
+    "What's in it for you?"
+  ],
+  "hero-lede2": [
+    "<p>We think AI is a tool for people — and people should not be tools for AI.</p><p>So this site looks at the other side of AI: augmented intelligence. The idea is almost as old as AI itself, but people talk about it far less.</p><p>It means using AI to reach the many tools and all the data that are already out there, and to make them easier to understand — so you can do more.</p>",
+    "<p>We believe AI is a tool for humans — humans must not be tools for AI.</p><p>So this site explores the other side of the AI coin: augmented intelligence. The idea is almost as old as artificial intelligence, but far less talked about.</p><p>Its aim is to lift people up — using AI as the way in to the many tools and the huge amount of data that already exist, and making them easier to understand, so you can amplify yourself.</p>",
+    "<p>We believe AI is a tool for humans — humans must not be tools for AI.</p><p>So this site sets out to explore and explain the other side of the AI coin: augmented intelligence. The idea is nearly as old as artificial intelligence, but far less talked about.</p><p>Its aim is to raise people up — using AI as the way in to the many tools and the vast data that already exist, and making them easier to digest and understand, so you can amplify yourself.</p>",
+    "<p>AI is a tool for humans — humans must not be tools for AI.</p><p>This site explores the other side of the coin: augmented intelligence — nearly as old as AI, far less discussed.</p><p>It uses AI as the interface to the tools and data that already exist, making them easier to digest, so you amplify yourself.</p>",
+    "<p>AI is a tool for humans, not humans for AI.</p><p>Hence this site's focus: augmented intelligence — nearly as old as AI, far less discussed — using AI as the interface to existing tools and data, made easier to digest, to amplify you.</p>"
   ],
   "paths-title": [
     "Where would you like to start?",
