@@ -67,7 +67,7 @@
         '<path id="mgtPunchSpine" style="fill:none" d="M 79,184 L 83,48"/>' +
         '<path d="M 46,28 C 58,14 106,12 120,26 C 108,92 96,150 96,198 L 132,194 L 76,278 L 20,194 L 60,198 C 48,150 36,92 46,28 Z" ' +
           'style="fill:var(--color-accent);stroke:var(--color-bg);stroke-width:8;stroke-linejoin:round;stroke-linecap:round"/>' +
-        '<text style="fill:var(--color-bg);font-family:var(--font-display,sans-serif);font-size:39px;letter-spacing:0.5px;paint-order:stroke;stroke:var(--color-bg);stroke-width:1.6px;stroke-linejoin:round">' +
+        '<text style="fill:var(--color-bg);font-family:var(--font-display,sans-serif);font-size:39px;letter-spacing:0.5px;dominant-baseline:central;paint-order:stroke;stroke:var(--color-bg);stroke-width:1.6px;stroke-linejoin:round">' +
           '<textPath href="#mgtPunchSpine" startOffset="50%" text-anchor="middle">PUNCH</textPath>' +
         '</text>' +
       '</svg>' +
