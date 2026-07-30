@@ -23,6 +23,10 @@ short version, kept in sync.
 - Pages with `data-a11y="key"` are reading-level managed: the visible HTML is the level-3 variant and is repainted from `assets/a11y-content/<slug>.json` on load. **Edit both the inline HTML and the JSON** (parity is required and fails silently).
 - `/notes/*.html` is **generated** — edit `content/notes/*.md` and run `node scripts/build-notes.mjs`.
 - After touching `<mgt-recall>` cards, run `node scripts/check-cards.mjs`.
+- After touching any managed copy (`data-a11y`) or an `assets/a11y-content/*.json`, run
+  `node scripts/check-a11y.mjs` — it enforces the reading-level parity that used to fail silently
+  (JSON exists, all keys present, exactly 5 variants, index 2 matches the inline HTML, no level
+  silently drops a link). 23 pre-existing failures are catalogued in `CLAUDE.md`.
 
 ## Testing
 - No automated suite. Verify in latest Chrome/Safari/Firefox; check responsiveness to 320 px.

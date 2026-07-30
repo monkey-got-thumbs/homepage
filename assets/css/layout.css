@@ -401,8 +401,16 @@ main .build-hero, main .advisor-hero, main .cm-hero, main .lp-hero { max-width: 
     justify-content: center;
   }
   .content.article-layout > *          { grid-column: prose; min-width: 0; }
-  .content.article-layout > .toc        { grid-area: toc; }
-  .content.article-layout > .page-aside { grid-area: aside; }
+  /* Span every row, don't sit in row 1. `grid-area: toc` put these side rails in the first
+     implicit row alongside the breadcrumb, so a tall TOC inflated row 1 and pushed the <h1>
+     hundreds of pixels down the page — and, because a grid item's sticky containing block is
+     its own grid area, the sticky TOC could only follow row 1 before scrolling away.
+     NB `1 / -1` does NOT work here: negative line numbers resolve against the *explicit* grid,
+     and grid-template-areas declares a single explicit row, so -1 means "end of row 1". Every
+     prose row is implicit, hence the open-ended span. Empty implicit rows cost nothing
+     (row-gap is normal → 0), so overshooting the row count is harmless. */
+  .content.article-layout > .toc        { grid-column: toc;   grid-row: 1 / span 999; }
+  .content.article-layout > .page-aside { grid-column: aside; grid-row: 1 / span 999; }
 }
 @media (min-width: 90rem) {
   .content.article-layout { max-width: var(--container-full); }
@@ -807,3 +815,31 @@ a.wikilink:hover { border-bottom-color: var(--color-accent); }
 .notes-group { display: flex; align-items: center; gap: 0.7rem; margin: var(--space-3xl) 0 var(--space-md); font-size: var(--font-size-xl); color: var(--color-fg); }
 .notes-group::before { content: ""; flex: 0 0 auto; width: 1.4rem; height: 3px; border-radius: 2px; background: var(--color-accent); }
 .notes-group:first-of-type { margin-top: var(--space-xl); }
+
+/* ===================================================================== *
+ * BASICS SECTION SHELL — a reading-slider band under the top nav + a left
+ * section-nav rail (<mgt-basics-nav>). Used by every /basics/ page so the
+ * menu and the big slider persist as you move through the section.
+ * ===================================================================== */
+.tune-band {
+  display: flex;
+  justify-content: center;
+  padding: 1.5rem var(--gutter);
+  background: color-mix(in srgb, var(--color-bg-secondary) 55%, transparent);
+  border-block-end: 1px solid var(--color-border);
+}
+.tune-band mgt-reading-slider {
+  inline-size: 80vw;
+  max-inline-size: 88rem;
+  --rs-h: 46px; --rs-thumb: 42px; --rs-line: 3px; --rs-tick: 18px; --rs-label: 0.95rem; --rs-gap: 1.1rem;
+}
+.basics-shell {
+  display: grid;
+  grid-template-columns: 15rem minmax(0, 1fr);
+  gap: clamp(1.5rem, 3vw, 3rem);
+  align-items: start;
+}
+.basics-shell > article { padding-block-start: var(--space-lg); }   /* the band already sets it off from the top nav */
+@media (max-width: 60rem) {
+  .basics-shell { grid-template-columns: 1fr; }
+}

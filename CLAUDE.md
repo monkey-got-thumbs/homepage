@@ -115,16 +115,37 @@ level 1–5** (default 3). `accessibility.js` swaps managed prose to match:
 
 **Therefore: to change copy on a managed element you must edit BOTH the inline HTML and the JSON's
 index-2 string** (ideally all 5 variants). Editing only the visible HTML appears to work, then the stale
-JSON repaints over it on next load. **Parity is not enforced in code and fails silently:** a missing key,
+JSON repaints over it on next load.
+
+> **Run `node scripts/check-a11y.mjs` after any copy edit.** It is the parity gate this section used to
+> say did not exist: it derives the slug the way `accessibility.js` does, then asserts the JSON exists,
+> every key is present, every array is exactly 5 non-empty strings, index 2 matches the inline HTML
+> (whitespace-normalised), and no reading level silently drops an `<a href>` the others have. Emphasis
+> differences (`<em>`/`<strong>`) are warnings, since those are a deliberate per-level style choice.
+> It is not run by CI. Known pre-existing failures it reports are listed at the end of this section.
+
+**Parity fails silently without that gate:** a missing key,
 a short (<5) variant array, or a misnamed/404 JSON just leaves elements stuck on their inline text with no
-error. There is no validator for this (unlike recall cards) — keep keys and JSON in sync by hand.
-Variants are injected via `innerHTML`, so they're trusted first-party HTML — keep them well-formed.
+error — which is why the gate above exists. Variants are injected via `innerHTML`, so they're trusted
+first-party HTML — keep them well-formed.
+
+**Known pre-existing failures** (`check-a11y.mjs` reports 23 errors across 7 sites; none are regressions,
+all predate the gate). Two kinds:
+
+- **A reading level drops a link the other levels have**, so that reader loses the navigation entirely:
+  `basics/augmented-intelligence/` `[why-it-matters]` L1, `basics/augmented-reality/` `[where-it-fits]`
+  L1/L2/L4/L5, `basics/llms/` `[treat-facts-as-guesses]` L4/L5,
+  `learn/foundations/what-is-ai.html` `[explorable-takeaway]` L4/L5,
+  `learn/frameworks/explanation.html` `[the-test]` L4/L5.
+- **`data-a11y` on a void element**, where `innerHTML` paints nothing so the key can never take effect:
+  `learn/use-cases/research.html` `[ex-vague]` and `[ex-directed]`, both on `<br>`.
 
 ## Build steps (run from repo root; none are run by CI)
 
 ```bash
 node scripts/build-notes.mjs     # regenerate /notes/*.html from content/notes/*.md (wikilinks → backlinks)
 node scripts/check-cards.mjs     # quality-gate <mgt-recall> cards under learn/ (dup/missing ids, length)
+node scripts/check-a11y.mjs      # quality-gate the reading-level system (see below) — the parity check
 bash scripts/build-vendor.sh     # rebuild the in-browser ML stack under vendor/ (gitignored)
 ```
 

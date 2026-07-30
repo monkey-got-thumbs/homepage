@@ -12,6 +12,11 @@
   // The arc follows the new IA — basics → discover → explore → build — and then
   // closes Fan's loop (build → discover again, one rung higher). Legacy pages kept.
   var MAP = [
+    // /begin/ is the homepage's only CTA target, so it must hand off or it's a dead end.
+    [/^\/begin\/$/, { href: "/basics/", t: "Start with the basics",
+      s: ["That's the whole picture — now the short version of the groundwork, five reads that start from nothing at all and assume you know none of it.",
+          "That's the picture. Now the groundwork: five short reads that start from nothing.",
+          "Next: the five basics."] }],
     // Hub + memory only — the five concept reads carry their own prev/next
     // reading-order nav, so a second "next step" card there would conflict.
     [/^\/basics\/(memory\/)?$/, { href: "/discover/", t: "Discover the territory",

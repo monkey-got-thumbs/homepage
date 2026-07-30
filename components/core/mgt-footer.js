@@ -131,7 +131,7 @@ class MGTFooter extends HTMLElement {
             <section aria-labelledby="footer-basics">
               <h2 id="footer-basics">Basics</h2>
               <ul>
-                <li><a href="/basics/">Start here</a></li>
+                <li><a href="/begin/">Start here</a></li>
                 <li><a href="/basics/memory/">Memory</a></li>
                 <li><a href="/learn/review/">Review your cards</a></li>
                 <li><a href="/learn/foundations/">Foundations</a></li>
