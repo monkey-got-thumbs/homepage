@@ -45,6 +45,16 @@
   function pull(p, pay) {
     return pay === 0 ? p * p + 25 * p + 22 : 0.5 * p * p + 10.5 * p + 10;
   }
+  /* ...and its inverse, so the attention bar can be dragged to set the prize. Both branches are
+     monotonic over the prize range, so this is a straight positive-root solve. Attention outside the
+     reachable band just clamps — which is itself the lesson: when someone is paid properly you
+     cannot drag their attention badly off the work, because the prize has lost its grip. */
+  function prizeForPull(a, pay) {
+    var p = pay === 0
+      ? (-25 + Math.sqrt(625 - 4 * (22 - a))) / 2
+      : (-21 + Math.sqrt(441 - 4 * (20 - 2 * a))) / 2;
+    return Math.max(0, Math.min(2, p));
+  }
 
   function verdictFor(p, task, pay) {
     var near = Math.abs(p - Math.round(p)) < 0.12;
@@ -94,6 +104,8 @@
     knob: svg.querySelector("[data-rx-knob]"),
     vline: svg.querySelector("[data-rx-vline]"),
     hline: svg.querySelector("[data-rx-hline]"),
+    attnBar: fig.querySelector("[data-rx-attn]"),
+    grip: fig.querySelector("[data-rx-grip]"),
     attnWork: fig.querySelector("[data-rx-attn-work]"),
     attnPrize: fig.querySelector("[data-rx-attn-prize]"),
     status: fig.querySelector("[data-rx-status]"),
@@ -151,6 +163,11 @@
 
     if (el.attnWork) el.attnWork.style.width = onWork.toFixed(1) + "%";
     if (el.attnPrize) el.attnPrize.style.width = onPrize.toFixed(1) + "%";
+    if (el.grip) el.grip.style.left = onWork.toFixed(1) + "%";
+    if (el.attnBar) {
+      el.attnBar.setAttribute("aria-valuenow", Math.round(onWork));
+      el.attnBar.setAttribute("aria-valuetext", Math.round(onWork) + "% on the work — " + attnWords(onWork));
+    }
 
     var nearMark = Math.abs(state.p - Math.round(state.p)) < 0.12;
     fig.setAttribute("data-rx-untested", nearMark ? "false" : "true");
@@ -308,6 +325,56 @@
     state.p = clamp(v, 0, 2);
     render();
   });
+
+  /* The attention bar drives the model backwards: set where their head is, and the prize that would
+     put it there follows. Same state as the knob and the sentence — just entered from the other end. */
+  if (el.attnBar) {
+    var barDragging = false;
+
+    function attnFromPointer(e) {
+      var box = el.attnBar.getBoundingClientRect();
+      var onWork = ((e.clientX - box.left) / box.width) * 100;
+      return Math.max(0, Math.min(100, onWork));
+    }
+    function setFromWork(onWork) {
+      state.p = prizeForPull(100 - onWork, state.pay);
+      render();
+    }
+
+    el.attnBar.addEventListener("pointerdown", function (e) {
+      barDragging = true;
+      el.attnBar.setAttribute("data-dragging", "true");
+      try { el.attnBar.setPointerCapture(e.pointerId); } catch (err) { /* pointer already gone */ }
+      setFromWork(attnFromPointer(e));
+      e.preventDefault();
+    });
+    el.attnBar.addEventListener("pointermove", function (e) {
+      if (!barDragging) return;
+      setFromWork(attnFromPointer(e));
+    });
+    function barDrop(e) {
+      if (!barDragging) return;
+      barDragging = false;
+      el.attnBar.removeAttribute("data-dragging");
+      try { if (e && e.pointerId != null && el.attnBar.hasPointerCapture(e.pointerId)) el.attnBar.releasePointerCapture(e.pointerId); } catch (err) { /* already released */ }
+    }
+    el.attnBar.addEventListener("pointerup", barDrop);
+    el.attnBar.addEventListener("pointercancel", barDrop);
+
+    el.attnBar.addEventListener("keydown", function (e) {
+      var onWork = 100 - pull(state.p, state.pay), handled = true;
+      switch (e.key) {
+        case "ArrowLeft": case "ArrowDown": onWork -= 4; break;
+        case "ArrowRight": case "ArrowUp": onWork += 4; break;
+        case "Home": onWork = 0; break;
+        case "End": onWork = 100; break;
+        default: handled = false;
+      }
+      if (!handled) return;
+      e.preventDefault();
+      setFromWork(Math.max(0, Math.min(100, onWork)));
+    });
+  }
 
   /* clicking a tested mark snaps to it */
   Array.prototype.forEach.call(el.dots, function (dot) {

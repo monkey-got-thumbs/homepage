@@ -110,8 +110,17 @@
         .rx-read-t { font-size: var(--font-size-sm); color: var(--color-muted); margin: 0 0 0.4rem;
                      text-transform: uppercase; letter-spacing: 0.07em; }
         .rx-read-v { text-transform: none; letter-spacing: normal; color: var(--color-fg); font-weight: 700; }
-        .rx-split { display: flex; height: 1.4rem; border: 1px solid var(--color-border);
-                    border-radius: var(--radius-full); overflow: hidden; }
+        .rx-split { position: relative; display: flex; height: 1.4rem; border: 1px solid var(--color-border);
+                    border-radius: var(--radius-full); cursor: ew-resize; touch-action: none;
+                    -webkit-user-select: none; user-select: none; }
+        .rx-split:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; }
+        .rx-seg--work { border-radius: var(--radius-full) 0 0 var(--radius-full); }
+        .rx-seg--prize { border-radius: 0 var(--radius-full) var(--radius-full) 0; }
+        /* the grip sits on the boundary, so it is obvious the split itself is the handle */
+        .rx-grip { position: absolute; top: -5px; bottom: -5px; width: 12px; margin-left: -6px;
+                   border-radius: var(--radius); background: var(--color-fg);
+                   border: 2px solid var(--color-bg-secondary); pointer-events: none; }
+        [data-dragging="true"] .rx-grip { background: var(--color-accent); }
         .rx-seg { display: block; }
         .rx-seg--work { background: var(--color-accent); }
         .rx-seg--prize { background: var(--color-brand-light, var(--color-brand));
@@ -141,7 +150,7 @@
     <script src="/assets/js/accessibility.js" defer></script>
     <link rel="stylesheet" href="/assets/css/journey.css">
     <script src="/assets/js/journey.js" defer></script>
-    <script src="/assets/js/begin-reward.js?v=2" defer></script>
+    <script src="/assets/js/begin-reward.js?v=3" defer></script>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -213,10 +222,13 @@
                         <p class="rx-untested">Between the tested prizes — the dashed line is a guess at the shape, not data.</p>
 
                         <div class="rx-read">
-                            <p class="rx-read-t">Where their attention is</p>
-                            <div class="rx-split">
+                            <p class="rx-read-t">Where their attention is <span class="rx-read-v">— drag it</span></p>
+                            <div class="rx-split" data-rx-attn role="slider" tabindex="0"
+                                 aria-label="How much of their attention is on the work — drag to set it, and the prize that would put it there follows"
+                                 aria-valuemin="0" aria-valuemax="100" aria-valuenow="78">
                                 <span class="rx-seg rx-seg--work" data-rx-attn-work></span>
                                 <span class="rx-seg rx-seg--prize" data-rx-attn-prize></span>
+                                <span class="rx-grip" data-rx-grip aria-hidden="true"></span>
                             </div>
                             <p class="rx-key"><span class="rx-dot rx-dot--work"></span> on the work &nbsp; <span class="rx-dot rx-dot--prize"></span> on the prize</p>
                         </div>
