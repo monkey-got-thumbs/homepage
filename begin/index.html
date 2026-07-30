@@ -15,11 +15,11 @@
     <link rel="stylesheet" href="/assets/css/base.css">
     <link rel="stylesheet" href="/assets/css/layout.css">
 
-    <meta name="description" content="Begin your journey — Monkey Got Thumbs." />
+    <meta name="description" content="Why there's more you could do, and how you get at it — motivation, trust and collaboration, with the reward experiment you can play with yourself." />
     <meta name="author" content="Monkey Got Thumbs" />
 
     <meta property="og:title" content="Begin your journey — Monkey Got Thumbs">
-    <meta property="og:description" content="Begin your journey.">
+    <meta property="og:description" content="Why there's more you could do, and how you get at it — with the reward experiment you can play with yourself.">
     <meta property="og:url" content="https://monkey-got-thumbs.com/begin/">
     <meta property="og:type" content="article">
     <meta property="og:image" content="https://monkey-got-thumbs.com/social-card.png">
@@ -32,7 +32,7 @@
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Begin your journey">
-    <meta name="twitter:description" content="Begin your journey.">
+    <meta name="twitter:description" content="Why there's more you could do, and how you get at it.">
     <meta name="twitter:image" content="https://monkey-got-thumbs.com/social-card.png">
 
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
@@ -49,12 +49,76 @@
                background: var(--color-bg-secondary); border: 1px solid var(--color-border);
                border-radius: var(--radius); padding: 1rem 1.25rem; margin: 1.25rem 0;
                text-align: center; overflow-x: auto; line-height: 1.6; }
+
+        /* ===== The playable reward experiment ===== *
+         * Encoding is rank only — see the honesty note in assets/js/begin-reward.js. Real radio
+         * inputs do the interaction, so it is keyboard operable natively (arrow keys within a
+         * radiogroup) rather than needing hand-rolled key handling. No colour carries meaning on
+         * its own: bar HEIGHT is the encoding, so it survives the colour-vision filters. */
+        .rx { margin: 2rem 0; padding: clamp(1rem, 3vw, 1.5rem); border: 1px solid var(--color-border);
+              border-radius: var(--radius-lg); background: var(--color-bg-secondary); }
+        .rx-cap { font-family: var(--font-display); color: var(--color-accent); line-height: 1.1;
+                  font-size: clamp(1.15rem, 2.4vw, 1.5rem); letter-spacing: var(--letter-spacing-wide);
+                  margin-bottom: 0.9rem; }
+        .rx fieldset { border: 0; padding: 0; margin: 0 0 1.1rem; }
+        .rx legend { font-size: var(--font-size-sm); color: var(--color-muted); text-transform: uppercase;
+                     letter-spacing: 0.07em; margin-bottom: 0.55rem; }
+        .rx-opts { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+        .rx-opts label { display: inline-flex; align-items: center; gap: 0.45rem; cursor: pointer;
+                         border: 1px solid var(--color-border); border-radius: var(--radius-full);
+                         padding: 0.45rem 0.9rem; font-size: var(--font-size-sm); }
+        .rx-opts label:hover { border-color: var(--color-accent); }
+        .rx-opts label:has(input:checked) { border-color: var(--color-accent); color: var(--color-accent); }
+        .rx input:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+        /* One dial per row, full width, so its options sit side by side rather than stacking into a
+           tall column. */
+        .rx-dials { display: block; }
+        .rx-dials fieldset { margin-bottom: 0.85rem; }
+        .rx-echo { font-size: var(--font-size-sm); color: var(--color-accent); margin: 0.25rem 0 0; min-height: 1.5em; }
+
+        .rx-read { margin: 1.25rem 0 0; }
+        .rx-read-t { font-size: var(--font-size-sm); color: var(--color-muted); margin: 0 0 0.4rem;
+                     text-transform: uppercase; letter-spacing: 0.07em; }
+        .rx-read-v { text-transform: none; letter-spacing: normal; color: var(--color-fg); font-weight: 700; }
+        /* Two-segment attention bar. Segments differ in BOTH fill and border style, so the split is
+           legible without relying on hue. */
+        .rx-split { display: flex; height: 1.5rem; border: 1px solid var(--color-border);
+                    border-radius: var(--radius-full); overflow: hidden; }
+        .rx-seg { display: block; }
+        .rx-seg--work { background: var(--color-accent); }
+        .rx-seg--prize { background: var(--color-brand-light, var(--color-brand));
+                         background-image: repeating-linear-gradient(45deg, transparent 0 4px, var(--color-bg-secondary) 4px 6px); }
+        .rx-key { font-size: var(--font-size-xs, 0.78rem); color: var(--color-muted); margin: 0.4rem 0 0; }
+        .rx-dot { display: inline-block; width: 0.7rem; height: 0.7rem; border-radius: 2px; vertical-align: -1px; }
+        .rx-dot--work { background: var(--color-accent); }
+        .rx-dot--prize { background: var(--color-brand-light, var(--color-brand));
+                         background-image: repeating-linear-gradient(45deg, transparent 0 3px, var(--color-bg-secondary) 3px 5px); }
+
+        .rx-meter { height: 1.5rem; border: 1px solid var(--color-border);
+                    border-radius: var(--radius-full); overflow: hidden; }
+        .rx-meter > span { display: block; height: 100%; width: 50%; background: var(--color-accent); }
+        [data-rx-collapsed="true"] .rx-meter > span { background: var(--color-muted); }
+
+        .rx-finds { margin: 1.5rem 0 0; padding-top: 1rem; border-top: 1px solid var(--color-border); }
+        .rx-find-list { list-style: none; padding: 0; margin: 0; }
+        .rx-find-list li { position: relative; padding-inline-start: 1.6rem; margin-bottom: 0.45rem;
+                           font-size: var(--font-size-sm); line-height: 1.45; color: var(--color-muted); }
+        .rx-find-list li::before { content: "○"; position: absolute; inset-inline-start: 0; }
+        .rx-find-list li[data-found="true"] { color: var(--color-fg); }
+        .rx-find-list li[data-found="true"]::before { content: "●"; color: var(--color-accent); }
+
+        .rx-note { font-size: var(--font-size-sm); color: var(--color-muted); margin: 1.25rem 0 0; line-height: 1.55; }
+        [data-rx-answered="true"] .rx-q { color: var(--color-muted); }
+        @media (prefers-reduced-motion: no-preference) {
+            .rx-seg, .rx-meter > span { transition: width 0.4s ease, background-color 0.4s ease; }
+        }
     </style>
     <link rel="stylesheet" href="/assets/css/accessibility.css">
     <script src="/assets/js/a11y-init.js"></script>
     <script src="/assets/js/accessibility.js" defer></script>
     <link rel="stylesheet" href="/assets/css/journey.css">
     <script src="/assets/js/journey.js" defer></script>
+    <script src="/assets/js/begin-reward.js" defer></script>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -75,41 +139,118 @@
 
             <section>
                 <h2>You know there's more</h2>
-                <p data-a11y="more-one">That feeling is worth taking seriously, because it is the only fuel that actually works for this kind of work. The research is fairly blunt about it: for routine, mechanical tasks, a bigger reward does buy better performance — but for anything needing judgement or invention, it can make people measurably worse. Pay matters up to the point where money stops being the problem. After that, three things do the work: <strong>directing your own effort</strong>, <strong>getting better at something</strong>, and <strong>doing something that matters beyond you</strong>. "You know there's more" is just what wanting those feels like from the inside.</p>
-                <p data-a11y="more-two">Which is also why the promise on the front page is <em>a little further each day</em> rather than something grander. Getting better is a direction, not a destination — the pull comes from moving, not from arriving. A day where you can do one thing you couldn't do last week is the whole mechanism. It is not modesty; it is the only version of this that keeps working.</p>
+                <p data-a11y="more-one">Worth taking seriously, because it's the only fuel that works here. Past the point where money stops being the problem, three things do the work: <strong>directing your own effort</strong>, <strong>getting better at something</strong>, and <strong>doing something that matters</strong>.</p>
+                <p data-a11y="more-two">Which is why the promise out front is <em>a little further each day</em>. Getting better is a direction, not a destination — the pull comes from moving, not arriving. One thing you couldn't do last week is the whole mechanism.</p>
 
-                <p data-a11y="more-video">The <a href="https://www.youtube.com/watch?v=u6XAPnuFjJc" rel="noopener">twelve-minute animation of the research</a> is worth your time, and this is what it lands:</p>
+                <p data-a11y="more-video">The <a href="https://www.youtube.com/watch?v=u6XAPnuFjJc" rel="noopener">twelve-minute animation of the research</a> is worth your time. What it lands:</p>
                 <ul>
-                    <li data-a11y="bullet-mechanical">Bigger rewards reliably improve <em>mechanical</em> performance. On tasks needing even rudimentary thought, the same rewards made performance worse — a finding from MIT, repeated in rural India, where the highest-incentive group did worst of all.</li>
-                    <li data-a11y="bullet-pay">Pay people inadequately and nothing else works. The purpose of paying fairly is to take money off the table so the work itself can do the motivating.</li>
-                    <li data-a11y="bullet-three">What is left over is those three: self-direction, getting better, and purpose. Not as sentiment — as the thing that actually predicts good work.</li>
-                    <li data-a11y="bullet-evidence">The evidence it isn't wishful thinking is sitting in plain sight. Skilled people built Linux, Apache and Wikipedia in their own time, for nothing, to a professional standard.</li>
-                    <li data-a11y="bullet-firms">Firms act on it. Atlassian hands its engineers a day a quarter to work on whatever they like, and ships things that came out of it.</li>
+                    <li data-a11y="bullet-pay">Pay too little and nothing else works. Pay fairly to take money off the table, so the work can do the motivating.</li>
+                    <li data-a11y="bullet-three">What's left over: self-direction, getting better, purpose. Not sentiment — the thing that predicts good work.</li>
+                    <li data-a11y="bullet-evidence">Skilled people built Linux, Apache and Wikipedia in their own time, for nothing.</li>
+                    <li data-a11y="bullet-firms">Atlassian gives its engineers a day a quarter on anything they like, and ships what comes out.</li>
                 </ul>
 
-                <p data-a11y="more-agency">The reach itself, though, comes from other people — and collaboration is not a personality trait, it is a question of agency. Three things you bring, divided by the one thing that decides how much of them ever gets out:</p>
+                <figure class="rx" id="reward-experiment">
+                    <figcaption class="rx-cap">The prize machine</figcaption>
+
+                    <div data-rx-predict>
+                        <p class="rx-q" data-a11y="rx-question">They ran this in rural India, where the top prize was two months' wages — enough to really matter. On the task that needs you to <em>think</em>, what did the biggest prize do?</p>
+                        <fieldset>
+                            <legend>Guess first</legend>
+                            <div class="rx-opts">
+                                <label><input type="radio" name="rx-guess" value="better"> Made people better</label>
+                                <label><input type="radio" name="rx-guess" value="same"> Made no difference</label>
+                                <label><input type="radio" name="rx-guess" value="worse"> Made people worse</label>
+                            </div>
+                        </fieldset>
+                        <p class="rx-echo" data-rx-guess-echo></p>
+                    </div>
+
+                    <div data-rx-lab>
+                        <div class="rx-dials">
+                            <fieldset>
+                                <legend>The prize</legend>
+                                <div class="rx-opts">
+                                    <label><input type="radio" name="rx-prize" value="0" checked> Two weeks' pay</label>
+                                    <label><input type="radio" name="rx-prize" value="1"> A month's pay</label>
+                                    <label><input type="radio" name="rx-prize" value="2"> Two months' pay</label>
+                                </div>
+                            </fieldset>
+                            <fieldset>
+                                <legend>The task</legend>
+                                <div class="rx-opts">
+                                    <label><input type="radio" name="rx-task" value="rules" checked> Follow the rules</label>
+                                    <label><input type="radio" name="rx-task" value="think"> Work it out</label>
+                                </div>
+                            </fieldset>
+                            <fieldset>
+                                <legend>Their normal pay</legend>
+                                <div class="rx-opts">
+                                    <label><input type="radio" name="rx-pay" value="low" checked> Barely enough</label>
+                                    <label><input type="radio" name="rx-pay" value="enough"> Enough to forget about</label>
+                                </div>
+                            </fieldset>
+                        </div>
+
+                        <div class="rx-read">
+                            <p class="rx-read-t">Where their attention is <span class="rx-read-v" data-rx-attn-label></span></p>
+                            <div class="rx-split">
+                                <span class="rx-seg rx-seg--work" data-rx-attn-work></span>
+                                <span class="rx-seg rx-seg--prize" data-rx-attn-prize></span>
+                            </div>
+                            <p class="rx-key"><span class="rx-dot rx-dot--work"></span> on the work &nbsp; <span class="rx-dot rx-dot--prize"></span> on the prize</p>
+                        </div>
+
+                        <div class="rx-read">
+                            <p class="rx-read-t">How the work went <span class="rx-read-v" data-rx-verdict></span></p>
+                            <div class="rx-meter"><span data-rx-result-fill></span></div>
+                        </div>
+
+                        <div class="rx-finds">
+                            <p class="rx-read-t">Things to find <span class="rx-read-v" data-rx-count>0 of 6</span></p>
+                            <ul class="rx-find-list">
+                                <li data-rx-find="d1" data-found="false">Big prize, best work — when the task is just following rules.</li>
+                                <li data-rx-find="d2" data-found="false">Big prize, worst work — when the task needs thinking.</li>
+                                <li data-rx-find="d3" data-found="false">The middle prize changed nothing at all.</li>
+                                <li data-rx-find="d4" data-found="false">Turn the prize up and attention slides off the work.</li>
+                                <li data-rx-find="d5" data-found="false">The rules task barely needs that attention — which is why prizes work there.</li>
+                                <li data-rx-find="d6" data-found="false">Pay enough that money isn't on their mind, and the big prize stops doing damage.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <p class="sr-only" data-rx-status role="status" aria-live="polite"></p>
+
+                    <noscript>
+                        <p>With the prize raised to two months' wages, the group doing the rules-based task did best of the three — and the group doing the task that needed thinking did <strong>worst</strong> of the three. The middle prize made no difference at all. Higher incentives led to worse performance. The explanation offered is that a big enough prize pulls attention onto the prize and away from the work, which costs you nothing on a task you can do by rote and everything on one you have to think through.</p>
+                    </noscript>
+
+                    <p class="rx-note" data-a11y="rx-note">The three prize levels were really tested, and the result was reported as which group did better — never by how much. So the bars show direction and rank, not measured amounts, and nothing is claimed between the stops. The attention split and the normal-pay dial are the <em>explanation</em> rather than the experiment: paying people enough to stop thinking about money is the principle he draws from it, not a condition he ran.</p>
+                </figure>
+
+                <p data-a11y="more-agency">The reach itself comes from other people, and collaboration is a question of agency. Three things you bring, over the one that decides how much of them gets out:</p>
                 <p class="eqn">agency = ( perspective + worldview + culture ) ÷ values</p>
                 <ul>
-                    <li data-a11y="agency-perspective"><strong>Perspective</strong> — your credibility: your maturity, and whether you show up competitive or cooperative.</li>
+                    <li data-a11y="agency-perspective"><strong>Perspective</strong> — your credibility: maturity, and whether you show up competitive or cooperative.</li>
                     <li data-a11y="agency-worldview"><strong>Worldview</strong> — your ordering principle, your plan for interacting, your reliability.</li>
-                    <li data-a11y="agency-culture"><strong>Culture</strong> — intimacy, vibe, and the enormous stock of common knowledge you take for granted.</li>
-                    <li data-a11y="agency-values"><strong>Values</strong> — the divisor, and the term you can actually move: your filter, your self-orientation, how you like to listen, how you speak.</li>
+                    <li data-a11y="agency-culture"><strong>Culture</strong> — intimacy, vibe, and the stock of common knowledge you take for granted.</li>
+                    <li data-a11y="agency-values"><strong>Values</strong> — the divisor, and the term you can move: your filter, your self-orientation, how you like to listen, how you speak.</li>
                 </ul>
-                <p data-a11y="more-notload">Notice what is absent. Not one of those four is about mental effort, or how much you can hold in your head at once. They are about moving people and being moved — and like it or not, that is most jobs now, whether you teach, direct art or work in healthcare. The <a href="https://www.youtube.com/watch?v=neYDJUWtlQk" rel="noopener">three qualities that make someone good at it</a> land on the terms above almost exactly:</p>
-                <ul>
-                    <li data-a11y="abc-attunement"><strong>Attunement</strong> is perspective-taking — can you tune yourself to someone else and understand their view. That is <em>perspective</em>, under another name.</li>
-                    <li data-a11y="abc-buoyancy"><strong>Buoyancy</strong> is staying afloat in what one salesman called an ocean of rejection. What predicts it isn't pep talk; it's how you explain failure to yourself afterwards — an ordering principle, so it belongs to <em>worldview</em>. Interestingly, questioning your own ability beforehand beats pumping yourself up.</li>
-                    <li data-a11y="abc-clarity"><strong>Clarity</strong> is deciding what is signal and what is noise. Access to information stopped being an advantage a long time ago; curating it is the advantage. That is the filter, which sits in <em>values</em>.</li>
-                    <li data-a11y="abc-common"><strong>And the note it ends on</strong> — looking for the ground where you and the other person are both better off — is <em>culture</em>: the shared stock that lets short messages work at all.</li>
-                </ul>
-                <p data-a11y="more-human">None of it is about capacity. All of it is about being, in the end, a bit more human.</p>
 
-                <p data-a11y="more-trust">Which is where trust comes in, and where it is usually pointed the wrong way. The familiar equation — credibility plus reliability plus intimacy, over self-orientation — gets used as a scorecard for other people. It isn't one. Put it next to the four above and it lines up term for term, and in the same positions: credibility sits inside perspective, reliability inside worldview, intimacy inside culture, and self-orientation inside values — which is the divisor in both. It is the same shape, read narrowly.</p>
-                <p data-a11y="more-trust-two">That correspondence is the whole point. The trust equation is an instrument for auditing <em>your own</em> agency, and nothing else. You run it inward, on your own three-over-one, until you have a defensible read on whether your own judgement can be trusted — and you keep working on the divisor, because it is the term that moves.</p>
-                <p data-a11y="more-combination">And that is why the three of them together are worth more than any one of them alone. Motivation gives you the reason to reach. Trusting your own agency is what makes you willing to hand something over without needing to control what happens to it. And the moment you can do that, someone else's agency stops being an obstacle to manage and becomes the thing that carries your idea further than you could carry it yourself. That is the "more" you can already feel. It was never going to come from working harder on your own.</p>
+                <p data-a11y="more-notload">Notice what's missing. None of it is about capacity, or how much you can hold at once. It's about moving people and being moved — which is most work now, whoever you are. The <a href="https://www.youtube.com/watch?v=neYDJUWtlQk" rel="noopener">three qualities that make someone good at it</a> land on the same terms:</p>
+                <ul>
+                    <li data-a11y="abc-attunement"><strong>Attunement</strong> is perspective-taking — tuning yourself to someone else. That is <em>perspective</em>, renamed.</li>
+                    <li data-a11y="abc-buoyancy"><strong>Buoyancy</strong> is staying afloat in an ocean of rejection. What predicts it is how you explain failure afterwards — an ordering principle, so <em>worldview</em>. Questioning your ability beforehand beats pumping yourself up.</li>
+                    <li data-a11y="abc-clarity"><strong>Clarity</strong> is telling signal from noise. Access to information stopped being an advantage; curating it is one. That's the filter, in <em>values</em>.</li>
+                    <li data-a11y="abc-common"><strong>And where it ends</strong> — the common ground where you're both better off — is <em>culture</em>.</li>
+                </ul>
+
+                <p data-a11y="more-trust">Which is where trust comes in, usually pointed the wrong way. Credibility plus reliability plus intimacy, over self-orientation — used as a scorecard for other people. It isn't one. Set it beside the four above and it lines up term for term and in the same positions — self-orientation inside values, the divisor in both.</p>
+                <p data-a11y="more-trust-two">So it is an instrument for auditing <em>your own</em> agency. You run it inward, on your own three-over-one, and you work on the divisor — because that's the term that moves.</p>
+                <p data-a11y="more-combination">Which is why the three together beat any one alone. Motivation gives you the reason to reach. Trusting your own agency lets you hand something over without controlling it. Then someone else's agency stops being an obstacle and becomes what carries the idea further than you could. That's the "more" you can already feel — it was never coming from working harder on your own.</p>
             </section>
 
-            <mgt-credit>The motivation research on this page is <strong>Daniel Pink</strong>'s — <em>Drive: The Surprising Truth About What Motivates Us</em> (2009), as presented in his <a href="https://www.youtube.com/watch?v=u6XAPnuFjJc" rel="noopener">RSA lecture</a>. Attunement, buoyancy and clarity are his too, from <em>To Sell Is Human</em> (2012) and the <a href="https://www.youtube.com/watch?v=neYDJUWtlQk" rel="noopener">RSA short</a> drawn from it — where the point about explanatory style predicting resilience is credited to <strong>Martin Seligman</strong> at the University of Pennsylvania. The way of picturing trust is <strong>David Maister, Charles Green and Robert Galford</strong>'s, from <em>The Trusted Advisor</em>.</mgt-credit>
+            <mgt-credit>The motivation research is <strong>Daniel Pink</strong>'s — <em>Drive</em> (2009), as presented in his <a href="https://www.youtube.com/watch?v=u6XAPnuFjJc" rel="noopener">RSA lecture</a>; the reward experiment in the figure is the Madurai replication he describes there, from Ariely, Gneezy, Loewenstein and Mazar's <em>Large Stakes and Big Mistakes</em>. Attunement, buoyancy and clarity are his too, from <em>To Sell Is Human</em> (2012) and the <a href="https://www.youtube.com/watch?v=neYDJUWtlQk" rel="noopener">RSA short</a> drawn from it — where the point about explanatory style predicting resilience is credited to <strong>Martin Seligman</strong> at the University of Pennsylvania. The way of picturing trust is <strong>David Maister, Charles Green and Robert Galford</strong>'s, from <em>The Trusted Advisor</em>.</mgt-credit>
         </article>
     </main>
 
