@@ -50,17 +50,19 @@
                border-radius: var(--radius); padding: 1rem 1.25rem; margin: 1.25rem 0;
                text-align: center; overflow-x: auto; line-height: 1.6; }
 
-        /* ===== The playable reward experiment ===== *
-         * Encoding is rank only — see the honesty note in assets/js/begin-reward.js. Real radio
-         * inputs do the interaction, so it is keyboard operable natively (arrow keys within a
-         * radiogroup) rather than needing hand-rolled key handling. No colour carries meaning on
-         * its own: bar HEIGHT is the encoding, so it survives the colour-vision filters. */
-        .rx { margin: 2rem 0; padding: clamp(1rem, 3vw, 1.5rem); border: 1px solid var(--color-border);
+        /* ===== The prize machine — a reactive document ===== *
+         * Two bound views of one state: a curve with a draggable knob, and a sentence whose values
+         * scrub (dotted underline, drag left/right). Honesty is carried by the DRAWING: the three
+         * tested prizes are solid marks, the line between them is dashed because its shape is
+         * interpolation, and the vertical axis has no numbers because the result was ordinal.
+         * Every control is an ARIA slider with arrow-key support. Nothing depends on hue alone —
+         * the prize segment is also hatched, and the active curve is distinguished by weight. */
+        .rx { margin: 2.5rem 0; padding: clamp(1rem, 3vw, 1.6rem); border: 1px solid var(--color-border);
               border-radius: var(--radius-lg); background: var(--color-bg-secondary); }
         .rx-cap { font-family: var(--font-display); color: var(--color-accent); line-height: 1.1;
-                  font-size: clamp(1.15rem, 2.4vw, 1.5rem); letter-spacing: var(--letter-spacing-wide);
+                  font-size: clamp(1.25rem, 2.8vw, 1.7rem); letter-spacing: var(--letter-spacing-wide);
                   margin-bottom: 0.9rem; }
-        .rx fieldset { border: 0; padding: 0; margin: 0 0 1.1rem; }
+        .rx fieldset { border: 0; padding: 0; margin: 0 0 0.6rem; }
         .rx legend { font-size: var(--font-size-sm); color: var(--color-muted); text-transform: uppercase;
                      letter-spacing: 0.07em; margin-bottom: 0.55rem; }
         .rx-opts { display: flex; flex-wrap: wrap; gap: 0.5rem; }
@@ -70,47 +72,68 @@
         .rx-opts label:hover { border-color: var(--color-accent); }
         .rx-opts label:has(input:checked) { border-color: var(--color-accent); color: var(--color-accent); }
         .rx input:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
-        /* One dial per row, full width, so its options sit side by side rather than stacking into a
-           tall column. */
-        .rx-dials { display: block; }
-        .rx-dials fieldset { margin-bottom: 0.85rem; }
-        .rx-echo { font-size: var(--font-size-sm); color: var(--color-accent); margin: 0.25rem 0 0; min-height: 1.5em; }
+        .rx-echo { font-size: var(--font-size-sm); color: var(--color-accent); margin: 0.35rem 0 0; min-height: 1.5em; }
+        [data-rx-answered="true"] .rx-q { color: var(--color-muted); }
 
-        .rx-read { margin: 1.25rem 0 0; }
+        /* the reactive sentence */
+        .rx-sentence { font-size: clamp(1.05rem, 1.9vw, 1.3rem); line-height: 1.75; margin: 0 0 0.4rem; }
+        .scrub { border-bottom: 2px dotted var(--color-accent); color: var(--color-accent);
+                 font-weight: 700; cursor: ew-resize; white-space: nowrap; padding-bottom: 1px;
+                 touch-action: none; -webkit-user-select: none; user-select: none; }
+        .scrub:hover { background: color-mix(in srgb, var(--color-accent) 12%, transparent); }
+        .scrub:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; }
+        .scrub[data-dragging="true"] { background: color-mix(in srgb, var(--color-accent) 22%, transparent); }
+        .rx-sentence b { color: var(--color-fg); }
+        .rx-hint { font-size: var(--font-size-sm); color: var(--color-muted); margin: 0 0 0.9rem; }
+
+        /* the graph */
+        .rx-graph { display: block; width: 100%; height: auto; touch-action: none; cursor: ew-resize;
+                    overflow: visible; }
+        .rx-axis { stroke: var(--color-border); stroke-width: 1.5; }
+        .rx-curve { fill: none; stroke: var(--color-muted); stroke-width: 2; stroke-dasharray: 7 6; opacity: 0.55; }
+        .rx-curve[data-active="true"] { stroke: var(--color-accent); stroke-width: 4; opacity: 1; }
+        .rx-mark { fill: var(--color-fg); cursor: pointer; }
+        .rx-knob { fill: var(--color-accent); stroke: var(--color-bg-secondary); stroke-width: 3; cursor: grab; }
+        .rx-knob:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; }
+        [data-dragging="true"] .rx-knob { cursor: grabbing; }
+        [data-rx-collapsed="true"] .rx-knob { fill: var(--color-muted); }
+        .rx-guide { stroke: var(--color-accent); stroke-width: 1; stroke-dasharray: 3 4; opacity: 0.5; }
+        .rx-tick { fill: var(--color-muted); font: 500 15px var(--font-sans); }
+        .rx-tick--note { font-size: 13px; font-style: italic; }
+        .rx-ylab { fill: var(--color-muted); font: 500 13px var(--font-sans); }
+        .rx-untested { font-size: var(--font-size-sm); color: var(--color-accent); margin: 0.5rem 0 0;
+                       min-height: 1.4em; visibility: hidden; }
+        [data-rx-untested="true"] .rx-untested { visibility: visible; }
+
+        /* the attention split */
+        .rx-read { margin: 1.4rem 0 0; }
         .rx-read-t { font-size: var(--font-size-sm); color: var(--color-muted); margin: 0 0 0.4rem;
                      text-transform: uppercase; letter-spacing: 0.07em; }
         .rx-read-v { text-transform: none; letter-spacing: normal; color: var(--color-fg); font-weight: 700; }
-        /* Two-segment attention bar. Segments differ in BOTH fill and border style, so the split is
-           legible without relying on hue. */
-        .rx-split { display: flex; height: 1.5rem; border: 1px solid var(--color-border);
+        .rx-split { display: flex; height: 1.4rem; border: 1px solid var(--color-border);
                     border-radius: var(--radius-full); overflow: hidden; }
         .rx-seg { display: block; }
         .rx-seg--work { background: var(--color-accent); }
         .rx-seg--prize { background: var(--color-brand-light, var(--color-brand));
                          background-image: repeating-linear-gradient(45deg, transparent 0 4px, var(--color-bg-secondary) 4px 6px); }
-        .rx-key { font-size: var(--font-size-xs, 0.78rem); color: var(--color-muted); margin: 0.4rem 0 0; }
+        .rx-key { font-size: var(--font-size-sm); color: var(--color-muted); margin: 0.4rem 0 0; }
         .rx-dot { display: inline-block; width: 0.7rem; height: 0.7rem; border-radius: 2px; vertical-align: -1px; }
         .rx-dot--work { background: var(--color-accent); }
         .rx-dot--prize { background: var(--color-brand-light, var(--color-brand));
                          background-image: repeating-linear-gradient(45deg, transparent 0 3px, var(--color-bg-secondary) 3px 5px); }
 
-        .rx-meter { height: 1.5rem; border: 1px solid var(--color-border);
-                    border-radius: var(--radius-full); overflow: hidden; }
-        .rx-meter > span { display: block; height: 100%; width: 50%; background: var(--color-accent); }
-        [data-rx-collapsed="true"] .rx-meter > span { background: var(--color-muted); }
-
+        /* discoveries */
         .rx-finds { margin: 1.5rem 0 0; padding-top: 1rem; border-top: 1px solid var(--color-border); }
         .rx-find-list { list-style: none; padding: 0; margin: 0; }
         .rx-find-list li { position: relative; padding-inline-start: 1.6rem; margin-bottom: 0.45rem;
                            font-size: var(--font-size-sm); line-height: 1.45; color: var(--color-muted); }
-        .rx-find-list li::before { content: "○"; position: absolute; inset-inline-start: 0; }
+        .rx-find-list li::before { content: "\25CB"; position: absolute; inset-inline-start: 0; }
         .rx-find-list li[data-found="true"] { color: var(--color-fg); }
-        .rx-find-list li[data-found="true"]::before { content: "●"; color: var(--color-accent); }
+        .rx-find-list li[data-found="true"]::before { content: "\25CF"; color: var(--color-accent); }
 
         .rx-note { font-size: var(--font-size-sm); color: var(--color-muted); margin: 1.25rem 0 0; line-height: 1.55; }
-        [data-rx-answered="true"] .rx-q { color: var(--color-muted); }
         @media (prefers-reduced-motion: no-preference) {
-            .rx-seg, .rx-meter > span { transition: width 0.4s ease, background-color 0.4s ease; }
+            .rx-seg { transition: width 0.25s ease; }
         }
     </style>
     <link rel="stylesheet" href="/assets/css/accessibility.css">
@@ -167,43 +190,44 @@
                     </div>
 
                     <div data-rx-lab>
-                        <div class="rx-dials">
-                            <fieldset>
-                                <legend>The prize</legend>
-                                <div class="rx-opts">
-                                    <label><input type="radio" name="rx-prize" value="0" checked> Two weeks' pay</label>
-                                    <label><input type="radio" name="rx-prize" value="1"> A month's pay</label>
-                                    <label><input type="radio" name="rx-prize" value="2"> Two months' pay</label>
-                                </div>
-                            </fieldset>
-                            <fieldset>
-                                <legend>The task</legend>
-                                <div class="rx-opts">
-                                    <label><input type="radio" name="rx-task" value="rules" checked> Follow the rules</label>
-                                    <label><input type="radio" name="rx-task" value="think"> Work it out</label>
-                                </div>
-                            </fieldset>
-                            <fieldset>
-                                <legend>Their normal pay</legend>
-                                <div class="rx-opts">
-                                    <label><input type="radio" name="rx-pay" value="low" checked> Barely enough</label>
-                                    <label><input type="radio" name="rx-pay" value="enough"> Enough to forget about</label>
-                                </div>
-                            </fieldset>
-                        </div>
+                        <p class="rx-sentence">Offer someone <span class="scrub" data-scrub="prize"></span> to do <span class="scrub" data-scrub="task"></span>, when their normal pay is <span class="scrub" data-scrub="pay"></span>. Their attention ends up <b data-out="attn"></b>, and the work comes out <b data-out="verdict"></b>.</p>
+                        <p class="rx-hint">Drag any underlined value &mdash; or drag the knob along the curve. They are the same thing.</p>
+
+                        <svg class="rx-graph" data-rx-svg viewBox="0 0 640 300" role="group" aria-label="How the work went as the prize rises. Drag the knob to change the prize.">
+                            <line class="rx-axis" x1="54" y1="22" x2="54" y2="248"></line>
+                            <line class="rx-axis" x1="54" y1="248" x2="614" y2="248"></line>
+
+                            <text class="rx-ylab" x="62" y="34">better</text>
+                            <text class="rx-ylab" x="62" y="242">worse</text>
+                            <text class="rx-ylab" x="18" y="150" text-anchor="middle" transform="rotate(-90 18 150)">how the work went</text>
+
+                            <line class="rx-guide" data-rx-hline x1="54" y1="150" x2="54" y2="150"></line>
+                            <line class="rx-guide" data-rx-vline x1="54" y1="150" x2="54" y2="248"></line>
+
+                            <path class="rx-curve" data-rx-path="rules" d=""></path>
+                            <path class="rx-curve" data-rx-path="think" d=""></path>
+
+                            <circle class="rx-mark" data-rx-dot="0" r="5" cx="54" cy="150"></circle>
+                            <circle class="rx-mark" data-rx-dot="1" r="5" cx="334" cy="150"></circle>
+                            <circle class="rx-mark" data-rx-dot="2" r="5" cx="614" cy="150"></circle>
+
+                            <circle class="rx-knob" data-rx-knob r="11" cx="54" cy="150"></circle>
+
+                            <text class="rx-tick" x="54" y="272" text-anchor="start">2 weeks’ pay</text>
+                            <text class="rx-tick" x="334" y="272" text-anchor="middle">a month’s</text>
+                            <text class="rx-tick" x="614" y="272" text-anchor="end">2 months’</text>
+                            <text class="rx-tick rx-tick--note" x="334" y="292" text-anchor="middle">the three prizes actually tested</text>
+                        </svg>
+
+                        <p class="rx-untested">Between the tested prizes — the dashed line is a guess at the shape, not data.</p>
 
                         <div class="rx-read">
-                            <p class="rx-read-t">Where their attention is <span class="rx-read-v" data-rx-attn-label></span></p>
+                            <p class="rx-read-t">Where their attention is</p>
                             <div class="rx-split">
                                 <span class="rx-seg rx-seg--work" data-rx-attn-work></span>
                                 <span class="rx-seg rx-seg--prize" data-rx-attn-prize></span>
                             </div>
                             <p class="rx-key"><span class="rx-dot rx-dot--work"></span> on the work &nbsp; <span class="rx-dot rx-dot--prize"></span> on the prize</p>
-                        </div>
-
-                        <div class="rx-read">
-                            <p class="rx-read-t">How the work went <span class="rx-read-v" data-rx-verdict></span></p>
-                            <div class="rx-meter"><span data-rx-result-fill></span></div>
                         </div>
 
                         <div class="rx-finds">
@@ -214,7 +238,7 @@
                                 <li data-rx-find="d3" data-found="false">The middle prize changed nothing at all.</li>
                                 <li data-rx-find="d4" data-found="false">Turn the prize up and attention slides off the work.</li>
                                 <li data-rx-find="d5" data-found="false">The rules task barely needs that attention — which is why prizes work there.</li>
-                                <li data-rx-find="d6" data-found="false">Pay enough that money isn't on their mind, and the big prize stops doing damage.</li>
+                                <li data-rx-find="d6" data-found="false">Pay enough that money isn’t on their mind, and the big prize stops doing damage.</li>
                             </ul>
                         </div>
                     </div>
@@ -222,10 +246,10 @@
                     <p class="sr-only" data-rx-status role="status" aria-live="polite"></p>
 
                     <noscript>
-                        <p>With the prize raised to two months' wages, the group doing the rules-based task did best of the three — and the group doing the task that needed thinking did <strong>worst</strong> of the three. The middle prize made no difference at all. Higher incentives led to worse performance. The explanation offered is that a big enough prize pulls attention onto the prize and away from the work, which costs you nothing on a task you can do by rote and everything on one you have to think through.</p>
+                        <p>With the prize raised to two months’ wages, the group doing the rules-based task did best of the three — and the group doing the task that needed thinking did <strong>worst</strong> of the three. The middle prize made no difference at all. The explanation offered is that a big enough prize pulls attention onto the prize and away from the work, which costs nothing on a task you can do by rote and everything on one you have to think through.</p>
                     </noscript>
 
-                    <p class="rx-note" data-a11y="rx-note">The three prize levels were really tested, and the result was reported as which group did better — never by how much. So the bars show direction and rank, not measured amounts, and nothing is claimed between the stops. The attention split and the normal-pay dial are the <em>explanation</em> rather than the experiment: paying people enough to stop thinking about money is the principle he draws from it, not a condition he ran.</p>
+                    <p class="rx-note" data-a11y="rx-note">Only the three marked prizes were tested, and the result was reported as which group did better — never by how much. So the marks are the data, the dashed line between them is only a way of getting from one to the next, and the vertical axis carries no numbers. The attention split and the normal-pay value are the <em>explanation</em> rather than the experiment: paying people enough to stop thinking about money is the principle drawn from it, not a condition that was run.</p>
                 </figure>
 
                 <p data-a11y="more-agency">The reach itself comes from other people, and collaboration is a question of agency. Three things you bring, over the one that decides how much of them gets out:</p>

@@ -1,166 +1,337 @@
-/* THE PRIZE MACHINE — the reward experiment from 3:26-5:32 of the RSA Drive animation, playable.
+/* THE PRIZE MACHINE — a reactive document for the reward experiment described between 3:26 and 5:32
+ * of the RSA Drive animation (the Madurai replication).
  *
- * Three dials: the prize on offer, the kind of task, and whether the base pay is enough to stop
- * thinking about money. Two readouts: where the person's attention is, and how the work went.
+ * Two views of one state, bound both ways:
+ *   - a line graph with a knob you drag along the curve
+ *   - a sentence whose values are scrubbable (dotted underline, drag left/right), Tangle-style
+ * Move either and the other follows. Selects scrub the same way as numbers.
  *
- * The point of the third dial and the attention readout is that the machine gets DEEPER the longer
- * you fiddle. Layer 1: prize up, the two tasks come apart. Layer 2: you can see why — the prize
- * pulls attention off the work. Layer 3: the rules task doesn't need that attention, which is why
- * prizes help there and hurt here. Layer 4: pay enough and the prize loses its grip. Six discoveries
- * only tick off when the reader actually produces the state that demonstrates them.
+ * WHAT IS MEASURED AND WHAT IS MODEL — do not blur this:
+ *   - Measured: three prize levels (two weeks', one month', two months' pay), reported ORDINALLY —
+ *     which group did better, never by how much. Those three are drawn as solid marks. The curve
+ *     between them is drawn dashed because its shape is interpolation, not data. The y axis carries
+ *     no numbers for the same reason.
+ *   - Model: the attention split, and the normal-pay dial. The talk states the principle — "pay
+ *     people enough to take the issue of money off the table... so they're not thinking about money
+ *     and they're thinking about the work" — but base pay was not a condition that was run.
  *
- * WHAT IS MEASURED AND WHAT IS MODEL — this distinction is load-bearing, do not blur it:
- *   - Measured, and reported ORDINALLY (which group did better, never by how much): with the prize
- *     at three levels, the rules task improves; the thinking task shows no gain at the middle prize
- *     and is worst of all at the top. Bar lengths therefore encode rank and direction only.
- *   - Model, i.e. the stated explanation rather than a tested condition: the attention split, and
- *     the base-pay dial. The talk says to "pay people enough to take the issue of money off the
- *     table... so they're not thinking about money and they're thinking about the work" — but base
- *     pay was not a manipulated variable in the experiment. The figure labels this as the mechanism.
+ * Curves are quadratics fitted exactly through the three ordinal marks, so the marks are the truth
+ * and the line is only a way of getting between them.
  *
- * CSP-safe (external, same-origin). Classic IIFE — no import/export. Every control is a real radio
- * input, so the whole thing is keyboard operable natively via radiogroup arrow keys. No colour
- * carries meaning alone: length is the encoding, so it survives the colour-vision filters. */
+ * CSP-safe (external, same-origin). Classic IIFE. Every control is a real ARIA slider with keyboard
+ * support; nothing depends on hue alone. */
 (function () {
   "use strict";
 
   var fig = document.getElementById("reward-experiment");
   if (!fig) return;
 
-  var PRIZE = ["two weeks' pay", "a month's pay", "two months' pay"];
-  var TASK = { rules: "the rules task", think: "the thinking task" };
+  var svg = fig.querySelector("[data-rx-svg]");
+  if (!svg) return;
 
-  /* attention pulled onto the prize, by [prize level][base pay adequate] */
-  var PULL = { 0: [22, 10], 1: [48, 21], 2: [76, 33] };
+  /* ---------------------------------------------------------------- model */
 
-  /* how the work went — rank-only encoding, see header note */
-  var RESULT = {
-    rules: { 0: [56, 58], 1: [74, 76], 2: [92, 93] },
-    think: { 0: [74, 78], 1: [72, 77], 2: [30, 70] }
+  var MARKS = ["two weeks' pay", "a month's pay", "two months' pay"];
+  var TASKS = ["a task with clear rules", "a task that needs thinking"];
+  var PAYS = ["barely enough", "enough to forget about"];
+
+  /* result(prize) — quadratics through the three ordinal marks */
+  function result(p, task, pay) {
+    if (task === 0) return 56 + 18 * p;                    // rules: 56 / 74 / 92
+    return pay === 0 ? -20 * p * p + 18 * p + 74           // thinking, poorly paid: 74 / 72 / 30
+                     : -3 * p * p + 2 * p + 78;            // thinking, paid enough: 78 / 77 / 70
+  }
+  /* attention pulled onto the prize */
+  function pull(p, pay) {
+    return pay === 0 ? p * p + 25 * p + 22 : 0.5 * p * p + 10.5 * p + 10;
+  }
+
+  function verdictFor(p, task, pay) {
+    var near = Math.abs(p - Math.round(p)) < 0.12;
+    var m = Math.round(p);
+    if (!near) return "somewhere in between — untested ground";
+    if (task === 0) return ["fine", "sharper", "best of the three"][m];
+    if (pay === 1) return m === 2 ? "unharmed — the prize stopped mattering"
+                                  : ["fine", "much the same"][m];
+    return ["fine", "no better than the small prize", "worst of all three"][m];
+  }
+
+  function attnWords(onWork) {
+    return onWork >= 75 ? "mostly on the work"
+      : onWork >= 55 ? "drifting off the work"
+      : onWork >= 40 ? "half on the prize"
+      : "mostly on the prize";
+  }
+
+  var state = { p: 0, task: 0, pay: 0 };
+
+  /* ------------------------------------------------------------ geometry */
+
+  var VB = { w: 640, h: 300, l: 54, r: 26, t: 22, b: 52 };
+  var X0 = VB.l, X1 = VB.w - VB.r, Y0 = VB.h - VB.b, Y1 = VB.t;
+  var xOf = function (p) { return X0 + (p / 2) * (X1 - X0); };
+  var yOf = function (v) { return Y0 + (v / 100) * (Y1 - Y0); };
+  var pOfX = function (x) { return Math.max(0, Math.min(2, ((x - X0) / (X1 - X0)) * 2)); };
+
+  function pathFor(task, pay) {
+    var d = "", n = 60;
+    for (var i = 0; i <= n; i++) {
+      var p = (i / n) * 2;
+      d += (i ? "L" : "M") + xOf(p).toFixed(1) + " " + yOf(result(p, task, pay)).toFixed(1);
+    }
+    return d;
+  }
+
+  /* -------------------------------------------------------------- refs */
+
+  var el = {
+    lab: fig.querySelector("[data-rx-lab]"),
+    predict: fig.querySelector("[data-rx-predict]"),
+    echo: fig.querySelector("[data-rx-guess-echo]"),
+    pathRules: svg.querySelector("[data-rx-path='rules']"),
+    pathThink: svg.querySelector("[data-rx-path='think']"),
+    dots: svg.querySelectorAll("[data-rx-dot]"),
+    knob: svg.querySelector("[data-rx-knob]"),
+    vline: svg.querySelector("[data-rx-vline]"),
+    hline: svg.querySelector("[data-rx-hline]"),
+    attnWork: fig.querySelector("[data-rx-attn-work]"),
+    attnPrize: fig.querySelector("[data-rx-attn-prize]"),
+    status: fig.querySelector("[data-rx-status]"),
+    count: fig.querySelector("[data-rx-count]"),
+    outs: {
+      prize: fig.querySelector("[data-scrub='prize']"),
+      task: fig.querySelector("[data-scrub='task']"),
+      pay: fig.querySelector("[data-scrub='pay']"),
+      attn: fig.querySelector("[data-out='attn']"),
+      verdict: fig.querySelector("[data-out='verdict']")
+    }
   };
 
-  var VERDICT = {
-    rules: { 0: "gets it done", 1: "sharper", 2: "best of the three" },
-    think: { 0: "gets it done", 1: "no better than the small prize", 2: "worst of all three" }
-  };
-  var THINK_RECOVERED = "back on form — the prize stopped mattering";
+  if (el.lab) el.lab.hidden = true;
 
-  var DISCOVERIES = [
-    { id: "d1", test: function (s) { return s.task === "rules" && s.prize === 2; },
-      text: "Big prize, best work — when the task is just following rules." },
-    { id: "d2", test: function (s) { return s.task === "think" && s.prize === 2 && !s.paid; },
-      text: "Big prize, WORST work — when the task needs thinking." },
-    { id: "d3", test: function (s) { return s.task === "think" && s.prize === 1 && !s.paid; },
-      text: "The middle prize changed nothing at all." },
-    { id: "d4", test: function (s) { return s.prize === 2 && !s.paid; },
-      text: "Turn the prize up and attention slides off the work and onto the prize." },
-    { id: "d5", test: function (s) { return s.task === "rules" && s.prize === 2 && !s.paid; },
-      text: "The rules task barely needs that attention — which is exactly why prizes work there." },
-    { id: "d6", test: function (s) { return s.task === "think" && s.prize === 2 && s.paid; },
-      text: "Pay enough that money isn't on their mind, and the big prize stops doing damage." }
+  /* ------------------------------------------------------- discoveries */
+
+  var FINDS = [
+    { id: "d1", t: function (s) { return s.task === 0 && s.p > 1.85; } },
+    { id: "d2", t: function (s) { return s.task === 1 && s.p > 1.85 && s.pay === 0; } },
+    { id: "d3", t: function (s) { return s.task === 1 && Math.abs(s.p - 1) < 0.12 && s.pay === 0; } },
+    { id: "d4", t: function (s) { return s.p > 1.85 && s.pay === 0; } },
+    { id: "d5", t: function (s) { return s.task === 0 && s.p > 1.5 && s.pay === 0; } },
+    { id: "d6", t: function (s) { return s.task === 1 && s.p > 1.85 && s.pay === 1; } }
   ];
-
   var found = {};
 
-  var els = {
-    predict: fig.querySelector("[data-rx-predict]"),
-    lab: fig.querySelector("[data-rx-lab]"),
-    status: fig.querySelector("[data-rx-status]"),
-    workFill: fig.querySelector("[data-rx-attn-work]"),
-    prizeFill: fig.querySelector("[data-rx-attn-prize]"),
-    workPct: fig.querySelector("[data-rx-attn-label]"),
-    resultFill: fig.querySelector("[data-rx-result-fill]"),
-    verdict: fig.querySelector("[data-rx-verdict]"),
-    count: fig.querySelector("[data-rx-count]")
-  };
-
-  var guess = null;
-
-  /* Progressive enhancement: the <noscript> prose carries the finding with JS off, so only hide the
-     machine once we know we can drive it. */
-  if (els.lab) els.lab.hidden = true;
-
-  function radio(name, fallback) {
-    var on = fig.querySelector('input[name="' + name + '"]:checked');
-    return on ? on.value : fallback;
-  }
-
-  function state() {
-    return {
-      prize: parseInt(radio("rx-prize", "0"), 10) || 0,
-      task: radio("rx-task", "rules"),
-      paid: radio("rx-pay", "low") === "enough"
-    };
-  }
-
-  function pct(n) { return Math.max(0, Math.min(100, n)) + "%"; }
+  /* ----------------------------------------------------------- render */
 
   function render() {
-    var s = state();
-    var p = s.paid ? 1 : 0;
-    var onPrize = PULL[s.prize][p];
+    var res = result(state.p, state.task, state.pay);
+    var onPrize = pull(state.p, state.pay);
     var onWork = 100 - onPrize;
-    var score = RESULT[s.task][s.prize][p];
 
-    if (els.workFill) els.workFill.style.width = pct(onWork);
-    if (els.prizeFill) els.prizeFill.style.width = pct(onPrize);
-    if (els.workPct) {
-      els.workPct.textContent = onWork >= 75 ? "mostly on the work"
-        : onWork >= 55 ? "drifting toward the prize"
-        : onWork >= 40 ? "half on the prize"
-        : "mostly on the prize";
-    }
+    el.pathRules.setAttribute("d", pathFor(0, state.pay));
+    el.pathThink.setAttribute("d", pathFor(1, state.pay));
+    el.pathRules.setAttribute("data-active", state.task === 0 ? "true" : "false");
+    el.pathThink.setAttribute("data-active", state.task === 1 ? "true" : "false");
 
-    if (els.resultFill) els.resultFill.style.width = pct(score);
-    var verdict = VERDICT[s.task][s.prize];
-    if (s.task === "think" && s.prize === 2 && s.paid) verdict = THINK_RECOVERED;
-    if (els.verdict) els.verdict.textContent = verdict;
+    Array.prototype.forEach.call(el.dots, function (dot) {
+      var m = parseInt(dot.getAttribute("data-rx-dot"), 10);
+      dot.setAttribute("cx", xOf(m));
+      dot.setAttribute("cy", yOf(result(m, state.task, state.pay)));
+    });
 
-    fig.setAttribute("data-rx-collapsed", s.task === "think" && s.prize === 2 && !s.paid ? "true" : "false");
+    var kx = xOf(state.p), ky = yOf(res);
+    el.knob.setAttribute("cx", kx);
+    el.knob.setAttribute("cy", ky);
+    el.knob.setAttribute("aria-valuenow", state.p.toFixed(2));
+    el.knob.setAttribute("aria-valuetext", MARKS[Math.round(state.p)] + ", " + verdictFor(state.p, state.task, state.pay));
+    el.vline.setAttribute("x1", kx); el.vline.setAttribute("x2", kx);
+    el.vline.setAttribute("y1", ky); el.vline.setAttribute("y2", Y0);
+    el.hline.setAttribute("x1", X0); el.hline.setAttribute("x2", kx);
+    el.hline.setAttribute("y1", ky); el.hline.setAttribute("y2", ky);
 
-    /* discoveries — only tick when the reader has actually produced the demonstrating state */
+    if (el.attnWork) el.attnWork.style.width = onWork.toFixed(1) + "%";
+    if (el.attnPrize) el.attnPrize.style.width = onPrize.toFixed(1) + "%";
+
+    var nearMark = Math.abs(state.p - Math.round(state.p)) < 0.12;
+    fig.setAttribute("data-rx-untested", nearMark ? "false" : "true");
+    fig.setAttribute("data-rx-collapsed", state.task === 1 && state.p > 1.6 && state.pay === 0 ? "true" : "false");
+
+    var o = el.outs;
+    o.prize.textContent = MARKS[Math.round(state.p)] + (nearMark ? "" : " (ish)");
+    o.task.textContent = TASKS[state.task];
+    o.pay.textContent = PAYS[state.pay];
+    o.attn.textContent = attnWords(onWork);
+    o.verdict.textContent = verdictFor(state.p, state.task, state.pay);
+
+    [["prize", state.p, MARKS[Math.round(state.p)]], ["task", state.task, TASKS[state.task]], ["pay", state.pay, PAYS[state.pay]]]
+      .forEach(function (row) {
+        var node = o[row[0]];
+        node.setAttribute("aria-valuenow", String(row[1]));
+        node.setAttribute("aria-valuetext", row[2]);
+      });
+
     var newly = [];
-    DISCOVERIES.forEach(function (d) {
-      if (found[d.id] || !d.test(s)) return;
-      found[d.id] = true;
-      newly.push(d.text);
-      var li = fig.querySelector('[data-rx-find="' + d.id + '"]');
-      if (li) li.setAttribute("data-found", "true");
+    FINDS.forEach(function (f) {
+      if (found[f.id] || !f.t(state)) return;
+      found[f.id] = true;
+      var li = fig.querySelector("[data-rx-find='" + f.id + "']");
+      if (li) { li.setAttribute("data-found", "true"); newly.push(li.textContent.trim()); }
     });
     var n = Object.keys(found).length;
-    if (els.count) els.count.textContent = n + " of " + DISCOVERIES.length;
+    if (el.count) el.count.textContent = n + " of " + FINDS.length;
 
-    if (els.status) {
-      var msg = "Prize: " + PRIZE[s.prize] + ", base pay " + (s.paid ? "enough to forget about" : "barely enough") +
-        ", on " + TASK[s.task] + ". Attention " + (els.workPct ? els.workPct.textContent : "") +
-        ". Result: " + verdict + ".";
-      if (newly.length) msg += " Found: " + newly.join(" ") ;
-      if (n === DISCOVERIES.length) msg += " That's all six.";
-      els.status.textContent = msg;
+    if (el.status) {
+      el.status.textContent = "Prize " + MARKS[Math.round(state.p)] + ", " + TASKS[state.task] +
+        ", normal pay " + PAYS[state.pay] + ". Attention " + attnWords(onWork) + ". Result: " +
+        verdictFor(state.p, state.task, state.pay) + "." +
+        (newly.length ? " Found: " + newly.join(" ") : "") +
+        (n === FINDS.length ? " That is all six." : "");
     }
   }
+
+  /* ------------------------------------------------- scrubbable values */
+
+  function clamp(v, lo, hi) { return Math.max(lo, Math.min(hi, v)); }
+
+  /* Turns a span into a draggable value. dragPx is how far the pointer travels per unit. */
+  function scrub(node, cfg) {
+    if (!node) return;
+    node.setAttribute("role", "slider");
+    node.setAttribute("tabindex", "0");
+    node.setAttribute("aria-valuemin", String(cfg.min));
+    node.setAttribute("aria-valuemax", String(cfg.max));
+    node.setAttribute("aria-label", cfg.label);
+
+    var startX = 0, startV = 0, dragging = false;
+
+    node.addEventListener("pointerdown", function (e) {
+      dragging = true; startX = e.clientX; startV = cfg.get();
+      try { node.setPointerCapture(e.pointerId); } catch (err) { /* pointer already gone */ }
+      node.setAttribute("data-dragging", "true");
+      e.preventDefault();
+    });
+    node.addEventListener("pointermove", function (e) {
+      if (!dragging) return;
+      var v = startV + (e.clientX - startX) / cfg.dragPx;
+      cfg.set(clamp(cfg.step ? Math.round(v / cfg.step) * cfg.step : v, cfg.min, cfg.max));
+      render();
+    });
+    function end(e) {
+      if (!dragging) return;
+      dragging = false;
+      node.removeAttribute("data-dragging");
+      try { if (e && e.pointerId != null && node.hasPointerCapture(e.pointerId)) node.releasePointerCapture(e.pointerId); } catch (err) { /* already released */ }
+    }
+    node.addEventListener("pointerup", end);
+    node.addEventListener("pointercancel", end);
+
+    node.addEventListener("keydown", function (e) {
+      var step = cfg.keyStep || cfg.step || 1;
+      var v = cfg.get(), handled = true;
+      switch (e.key) {
+        case "ArrowLeft": case "ArrowDown": v -= step; break;
+        case "ArrowRight": case "ArrowUp": v += step; break;
+        case "Home": v = cfg.min; break;
+        case "End": v = cfg.max; break;
+        case "PageDown": v -= step * 2; break;
+        case "PageUp": v += step * 2; break;
+        default: handled = false;
+      }
+      if (!handled) return;
+      e.preventDefault();
+      cfg.set(clamp(cfg.step ? Math.round(v / cfg.step) * cfg.step : v, cfg.min, cfg.max));
+      render();
+    });
+  }
+
+  scrub(el.outs.prize, {
+    label: "The prize on offer", min: 0, max: 2, keyStep: 0.25, dragPx: 90,
+    get: function () { return state.p; }, set: function (v) { state.p = v; }
+  });
+  scrub(el.outs.task, {
+    label: "The kind of task", min: 0, max: 1, step: 1, dragPx: 55,
+    get: function () { return state.task; }, set: function (v) { state.task = v; }
+  });
+  scrub(el.outs.pay, {
+    label: "Their normal pay", min: 0, max: 1, step: 1, dragPx: 55,
+    get: function () { return state.pay; }, set: function (v) { state.pay = v; }
+  });
+
+  /* -------------------------------------------------- the graph knob */
+
+  function pointerToP(e) {
+    var box = svg.getBoundingClientRect();
+    var x = ((e.clientX - box.left) / box.width) * VB.w;
+    return pOfX(x);
+  }
+
+  var knobDragging = false;
+  function grab(e) {
+    knobDragging = true;
+    svg.setAttribute("data-dragging", "true");
+    state.p = pointerToP(e);
+    render();
+    try { if (svg.setPointerCapture) svg.setPointerCapture(e.pointerId); } catch (err) { /* pointer already gone */ }
+    e.preventDefault();
+  }
+  svg.addEventListener("pointerdown", grab);
+  svg.addEventListener("pointermove", function (e) {
+    if (!knobDragging) return;
+    state.p = pointerToP(e);
+    render();
+  });
+  function drop(e) {
+    if (!knobDragging) return;
+    knobDragging = false;
+    svg.removeAttribute("data-dragging");
+    try { if (e && e.pointerId != null && svg.hasPointerCapture && svg.hasPointerCapture(e.pointerId)) svg.releasePointerCapture(e.pointerId); } catch (err) { /* already released */ }
+  }
+  svg.addEventListener("pointerup", drop);
+  svg.addEventListener("pointercancel", drop);
+
+  el.knob.setAttribute("role", "slider");
+  el.knob.setAttribute("tabindex", "0");
+  el.knob.setAttribute("aria-valuemin", "0");
+  el.knob.setAttribute("aria-valuemax", "2");
+  el.knob.setAttribute("aria-label", "The prize on offer — drag along the curve");
+  el.knob.addEventListener("keydown", function (e) {
+    var v = state.p, handled = true;
+    switch (e.key) {
+      case "ArrowLeft": case "ArrowDown": v -= 0.25; break;
+      case "ArrowRight": case "ArrowUp": v += 0.25; break;
+      case "Home": v = 0; break;
+      case "End": v = 2; break;
+      default: handled = false;
+    }
+    if (!handled) return;
+    e.preventDefault();
+    state.p = clamp(v, 0, 2);
+    render();
+  });
+
+  /* clicking a tested mark snaps to it */
+  Array.prototype.forEach.call(el.dots, function (dot) {
+    dot.addEventListener("pointerdown", function (e) {
+      e.stopPropagation();
+      state.p = parseInt(dot.getAttribute("data-rx-dot"), 10);
+      render();
+    });
+  });
+
+  /* ------------------------------------------------------ the gate */
 
   fig.addEventListener("change", function (e) {
     var t = e.target;
-    if (!t || t.type !== "radio") return;
-
-    if (t.name === "rx-guess") {
-      guess = t.value;
-      if (els.predict) els.predict.setAttribute("data-rx-answered", "true");
-      if (els.lab) els.lab.hidden = false;
-      var verdictLine = fig.querySelector("[data-rx-guess-echo]");
-      if (verdictLine) {
-        verdictLine.textContent = guess === "worse"
-          ? "You're right — and almost nobody guesses that. Now find out why."
-          : "Most people say that too. Turn the prize up to two months' pay and watch.";
-      }
-      render();
-      var first = fig.querySelector('input[name="rx-prize"]');
-      if (first) first.focus();
-      return;
+    if (!t || t.name !== "rx-guess") return;
+    if (el.predict) el.predict.setAttribute("data-rx-answered", "true");
+    if (el.lab) el.lab.hidden = false;
+    if (el.echo) {
+      el.echo.textContent = t.value === "worse"
+        ? "Right — and almost nobody guesses that. Drag the prize up and see why."
+        : "Most people say that too. Drag the prize up to two months' pay and watch what happens.";
     }
-
-    if (t.name === "rx-prize" || t.name === "rx-task" || t.name === "rx-pay") render();
+    render();
+    if (el.outs.prize) el.outs.prize.focus();
   });
 
   render();
