@@ -1,116 +1,94 @@
-/* THE PRIZE MACHINE — a reactive document for the reward experiment described between 3:26 and 5:32
- * of the RSA Drive animation (the Madurai replication).
+/* THE PRIZE MACHINE — a toy for the reward experiment described between 3:26 and 5:32 of the RSA
+ * Drive animation (the Madurai replication).
  *
- * Two views of one state, bound both ways:
- *   - a line graph with a knob you drag along the curve
- *   - a sentence whose values are scrubbable (dotted underline, drag left/right), Tangle-style
- * Move either and the other follows. Selects scrub the same way as numbers.
+ * The article does the explaining. This is for digging: change the numbers and see what would be.
  *
- * WHAT IS MEASURED AND WHAT IS MODEL — do not blur this:
- *   - Measured: three prize levels (two weeks', one month', two months' pay), reported ORDINALLY —
- *     which group did better, never by how much. Those three are drawn as solid marks. The curve
- *     between them is drawn dashed because its shape is interpolation, not data. The y axis carries
- *     no numbers for the same reason.
- *   - Model: the attention split, and the normal-pay dial. The talk states the principle — "pay
- *     people enough to take the issue of money off the table... so they're not thinking about money
- *     and they're thinking about the work" — but base pay was not a condition that was run.
+ * One bound state, enterable from any end —
+ *   drag the knob along the curve · drag the underlined values in the sentence ·
+ *   drag the attention split (runs the model backwards) · drag the measured marks themselves
  *
- * Curves are quadratics fitted exactly through the three ordinal marks, so the marks are the truth
- * and the line is only a way of getting between them.
+ * Dragging a mark asks "what if it had come out otherwise". The measured result stays behind it as a
+ * ghost and a reset puts it back, so the real finding is never silently overwritten.
  *
- * CSP-safe (external, same-origin). Classic IIFE. Every control is a real ARIA slider with keyboard
- * support; nothing depends on hue alone. */
+ * The curve is the quadratic through whatever the three marks currently say — so the marks are the
+ * truth and the line is only a way of getting between them. The vertical axis carries no numbers
+ * because the study reported which group did better, never by how much.
+ *
+ * CSP-safe, classic IIFE, ARIA sliders throughout, nothing encoded by hue alone. */
 (function () {
   "use strict";
 
   var fig = document.getElementById("reward-experiment");
   if (!fig) return;
-
   var svg = fig.querySelector("[data-rx-svg]");
   if (!svg) return;
-
-  /* ---------------------------------------------------------------- model */
 
   var MARKS = ["two weeks' pay", "a month's pay", "two months' pay"];
   var TASKS = ["a task with clear rules", "a task that needs thinking"];
   var PAYS = ["barely enough", "enough to forget about"];
 
-  /* result(prize) — quadratics through the three ordinal marks */
-  function result(p, task, pay) {
-    if (task === 0) return 56 + 18 * p;                    // rules: 56 / 74 / 92
-    return pay === 0 ? -20 * p * p + 18 * p + 74           // thinking, poorly paid: 74 / 72 / 30
-                     : -3 * p * p + 2 * p + 78;            // thinking, paid enough: 78 / 77 / 70
+  /* what was measured — ordinal, so these are ranks drawn as heights, never scores */
+  var REAL = { rules: [[56, 74, 92], [58, 76, 93]], think: [[74, 72, 30], [78, 77, 70]] };
+  function clone(o) {
+    return { rules: [o.rules[0].slice(), o.rules[1].slice()], think: [o.think[0].slice(), o.think[1].slice()] };
   }
-  /* attention pulled onto the prize */
-  function pull(p, pay) {
-    return pay === 0 ? p * p + 25 * p + 22 : 0.5 * p * p + 10.5 * p + 10;
-  }
-  /* ...and its inverse, so the attention bar can be dragged to set the prize. Both branches are
-     monotonic over the prize range, so this is a straight positive-root solve. Attention outside the
-     reachable band just clamps — which is itself the lesson: when someone is paid properly you
-     cannot drag their attention badly off the work, because the prize has lost its grip. */
+  var DATA = clone(REAL);
+
+  var state = { p: 0, task: 0, pay: 0, edited: false };
+  function key() { return state.task === 0 ? "rules" : "think"; }
+  function ys(src) { return (src || DATA)[key()][state.pay]; }
+
+  function curve(p, v) { return v[0] * (p - 1) * (p - 2) / 2 - v[1] * p * (p - 2) + v[2] * p * (p - 1) / 2; }
+  function pull(p, pay) { return pay === 0 ? p * p + 25 * p + 22 : 0.5 * p * p + 10.5 * p + 10; }
   function prizeForPull(a, pay) {
-    var p = pay === 0
-      ? (-25 + Math.sqrt(625 - 4 * (22 - a))) / 2
-      : (-21 + Math.sqrt(441 - 4 * (20 - 2 * a))) / 2;
+    var p = pay === 0 ? (-25 + Math.sqrt(625 - 4 * (22 - a))) / 2
+                      : (-21 + Math.sqrt(441 - 4 * (20 - 2 * a))) / 2;
     return Math.max(0, Math.min(2, p));
   }
 
-  function verdictFor(p, task, pay) {
-    var near = Math.abs(p - Math.round(p)) < 0.12;
-    var m = Math.round(p);
-    if (!near) return "somewhere in between — untested ground";
-    if (task === 0) return ["fine", "sharper", "best of the three"][m];
-    if (pay === 1) return m === 2 ? "unharmed — the prize stopped mattering"
-                                  : ["fine", "much the same"][m];
-    return ["fine", "no better than the small prize", "worst of all three"][m];
+  /* verdicts read off the marks, so they stay true after you have moved them */
+  function verdictAt(m, v) {
+    var hi = Math.max(v[0], v[1], v[2]), lo = Math.min(v[0], v[1], v[2]);
+    if (hi - lo < 3) return "much the same either way";
+    if (m > 0 && Math.abs(v[m] - v[m - 1]) < 3) return "no better than the smaller prize";
+    if (v[m] >= hi - 0.5) return "the best of the three";
+    if (v[m] <= lo + 0.5) return "the worst of the three";
+    return "somewhere in the middle";
+  }
+  function verdict() {
+    var m = Math.round(state.p);
+    return Math.abs(state.p - m) >= 0.12 ? "somewhere in between" : verdictAt(m, ys());
+  }
+  function attnWords(w) {
+    return w >= 75 ? "mostly on the work" : w >= 55 ? "drifting off the work"
+      : w >= 40 ? "half on the prize" : "mostly on the prize";
   }
 
-  function attnWords(onWork) {
-    return onWork >= 75 ? "mostly on the work"
-      : onWork >= 55 ? "drifting off the work"
-      : onWork >= 40 ? "half on the prize"
-      : "mostly on the prize";
-  }
-
-  var state = { p: 0, task: 0, pay: 0 };
-
-  /* ------------------------------------------------------------ geometry */
-
-  var VB = { w: 640, h: 300, l: 54, r: 26, t: 22, b: 52 };
-  var X0 = VB.l, X1 = VB.w - VB.r, Y0 = VB.h - VB.b, Y1 = VB.t;
-  var xOf = function (p) { return X0 + (p / 2) * (X1 - X0); };
-  var yOf = function (v) { return Y0 + (v / 100) * (Y1 - Y0); };
-  var pOfX = function (x) { return Math.max(0, Math.min(2, ((x - X0) / (X1 - X0)) * 2)); };
-
-  function pathFor(task, pay) {
-    var d = "", n = 60;
-    for (var i = 0; i <= n; i++) {
-      var p = (i / n) * 2;
-      d += (i ? "L" : "M") + xOf(p).toFixed(1) + " " + yOf(result(p, task, pay)).toFixed(1);
-    }
+  var VBW = 640, VBH = 300, X0 = 54, X1 = 614, Y0 = 248, Y1 = 22;
+  function xOf(p) { return X0 + (p / 2) * (X1 - X0); }
+  function yOf(v) { return Y0 + (v / 100) * (Y1 - Y0); }
+  function vOfY(y) { return Math.max(4, Math.min(100, ((y - Y0) / (Y1 - Y0)) * 100)); }
+  function pathFor(v) {
+    var d = "";
+    for (var i = 0; i <= 60; i++) { var p = (i / 60) * 2; d += (i ? "L" : "M") + xOf(p).toFixed(1) + " " + yOf(curve(p, v)).toFixed(1); }
     return d;
   }
-
-  /* -------------------------------------------------------------- refs */
+  function clamp(v, a, b) { return Math.max(a, Math.min(b, v)); }
 
   var el = {
-    lab: fig.querySelector("[data-rx-lab]"),
-    predict: fig.querySelector("[data-rx-predict]"),
-    echo: fig.querySelector("[data-rx-guess-echo]"),
-    pathRules: svg.querySelector("[data-rx-path='rules']"),
-    pathThink: svg.querySelector("[data-rx-path='think']"),
+    active: svg.querySelector("[data-rx-path='active']"),
+    other: svg.querySelector("[data-rx-path='other']"),
+    ghost: svg.querySelector("[data-rx-path='ghost']"),
     dots: svg.querySelectorAll("[data-rx-dot]"),
     knob: svg.querySelector("[data-rx-knob]"),
     vline: svg.querySelector("[data-rx-vline]"),
-    hline: svg.querySelector("[data-rx-hline]"),
+    reset: fig.querySelector("[data-rx-reset]"),
     attnBar: fig.querySelector("[data-rx-attn]"),
     grip: fig.querySelector("[data-rx-grip]"),
     attnWork: fig.querySelector("[data-rx-attn-work]"),
     attnPrize: fig.querySelector("[data-rx-attn-prize]"),
     status: fig.querySelector("[data-rx-status]"),
-    count: fig.querySelector("[data-rx-count]"),
-    outs: {
+    o: {
       prize: fig.querySelector("[data-scrub='prize']"),
       task: fig.querySelector("[data-scrub='task']"),
       pay: fig.querySelector("[data-scrub='pay']"),
@@ -119,98 +97,59 @@
     }
   };
 
-  if (el.lab) el.lab.hidden = true;
-
-  /* ------------------------------------------------------- discoveries */
-
-  var FINDS = [
-    { id: "d1", t: function (s) { return s.task === 0 && s.p > 1.85; } },
-    { id: "d2", t: function (s) { return s.task === 1 && s.p > 1.85 && s.pay === 0; } },
-    { id: "d3", t: function (s) { return s.task === 1 && Math.abs(s.p - 1) < 0.12 && s.pay === 0; } },
-    { id: "d4", t: function (s) { return s.p > 1.85 && s.pay === 0; } },
-    { id: "d5", t: function (s) { return s.task === 0 && s.p > 1.5 && s.pay === 0; } },
-    { id: "d6", t: function (s) { return s.task === 1 && s.p > 1.85 && s.pay === 1; } }
-  ];
-  var found = {};
-
-  /* ----------------------------------------------------------- render */
-
   function render() {
-    var res = result(state.p, state.task, state.pay);
-    var onPrize = pull(state.p, state.pay);
-    var onWork = 100 - onPrize;
-
-    el.pathRules.setAttribute("d", pathFor(0, state.pay));
-    el.pathThink.setAttribute("d", pathFor(1, state.pay));
-    el.pathRules.setAttribute("data-active", state.task === 0 ? "true" : "false");
-    el.pathThink.setAttribute("data-active", state.task === 1 ? "true" : "false");
+    var v = ys(), otherKey = state.task === 0 ? "think" : "rules";
+    el.active.setAttribute("d", pathFor(v));
+    el.other.setAttribute("d", pathFor(DATA[otherKey][state.pay]));
+    if (el.ghost) el.ghost.setAttribute("d", state.edited ? pathFor(REAL[key()][state.pay]) : "");
 
     Array.prototype.forEach.call(el.dots, function (dot) {
-      var m = parseInt(dot.getAttribute("data-rx-dot"), 10);
+      var m = +dot.getAttribute("data-rx-dot");
       dot.setAttribute("cx", xOf(m));
-      dot.setAttribute("cy", yOf(result(m, state.task, state.pay)));
+      dot.setAttribute("cy", yOf(v[m]));
+      dot.setAttribute("aria-valuenow", Math.round(v[m]));
+      dot.setAttribute("aria-valuetext", MARKS[m] + " — " + verdictAt(m, v));
     });
 
-    var kx = xOf(state.p), ky = yOf(res);
-    el.knob.setAttribute("cx", kx);
-    el.knob.setAttribute("cy", ky);
+    var kx = xOf(state.p), ky = yOf(curve(state.p, v));
+    el.knob.setAttribute("cx", kx); el.knob.setAttribute("cy", ky);
     el.knob.setAttribute("aria-valuenow", state.p.toFixed(2));
-    el.knob.setAttribute("aria-valuetext", MARKS[Math.round(state.p)] + ", " + verdictFor(state.p, state.task, state.pay));
+    el.knob.setAttribute("aria-valuetext", MARKS[Math.round(state.p)] + ", " + verdict());
     el.vline.setAttribute("x1", kx); el.vline.setAttribute("x2", kx);
     el.vline.setAttribute("y1", ky); el.vline.setAttribute("y2", Y0);
-    el.hline.setAttribute("x1", X0); el.hline.setAttribute("x2", kx);
-    el.hline.setAttribute("y1", ky); el.hline.setAttribute("y2", ky);
 
-    if (el.attnWork) el.attnWork.style.width = onWork.toFixed(1) + "%";
-    if (el.attnPrize) el.attnPrize.style.width = onPrize.toFixed(1) + "%";
+    var onPrize = pull(state.p, state.pay), onWork = 100 - onPrize;
+    el.attnWork.style.width = onWork.toFixed(1) + "%";
+    el.attnPrize.style.width = onPrize.toFixed(1) + "%";
     if (el.grip) el.grip.style.left = onWork.toFixed(1) + "%";
     if (el.attnBar) {
       el.attnBar.setAttribute("aria-valuenow", Math.round(onWork));
       el.attnBar.setAttribute("aria-valuetext", Math.round(onWork) + "% on the work — " + attnWords(onWork));
     }
 
-    var nearMark = Math.abs(state.p - Math.round(state.p)) < 0.12;
-    fig.setAttribute("data-rx-untested", nearMark ? "false" : "true");
-    fig.setAttribute("data-rx-collapsed", state.task === 1 && state.p > 1.6 && state.pay === 0 ? "true" : "false");
-
-    var o = el.outs;
-    o.prize.textContent = MARKS[Math.round(state.p)] + (nearMark ? "" : " (ish)");
-    o.task.textContent = TASKS[state.task];
-    o.pay.textContent = PAYS[state.pay];
-    o.attn.textContent = attnWords(onWork);
-    o.verdict.textContent = verdictFor(state.p, state.task, state.pay);
-
+    var near = Math.abs(state.p - Math.round(state.p)) < 0.12;
+    el.o.prize.textContent = MARKS[Math.round(state.p)] + (near ? "" : " (ish)");
+    el.o.task.textContent = TASKS[state.task];
+    el.o.pay.textContent = PAYS[state.pay];
+    el.o.attn.textContent = attnWords(onWork);
+    el.o.verdict.textContent = verdict();
     [["prize", state.p, MARKS[Math.round(state.p)]], ["task", state.task, TASKS[state.task]], ["pay", state.pay, PAYS[state.pay]]]
-      .forEach(function (row) {
-        var node = o[row[0]];
-        node.setAttribute("aria-valuenow", String(row[1]));
-        node.setAttribute("aria-valuetext", row[2]);
+      .forEach(function (r) {
+        el.o[r[0]].setAttribute("aria-valuenow", String(r[1]));
+        el.o[r[0]].setAttribute("aria-valuetext", r[2]);
       });
 
-    var newly = [];
-    FINDS.forEach(function (f) {
-      if (found[f.id] || !f.t(state)) return;
-      found[f.id] = true;
-      var li = fig.querySelector("[data-rx-find='" + f.id + "']");
-      if (li) { li.setAttribute("data-found", "true"); newly.push(li.textContent.trim()); }
-    });
-    var n = Object.keys(found).length;
-    if (el.count) el.count.textContent = n + " of " + FINDS.length;
+    fig.setAttribute("data-rx-edited", state.edited ? "true" : "false");
+    if (el.reset) el.reset.hidden = !state.edited;
 
     if (el.status) {
-      el.status.textContent = "Prize " + MARKS[Math.round(state.p)] + ", " + TASKS[state.task] +
-        ", normal pay " + PAYS[state.pay] + ". Attention " + attnWords(onWork) + ". Result: " +
-        verdictFor(state.p, state.task, state.pay) + "." +
-        (newly.length ? " Found: " + newly.join(" ") : "") +
-        (n === FINDS.length ? " That is all six." : "");
+      el.status.textContent = MARKS[Math.round(state.p)] + " for " + TASKS[state.task] + ", normal pay " +
+        PAYS[state.pay] + ". Attention " + attnWords(onWork) + ". The work comes out " + verdict() + "." +
+        (state.edited ? " These are your numbers now, not the measured ones." : "");
     }
   }
 
-  /* ------------------------------------------------- scrubbable values */
-
-  function clamp(v, lo, hi) { return Math.max(lo, Math.min(hi, v)); }
-
-  /* Turns a span into a draggable value. dragPx is how far the pointer travels per unit. */
+  /* scrubbable values in the sentence */
   function scrub(node, cfg) {
     if (!node) return;
     node.setAttribute("role", "slider");
@@ -218,188 +157,130 @@
     node.setAttribute("aria-valuemin", String(cfg.min));
     node.setAttribute("aria-valuemax", String(cfg.max));
     node.setAttribute("aria-label", cfg.label);
-
-    var startX = 0, startV = 0, dragging = false;
-
+    var sx = 0, sv = 0, on = false;
     node.addEventListener("pointerdown", function (e) {
-      dragging = true; startX = e.clientX; startV = cfg.get();
-      try { node.setPointerCapture(e.pointerId); } catch (err) { /* pointer already gone */ }
-      node.setAttribute("data-dragging", "true");
-      e.preventDefault();
+      on = true; sx = e.clientX; sv = cfg.get();
+      try { node.setPointerCapture(e.pointerId); } catch (err) {}
+      node.setAttribute("data-dragging", "true"); e.preventDefault();
     });
     node.addEventListener("pointermove", function (e) {
-      if (!dragging) return;
-      var v = startV + (e.clientX - startX) / cfg.dragPx;
-      cfg.set(clamp(cfg.step ? Math.round(v / cfg.step) * cfg.step : v, cfg.min, cfg.max));
+      if (!on) return;
+      var val = sv + (e.clientX - sx) / cfg.dragPx;
+      cfg.set(clamp(cfg.step ? Math.round(val / cfg.step) * cfg.step : val, cfg.min, cfg.max));
       render();
     });
-    function end(e) {
-      if (!dragging) return;
-      dragging = false;
-      node.removeAttribute("data-dragging");
-      try { if (e && e.pointerId != null && node.hasPointerCapture(e.pointerId)) node.releasePointerCapture(e.pointerId); } catch (err) { /* already released */ }
+    function off(e) {
+      if (!on) return; on = false; node.removeAttribute("data-dragging");
+      try { if (e && e.pointerId != null && node.hasPointerCapture(e.pointerId)) node.releasePointerCapture(e.pointerId); } catch (err) {}
     }
-    node.addEventListener("pointerup", end);
-    node.addEventListener("pointercancel", end);
-
+    node.addEventListener("pointerup", off);
+    node.addEventListener("pointercancel", off);
     node.addEventListener("keydown", function (e) {
-      var step = cfg.keyStep || cfg.step || 1;
-      var v = cfg.get(), handled = true;
-      switch (e.key) {
-        case "ArrowLeft": case "ArrowDown": v -= step; break;
-        case "ArrowRight": case "ArrowUp": v += step; break;
-        case "Home": v = cfg.min; break;
-        case "End": v = cfg.max; break;
-        case "PageDown": v -= step * 2; break;
-        case "PageUp": v += step * 2; break;
-        default: handled = false;
-      }
-      if (!handled) return;
+      var st = cfg.keyStep || cfg.step || 1, val = cfg.get(), ok = true;
+      if (e.key === "ArrowLeft" || e.key === "ArrowDown") val -= st;
+      else if (e.key === "ArrowRight" || e.key === "ArrowUp") val += st;
+      else if (e.key === "Home") val = cfg.min;
+      else if (e.key === "End") val = cfg.max;
+      else ok = false;
+      if (!ok) return;
       e.preventDefault();
-      cfg.set(clamp(cfg.step ? Math.round(v / cfg.step) * cfg.step : v, cfg.min, cfg.max));
+      cfg.set(clamp(cfg.step ? Math.round(val / cfg.step) * cfg.step : val, cfg.min, cfg.max));
       render();
     });
   }
+  scrub(el.o.prize, { label: "The prize on offer", min: 0, max: 2, keyStep: 0.25, dragPx: 90, get: function () { return state.p; }, set: function (v) { state.p = v; } });
+  scrub(el.o.task, { label: "The kind of task", min: 0, max: 1, step: 1, dragPx: 55, get: function () { return state.task; }, set: function (v) { state.task = v; } });
+  scrub(el.o.pay, { label: "Their normal pay", min: 0, max: 1, step: 1, dragPx: 55, get: function () { return state.pay; }, set: function (v) { state.pay = v; } });
 
-  scrub(el.outs.prize, {
-    label: "The prize on offer", min: 0, max: 2, keyStep: 0.25, dragPx: 90,
-    get: function () { return state.p; }, set: function (v) { state.p = v; }
-  });
-  scrub(el.outs.task, {
-    label: "The kind of task", min: 0, max: 1, step: 1, dragPx: 55,
-    get: function () { return state.task; }, set: function (v) { state.task = v; }
-  });
-  scrub(el.outs.pay, {
-    label: "Their normal pay", min: 0, max: 1, step: 1, dragPx: 55,
-    get: function () { return state.pay; }, set: function (v) { state.pay = v; }
-  });
-
-  /* -------------------------------------------------- the graph knob */
-
-  function pointerToP(e) {
-    var box = svg.getBoundingClientRect();
-    var x = ((e.clientX - box.left) / box.width) * VB.w;
-    return pOfX(x);
+  /* the knob slides along the curve; a mark being dragged takes precedence */
+  var sliding = false, editing = null;
+  function pFromPointer(e) {
+    var b = svg.getBoundingClientRect();
+    return clamp((((e.clientX - b.left) / b.width) * VBW - X0) / (X1 - X0) * 2, 0, 2);
   }
-
-  var knobDragging = false;
-  function grab(e) {
-    knobDragging = true;
-    svg.setAttribute("data-dragging", "true");
-    state.p = pointerToP(e);
-    render();
-    try { if (svg.setPointerCapture) svg.setPointerCapture(e.pointerId); } catch (err) { /* pointer already gone */ }
+  svg.addEventListener("pointerdown", function (e) {
+    if (editing !== null) return;
+    sliding = true; svg.setAttribute("data-dragging", "true");
+    state.p = pFromPointer(e); render();
+    try { svg.setPointerCapture(e.pointerId); } catch (err) {}
     e.preventDefault();
-  }
-  svg.addEventListener("pointerdown", grab);
+  });
   svg.addEventListener("pointermove", function (e) {
-    if (!knobDragging) return;
-    state.p = pointerToP(e);
-    render();
+    if (editing !== null) {
+      var b = svg.getBoundingClientRect();
+      ys()[editing] = vOfY(((e.clientY - b.top) / b.height) * VBH);
+      state.edited = true; render();
+      return;
+    }
+    if (sliding) { state.p = pFromPointer(e); render(); }
   });
-  function drop(e) {
-    if (!knobDragging) return;
-    knobDragging = false;
+  function release(e) {
+    sliding = false; editing = null;
     svg.removeAttribute("data-dragging");
-    try { if (e && e.pointerId != null && svg.hasPointerCapture && svg.hasPointerCapture(e.pointerId)) svg.releasePointerCapture(e.pointerId); } catch (err) { /* already released */ }
+    try { if (e && e.pointerId != null && svg.hasPointerCapture(e.pointerId)) svg.releasePointerCapture(e.pointerId); } catch (err) {}
   }
-  svg.addEventListener("pointerup", drop);
-  svg.addEventListener("pointercancel", drop);
+  svg.addEventListener("pointerup", release);
+  svg.addEventListener("pointercancel", release);
 
-  el.knob.setAttribute("role", "slider");
-  el.knob.setAttribute("tabindex", "0");
-  el.knob.setAttribute("aria-valuemin", "0");
-  el.knob.setAttribute("aria-valuemax", "2");
-  el.knob.setAttribute("aria-label", "The prize on offer — drag along the curve");
-  el.knob.addEventListener("keydown", function (e) {
-    var v = state.p, handled = true;
-    switch (e.key) {
-      case "ArrowLeft": case "ArrowDown": v -= 0.25; break;
-      case "ArrowRight": case "ArrowUp": v += 0.25; break;
-      case "Home": v = 0; break;
-      case "End": v = 2; break;
-      default: handled = false;
-    }
-    if (!handled) return;
-    e.preventDefault();
-    state.p = clamp(v, 0, 2);
-    render();
-  });
-
-  /* The attention bar drives the model backwards: set where their head is, and the prize that would
-     put it there follows. Same state as the knob and the sentence — just entered from the other end. */
-  if (el.attnBar) {
-    var barDragging = false;
-
-    function attnFromPointer(e) {
-      var box = el.attnBar.getBoundingClientRect();
-      var onWork = ((e.clientX - box.left) / box.width) * 100;
-      return Math.max(0, Math.min(100, onWork));
-    }
-    function setFromWork(onWork) {
-      state.p = prizeForPull(100 - onWork, state.pay);
-      render();
-    }
-
-    el.attnBar.addEventListener("pointerdown", function (e) {
-      barDragging = true;
-      el.attnBar.setAttribute("data-dragging", "true");
-      try { el.attnBar.setPointerCapture(e.pointerId); } catch (err) { /* pointer already gone */ }
-      setFromWork(attnFromPointer(e));
-      e.preventDefault();
-    });
-    el.attnBar.addEventListener("pointermove", function (e) {
-      if (!barDragging) return;
-      setFromWork(attnFromPointer(e));
-    });
-    function barDrop(e) {
-      if (!barDragging) return;
-      barDragging = false;
-      el.attnBar.removeAttribute("data-dragging");
-      try { if (e && e.pointerId != null && el.attnBar.hasPointerCapture(e.pointerId)) el.attnBar.releasePointerCapture(e.pointerId); } catch (err) { /* already released */ }
-    }
-    el.attnBar.addEventListener("pointerup", barDrop);
-    el.attnBar.addEventListener("pointercancel", barDrop);
-
-    el.attnBar.addEventListener("keydown", function (e) {
-      var onWork = 100 - pull(state.p, state.pay), handled = true;
-      switch (e.key) {
-        case "ArrowLeft": case "ArrowDown": onWork -= 4; break;
-        case "ArrowRight": case "ArrowUp": onWork += 4; break;
-        case "Home": onWork = 0; break;
-        case "End": onWork = 100; break;
-        default: handled = false;
-      }
-      if (!handled) return;
-      e.preventDefault();
-      setFromWork(Math.max(0, Math.min(100, onWork)));
-    });
-  }
-
-  /* clicking a tested mark snaps to it */
+  /* the marks themselves are draggable — this is the "what if" */
   Array.prototype.forEach.call(el.dots, function (dot) {
+    var m = +dot.getAttribute("data-rx-dot");
+    dot.setAttribute("role", "slider");
+    dot.setAttribute("tabindex", "0");
+    dot.setAttribute("aria-valuemin", "4");
+    dot.setAttribute("aria-valuemax", "100");
+    dot.setAttribute("aria-label", "What " + MARKS[m] + " produced — drag up or down to change it");
     dot.addEventListener("pointerdown", function (e) {
       e.stopPropagation();
-      state.p = parseInt(dot.getAttribute("data-rx-dot"), 10);
-      render();
+      editing = m; state.p = m;
+      try { svg.setPointerCapture(e.pointerId); } catch (err) {}
+      svg.setAttribute("data-dragging", "true");
+      render(); e.preventDefault();
+    });
+    dot.addEventListener("keydown", function (e) {
+      var val = ys()[m], ok = true;
+      if (e.key === "ArrowUp") val += 4;
+      else if (e.key === "ArrowDown") val -= 4;
+      else ok = false;
+      if (!ok) return;
+      e.preventDefault();
+      ys()[m] = clamp(val, 4, 100);
+      state.edited = true; state.p = m; render();
     });
   });
 
-  /* ------------------------------------------------------ the gate */
-
-  fig.addEventListener("change", function (e) {
-    var t = e.target;
-    if (!t || t.name !== "rx-guess") return;
-    if (el.predict) el.predict.setAttribute("data-rx-answered", "true");
-    if (el.lab) el.lab.hidden = false;
-    if (el.echo) {
-      el.echo.textContent = t.value === "worse"
-        ? "Right — and almost nobody guesses that. Drag the prize up and see why."
-        : "Most people say that too. Drag the prize up to two months' pay and watch what happens.";
-    }
-    render();
-    if (el.outs.prize) el.outs.prize.focus();
+  if (el.reset) el.reset.addEventListener("click", function () {
+    DATA = clone(REAL); state.edited = false; render();
   });
+
+  /* the attention split runs the model backwards */
+  if (el.attnBar) {
+    var barOn = false;
+    function workFrom(e) { var b = el.attnBar.getBoundingClientRect(); return clamp(((e.clientX - b.left) / b.width) * 100, 0, 100); }
+    function setWork(w) { state.p = prizeForPull(100 - w, state.pay); render(); }
+    el.attnBar.addEventListener("pointerdown", function (e) {
+      barOn = true; el.attnBar.setAttribute("data-dragging", "true");
+      try { el.attnBar.setPointerCapture(e.pointerId); } catch (err) {}
+      setWork(workFrom(e)); e.preventDefault();
+    });
+    el.attnBar.addEventListener("pointermove", function (e) { if (barOn) setWork(workFrom(e)); });
+    function barOff(e) {
+      if (!barOn) return; barOn = false; el.attnBar.removeAttribute("data-dragging");
+      try { if (e && e.pointerId != null && el.attnBar.hasPointerCapture(e.pointerId)) el.attnBar.releasePointerCapture(e.pointerId); } catch (err) {}
+    }
+    el.attnBar.addEventListener("pointerup", barOff);
+    el.attnBar.addEventListener("pointercancel", barOff);
+    el.attnBar.addEventListener("keydown", function (e) {
+      var w = 100 - pull(state.p, state.pay), ok = true;
+      if (e.key === "ArrowLeft" || e.key === "ArrowDown") w -= 4;
+      else if (e.key === "ArrowRight" || e.key === "ArrowUp") w += 4;
+      else if (e.key === "Home") w = 0;
+      else if (e.key === "End") w = 100;
+      else ok = false;
+      if (!ok) return;
+      e.preventDefault(); setWork(clamp(w, 0, 100));
+    });
+  }
 
   render();
 })();
