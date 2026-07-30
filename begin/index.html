@@ -141,7 +141,7 @@
     <script src="/assets/js/accessibility.js" defer></script>
     <link rel="stylesheet" href="/assets/css/journey.css">
     <script src="/assets/js/journey.js" defer></script>
-    <script src="/assets/js/begin-reward.js" defer></script>
+    <script src="/assets/js/begin-reward.js?v=2" defer></script>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -181,7 +181,7 @@
                     </div>
 
                     <div data-rx-lab>
-                        <p class="rx-sentence">Offer someone <span class="scrub" data-scrub="prize"></span> to do <span class="scrub" data-scrub="task"></span>, when their normal pay is <span class="scrub" data-scrub="pay"></span>. Their attention ends up <b data-out="attn"></b>, and the work comes out <b data-out="verdict"></b>.</p>
+                        <p class="rx-sentence">Offer someone <span class="scrub" data-scrub="prize">two weeks’ pay</span> to do <span class="scrub" data-scrub="task">a task with clear rules</span>, when their normal pay is <span class="scrub" data-scrub="pay">barely enough</span>. Their attention ends up <b data-out="attn">mostly on the work</b>, and the work comes out <b data-out="verdict">fine</b>.</p>
                         <p class="rx-hint">Drag any underlined value &mdash; or drag the knob along the curve. They are the same thing.</p>
 
                         <svg class="rx-graph" data-rx-svg viewBox="0 0 640 300" role="group" aria-label="How the work went as the prize rises. Drag the knob to change the prize.">
@@ -195,14 +195,14 @@
                             <line class="rx-guide" data-rx-hline x1="54" y1="150" x2="54" y2="150"></line>
                             <line class="rx-guide" data-rx-vline x1="54" y1="150" x2="54" y2="248"></line>
 
-                            <path class="rx-curve" data-rx-path="rules" d=""></path>
-                            <path class="rx-curve" data-rx-path="think" d=""></path>
+                            <path class="rx-curve" data-rx-path="rules" data-active="true" d="M54.0 121.4L63.3 120.1L72.7 118.7L82.0 117.4L91.3 116.0L100.7 114.7L110.0 113.3L119.3 111.9L128.7 110.6L138.0 109.2L147.3 107.9L156.7 106.5L166.0 105.2L175.3 103.8L184.7 102.5L194.0 101.1L203.3 99.7L212.7 98.4L222.0 97.0L231.3 95.7L240.7 94.3L250.0 93.0L259.3 91.6L268.7 90.3L278.0 88.9L287.3 87.5L296.7 86.2L306.0 84.8L315.3 83.5L324.7 82.1L334.0 80.8L343.3 79.4L352.7 78.0L362.0 76.7L371.3 75.3L380.7 74.0L390.0 72.6L399.3 71.3L408.7 69.9L418.0 68.6L427.3 67.2L436.7 65.8L446.0 64.5L455.3 63.1L464.7 61.8L474.0 60.4L483.3 59.1L492.7 57.7L502.0 56.4L511.3 55.0L520.7 53.6L530.0 52.3L539.3 50.9L548.7 49.6L558.0 48.2L567.3 46.9L576.7 45.5L586.0 44.1L595.3 42.8L604.7 41.4L614.0 40.1"></path>
+                            <path class="rx-curve" data-rx-path="think" data-active="false" d="M54.0 80.8L63.3 79.5L72.7 78.2L82.0 77.1L91.3 76.1L100.7 75.2L110.0 74.4L119.3 73.7L128.7 73.1L138.0 72.6L147.3 72.2L156.7 71.9L166.0 71.7L175.3 71.6L184.7 71.6L194.0 71.7L203.3 71.9L212.7 72.2L222.0 72.6L231.3 73.1L240.7 73.7L250.0 74.4L259.3 75.2L268.7 76.1L278.0 77.1L287.3 78.2L296.7 79.5L306.0 80.8L315.3 82.2L324.7 83.7L334.0 85.3L343.3 87.0L352.7 88.8L362.0 90.7L371.3 92.7L380.7 94.8L390.0 97.0L399.3 99.3L408.7 101.8L418.0 104.3L427.3 106.9L436.7 109.6L446.0 112.4L455.3 115.3L464.7 118.3L474.0 121.4L483.3 124.7L492.7 128.0L502.0 131.4L511.3 134.9L520.7 138.5L530.0 142.2L539.3 146.0L548.7 150.0L558.0 154.0L567.3 158.1L576.7 162.3L586.0 166.6L595.3 171.1L604.7 175.6L614.0 180.2"></path>
 
-                            <circle class="rx-mark" data-rx-dot="0" r="5" cx="54" cy="150"></circle>
-                            <circle class="rx-mark" data-rx-dot="1" r="5" cx="334" cy="150"></circle>
-                            <circle class="rx-mark" data-rx-dot="2" r="5" cx="614" cy="150"></circle>
+                            <circle class="rx-mark" data-rx-dot="0" r="5" cx="54" cy="121.4"></circle>
+                            <circle class="rx-mark" data-rx-dot="1" r="5" cx="334" cy="80.8"></circle>
+                            <circle class="rx-mark" data-rx-dot="2" r="5" cx="614" cy="40.1"></circle>
 
-                            <circle class="rx-knob" data-rx-knob r="11" cx="54" cy="150"></circle>
+                            <circle class="rx-knob" data-rx-knob r="11" cx="54" cy="121.4"></circle>
 
                             <text class="rx-tick" x="54" y="272" text-anchor="start">2 weeks’ pay</text>
                             <text class="rx-tick" x="334" y="272" text-anchor="middle">a month’s</text>
