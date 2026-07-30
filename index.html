@@ -9,7 +9,7 @@
     <meta name="theme-color" content="#0E0B1A" />
     <meta name="color-scheme" content="dark">
     <!-- Preload the LCP hero (responsive) so it's discovered before the stylesheets parse -->
-    <link rel="preload" as="image" type="image/webp" imagesrcset="/hero-400.webp 400w, /hero.webp 800w" imagesizes="(max-width: 571px) 70vw, 400px" fetchpriority="high">
+    <link rel="preload" as="image" type="image/webp" imagesrcset="/hero-400.webp 400w, /hero.webp 800w" imagesizes="(max-width: 571px) 61vw, 350px" fetchpriority="high">
     <link rel="stylesheet" href="/assets/css/tokens.css">
     <link rel="stylesheet" href="/assets/css/base.css">
     <link rel="stylesheet" href="/assets/css/layout.css">
@@ -46,20 +46,35 @@
             background-attachment: fixed;
         }
 
+        /* The monkey is the first thing you should see — keep the page's own top space small.
+           Overrides layout.css `main { margin-block: clamp(2rem, 4vw, 4rem) }` on the homepage only. */
+        main { margin-block-start: clamp(0.5rem, 1.5vw, 1.25rem); margin-block-end: clamp(1rem, 2vw, 1.75rem); }
+
         /* Generous, restful vertical rhythm — one idea at a time */
         .home-section { padding-block: clamp(3rem, 8vw, 6.5rem); }
         .home-section:not(.hero) { max-width: var(--content-col); margin-inline: auto; }
         .home-lede { max-width: 38rem; margin-inline: auto; text-align: center; color: var(--color-fg-secondary); font-size: var(--font-size-lg); line-height: 1.75; }
 
         /* ===== Hero — states the purpose, nothing to decide ===== */
-        .hero { text-align: center; padding-top: clamp(1rem, 4vw, 3rem); }
-        /* width comes from the shared `section.hero img` rule in layout.css (min(400px, 70vw)) */
-        .hero img { height: auto; margin-inline: auto; display: block; animation: floatIn 800ms ease-out both; }
+        /* margin-top: 0 beats layout.css `section.hero { margin: 2rem 0 2.5rem }`; the art carries
+           its own optical breathing room, so it doesn't need stacked padding above it as well. */
+        .hero { text-align: center; padding-top: 0; margin-top: 0; }
+        /* The hero is now the page's only section, so the between-sections spacing that layout.css
+           gives it (`.home-section.hero`, 0,2,0) is orphaned trailing space above the footer. */
+        .home-section.hero { padding-bottom: clamp(1rem, 2vw, 1.5rem); margin-bottom: 0; }
+        /* The art is now cropped tight to the monkey (was floating in ~19% dead canvas), so the box
+           is sized to the artwork itself — 350px keeps the monkey the same size it rendered before,
+           rather than growing it by the padding we just removed. Overrides layout.css min(400px,70vw). */
+        /* `.home-section.hero img` (0,2,1) is needed to beat layout.css's `section.hero img` (0,1,2) —
+           a plain `.hero img` loses on specificity no matter that this block is loaded later. */
+        .home-section.hero img { width: min(350px, 61vw); height: auto; margin-inline: auto; display: block; animation: floatIn 800ms ease-out both; }
         .hero h1 { margin: var(--space-lg) 0 var(--space-sm); }
         /* the two questions read as a pair — h2 matches h1's display face + accent, a touch smaller */
         .hero h2 { font-family: var(--font-display); color: var(--color-accent); letter-spacing: var(--letter-spacing-wide); font-size: clamp(1.7rem, 3.2vw, 2.7rem); line-height: 1.05; margin: clamp(2rem, 5vw, 3.25rem) 0 var(--space-sm); }
-        /* "Getting ahead of AI." — a centred statement, heading-like, above the body */
-        .hero-statement { text-align: center; font-weight: 700; color: var(--color-fg); font-size: var(--font-size-lg); margin: var(--space-lg) auto var(--space-md); }
+        /* "Move your limits." — the site's proposition, so it carries real weight: sized between the
+           display h2 above it and the body below, in fg (not accent) so it reads as a statement
+           rather than a third heading. */
+        .hero-statement { text-align: center; font-weight: 700; color: var(--color-fg); font-size: clamp(1.35rem, 2.6vw, 1.9rem); line-height: 1.2; letter-spacing: -0.01em; margin: var(--space-lg) auto var(--space-lg); }
         /* body reads as proper, separated paragraphs — left-aligned in a tidy measure */
         .hero .hero-body { text-align: left; text-wrap: pretty; max-width: 40rem; }
         .hero .hero-body p { margin: 0 0 0.9em; }
@@ -71,26 +86,9 @@
         /* transform-only — never opacity:0 on the LCP hero image, so it paints immediately */
         @keyframes floatIn { from { transform: translateY(18px); } to { transform: translateY(0); } }
 
-        /* ===== The four doors — where everything lives ===== */
-        .paths { padding-inline: var(--gutter, 1rem); }
-        .paths h2 { text-align: center; margin: 0 0 var(--space-xl); }
-        /* explicit steps (1 → 2×2 → 4-across) so no card ever orphans on its own row */
-        .paths-grid { display: grid; gap: clamp(0.9rem, 2vw, 1.25rem); grid-template-columns: 1fr; }
-        @media (min-width: 640px) { .paths-grid { grid-template-columns: repeat(2, 1fr); } }
-        @media (min-width: 1024px) { .paths-grid { grid-template-columns: repeat(4, 1fr); } }
-        .path-card { display: flex; flex-direction: column; gap: 0.45rem; text-decoration: none; color: inherit; border: 1px solid var(--color-border); border-radius: 16px; padding: 1.25rem 1.35rem; background: radial-gradient(120% 130% at 0% 0%, color-mix(in srgb, var(--color-accent) 11%, transparent), transparent 60%), var(--color-bg-secondary); transition: border-color .15s ease, transform .15s ease; }
-        .path-card:hover { border-color: var(--color-accent); transform: translateY(-2px); }
-        .path-card .verb { font: 700 var(--font-size-xs)/1 var(--font-mono); text-transform: uppercase; letter-spacing: .07em; color: var(--color-accent); }
-        .path-card b { font-size: var(--font-size-lg); line-height: 1.25; }
-        .path-card span:not(.verb) { color: var(--color-fg-secondary); line-height: 1.55; font-size: var(--font-size-sm); }
-
-        /* ===== Gentle scroll reveal — transform only, never hides content ===== */
-        @media (prefers-reduced-motion: no-preference) {
-            @supports (animation-timeline: view()) {
-                .reveal { animation: reveal-rise linear both; animation-timeline: view(); animation-range: entry 0% cover 22%; }
-                @keyframes reveal-rise { from { transform: translateY(22px); } to { transform: translateY(0); } }
-            }
-        }
+        /* The four door-cards lived here. Removed: the homepage now asks one question and offers
+           one way in (`Begin your journey` → /begin/), so there is nothing to choose between.
+           The four sections are still reachable from the nav. */
     </style>
     <link rel="stylesheet" href="/assets/css/accessibility.css">
     <script src="/assets/js/a11y-init.js"></script>
@@ -106,48 +104,21 @@
         <!-- HERO: state the purpose -->
         <section class="home-section hero" aria-labelledby="hero-title">
             <picture>
-                <source type="image/webp" srcset="/hero-400.webp 400w, /hero.webp 800w" sizes="(max-width: 571px) 70vw, 400px">
-                <img src="/hero.png" srcset="/hero-400.png 400w, /hero.png 800w" sizes="(max-width: 571px) 70vw, 400px" alt="Monkey Got Thumbs — a friendly monkey, thumbs up, on a dark background" width="800" height="1200" loading="eager" decoding="async" fetchpriority="high">
+                <source type="image/webp" srcset="/hero-400.webp 400w, /hero.webp 800w" sizes="(max-width: 571px) 61vw, 350px">
+                <img src="/hero.png" srcset="/hero-400.png 400w, /hero.png 800w" sizes="(max-width: 571px) 61vw, 350px" alt="Monkey Got Thumbs — a friendly monkey, thumbs up, on a dark background" width="800" height="880" loading="eager" decoding="async" fetchpriority="high">
             </picture>
             <h1 id="hero-title" data-a11y="hero-title">Why are you here?</h1>
-            <p class="home-lede" data-a11y="hero-lede">You're here because AI is here. Everybody's talking about it, it moves so fast, and it's hard to keep up.</p>
+            <p class="home-lede" data-a11y="hero-lede">You're here because AI is here. Everybody's talking about it, it moves so fast, and it's hard to tell what actually matters.</p>
             <h2 data-a11y="hero-title2">What's in it for you?</h2>
-            <p class="hero-statement">Getting ahead of AI.</p>
+            <p class="hero-statement" data-a11y="hero-statement">Move your limits.</p>
             <div class="home-lede hero-body" data-a11y="hero-lede2">
                 <p>We believe AI is a tool for humans — humans must not be tools for AI.</p>
-                <p>So this site sets out to explore and explain the other side of the AI coin: augmented intelligence. The idea is nearly as old as artificial intelligence, but far less talked about.</p>
-                <p>Its aim is to raise people up — using AI as the way in to the many tools and the vast data that already exist, and making them easier to digest and understand, so you can amplify yourself.</p>
+                <p>Most of what makes you more capable isn't AI at all. Search, spreadsheets, notes, reminders, a bit of automation — ordinary tools already do the bulk of the work. What's new is that AI can finally reach them on your behalf, and explain them back to you in words you already use.</p>
+                <p>Put those together and the thing holding you back quietly changes. It stops being the tool, and starts being what you can imagine doing with it.</p>
             </div>
             <div class="hero-cta">
-                <a class="btn" href="/basics/">Start with the basics</a>
+                <a class="btn" href="/begin/">Begin your journey</a>
                 <small>No sign-up. No jargon. No assumption you know a thing.</small>
-            </div>
-        </section>
-
-        <!-- THE FOUR DOORS: where everything lives -->
-        <section class="home-section paths reveal" aria-labelledby="paths-title">
-            <h2 id="paths-title" data-a11y="paths-title">Where would you like to begin?</h2>
-            <div class="paths-grid">
-                <a class="path-card" href="/basics/">
-                    <span class="verb" aria-hidden="true">learn</span>
-                    <b>Basics</b>
-                    <span data-a11y="path-basics">Five short reads from zero — what AI is, what's behind the chatbots, what an “agent” really is.</span>
-                </a>
-                <a class="path-card" href="/discover/">
-                    <span class="verb" aria-hidden="true">discover</span>
-                    <b>Discover</b>
-                    <span data-a11y="path-discover">See a whole field at a glance — infographics with live bits you can poke.</span>
-                </a>
-                <a class="path-card" href="/explore/">
-                    <span class="verb" aria-hidden="true">explore</span>
-                    <b>Explore</b>
-                    <span data-a11y="path-explore">Interactive explanations you can fiddle with until an idea clicks.</span>
-                </a>
-                <a class="path-card" href="/build/">
-                    <span class="verb" aria-hidden="true">build</span>
-                    <b>Build</b>
-                    <span data-a11y="path-build">Make a little agent of your own — in plain English, no code.</span>
-                </a>
             </div>
         </section>
 
