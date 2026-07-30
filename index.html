@@ -68,14 +68,38 @@
         /* `.home-section.hero img` (0,2,1) is needed to beat layout.css's `section.hero img` (0,1,2) —
            a plain `.hero img` loses on specificity no matter that this block is loaded later. */
         .home-section.hero img { width: min(350px, 61vw); height: auto; margin-inline: auto; display: block; animation: floatIn 800ms ease-out both; }
-        .hero h1 { margin: var(--space-lg) 0 var(--space-sm); }
-        /* the two questions read as a pair — h2 matches h1's display face + accent, a touch smaller */
-        .hero h2 { font-family: var(--font-display); color: var(--color-accent); letter-spacing: var(--letter-spacing-wide); font-size: clamp(1.7rem, 3.2vw, 2.7rem); line-height: 1.05; margin: clamp(2rem, 5vw, 3.25rem) 0 var(--space-sm); }
-        /* The answer to the second question — carries real weight, in fg (not accent) so it reads as
-           a statement rather than a third heading. */
-        .hero-statement { text-align: center; font-weight: 700; color: var(--color-fg); font-size: clamp(1.35rem, 2.6vw, 1.9rem); line-height: 1.2; letter-spacing: -0.01em; margin: var(--space-lg) auto var(--space-lg); }
-        .hero .home-lede { font-size: clamp(1.05rem, 1.6vw, 1.3rem); }
-        .hero-cta { margin-top: var(--space-xl); display: flex; flex-direction: column; align-items: center; gap: var(--space-sm); }
+
+        /* ===== Hero layout — question · monkey · question, button under the monkey ===== */
+        .hero-grid { display: grid; justify-items: center; align-items: center; row-gap: var(--space-lg);
+                     grid-template-columns: minmax(0, 1fr);
+                     grid-template-areas: "art" "why" "what" "cta"; }
+        .hero-ask--why  { grid-area: why; }
+        .hero-ask--what { grid-area: what; }
+        .hero-art       { grid-area: art; display: block; }
+        .hero-cta       { grid-area: cta; }
+
+        @media (min-width: 62rem) {
+            .hero-grid {
+                /* the side columns are equal, so the monkey stays optically centred on the page */
+                grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+                grid-template-areas: "why art what"
+                                     ".   cta .   ";
+                column-gap: clamp(1.5rem, 4vw, 3.5rem);
+            }
+        }
+
+        /* the two questions read as a matched pair — same display face, accent and size */
+        .hero-ask h1, .hero-ask h2 { font-family: var(--font-display); color: var(--color-accent);
+                                     letter-spacing: var(--letter-spacing-wide);
+                                     font-size: clamp(1.45rem, 2.5vw, 2.1rem); line-height: 1.05;
+                                     margin: 0 0 var(--space-sm); text-wrap: balance; }
+        /* Both answers: same size and measure so neither question outweighs the other. The second is
+           bolder because it is the proposition, not just an answer. */
+        .hero .home-lede { font-size: clamp(1rem, 1.25vw, 1.15rem); max-width: 20rem; line-height: 1.5; margin: 0 auto; }
+        .hero-statement { text-align: center; font-weight: 700; color: var(--color-fg);
+                          font-size: clamp(1.05rem, 1.4vw, 1.25rem); line-height: 1.35;
+                          letter-spacing: -0.01em; max-width: 24rem; margin: 0 auto; text-wrap: pretty; }
+        .hero-cta { margin-top: var(--space-md); display: flex; flex-direction: column; align-items: center; gap: var(--space-sm); }
         .hero-cta .btn { font-size: var(--font-size-lg); padding-inline: 1.6rem; }
         .hero-cta small { color: var(--color-muted); font-size: var(--font-size-sm); }
         /* transform-only — never opacity:0 on the LCP hero image, so it paints immediately */
@@ -98,17 +122,25 @@
 
         <!-- HERO: state the purpose -->
         <section class="home-section hero" aria-labelledby="hero-title">
-            <picture>
-                <source type="image/webp" srcset="/hero-400.webp 400w, /hero.webp 800w" sizes="(max-width: 571px) 61vw, 350px">
-                <img src="/hero.png" srcset="/hero-400.png 400w, /hero.png 800w" sizes="(max-width: 571px) 61vw, 350px" alt="Monkey Got Thumbs — a friendly monkey, thumbs up, on a dark background" width="800" height="880" loading="eager" decoding="async" fetchpriority="high">
-            </picture>
-            <h1 id="hero-title" data-a11y="hero-title">Why are you here?</h1>
-            <p class="home-lede" data-a11y="hero-lede">Because you know there's more</p>
-            <h2 data-a11y="hero-title2">What's in it for you?</h2>
-            <p class="hero-statement" data-a11y="hero-statement">Expand what you can do — a little further each day</p>
-            <div class="hero-cta">
-                <a class="btn" href="/begin/">Begin your journey</a>
-                <small>No sign-up. No jargon. No assumption you know a thing.</small>
+            <!-- Grid areas place these visually (question | monkey | question), so the DOM keeps a
+                 sensible reading order for screen readers and for no-CSS: both asks, art, button. -->
+            <div class="hero-grid">
+                <div class="hero-ask hero-ask--why">
+                    <h1 id="hero-title" data-a11y="hero-title">Why are you here?</h1>
+                    <p class="home-lede" data-a11y="hero-lede">Because you know there's more</p>
+                </div>
+                <div class="hero-ask hero-ask--what">
+                    <h2 data-a11y="hero-title2">What's in it for you?</h2>
+                    <p class="hero-statement" data-a11y="hero-statement">Expand what you can do — a little further each day</p>
+                </div>
+                <picture class="hero-art">
+                    <source type="image/webp" srcset="/hero-400.webp 400w, /hero.webp 800w" sizes="(max-width: 571px) 61vw, 350px">
+                    <img src="/hero.png" srcset="/hero-400.png 400w, /hero.png 800w" sizes="(max-width: 571px) 61vw, 350px" alt="Monkey Got Thumbs — a friendly monkey, thumbs up, on a dark background" width="800" height="880" loading="eager" decoding="async" fetchpriority="high">
+                </picture>
+                <div class="hero-cta">
+                    <a class="btn" href="/begin/">Begin your journey</a>
+                    <small>No sign-up. No jargon. No assumption you know a thing.</small>
+                </div>
             </div>
         </section>
 
