@@ -1,130 +1,158 @@
-/* THE LADDER — what is in reach, and what moves.
+/* HOW FAR YOU GET — a reach plot.
  *
- * The reader marks the jobs they could not do on their own today. That mark is the data: their own
- * line, not a study's. Then one lever adds something that will explain anything, as often as asked,
- * and the marked rows re-evaluate.
+ * Nine things from an ordinary life, laid out left to right by how much you have to know to do them.
+ * The reader drags a line to where they get to on their own. That line is their own, and it is the
+ * only data in the figure. Then one lever adds something that will explain anything, and a second,
+ * further reach appears — sweeping several of the things they had left behind.
  *
- * The design rule this exists to satisfy: nothing here may tell the reader that AI can help them.
- * They mark their own limits, they pull the lever, they watch their own line move, and the
- * conclusion is theirs. There is no sentence anywhere that states it.
+ * The rule this exists to satisfy: nothing may tell the reader that AI can help them. There is no
+ * sentence anywhere that says so. They set their own line, they pull the lever, they watch what gets
+ * covered, and the conclusion is theirs.
  *
- * Two rows never move. They sit in the list looking like all the others — the reader marks them
- * along with everything else, and then everything else shifts and those two stay put. They are not
- * questions, they are choices, and explaining does not touch a choice. Nothing says so; the rows
- * simply do not move, and the count at the bottom notices out loud.
+ * Two things sit past the point the assisted reach can ever get to — and the cap is fixed, so no
+ * matter how far the reader drags their own line, those two are never covered. They are choices, not
+ * questions, and explaining does not touch a choice. Nothing says this; the reader can simply see
+ * that the shading stops short of them however hard they push.
  *
- * One row moves but comes back marked worth checking, because a version of this that showed only
- * upside would be lying by omission: in the BCG trial (Dell'Acqua et al. 2023) consultants working
- * outside the model's frontier were faster, more confident and measurably wronger — 60-70% correct
- * against 84.5% without it.
+ * One thing crosses but is marked worth checking, because a version showing only upside would be
+ * lying by omission — in the BCG trial (Dell'Acqua et al. 2023) people working outside the model's
+ * frontier were faster, more confident and measurably wronger.
  *
- * No axis, no curve, no numbers. The ordering of the list is the only scale, and it is ordinal —
- * which is all anyone can honestly claim, since no measured scale of problem complexity exists.
+ * The horizontal axis has no numbers and no scale. It is an ordering, which is all that can honestly
+ * be claimed: no measured scale of problem difficulty exists.
  *
- * CSP-safe, classic IIFE, real buttons throughout so keyboard support is free. */
+ * CSP-safe, classic IIFE, ARIA slider, nothing carried by hue alone. */
 (function () {
   "use strict";
 
   var fig = document.getElementById("reach-ladder");
   if (!fig) return;
+  var plot = fig.querySelector("[data-lad-band]");   /* the band IS the coordinate system */
+  if (!plot) return;
 
-  /* outcome when the lever is on:
-     "already" — most people can already do it, so there is nothing to move
-     "moves"   — crosses into reach
-     "check"   — crosses, but you would want to check it
-     "never"   — a choice, not a question */
-  var JOBS = [
-    { text: "Add up a column of numbers", out: "already" },
-    { text: "Make a chart from a spreadsheet", out: "moves" },
-    { text: "Write a formula that looks something up in another sheet", out: "moves" },
-    { text: "Tidy 500 addresses that were all typed differently", out: "moves" },
-    { text: "Pull the totals out of 200 PDF invoices", out: "moves" },
-    { text: "Have something email you a summary every Monday", out: "moves" },
-    { text: "Work out why your busiest month lost money", out: "check" },
-    { text: "Decide whether to take the bigger contract or keep the smaller client", out: "never" },
-    { text: "Decide who to promote", out: "never" }
+  /* x is position along the ordering, 0..1. out: what happens when the lever is on. */
+  var THINGS = [
+    { x: 0.06, out: "moves", text: "Sort out a folder of holiday photos" },
+    { x: 0.15, out: "moves", text: "Set up a calendar the whole family can see" },
+    { x: 0.30, out: "moves", text: "Understand the letter from the tax office" },
+    { x: 0.41, out: "moves", text: "Work out if you are overpaying on insurance" },
+    { x: 0.53, out: "moves", text: "Plan a trip that suits six people" },
+    { x: 0.64, out: "moves", text: "Help with homework you were never taught" },
+    { x: 0.76, out: "check", text: "Work out whether solar would pay for itself" },
+    { x: 0.90, out: "never", text: "Whether to move nearer your parents" },
+    { x: 0.96, out: "never", text: "Whether to leave a job you are good at" }
   ];
 
-  var LABEL = {
-    moves: "now in reach",
-    check: "in reach — worth checking",
-    never: "",
-    already: ""
-  };
+  var BOOST = 0.42;   /* how much further the assisted reach goes */
+  /* The furthest ANY reach gets — the reader's own line as well as the assisted one. The axis is
+     really "how far knowing gets you", and knowing runs out before the last two whoever you are.
+     Without capping the reader's own drag they could sweep the choices by claiming competence, which
+     would say the choices are merely harder — the opposite of the point. */
+  var CAP = 0.83;
 
-  var marked = {};       /* index -> true, meaning "not me, today" */
+  var reach = 0.18;
   var lever = false;
 
-  var rows = fig.querySelectorAll("[data-lad-row]");
+  var handle = fig.querySelector("[data-lad-handle]");
+  var mine = fig.querySelector("[data-lad-mine]");
+  var extra = fig.querySelector("[data-lad-extra]");
   var leverBtn = fig.querySelector("[data-lad-lever]");
   var countEl = fig.querySelector("[data-lad-count]");
   var statusEl = fig.querySelector("[data-lad-status]");
+  var rows = fig.querySelectorAll("[data-lad-row]");
+  var dots = fig.querySelectorAll("[data-lad-dot]");
 
-  function outcomeFor(i) {
-    if (!marked[i]) return "unmarked";
-    if (!lever) return "out";
-    return JOBS[i].out === "already" ? "moves" : JOBS[i].out;
+  function assisted() { return lever ? Math.min(reach + BOOST, CAP) : reach; }
+  function clamp(v, a, b) { return Math.max(a, Math.min(b, v)); }
+  function pct(v) { return (v * 100).toFixed(1) + "%"; }
+
+  function stateOf(i) {
+    var t = THINGS[i];
+    if (t.x <= reach) return "yours";
+    if (lever && t.x <= assisted()) return t.out === "check" ? "check" : "moves";
+    return "out";
   }
 
   function render() {
-    var moved = 0, stuck = 0, totalMarked = 0;
+    var a = assisted(), swept = 0, beyond = 0;
+
+    if (mine) mine.style.width = pct(reach);
+    if (extra) {
+      extra.style.left = pct(reach);
+      extra.style.width = pct(Math.max(0, a - reach));
+    }
+    if (handle) {
+      handle.style.left = pct(reach);
+      handle.setAttribute("aria-valuenow", Math.round(reach * 100));
+      handle.setAttribute("aria-valuetext", "you reach " +
+        THINGS.filter(function (t) { return t.x <= reach; }).length + " of the nine on your own");
+    }
 
     Array.prototype.forEach.call(rows, function (row) {
       var i = +row.getAttribute("data-lad-row");
-      var state = outcomeFor(i);
-      var stateEl = row.querySelector("[data-lad-state]");
-
-      row.setAttribute("aria-pressed", marked[i] ? "true" : "false");
-      row.setAttribute("data-state", state);
-
-      if (marked[i]) totalMarked++;
-      if (state === "moves" || state === "check") moved++;
-      if (state === "never") stuck++;
-
-      if (stateEl) {
-        stateEl.textContent = state === "out" ? "not me, today"
-          : state === "moves" ? LABEL.moves
-          : state === "check" ? LABEL.check
-          : "";
-      }
+      var st = stateOf(i);
+      row.setAttribute("data-state", st);
+      var dot = dots[i];
+      if (dot) dot.style.left = pct(THINGS[i].x);
+      var tag = row.querySelector("[data-lad-tag]");
+      if (tag) tag.textContent = st === "moves" ? "now in reach"
+        : st === "check" ? "in reach — worth checking" : "";
+      if (st === "moves" || st === "check") swept++;
+      if (lever && THINGS[i].x > a) beyond++;
     });
 
     fig.setAttribute("data-lad-on", lever ? "true" : "false");
     if (leverBtn) leverBtn.setAttribute("aria-pressed", lever ? "true" : "false");
 
-    var msg = "";
-    if (!totalMarked) {
-      msg = "";
-    } else if (!lever) {
-      msg = totalMarked === 1 ? "One out of reach." : totalMarked + " out of reach.";
-    } else {
-      msg = moved + (moved === 1 ? " moved" : " moved");
-      if (stuck) msg += " · " + stuck + (stuck === 1 ? " didn’t" : " didn’t");
+    if (countEl) {
+      countEl.textContent = !lever ? ""
+        : swept + (swept === 1 ? " came into reach" : " came into reach") +
+          (beyond ? " · " + beyond + " still out" : "");
     }
-    if (countEl) countEl.textContent = msg;
-
     if (statusEl) {
-      statusEl.textContent = !totalMarked
-        ? "Nothing marked yet."
-        : !lever
-          ? totalMarked + " marked out of reach."
-          : moved + " of your " + totalMarked + " moved into reach. " +
-            (stuck ? stuck + " did not move." : "");
+      statusEl.textContent = lever
+        ? swept + " more of the nine came into reach. " + (beyond ? beyond + " did not." : "")
+        : THINGS.filter(function (t) { return t.x <= reach; }).length + " of the nine within your reach.";
     }
   }
 
-  Array.prototype.forEach.call(rows, function (row) {
-    row.addEventListener("click", function () {
-      var i = +row.getAttribute("data-lad-row");
-      if (marked[i]) delete marked[i]; else marked[i] = true;
-      render();
-    });
+  /* dragging the line */
+  function fromPointer(e) {
+    var b = plot.getBoundingClientRect();
+    return clamp((e.clientX - b.left) / b.width, 0, CAP);
+  }
+  var dragging = false;
+  function grab(e) {
+    dragging = true;
+    plot.setAttribute("data-dragging", "true");
+    reach = fromPointer(e); render();
+    try { plot.setPointerCapture(e.pointerId); } catch (err) {}
+    e.preventDefault();
+  }
+  plot.addEventListener("pointerdown", grab);
+  plot.addEventListener("pointermove", function (e) { if (dragging) { reach = fromPointer(e); render(); } });
+  function drop(e) {
+    if (!dragging) return;
+    dragging = false;
+    plot.removeAttribute("data-dragging");
+    try { if (e && e.pointerId != null && plot.hasPointerCapture(e.pointerId)) plot.releasePointerCapture(e.pointerId); } catch (err) {}
+  }
+  plot.addEventListener("pointerup", drop);
+  plot.addEventListener("pointercancel", drop);
+
+  if (handle) handle.addEventListener("keydown", function (e) {
+    var v = reach, ok = true;
+    if (e.key === "ArrowLeft" || e.key === "ArrowDown") v -= 0.05;
+    else if (e.key === "ArrowRight" || e.key === "ArrowUp") v += 0.05;
+    else if (e.key === "Home") v = 0;
+    else if (e.key === "End") v = CAP;
+    else ok = false;
+    if (!ok) return;
+    e.preventDefault();
+    reach = clamp(v, 0, CAP); render();
   });
 
-  if (leverBtn) leverBtn.addEventListener("click", function () {
-    lever = !lever;
-    render();
-  });
+  if (leverBtn) leverBtn.addEventListener("click", function () { lever = !lever; render(); });
 
   render();
 })();
