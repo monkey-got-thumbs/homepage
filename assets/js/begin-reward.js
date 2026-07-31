@@ -130,7 +130,7 @@
       el.prov.setAttribute("data-kind", state.edited ? "yours" : "measured");
       el.prov.textContent = state.edited
         ? "Your numbers now — the faint line is what they actually found."
-        : "Measured. Run first with American students, then again in rural India where the top reward was two months’ wages, in case the money had not been meaningful enough.";
+        : "Measured, by economists at MIT, Chicago and Carnegie Mellon. Rerun in rural India — where the three rewards were two weeks’, one month’s and two months’ wages — in case the money had not been meaningful enough the first time.";
     }
     if (el.status) el.status.textContent = MARKS[Math.round(state.p)] + " for " + TASKS[state.task] + ". " + outcome();
   }
