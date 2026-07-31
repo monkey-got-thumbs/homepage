@@ -52,6 +52,7 @@
         .fx h2 { display: flex; align-items: baseline; gap: 0.7rem; font-size: var(--font-size-2xl); margin: 0 0 var(--space-md); }
         .fx h2 .n { font: 700 var(--font-size-sm)/1 var(--font-mono); color: var(--color-accent); flex: none; }
         .cx-tune { display: block; max-width: 24rem; margin: var(--space-lg) 0 0; }
+        /* .tune-band + .basics-shell live in layout.css (shared by every Basics page) */
 
         /* ===== interactive vocabulary (document.js heritage) ===== */
         .fig { border: 1px solid var(--color-border); border-radius: 16px; padding: 1.1rem 1.25rem 1.25rem; margin-block: var(--space-lg); background: var(--color-bg-secondary); }
@@ -194,6 +195,86 @@
 
         /* per-scheme sanity for accent-tinted pieces is inherited from tokens; charts stay token-driven */
         @media (prefers-reduced-motion: reduce) { .bar .fl, .seq .nxt, .rx { transition: none; } }
+
+        /* ===================================================================== *
+         * SCROLLYTELLING ONE-PAGER — chapter spine + scroll-linked reveals + a
+         * progress hairline + ghost numerals + a one-shot demo "wake-up". Every
+         * hidden-until state lives ONLY inside prefers-reduced-motion:no-preference
+         * (+ @supports view()), so content is always visible otherwise. No motion
+         * is ever put on a .fig / canvas / svg (keeps the demos' pointer math exact).
+         * ===================================================================== */
+        .fx section { position: relative; scroll-margin-top: var(--scroll-offset); }
+        @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+        @media (prefers-reduced-motion: no-preference) {
+          @supports (animation-timeline: view()) {
+            .fx section > h2,
+            .fx section > p:not(:has(.scrub)) { animation: ch-rise linear both; animation-timeline: view(); animation-range: entry 2% cover 20%; }
+            .fx .fig, .fx .seqs, .fx .doors, .fx .blank-page { animation: ch-settle linear both; animation-timeline: view(); animation-range: entry 6% cover 34%; }
+            .fx .doors .door { animation: ch-rise linear both; animation-timeline: view(); animation-range: entry 0% cover 24%; }
+            .fx .doors .door:nth-child(2) { animation-range: entry 4% cover 24%; }
+            .fx .doors .door:nth-child(3) { animation-range: entry 8% cover 24%; }
+          }
+        }
+        @keyframes ch-rise { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
+        @keyframes ch-settle { from { opacity: 0; } to { opacity: 1; } }
+
+        /* giant faint chapter numeral in the right gutter (wide screens only) */
+        .ch-ghost { position: absolute; top: -0.35em; right: 0; z-index: 0; font: 400 clamp(6rem,13vw,11rem)/0.8 var(--font-display); color: color-mix(in srgb, var(--color-accent) 8%, transparent); pointer-events: none; user-select: none; }
+        .fx section > :not(.ch-ghost) { position: relative; z-index: 1; }
+        @media (max-width: 80rem) { .ch-ghost { display: none; } }
+
+        /* one-shot demo wake-up — underline sweep + soft glow first time a figure enters */
+        .fig .fig-h { position: relative; }
+        @media (prefers-reduced-motion: no-preference) {
+          .fig.awake .fig-h::after { content: ""; position: absolute; left: 0; right: 0; bottom: -3px; height: 2px; background: var(--color-accent); transform-origin: left; animation: wake-underline .5s ease forwards; }
+          .fig.awake { animation: wake-glow .6s ease; }
+        }
+        @keyframes wake-underline { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+        @keyframes wake-glow { 40% { box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent) 22%, transparent); } }
+
+        /* ===== chapter spine (scroll-spy rail) ===== */
+        .basics-rail { position: sticky; top: var(--scroll-offset); max-height: calc(100vh - var(--scroll-offset) - 2rem); overflow-y: auto; }
+        .mgt-chapters { --rail-fill: 0px; position: relative; }
+        .mgt-chapters::before { content: ""; position: absolute; inset-block: 0.7rem; inset-inline-start: 10px; width: 2px; background: var(--color-border); }
+        .mgt-chapters::after { content: ""; position: absolute; inset-block-start: 0.7rem; inset-inline-start: 10px; width: 2px; height: var(--rail-fill); background: var(--color-accent); transition: height .3s ease; }
+        .rail-monkey { position: absolute; inset-inline-start: 0; inset-block-start: 0; width: 22px; height: 22px; border-radius: 50%; background: var(--color-bg-secondary) url("/favicon.png") center/cover no-repeat; box-shadow: 0 0 0 3px var(--color-bg), 0 0 10px color-mix(in srgb, var(--color-accent) 45%, transparent); transform: translateY(var(--rail-monkey-y, -100px)); transition: transform .32s cubic-bezier(.34,1.2,.64,1); opacity: 0; z-index: 2; pointer-events: none; }
+        .mgt-chapters[data-ready] .rail-monkey { opacity: 1; }
+        .mgt-chapters a { position: relative; display: block; padding: 0.42rem 0.5rem 0.42rem 1.9rem; border-radius: 8px; text-decoration: none; color: var(--color-fg-secondary); font: 600 0.86rem/1.3 var(--font-sans); transition: color .15s ease; }
+        .mgt-chapters a::before { content: ""; position: absolute; inset-inline-start: 5px; inset-block-start: 0.6rem; width: 12px; height: 12px; box-sizing: border-box; border-radius: 50%; border: 2px solid var(--color-border); background: var(--color-bg); transition: background .2s ease, border-color .2s ease; }
+        .mgt-chapters a .num { font-family: var(--font-mono); font-size: 0.68rem; color: var(--color-muted); margin-inline-end: 0.45rem; }
+        .mgt-chapters a:hover { color: var(--color-fg); }
+        .mgt-chapters a[data-passed]::before { border-color: color-mix(in srgb, var(--color-accent) 55%, var(--color-bg)); background: color-mix(in srgb, var(--color-accent) 55%, var(--color-bg)); }
+        .mgt-chapters a[data-active] { color: var(--color-fg); }
+        .mgt-chapters a[data-active] .num { color: var(--color-accent); }
+        .mgt-chapters a[data-active]::before { border-color: var(--color-accent); background: var(--color-accent); }
+        .mgt-chapters a:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 2px; }
+        @media (prefers-reduced-motion: no-preference) { .mgt-chapters a.pulse::before { animation: dot-pulse .5s ease; } }
+        @keyframes dot-pulse { 45% { transform: scale(1.4); } }
+
+        .chapters-all { margin-top: var(--space-lg); border-top: 1px solid var(--color-border); padding-top: var(--space-md); }
+        .chapters-all summary { cursor: pointer; font: 700 var(--font-size-xs)/1 var(--font-mono); text-transform: uppercase; letter-spacing: .07em; color: var(--color-muted); padding: 0.3rem 0; }
+        .chapters-all[open] summary { margin-bottom: var(--space-sm); }
+
+        /* scroll-progress hairline (JS-injected into <body>) */
+        .essay-progress { position: fixed; inset: 0 0 auto 0; height: 3px; z-index: 102; pointer-events: none; }
+        .essay-progress > i { display: block; height: 100%; transform: scaleX(var(--essay-progress, 0)); transform-origin: left; background: linear-gradient(90deg, var(--color-accent), var(--color-brand-light)); }
+        @media (prefers-reduced-motion: no-preference) { .essay-progress > i { transition: transform .1s linear; } }
+
+        /* mobile: rail folds into a sticky current-chapter pill (JS-injected) */
+        .ch-pill { display: none; }
+        @media (max-width: 60rem) {
+          .basics-rail { position: static; max-height: none; overflow: visible; }
+          .mgt-chapters { display: none; }
+          .mgt-chapters.open { display: block; margin-top: var(--space-sm); }
+          .chapters-all { display: none; }
+          .ch-pill { display: inline-flex; align-items: center; gap: 0.5rem; position: sticky; top: calc(var(--header-h) + 0.5rem); z-index: 40; margin: 0 0 var(--space-md); padding: 0.55rem 1rem; border: 1px solid var(--color-border); border-radius: 999px; background: var(--color-bg-secondary); font: 700 var(--font-size-sm)/1 var(--font-mono); color: var(--color-accent); cursor: pointer; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          html { scroll-behavior: auto; }
+          .mgt-chapters::after, .rail-monkey { transition: none; }
+        }
+
     </style>
     <link rel="stylesheet" href="/assets/css/accessibility.css">
     <script src="/assets/js/a11y-init.js"></script>
@@ -201,19 +282,42 @@
     <link rel="stylesheet" href="/assets/css/journey.css">
     <script src="/assets/js/journey.js" defer></script>
     <script src="/assets/js/basics-essay.js" defer></script>
+    <script src="/assets/js/basics-scrolly.js" defer></script>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
     <mgt-header></mgt-header>
+    <div class="tune-band">
+        <mgt-reading-slider></mgt-reading-slider>
+    </div>
     <main id="main-content">
-        <article class="fx section-pad">
+        <div class="basics-shell">
+            <div class="basics-rail">
+                <nav class="mgt-chapters" aria-label="Chapters">
+                    <span class="rail-monkey" aria-hidden="true"></span>
+                    <a href="#ch-1"><span class="num">01</span><span class="lab">The guessing game</span></a>
+                    <a href="#ch-2"><span class="num">02</span><span class="lab">The bank trap</span></a>
+                    <a href="#ch-3"><span class="num">03</span><span class="lab">Build the machine</span></a>
+                    <a href="#ch-4"><span class="num">04</span><span class="lab">Scale, with holes</span></a>
+                    <a href="#ch-5"><span class="num">05</span><span class="lab">It dreams</span></a>
+                    <a href="#ch-6"><span class="num">06</span><span class="lab">Give it hands</span></a>
+                    <a href="#ch-7"><span class="num">07</span><span class="lab">The 1960 fork</span></a>
+                    <a href="#ch-8"><span class="num">08</span><span class="lab">Onto your face</span></a>
+                    <a href="#ch-9"><span class="num">09</span><span class="lab">Your trail</span></a>
+                    <a href="#ch-10"><span class="num">10</span><span class="lab">The blank page</span></a>
+                </nav>
+                <details class="chapters-all">
+                    <summary>All Basics pages</summary>
+                    <mgt-basics-nav></mgt-basics-nav>
+                </details>
+            </div>
+            <article class="fx section-pad">
             <nav aria-label="Breadcrumb">
                 <ul class="breadcrumbs">
                     <li><a href="/">Home</a></li>
                     <li><span aria-current="page">Basics</span></li>
                 </ul>
             </nav>
-            <mgt-reading-slider class="cx-tune"></mgt-reading-slider>
 
             <header class="fx-hero">
                 <span class="eyebrow">basics · one essay, everything live</span>
@@ -222,7 +326,7 @@
             </header>
 
             <!-- 1 · THE GATE -->
-            <section aria-label="The guessing game">
+            <section id="ch-1" tabindex="-1" aria-label="The guessing game">
                 <p data-a11y="gate-lead">Before anything gets a name, play one round of a game. Below are five practice sentences, written for exactly this moment. Under them, a sixth sentence stops early. What word comes next?</p>
                 <div class="fig" id="fig-gate">
                     <p class="fig-h">the guessing game</p>
@@ -241,7 +345,7 @@
             </section>
 
             <!-- 2 · THE BANK TRAP -->
-            <section aria-labelledby="h-bank">
+            <section id="ch-2" tabindex="-1" aria-labelledby="h-bank">
                 <h2 id="h-bank"><span class="n" aria-hidden="true">02</span> <span data-a11y="h-bank-t">But one small word wrecks the trick</span></h2>
                 <p data-a11y="bank-lead">Your counting trick has a weakness, and it is nine letters long: “the bank”. In the guide's text, money sleeps in a bank and a river sleeps against one. Count how often each word follows “the”, and “bank” tells you nothing about which bank you are in. A guesser that counts single words can do no better than a coin-flip here. Watch it flip — then give it one extra word of memory.</p>
                 <div class="fig" id="fig-bank">
@@ -256,7 +360,7 @@
             </section>
 
             <!-- 3 · THE TOY (flagship) -->
-            <section aria-labelledby="h-toy">
+            <section id="ch-3" tabindex="-1" aria-labelledby="h-toy">
                 <h2 id="h-toy"><span class="n" aria-hidden="true">03</span> <span data-a11y="h-toy-t">So build the whole machine yourself</span></h2>
                 <p data-a11y="toy-lead">Here is a small page of text — about 250 words, written to be checkable. And here is a complete guessing machine that reads nothing else. Every bar it shows you is a count you can verify by eye in the text directly above it: click any bar and count the highlights. No secrets, no cloud, no maths you cannot check on your fingers.</p>
                 <div class="fig" id="fig-toy">
@@ -284,7 +388,7 @@
             </section>
 
             <!-- 4 · SCALE, WITH HOLES -->
-            <section aria-labelledby="h-scale">
+            <section id="ch-4" tabindex="-1" aria-labelledby="h-scale">
                 <h2 id="h-scale"><span class="n" aria-hidden="true">04</span> <span data-a11y="h-scale-t">But the real one has read a thousand lifetimes — and still fumbles</span></h2>
                 <p data-a11y="scale-lead">How much reading are we talking about? One open model — Llama 3, whose maker published the number — trained on about fifteen trillion tokens of text. Make that personal: at <span class="scrub" data-k="wpm" tabindex="0" role="slider" aria-label="Your reading speed in words per minute — drag to adjust">250 words a minute</span>, reading nonstop with no sleep, that pile would take you about <span class="out" data-o="years">86,000</span> years<span class="rx" data-rx="yearsNote"></span>. Drag the number to your own speed; the sentence will keep up.</p>
                 <div class="fig" id="fig-scale">
@@ -304,7 +408,7 @@
             </section>
 
             <!-- 5 · DREAMS & MARKING SCHEMES -->
-            <section aria-labelledby="h-dream">
+            <section id="ch-5" tabindex="-1" aria-labelledby="h-dream">
                 <h2 id="h-dream"><span class="n" aria-hidden="true">05</span> <span data-a11y="h-dream-t">And worse — it makes things up with a straight face</span></h2>
                 <p data-a11y="dream-lead">Ask the toy above something factual — seed “the money” and let it write — and out comes “the money sleeps in the bank at night”, fluently, because fluent is all it does. Watch the highlights while it writes: no fact is being looked up. Fragments of the page are being continued. Now scale that up: these are pattern-spotting engines, not search engines. Nothing inside checks “is that true?” before the next word lands.</p>
                 <p data-a11y="dream-lawyer">People have already learnt this the expensive way. A New York lawyer filed a brief full of court cases a chatbot had invented for him — names, dates, page numbers, all fluent, none real. “I did not comprehend,” he told the judge, “that ChatGPT could fabricate cases.” Now you comprehend it: fabrication is not a malfunction of the machine you built above. It is the machine you built above, running as designed.</p>
@@ -333,7 +437,7 @@
             </section>
 
             <!-- 6 · HANDS AND A TO-DO LIST -->
-            <section aria-labelledby="h-agent">
+            <section id="ch-6" tabindex="-1" aria-labelledby="h-agent">
                 <h2 id="h-agent"><span class="n" aria-hidden="true">06</span> <span data-a11y="h-agent-t">So give the guesser hands — and watch every step</span></h2>
                 <p data-a11y="agent-lead">A guesser that can only talk is stuck the moment talk is not enough. Ask one for 47 × 93 in a single breath and it must continue the digits from pattern — and the pages it read rarely continue them correctly. But give the same guesser two tools — a calculator, and a search over its own page — plus a goal and permission to work in steps, and something new appears. An <strong>agent</strong>: a guessing machine that runs tools in a loop until a goal is met. That one sentence is the whole idea.</p>
                 <div class="fig" id="fig-agent">
@@ -356,7 +460,7 @@
             </section>
 
             <!-- 7 · THE FORK · ENGELBART -->
-            <section aria-labelledby="h-fork">
+            <section id="ch-7" tabindex="-1" aria-labelledby="h-fork">
                 <h2 id="h-fork"><span class="n" aria-hidden="true">07</span> <span data-a11y="h-fork-t">But rewind to 1960 — the other branch made <em>you</em> smarter</span></h2>
                 <p data-a11y="fork-lead">Everything so far sits on one branch of a fork that is now sixty-six years old. Around 1960, two ideas split. John McCarthy's camp asked: can we make machines intelligent? Doug Engelbart's asked something slyer: can machines make <em>people</em> more capable? Artificial intelligence, and intelligence augmentation. Both branches shipped. You have been reading about the first. You have been <em>using</em> the second your whole life.</p>
                 <div class="fig" id="fig-fork">
@@ -399,7 +503,7 @@
             </section>
 
             <!-- 8 · ONTO YOUR FACE -->
-            <section aria-labelledby="h-ar">
+            <section id="ch-8" tabindex="-1" aria-labelledby="h-ar">
                 <h2 id="h-ar"><span class="n" aria-hidden="true">08</span> <span data-a11y="h-ar-t">And that branch has climbed onto your face</span></h2>
                 <p data-a11y="ar-lead">You probably used the augmentation branch this week without naming it. Pointing a phone camera at a plant, a menu, a foreign sign — that is <strong>augmented reality</strong>: useful information laid over the world you are already looking at. Today it runs ten-to-twenty billion times a month through one visual search tool alone; the honest figure is a range because even its owner counts it differently year to year.</p>
                 <p data-a11y="ar-glasses">The glasses have arrived too. Since September 2025 you can buy a $799 pair with a small display in one lens — and a wristband that steers it by reading the tiny electrical signals your muscles make before your fingers move. Captions for the deaf, translations for the traveller, directions for the lost, floating on the world itself. And the sci-fi pair — wide field of view, the whole movie dream? It exists. It costs about $10,000 a unit to build, and you cannot buy it at any price. The frontier right now is not capability. It is price, weight and battery.</p>
@@ -427,7 +531,7 @@
             </section>
 
             <!-- 9 · THE TWIST: YOUR TRAIL -->
-            <section aria-labelledby="h-trail">
+            <section id="ch-9" tabindex="-1" aria-labelledby="h-trail">
                 <h2 id="h-trail"><span class="n" aria-hidden="true">09</span> <span data-a11y="h-trail-t">Now look back — you already used this whole site once</span></h2>
                 <p data-a11y="trail-lead">A confession about the ground you are standing on. This page sits inside a site with three wings — <strong>Discover</strong>, <strong>Explore</strong>, <strong>Build</strong> — and rather than describe them, this page has been quietly walking you through all three. Engelbart would have recognised the floor plan: upgrade a person's <em>language</em> (names and maps for whole fields — that is Discover), upgrade their <em>methods</em> (poking a live model until it makes sense — that is Explore), upgrade their <em>artifacts</em> (tools of your own — that is Build). Here is your own trail, kept on this page, in this browser, sent nowhere:</p>
                 <div class="fig" id="fig-trail">
@@ -440,7 +544,7 @@
             </section>
 
             <!-- 10 · THE BLANK CHAPTER -->
-            <section aria-labelledby="h-blank">
+            <section id="ch-10" tabindex="-1" aria-labelledby="h-blank">
                 <h2 id="h-blank"><span class="n" aria-hidden="true">10</span> <span data-a11y="h-blank-t">So build one — the last word here is yours</span></h2>
                 <p data-a11y="sand-lead">Every control below is one you have already used on its own — the memory slider, the temperature, the marking scheme, the two tools with their exit door, and the page of text itself, which you may now write into. Nothing here is new except the combination you choose. Assemble your own tiny answerer, and mind the one lesson every section has repeated: it will be exactly as good, and exactly as honest, as what you gave it.</p>
                 <div class="fig sand" id="fig-sand">
@@ -496,6 +600,7 @@
                 <p class="bx-why deeper" data-a11y="why-note">Curious <em>why</em> this page teaches by letting you poke at things rather than lecturing? That's not ours to claim — it comes from a handful of people we name on the <a href="/learn/influences.html">influences page</a>.</p>
             </section>
         </article>
+        </div>
     </main>
     <mgt-footer></mgt-footer>
     <script src="/assets/js/tracking.js" defer></script>
@@ -504,5 +609,6 @@
     <script type="module" src="/components/core/mgt-footer.js"></script>
     <script type="module" src="/components/core/mgt-recall.js"></script>
     <script type="module" src="/components/core/mgt-reading-slider.js"></script>
+    <script type="module" src="/components/core/mgt-basics-nav.js"></script>
 </body>
 </html>

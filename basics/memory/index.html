@@ -93,8 +93,13 @@
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
     <mgt-header></mgt-header>
+    <div class="tune-band">
+        <mgt-reading-slider></mgt-reading-slider>
+    </div>
     <main id="main-content">
-        <article class="mx section-pad">
+        <div class="basics-shell">
+            <mgt-basics-nav></mgt-basics-nav>
+            <article class="mx section-pad">
             <nav aria-label="Breadcrumb">
                 <ul class="breadcrumbs">
                     <li><a href="/">Home</a></li>
@@ -158,6 +163,7 @@
                 <p data-a11y="next-note">Two short notes go deeper on the human half: <a href="/notes/retrieval-beats-rereading.html">retrieval beats re-reading</a> and <a href="/notes/spacing-fights-forgetting.html">spacing fights forgetting</a>. Come back to this page whenever — the more cards you answer across the site, the more it's a picture of <em>your</em> memory, not an example.</p>
             </section>
         </article>
+        </div>
     </main>
     <mgt-footer></mgt-footer>
     <script src="/assets/js/tracking.js" defer></script>
@@ -165,5 +171,7 @@
     <script type="module" src="/components/core/mgt-header.js"></script>
     <script type="module" src="/components/core/mgt-footer.js"></script>
     <script type="module" src="/components/core/mgt-recall.js"></script>
+    <script type="module" src="/components/core/mgt-reading-slider.js"></script>
+    <script type="module" src="/components/core/mgt-basics-nav.js"></script>
 </body>
 </html>

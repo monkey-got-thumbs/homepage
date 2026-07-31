@@ -24,17 +24,24 @@ class MGTReadingSlider extends HTMLElement {
         :host {
           display: block;
           --accent: var(--color-accent, #A6FF4D);
+          /* sizing knobs — a host can enlarge the slider by overriding these */
+          --rs-h: 32px;          /* input/track height */
+          --rs-thumb: 30px;      /* monkey handle diameter */
+          --rs-line: 2px;        /* the ruled measure line */
+          --rs-tick: 12px;       /* tick-mark height */
+          --rs-label: 0.62rem;   /* SIMPLER / DENSER label size */
+          --rs-gap: 0.6rem;
         }
 
         .wrap {
           display: flex;
           align-items: center;
-          gap: 0.6rem;
+          gap: var(--rs-gap);
         }
 
         .end {
           flex: none;
-          font: 700 0.62rem/1 var(--font-mono, monospace);
+          font: 700 var(--rs-label)/1 var(--font-mono, monospace);
           text-transform: uppercase;
           letter-spacing: 0.07em;
           color: color-mix(in srgb, var(--accent) 82%, #fff 18%);
@@ -44,7 +51,7 @@ class MGTReadingSlider extends HTMLElement {
         input {
           flex: 1 1 auto;
           min-inline-size: 0;
-          block-size: 32px;
+          block-size: var(--rs-h);
           margin: 0;
           -webkit-appearance: none;
           appearance: none;
@@ -59,19 +66,19 @@ class MGTReadingSlider extends HTMLElement {
         input::-webkit-slider-runnable-track {
           block-size: 100%;
           background:
-            var(--cog-line) 0 50% / 100% 2px no-repeat,
-            repeating-linear-gradient(90deg, var(--cog-tick) 0 2px, transparent 2px 25%) 0 50% / 100% 12px no-repeat;
+            var(--cog-line) 0 50% / 100% var(--rs-line) no-repeat,
+            repeating-linear-gradient(90deg, var(--cog-tick) 0 2px, transparent 2px 25%) 0 50% / 100% var(--rs-tick) no-repeat;
         }
         input::-moz-range-track {
           block-size: 100%;
           background:
-            var(--cog-line) 0 50% / 100% 2px no-repeat,
-            repeating-linear-gradient(90deg, var(--cog-tick) 0 2px, transparent 2px 25%) 0 50% / 100% 12px no-repeat;
+            var(--cog-line) 0 50% / 100% var(--rs-line) no-repeat,
+            repeating-linear-gradient(90deg, var(--cog-tick) 0 2px, transparent 2px 25%) 0 50% / 100% var(--rs-tick) no-repeat;
         }
         input::-webkit-slider-thumb {
           -webkit-appearance: none;
           appearance: none;
-          inline-size: 30px; block-size: 30px; border-radius: 50%;
+          inline-size: var(--rs-thumb); block-size: var(--rs-thumb); border-radius: 50%;
           box-sizing: border-box;
           background: var(--color-bg-secondary, #17122B) url("/favicon.png") center/cover no-repeat;
           border: 2px solid var(--accent);
@@ -80,7 +87,7 @@ class MGTReadingSlider extends HTMLElement {
           margin-top: 1px;
         }
         input::-moz-range-thumb {
-          inline-size: 30px; block-size: 30px; border-radius: 50%;
+          inline-size: var(--rs-thumb); block-size: var(--rs-thumb); border-radius: 50%;
           box-sizing: border-box;
           background: var(--color-bg-secondary, #17122B) url("/favicon.png") center/cover no-repeat;
           border: 2px solid var(--accent);
