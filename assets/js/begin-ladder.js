@@ -1,6 +1,9 @@
 /* HOW FAR YOU GET — a reach plot.
  *
- * Nine things from an ordinary life, laid out left to right by how much you have to know to do them.
+ * Nine things from an ordinary life, laid out left to right by how much there is to HOLD AT ONCE —
+ * volume, not difficulty. The barrier on the first seven is not that they are hard to understand, it
+ * is that there is more of them than fits in a head, so they stay undone. That is the whole point:
+ * an earlier list drifted into comprehension and decisions, which is a different problem.
  * The reader drags a line to where they get to on their own. That line is their own, and it is the
  * only data in the figure. Then one lever adds something that will explain anything, and a second,
  * further reach appears — sweeping several of the things they had left behind.
@@ -32,13 +35,13 @@
 
   /* x is position along the ordering, 0..1. out: what happens when the lever is on. */
   var THINGS = [
-    { x: 0.06, out: "moves", text: "Sort out a folder of holiday photos" },
-    { x: 0.15, out: "moves", text: "Set up a calendar the whole family can see" },
-    { x: 0.30, out: "moves", text: "Understand the letter from the tax office" },
-    { x: 0.41, out: "moves", text: "Work out if you are overpaying on insurance" },
-    { x: 0.53, out: "moves", text: "Plan a trip that suits six people" },
-    { x: 0.64, out: "moves", text: "Help with homework you were never taught" },
-    { x: 0.76, out: "check", text: "Work out whether solar would pay for itself" },
+    { x: 0.06, out: "moves", text: "Which bills renew this month, and at what" },
+    { x: 0.15, out: "moves", text: "What everyone in the house needs this week" },
+    { x: 0.30, out: "moves", text: "Where the money actually went last month" },
+    { x: 0.41, out: "moves", text: "Every school letter, form and deadline this term" },
+    { x: 0.53, out: "moves", text: "What fourteen energy tariffs would really cost you" },
+    { x: 0.64, out: "moves", text: "Eleven years of photos, and which are worth keeping" },
+    { x: 0.76, out: "check", text: "What changed in the forty-page tenancy agreement" },
     { x: 0.90, out: "never", text: "Whether to move nearer your parents" },
     { x: 0.96, out: "never", text: "Whether to leave a job you are good at" }
   ];

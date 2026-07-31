@@ -26,7 +26,12 @@
   var svg = fig.querySelector("[data-rx-svg]");
   if (!svg) return;
 
-  var MARKS = ["two weeks' pay", "a month's pay", "two months' pay"];
+  /* The reward, unnamed. The salary denominations belong to the rural-India run only; the
+     mechanical-versus-thinking contrast comes from the earlier US study, where the prizes were
+     dollar amounts. Labelling this axis in salary put a curve nobody measured under the mechanical
+     line. The denominations now appear once, in the provenance note, attached to the run they
+     belong to. */
+  var MARKS = ["a small reward", "a middling reward", "a large reward"];
   var TASKS = ["a mechanical task", "a task that needs thought"];
 
   var REAL = { rules: [56, 74, 92], think: [74, 72, 30] };
@@ -41,14 +46,15 @@
   function slope(p, v) { return p < 1 ? v[1] - v[0] : v[2] - v[1]; }
 
   /* the talk's own findings, at the three rewards it describes */
+  /* Each line is what the talk reports for that case, and nothing further. */
   var SAID = {
     rules: [
-      "The higher the pay, the better they do — this is the low end of that.",
-      "The higher the pay, the better they do.",
-      "The higher the pay, the better they do. For work like this, carrots and sticks are outstanding."
+      "Bonuses work the way you would expect here: the higher the pay, the better the performance.",
+      "Still climbing. Higher pay, better performance.",
+      "Best of the three. For work that is purely mechanical, carrots and sticks are outstanding."
     ],
     think: [
-      "The small reward. The other two were measured against this one.",
+      "The smallest reward. The other two were measured against this.",
       "They did no better than the people offered the small reward.",
       "They did worst of all. A larger reward led to poorer performance."
     ]

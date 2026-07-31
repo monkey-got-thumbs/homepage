@@ -177,8 +177,8 @@
     <script src="/assets/js/accessibility.js" defer></script>
     <link rel="stylesheet" href="/assets/css/journey.css">
     <script src="/assets/js/journey.js" defer></script>
-    <script src="/assets/js/begin-reward.js?v=8" defer></script>
-    <script src="/assets/js/begin-ladder.js?v=6" defer></script>
+    <script src="/assets/js/begin-reward.js?v=9" defer></script>
+    <script src="/assets/js/begin-ladder.js?v=7" defer></script>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -202,7 +202,7 @@
                 <p data-a11y="more-one">You've probably had the pay rise that changed nothing. Or the bonus that turned something you liked into a chore. Not ingratitude, and not just you — it happens reliably enough that people measured it. Here it is. Have a go.</p>
 
                 <figure class="rx" id="reward-experiment">
-                    <p class="rx-sentence">Offer <span class="scrub" data-scrub="prize">two weeks’ pay</span> for <span class="scrub" data-scrub="task">a mechanical task</span>. <b data-out="outcome">The higher the pay, the better they do — this is the low end of that.</b></p>
+                    <p class="rx-sentence">Offer <span class="scrub" data-scrub="prize">a small reward</span> for <span class="scrub" data-scrub="task">a mechanical task</span>. <b data-out="outcome">Bonuses work the way you would expect here: the higher the pay, the better the performance.</b></p>
 
                     <svg class="rx-graph" data-rx-svg viewBox="0 0 640 300" role="group" aria-label="How the work went at each reward. Drag the three marks to change what they found.">
                         <line class="rx-axis" x1="54" y1="22" x2="54" y2="248"></line>
@@ -218,12 +218,12 @@
                         <circle class="rx-mark" data-rx-dot="1" r="9" cx="334" cy="80.8"></circle>
                         <circle class="rx-mark" data-rx-dot="2" r="9" cx="614" cy="40.1"></circle>
                         <circle class="rx-knob" data-rx-knob r="11" cx="54" cy="121.4"></circle>
-                        <text class="rx-tick" x="54" y="272" text-anchor="start">2 weeks’ pay</text>
-                        <text class="rx-tick" x="334" y="272" text-anchor="middle">a month’s</text>
-                        <text class="rx-tick" x="614" y="272" text-anchor="end">2 months’</text>
+                        <text class="rx-tick" x="54" y="272" text-anchor="start">small</text>
+                        <text class="rx-tick" x="334" y="272" text-anchor="middle">middling</text>
+                        <text class="rx-tick" x="614" y="272" text-anchor="end">large</text>
                     </svg>
 
-                    <p class="rx-prov" data-rx-prov data-kind="measured">Measured. Run first with American students, then again in rural India where the top reward was two months’ wages, in case the money had not been meaningful enough.</p>
+                    <p class="rx-prov" data-rx-prov data-kind="measured">Measured, by economists at MIT, Chicago and Carnegie Mellon. Rerun in rural India — where the three rewards were two weeks’, one month’s and two months’ wages — in case the money had not been meaningful enough the first time.</p>
                     <p class="rx-hint">Both underlined words drag. So do the three marks — move one to ask what if it had come out otherwise. <button type="button" class="rx-reset" data-rx-reset hidden>put them back</button></p>
 
                     <p class="sr-only" data-rx-status role="status" aria-live="polite"></p>
@@ -262,15 +262,15 @@
 
 
             <section>
-                <h2>Why some things stay out of reach</h2>
-                <p data-a11y="reach-one">There are things you would do if you knew how. Not because they are mysterious — because learning enough to start costs more than the job is worth, so you go on doing without.</p>
+                <h2>Why some things never get done</h2>
+                <p data-a11y="reach-one">There are things you would do if there were less of them. Not hard, exactly. Just more than fits in a head at once — so they sit there, and you carry on without.</p>
 
                 <figure class="lad" id="reach-ladder">
-                    <p class="lad-lede">Each bar is how much you need to know. Drag the line to where you get to on your own.</p>
+                    <p class="lad-lede">Each bar is how much there is to hold in your head at once. Drag the line to where you get to on your own.</p>
 
                     <div class="lad-plot" data-lad-plot>
                         <div class="lad-row" data-lad-row="0" data-state="out">
-                            <span class="lad-name">Sort out a folder of holiday photos</span>
+                            <span class="lad-name">Which bills renew this month, and at what</span>
                             <span class="lad-gauge">
                                 <span class="lad-shade lad-shade--mine"></span>
                                 <span class="lad-shade lad-shade--extra"></span>
@@ -280,7 +280,7 @@
                             <span class="lad-tag" data-lad-tag></span>
                         </div>
                         <div class="lad-row" data-lad-row="1" data-state="out">
-                            <span class="lad-name">Set up a calendar the whole family can see</span>
+                            <span class="lad-name">What everyone in the house needs this week</span>
                             <span class="lad-gauge">
                                 <span class="lad-shade lad-shade--mine"></span>
                                 <span class="lad-shade lad-shade--extra"></span>
@@ -290,7 +290,7 @@
                             <span class="lad-tag" data-lad-tag></span>
                         </div>
                         <div class="lad-row" data-lad-row="2" data-state="out">
-                            <span class="lad-name">Understand the letter from the tax office</span>
+                            <span class="lad-name">Where the money actually went last month</span>
                             <span class="lad-gauge">
                                 <span class="lad-shade lad-shade--mine"></span>
                                 <span class="lad-shade lad-shade--extra"></span>
@@ -300,7 +300,7 @@
                             <span class="lad-tag" data-lad-tag></span>
                         </div>
                         <div class="lad-row" data-lad-row="3" data-state="out">
-                            <span class="lad-name">Work out if you are overpaying on insurance</span>
+                            <span class="lad-name">Every school letter, form and deadline this term</span>
                             <span class="lad-gauge">
                                 <span class="lad-shade lad-shade--mine"></span>
                                 <span class="lad-shade lad-shade--extra"></span>
@@ -310,7 +310,7 @@
                             <span class="lad-tag" data-lad-tag></span>
                         </div>
                         <div class="lad-row" data-lad-row="4" data-state="out">
-                            <span class="lad-name">Plan a trip that suits six people</span>
+                            <span class="lad-name">What fourteen energy tariffs would really cost you</span>
                             <span class="lad-gauge">
                                 <span class="lad-shade lad-shade--mine"></span>
                                 <span class="lad-shade lad-shade--extra"></span>
@@ -320,7 +320,7 @@
                             <span class="lad-tag" data-lad-tag></span>
                         </div>
                         <div class="lad-row" data-lad-row="5" data-state="out">
-                            <span class="lad-name">Help with homework you were never taught</span>
+                            <span class="lad-name">Eleven years of photos, and which are worth keeping</span>
                             <span class="lad-gauge">
                                 <span class="lad-shade lad-shade--mine"></span>
                                 <span class="lad-shade lad-shade--extra"></span>
@@ -330,7 +330,7 @@
                             <span class="lad-tag" data-lad-tag></span>
                         </div>
                         <div class="lad-row" data-lad-row="6" data-state="out">
-                            <span class="lad-name">Work out whether solar would pay for itself</span>
+                            <span class="lad-name">What changed in the forty-page tenancy agreement</span>
                             <span class="lad-gauge">
                                 <span class="lad-shade lad-shade--mine"></span>
                                 <span class="lad-shade lad-shade--extra"></span>
@@ -359,7 +359,7 @@
                             </span>
                             <span class="lad-tag" data-lad-tag></span>
                         </div>
-                        <div class="lad-axis"><span>easier</span><span>harder</span></div>
+                        <div class="lad-axis"><span>a bit to hold</span><span>more than fits</span></div>
                     </div>
                     <span class="lad-grab" data-lad-handle role="slider" tabindex="0"
                           aria-label="How far you get on your own — drag left or right"
@@ -373,7 +373,7 @@
                     <p class="lad-note">Where each of these sits is our judgement, not a measurement.</p>
                     <p class="sr-only" role="status" aria-live="polite" data-lad-status></p>
                     <noscript>
-                        <p>Nine things from an ordinary life, in rough order of how much you have to know to do them. Most people stop somewhere in the middle. The last two are not like the others.</p>
+                        <p>Nine things from an ordinary life, in rough order of how much there is to hold at once. Most people stop somewhere in the middle. The last two are not like the others.</p>
                     </noscript>
                 </figure>
 
