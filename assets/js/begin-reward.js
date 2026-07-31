@@ -1,22 +1,23 @@
-/* THE PRIZE MACHINE — a toy for the reward experiment described between 3:26 and 5:32 of the RSA
- * Drive animation. (The talk names the town; the auto-captions garble it, and the underlying paper
- * is Ariely, Gneezy, Loewenstein and Mazar, "Large Stakes and Big Mistakes". The place name is not
- * used in reader-facing copy — the page just says rural India, which is all the talk needs it to.)
+/* THE PRIZE MACHINE — a toy for the reward experiment described between 1:40 and 5:00 of the RSA
+ * Drive animation.
  *
  * The article does the explaining. This is for digging: change the numbers and see what would be.
  *
- * One bound state, enterable from any end —
- *   drag the knob along the curve · drag the underlined values in the sentence ·
- *   drag the attention split (runs the model backwards) · drag the measured marks themselves
+ * TWO DIMENSIONS, because the talk describes two: how big the reward is, and whether the task is
+ * mechanical or calls for thought. An earlier version also let you set the worker's normal pay and
+ * watch their attention divide — neither was ever a condition anyone ran. "Pay people enough to take
+ * the issue of money off the table" is a principle drawn after the result, and the talk never claims
+ * attention shifts with the size of the prize. Both are gone: states nobody measured read as
+ * nonsense, however carefully they are labelled.
  *
- * Dragging a mark asks "what if it had come out otherwise". The measured result stays behind it as a
- * ghost and a reset puts it back, so the real finding is never silently overwritten.
+ * The outcomes are the talk's own words. Mechanical: the higher the pay, the better the performance.
+ * Thinking: the medium reward did no better than the small one, and the top reward did worst of all.
  *
- * The curve is the quadratic through whatever the three marks currently say — so the marks are the
- * truth and the line is only a way of getting between them. The vertical axis carries no numbers
- * because the study reported which group did better, never by how much.
+ * The three tested rewards are marks; straight lines join them and claim nothing in between. The
+ * vertical axis carries no numbers because the result was reported as a ranking. Drag a mark to ask
+ * what if it had come out otherwise — the measured shape stays behind it as a ghost.
  *
- * CSP-safe, classic IIFE, ARIA sliders throughout, nothing encoded by hue alone. */
+ * CSP-safe, classic IIFE, ARIA sliders, nothing encoded by hue alone. */
 (function () {
   "use strict";
 
@@ -26,51 +27,41 @@
   if (!svg) return;
 
   var MARKS = ["two weeks' pay", "a month's pay", "two months' pay"];
-  var TASKS = ["a task with clear rules", "a task that needs thinking"];
-  var PAYS = ["barely enough", "enough to forget about"];
+  var TASKS = ["a mechanical task", "a task that needs thought"];
 
-  /* what was measured — ordinal, so these are ranks drawn as heights, never scores */
-  var REAL = { rules: [[56, 74, 92], [58, 76, 93]], think: [[74, 72, 30], [78, 77, 74]] };
-  function clone(o) {
-    return { rules: [o.rules[0].slice(), o.rules[1].slice()], think: [o.think[0].slice(), o.think[1].slice()] };
-  }
+  var REAL = { rules: [56, 74, 92], think: [74, 72, 30] };
+  function clone(o) { return { rules: o.rules.slice(), think: o.think.slice() }; }
   var DATA = clone(REAL);
 
-  var state = { p: 0, task: 0, pay: 0, edited: false };
+  var state = { p: 0, task: 0, edited: false };
   function key() { return state.task === 0 ? "rules" : "think"; }
-  function ys(src) { return (src || DATA)[key()][state.pay]; }
+  function ys(src) { return (src || DATA)[key()]; }
 
-  /* Join the measured points with straight lines. A fitted curve invented a rise that was never
-     measured — through 74/72/30 a quadratic climbs before it falls, so a small prize appeared to
-     help on the thinking task. Straight segments claim nothing between the marks. */
-  function curve(p, v) {
-    return p <= 1 ? v[0] + (v[1] - v[0]) * p : v[1] + (v[2] - v[1]) * (p - 1);
-  }
-  /* which way the work moves as the prize rises, right here — the finding itself */
+  function curve(p, v) { return p <= 1 ? v[0] + (v[1] - v[0]) * p : v[1] + (v[2] - v[1]) * (p - 1); }
   function slope(p, v) { return p < 1 ? v[1] - v[0] : v[2] - v[1]; }
-  function pull(p, pay) { return pay === 0 ? p * p + 25 * p + 22 : 0.5 * p * p + 10.5 * p + 10; }
-  function prizeForPull(a, pay) {
-    var p = pay === 0 ? (-25 + Math.sqrt(625 - 4 * (22 - a))) / 2
-                      : (-21 + Math.sqrt(441 - 4 * (20 - 2 * a))) / 2;
-    return Math.max(0, Math.min(2, p));
-  }
 
-  /* The verdict is the direction of travel, which is what was actually found — and it is what the
-     line in front of you is doing, so the words and the picture cannot come apart. Ranking the three
-     prizes against each other produced true-but-useless statements like "the worst of the three"
-     for the smallest prize on a task where prizes help. */
-  function verdictAt(m, v) {
-    var g = m < 1 ? v[1] - v[0] : v[2] - v[1];
-    /* "no better" is the talk's own phrasing for the middle prize, and unlike "barely any
-       difference" it completes the sentence: the work gets no better. */
-    return g > 4 ? "better" : g < -4 ? "worse" : "no better";
-  }
-  function verdict() { return verdictAt(state.p, ys()); }
-  /* does this kind of task need the attention the prize is taking? */
-  function needsIt() { return state.task === 1 ? "and that is a task that needs it" : "but that task barely needs it"; }
-  function attnWords(w) {
-    return w >= 75 ? "mostly on the work" : w >= 55 ? "drifting off the work"
-      : w >= 40 ? "half on the prize" : "mostly on the prize";
+  /* the talk's own findings, at the three rewards it describes */
+  var SAID = {
+    rules: [
+      "The higher the pay, the better they do — this is the low end of that.",
+      "The higher the pay, the better they do.",
+      "The higher the pay, the better they do. For work like this, carrots and sticks are outstanding."
+    ],
+    think: [
+      "The small reward. The other two were measured against this one.",
+      "They did no better than the people offered the small reward.",
+      "They did worst of all. A larger reward led to poorer performance."
+    ]
+  };
+
+  function outcome() {
+    var m = Math.round(state.p);
+    if (Math.abs(state.p - m) >= 0.12) return "Between the tested rewards — nothing was measured here.";
+    if (state.edited) {
+      var g = slope(state.p, ys());
+      return "Your version: from here a bigger reward makes it " + (g > 4 ? "better" : g < -4 ? "worse" : "no better") + ".";
+    }
+    return SAID[key()][m];
   }
 
   var VBW = 640, VBH = 300, X0 = 54, X1 = 614, Y0 = 248, Y1 = 22;
@@ -78,9 +69,8 @@
   function yOf(v) { return Y0 + (v / 100) * (Y1 - Y0); }
   function vOfY(y) { return Math.max(4, Math.min(100, ((y - Y0) / (Y1 - Y0)) * 100)); }
   function pathFor(v) {
-    var d = "";
-    for (var i = 0; i <= 60; i++) { var p = (i / 60) * 2; d += (i ? "L" : "M") + xOf(p).toFixed(1) + " " + yOf(curve(p, v)).toFixed(1); }
-    return d;
+    return "M" + xOf(0) + " " + yOf(v[0]).toFixed(1) + "L" + xOf(1) + " " + yOf(v[1]).toFixed(1) +
+           "L" + xOf(2) + " " + yOf(v[2]).toFixed(1);
   }
   function clamp(v, a, b) { return Math.max(a, Math.min(b, v)); }
 
@@ -91,29 +81,19 @@
     dots: svg.querySelectorAll("[data-rx-dot]"),
     knob: svg.querySelector("[data-rx-knob]"),
     vline: svg.querySelector("[data-rx-vline]"),
-    tangent: svg.querySelector("[data-rx-tangent]"),
-    needs: fig.querySelector("[data-out='needs']"),
     reset: fig.querySelector("[data-rx-reset]"),
     prov: fig.querySelector("[data-rx-prov]"),
-    attnBar: fig.querySelector("[data-rx-attn]"),
-    grip: fig.querySelector("[data-rx-grip]"),
-    attnWork: fig.querySelector("[data-rx-attn-work]"),
-    attnPrize: fig.querySelector("[data-rx-attn-prize]"),
     status: fig.querySelector("[data-rx-status]"),
-    o: {
-      prize: fig.querySelector("[data-scrub='prize']"),
-      task: fig.querySelector("[data-scrub='task']"),
-      pay: fig.querySelector("[data-scrub='pay']"),
-      attn: fig.querySelector("[data-out='attn']"),
-      verdict: fig.querySelector("[data-out='verdict']")
-    }
+    prize: fig.querySelector("[data-scrub='prize']"),
+    taskEl: fig.querySelector("[data-scrub='task']"),
+    outcome: fig.querySelector("[data-out='outcome']")
   };
 
   function render() {
-    var v = ys(), otherKey = state.task === 0 ? "think" : "rules";
+    var v = ys();
     el.active.setAttribute("d", pathFor(v));
-    el.other.setAttribute("d", pathFor(DATA[otherKey][state.pay]));
-    if (el.ghost) el.ghost.setAttribute("d", state.edited ? pathFor(REAL[key()][state.pay]) : "");
+    el.other.setAttribute("d", pathFor(DATA[state.task === 0 ? "think" : "rules"]));
+    if (el.ghost) el.ghost.setAttribute("d", state.edited ? pathFor(REAL[key()]) : "");
 
     Array.prototype.forEach.call(el.dots, function (dot) {
       var m = +dot.getAttribute("data-rx-dot");
@@ -126,64 +106,29 @@
     var kx = xOf(state.p), ky = yOf(curve(state.p, v));
     el.knob.setAttribute("cx", kx); el.knob.setAttribute("cy", ky);
     el.knob.setAttribute("aria-valuenow", state.p.toFixed(2));
-    el.knob.setAttribute("aria-valuetext", MARKS[Math.round(state.p)] + " — a bigger prize from here makes the work " + verdict());
+    el.knob.setAttribute("aria-valuetext", MARKS[Math.round(state.p)] + ". " + outcome());
     el.vline.setAttribute("x1", kx); el.vline.setAttribute("x2", kx);
     el.vline.setAttribute("y1", ky); el.vline.setAttribute("y2", Y0);
 
-    var onPrize = pull(state.p, state.pay), onWork = 100 - onPrize;
-    el.attnWork.style.width = onWork.toFixed(1) + "%";
-    el.attnPrize.style.width = onPrize.toFixed(1) + "%";
-    if (el.grip) el.grip.style.left = onWork.toFixed(1) + "%";
-    if (el.attnBar) {
-      el.attnBar.setAttribute("aria-valuenow", Math.round(onWork));
-      el.attnBar.setAttribute("aria-valuetext", Math.round(onWork) + "% on the work — " + attnWords(onWork));
-    }
-
-    el.o.prize.textContent = MARKS[Math.round(state.p)];
-    if (el.needs) el.needs.textContent = needsIt();
-    /* a short tangent at the knob, so "better"/"worse" in the sentence is visibly the same fact as
-       the direction the line is heading */
-    if (el.tangent) {
-      var g = slope(state.p, v), dx = 46;
-      var dy = -(g / 100) * (Y0 - Y1) * (dx / ((X1 - X0) / 2));
-      el.tangent.setAttribute("d", "M" + kx + " " + ky + "l" + dx + " " + dy.toFixed(1));
-      el.tangent.setAttribute("data-dir", g > 4 ? "up" : g < -4 ? "down" : "flat");
-    }
-    el.o.task.textContent = TASKS[state.task];
-    el.o.pay.textContent = PAYS[state.pay];
-    el.o.attn.textContent = attnWords(onWork);
-    el.o.verdict.textContent = verdict();
-    [["prize", state.p, MARKS[Math.round(state.p)]], ["task", state.task, TASKS[state.task]], ["pay", state.pay, PAYS[state.pay]]]
-      .forEach(function (r) {
-        el.o[r[0]].setAttribute("aria-valuenow", String(r[1]));
-        el.o[r[0]].setAttribute("aria-valuetext", r[2]);
-      });
+    el.prize.textContent = MARKS[Math.round(state.p)];
+    el.taskEl.textContent = TASKS[state.task];
+    el.outcome.textContent = outcome();
+    el.prize.setAttribute("aria-valuenow", String(state.p));
+    el.prize.setAttribute("aria-valuetext", MARKS[Math.round(state.p)]);
+    el.taskEl.setAttribute("aria-valuenow", String(state.task));
+    el.taskEl.setAttribute("aria-valuetext", TASKS[state.task]);
 
     fig.setAttribute("data-rx-edited", state.edited ? "true" : "false");
     if (el.reset) el.reset.hidden = !state.edited;
-
-    /* Say which footing the reader is on, always. Not knowing is itself work, and the whole point of
-       the thing is to take work away. Three footings: what was measured, what is only the stated
-       explanation, and what the reader has changed themselves. */
-    var kind = state.edited ? "yours" : (state.pay === 1 ? "model" : "measured");
     if (el.prov) {
-      el.prov.setAttribute("data-kind", kind);
-      el.prov.textContent =
-        kind === "yours" ? "Your numbers now, not theirs — the faint line is what they actually found."
-        : kind === "model" ? "Not measured. Paying people enough that money leaves their mind is the principle he draws from the result, not a condition anyone ran."
-        : "Measured. Mechanical work got better with a bigger prize; work needing thought got worse — then rerun in rural India, where the top prize was two months\u2019 wages.";
+      el.prov.setAttribute("data-kind", state.edited ? "yours" : "measured");
+      el.prov.textContent = state.edited
+        ? "Your numbers now — the faint line is what they actually found."
+        : "Measured. Run first with American students, then again in rural India where the top reward was two months’ wages, in case the money had not been meaningful enough.";
     }
-    fig.setAttribute("data-rx-kind", kind);
-
-    if (el.status) {
-      el.status.textContent = MARKS[Math.round(state.p)] + " for " + TASKS[state.task] + ", normal pay " +
-        PAYS[state.pay] + ". A bigger prize from here makes the work " + verdict() + ". Attention " +
-        attnWords(onWork) + ", " + needsIt() + "." +
-        (state.edited ? " These are your numbers now, not the measured ones." : "");
-    }
+    if (el.status) el.status.textContent = MARKS[Math.round(state.p)] + " for " + TASKS[state.task] + ". " + outcome();
   }
 
-  /* scrubbable values in the sentence */
   function scrub(node, cfg) {
     if (!node) return;
     node.setAttribute("role", "slider");
@@ -200,8 +145,7 @@
     node.addEventListener("pointermove", function (e) {
       if (!on) return;
       var val = sv + (e.clientX - sx) / cfg.dragPx;
-      cfg.set(clamp(cfg.step ? Math.round(val / cfg.step) * cfg.step : val, cfg.min, cfg.max));
-      render();
+      cfg.set(clamp(cfg.step ? Math.round(val / cfg.step) * cfg.step : val, cfg.min, cfg.max)); render();
     });
     function off(e) {
       if (!on) return; on = false; node.removeAttribute("data-dragging");
@@ -218,15 +162,12 @@
       else ok = false;
       if (!ok) return;
       e.preventDefault();
-      cfg.set(clamp(cfg.step ? Math.round(val / cfg.step) * cfg.step : val, cfg.min, cfg.max));
-      render();
+      cfg.set(clamp(cfg.step ? Math.round(val / cfg.step) * cfg.step : val, cfg.min, cfg.max)); render();
     });
   }
-  scrub(el.o.prize, { label: "The prize on offer", min: 0, max: 2, keyStep: 0.25, dragPx: 90, get: function () { return state.p; }, set: function (v) { state.p = v; } });
-  scrub(el.o.task, { label: "The kind of task", min: 0, max: 1, step: 1, dragPx: 55, get: function () { return state.task; }, set: function (v) { state.task = v; } });
-  scrub(el.o.pay, { label: "Their normal pay", min: 0, max: 1, step: 1, dragPx: 55, get: function () { return state.pay; }, set: function (v) { state.pay = v; } });
+  scrub(el.prize, { label: "The reward on offer", min: 0, max: 2, step: 1, dragPx: 70, get: function () { return state.p; }, set: function (v) { state.p = v; } });
+  scrub(el.taskEl, { label: "The kind of task", min: 0, max: 1, step: 1, dragPx: 55, get: function () { return state.task; }, set: function (v) { state.task = v; } });
 
-  /* the knob slides along the curve; a mark being dragged takes precedence */
   var sliding = false, editing = null;
   function pFromPointer(e) {
     var b = svg.getBoundingClientRect();
@@ -235,7 +176,7 @@
   svg.addEventListener("pointerdown", function (e) {
     if (editing !== null) return;
     sliding = true; svg.setAttribute("data-dragging", "true");
-    state.p = pFromPointer(e); render();
+    state.p = Math.round(pFromPointer(e)); render();
     try { svg.setPointerCapture(e.pointerId); } catch (err) {}
     e.preventDefault();
   });
@@ -246,7 +187,7 @@
       state.edited = true; render();
       return;
     }
-    if (sliding) { state.p = pFromPointer(e); render(); }
+    if (sliding) { state.p = Math.round(pFromPointer(e)); render(); }
   });
   function release(e) {
     sliding = false; editing = null;
@@ -256,7 +197,6 @@
   svg.addEventListener("pointerup", release);
   svg.addEventListener("pointercancel", release);
 
-  /* the marks themselves are draggable — this is the "what if" */
   Array.prototype.forEach.call(el.dots, function (dot) {
     var m = +dot.getAttribute("data-rx-dot");
     dot.setAttribute("role", "slider");
@@ -268,8 +208,7 @@
       e.stopPropagation();
       editing = m; state.p = m;
       try { svg.setPointerCapture(e.pointerId); } catch (err) {}
-      svg.setAttribute("data-dragging", "true");
-      render(); e.preventDefault();
+      svg.setAttribute("data-dragging", "true"); render(); e.preventDefault();
     });
     dot.addEventListener("keydown", function (e) {
       var val = ys()[m], ok = true;
@@ -286,35 +225,6 @@
   if (el.reset) el.reset.addEventListener("click", function () {
     DATA = clone(REAL); state.edited = false; render();
   });
-
-  /* the attention split runs the model backwards */
-  if (el.attnBar) {
-    var barOn = false;
-    function workFrom(e) { var b = el.attnBar.getBoundingClientRect(); return clamp(((e.clientX - b.left) / b.width) * 100, 0, 100); }
-    function setWork(w) { state.p = prizeForPull(100 - w, state.pay); render(); }
-    el.attnBar.addEventListener("pointerdown", function (e) {
-      barOn = true; el.attnBar.setAttribute("data-dragging", "true");
-      try { el.attnBar.setPointerCapture(e.pointerId); } catch (err) {}
-      setWork(workFrom(e)); e.preventDefault();
-    });
-    el.attnBar.addEventListener("pointermove", function (e) { if (barOn) setWork(workFrom(e)); });
-    function barOff(e) {
-      if (!barOn) return; barOn = false; el.attnBar.removeAttribute("data-dragging");
-      try { if (e && e.pointerId != null && el.attnBar.hasPointerCapture(e.pointerId)) el.attnBar.releasePointerCapture(e.pointerId); } catch (err) {}
-    }
-    el.attnBar.addEventListener("pointerup", barOff);
-    el.attnBar.addEventListener("pointercancel", barOff);
-    el.attnBar.addEventListener("keydown", function (e) {
-      var w = 100 - pull(state.p, state.pay), ok = true;
-      if (e.key === "ArrowLeft" || e.key === "ArrowDown") w -= 4;
-      else if (e.key === "ArrowRight" || e.key === "ArrowUp") w += 4;
-      else if (e.key === "Home") w = 0;
-      else if (e.key === "End") w = 100;
-      else ok = false;
-      if (!ok) return;
-      e.preventDefault(); setWork(clamp(w, 0, 100));
-    });
-  }
 
   render();
 })();

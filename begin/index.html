@@ -83,7 +83,6 @@
         .rx-guide { stroke: var(--color-accent); stroke-width: 1; stroke-dasharray: 3 4; opacity: 0.5; }
         /* the tangent makes "better"/"worse" in the sentence and the direction of the line the same
            fact, so the words and the picture cannot drift apart */
-        .rx-tangent { stroke: var(--color-accent); stroke-width: 5; stroke-linecap: round; fill: none; opacity: 0.9; }
         .rx-tick { fill: var(--color-muted); font: 500 15px var(--font-sans); }
         .rx-ylab { fill: var(--color-muted); font: 500 13px var(--font-sans); }
 
@@ -96,30 +95,11 @@
         .rx-prov[data-kind="model"] { border-inline-start-color: var(--color-muted); font-style: italic; }
         .rx-prov[data-kind="yours"] { border-inline-start-color: var(--color-brand-light, var(--color-brand)); }
         /* hollow the marks when they are not standing on measured ground */
-        [data-rx-kind="model"] .rx-mark, [data-rx-kind="yours"] .rx-mark {
-            fill: var(--color-bg-secondary); stroke: var(--color-fg-secondary); stroke-width: 2.5; }
         .rx-hint { font-size: var(--font-size-sm); color: var(--color-muted); margin: 0.35rem 0 1.4rem; line-height: 1.5; }
         .rx-reset { font: inherit; color: var(--color-accent); background: none; border: 0;
                     border-bottom: 1px dotted var(--color-accent); padding: 0; cursor: pointer; }
         .rx-reset:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
 
-        .rx-split { position: relative; display: flex; height: 1.4rem; border: 1px solid var(--color-border);
-                    border-radius: var(--radius-full); cursor: ew-resize; touch-action: none;
-                    -webkit-user-select: none; user-select: none; }
-        .rx-split:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; }
-        .rx-seg { display: block; }
-        .rx-seg--work { background: var(--color-accent); border-radius: var(--radius-full) 0 0 var(--radius-full); }
-        .rx-seg--prize { background: var(--color-brand-light, var(--color-brand)); border-radius: 0 var(--radius-full) var(--radius-full) 0;
-                         background-image: repeating-linear-gradient(45deg, transparent 0 4px, var(--color-bg-secondary) 4px 6px); }
-        .rx-grip { position: absolute; top: -5px; bottom: -5px; width: 12px; margin-left: -6px;
-                   border-radius: var(--radius); background: var(--color-fg);
-                   border: 2px solid var(--color-bg-secondary); pointer-events: none; }
-        [data-dragging="true"] .rx-grip { background: var(--color-accent); }
-        .rx-key { font-size: var(--font-size-sm); color: var(--color-muted); margin: 0.45rem 0 0; }
-        .rx-dot { display: inline-block; width: 0.7rem; height: 0.7rem; border-radius: 2px; vertical-align: -1px; }
-        .rx-dot--work { background: var(--color-accent); }
-        .rx-dot--prize { background: var(--color-brand-light, var(--color-brand));
-                         background-image: repeating-linear-gradient(45deg, transparent 0 3px, var(--color-bg-secondary) 3px 5px); }
 
         .rx-note { font-size: var(--font-size-sm); color: var(--color-muted); margin: 1.1rem 0 0; }
     </style>
@@ -128,7 +108,7 @@
     <script src="/assets/js/accessibility.js" defer></script>
     <link rel="stylesheet" href="/assets/css/journey.css">
     <script src="/assets/js/journey.js" defer></script>
-    <script src="/assets/js/begin-reward.js?v=7" defer></script>
+    <script src="/assets/js/begin-reward.js?v=8" defer></script>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -152,9 +132,9 @@
                 <p data-a11y="more-one">You've probably had the pay rise that changed nothing. Or the bonus that turned something you liked into a chore. Not ingratitude, and not just you — it happens reliably enough that people measured it. Here it is. Have a go.</p>
 
                 <figure class="rx" id="reward-experiment">
-                    <p class="rx-sentence">You are offering <span class="scrub" data-scrub="prize">two weeks’ pay</span> for <span class="scrub" data-scrub="task">a task with clear rules</span>, and their normal pay is <span class="scrub" data-scrub="pay">barely enough</span>. Raise the prize from here and the work gets <b data-out="verdict">better</b> — their attention is <b data-out="attn">mostly on the work</b>, <b data-out="needs">but that task barely needs it</b>.</p>
+                    <p class="rx-sentence">Offer <span class="scrub" data-scrub="prize">two weeks’ pay</span> for <span class="scrub" data-scrub="task">a mechanical task</span>. <b data-out="outcome">The higher the pay, the better they do — this is the low end of that.</b></p>
 
-                    <svg class="rx-graph" data-rx-svg viewBox="0 0 640 300" role="group" aria-label="How the work went as the prize rises. Drag the knob, or drag the three marks to change what they found.">
+                    <svg class="rx-graph" data-rx-svg viewBox="0 0 640 300" role="group" aria-label="How the work went at each reward. Drag the three marks to change what they found.">
                         <line class="rx-axis" x1="54" y1="22" x2="54" y2="248"></line>
                         <line class="rx-axis" x1="54" y1="248" x2="614" y2="248"></line>
                         <text class="rx-ylab" x="62" y="34">better</text>
@@ -167,24 +147,14 @@
                         <circle class="rx-mark" data-rx-dot="0" r="9" cx="54" cy="121.4"></circle>
                         <circle class="rx-mark" data-rx-dot="1" r="9" cx="334" cy="80.8"></circle>
                         <circle class="rx-mark" data-rx-dot="2" r="9" cx="614" cy="40.1"></circle>
-                        <path class="rx-tangent" data-rx-tangent data-dir="up" d=""></path>
                         <circle class="rx-knob" data-rx-knob r="11" cx="54" cy="121.4"></circle>
                         <text class="rx-tick" x="54" y="272" text-anchor="start">2 weeks’ pay</text>
                         <text class="rx-tick" x="334" y="272" text-anchor="middle">a month’s</text>
                         <text class="rx-tick" x="614" y="272" text-anchor="end">2 months’</text>
                     </svg>
 
-                    <p class="rx-prov" data-rx-prov data-kind="measured">Measured. Mechanical work got better with a bigger prize; work needing thought got worse — then rerun in rural India, where the top prize was two months’ wages.</p>
-                    <p class="rx-hint">Everything underlined drags. So do the three marks — move one to ask what if it had come out otherwise. <button type="button" class="rx-reset" data-rx-reset hidden>put them back</button></p>
-
-                    <div class="rx-split" data-rx-attn role="slider" tabindex="0"
-                         aria-label="How much of their attention is on the work — drag to set it, and the prize that would put it there follows"
-                         aria-valuemin="0" aria-valuemax="100" aria-valuenow="78">
-                        <span class="rx-seg rx-seg--work" data-rx-attn-work></span>
-                        <span class="rx-seg rx-seg--prize" data-rx-attn-prize></span>
-                        <span class="rx-grip" data-rx-grip aria-hidden="true"></span>
-                    </div>
-                    <p class="rx-key"><span class="rx-dot rx-dot--work"></span> attention on the work &nbsp; <span class="rx-dot rx-dot--prize"></span> on the prize &mdash; drag this too. Where their head is, is the explanation rather than a measurement.</p>
+                    <p class="rx-prov" data-rx-prov data-kind="measured">Measured. Run first with American students, then again in rural India where the top reward was two months’ wages, in case the money had not been meaningful enough.</p>
+                    <p class="rx-hint">Both underlined words drag. So do the three marks — move one to ask what if it had come out otherwise. <button type="button" class="rx-reset" data-rx-reset hidden>put them back</button></p>
 
                     <p class="sr-only" data-rx-status role="status" aria-live="polite"></p>
                 </figure>
