@@ -30,7 +30,7 @@
   var PAYS = ["barely enough", "enough to forget about"];
 
   /* what was measured — ordinal, so these are ranks drawn as heights, never scores */
-  var REAL = { rules: [[56, 74, 92], [58, 76, 93]], think: [[74, 72, 30], [78, 77, 70]] };
+  var REAL = { rules: [[56, 74, 92], [58, 76, 93]], think: [[74, 72, 30], [78, 77, 74]] };
   function clone(o) {
     return { rules: [o.rules[0].slice(), o.rules[1].slice()], think: [o.think[0].slice(), o.think[1].slice()] };
   }
@@ -40,7 +40,14 @@
   function key() { return state.task === 0 ? "rules" : "think"; }
   function ys(src) { return (src || DATA)[key()][state.pay]; }
 
-  function curve(p, v) { return v[0] * (p - 1) * (p - 2) / 2 - v[1] * p * (p - 2) + v[2] * p * (p - 1) / 2; }
+  /* Join the measured points with straight lines. A fitted curve invented a rise that was never
+     measured — through 74/72/30 a quadratic climbs before it falls, so a small prize appeared to
+     help on the thinking task. Straight segments claim nothing between the marks. */
+  function curve(p, v) {
+    return p <= 1 ? v[0] + (v[1] - v[0]) * p : v[1] + (v[2] - v[1]) * (p - 1);
+  }
+  /* which way the work moves as the prize rises, right here — the finding itself */
+  function slope(p, v) { return p < 1 ? v[1] - v[0] : v[2] - v[1]; }
   function pull(p, pay) { return pay === 0 ? p * p + 25 * p + 22 : 0.5 * p * p + 10.5 * p + 10; }
   function prizeForPull(a, pay) {
     var p = pay === 0 ? (-25 + Math.sqrt(625 - 4 * (22 - a))) / 2
@@ -48,19 +55,19 @@
     return Math.max(0, Math.min(2, p));
   }
 
-  /* verdicts read off the marks, so they stay true after you have moved them */
+  /* The verdict is the direction of travel, which is what was actually found — and it is what the
+     line in front of you is doing, so the words and the picture cannot come apart. Ranking the three
+     prizes against each other produced true-but-useless statements like "the worst of the three"
+     for the smallest prize on a task where prizes help. */
   function verdictAt(m, v) {
-    var hi = Math.max(v[0], v[1], v[2]), lo = Math.min(v[0], v[1], v[2]);
-    if (hi - lo < 3) return "much the same either way";
-    if (m > 0 && Math.abs(v[m] - v[m - 1]) < 3) return "no better than the smaller prize";
-    if (v[m] >= hi - 0.5) return "the best of the three";
-    if (v[m] <= lo + 0.5) return "the worst of the three";
-    return "somewhere in the middle";
+    var g = m < 1 ? v[1] - v[0] : v[2] - v[1];
+    /* "no better" is the talk's own phrasing for the middle prize, and unlike "barely any
+       difference" it completes the sentence: the work gets no better. */
+    return g > 4 ? "better" : g < -4 ? "worse" : "no better";
   }
-  function verdict() {
-    var m = Math.round(state.p);
-    return Math.abs(state.p - m) >= 0.12 ? "somewhere in between" : verdictAt(m, ys());
-  }
+  function verdict() { return verdictAt(state.p, ys()); }
+  /* does this kind of task need the attention the prize is taking? */
+  function needsIt() { return state.task === 1 ? "and that is a task that needs it" : "but that task barely needs it"; }
   function attnWords(w) {
     return w >= 75 ? "mostly on the work" : w >= 55 ? "drifting off the work"
       : w >= 40 ? "half on the prize" : "mostly on the prize";
@@ -84,6 +91,8 @@
     dots: svg.querySelectorAll("[data-rx-dot]"),
     knob: svg.querySelector("[data-rx-knob]"),
     vline: svg.querySelector("[data-rx-vline]"),
+    tangent: svg.querySelector("[data-rx-tangent]"),
+    needs: fig.querySelector("[data-out='needs']"),
     reset: fig.querySelector("[data-rx-reset]"),
     prov: fig.querySelector("[data-rx-prov]"),
     attnBar: fig.querySelector("[data-rx-attn]"),
@@ -111,13 +120,13 @@
       dot.setAttribute("cx", xOf(m));
       dot.setAttribute("cy", yOf(v[m]));
       dot.setAttribute("aria-valuenow", Math.round(v[m]));
-      dot.setAttribute("aria-valuetext", MARKS[m] + " — " + verdictAt(m, v));
+      dot.setAttribute("aria-valuetext", "what " + MARKS[m] + " produced");
     });
 
     var kx = xOf(state.p), ky = yOf(curve(state.p, v));
     el.knob.setAttribute("cx", kx); el.knob.setAttribute("cy", ky);
     el.knob.setAttribute("aria-valuenow", state.p.toFixed(2));
-    el.knob.setAttribute("aria-valuetext", MARKS[Math.round(state.p)] + ", " + verdict());
+    el.knob.setAttribute("aria-valuetext", MARKS[Math.round(state.p)] + " — a bigger prize from here makes the work " + verdict());
     el.vline.setAttribute("x1", kx); el.vline.setAttribute("x2", kx);
     el.vline.setAttribute("y1", ky); el.vline.setAttribute("y2", Y0);
 
@@ -130,8 +139,16 @@
       el.attnBar.setAttribute("aria-valuetext", Math.round(onWork) + "% on the work — " + attnWords(onWork));
     }
 
-    var near = Math.abs(state.p - Math.round(state.p)) < 0.12;
-    el.o.prize.textContent = MARKS[Math.round(state.p)] + (near ? "" : " (ish)");
+    el.o.prize.textContent = MARKS[Math.round(state.p)];
+    if (el.needs) el.needs.textContent = needsIt();
+    /* a short tangent at the knob, so "better"/"worse" in the sentence is visibly the same fact as
+       the direction the line is heading */
+    if (el.tangent) {
+      var g = slope(state.p, v), dx = 46;
+      var dy = -(g / 100) * (Y0 - Y1) * (dx / ((X1 - X0) / 2));
+      el.tangent.setAttribute("d", "M" + kx + " " + ky + "l" + dx + " " + dy.toFixed(1));
+      el.tangent.setAttribute("data-dir", g > 4 ? "up" : g < -4 ? "down" : "flat");
+    }
     el.o.task.textContent = TASKS[state.task];
     el.o.pay.textContent = PAYS[state.pay];
     el.o.attn.textContent = attnWords(onWork);
@@ -160,7 +177,8 @@
 
     if (el.status) {
       el.status.textContent = MARKS[Math.round(state.p)] + " for " + TASKS[state.task] + ", normal pay " +
-        PAYS[state.pay] + ". Attention " + attnWords(onWork) + ". The work comes out " + verdict() + "." +
+        PAYS[state.pay] + ". A bigger prize from here makes the work " + verdict() + ". Attention " +
+        attnWords(onWork) + ", " + needsIt() + "." +
         (state.edited ? " These are your numbers now, not the measured ones." : "");
     }
   }
