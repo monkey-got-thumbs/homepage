@@ -27,7 +27,7 @@
 
   var fig = document.getElementById("reach-ladder");
   if (!fig) return;
-  var plot = fig.querySelector("[data-lad-band]");   /* the band IS the coordinate system */
+  var plot = fig.querySelector("[data-lad-plot]");
   if (!plot) return;
 
   /* x is position along the ordering, 0..1. out: what happens when the lever is on. */
@@ -60,7 +60,7 @@
   var countEl = fig.querySelector("[data-lad-count]");
   var statusEl = fig.querySelector("[data-lad-status]");
   var rows = fig.querySelectorAll("[data-lad-row]");
-  var dots = fig.querySelectorAll("[data-lad-dot]");
+  var bars = fig.querySelectorAll("[data-lad-bar]");
 
   function assisted() { return lever ? Math.min(reach + BOOST, CAP) : reach; }
   function clamp(v, a, b) { return Math.max(a, Math.min(b, v)); }
@@ -76,11 +76,9 @@
   function render() {
     var a = assisted(), swept = 0, beyond = 0;
 
-    if (mine) mine.style.width = pct(reach);
-    if (extra) {
-      extra.style.left = pct(reach);
-      extra.style.width = pct(Math.max(0, a - reach));
-    }
+    /* one update point: every row's shading and line read these two properties */
+    plot.style.setProperty("--reach", pct(reach));
+    plot.style.setProperty("--assist", pct(a));
     if (handle) {
       handle.style.left = pct(reach);
       handle.setAttribute("aria-valuenow", Math.round(reach * 100));
@@ -92,8 +90,8 @@
       var i = +row.getAttribute("data-lad-row");
       var st = stateOf(i);
       row.setAttribute("data-state", st);
-      var dot = dots[i];
-      if (dot) dot.style.left = pct(THINGS[i].x);
+      var bar = bars[i];
+      if (bar) bar.style.setProperty("--x", pct(THINGS[i].x));
       var tag = row.querySelector("[data-lad-tag]");
       if (tag) tag.textContent = st === "moves" ? "now in reach"
         : st === "check" ? "in reach — worth checking" : "";
@@ -118,7 +116,8 @@
 
   /* dragging the line */
   function fromPointer(e) {
-    var b = plot.getBoundingClientRect();
+    var g = fig.querySelector(".lad-gauge");
+    var b = g.getBoundingClientRect();
     return clamp((e.clientX - b.left) / b.width, 0, CAP);
   }
   var dragging = false;
