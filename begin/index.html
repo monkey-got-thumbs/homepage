@@ -84,7 +84,18 @@
         .rx-tick { fill: var(--color-muted); font: 500 15px var(--font-sans); }
         .rx-ylab { fill: var(--color-muted); font: 500 13px var(--font-sans); }
 
-        .rx-hint { font-size: var(--font-size-sm); color: var(--color-muted); margin: 0.6rem 0 1.4rem; line-height: 1.5; }
+        /* which footing you are on — measured, model, or your own edit. Marked by a coloured rule as
+           well as wording, so it is not carried by colour alone. */
+        .rx-prov { font-size: var(--font-size-sm); line-height: 1.5; margin: 0.7rem 0 0.35rem;
+                   padding-inline-start: 0.75rem; border-inline-start: 3px solid var(--color-border);
+                   color: var(--color-fg-secondary); }
+        .rx-prov[data-kind="measured"] { border-inline-start-color: var(--color-accent); }
+        .rx-prov[data-kind="model"] { border-inline-start-color: var(--color-muted); font-style: italic; }
+        .rx-prov[data-kind="yours"] { border-inline-start-color: var(--color-brand-light, var(--color-brand)); }
+        /* hollow the marks when they are not standing on measured ground */
+        [data-rx-kind="model"] .rx-mark, [data-rx-kind="yours"] .rx-mark {
+            fill: var(--color-bg-secondary); stroke: var(--color-fg-secondary); stroke-width: 2.5; }
+        .rx-hint { font-size: var(--font-size-sm); color: var(--color-muted); margin: 0.35rem 0 1.4rem; line-height: 1.5; }
         .rx-reset { font: inherit; color: var(--color-accent); background: none; border: 0;
                     border-bottom: 1px dotted var(--color-accent); padding: 0; cursor: pointer; }
         .rx-reset:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
@@ -114,7 +125,7 @@
     <script src="/assets/js/accessibility.js" defer></script>
     <link rel="stylesheet" href="/assets/css/journey.css">
     <script src="/assets/js/journey.js" defer></script>
-    <script src="/assets/js/begin-reward.js?v=4" defer></script>
+    <script src="/assets/js/begin-reward.js?v=5" defer></script>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -159,6 +170,7 @@
                         <text class="rx-tick" x="614" y="272" text-anchor="end">2 months’</text>
                     </svg>
 
+                    <p class="rx-prov" data-rx-prov data-kind="measured">Measured. Mechanical work got better with a bigger prize; work needing thought got worse — then rerun in rural India, where the top prize was two months’ wages.</p>
                     <p class="rx-hint">Everything underlined drags. So do the three marks — move one to ask what if it had come out otherwise. <button type="button" class="rx-reset" data-rx-reset hidden>put them back</button></p>
 
                     <div class="rx-split" data-rx-attn role="slider" tabindex="0"
@@ -168,10 +180,9 @@
                         <span class="rx-seg rx-seg--prize" data-rx-attn-prize></span>
                         <span class="rx-grip" data-rx-grip aria-hidden="true"></span>
                     </div>
-                    <p class="rx-key"><span class="rx-dot rx-dot--work"></span> attention on the work &nbsp; <span class="rx-dot rx-dot--prize"></span> on the prize &mdash; drag this too</p>
+                    <p class="rx-key"><span class="rx-dot rx-dot--work"></span> attention on the work &nbsp; <span class="rx-dot rx-dot--prize"></span> on the prize &mdash; drag this too. Where their head is, is the explanation rather than a measurement.</p>
 
                     <p class="sr-only" data-rx-status role="status" aria-live="polite"></p>
-                    <p class="rx-note" data-a11y="rx-note">Only the three marks were measured, and only as a ranking.</p>
                 </figure>
 
                 <p data-a11y="more-two">So the question isn't pay. It's what to protect. Three things keep anyone going at something hard: choosing how you do it, feeling yourself get better, and it mattering to somebody. Lose one and the work goes flat. Hence <em>a little further each day</em> — better is a direction, not a place you arrive.</p>

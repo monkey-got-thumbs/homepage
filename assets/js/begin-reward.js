@@ -83,6 +83,7 @@
     knob: svg.querySelector("[data-rx-knob]"),
     vline: svg.querySelector("[data-rx-vline]"),
     reset: fig.querySelector("[data-rx-reset]"),
+    prov: fig.querySelector("[data-rx-prov]"),
     attnBar: fig.querySelector("[data-rx-attn]"),
     grip: fig.querySelector("[data-rx-grip]"),
     attnWork: fig.querySelector("[data-rx-attn-work]"),
@@ -141,6 +142,19 @@
 
     fig.setAttribute("data-rx-edited", state.edited ? "true" : "false");
     if (el.reset) el.reset.hidden = !state.edited;
+
+    /* Say which footing the reader is on, always. Not knowing is itself work, and the whole point of
+       the thing is to take work away. Three footings: what was measured, what is only the stated
+       explanation, and what the reader has changed themselves. */
+    var kind = state.edited ? "yours" : (state.pay === 1 ? "model" : "measured");
+    if (el.prov) {
+      el.prov.setAttribute("data-kind", kind);
+      el.prov.textContent =
+        kind === "yours" ? "Your numbers now, not theirs — the faint line is what they actually found."
+        : kind === "model" ? "Not measured. Paying people enough that money leaves their mind is the principle he draws from the result, not a condition anyone ran."
+        : "Measured. Mechanical work got better with a bigger prize; work needing thought got worse — then rerun in rural India, where the top prize was two months\u2019 wages.";
+    }
+    fig.setAttribute("data-rx-kind", kind);
 
     if (el.status) {
       el.status.textContent = MARKS[Math.round(state.p)] + " for " + TASKS[state.task] + ", normal pay " +
