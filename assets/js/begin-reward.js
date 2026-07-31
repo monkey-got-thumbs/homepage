@@ -1,5 +1,7 @@
 /* THE PRIZE MACHINE — a toy for the reward experiment described between 3:26 and 5:32 of the RSA
- * Drive animation (the Madurai replication).
+ * Drive animation. (The talk names the town; the auto-captions garble it, and the underlying paper
+ * is Ariely, Gneezy, Loewenstein and Mazar, "Large Stakes and Big Mistakes". The place name is not
+ * used in reader-facing copy — the page just says rural India, which is all the talk needs it to.)
  *
  * The article does the explaining. This is for digging: change the numbers and see what would be.
  *
