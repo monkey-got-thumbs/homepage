@@ -102,6 +102,53 @@
 
 
         .rx-note { font-size: var(--font-size-sm); color: var(--color-muted); margin: 1.1rem 0 0; }
+
+        /* ===== The ladder ===== *
+         * The reader's own marks are the data. No axis and no curve: the ordering of the list is the
+         * only scale, and it is ordinal, which is all anyone can honestly claim — no measured scale
+         * of problem complexity exists. State is carried by text and position as well as colour. */
+        .lad { margin: 2.5rem 0; padding: clamp(1rem, 3vw, 1.6rem); border: 1px solid var(--color-border);
+               border-radius: var(--radius-lg); background: var(--color-bg-secondary); }
+        .lad-lede { font-size: var(--font-size-sm); color: var(--color-muted); text-transform: uppercase;
+                    letter-spacing: 0.07em; margin: 0 0 0.9rem; }
+        .lad-list { list-style: none; margin: 0; padding: 0; }
+        .lad-list li { margin: 0 0 0.4rem; }
+        .lad-row { display: flex; width: 100%; gap: 1rem; align-items: baseline; justify-content: space-between;
+                   text-align: start; font: inherit; line-height: 1.45; cursor: pointer;
+                   color: var(--color-fg); background: none; padding: 0.6rem 0.85rem;
+                   border: 1px solid var(--color-border); border-radius: var(--radius); }
+        .lad-row:hover { border-color: var(--color-accent); }
+        .lad-row:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+        .lad-name { flex: 1 1 auto; }
+        .lad-state { flex: 0 0 auto; font-size: var(--font-size-sm); color: var(--color-muted); white-space: nowrap; }
+
+        /* marked out of reach: struck through and dimmed, so it reads as "not for me" at a glance */
+        .lad-row[data-state="out"] { color: var(--color-muted); border-style: dashed; }
+        .lad-row[data-state="out"] .lad-name { text-decoration: line-through; text-decoration-thickness: 1px; }
+        /* crossed into reach */
+        .lad-row[data-state="moves"], .lad-row[data-state="check"] {
+            color: var(--color-fg); border-color: var(--color-accent); border-style: solid; }
+        .lad-row[data-state="moves"] .lad-state, .lad-row[data-state="check"] .lad-state { color: var(--color-accent); }
+        .lad-row[data-state="check"] { border-style: dotted; }
+        /* did not move — left exactly as it was, deliberately unremarked */
+        .lad-row[data-state="never"] { color: var(--color-muted); border-style: dashed; }
+        .lad-row[data-state="never"] .lad-name { text-decoration: line-through; text-decoration-thickness: 1px; }
+
+        .lad-note { font-size: var(--font-size-sm); color: var(--color-muted); margin: 1rem 0 0; }
+        .lad-count { font-size: var(--font-size-sm); color: var(--color-fg-secondary); margin: 0.9rem 0 0; min-height: 1.5em; }
+        .lad-lever { display: inline-flex; align-items: baseline; gap: 0.6rem; margin-top: 0.6rem;
+                     font: inherit; text-align: start; cursor: pointer; color: var(--color-fg);
+                     background: none; border: 2px solid var(--color-border); border-radius: var(--radius-full);
+                     padding: 0.6rem 1.1rem; line-height: 1.4; }
+        .lad-lever:hover { border-color: var(--color-accent); }
+        .lad-lever:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; }
+        .lad-lever-k { font: 700 var(--font-size-sm)/1 var(--font-mono); text-transform: uppercase;
+                       letter-spacing: 0.08em; color: var(--color-muted); }
+        .lad-lever[aria-pressed="true"] { border-color: var(--color-accent); }
+        .lad-lever[aria-pressed="true"] .lad-lever-k { color: var(--color-accent); }
+        @media (prefers-reduced-motion: no-preference) {
+            .lad-row { transition: border-color 0.25s ease, color 0.25s ease; }
+        }
     </style>
     <link rel="stylesheet" href="/assets/css/accessibility.css">
     <script src="/assets/js/a11y-init.js"></script>
@@ -109,6 +156,7 @@
     <link rel="stylesheet" href="/assets/css/journey.css">
     <script src="/assets/js/journey.js" defer></script>
     <script src="/assets/js/begin-reward.js?v=8" defer></script>
+    <script src="/assets/js/begin-ladder.js?v=1" defer></script>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -188,6 +236,66 @@
 
                 <p data-a11y="more-trust">So point the trust equation at yourself, not at everybody else. Credibility plus reliability plus intimacy over self-orientation — it lines up with those four term for term, self-orientation inside values, the divisor in both. Run it inward until you're someone whose judgement you'd back.</p>
                 <p data-a11y="more-combination">Then the thing you wanted stops being a solo project. That's the "more" you can already feel — it was never coming from working harder on your own.</p>
+            </section>
+
+
+            <section>
+                <h2>Why some things stay out of reach</h2>
+                <p data-a11y="reach-one">There are things you would do if you knew how. Not because they are mysterious — because learning enough to start costs more than the job is worth, so you go on doing without.</p>
+
+                <figure class="lad" id="reach-ladder">
+                    <p class="lad-lede">Tap anything here you could not do on your own today.</p>
+                    <ul class="lad-list">
+                        <li><button type="button" class="lad-row" data-lad-row="0" aria-pressed="false">
+                            <span class="lad-name">Add up a column of numbers</span>
+                            <span class="lad-state" data-lad-state></span>
+                        </button></li>
+                        <li><button type="button" class="lad-row" data-lad-row="1" aria-pressed="false">
+                            <span class="lad-name">Make a chart from a spreadsheet</span>
+                            <span class="lad-state" data-lad-state></span>
+                        </button></li>
+                        <li><button type="button" class="lad-row" data-lad-row="2" aria-pressed="false">
+                            <span class="lad-name">Write a formula that looks something up in another sheet</span>
+                            <span class="lad-state" data-lad-state></span>
+                        </button></li>
+                        <li><button type="button" class="lad-row" data-lad-row="3" aria-pressed="false">
+                            <span class="lad-name">Tidy 500 addresses that were all typed differently</span>
+                            <span class="lad-state" data-lad-state></span>
+                        </button></li>
+                        <li><button type="button" class="lad-row" data-lad-row="4" aria-pressed="false">
+                            <span class="lad-name">Pull the totals out of 200 PDF invoices</span>
+                            <span class="lad-state" data-lad-state></span>
+                        </button></li>
+                        <li><button type="button" class="lad-row" data-lad-row="5" aria-pressed="false">
+                            <span class="lad-name">Have something email you a summary every Monday</span>
+                            <span class="lad-state" data-lad-state></span>
+                        </button></li>
+                        <li><button type="button" class="lad-row" data-lad-row="6" aria-pressed="false">
+                            <span class="lad-name">Work out why your busiest month lost money</span>
+                            <span class="lad-state" data-lad-state></span>
+                        </button></li>
+                        <li><button type="button" class="lad-row" data-lad-row="7" aria-pressed="false">
+                            <span class="lad-name">Decide whether to take the bigger contract or keep the smaller client</span>
+                            <span class="lad-state" data-lad-state></span>
+                        </button></li>
+                        <li><button type="button" class="lad-row" data-lad-row="8" aria-pressed="false">
+                            <span class="lad-name">Decide who to promote</span>
+                            <span class="lad-state" data-lad-state></span>
+                        </button></li>
+                    </ul>
+                    <p class="lad-count" data-lad-count></p>
+                    <button type="button" class="lad-lever" data-lad-lever aria-pressed="false">
+                        <span class="lad-lever-k">add</span>
+                        something that will explain anything, as often as you ask
+                    </button>
+                    <p class="lad-note">Which of these move is our judgement, not a measurement.</p>
+                    <p class="sr-only" role="status" aria-live="polite" data-lad-status></p>
+                    <noscript>
+                        <p>Most of the jobs on this list are ones people leave undone because learning enough to start costs more than the job is worth. The last two are not like the others.</p>
+                    </noscript>
+                </figure>
+
+                <p data-a11y="reach-two">Whatever did not move was never a question. It was a choice — and choices do not get easier when you know more.</p>
             </section>
 
             <mgt-credit>The motivation research is <strong>Daniel Pink</strong>'s — <em>Drive</em> (2009), as presented in his <a href="https://www.youtube.com/watch?v=u6XAPnuFjJc" rel="noopener">RSA lecture</a>; the reward experiment in the figure is the one he describes there, from Ariely, Gneezy, Loewenstein and Mazar's <em>Large Stakes and Big Mistakes</em>. Attunement, buoyancy and clarity are his too, from <em>To Sell Is Human</em> (2012) and the <a href="https://www.youtube.com/watch?v=neYDJUWtlQk" rel="noopener">RSA short</a> drawn from it — where the point about explanatory style predicting resilience is credited to <strong>Martin Seligman</strong> at the University of Pennsylvania. The way of picturing trust is <strong>David Maister, Charles Green and Robert Galford</strong>'s, from <em>The Trusted Advisor</em>.</mgt-credit>
